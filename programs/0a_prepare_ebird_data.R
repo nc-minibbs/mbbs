@@ -1,7 +1,8 @@
 #------------------------------------------------------------------------------#
-#
-#
-#
+#  TITLE: Import MBBS ebird data 
+#   DATE: 20181216
+#   PROG: B. Saul
+#   DESC: Import MBBS data downloaded from the ebird site in MyEBirdData.csv
 #------------------------------------------------------------------------------#
 library(dplyr)
 library(stringr)
@@ -126,7 +127,7 @@ not_habitat_dt <- comment_dt %>%
 
 ## Put things back together ####
 
-analysis_dt <- dt %>%
+ebird_dt <- dt %>%
   select(
     obs_id,
     sub_id      = Submission.ID,
@@ -151,9 +152,11 @@ analysis_dt <- dt %>%
   ) %>%
   mutate(
     count = as.numeric(count),
-    date = as.Date(date, format = "%m-%d-%Y"),
-    year = year(date)
-  )
-
+    date  = as.Date(date, format = "%m-%d-%Y"),
+    year  = year(date),
+    route = str_replace(loc, "MBBS, NC, Orange Co, ", ""),
+    route_num = str_extract(route, "[1-9][0-9]*")
+  ) 
+  
 
 
