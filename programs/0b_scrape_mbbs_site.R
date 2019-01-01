@@ -166,7 +166,7 @@ get_all_year_data <- function(year){
 ## Collect all the data ####
 years <- as.character(1999:2009)
 
-old_mbbs_dt <- purrr::map_dfr(years, function(y){
+mbbs_site_dt <- purrr::map_dfr(years, function(y){
   x <- get_all_year_data(y)
   if(y %in% as.character(1999:2003)){
     x <- x %>% mutate(
@@ -178,6 +178,7 @@ old_mbbs_dt <- purrr::map_dfr(years, function(y){
   return(x)
 })
 
+saveRDS(mbbs_site_dt, file = sprintf("data/mbbs_site_%s.rds", format(Sys.Date(), "%Y%m%d")))
 
 
 

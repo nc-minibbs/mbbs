@@ -139,7 +139,7 @@ ebird_dt <- dt %>%
     county      = County,
     loc         = Location,
     lat         = Latitude,
-    long        = Longitude,
+    lon         = Longitude,
     date        = Date,
     time        = Time,
     distance    = Distance.Traveled..km.,
@@ -149,6 +149,13 @@ ebird_dt <- dt %>%
   ) %>%
   left_join(
     not_habitat_dt, by = c("sub_id" = "Submission.ID")
+  ) %>%
+  # Clean up routes
+  mutate(
+    loc = case_when(
+      loc == "MBBS, NC, Orange Co, Route 5, Arthur Minnis" ~ "MBBS, NC, Orange Co, Route 05, Arthur Minnis Road",
+      TRUE ~ loc
+    )
   ) %>%
   mutate(
     count = as.numeric(count),
