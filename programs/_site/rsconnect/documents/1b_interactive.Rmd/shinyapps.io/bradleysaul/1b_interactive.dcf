@@ -1,0 +1,12 @@
+name: 1b_interactive
+title: 1b_interactive
+username:
+account: bradleysaul
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 625301
+bundleId: 1791999
+url: https://bradleysaul.shinyapps.io/1b_interactive/
+when: 1546375234.26377
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,67 @@
+---
+title: "Orange County MBBS Results 1999-2018"
+runtime: shiny
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+mbbs_dt <- readRDS(file = "mbbs_dt.rds")
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+```
+
+
+```{r}
+analysis_dt <- mbbs_dt %>%
+  group_by(year, common_name, sci_name) %>%
+  summarise(count = mean(count)) %>%
+  ungroup() %>%
+  complete(
+   nesting(common_name, sci_name),
+   year = full_seq(year, 1), 
+   fill = list(count = 0)
+  )
+
+species <- unique(analysis_dt$common_name)
+```
+
+```{r}
+plot_dt <- function(dt){
+  ggplot(
+    data = dt,
+    aes(x = year, y = count, group = sci_name)
+  ) + geom_line() +
+    geom_point(size = 1) + 
+    scale_y_continuous(
+      "Mean count per route",
+      expand = c(0, 0),
+      limits = c(0, max(dt$count) + 1)
+    ) + 
+    scale_x_continuous(
+      "Year",
+      expand = c(.01, 0),
+      breaks = seq(2000, 2018, by = 2) 
+    ) + 
+    stat_smooth(method = "lm", se = FALSE) +
+    theme_classic() + 
+    theme()
+}
+
+```
+```{r eruptions, echo=FALSE}
+inputPanel(
+  selectInput("species", label = "Select a species:",
+              choices = species, selected = species[1])
+)
+
+renderPlot({
+  analysis_dt %>% filter(common_name == input$species) %>%
+  plot_dt()
+
+}, width = 700, height = 500)
+```
+
+
+
