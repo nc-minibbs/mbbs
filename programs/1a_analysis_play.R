@@ -46,19 +46,17 @@ plot_dt <- function(dt){
 analysis_dt %>% filter(common_name == "Acadian Flycatcher") %>%
   plot_dt()
 
-```{r}
-show_plots <- function(.prelabel){
-  plots <- paste0(list.files("img", full.names = TRUE))
-  plots <- plots[grepl(.prelabel, plots)]
-  
-  replacements <- c("", "")
-  names(replacements) <- c("\\.png", sprintf("img/%s_", .prelabel)) 
-  names(plots) <- str_replace_all(plots, replacements)
-  
-  bsselect(plots, type = "img", selected = "As_ppm_m75", 
-           frame_height = "200",
-           live_search = TRUE, show_tick = TRUE)
-}
-```
-
-show_plots("epoxy_nacre_free_scale")
+# show_plots <- function(.prelabel){
+#   plots <- paste0(list.files("img", full.names = TRUE))
+#   plots <- plots[grepl(.prelabel, plots)]
+#   
+#   replacements <- c("", "")
+#   names(replacements) <- c("\\.png", sprintf("img/%s_", .prelabel)) 
+#   names(plots) <- str_replace_all(plots, replacements)
+#   
+#   bsselect(plots, type = "img", selected = "As_ppm_m75", 
+#            frame_height = "200",
+#            live_search = TRUE, show_tick = TRUE)
+# }
+# 
+# show_plots("epoxy_nacre_free_scale")
