@@ -7,4 +7,5 @@ This repository contains code to download and analyze data from the [Mini-Bird B
 ## TODO
 
 * download and process data for Chatham and Durham counties
+* offer the curated data files in .csv format in addition to .rds
 * document data files
