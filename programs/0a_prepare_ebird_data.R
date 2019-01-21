@@ -105,6 +105,8 @@ not_habitat_dt <- comment_dt %>%
     .funs = funs(clean_missing)
   ) %>%
   mutate(
+    # TODO: WARNING about NAs by coercion will appear. Can be smarter about
+    # cleaning up the vehicles variable before converting to numeric.
     vehicles = as.numeric(str_replace_all(vehicles, "[A-Za-z]", ""))
   ) %>%
   # Not sure what this variable is for
