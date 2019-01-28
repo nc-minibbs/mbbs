@@ -1,0 +1,10 @@
+Package: mbbs
+Title: Data from the Mini-Bird Breeding Survery
+Version: 0.0.0.9000
+Authors@R: person("Bradley", "Saul", email = "bradleysaul@gmail.com", role = c("aut", "cre"))
+Description: Contains the data from the Mini-Bird Breeding Survey.
+Depends: R (>= 3.5.1)
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1

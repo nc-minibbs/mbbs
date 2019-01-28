@@ -1,0 +1,8 @@
+name: "MBBS"
+navbar:
+  title: "MBBS"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Results 1999-2018"
+      href: by_species.html
