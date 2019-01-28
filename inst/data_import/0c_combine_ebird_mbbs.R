@@ -200,6 +200,6 @@ save(mbbs, file = "data/mbbs.rda")
 
 ## 8. Create CSV version ####
 
-write.csv(mbbs, file = sprintf("inst/extdata/mbbs_data_%s", format(Sys.Date(), "%Y%m%d")))
+write.csv(mbbs, file = sprintf("inst/extdata/mbbs_data_%s.csv", format(Sys.Date(), "%Y%m%d")))
 
 rm(list = ls())
