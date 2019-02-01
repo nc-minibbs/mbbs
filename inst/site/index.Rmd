@@ -4,6 +4,9 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+source("0a_report_functions.R")
+source("0b_model_functions.R")
+source("1a_data_prep.R")
 ```
 
 # The MBBS

@@ -1,0 +1,97 @@
+---
+subtitle: "DRAFT: for discussion only"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r trend_setup, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+
+tot_sp_cnt <- length(unique(pre_dt$common_name))
+ana_sp_cnt <- length(unique(analysis_dt_grouped$common_name))
+species <- unique(analysis_dt_grouped$common_name)
+```
+
+## Trends by Species
+
+From 1999-2018, `r tot_sp_cnt` different species were observed. For these analyses, only species counted in at least three years were included, leaving `r ana_sp_cnt` species for analysis of trends.
+
+
+```{r results_data}
+result_dt <- analysis_dt_grouped %>%
+  group_by(common_name) %>%
+  tidyr::nest(.key = "data_grouped") %>% 
+  left_join(
+    model_dt, by = c("common_name")
+  ) %>% mutate(
+    # lm             = purrr::map(data_grouped, ~ lm(count ~ year, data = .x)),
+    # rate_of_change = purrr::map_dbl(lm, ~ coef(.x)[2]),
+    # rate_of_change = round(rate_of_change, 3), 
+    rate_color     = case_when(
+      rate < 0 & significant  ~ "#d7191c",
+      rate < 0 & !significant ~ "#fdae61",
+      rate > 0 & !significant ~ "#abd9e9",
+      rate > 0 & significant  ~ "#2c7bb6"
+    ),
+    rate  = purrr::map2_chr(
+      .x = rate,
+      .y = rate_color, 
+      .f = ~ as.character(htmltools::span(
+        style = sprintf("color:%s", .y),
+        round(.x, 3)))),
+    sparkline      = purrr::map_chr(data_grouped, ~ plot_sparkline(.x$count)),
+    trend_plot     = purrr::map2(
+      .x = data,
+      .y = data_grouped,
+      .f = ~ plot_trend(.x, .y) %>%
+        convert_img(width = 6.5, height = 5) %>%
+        htmltools::img(src = .)),
+    details        = purrr::pmap(
+      .l = list(x = common_name, y = sci_name, z = trend_plot),
+      .f = function(x, y, z) {as.character(create_details(x, y, z)) }
+    )
+  ) 
+
+table_dt <- result_dt %>%
+  select(common_name, sparkline, rate, details)
+```
+
+```{r}
+tab <- datatable(
+  cbind(' ' = '&oplus;', table_dt), 
+  colnames  = c("", "Common name", "Trend", "Rate of Change", ""),
+  escape = FALSE,
+  options = list(
+    paging     = FALSE,
+    bInfo      = FALSE,
+    columnDefs = list(
+      list(visible = FALSE, targets = c(0, 5)),
+      list(orderable = FALSE, className = 'details-control', targets = c(1, 5))
+    )
+  ),
+  callback = JS("
+  table.column(1).nodes().to$().css({cursor: 'pointer'});
+  var format = function(d) {
+    return d[5];
+  };
+  table.on('click', 'td.details-control', function() {
+    var td = $(this), row = table.row(td.closest('tr'));
+    if (row.child.isShown()) {
+      row.child.hide();
+      td.html('&oplus;');
+    } else {
+      row.child(format(row.data())).show();
+      td.html('&CircleMinus;');
+    }
+  });"
+)) 
+tab$dependencies <- append(tab$dependencies, htmlwidgets:::getDependency("sparkline"))
+# tab$dependencies <- append(tab$dependencies, htmlwidgets:::getDependency("girafe", package = "ggiraph"))
+```
+```{r show_table, echo=FALSE}
+tab
+```
+
+
+
