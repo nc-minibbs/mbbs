@@ -1,0 +1,13 @@
+nha_local_concern
+"Bald Eagle"
+"Barn Owl"
+"Brown-headed Nuthatch"
+"Chimney Swift"
+"Eastern Bluebird"
+"Eastern Meadowlark"
+"Eastern Screech-owl"
+"Field Sparrow"
+"Northern Bobwhite"
+"Prothonotary Warbler"
+"Red-headed Woodpecker"
+"Wood Thrushs"
