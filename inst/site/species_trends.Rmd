@@ -1,6 +1,9 @@
 ---
 subtitle: "DRAFT: for discussion only"
-output: html_document
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
 editor_options: 
   chunk_output_type: console
 ---
@@ -20,11 +23,18 @@ From 1999-2018, `r tot_sp_cnt` different species were observed. For these analys
 
 ```{r results_data}
 result_dt <- analysis_dt_grouped %>%
+  # filter(
+  #   common_name %in% c("Northern Cardinal", "Tufted Titmouse", "Wood Thrush")
+  # ) %>%
   group_by(common_name) %>%
   tidyr::nest(.key = "data_grouped") %>% 
   left_join(
     model_dt, by = c("common_name")
-  ) %>% mutate(
+  ) %>% 
+  left_join(
+    select(mbbs_species, -sci_name, -spec_code), by = "common_name"
+  ) %>%
+  mutate(
     # lm             = purrr::map(data_grouped, ~ lm(count ~ year, data = .x)),
     # rate_of_change = purrr::map_dbl(lm, ~ coef(.x)[2]),
     # rate_of_change = round(rate_of_change, 3), 
@@ -38,6 +48,7 @@ result_dt <- analysis_dt_grouped %>%
       .x = rate,
       .y = rate_color, 
       .f = ~ as.character(htmltools::span(
+        class = "text-center",
         style = sprintf("color:%s", .y),
         round(.x, 3)))),
     sparkline      = purrr::map_chr(data_grouped, ~ plot_sparkline(.x$count)),
@@ -54,27 +65,35 @@ result_dt <- analysis_dt_grouped %>%
   ) 
 
 table_dt <- result_dt %>%
-  select(common_name, sparkline, rate, details)
+  select(common_name, sparkline, rate, details, local_concern, significant)
 ```
 
 ```{r}
-tab <- datatable(
-  cbind(' ' = '&oplus;', table_dt), 
-  colnames  = c("", "Common name", "Trend", "Rate of Change", ""),
+species_table <- function(table_data, details_column,
+                          width,
+                          colnames){
+  tab <- datatable(
+  cbind(' ' = '&oplus;', table_data), 
+  colnames  = colnames,
+  width  = width,
   escape = FALSE,
   options = list(
     paging     = FALSE,
     bInfo      = FALSE,
     columnDefs = list(
-      list(visible = FALSE, targets = c(0, 5)),
-      list(orderable = FALSE, className = 'details-control', targets = c(1, 5))
+      list(targets = c(3,4,5), className = "text-center"),
+      list(targets = c(2, details_column, 6, 7), searchable = TRUE),
+      list(targets = c(0, details_column, 6, 7), visible = FALSE),
+      list(orderable = FALSE, className = 'details-control', targets = c(1, details_column))
     )
   ),
-  callback = JS("
+  callback = JS(sprintf("
   table.column(1).nodes().to$().css({cursor: 'pointer'});
+  
   var format = function(d) {
-    return d[5];
+    return d[%s];
   };
+  
   table.on('click', 'td.details-control', function() {
     var td = $(this), row = table.row(td.closest('tr'));
     if (row.child.isShown()) {
@@ -84,14 +103,76 @@ tab <- datatable(
       row.child(format(row.data())).show();
       td.html('&CircleMinus;');
     }
-  });"
-)) 
-tab$dependencies <- append(tab$dependencies, htmlwidgets:::getDependency("sparkline"))
-# tab$dependencies <- append(tab$dependencies, htmlwidgets:::getDependency("girafe", package = "ggiraph"))
+  });
+  
+  $('ul').on( 'click', 'a.localConcern', function () {
+  table
+      .columns( 6 )
+      .search(  true )
+      .draw();
+  });
+  
+  $('ul').on( 'click', 'a.sigTrends', function () {
+  table
+      .columns( 7 )
+      .search(  true )
+      .draw();
+  });
+  
+  $('ul').on('click', 'a.all', function() {
+     table
+       .columns( )
+       .search( '' )
+       .draw();
+    });
+  
+  ", details_column)
+  )) 
+  tab$dependencies <- append(tab$dependencies, htmlwidgets:::getDependency("sparkline"))
+  tab
+}
 ```
+
+```{r}
+library(htmltools)
+tags$ul(
+  tags$li(
+    class = "btn",
+    tags$a(href = "#", class = "all", "All Species")
+  ),
+  tags$li(
+    class = "btn",
+    tags$a(href = "#", class = "localConcern", "Species of Local Concern")
+  ),
+  tags$li(
+    class = "btn",
+    tags$a(href = "#", class = "sigTrends", "Significant Trends")
+  )
+)
+
+```
+
+
 ```{r show_table, echo=FALSE}
-tab
+species_table(
+  table_dt, 5, 
+  width    = NULL,
+  colnames = c("", "Common name", "Trend", "Rate of Change", "", "", ""))
 ```
 
 
+```{js}
 
+//var table = $('#DataTables_Table_0').DataTable();
+
+/*$('ul').on( 'click', 'a', function () {
+  table
+      .columns( 1 )
+      .search(  $(this).text() )
+      .draw();
+});
+*/
+```
+
+```{r child = "_methods.Rmd"}
+```

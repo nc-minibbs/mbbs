@@ -6,3 +6,6 @@ navbar:
       href: index.html
     - text: "Species Trends"
       href: species_trends.html
+  right:
+    - icon: fa-github
+      href: https://github.com/bsaul/mbbs
