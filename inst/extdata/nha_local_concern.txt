@@ -10,4 +10,4 @@ nha_local_concern
 "Northern Bobwhite"
 "Prothonotary Warbler"
 "Red-headed Woodpecker"
-"Wood Thrushs"
+"Wood Thrush"

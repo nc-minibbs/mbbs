@@ -34,8 +34,6 @@ analysis_dt_grouped <- analysis_dt %>%
     fill = list(count = 0)
   ) 
 
-
-
 model_dt <- analysis_dt %>%
   mutate(time = year - min(year)) %>%
   group_by(common_name, sci_name, spec_code) %>%
