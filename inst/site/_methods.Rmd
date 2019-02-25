@@ -5,3 +5,44 @@ output: html_document
 ## Methods
 
 [Under development](https://github.com/bsaul/mbbs/issues/8)
+
+### Estimand
+
+We are interested in estimating in the marginal rate of annual change in counts for species $s$:
+
+\[
+\theta^s(x) = \frac{E[Y^{s}_i | X_i = x + 1]}{E[Y^{s}_i | X_i = x]},
+\]
+
+where $Y^s_i$ denotes the observed count for a species for MBBS Orange County route $i = 1, \dots, 11$  and $X_i = 0, \dots, 19$ is the time (in years) since the start of the MBBS.
+
+### Statistical Models
+
+#### GEE Poisson
+
+* indepedence correlation
+* AR correlation
+
+Let $\mu^s(\beta) = log(E[Y_i|X_i = x]) = \beta_0 + \beta_1 x$. Under this model, $\theta^s(x) = \beta_1$. We estimate $\beta$ using the generalized estimating equation:
+
+\[
+\sum_{i = 1}^n \frac{\partial \mu}{\partial \beta} V_i^{-1} \{Y_i^s - \mu^s(\beta) \},
+\]
+
+where $V^s_i$ is the so-called "working" correlation matrix.
+
+
+#### GEE Negative Binomial
+
+* indepedence correlation
+* AR correlation
+
+#### Overall Mean Model for Zero-Inflated 
+
+### Model Selection
+
+For each species, parameters from each of the above models will be estimated. The model with the smallest mean absolute error (?) will be selected as the "best" model. Models where the fitter failed to converge will be excluded. The best model will be presented in the results table, but all model results will be available for review.
+
+### Inference
+
+* estimating equations with small sample corrections
