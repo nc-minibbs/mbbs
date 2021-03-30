@@ -4,7 +4,9 @@
 \name{mbbs}
 \alias{mbbs}
 \title{Data from the Mini-Bird Breeding Survey}
-\format{An object of class \code{data.frame} with 13169 rows and 29 columns.}
+\format{
+An object of class \code{data.frame} with 13169 rows and 29 columns.
+}
 \usage{
 mbbs
 }

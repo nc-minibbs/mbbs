@@ -4,7 +4,9 @@
 \name{mbbs_species}
 \alias{mbbs_species}
 \title{Additional Data about each species in the Mini-Bird Breeding Survey}
-\format{An object of class \code{data.frame} with 115 rows and 6 columns.}
+\format{
+An object of class \code{data.frame} with 115 rows and 6 columns.
+}
 \usage{
 mbbs_species
 }
