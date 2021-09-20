@@ -1,5 +1,5 @@
 Package: mbbs
-Title: Data and aata processing functions for the Mini-Bird Breeding Survery
+Title: Data and data processing functions for the Mini-Bird Breeding Survery
 Version: 0.1.0
 Authors@R: c(
    person("Bradley", "Saul", email = "bradleysaul@gmail.com", role = c("aut", "cre")),
@@ -13,7 +13,7 @@ Imports:
    lubridate,
    magrittr (>= 1.0),
    dplyr (>= 1.0),
-   asserttthat,
+   assertthat,
    yaml
 License: MIT + file LICENSE
 Encoding: UTF-8

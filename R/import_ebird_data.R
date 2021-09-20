@@ -72,7 +72,7 @@ exclude_submissions <- function(dt, exclusions){
 #' @importFrom stringr str_match
 #' @importFrom utils read.csv
 #' @export
-import_ebird_data <- function(path){
+import_ebird_data <- function(path, run_checks = TRUE){
   read.csv(path, stringsAsFactors = FALSE) %>%
   # TODO: revisit read_csv; can't get past parse errors.
   # readr::read_csv(path) %>%
@@ -89,14 +89,20 @@ import_ebird_data <- function(path){
       count = as.integer(count),
       date  = lubridate::ymd(date),
       year  = lubridate::year(date),
-      mbbs_county = str_extract(loc, "Orange|Chatham|Durham"),
+      mbbs_county = str_extract(loc, "[Oo]range|[Cc]hatham|[Dd]urham"),
+      mbbs_county = tolower(mbbs_county),
       route_num   = as.integer(str_match(loc, "[0-1]{0,1}[1-9]{1}")),
       # Getting stop from numbers at end (this is fragile):
       stop_num    = as.integer(str_extract(loc, "([0-9]{1,2}$)")),
       
     ) %>%
     exclude_submissions(get_exclusions()) %>%
-    run_import_checks() %>%
+    { 
+      x <- .
+      if (run_checks) 
+        x %>% run_import_checks() 
+      else x
+    } %>%
     as_tibble()
 }
 
