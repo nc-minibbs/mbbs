@@ -1,0 +1,49 @@
+# Excluded submissions
+# add submission IDs to be excluded here
+# add a comment as necessary
+
+# Examining duplicate_checklist_comparison reveals the following duplicate 
+# checklist ID's that can be removed:
+- S6659296  # route 5
+- S23439664 # route 5
+- S6659658  # route 10, 2005
+
+# as well as the following paired checklists which are problematic and should be 
+# independently investigated:
+#
+# Route 4: 2005, S6659351/S6659606 (of these two, I get the impression of one 
+# list by an experienced birder, and one list by a less experienced birder; 
+# I would trust S6659351 and drop S6659606); 
+- S6659606
+# Route 5: 2005, S23455267/S6659305/S6659365 (only difference is BLGR; 
+# keep S23455267 (5 BLGR, Will Cook's checklist)
+#                & drop S6659305, S6659365 (7 BLGR); none of them have comments
+- S6659305
+- S6659365
+
+#          2007, S23439679/S6653243 (keep S6653243, drop S23439679); 
+- S23439679
+#          2008, S23439662/S6659533 (keep S23439662 which has unexpected 
+#                Glossy Ibis rec, reported to The Chat, drop S6659533); 
+- S6659533
+#          2009, S23439661/S6659581 (keep S23439661 which has everything the same
+#                as the other checklist, plus a few more species, drop S6659581);
+- S6659581
+# Route 6: 2008, S6653290/S8323435 (notes from S8323435: "note=woodcocks flew 
+#                over our heads at our second stop at about 5:45am",
+#                one checklist includes the woodcock, the other does not; 
+#                I assume the woodcock did not fly over during the 3-minute count,
+#                but this could be confirmed with Robin Moran / Judy Murray; 
+#                in that case drop S8323435; other difference is # vehicles 51 vs 102--weird); 
+- S8323435
+
+# Route 12: 2013, S14314705/S14314588; 2014, S18727169/S18727091; 2015, S24083367/S24083590;
+#           2016, S46295712	S46295165; 2018, S46295712/S46295165
+#           (all of these for Route 12 likely represent the 3 extra pre-dawn stops for owling which 
+#           are filtered out by grepl("night birds preceding", Checklist.Comments))
+- S14314705
+- S18727169
+- S46295165
+- S29843645
+- S14380358
+- S24083590

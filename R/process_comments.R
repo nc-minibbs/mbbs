@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------#
-# Functions/workflows for cleaning and processing eBird data
+# Functions/workflows for cleaning and processing MBBS comments 
 #------------------------------------------------------------------------------#
 
 
@@ -77,8 +77,7 @@ preprocess_comments <- function(comments){
 
 # Workaround for "Undefined global functions or variables" CRAN check
 globalVariables(c(".", 
-                  "Checklist.Comments",
-                  "Submission.ID",
+                  "sub_id",
                   "checklist_comments",
                   "vehicles"))
 
@@ -122,21 +121,22 @@ postprocess_comments <- function(comments){
 
 #' Full workflow for processing comments
 #' @param eBird_dt a `data.frame` of imported eBird counts
-#' @importFrom dplyr distinct mutate
+#' @importFrom dplyr distinct mutate select distinct
 #' @return a `data.frame` with one row per submission ID in `eBird_dt`
 #' @export
 comment_workflow <- function(eBird_dt){
   eBird_dt %>%
-    dplyr::distinct(
-      sub_id = Submission.ID, 
-      checklist_comments = Checklist.Comments
+    distinct(
+      sub_id, 
+      checklist_comments
     ) %>% 
-    dplyr::mutate(
+    mutate(
       checklist_comments %>%
         preprocess_comments() %>%
         process_comments() %>%
         postprocess_comments() 
-    )
+    ) %>%
+    dplyr::select(-checklist_comments)
 }
 
 
