@@ -31,6 +31,8 @@ rename_ebird_data <- function(dt){
 #' A basic set of import integrity checks
 #' These do not check the validity of the data.
 #' @param dt ebird data.frame
+#' @importFrom glue glue
+#' @importFrom dplyr distinct summarize mutate group_by pull filter
 #' @keywords internal
 run_import_checks <- function(dt){
   
@@ -43,6 +45,38 @@ run_import_checks <- function(dt){
         msg = sprintf("Found NA %s values; there shouldn't be.", .x))
     }
   )
+  
+  # Check for >1 county in an ebird import
+  assertthat::assert_that(
+    length(unique(dt$mbbs_county)) == 1,
+    msg = "The ebird dt should contain only a single MBBS county's data."
+  )
+  
+  # Check that routes have exactly 1 or 20 non-owling submissions.
+  # TODO: 2020 and after should have 20 submissions
+  dt %>%
+    distinct(year, mbbs_county, route_num, stop_num) %>%
+    summarize(
+      n = n(),
+      flag = !(n %in% c(1, 20))
+    ) %>% 
+    {
+      x <- .
+      
+      probs <- 
+        x[ , x$flag] %>%
+        mutate(
+          desc = glue::glue("{mbbs_county}, {year}, {route}")
+        ) %>%
+        pull(desc) %>%
+        paste0(collapse = "\n")
+      
+      assertthat::assert_that(
+        !any(x$flag),
+        msg = sprintf("The following year/route don't have either 1 or 20 checklists: %s",
+                      probs)
+      )
+    }
   
   dt
 }
@@ -58,7 +92,8 @@ get_exclusions <- function(path = "inst/excluded_submissions.yml"){
 #' Exclude submissions
 #' 
 #' @param dt ebird `data.frame`
-#' @param exclusions character vector of submission ids to exclude
+#' @param exclusions character vector of submission ids to 
+#' @importFrom  dplyr filter
 #' @return a `data.frame` without the exclusions
 #' @export
 exclude_submissions <- function(dt, exclusions){
@@ -89,11 +124,17 @@ import_ebird_data <- function(path, run_checks = TRUE){
       count = as.integer(count),
       date  = lubridate::ymd(date),
       year  = lubridate::year(date),
-      mbbs_county = str_extract(loc, "[Oo]range|[Cc]hatham|[Dd]urham"),
+      
+      # Get county from location and clean up.
+      mbbs_county = str_extract(loc, "[Oo]range|[Cc]hatham|Chatman|[Dd]urham"),
+      mbbs_county = str_replace(mbbs_county, "Chatman", "Chatham"),
       mbbs_county = tolower(mbbs_county),
       route_num   = as.integer(str_match(loc, "[0-1]{0,1}[1-9]{1}")),
       # Getting stop from numbers at end (this is fragile):
       stop_num    = as.integer(str_extract(loc, "([0-9]{1,2}$)")),
+      
+      # TODO: Flag the pre-dawn "owling" submissions
+      # is_owling = 
       
     ) %>%
     exclude_submissions(get_exclusions()) %>%

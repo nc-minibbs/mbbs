@@ -15,10 +15,6 @@ prepare_mbbs_data <- function(ebird_dt, mbbs_site_dt){
   
   mbbs_county <- unique(ebird_dt$mbbs_county)
   
-  assertthat::assert_that(
-    length(mbbs_county) == 1,
-    msg = "The ebird dt should contain only a single MBBS county's data."
-  )
   
   ## 1. HARD CODE Clean up ####
   mbbs_site_dt <- 

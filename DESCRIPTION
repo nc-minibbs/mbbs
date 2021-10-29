@@ -1,6 +1,6 @@
 Package: mbbs
 Title: Data and data processing functions for the Mini-Bird Breeding Survery
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
    person("Bradley", "Saul", email = "bradleysaul@gmail.com", role = c("aut", "cre")),
    person("Allen", "Hurlbert", email = "hurlbert@bio.unc.edu", role = c("aut")))
@@ -13,6 +13,7 @@ Imports:
    lubridate,
    magrittr (>= 1.0),
    dplyr (>= 1.0),
+   glue (>= 1.4),
    assertthat,
    yaml
 License: MIT + file LICENSE
