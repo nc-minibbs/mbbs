@@ -1,0 +1,50 @@
+#!/usr/bin/env Rscript --vanilla
+
+#------------------------------------------------------------------------------#
+#  TITLE: Combine MBBS ebird and website data 
+#   DATE: 20181216
+#   PROG: B. Saul
+#   DESC: Combine MBBS ebird and website data. Removing duplicates and cleaning
+#         as necessary
+#------------------------------------------------------------------------------#
+
+library(magrittr)
+library(mbbs)
+
+mbbs_orange <-
+  import_ebird_data('inst/extdata/MyEBirdData_Orange_20211030.csv') %>%
+  prepare_mbbs_data(
+    mbbs_site_dt = readRDS("inst/extdata/mbbs_orange_sitescrape_20190127.rds")  
+  ) %>%
+  combine_site_ebird()
+
+mbbs_durham <-
+  import_ebird_data('inst/extdata/MyEBirdData_Durham_20211030.csv') %>%
+  prepare_mbbs_data(
+    # TODO: scrape durham data from old website
+    mbbs_site_dt = NULL  
+  ) %>%
+  combine_site_ebird()
+
+mbbs_chatham <-
+  import_ebird_data('inst/extdata/MyEBirdData_Chatham_20211030.csv') %>%
+  prepare_mbbs_data(
+    # TODO: scrape chatham data from old website
+    mbbs_site_dt = NULL  
+  ) %>%
+  combine_site_ebird()
+
+## Save results ####
+
+save(mbbs_orange, file = "data/mbbs_orange.rda")
+save(mbbs_durham, file = "data/mbbs_durham.rda")
+save(mbbs_chatham, file = "data/mbbs_chatham.rda")
+ 
+# Create CSV version ####
+# 
+write.csv(mbbs_orange, file = sprintf("inst/analysis_data/mbbs_orange_%s.csv", format(Sys.Date(), "%Y%m%d")))
+write.csv(mbbs_durham, file = sprintf("inst/analysis_data/mbbs_durham_%s.csv", format(Sys.Date(), "%Y%m%d")))
+write.csv(mbbs_chatham, file = sprintf("inst/analysis_data/mbbs_chatham_%s.csv", format(Sys.Date(), "%Y%m%d")))
+
+
+rm(list = ls())

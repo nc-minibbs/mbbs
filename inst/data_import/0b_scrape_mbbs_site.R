@@ -3,6 +3,8 @@
 #   DATE: 20181216
 #   PROG: B. Saul
 #   DESC: Scrape MBBS website data and collect data into analytic file
+# 
+#  NOTE: 
 #------------------------------------------------------------------------------#
 library(rvest)
 library(lubridate)
