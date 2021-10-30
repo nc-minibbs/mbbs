@@ -10,25 +10,41 @@
 
 library(magrittr)
 library(mbbs)
-library(stringr)
-library(dplyr)
-
 
 mbbs_orange <-
-  import_ebird_data('inst/extdata/MyEBirdData_Orange_20210917.csv') %>%
+  import_ebird_data('inst/extdata/MyEBirdData_Orange_20211030.csv') %>%
   prepare_mbbs_data(
     mbbs_site_dt = readRDS("inst/extdata/mbbs_orange_sitescrape_20190127.rds")  
   ) %>%
   combine_site_ebird()
 
+mbbs_durham <-
+  import_ebird_data('inst/extdata/MyEBirdData_Durham_20211030.csv') %>%
+  prepare_mbbs_data(
+    # TODO: scrape durham data from old website
+    mbbs_site_dt = NULL  
+  ) %>%
+  combine_site_ebird()
 
+mbbs_chatham <-
+  import_ebird_data('inst/extdata/MyEBirdData_Chatham_20211030.csv') %>%
+  prepare_mbbs_data(
+    # TODO: scrape chatham data from old website
+    mbbs_site_dt = NULL  
+  ) %>%
+  combine_site_ebird()
 
 ## Save results ####
+
+save(mbbs_orange, file = "data/mbbs_orange.rda")
+save(mbbs_durham, file = "data/mbbs_durham.rda")
+save(mbbs_chatham, file = "data/mbbs_chatham.rda")
+ 
+# Create CSV version ####
 # 
-# save(mbbs, file = "data/mbbs.rda")
-# 
-# ## 8. Create CSV version ####
-# 
-# write.csv(mbbs, file = sprintf("inst/extdata/mbbs_data_%s.csv", format(Sys.Date(), "%Y%m%d")))
-# 
-# rm(list = ls())
+write.csv(mbbs_orange, file = sprintf("inst/analysis_data/mbbs_orange_%s.csv", format(Sys.Date(), "%Y%m%d")))
+write.csv(mbbs_durham, file = sprintf("inst/analysis_data/mbbs_durham_%s.csv", format(Sys.Date(), "%Y%m%d")))
+write.csv(mbbs_chatham, file = sprintf("inst/analysis_data/mbbs_chatham_%s.csv", format(Sys.Date(), "%Y%m%d")))
+
+
+rm(list = ls())

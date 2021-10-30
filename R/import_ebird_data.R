@@ -32,7 +32,7 @@ rename_ebird_data <- function(dt){
 #' These do not check the validity of the data.
 #' @param dt ebird data.frame
 #' @importFrom glue glue
-#' @importFrom dplyr distinct summarize mutate group_by pull filter
+#' @importFrom dplyr distinct summarise mutate group_by pull filter 
 #' @keywords internal
 run_import_checks <- function(dt){
   
@@ -56,26 +56,25 @@ run_import_checks <- function(dt){
   # TODO: 2020 and after should have 20 submissions
   dt %>%
     distinct(year, mbbs_county, route_num, stop_num) %>%
-    summarize(
-      n = n(),
+    group_by(year, mbbs_county, route_num) %>%
+    dplyr::summarise(
+      n = dplyr::n(),
       flag = !(n %in% c(1, 20))
     ) %>% 
     {
       x <- .
-      
       probs <- 
-        x[ , x$flag] %>%
+        x[x$flag, ] %>%
         mutate(
-          desc = glue::glue("{mbbs_county}, {year}, {route}")
+          desc = glue::glue("{mbbs_county}, {year}, {route_num}")
         ) %>%
         pull(desc) %>%
-        paste0(collapse = "\n")
+        paste0(collapse = "\n * ")
       
-      assertthat::assert_that(
-        !any(x$flag),
-        msg = sprintf("The following year/route don't have either 1 or 20 checklists: %s",
-                      probs)
-      )
+     if ( any(x$flag) ) {
+       warning(sprintf("The following year/route don't have either 1 or 20 checklists:\n %s",
+               probs))
+     }
     }
   
   dt
@@ -94,6 +93,7 @@ get_exclusions <- function(path = "inst/excluded_submissions.yml"){
 #' @param dt ebird `data.frame`
 #' @param exclusions character vector of submission ids to 
 #' @importFrom  dplyr filter
+#' @importFrom stringr str_extract str_replace
 #' @return a `data.frame` without the exclusions
 #' @export
 exclude_submissions <- function(dt, exclusions){

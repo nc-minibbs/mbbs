@@ -7,7 +7,7 @@
 #'    website for a single county.
 #' @param ebird_dt a `data.frame` imported using `import_ebird_data` for a single
 #'    county
-#' @importFrom dplyr case_when row_number
+#' @importFrom dplyr case_when row_number full_join right_join
 #' @return a `list` containing `site` (processed "website" data) and `ebird` 
 #'    (processed ebird data)
 #' @export
@@ -15,6 +15,14 @@ prepare_mbbs_data <- function(ebird_dt, mbbs_site_dt){
   
   mbbs_county <- unique(ebird_dt$mbbs_county)
   
+  if (is.null(mbbs_site_dt) ){
+    return(
+      list(
+        site = data.frame(),
+        ebird = ebird_dt
+      )
+    )
+  }
   
   ## 1. HARD CODE Clean up ####
   mbbs_site_dt <- 
@@ -200,9 +208,14 @@ prepare_mbbs_data <- function(ebird_dt, mbbs_site_dt){
 #' @importFrom dplyr bind_rows
 #' @export
 combine_site_ebird <- function(x, at_year = 2009){
+  if (nrow(x$site) == 0 || is.null(x$site)) { 
+    return(
+      x$ebird %>% filter(year >= !! at_year)
+    )
+  }
+  
   bind_rows(
     x$ebird %>% filter(year >= !! at_year),
-    x$site  %>% filter(year <  !! at_year)
+    x$site  %>% filter(year <  !! at_year)  
   )
-     
 }

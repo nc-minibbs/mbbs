@@ -9,7 +9,7 @@ exclude_submissions(dt, exclusions)
 \arguments{
 \item{dt}{ebird `data.frame`}
 
-\item{exclusions}{character vector of submission ids to exclude}
+\item{exclusions}{character vector of submission ids to}
 }
 \value{
 a `data.frame` without the exclusions

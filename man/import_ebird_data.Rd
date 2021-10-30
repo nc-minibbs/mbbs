@@ -4,7 +4,7 @@
 \alias{import_ebird_data}
 \title{Import an ebird export into R}
 \usage{
-import_ebird_data(path)
+import_ebird_data(path, run_checks = TRUE)
 }
 \arguments{
 \item{path}{path/to/ebird_export.csv}
