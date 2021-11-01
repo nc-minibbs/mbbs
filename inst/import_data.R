@@ -21,16 +21,24 @@ mbbs_orange <-
 mbbs_durham <-
   import_ebird_data('inst/extdata/MyEBirdData_Durham_20211030.csv') %>%
   prepare_mbbs_data(
-    # TODO: scrape durham data from old website
-    mbbs_site_dt = NULL  
+    mbbs_site_dt = 
+      readr::read_csv("inst/extdata/durham_2002-2009_from_website.csv") %>%
+      dplyr::mutate(
+        date = lubridate::mdy(date),
+        time = as.character(time)
+      )
   ) %>%
   combine_site_ebird()
 
 mbbs_chatham <-
   import_ebird_data('inst/extdata/MyEBirdData_Chatham_20211030.csv') %>%
   prepare_mbbs_data(
-    # TODO: scrape chatham data from old website
-    mbbs_site_dt = NULL  
+    mbbs_site_dt = 
+      readr::read_csv("inst/extdata/chatham_2002-2009_from_website.csv") %>%
+      dplyr::mutate(
+        date = lubridate::mdy(date),
+        time = as.character(time)
+      )
   ) %>%
   combine_site_ebird()
 
