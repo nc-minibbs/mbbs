@@ -23,6 +23,7 @@ mbbs_durham <-
   prepare_mbbs_data(
     mbbs_site_dt = 
       readr::read_csv("inst/extdata/durham_2002-2009_from_website.csv") %>%
+      dplyr::filter(!is.na(route_num)) %>%
       dplyr::mutate(
         date = lubridate::mdy(date),
         time = as.character(time)
@@ -34,7 +35,7 @@ mbbs_chatham <-
   import_ebird_data('inst/extdata/MyEBirdData_Chatham_20211030.csv') %>%
   prepare_mbbs_data(
     mbbs_site_dt = 
-      readr::read_csv("inst/extdata/chatham_2002-2009_from_website.csv") %>%
+      readr::read_csv("inst/extdata/chatham_2000-2009_from_website.csv") %>%
       dplyr::mutate(
         date = lubridate::mdy(date),
         time = as.character(time)
