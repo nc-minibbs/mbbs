@@ -5,7 +5,7 @@
 \title{A function that combines and aligns MBBS data scraped from the old website
 with ebird data.}
 \usage{
-prepare_mbbs_data(ebird_dt, mbbs_site_dt)
+prepare_mbbs_data(ebird_dt, mbbs_site_dt, ebird_taxonomy)
 }
 \arguments{
 \item{ebird_dt}{a `data.frame` imported using `import_ebird_data` for a single

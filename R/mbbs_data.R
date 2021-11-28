@@ -19,10 +19,10 @@
 
 "mbbs_chatham"
 
-#' Additional Data about each species in the Mini-Bird Breeding Survey
+#' Data.frame containing information about the routes
 #' 
 #' TODO: Describe the data
-#' 
+#'
 
-"mbbs_species"
+"mbbs_routes"
 
