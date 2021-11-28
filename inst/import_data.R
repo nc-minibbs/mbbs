@@ -11,10 +11,14 @@
 library(magrittr)
 library(mbbs)
 
+etax <- get_ebird_taxonomy()
+
 mbbs_orange <-
   import_ebird_data('inst/extdata/MyEBirdData_Orange_20211030.csv') %>%
   prepare_mbbs_data(
-    mbbs_site_dt = readRDS("inst/extdata/mbbs_orange_sitescrape_20190127.rds")  
+    mbbs_site_dt = 
+      readRDS("inst/extdata/mbbs_orange_sitescrape_20190127.rds"),
+    ebird_taxonomy = etax
   ) %>%
   combine_site_ebird()
 
@@ -27,7 +31,8 @@ mbbs_durham <-
       dplyr::mutate(
         date = lubridate::mdy(date),
         time = as.character(time)
-      )
+      ),
+    ebird_taxonomy = etax
   ) %>%
   combine_site_ebird()
 
@@ -39,7 +44,8 @@ mbbs_chatham <-
       dplyr::mutate(
         date = lubridate::mdy(date),
         time = as.character(time)
-      )
+      ),
+    ebird_taxonomy = etax
   ) %>%
   combine_site_ebird()
 

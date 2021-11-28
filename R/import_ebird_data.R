@@ -28,6 +28,18 @@ rename_ebird_data <- function(dt){
     )
 }
 
+#' Filters ebird csv export.
+#' 
+#' @param dt a data.frame imported from an ebird export.
+#' @export
+filter_ebird_data <- function(dt) {
+  dt %>%
+    dplyr::filter(
+      # remove highly non-specific observations.
+      sci_name != "Passeriformes sp."
+    )
+}
+
 #' A basic set of import integrity checks
 #' These do not check the validity of the data.
 #' @param dt ebird data.frame
@@ -103,6 +115,7 @@ exclude_submissions <- function(dt, exclusions){
 
 #' Import an ebird export into R
 #' @param path path/to/ebird_export.csv
+#' @param run_checks run integrity checks or not?
 #' @importFrom dplyr left_join as_tibble if_else mutate
 #' @importFrom stringr str_match
 #' @importFrom utils read.csv
@@ -110,9 +123,8 @@ exclude_submissions <- function(dt, exclusions){
 import_ebird_data <- function(path, run_checks = TRUE){
   read.csv(path, stringsAsFactors = FALSE) %>%
   # TODO: revisit read_csv; can't get past parse errors.
-  # readr::read_csv(path) %>%
-  #   readr::stop_for_problems() %>%
     rename_ebird_data() %>%
+    filter_ebird_data() %>%
     ## Process comments ##
     left_join(
       comment_workflow(.), 
