@@ -9,7 +9,7 @@ get_routes <- function(x){
     distinct(mbbs_county, route_num, lat, lon)
 }
 
-mbbs_routes <-
+mbbs_routes <- 
   bind_rows(
     import_ebird_data('inst/extdata/MyEBirdData_Orange_20211030.csv') %>%
       get_routes(),

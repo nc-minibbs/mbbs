@@ -141,7 +141,7 @@ import_ebird_data <- function(path, run_checks = TRUE){
       mbbs_county = str_extract(loc, "[Oo]range|[Cc]hatham|Chatman|[Dd]urham"),
       mbbs_county = str_replace(mbbs_county, "Chatman", "Chatham"),
       mbbs_county = tolower(mbbs_county),
-      route_num   = as.integer(str_match(loc, "[0-1]{0,1}[1-9]{1}")),
+      route_num   = as.integer(str_match(loc, "[0-1]{0,1}[0-9]{1}")),
       # Getting stop from numbers at end (this is fragile):
       stop_num    = as.integer(str_extract(loc, "([0-9]{1,2}$)")),
       

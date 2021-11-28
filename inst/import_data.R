@@ -20,7 +20,9 @@ mbbs_orange <-
       readRDS("inst/extdata/mbbs_orange_sitescrape_20190127.rds"),
     ebird_taxonomy = etax
   ) %>%
-  combine_site_ebird()
+  combine_site_ebird() 
+
+
 
 mbbs_durham <-
   import_ebird_data('inst/extdata/MyEBirdData_Durham_20211030.csv') %>%
@@ -35,6 +37,7 @@ mbbs_durham <-
     ebird_taxonomy = etax
   ) %>%
   combine_site_ebird()
+
 
 mbbs_chatham <-
   import_ebird_data('inst/extdata/MyEBirdData_Chatham_20211030.csv') %>%
