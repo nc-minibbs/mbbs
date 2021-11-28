@@ -8,6 +8,8 @@ add_route_info(dt, county)
 }
 \arguments{
 \item{dt}{a data.frame}
+
+\item{county}{the name of the county to merge}
 }
 \description{
 Add route info to data scraped from old MBBS site

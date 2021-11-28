@@ -1,5 +1,6 @@
 #' Gets the ebird taxonomy dataset
 #' @importFrom readr read_csv
+#' @export
 get_ebird_taxonomy <- function() {
   readr::read_csv("https://www.birds.cornell.edu/clementschecklist/wp-content/uploads/2021/08/eBird_Taxonomy_v2021.csv") %>%
     select(

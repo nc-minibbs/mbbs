@@ -13,6 +13,9 @@ county}
 
 \item{mbbs_site_dt}{a `data.frame` containing MBBS data scraped from the old
 website for a single county.}
+
+\item{ebird_taxonomy}{a `data.frame` containing common and scientific names
+of ebird taxonomy}
 }
 \value{
 a `list` containing `site` (processed "website" data) and `ebird` 
