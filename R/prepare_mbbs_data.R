@@ -122,7 +122,7 @@ prepare_mbbs_data <- function(ebird_dt, mbbs_site_dt, ebird_taxonomy) {
 #' @param at_year the year which to begin using ebird data
 #' @importFrom dplyr bind_rows
 #' @export
-combine_site_ebird <- function(x, at_year = 2009) {
+combine_site_ebird <- function(x, at_year = 2010) {
   if (nrow(x$site) == 0 || is.null(x$site)) {
     return(
       x$ebird %>% filter(year >= !!at_year)
