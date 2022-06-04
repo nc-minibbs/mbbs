@@ -18,7 +18,12 @@ mbbs_orange <-
   import_ebird_data("inst/extdata/MyEBirdData_Orange_20211030.csv") %>%
   prepare_mbbs_data(
     mbbs_site_dt =
-      readRDS("inst/extdata/mbbs_orange_sitescrape_20190127.rds"),
+      readr::read_csv("inst/extdata/orange_1999-2009_from_website.csv") %>%
+      dplyr::mutate(
+        # NOTE: date format is different in orange county data
+        date = lubridate::ymd(date),
+        time = as.character(time)
+      ),
     ebird_taxonomy = etax
   ) %>%
   combine_site_ebird()
