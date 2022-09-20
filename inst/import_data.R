@@ -21,8 +21,7 @@ mbbs_orange <-
       readr::read_csv("inst/extdata/orange_1999-2009_from_website.csv") %>%
       dplyr::mutate(
         # NOTE: date format is different in orange county data
-        #EDIT 9/20 - date format appears to be the is same? change ::ymd to ::mdy - wait no, probably means that the older data is formatted differently. it's not saying what it is, it's saying what it SHOULD be? or is it? either way, changing it is not helping fix the problem
-        date = lubridate::mdy(date),
+        date = lubridate::ymd(date),
         time = as.character(time)
       ),
     ebird_taxonomy = etax
