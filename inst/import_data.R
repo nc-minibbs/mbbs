@@ -15,13 +15,14 @@ etax <- get_ebird_taxonomy()
 
 # import Orange
 mbbs_orange <-
-  import_ebird_data("inst/extdata/MyEBirdData_Orange_20211030.csv") %>%
+  import_ebird_data("inst/extdata/MyEBirdData_Orange_20220913.csv") %>%
   prepare_mbbs_data(
     mbbs_site_dt =
       readr::read_csv("inst/extdata/orange_1999-2009_from_website.csv") %>%
       dplyr::mutate(
         # NOTE: date format is different in orange county data
-        date = lubridate::ymd(date),
+        #EDIT 9/20 - date format appears to be the is same? change ::ymd to ::mdy - wait no, probably means that the older data is formatted differently. it's not saying what it is, it's saying what it SHOULD be? or is it? either way, changing it is not helping fix the problem
+        date = lubridate::mdy(date),
         time = as.character(time)
       ),
     ebird_taxonomy = etax
@@ -30,7 +31,7 @@ mbbs_orange <-
 
 # import Durham
 mbbs_durham <-
-  import_ebird_data("inst/extdata/MyEBirdData_Durham_20211030.csv") %>%
+  import_ebird_data("inst/extdata/MyEBirdData_Durham_20220913.csv") %>%
   prepare_mbbs_data(
     mbbs_site_dt =
       readr::read_csv("inst/extdata/durham_2002-2009_from_website.csv") %>%
@@ -45,7 +46,7 @@ mbbs_durham <-
 
 # import Chatham
 mbbs_chatham <-
-  import_ebird_data("inst/extdata/MyEBirdData_Chatham_20211030.csv") %>%
+  import_ebird_data("inst/extdata/MyEBirdData_Chatham_20220913.csv") %>%
   prepare_mbbs_data(
     mbbs_site_dt =
       readr::read_csv("inst/extdata/chatham_2000-2009_from_website.csv") %>%
@@ -58,9 +59,10 @@ mbbs_chatham <-
   combine_site_ebird()
 
 # Save results ####
-save(mbbs_orange, file = "data/mbbs_orange.rda")
-save(mbbs_durham, file = "data/mbbs_durham.rda")
-save(mbbs_chatham, file = "data/mbbs_chatham.rda")
+#EDIT: /Goulden - remove later once fixed for 2022
+save(mbbs_orange, file = "data/Goulden/mbbs_orange.rda")
+save(mbbs_durham, file = "data/Goulden/mbbs_durham.rda")
+save(mbbs_chatham, file = "data/Goulden/mbbs_chatham.rda")
 
 # Create CSV version ####
 write.csv(mbbs_orange, file = sprintf(
