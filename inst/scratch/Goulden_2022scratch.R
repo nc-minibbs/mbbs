@@ -24,3 +24,19 @@ chat2 <- import_ebird_data("data/Goulden/mbbs_chatham_sample.csv")
 lubridate::mdy(chat$Date)
 sample
 lubridate::mdy(sample$Date) #works fine on the Orange data here..
+
+
+orange <- read.csv("inst/extdata/MyEBirdData_Orange_20220913.csv", header = TRUE)
+table(orange$County)
+orange_only <- orange[orange$County == "Orange",]
+table(orange_only$County)
+head(orange_only)
+
+write.csv(orange_only,"inst/extdata/MyEBirdData_Orange_20220913.csv")
+orange_only2 <- read.csv("inst/extdata/MyEBirdData_Orange_20220913.csv", header = TRUE)
+
+chatham <- read.csv("inst/extdata/MyEBirdData_Chatham_20220913.csv", header = TRUE)
+table(chatham$County)
+chatham_only <- chatham[chatham$County == "Chatham",]
+table(chatham_only$County)
+write.csv(chatham_only, "inst/extdata/MyEBirdData_Chatham_20220913.csv")
