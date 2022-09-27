@@ -8,7 +8,7 @@ rename_ebird_data <- function(dt) {
     dt,
     sub_id      = Submission.ID,
     common_name = Common.Name,
-    sci_name    = Scientific.Name,
+    sci_name    = word(Scientific.Name, 1, 2), # dropping subspecies and subgroup designations
     tax_order   = Taxonomic.Order,
     count_raw   = Count,
     state       = State.Province,
