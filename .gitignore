@@ -3,6 +3,5 @@
 .RData
 .Ruserdata
 *.DS_Store
-*.Rproj
 packrat/lib*/
 *rsconnect*
