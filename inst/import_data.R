@@ -58,10 +58,9 @@ mbbs_chatham <-
   combine_site_ebird()
 
 # Save results ####
-#EDIT: /Goulden - remove later once fixed for 2022
-save(mbbs_orange, file = "data/Goulden/mbbs_orange.rda")
-save(mbbs_durham, file = "data/Goulden/mbbs_durham.rda")
-save(mbbs_chatham, file = "data/Goulden/mbbs_chatham.rda")
+save(mbbs_orange, file = "data/mbbs_orange.rda")
+save(mbbs_durham, file = "data/mbbs_durham.rda")
+save(mbbs_chatham, file = "data/mbbs_chatham.rda")
 
 # Create CSV version ####
 write.csv(mbbs_orange, file = sprintf(
