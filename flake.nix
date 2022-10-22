@@ -1,8 +1,11 @@
+# https://discourse.nixos.org/t/r-packages-the-renv-library-manager/5881/2   
 {
   description = "A basic flake for the mbbs package";
-
+  nixConfig = {
+    bash-prompt = "mbbs> ";
+  };
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -10,29 +13,12 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      # https://discourse.nixos.org/t/r-packages-the-renv-library-manager/5881/2     
-      devShells.default =        pkgs.mkShell {
+      devShells.default =  pkgs.mkShell {
         nativeBuildInputs = [ pkgs.bashInteractive ];
-        buildInputs = with pkgs; [ 
-          R 
+        buildInputs = [
+          pkgs.R
         ];
       }; 
-      
-      # (pkgs.buildFHSUserEnv {
-      #   name = "mbbs";
-      #   targetPkgs = pkgs: 
-      #     (with pkgs; [
-      #       R 
-      #       rPackages.renv
-      #     ]);
-      # });
-      
-      # pkgs.mkShell {
-      #   nativeBuildInputs = [ pkgs.bashInteractive ];
-      #   buildInputs = with pkgs; [ 
-      #     R 
-      #   ];
-      # };
 
     });
 }
