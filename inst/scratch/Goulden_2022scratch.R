@@ -40,3 +40,43 @@ table(chatham$County)
 chatham_only <- chatham[chatham$County == "Chatham",]
 table(chatham_only$County)
 write.csv(chatham_only, "inst/extdata/MyEBirdData_Chatham_20220913.csv")
+
+chatham <- chatham[,2:24]
+chatham
+table(chatham$Scientific.Name)
+#Accipiter sp.
+#Accipitridae sp. (hawk sp.)
+#Anas platyrhynchos (Domestic type)
+#Anatinae sp.
+#Ardea herodias [herodias Group]
+#Cairina moschata (Domestic type)
+#Cardinalis cardinalis [cardinalis Group]
+#Hirundinidae sp. 
+#Hirundo rustica erythrogaster? same as Hirundo rustica?
+#same q: Pandion haliaetus carolinensis vs pandion haliaetus
+#Passeriformes sp.
+#Picidae sp.
+#Pipilo erythrophthalmus erythrophthalmus/canaster
+# Setophaga dominica dominica/stoddardi 
+# Sialia sialis sialis/bermudensis
+#Sitta carolinensis carolinensis vs    Sitta carolinensis
+# Thryothorus ludovicianus [ludovicianus Group]
+#Turdus migratorius [migratorius Group] 
+orange <- orange[,2:24]
+table(orange$Scientific.Name)
+# Accipitridae sp. (hawk sp.) 
+#  Anas platyrhynchos (Domestic type)
+#Cardinalis cardinalis [cardinalis Group] 
+# Corvus sp. (crow sp.)
+#Hirundinidae sp.
+#Passeriformes sp.
+#Picidae sp.
+#Piranga rubra/olivacea 
+#  Quiscalus quiscula quiscula/stonei 
+durham <- read.csv("inst/extdata/MyEBirdData_Durham_20220913.csv", header = TRUE)
+table(durham$Scientific.Name)
+#Accipitridae sp. (hawk sp.)
+#Anatinae sp. 
+# Corvus sp. (crow sp.) 
+#Picidae sp.
+#Quiscalus quiscula quiscula/stonei
