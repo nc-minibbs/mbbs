@@ -17,6 +17,19 @@ mbbs_orange$common_name <- str_split(mbbs_orange$common_name, fixed(" ("), simpl
 mbbs_durham$common_name <- str_split(mbbs_durham$common_name, fixed(" ("), simplify = TRUE)[,1]
 mbbs_chatham$common_name <- str_split(mbbs_chatham$common_name, fixed(" ("), simplify = TRUE)[,1]
 
+
+#fix all scientific names so there's no like, cardinalis [cardinalis group] and those are all just cardinalis instead. !!Issue still to fix: removing the last word when it's like dominica dominica/stoddardi 
+#issue actually already fixed in import_ebird_data - you need to rerun making the data for the year. But first fix the common name issue there as well. 
+mbbs_orange$sci_name <- str_split(mbbs_orange$sci_name, fixed(" ("), simplify = TRUE)[,1]  
+mbbs_orange$sci_name <- str_split(mbbs_orange$sci_name, fixed(" ["), simplify = TRUE)[,1]  
+
+mbbs_durham$sci_name <- str_split(mbbs_durham$sci_name, fixed(" ("), simplify = TRUE)[,1]  
+mbbs_durham$sci_name <- str_split(mbbs_durham$sci_name, fixed(" ["), simplify = TRUE)[,1] 
+
+mbbs_chatham$sci_name <- str_split(mbbs_chatham$sci_name, fixed(" ("), simplify = TRUE)[,1]  
+mbbs_chatham$sci_name <- str_split(mbbs_chatham$sci_name, fixed(" ["), simplify = TRUE)[,1] 
+
+
 #create mbbs_all
 mbbs_all <- bind_rows(mbbs_orange, mbbs_chatham, mbbs_durham)
 #problem! 16 observations in Wake county instead of Durham, didn't cause problems before but let's lump those back into durham
