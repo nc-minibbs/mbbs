@@ -152,32 +152,30 @@ plot_all_species_in_county <- function(mbbs_county) {
   
 }
 
-#clapping emojis - you could even incorporate this into the mbbs package if you talked with Bradley about how to do that 
-
-#figuring out averaging 2020 -> 2022
-#let's make an ave for years before 2020, then years 2020+, and then tibble combine them, like bind_rows(ave1990-2019, ave2020+)
-ave1990_2019 <- mbbs_orange %>% filter(common_name == "American Robin", year <= 2019) %>% group_by(year) %>% summarize(mean = mean(count))
-print(ave1990_2019, n =24)
-ave2020onwards <- mbbs_orange %>% filter(common_name == "American Robin") %>% group_by(year, route_num) %>% summarize(sum = sum(count)) %>% group_by(year) %>% summarize(mean = mean(sum))
-print(ave2020onwards, n =40)
-#okay, this works for ALL the years, we don't have to bind rows after, we can just make ave this way
 
 
-mbbs_orange$count_across_stops <- 400
-years <- 2022
-routes <- 12
-mbbs_orange$count_accross_stops[mbbs_orange$year == 2022 && mbbs_orange$route_num == 12] <- mbbs_orange %>% filter(year == years, route_num == routes)
+#alrighty, now let's work on creating a dataset from which we can incorporate 0's [where a route was run but the species was not counted on the route at all) into our averages. 
+#we'll need mbbs_all and lets use species_list_allcountries since we've already got that
+#mbbs_all
+#species_list_allcounties
+allroutes <- unique(mbbs_all$route_num) #remember: routes have been modified 
+#this is not sorted chronologically, do not worry
+allyears <- unique(mbbs_all$year)
 
-mbbs_orange %>% filter(common_name == "Canada Goose") %>% filter(year >= 2020) %>% group_by(route_num)
+#y number of years
+y <- length(allyears)
+#r number of routes
+r <- length(allroutes)
+#s number of species
+s <- length(species_list_allcounties)
 
-table(mbbs_orange$year[mbbs_orange$common_name == "American Robin"], mbbs_orange$route_num[mbbs_orange$common_name == "American Robin"]) #should all be 1's but indeed, starting in 2020 and continuing on there are more reports....lets think about how to group those into one.
+#now let's create a dataframe of unique combinations of route and year
+routeyear <- unique(mbbs_all[,c('year', 'route_num')]) %>% arrange(year)
 
-mbbs_orange$count_across_stops <- 400
+#create dataframe with species repeated in every year and route that's been run.
+routeyearspecies <- data.frame(route = rep(routeyear$route_num, s), year = rep(routeyear$year, s), species = rep(species_list_allcounties, each = nrow(routeyear)))
 
-#for(c in 1:nrow(mbbs_county)) {
-  
-  intermediate <- mbbs_orange %>% filter(common_name == mbbs_orange$common_name[c], year == mbbs_orange$year[c], route_num == mbbs_orange$route_num[c]) %>% group_by(year, route_num) %>% summarize(sum = sum(count))
-  
-  mbbs_orange$count_across_stops[c] <- intermediate[[3]]
-  
-#}
+#Now, we'll join together the routeyearspecies dataset with the mbbs_all in order to create those 0's where the route was run, but the species was not seen
+
+left_join(routeyearspecies, mbbs_alll, by)
+
