@@ -20,8 +20,10 @@ You'll want the 'NC Mini BBS Route Runners' google sheet up to check which route
  3. Does Stop 1 have environmental data? Are the types of data written correctly? The only required information is the *observers=*
 
 Here's an example of what this environmental data might look like:
+
 *observers=Allen Hurlbert, Sarah Pollack; weather=55 F, clear; notes=big thunderstorm last night, everything wet; vehicles=3 (or v=3); habitat=B,H (or h=B,H).*
-Habitat data may only be recorded if something's changed from the last years
+
+Habitat data may only be recorded if something's changed from the last years.
     - Potential errors
       - misspellings in the data type ie "wether" instead of "weather". To fix, edit the comments to the correct spelling
       - no *"observer(s)="* in the first stop. To fix, check the submitter's ebird account or the 'NC Mini BBS Route Runners' to see who to credit with running that route. Add the information
@@ -55,11 +57,14 @@ Run the <import_data.R> file located in mbbs/inst. Every other R code in the pro
 	library(mbbs) 
 
 To run the new data, first you'll need to replace the .csv files being read in to create the Orange, Durham, and Chatham dataframes. You'll replace the dates in lines 18,33,and 48 ie:
+
 `import_ebird_data("inst/extdata/MyEBirdData_Orange_20220913.csv")`
 
 with the dates for the new ebird downloads that you added to inst/extdata in STEP2. 
 ie:
+
 `import_ebird_data("inst/extdata/MyEBirdData_Orange_YYYYMMDD.csv")`
+
 Ensure in changing the code that each line is still reading in correct county's .csv, and that for example the mbbs_orange variable is not now getting the new Durham csv.
 
 In lines 61-63 if everything's gone well, we've now updated the mbbs datasets with the new year's info. Open up your file explorer and make sure the date modified matches your current date and that they've been changed successfully. Because we want to create a backup of this specific download, the R script will also automatically create a new csv version labeled with the day's date stored in inst/analysis_data. 
