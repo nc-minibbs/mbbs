@@ -24,6 +24,7 @@ Here's an example of what this environmental data might look like:
 *observers=Allen Hurlbert, Sarah Pollack; weather=55 F, clear; notes=big thunderstorm last night, everything wet; vehicles=3 (or v=3); habitat=B,H (or h=B,H).*
 
 Habitat data may only be recorded if something's changed from the last years.
+
     - Potential errors
       - misspellings in the data type ie "wether" instead of "weather". To fix, edit the comments to the correct spelling
       - no *"observer(s)="* in the first stop. To fix, check the submitter's ebird account or the 'NC Mini BBS Route Runners' to see who to credit with running that route. Add the information
