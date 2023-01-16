@@ -25,10 +25,10 @@ Here's an example of what this environmental data might look like:
 
 Habitat data may only be recorded if something's changed from the last years.
 
-    - Potential errors
-      - misspellings in the data type ie "wether" instead of "weather". To fix, edit the comments to the correct spelling
-      - no *"observer(s)="* in the first stop. To fix, check the submitter's ebird account or the 'NC Mini BBS Route Runners' to see who to credit with running that route. Add the information
-      - data types seperated by a comma "," instead of semi-colon ";" To fix, edit the comments to change commas to semi-colons
+   - Potential errors
+     - misspellings in the data type ie "wether" instead of "weather". To fix, edit the comments to the correct spelling
+     - no *"observer(s)="* in the first stop. To fix, check the submitter's ebird account or the 'NC Mini BBS Route Runners' to see who to credit with running that route. Add the information
+     - data types seperated by a comma "," instead of semi-colon ";" To fix, edit the comments to change commas to semi-colons
 
  4. Do the other stops have comments? Are the comments formatted correctly?
     - Potential errors
