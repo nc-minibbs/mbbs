@@ -1,8 +1,7 @@
-# https://discourse.nixos.org/t/r-packages-the-renv-library-manager/5881/2   
 {
-  description = "A basic flake for the mbbs package";
+  description = "A flake for functional statistics blog";
   nixConfig = {
-    bash-prompt = "mbbs> ";
+    bash-prompt = "funstats> ";
   };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
