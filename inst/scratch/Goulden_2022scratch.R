@@ -19,6 +19,11 @@ read.csv(paste("inst/taxonomy/",latest_taxonomy,sep = "")) %>%
     common_name = PRIMARY_COM_NAME
   )
 
+  mutate(mbbs_orange,
+                sci_name = word(sci_name, 1, 2),
+                common_name = word(common_name, 1, sep = fixed(" (")))# dropping subspecies and subgroup designations)
+
+
 #this gets the year
 list.files("inst/taxonomy") %>% word(2, sep = fixed("_v")) %>% word(1, sep = "\\.") %>% max()
 #read the file
