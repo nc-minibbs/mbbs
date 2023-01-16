@@ -1,5 +1,34 @@
 #scratch
 
+#ebird taxonomy
+library(stringr)
+library(dplyr)
+#get list of all taxonomy files
+tax <- list.files("inst/taxonomy")
+#pull out the latest version of the taxonomy by finding the latest year in the file names
+mostrecent <- max(str_sub(tax, -8, -5))
+#read csv the file from the latest ebird year version
+read.csv(paste("inst/taxonomy/ebird_taxonomy_v",mostrecent,".csv", sep =""))
+
+#select the file that's from the lastest version year (ie: ebird_taxonomy_v2022)
+latest_taxonomy <- list.files("inst/taxonomy") %>% max(str_sub(-8, -5))
+read.csv(paste("inst/taxonomy/",latest_taxonomy,sep = "")) %>%
+  select(
+    tax_order = TAXON_ORDER,
+    sci_name = SCI_NAME,
+    common_name = PRIMARY_COM_NAME
+  )
+
+#this gets the year
+list.files("inst/taxonomy") %>% word(2, sep = fixed("_v")) %>% word(1, sep = "\\.") %>% max()
+#read the file
+
+
+word(tax, 1:4, sep = fixed("_v"))
+grepl("ebird", tax)
+
+
+
 orange <- read.csv("inst/extdata/MyEBirdData_Orange_20220913.csv", header = TRUE)
 head(orange)
 any(is.na(orange$Date))
