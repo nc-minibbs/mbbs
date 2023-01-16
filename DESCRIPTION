@@ -1,6 +1,6 @@
 Package: mbbs
 Title: Data and data processing functions for the Mini-Bird Breeding Survery
-Version: 0.3.0.0
+Version: 0.4.0.0
 Authors@R: c(
    person("Bradley", "Saul", email = "bradleysaul@gmail.com", role = c("aut", "cre")),
    person("Allen", "Hurlbert", email = "hurlbert@bio.unc.edu", role = c("aut")))
