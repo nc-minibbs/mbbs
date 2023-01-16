@@ -14,8 +14,7 @@ You'll want the 'NC Mini BBS Route Runners' google sheet up to check which route
  2. Check that all routes have 20 stops 
     - Potential errors: 
       - More than one checklist for the same stop
-      - Checklist missing for one or more stops
-      - Read the comments on the first stop, there should be an explanation ie: "road work, stops 2-4 not surveyed". If there's no explanation, check the surveyor's ebird lists to see if the stop checklist exists and hasn't been shared to the account or if the stop checklist is fully missing. Follow up with the surveyor and make a note in the sampling events tab of 'NC Mini BBS Route Runners'
+      - Checklist missing for one or more stops. To fix, read the comments on the first stop, there should be an explanation ie: "road work, stops 2-4 not surveyed". If there's no explanation, check the surveyor's ebird lists to see if the stop checklist exists and hasn't been shared to the account or if the stop checklist is fully missing. Follow up with the surveyor and make a note in the sampling events tab of 'NC Mini BBS Route Runners'
 
  3. Does Stop 1 have environmental data? Are the types of data written correctly? The only required information is the *observers=*
 
@@ -34,7 +33,7 @@ Habitat data may only be recorded if something's changed from the last years.
     - Potential errors
       - missing semi-colon between data types (ie v=3 h=b,bh) or comma instead of semi-colon. To fix, add semi-colons 
       - non-data comment. To fix, add "notes=" before the comment
-      - vehicle information on most but not all routes. To fix this use your discretion, as the surveyor may not have checked for vehicles at all stops, but if all the other spots have v>1, these are likely v=0 stops. If so add v=0 to comments.
+      - vehicle information on most but not all routes. To fix this use your discretion, as the surveyor may not have checked for vehicles at all stops, but if all the other stops have v>1, these are likely v=0 stops. If so add v=0 to comments.
 
  5. Are all the routes sorted under the right county? 
     - Potential error
