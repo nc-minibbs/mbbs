@@ -48,7 +48,7 @@ Download the latest version of the eBird taxonomy CSV to the inst/taxonomy folde
 
 	https://www.birds.cornell.edu/clementschecklist/download/
 
-The file should be named with the format `ebird_taxonomy_vYYYY` (it should download in this format)
+The file should be named with the format `ebird_taxonomy_vYYYY` (it should download in this format) Leave previous versions in the file.
 
 #### STEP4: Update the repository
 Run the `import_data.R` file located in mbbs/inst. Every other R code in the project contributes to this file, and it's the one thing that needs to run to update the data. You can see it calls library(mbbs) to use all the functions contained in the package. If you can't load library(mbbs) run the following lines:
@@ -57,7 +57,7 @@ Run the `import_data.R` file located in mbbs/inst. Every other R code in the pro
 	devtools::install_github('nc-minibbs/mbbs')
 	library(mbbs) 
 
-To run the new data, first you'll need to replace the .csv files being read in to create the Orange, Durham, and Chatham dataframes. You'll replace the dates in lines 18,33,and 48 ie:
+To run the new data, first you'll need to replace the .csv files being read in to create the Orange, Durham, and Chatham dataframes. You'll replace the dates in lines 18, 33, and 48 ie:
 
         import_ebird_data("inst/extdata/MyEBirdData_Orange_20220913.csv")
 
