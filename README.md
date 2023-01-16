@@ -42,8 +42,11 @@ EX: observers=Allen Hurlbert, Sarah Pollack; weather=55 F, clear; notes=big thun
 
 STEP2: Download the ebird data from all the accounts (it will be sent to Allen's email initially) and add it to mbbs -> inst -> extdata. You'll rename the files to MyEbirdData_[COUNTY]_[YYYYMMDD]. IMPORTANT! DO NOT open the files in excel. If you want to check the data open the .csv in R. Opening the files in excel may change the date format and cause errors when processing the data. If you get an error later on relating to an invalid date format, redownload the data.
 
-STEP3: Download the latest version of the eBird taxonomy to the inst/taxonomy folder. You can find the latest version of the taxonomy at 
+STEP3: Download the latest version of the eBird taxonomy CSV to the inst/taxonomy folder. You can find the latest version of the taxonomy at 
+
 	https://www.birds.cornell.edu/clementschecklist/download/
+
+The file should be named with the format "ebird_taxonomy_vYYYY" (it should download in this format)
 
 STEP4: Run the <import_data.R> file located in mbbs -> inst. Every other R code in the project contributes to this file, and it's the one thing that needs to run to update the data. You can see it calls library(mbbs) to use all the functions contained in the package. If you can't load library(mbbs) run the following lines:
 
