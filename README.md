@@ -41,17 +41,17 @@ Habitat data may only be recorded if something's changed from the last years.
       - Example: a Durham checklist has been shared to Chatham - if Durham already has the checklist and it's been shared twice, delete the duplicate checklist in the Chatham account. Ebird will make this seem scary! If the checklist is on both accounts it will only be deleted from the one account. If Durham does NOT have the checklist, share the checklist to Durham and then delete the checklist from the Chatham account, or if not possible, get in touch with the surveyor to share the checklist to the Durham account instead. All ebird accounts can Only have checklists from the correct county for the data to process correctly.
 
 #### STEP2: Download the ebird data 
-Now that the data is QC'd, download the ebird data from all the accounts (it will be sent to Allen's email initially) and add it to mbbs/inst/extdata. You'll rename the files to MyEbirdData_[COUNTY]_[YYYYMMDD]. IMPORTANT! DO NOT open the files in excel. If you want to check the data open the .csv in R. Opening the files in excel may change the date format and cause errors when processing the data. If you get an error later on relating to an invalid date format, redownload the data.
+Now that the data is QC'd, download the ebird data from all the accounts (it will be sent to Allen's email initially) and add it to mbbs/inst/extdata. You'll rename the files to `MyEbirdData_[COUNTY]_[YYYYMMDD]`. _IMPORTANT!_ DO NOT open the files in excel. If you want to check the data open the .csv in R. Opening the files in excel may change the date format and cause errors when processing the data. If you get an error later on relating to an invalid date format, redownload the data.
 
 #### STEP3: Update the taxonomy
 Download the latest version of the eBird taxonomy CSV to the inst/taxonomy folder. You can find the latest version of the taxonomy at 
 
 	https://www.birds.cornell.edu/clementschecklist/download/
 
-The file should be named with the format "ebird_taxonomy_vYYYY" (it should download in this format)
+The file should be named with the format `ebird_taxonomy_vYYYY` (it should download in this format)
 
 #### STEP4: Update the repository
-Run the <import_data.R> file located in mbbs/inst. Every other R code in the project contributes to this file, and it's the one thing that needs to run to update the data. You can see it calls library(mbbs) to use all the functions contained in the package. If you can't load library(mbbs) run the following lines:
+Run the `import_data.R` file located in mbbs/inst. Every other R code in the project contributes to this file, and it's the one thing that needs to run to update the data. You can see it calls library(mbbs) to use all the functions contained in the package. If you can't load library(mbbs) run the following lines:
 
 	install.packages('devtools')
 	devtools::install_github('nc-minibbs/mbbs')
@@ -59,12 +59,12 @@ Run the <import_data.R> file located in mbbs/inst. Every other R code in the pro
 
 To run the new data, first you'll need to replace the .csv files being read in to create the Orange, Durham, and Chatham dataframes. You'll replace the dates in lines 18,33,and 48 ie:
 
-`import_ebird_data("inst/extdata/MyEBirdData_Orange_20220913.csv")`
+        import_ebird_data("inst/extdata/MyEBirdData_Orange_20220913.csv")
 
-with the dates for the new ebird downloads that you added to inst/extdata in STEP2. 
+with the dates for the new ebird downloads that you added to inst/extdata in step 2. 
 ie:
 
-`import_ebird_data("inst/extdata/MyEBirdData_Orange_YYYYMMDD.csv")`
+        import_ebird_data("inst/extdata/MyEBirdData_Orange_YYYYMMDD.csv")
 
 Ensure in changing the code that each line is still reading in correct county's .csv, and that for example the mbbs_orange variable is not now getting the new Durham csv.
 
