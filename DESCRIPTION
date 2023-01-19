@@ -3,7 +3,7 @@ Title: Data and data processing functions for the Mini-Bird Breeding Survery
 Version: 2022.0
 Authors@R: c(
    person("Bradley", "Saul", email = "bradleysaul@gmail.com", role = c("aut", "cre")),
-   person("Allen", "Hurlbert", email = "hurlbert@bio.unc.edu", role = c("aut"))
+   person("Allen", "Hurlbert", email = "hurlbert@bio.unc.edu", role = c("aut")),
    person("Ivara", "Goulden", email = ijbg@unc.edu, role = c("aut")))
 Description: Contains the data from the Mini-Bird Breeding Survey.
 Depends: 
