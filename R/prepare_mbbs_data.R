@@ -4,7 +4,9 @@
 get_ebird_taxonomy <- function() {
   
   #select the file that's from the lastest version year (ie: ebird_taxonomy_v2022)
-  latest_taxonomy <- list.files("inst/taxonomy") %>% max(str_sub(-8, -5))
+  latest_taxonomy <- 
+    list.files("inst/taxonomy") %>% 
+    max(stringr::str_sub(-8, -5))
   read.csv(paste("inst/taxonomy/",latest_taxonomy,sep = "")) %>%
     select(
       tax_order = TAXON_ORDER,

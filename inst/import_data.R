@@ -9,7 +9,8 @@
 #------------------------------------------------------------------------------#
 
 library(magrittr)
-library(mbbs)
+# library(mbbs)
+devtools::load_all()
 
 etax <- get_ebird_taxonomy()
 
