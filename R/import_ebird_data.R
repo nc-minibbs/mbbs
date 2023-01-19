@@ -33,8 +33,8 @@ rename_ebird_data <- function(dt) {
 #'
 rename_subspecies <- function(dt) {
   dplyr::mutate(dt,
-    sci_name = word(sci_name, 1, 2),  #dropping subspecies or domestic type designations
-    common_name = word(common_name, 1, sep = fixed(" ("))# dropping subspecies and subgroup designations
+    sci_name = stringr::word(sci_name, 1, 2),  #dropping subspecies or domestic type designations
+    common_name = stringr::word(common_name, 1, sep = stringr::fixed(" ("))# dropping subspecies and subgroup designations
   )
 }
 
