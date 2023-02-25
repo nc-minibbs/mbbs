@@ -10,6 +10,10 @@
 clean_comments <- function(comments) {
   # change unicode equals to ==
   stringr::str_replace_all(comments, "&#61;", "==") %>%
+  # change correctly read = to ==
+  stringr::str_replace_all(comments, "=", "==") %>%
+  # change accidentially used ":" to ==
+  stringr::Str_replace_all(comments, ":", "==") %>%
     # Add additional as needed
     identity()
 }
