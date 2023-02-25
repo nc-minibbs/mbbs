@@ -7,8 +7,8 @@ rename_ebird_data <- function(dt) {
   dplyr::select(
     dt,
     sub_id      = Submission.ID,
-    common_name = Common.Name,
-    sci_name    = word(Scientific.Name, 1, 2), # dropping subspecies and subgroup designations
+    common_name = Common.Name, 
+    sci_name    = Scientific.Name,
     tax_order   = Taxonomic.Order,
     count_raw   = Count,
     state       = State.Province,
@@ -25,6 +25,16 @@ rename_ebird_data <- function(dt) {
     all_obs     = All.Obs.Reported,
     breed_code  = Breeding.Code,
     checklist_comments = Checklist.Comments
+  )
+}
+
+#' Removes subspecies, subgroup, or domestic type designations from the common
+#' and scienfic name columns of an ebird csv
+#'
+rename_subspecies <- function(dt) {
+  dplyr::mutate(dt,
+    sci_name = stringr::word(sci_name, 1, 2),  #dropping subspecies or domestic type designations
+    common_name = stringr::word(common_name, 1, sep = stringr::fixed(" ("))# dropping subspecies and subgroup designations
   )
 }
 
@@ -127,6 +137,7 @@ import_ebird_data <- function(path, run_checks = TRUE) {
   read.csv(path, stringsAsFactors = FALSE) %>%
     # TODO: revisit read_csv; can't get past parse errors.
     rename_ebird_data() %>%
+    rename_subspecies() %>% 
     filter_ebird_data() %>%
     ## Process comments ##
     left_join(

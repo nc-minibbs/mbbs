@@ -2,7 +2,12 @@
 #' @importFrom readr read_csv
 #' @export
 get_ebird_taxonomy <- function() {
-  readr::read_csv("https://www.birds.cornell.edu/clementschecklist/wp-content/uploads/2021/08/eBird_Taxonomy_v2021.csv") %>%
+  
+  #select the file that's from the lastest version year (ie: ebird_taxonomy_v2022)
+  latest_taxonomy <- 
+    list.files("inst/taxonomy") %>% 
+    max(stringr::str_sub(-8, -5))
+  read.csv(paste("inst/taxonomy/",latest_taxonomy,sep = "")) %>%
     select(
       tax_order = TAXON_ORDER,
       sci_name = SCI_NAME,
