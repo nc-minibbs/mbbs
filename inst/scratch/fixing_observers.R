@@ -1,7 +1,18 @@
 library(dplyr)
+library(stringr)
 
 #old <- read.csv("inst/extdata/orange_1999-2009_from_website.csv")
 #all old data has observers
+
+#pull up R/process_comments.R and import_ebird_data.R
+#run functions in there
+#grab an ebird file ie any one of the csvs "inst/extdata/MyEBirdData_Orange_20220913.csv"
+#use the comment_workflow() to check out things went
+
+test <- read.csv( "inst/extdata/MyEBirdData_Orange_20220913.csv", header = T)
+test <- test %>% import_ebird_data()
+test <- test %>% rename_ebird_data() 
+comment_workflow(test) #this isn't working yet, getting an "'Str_replace_all' is not an exported object from 'namespace:stringr'" error when trying to run it. Admittedly I'm running things all out of order, should maybe run it as
 
 #check observers in each year
 load("data/mbbs_orange.rda")
@@ -14,6 +25,7 @@ unique(mbbs_orange$observers)
 #     flag is observer is blank
 #for analysis QC:
 #     flag if the route was only run by that observer in one year
+
 
 # Check that routes have exactly 1 or 20 non-owling submissions.
 # TODO: 2020 and after should have 20 submissions
