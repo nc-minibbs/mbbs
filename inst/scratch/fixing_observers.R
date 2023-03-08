@@ -46,6 +46,26 @@ observer_table <- observer_table %>% arrange(county, route)
 write.csv(observer_table, "inst/extdata/observer_conversion_table.csv", row.names = F)
 
 
+#create test.csv
+test <- mbbs_durham[1:50,]
+#create new observers to add into table
+test$observers[45] <- "Example Observers"
+test$observers[14] <- "Example Test Observers"
+test$observers[17] <- "Example Observers2"
+test$observers[48] <- "Example Observers2"
+#3.8.2023
+#pass df
+update_observer_table <- function(mbbs_county) {
+  
+  #get the county name
+  deparse(quote(mbbs_county))
+  sub('.*_', '', deparse(quote(mbbs_county))) #this code doesn't look beautiful but it does work, but I want it to be beautiful and interpretable as well. I want to deparse(quote(mbbs_county)) to transform the county the function is passed into a string, and then I want to pass that to str_extract ideally. str_extract("mbbs_durham", "_.*") gets "_durham" - not sure how to specify I want something only after the _ yet..
+  #generate list of unique route number/observer combinations from the mbbs dataframe
+  
+}
+#generate list of unique route numbers + observers
+#check if on conversion table
+
 # Check that routes have exactly 1 or 20 non-owling submissions.
 # TODO: 2020 and after should have 20 submissions
 dt %>%
