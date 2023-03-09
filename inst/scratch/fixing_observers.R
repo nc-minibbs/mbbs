@@ -54,15 +54,116 @@ test$observers[14] <- "Example Test Observers"
 test$observers[17] <- "Example Observers2"
 test$observers[48] <- "Example Observers2"
 #3.8.2023
+test_durham <- test
 #pass df
+
+an_object <- mtcars
+myfunc <- function(x) deparse(substitute(x))
+
+myfunc(an_object)
+#> [1] "an_object"
+
+
 update_observer_table <- function(mbbs_county) {
   
-  #get the county name
-  deparse(quote(mbbs_county))
-  sub('.*_', '', deparse(quote(mbbs_county))) #this code doesn't look beautiful but it does work, but I want it to be beautiful and interpretable as well. I want to deparse(quote(mbbs_county)) to transform the county the function is passed into a string, and then I want to pass that to str_extract ideally. str_extract("mbbs_durham", "_.*") gets "_durham" - not sure how to specify I want something only after the _ yet..
-  #generate list of unique route number/observer combinations from the mbbs dataframe
+  #load the observer conversion table
+  observer_table <- read.csv("inst/extdata/observer_conversion_table.csv", header = T)
+  
+  #pull the county from the name of the df that was passed to the function
+  selected_county <- sub('.*_', '', deparse(substitute(mbbs_county)))
+  
+  #lowercase county just in case naming format changes or something
+  selected_county <- tolower(selected_county)
+  
+  #check if county is on the observer table list
+  #check_county_on_list ###not implemented yet
+  
+  #filter the observer conversion table to just one county
+  county_observer_table <- observer_table %>% filter(county == selected_county)
+  
+  #generate list of unique route number/observer combinations from the mbbs_county dataframe
+  rocombos <- as.data.frame(unique(mbbs_county[c("route_num","observers")]))
+  
+  #check if each row of the newobsrtcombos is already on the conversion table
+  for(i in 1:nrow(rocombos)) {
+    
+    #filter observer table to same route and name
+    if(county_observer_table %>% filter(route == rocombos$route_num[i]) %>% filter(observers == rocombos$observers[i]) %>% nrow() > 0) { } #route/observer combo already on table, do nothing
+    else { #this route/observer combo is not already on the conversion table
+      
+      #print border
+      print("------------------------------------------------")
+      
+      #print the new route/observer combo
+      print(paste("New route/observer combo:",list(rocombos[i,])))
+      
+      #filter mbbs_county to route, table(observer,year)
+      print("Survey history")
+      route_mbbs_county <- mbbs_county %>% filter(route_num == rocombos$route_num[i])
+      print(table(route_mbbs_county$observers, route_mbbs_county$year))
+      
+      #print that route's current conversion table
+      print("Current conversion table for this route:")
+      print(county_observer_table %>% filter(route == rocombos$route_num[i]))
+      
+      #reprint the new route/observer combo
+      print(paste("New route/observer combo:",list(rocombos[i,])))
+      
+      #take input on what the new conversion should be
+      new_primaryobs <- readline("What should the new primary observer be? 
+                                 Type QUIT to exit function, 
+                                 Type NA to not add to conversion table:") #change wording
+      
+      if(new_primaryobs == "QUIT") {return("Function Ended")}
+      if(new_primaryobs == "NA") {}#do nothing
+      else {
+      #add new row to overall observer_table
+      observer_table <- observer_table %>% 
+        add_row(county = selected_county,
+                route = rocombos$route_num[i], 
+                observers = rocombos$observers[i],
+                primary_observer = new_primaryobs)
+      } #end else statement about primary observers
+    } #end else statement
+  } #end for statement (done going through all the rocombos)
+  
+  #save updated version of observer conversion table
+  write.csv(observer_table, "inst/extdata/observer_conversion_table_TESTING.csv", row.names = F) ###############!!!!!!!!!!!!!!!!!!!!TESTING
+  
+} #end function
+
+update_observer_table(test_durham)
+
+as.data.frame(unique(test_durham[c("route_num","observers")]))
+
+#####NOT IN USE RN
+
+##function to check if the county is on the list, not working right now
+check_county_on_list <- function() { 
+  #return error if county is not on the observer table list 
+  if(nrow(filtered_observer_table) == 0){
+    print(paste("County for this datafile is ", "\"", selected_county,"\"", " If the county is not ", list(unique(observer_table$county)), " then this function may not work as intended", sep = ""))
+    
+    response <- readline("Type 
+    Y to acknowledge and continue anyway, 
+    S to specify county, 
+    or anything else to abort:")
+    if(response == "S"){selected_county <- readline("Type name of county:"); return()}
+    if(response == "Y"){ print(paste("County is", selected_county))}
+    else{ return(print("Aborted")); return()}
+  }
+}
+
+check_county_on_list()
+
+#get the county name, if we just want to be able to pass (mbbs_county) rather than (mbbs_county, selected_county) - figure out deparse(substitute) and if you can use it here.. deparse(quote(mbbs_county)) is ALWAYS going to return "mbbs_county" never the name of the variable that the function's been passed
+
+ok <- function(mbbs_county){
+  selected_county <- sub('.*_', '', deparse(substitute(mbbs_county))) #turn mbbs_county into a string, and then split that string to extract only what's after the _
+  return(selected_county)
   
 }
+ok(test_durham)
 #generate list of unique route numbers + observers
 #check if on conversion table
 
