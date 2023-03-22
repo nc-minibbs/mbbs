@@ -27,23 +27,10 @@ obs_only <- mbbs_orange %>% select(year, route_num, stop_num, notes, checklist_c
 #     flag if the route was only run by that observer in one year
 
 
-#3-7-2023 
-#create primary observer field conversion table, pull out unique table with route as a variable and send it to excel
-load("data/mbbs_orange.rda")
-load("data/mbbs_durham.rda")
-load("data/mbbs_chatham.rda")
-active <- mbbs_orange %>% filter(route_num == 3)
-table(active$observers, active$year)
-#I think I literally want a year, route, unique observers within that
-
-o <- unique(mbbs_orange$route_num)
-c <- unique(mbbs_chatham$route_num)
-d <- unique(mbbs_durham$route_num)
-
-
+#read in observer table
 observer_table <- read.csv("inst/extdata/observer_conversion_table.csv", header = T)
-observer_table <- observer_table %>% arrange(county, route)
-write.csv(observer_table, "inst/extdata/observer_conversion_table.csv", row.names = F)
+#observer_table <- observer_table %>% arrange(county, route)
+#write.csv(observer_table, "inst/extdata/observer_conversion_table.csv", row.names = F)
 
 
 #create test.csv
@@ -56,12 +43,6 @@ test$observers[48] <- "Example Observers2"
 #3.8.2023
 test_durham <- test
 #pass df
-
-an_object <- mtcars
-myfunc <- function(x) deparse(substitute(x))
-
-myfunc(an_object)
-#> [1] "an_object"
 
 
 update_observer_table <- function(mbbs_county) {
@@ -110,11 +91,15 @@ update_observer_table <- function(mbbs_county) {
       print(paste("New route/observer combo:",list(rocombos[i,])))
       
       #take input on what the new conversion should be
-      new_primaryobs <- readline("What should the new primary observer be? 
-                                 Type QUIT to exit function, 
-                                 Type NA to not add to conversion table:") #change wording
+      cat("\nWhat should the new primary observer be?:\n
+      Type QUIT to save and exit function,\n
+      TYPE !QUIT to exit function w/o saving,\n
+      Type NA to not add to conversion table") #change wording
+      new_primaryobs <- readline(":")
       
-      if(new_primaryobs == "QUIT") {return("Function Ended")}
+      if(new_primaryobs == "QUIT") {save_observer_table(observer_table); 
+                                    return("Function Ended")}
+      if(new_primaryobs == "!QUIT") {return("Function Ended")}
       if(new_primaryobs == "NA") {}#do nothing
       else {
       #add new row to overall observer_table
@@ -123,20 +108,100 @@ update_observer_table <- function(mbbs_county) {
                 route = rocombos$route_num[i], 
                 observers = rocombos$observers[i],
                 primary_observer = new_primaryobs)
-      } #end else statement about primary observers
-    } #end else statement
-  } #end for statement (done going through all the rocombos)
+      } #end else statement about adding a new primary observer or not
+      
+      #give user the option to edit a row that already exists in that route
+      # edit_row <- readline("Do you want to edit an existing row for this route?
+      #                       Type Y to edit,
+      #                       Type anything else to move to next new route/obersever combo")
+      # if(edit_row == "Y") {
+      #   edit_row <- readline("Type the full observers column to be changed:")
+      #   #check that observers column exists, quit if it doesn't
+      #   if(county_observer_table %>% filter(route == rocombos$route_num[i]) %>% 
+      #                                filter(observers == edit_row) %>% nrow() > 0) {
+      #   new_primaryobs <- readline("What should the new primary observer be?:")
+      #   #mutate that row
+      #   observer_table <- observer_table %>% mutate(
+      #                     primary_observer = replace(primary_observer, 
+      #                                                county == selected_county & #match county
+      #                                                route == rocombos$route_num[i] & #& route
+      #                                                observers == edit_row, #& observers
+      #                                                new_primaryobs)) #replace w/new primaryobs
+      #   } else {print("Cannot find observers as typed, moving to next new route/observer combo" )}
+      
+    } #end else statement about this observer/route combo not being on the conversion table
+  }  #end for loop (done going through all the rocombos)
   
   #save updated version of observer conversion table
-  write.csv(observer_table, "inst/extdata/observer_conversion_table_TESTING.csv", row.names = F) ###############!!!!!!!!!!!!!!!!!!!!TESTING
+  save_observer_table(observer_table)
   
 } #end function
 
+#function to arrange + save the observer table - CURRENTLY SAVES TO TESTING
+save_observer_table <- function(observer_table) {
+  observer_table <- observer_table %>% arrange(county, route)
+  write.csv(observer_table, 
+            "inst/extdata/observer_conversion_table_TESTING.csv", row.names = F)
+}
+###############!!!!!!!!!!!!!!!!!!!!TESTING
+  
+
 update_observer_table(test_durham)
 
-as.data.frame(unique(test_durham[c("route_num","observers")]))
+
+
+############### Writing something to extract observer comment specifically from the places they're missing
+extract_observers_2 <- function(mbbs_county) {
+  
+  #fix unicode 
+  mbbs_county$checklist_comments <- mbbs_county$checklist_comments %>%
+                                    str_replace_all(c("&#61;"), "=")
+  
+  #when checklist comments contain "observer(s)", extract after observer(s) and before a ;
+  mbbs_county <- mbbs_county %>% mutate(
+    observers = case_when(
+    str_detect(checklist_comments,".*[oO]bserver(s)?=") == TRUE ~
+      sub(".*[oO]bserver(s)?=", "", checklist_comments) %>% #extract after observer
+      {sub(";.*", "", .)} #extract before ;
+  ))
+  
+  return(mbbs_county)
+  }
+
+
+############# Function to add observers to the other route stops based on route_num stop_num =1
+#could do it based on date as well? If it's the same route_num, same county, same date... then stop_num 1's ingo gets populated across? if there is a stop 1...
+table(test_durham$route_num, test_durham$stop_num)
+
+
 
 #####NOT IN USE RN
+############### 3.22.2023 Writing something to extract observer comment specifically from the places they're missing
+test_durham <- mbbs_durham
+#let's use test_durham
+
+test_durham$checklist_comments <- test_durham$checklist_comments %>% 
+  str_replace_all(c("&#61;"), "=")
+
+
+
+###SOMETHING BEAUTIFUL
+x <- test_durham %>% mutate(
+  observers = case_when(
+    str_detect(checklist_comments,".*[oO]bserver(s)?=") == TRUE ~ sub(".*[oO]bserver(s)?=", "", checklist_comments) %>% {sub(";.*", "", .)}
+  )
+  #With pipe your data are passed as a first argument to the next function, so if you want to use it somewhere else you need to wrap the next line in {} and use . as a data "marker".
+) %>% select(observers)
+print(n = 200,x)
+###SOMETHING BEAUTIFUL
+
+str_detect(test_durham$checklist_comments,".*[oO]bserver(s)?=")
+
+test_durham$checklist_comments2 <- sub(".*[oO]bserver(s)?=", "", test_durham$checklist_comments)# Extract characters after pattern
+sub(";.*", "", test_durham$checklist_comments2)
+#need a check to make sure observers is a field at all
+###############################
+
 
 ##function to check if the county is on the list, not working right now
 check_county_on_list <- function() { 
@@ -195,4 +260,4 @@ dt %>%
   }
 
 dt
-}
+
