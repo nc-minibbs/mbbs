@@ -17,6 +17,8 @@ comment_workflow(test) #this isn't working yet, getting an "'Str_replace_all' is
 
 #check observers in each year
 load("data/mbbs_orange.rda")
+load("data/mbbs_chatham.rda")
+load("data/mbbs_durham.rda")
 obs_only <- mbbs_orange %>% select(year, route_num, stop_num, notes, checklist_comments, observers, mbbs_county)
 #easiest part - check year/route/stop1 has observer, if yes give that same observer to all the other year/route/stops
 #let's make a function that can do this for just county - the processing runs on each county individualy so that's the way to go
@@ -151,7 +153,9 @@ update_observer_table(test_durham)
 
 
 ############### Writing something to extract observer comment specifically from the places they're missing
-extract_observers_2 <- function(mbbs_county) {
+##OOOOH okay, error is that this is overwriting old observers - because the mbbs data from the old website doesn't HAVE an observer checklist column. So either a) only fill in if checklist_comments exists OR b) if observer already has info leave as is (I think this is the better solution)
+#but HMMMMMMMMMMMM shouldn't be like....blank filling for the others?
+observers_extractor <- function(mbbs_county) {
   
   #fix unicode 
   mbbs_county$checklist_comments <- mbbs_county$checklist_comments %>%
@@ -160,14 +164,19 @@ extract_observers_2 <- function(mbbs_county) {
   #when checklist comments contain "observer(s)", extract after observer(s) and before a ;
   mbbs_county <- mbbs_county %>% mutate(
     observers = case_when(
+    is.na(observers) == FALSE ~ observers, #if observer column exists leave it
     str_detect(checklist_comments,".*[oO]bserver(s)?=") == TRUE ~
       sub(".*[oO]bserver(s)?=", "", checklist_comments) %>% #extract after observer
-      {sub(";.*", "", .)} #extract before ;
+      {sub(";.*", "", .)}, #extract before ;
+    str_detect(checklist_comments,".*[oO]bserver(s)?=") == FALSE ~ observers
   ))
   
   return(mbbs_county)
   }
 
+load("data/mbbs_orange.rda")
+mbbs_orange <- observers_extractor(mbbs_orange)
+update_observer_table(mbbs_orange)
 
 ############# Function to add observers to the other route stops based on route_num stop_num =1
 #could do it based on date as well? If it's the same route_num, same county, same date... then stop_num 1's ingo gets populated across? if there is a stop 1...
