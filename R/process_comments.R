@@ -8,10 +8,8 @@
 #' @importFrom stringr str_replace_all
 #' @importFrom magrittr "%>%"
 clean_comments <- function(comments) {
-  # change unicode equals to ==
-  stringr::str_replace_all(comments, "&#61;", "==") %>%
-  # change correctly read = to ==
-  stringr::str_replace_all(comments, "=", "==") %>%
+  # change unicode equals and = to ==
+  stringr::str_replace_all(comments, c("&#61;", "="), "==") %>%
     # Add additional as needed
     identity()
 }
