@@ -110,6 +110,8 @@ update_observer_table <- function(mbbs_county) {
                 route = rocombos$route_num[i], 
                 observers = rocombos$observers[i],
                 primary_observer = new_primaryobs)
+      #update the county_observer_table so the new info shows up if more than one new observer is going to be added to the route
+      county_observer_table <- observer_table %>% filter(county == selected_county)
       } #end else statement about adding a new primary observer or not
       
       #give user the option to edit a row that already exists in that route
@@ -136,14 +138,14 @@ update_observer_table <- function(mbbs_county) {
   
   #save updated version of observer conversion table
   save_observer_table(observer_table)
-  
+  print("No more new route/observer combos. Done!")
 } #end function
 
 #function to arrange + save the observer table - CURRENTLY SAVES TO TESTING
 save_observer_table <- function(observer_table) {
   observer_table <- observer_table %>% arrange(county, route)
   write.csv(observer_table, 
-            "inst/extdata/observer_conversion_table_TESTING.csv", row.names = F)
+            "inst/extdata/observer_conversion_table.csv", row.names = F)
 }
 ###############!!!!!!!!!!!!!!!!!!!!TESTING
   
@@ -176,11 +178,38 @@ observers_extractor <- function(mbbs_county) {
 
 load("data/mbbs_orange.rda")
 mbbs_orange <- observers_extractor(mbbs_orange)
-update_observer_table(mbbs_orange)
+update_observer_table(mbbs_chatham)
 
 ############# Function to add observers to the other route stops based on route_num stop_num =1
+propogate_observers_across_stops <- function(mbbs_county) {
+  mbbs_county <-  mbbs_county %>% group_by(route_num, date) %>% mutate(observers = max(observers, na.rm  = T))
+  return(mbbs_county)
+}
 #could do it based on date as well? If it's the same route_num, same county, same date... then stop_num 1's ingo gets populated across? if there is a stop 1...
-table(test_durham$route_num, test_durham$stop_num)
+table(mbbs_orange$route_num, mbbs_orange$stop_num) #orange has stops for every route
+
+mbbs_county <- mbbs_orange %>% filter(route_num == 12)
+mbbs_county <- observers_extractor(mbbs_county)
+z <- propogate_observers_across_stops(mbbs_county)
+
+nstops <- 1:20
+nroutes <- 1:length(unique(mbbs_county$route_num))
+
+#issue is this doesn't take into account the stop_num - only stop 1 should have observers but still, might not be propogating properly
+z <- mbbs_county %>% group_by(route_num, date) %>% mutate(observers = max(observers, na.rm  = T)) %>% arrange(date)
+#actually, looks like that works great! spot check more later
+  
+  
+  mutate(observers = 
+  case_when(is.na(stop_num) == FALSE ~ filter(mbbs_county, stop_num == 1 & route_num == 1 & date == .$date) %>% select(observers)))
+
+#if I was going to for loop it
+#go thru whole dataset, go to route_level, go to date
+#for stop_num = 2:20, observers gets stop_num == 1 $ observers
+
+dplyr::filter(stop_num == 1 & route_num == 1 & date == date)
+
+mbbs_orange %>% filter(route_num == 1 & stop_num == 1)
 
 
 
