@@ -5,25 +5,22 @@
 #' Arranges and saves a new version of the observer table 
 #' @param observer_table observer table data.frame
 #' @importFrom dplyr arrange
-save_observer_table <- function(observer_table) {
-  observer_table <- observer_table %>% arrange(county, route)
-  write.csv(observer_table, 
-            "inst/extdata/observer_conversion_table.csv", row.names = F)
+save_observer_table <- function(observer_table, file = "inst/extdata/observer_conversion_table.csv") {
+  observer_table %>% 
+    arrange(county, route) %>%
+    write.csv(out, row.names = FALSE)
 }
-
 
 
 #' Interactive program to update the observer table when new route 
 #' + observer combos are present
 #' @param mbbs_county mbbs data.frame, must end in and underscore then the name of the county ie: _durham, _orange, _chatham
+#' @param selected_county county that the observer table should be filtered on
 #' @importFrom dplyr filter add_row
-update_observer_table <- function(mbbs_county) {
+update_observer_table <- function(mbbs_county, selected_county) {
   
   #load the observer conversion table
   observer_table <- read.csv("inst/extdata/observer_conversion_table.csv", header = T)
-  
-  #pull the county from the name of the df that was passed to the function
-  selected_county <- sub('.*_', '', deparse(substitute(mbbs_county)))
   
   #lowercase county just in case naming format changes or something
   selected_county <- tolower(selected_county)
@@ -122,7 +119,7 @@ observers_extractor <- function(mbbs_county) {
   
   #fix unicode 
   mbbs_county$checklist_comments <- mbbs_county$checklist_comments %>%
-    str_replace_all(c("&#61;"), "=")
+    str_replace_all(c("&#61;", " ="), "=")
   
   #when checklist comments contain "observer(s)", extract after observer(s) and before a ;
   mbbs_county <- mbbs_county %>% mutate(
@@ -147,7 +144,7 @@ observers_extractor <- function(mbbs_county) {
 #' @export
 propogate_observers_across_stops <- function(mbbs_county) {
   #group by route and date (all observations on that route, inclusive of stops 1:20 on ebird checklists after 2019) and give all observer columns the same value as whatever column is not NA
-  mbbs_county <-  mbbs_county %>% group_by(route_num, date) %>% mutate(observers = max(observers, na.rm  = T))
+  mbbs_county <-  mbbs_county %>% group_by(route_num, date) %>% mutate(observers = observers[!is.na(observers)][1])
   #will fill in stops 2:20 with checklist comments like v;3 and won't change data from pre-2019 because all the observations on the same route_num and date will already have the same comments/observer columns
   return(mbbs_county)
 }
@@ -159,12 +156,12 @@ propogate_observers_across_stops <- function(mbbs_county) {
 #' @param mbbs_county mbbs data.frame
 #' @importFrom dplyr
 #' @export
-process_observers <- function(mbbs_county) {
+process_observers <- function(mbbs_county, county) {
   mbbs_county <- mbbs_county %>% 
     observers_extractor() %>% 
     propogate_observers_across_stops()
   
-  update_observer_table(mbbs_county)
+  update_observer_table(mbbs_county, county)
   
   return(mbbs_county)
 }
