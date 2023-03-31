@@ -22,7 +22,7 @@ mbbs_orange <-
       readr::read_csv("inst/extdata/orange_1999-2009_from_website.csv") %>%
       dplyr::mutate(
         # NOTE: date format is different in orange county data
-        date = lubridate::ymd(date),
+        date = lubridate::mdy(date), #date format here WAS ymd before 
         time = as.character(time)
       ),
     ebird_taxonomy = etax
