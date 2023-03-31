@@ -9,7 +9,7 @@
 #------------------------------------------------------------------------------#
 
 library(magrittr)
-# library(mbbs)
+library(mbbs)
 devtools::load_all()
 
 etax <- get_ebird_taxonomy()
@@ -27,7 +27,8 @@ mbbs_orange <-
       ),
     ebird_taxonomy = etax
   ) %>%
-  combine_site_ebird()
+  combine_site_ebird() %>%
+  process_observers("Orange")
 
 
 # import Durham
@@ -43,7 +44,8 @@ mbbs_durham <-
         ),
     ebird_taxonomy = etax
   ) %>%
-  combine_site_ebird()
+  combine_site_ebird() %>%
+  process_observers("Durham")
 
 # import Chatham
 mbbs_chatham <-
@@ -57,7 +59,8 @@ mbbs_chatham <-
         ),
     ebird_taxonomy = etax
   ) %>%
-  combine_site_ebird()
+  combine_site_ebird() %>%
+  process_observers("Chatham")
 
 # Save results ####
 save(mbbs_orange, file = "data/mbbs_orange.rda")
