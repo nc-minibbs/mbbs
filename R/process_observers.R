@@ -8,7 +8,7 @@
 save_observer_table <- function(observer_table, file = "inst/extdata/observer_conversion_table.csv") {
   observer_table %>% 
     arrange(county, route) %>%
-    write.csv(out, row.names = FALSE)
+    write.csv(file, row.names = FALSE)
 }
 
 
@@ -21,9 +21,6 @@ update_observer_table <- function(mbbs_county, selected_county) {
   
   #load the observer conversion table
   observer_table <- read.csv("inst/extdata/observer_conversion_table.csv", header = T)
-  
-  #lowercase county just in case naming format changes or something
-  selected_county <- tolower(selected_county)
   
   #check if county is on the observer table list
   #check_county_on_list ###not implemented yet
@@ -119,7 +116,7 @@ observers_extractor <- function(mbbs_county) {
   
   #fix unicode 
   mbbs_county$checklist_comments <- mbbs_county$checklist_comments %>%
-    str_replace_all(c("&#61;", " ="), "=")
+    str_replace_all("&#61;| =", "=")
   
   #when checklist comments contain "observer(s)", extract after observer(s) and before a ;
   mbbs_county <- mbbs_county %>% mutate(
@@ -150,7 +147,10 @@ propogate_observers_across_stops <- function(mbbs_county) {
 }
 
 
-
+#' Create survey events dataframe
+#' 
+#' 
+#' 
 
 #' Full workflow for processing observers 
 #' @param mbbs_county mbbs data.frame
@@ -162,6 +162,8 @@ process_observers <- function(mbbs_county, county) {
     propogate_observers_across_stops()
   
   update_observer_table(mbbs_county, county)
+  
+  #survey events
   
   return(mbbs_county)
 }

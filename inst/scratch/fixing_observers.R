@@ -1,25 +1,13 @@
 library(dplyr)
 library(stringr)
 
-#old <- read.csv("inst/extdata/orange_1999-2009_from_website.csv")
-#all old data has observers
-
-#pull up R/process_comments.R and import_ebird_data.R
-#run functions in there
-#grab an ebird file ie any one of the csvs "inst/extdata/MyEBirdData_Orange_20220913.csv"
-#use the comment_workflow() to check out things went
-
-test <- read.csv( "inst/extdata/MyEBirdData_Orange_20220913.csv", header = T)
-test <- test %>% import_ebird_data()
-test <- test %>% rename_ebird_data() 
-comment_workflow(test) #this isn't working yet, getting an "'Str_replace_all' is not an exported object from 'namespace:stringr'" error when trying to run it. Admittedly I'm running things all out of order, should maybe run it as
 #yeah, if ur fixing the comment processer to pull observer correctly, just run the whole database upload again. It's literally fine to do that as many times as needed, we're on a different branch and we'll just merge once this is all updated. 
 
 #check observers in each year
 load("data/mbbs_orange.rda")
 load("data/mbbs_chatham.rda")
 load("data/mbbs_durham.rda")
-obs_only <- mbbs_orange %>% select(year, route_num, stop_num, notes, checklist_comments, observers, mbbs_county)
+
 #easiest part - check year/route/stop1 has observer, if yes give that same observer to all the other year/route/stops
 #let's make a function that can do this for just county - the processing runs on each county individualy so that's the way to go
 #for data QC:
@@ -31,8 +19,6 @@ obs_only <- mbbs_orange %>% select(year, route_num, stop_num, notes, checklist_c
 
 #read in observer table
 observer_table <- read.csv("inst/extdata/observer_conversion_table.csv", header = T)
-#observer_table <- observer_table %>% arrange(county, route)
-#write.csv(observer_table, "inst/extdata/observer_conversion_table.csv", row.names = F)
 
 
 #create test.csv
@@ -93,9 +79,9 @@ update_observer_table <- function(mbbs_county) {
       print(paste("New route/observer combo:",list(rocombos[i,])))
       
       #take input on what the new conversion should be
-      cat("\nWhat should the new primary observer be?:\n
-      Type QUIT to save and exit function,\n
-      TYPE !QUIT to exit function w/o saving,\n
+      cat("\nWhat should the new primary observer be?:
+      Type QUIT to save and exit function,
+      TYPE !QUIT to exit function w/o saving,
       Type NA to not add to conversion table") #change wording
       new_primaryobs <- readline(":")
       
@@ -174,7 +160,7 @@ observers_extractor <- function(mbbs_county) {
   ))
   
   return(mbbs_county)
-  }
+}
 
 load("data/mbbs_orange.rda")
 mbbs_orange <- observers_extractor(mbbs_orange)
@@ -256,6 +242,37 @@ check_county_on_list <- function() {
     else{ return(print("Aborted")); return()}
   }
 }
+
+
+####CREATING SURVEY EVENTS 
+#######3.28.2023
+#process observers then -> 
+load("data/mbbs_orange.rda")
+load("data/mbbs_chatham.rda")
+load("data/mbbs_durham.rda")
+observer_table <- read.csv("inst/extdata/observer_conversion_table.csv")
+mbbs_chatham <- process_observers(mbbs_chatham, "Chatham")
+mbbs_orange <- process_observers(mbbs_orange, "Orange")
+mbbs_durham <- process_observers(mbbs_durham, "Durham")
+
+survey_events <- rbind(mbbs_chatham, mbbs_durham, mbbs_orange) %>%
+  filter(count > 0 | count_raw > 0) %>%
+  mutate(county = case_when(
+    mbbs_county == "orange" ~ "Orange",
+    mbbs_county == "durham" ~ "Durham",
+    mbbs_county == "chatham" ~ "Chatham")) %>% 
+  group_by(county, route_num, year) %>% 
+  mutate(county = str_replace(county, "Wake", "Durham")) %>%
+  summarize(S = n_distinct(common_name), 
+            N = sum(count),
+            observers = observers[!is.na(observers)][1]) %>%
+  left_join(observer_table, by = c("county", "route_num" = "route", "observers"))
+
+#fix NA counties
+#rename wake to durham in code above
+#save mbbs_all as rda in /data
+#county = case_when mbbs_county orange ~ Orange - need to fix this elsewhere
+
 
 check_county_on_list()
 
