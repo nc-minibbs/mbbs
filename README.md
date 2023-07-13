@@ -36,8 +36,9 @@ Habitat data may only be recorded if something's changed from the last years.
       - vehicle information on most but not all routes. To fix this use your discretion, as the surveyor may not have checked for vehicles at all stops, but if all the other stops have v>1, these are likely v=0 stops. If so add v=0 to comments.
 
  5. Are all the routes sorted under the right county? 
-    - Potential error
+    - Potential errors
       - Example: a Durham checklist has been shared to Chatham - if Durham already has the checklist and it's been shared twice, delete the duplicate checklist in the Chatham account. Ebird will make this seem scary! If the checklist is on both accounts it will only be deleted from the one account. If Durham does NOT have the checklist, share the checklist to Durham and then delete the checklist from the Chatham account, or if not possible, get in touch with the surveyor to share the checklist to the Durham account instead. All ebird accounts can Only have checklists from the correct county for the data to process correctly.
+      -  Example: The location of the checklist does not include the county ie: "MBBS, Route=8,,Stop1" rather than something like "MBBS, Orange, Route=8,,Stop1". The dataset column mbbs_county is extracted from the checklist location, and this will cause an error where the data receives an N/A county. To fix, edit the location to the same route/stop, but one of the location names that includes the county. Double-check that the lat/long of the new location is the same. If a better labeled version of the location is not available, you'll need to get in contact with the surveyor. 
 
 #### STEP2: Download the ebird data 
 Now that the data is QC'd, download the ebird data from all the accounts (it will be sent to Allen's email initially) and add it to mbbs/inst/extdata. You'll rename the files to `MyEbirdData_[COUNTY]_[YYYYMMDD]`. _IMPORTANT!_ DO NOT open the files in excel. If you want to check the data open the .csv in R. Opening the files in excel may change the date format and cause errors when processing the data. If you get an error later on relating to an invalid date format, redownload the data.
