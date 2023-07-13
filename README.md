@@ -66,7 +66,9 @@ ie:
 
         import_ebird_data("inst/extdata/MyEBirdData_Orange_YYYYMMDD.csv")
 
-Ensure in changing the code that each line is still reading in correct county's .csv, and that for example the mbbs_orange variable is not now getting the new Durham csv.
+Ensure in changing the code that each line is still reading in correct county's .csv, and that for example the mbbs_orange variable is not now getting the new Durham csv. Now, run the code.
+
+As you import the data for each county, warning messages may appear in the console. ie: "The following year/route don't have either 1 or 20 checklists:". Follow up on these messages - first check for a note in the NC Mini BBS Route Runners sheet (in the sampling events tab), then fix any errors, and finally redownload the data from ebird as necessary.
 
 In lines 61-63 if everything's gone well, we've now updated the mbbs datasets with the new year's info. Open up your file explorer and make sure the date modified matches your current date and that they've been changed successfully. Because we want to create a backup of this specific download, the R script will also automatically create a new csv version labeled with the day's date stored in inst/analysis_data. 
 
