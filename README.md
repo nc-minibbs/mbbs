@@ -36,8 +36,9 @@ Habitat data may only be recorded if something's changed from the last years.
       - vehicle information on most but not all routes. To fix this use your discretion, as the surveyor may not have checked for vehicles at all stops, but if all the other stops have v>1, these are likely v=0 stops. If so add v=0 to comments.
 
  5. Are all the routes sorted under the right county? 
-    - Potential error
-      - Example: a Durham checklist has been shared to Chatham - if Durham already has the checklist and it's been shared twice, delete the duplicate checklist in the Chatham account. Ebird will make this seem scary! If the checklist is on both accounts it will only be deleted from the one account. If Durham does NOT have the checklist, share the checklist to Durham and then delete the checklist from the Chatham account, or if not possible, get in touch with the surveyor to share the checklist to the Durham account instead. All ebird accounts can Only have checklists from the correct county for the data to process correctly.
+    - Potential errors
+      - Example: a Durham checklist has been shared to Chatham - if Durham already has the checklist and it's been shared twice, delete the duplicate checklist in the Chatham account. Ebird will make this seem scary! If the checklist is on both accounts it will only be deleted from the one account. If Durham does NOT have the checklist, share the checklist to Durham and then delete the checklist from the Chatham account, or if not possible, get in touch with the surveyor to share the checklist to the Durham account instead. Determine what county the checklist belongs to based on the name of the checklist ie "MBBS, Durham, Route 1-1" rather than based on the location that ebird gives in the county column on the website. Sometimes checklists that are along county borders are put in the wrong location by ebird (ie: Wake co.) but mbbs_county is extracted from the location name.
+      -  Example: The location of the checklist does not include the county ie: "MBBS, Route=8,,Stop1" rather than something like "MBBS, Orange, Route=8,,Stop1". The dataset column mbbs_county is extracted from the checklist location, and this will cause an error where the data receives an N/A county. To fix, edit the location to the same route/stop, but one of the location names that includes the county. Double-check that the lat/long of the new location is the same. If a better labeled version of the location is not available, you'll need to get in contact with the surveyor. 
 
 #### STEP2: Download the ebird data 
 Now that the data is QC'd, download the ebird data from all the accounts (it will be sent to Allen's email initially) and add it to mbbs/inst/extdata. You'll rename the files to `MyEbirdData_[COUNTY]_[YYYYMMDD]`. _IMPORTANT!_ DO NOT open the files in excel. If you want to check the data open the .csv in R. Opening the files in excel may change the date format and cause errors when processing the data. If you get an error later on relating to an invalid date format, redownload the data.
@@ -65,7 +66,9 @@ ie:
 
         import_ebird_data("inst/extdata/MyEBirdData_Orange_YYYYMMDD.csv")
 
-Ensure in changing the code that each line is still reading in correct county's .csv, and that for example the mbbs_orange variable is not now getting the new Durham csv.
+Ensure in changing the code that each line is still reading in correct county's .csv, and that for example the mbbs_orange variable is not now getting the new Durham csv. Now, run the code.
+
+As you import the data for each county, warning messages may appear in the console. ie: "The following year/route don't have either 1 or 20 checklists:". Follow up on these messages - first check for a note in the NC Mini BBS Route Runners sheet (in the sampling events tab), then fix any errors, and finally redownload the data from ebird as necessary.
 
 In lines 61-63 if everything's gone well, we've now updated the mbbs datasets with the new year's info. Open up your file explorer and make sure the date modified matches your current date and that they've been changed successfully. Because we want to create a backup of this specific download, the R script will also automatically create a new csv version labeled with the day's date stored in inst/analysis_data. 
 
