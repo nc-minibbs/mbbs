@@ -1,7 +1,8 @@
-^renv$
+^renv.*$
 ^renv\.lock$
 ^packrat/
 ^\.Rprofile$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^\.direnv$
