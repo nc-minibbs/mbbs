@@ -255,6 +255,7 @@ mbbs_chatham <- process_observers(mbbs_chatham, "Chatham")
 mbbs_orange <- process_observers(mbbs_orange, "Orange")
 mbbs_durham <- process_observers(mbbs_durham, "Durham")
 
+#survey events
 survey_events <- rbind(mbbs_chatham, mbbs_durham, mbbs_orange) %>%
   filter(count > 0 | count_raw > 0) %>%
   mutate(county = case_when(
@@ -267,6 +268,8 @@ survey_events <- rbind(mbbs_chatham, mbbs_durham, mbbs_orange) %>%
             N = sum(count),
             observers = observers[!is.na(observers)][1]) %>%
   left_join(observer_table, by = c("county", "route_num" = "route", "observers"))
+
+write.csv(survey_events, "C:/git/survey_events.csv", row.names = FALSE)
 
 #fix NA counties
 #rename wake to durham in code above
@@ -286,33 +289,3 @@ ok <- function(mbbs_county){
 ok(test_durham)
 #generate list of unique route numbers + observers
 #check if on conversion table
-
-# Check that routes have exactly 1 or 20 non-owling submissions.
-# TODO: 2020 and after should have 20 submissions
-dt %>%
-  distinct(year, mbbs_county, route_num, stop_num) %>%
-  group_by(year, mbbs_county, route_num) %>%
-  dplyr::summarise(
-    n = dplyr::n(),
-    flag = !(n %in% c(1, 20))
-  ) %>%
-  {
-    x <- .
-    probs <-
-      x[x$flag, ] %>%
-      mutate(
-        desc = glue::glue("{mbbs_county}, {year}, {route_num}")
-      ) %>%
-      pull(desc) %>%
-      paste0(collapse = "\n * ")
-    
-    if (any(x$flag)) {
-      warning(sprintf(
-        "The following year/route don't have either 1 or 20 checklists:\n %s",
-        probs
-      ))
-    }
-  }
-
-dt
-
