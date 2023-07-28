@@ -60,7 +60,8 @@ update_observer_table <- function(mbbs_county, selected_county) {
       cat("\nWhat should the new primary observer be?:
       Type QUIT to save and exit function,
       TYPE !QUIT to exit function w/o saving,
-      Type NA to not add to conversion table") #change wording
+      Type NA to not add to conversion table,
+      but NAs should become ?") #change wording
       new_primaryobs <- readline(":")
       
       if(new_primaryobs == "QUIT") {save_observer_table(observer_table); #save and quit
@@ -70,8 +71,8 @@ update_observer_table <- function(mbbs_county, selected_county) {
       else {
         #add new row to overall observer_table
         observer_table <- observer_table %>% 
-          add_row(county = selected_county,
-                  route = rocombos$route_num[i], 
+          add_row(mbbs_county = selected_county,
+                  route_num = rocombos$route_num[i], 
                   observers = rocombos$observers[i],
                   primary_observer = new_primaryobs)
         #update the county_observer_table so the new info shows up if more than one new observer is going to be added to the route
@@ -147,62 +148,6 @@ propogate_observers_across_stops <- function(mbbs_county) {
 }
 
 
-#' Create survey events dataframe
-#' 
-#' #county, route, year, observers, N, R
-#' leftjoin to observer_table
-#' generate unique observer_ID
-#' note abt why we use envir = parent.frame(), so we use the local environment of import_data (which has the newly updated mbbs_counties) instead of having to load in older versions from the package/reload the folder in case this function gets moved around in import_data and hasn't been saved there yet
-#sorry, open file in all the files - we won't have to do this once editing is done and this is integrated in the workflow
-mbbs_chatham <- mbbs_chatham
-mbbs_orange <- mbbs_orange
-mbbs_durham <- mbbs_durham
-
-#in edits
-update_survey_events <- function(envir = parent.frame()) #{
-  
-  #load in survey list
-  survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE)
-  ex <- ex %>% relocate(mbbs_county, route_num, year, S, N, observers)
-  write.csv(ex, "inst/extdata/survey_list.csv", row.names = FALSE)
-  
-  #generate the list of the latest year's surveys
-  latest_surveys <- bind_rows(mbbs_chatham, mbbs_durham, mbbs_orange)
-    #maybe write another function to add the latest year's rows from each county, and don't both rbinding since it's causing problems. Just run a function three times.
-
-  #if latest year is already on survey_list, don't update
-  
-  #load in observer table
-  observer_table <- read.csv("inst/extdata/observer_conversion_table.csv", header = TRUE)
-  
-  
-  
-#}
-#need to just update survey events, rather than generating it wholesale (b/c of the missing data)
-
-#IF we only need to update then
-#read in survey_list
-#if survey_list$max(year) == mbbs_chatham$year max then do nothing
-#else, 
-
-  ####HOW I UPDATED TO ADD S,N TO TABLE
-survey_events <- rbind(mbbs_chatham, mbbs_durham, mbbs_orange) %>%
-  filter(count > 0 | count_raw > 0) %>%
-  group_by(mbbs_county, route_num, year)%>%
-  summarize(S = n_distinct(common_name), 
-            N = sum(count),
-            observers = observers[!is.na(observers)][1])
-survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE)
-ex <- left_join(survey_list, survey_events, by = c("mbbs_county", "route_num", "year"))
-ex <- ex %>% relocate(mbbs_county, route_num, year, S, N, observers)
-#write.csv(ex, "inst/extdata/survey_list.csv", row.names = FALSE)
-#in future, make left_join smooth and also then filter just to the latest max yr
-#%>%
-  filter(year == max(year))#%>%
-  left_join(observer_table, by = c("county", "route_num" = "route", "observers"))
-
-
-
 #' Full workflow for processing observers 
 #' @param mbbs_county mbbs data.frame
 #' @importFrom dplyr
@@ -214,7 +159,61 @@ process_observers <- function(mbbs_county, county) {
   
   update_observer_table(mbbs_county, county)
   
-  #survey events
-  
   return(mbbs_county)
 }
+
+
+#' Updates survey_list if needed by rbinding the new year, then updates survey_events
+#' @importFrom dplyr filter group_by summarize ungroup arrange left_join mutate select
+#' @importFrom stringr str_to_lower
+#' @param envir uses the local environment of import_data 
+update_survey_events <- function(envir = parent.frame()) {
+  
+  #load in survey list
+  survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE)
+  
+  #generate the list of the latest year's surveys
+  options(dplyr.summarise.inform = FALSE) #suppress dplyr "has grouped outby by"
+  latest_surveys <- rbind(mbbs_chatham, mbbs_durham, mbbs_orange) %>%
+    filter(count > 0 | count_raw > 0) %>%
+    group_by(mbbs_county, route_num, year)%>%
+    summarize(S = n_distinct(common_name), 
+              N = sum(count),
+              observers = observers[!is.na(observers)][1]) %>%
+    filter(year == max(year)) %>%
+    ungroup()
+  options(dplyr.summarise.inform = TRUE) #return this to normal
+  
+  #if the latest year is already on the survey_list, don't update. Otherwise, add in the new rows to survey_list and save the updated list
+  if(max(latest_surveys$year) <= max(survey_list$year)) {
+    cat(max(latest_surveys$year), "already in survey_list") #do nothing
+  } else {
+    
+    cat(max(latest_surveys$year), "data has been added to survey_list")
+    survey_list <- rbind(survey_list, latest_surveys)
+    survey_list <- survey_list %>% 
+      arrange(mbbs_county, route_num, year)
+    write.csv(survey_list, "inst/extdata/survey_list.csv", row.names = FALSE)
+    
+  }
+
+  #load in observer table
+  observer_table <- read.csv("inst/extdata/observer_conversion_table.csv", header = TRUE)
+  #Observer table may be updated several times during a year. So we regenerate and update survey_events even when we don't update(by rbinding new columns to) survey_list. 
+  
+  #for this moment...
+  observer_table$mbbs_county <- str_to_lower(observer_table$mbbs_county)
+  
+  mbbs_survey_events <- left_join(survey_list, observer_table, by = c("mbbs_county", "route_num", "observers")) %>%
+    group_by(primary_observer) %>%
+    mutate(observer_ID = cur_group_id()) %>%   #add observer ID
+    ungroup() %>%
+    select(-observers, -primary_observer) #remove the observers and primary_observer column to anonymize information
+  
+  #save survey_events
+  save(mbbs_survey_events, file = "data/mbbs_survey_events.rda")
+  cat("\nsurvey_events updated")
+}
+
+
+

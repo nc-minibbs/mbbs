@@ -66,6 +66,7 @@ mbbs_chatham <-
 save(mbbs_orange, file = "data/mbbs_orange.rda")
 save(mbbs_durham, file = "data/mbbs_durham.rda")
 save(mbbs_chatham, file = "data/mbbs_chatham.rda")
+update_survey_events()
 
 # Create CSV version ####
 write.csv(mbbs_orange, file = sprintf(
