@@ -7,7 +7,7 @@
 #' @importFrom dplyr arrange
 save_observer_table <- function(observer_table, file = "inst/extdata/observer_conversion_table.csv") {
   observer_table %>% 
-    arrange(county, route) %>%
+    arrange(mbbs_county, route_num) %>%
     write.csv(file, row.names = FALSE)
 }
 
@@ -22,11 +22,11 @@ update_observer_table <- function(mbbs_county, selected_county) {
   #load the observer conversion table
   observer_table <- read.csv("inst/extdata/observer_conversion_table.csv", header = TRUE)
   
-  #check if county is on the observer table list
-  #check_county_on_list ###not implemented yet
+  #load survey events
+  survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE) %>% select(-S, -N)
   
   #filter the observer conversion table to just one county
-  county_observer_table <- observer_table %>% filter(county == selected_county)
+  county_observer_table <- observer_table %>% filter(mbbs_county == selected_county)
   
   #generate list of unique route number/observer combinations from the mbbs_county dataframe
   rocombos <- as.data.frame(unique(mbbs_county[c("route_num","observers")]))
@@ -35,7 +35,7 @@ update_observer_table <- function(mbbs_county, selected_county) {
   for(i in 1:nrow(rocombos)) {
     
     #filter observer table to same route and name
-    if(county_observer_table %>% filter(route == rocombos$route_num[i]) %>% filter(observers == rocombos$observers[i]) %>% nrow() > 0) { } #route/observer combo already on table, do nothing
+    if(county_observer_table %>% filter(route_num == rocombos$route_num[i]) %>% filter(observers == rocombos$observers[i]) %>% nrow() > 0) { } #route/observer combo already on table, do nothing
     else { #this route/observer combo is not already on the conversion table
       
       #print border
@@ -44,14 +44,9 @@ update_observer_table <- function(mbbs_county, selected_county) {
       #print the new route/observer combo
       print(paste("New route/observer combo:",list(rocombos[i,])))
       
-      #filter mbbs_county to route, table(observer,year)
+      #print the survey history for the route
       print("Survey history")
-      route_mbbs_county <- mbbs_county %>% filter(route_num == rocombos$route_num[i])
-      print(table(route_mbbs_county$observers, route_mbbs_county$year))
-      
-      #print that route's current conversion table
-      print("Current conversion table for this route:")
-      print(county_observer_table %>% filter(route == rocombos$route_num[i]))
+      print(survey_list %>% filter(route_num == rocombos$route_num[i]) %>% filter(mbbs_county == selected_county))
       
       #reprint the new route/observer combo
       print(paste("New route/observer combo:",list(rocombos[i,])))
@@ -60,8 +55,7 @@ update_observer_table <- function(mbbs_county, selected_county) {
       cat("\nWhat should the new primary observer be?:
       Type QUIT to save and exit function,
       TYPE !QUIT to exit function w/o saving,
-      Type NA to not add to conversion table,
-      but NAs should become ?") #change wording
+      Type NA to not add to conversion table") #change wording
       new_primaryobs <- readline(":")
       
       if(new_primaryobs == "QUIT") {save_observer_table(observer_table); #save and quit
@@ -76,28 +70,8 @@ update_observer_table <- function(mbbs_county, selected_county) {
                   observers = rocombos$observers[i],
                   primary_observer = new_primaryobs)
         #update the county_observer_table so the new info shows up if more than one new observer is going to be added to the route
-        county_observer_table <- observer_table %>% filter(county == selected_county)
+        county_observer_table <- observer_table %>% filter(mbbs_county == selected_county)
       } #end else statement about adding a new primary observer or not
-      
-      #give user the option to edit a row that already exists in that route
-      # edit_row <- readline("Do you want to edit an existing row for this route?
-      #                       Type Y to edit,
-      #                       Type anything else to move to next new route/obersever combo")
-      # if(edit_row == "Y") {
-      #   edit_row <- readline("Type the full observers column to be changed:")
-      #   #check that observers column exists, quit if it doesn't
-      #   if(county_observer_table %>% filter(route == rocombos$route_num[i]) %>% 
-      #                                filter(observers == edit_row) %>% nrow() > 0) {
-      #   new_primaryobs <- readline("What should the new primary observer be?:")
-      #   #mutate that row
-      #   observer_table <- observer_table %>% mutate(
-      #                     primary_observer = replace(primary_observer, 
-      #                                                county == selected_county & #match county
-      #                                                route == rocombos$route_num[i] & #& route
-      #                                                observers == edit_row, #& observers
-      #                                                new_primaryobs)) #replace w/new primaryobs
-      #   } else {print("Cannot find observers as typed, moving to next new route/observer combo" )}
-      
     } #end else statement about this observer/route combo not being on the conversion table
   }  #end for loop (done going through all the rocombos)
   
@@ -201,14 +175,11 @@ update_survey_events <- function(envir = parent.frame()) {
   observer_table <- read.csv("inst/extdata/observer_conversion_table.csv", header = TRUE)
   #Observer table may be updated several times during a year. So we regenerate and update survey_events even when we don't update(by rbinding new columns to) survey_list. 
   
-  #for this moment...
-  observer_table$mbbs_county <- str_to_lower(observer_table$mbbs_county)
-  
   mbbs_survey_events <- left_join(survey_list, observer_table, by = c("mbbs_county", "route_num", "observers")) %>%
     group_by(primary_observer) %>%
     mutate(observer_ID = cur_group_id()) %>%   #add observer ID
-    ungroup() %>%
-    select(-observers, -primary_observer) #remove the observers and primary_observer column to anonymize information
+    ungroup() #%>% Removing this for now for testing purposes
+    #select(-observers, -primary_observer) #remove the observers and primary_observer column to anonymize information
   
   #save survey_events
   save(mbbs_survey_events, file = "data/mbbs_survey_events.rda")

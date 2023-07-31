@@ -8,6 +8,80 @@ load("data/mbbs_orange.rda")
 load("data/mbbs_chatham.rda")
 load("data/mbbs_durham.rda")
 
+
+update_observer_table <- function(mbbs_county, selected_county) {
+  
+  #load the observer conversion table
+  observer_table <- read.csv("inst/extdata/observer_conversion_table.csv", header = TRUE)
+  
+  #load survey events
+  survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE) %>% select(-S, -N)
+  
+  #filter the observer conversion table to just one county
+  county_observer_table <- observer_table %>% filter(mbbs_county == selected_county)
+  
+  #generate list of unique route number/observer combinations from the mbbs_county dataframe
+  rocombos <- as.data.frame(unique(mbbs_county[c("route_num","observers")]))
+  
+  #check if each row of the newobsrtcombos is already on the conversion table
+  for(i in 1:nrow(rocombos)) {
+    
+    #filter observer table to same route and name
+    if(county_observer_table %>% filter(route_num == rocombos$route_num[i]) %>% filter(observers == rocombos$observers[i]) %>% nrow() > 0) { } #route/observer combo already on table, do nothing
+    else { #this route/observer combo is not already on the conversion table
+      
+      #print border
+      print("------------------------------------------------")
+      
+      #print the new route/observer combo
+      print(paste("New route/observer combo:",list(rocombos[i,])))
+      
+      #print the survey history for the route
+      print("Survey history")
+      print(survey_list %>% filter(route_num == rocombos$route_num[i]) %>% filter(mbbs_county == selected_county))
+      
+      #reprint the new route/observer combo
+      print(paste("New route/observer combo:",list(rocombos[i,])))
+      
+      #take input on what the new conversion should be
+      cat("\nWhat should the new primary observer be?:
+      Type QUIT to save and exit function,
+      TYPE !QUIT to exit function w/o saving,
+      Type NA to not add to conversion table,
+      if the observer is unfixably unknown the new primary observer should be '?'") #change wording
+      new_primaryobs <- readline(":")
+      
+      if(new_primaryobs == "QUIT") {save_observer_table(observer_table); #save and quit
+        return("Function Ended")}
+      if(new_primaryobs == "!QUIT") {return("Function Ended")} #quit without saving
+      if(new_primaryobs == "NA") {}#do nothing
+      else {
+        #add new row to overall observer_table
+        observer_table <- observer_table %>% 
+          add_row(mbbs_county = selected_county,
+                  route_num = rocombos$route_num[i], 
+                  observers = rocombos$observers[i],
+                  primary_observer = new_primaryobs)
+        #update the county_observer_table so the new info shows up if more than one new observer is going to be added to the route
+        county_observer_table <- observer_table %>% filter(mbbs_county == selected_county)
+      } #end else statement about adding a new primary observer or not
+    } #end else statement about this observer/route combo not being on the conversion table
+  }  #end for loop (done going through all the rocombos)
+  
+  #save updated version of observer conversion table
+  save_observer_table(observer_table)
+  print("No more new route/observer combos. Done!")
+} #end function
+update_observer_table(mbbs_chatham, "chatham")
+
+#currently saves to testing
+save_observer_table <- function(observer_table, file = "C:/git/observer_conversion_tableTESTING.csv") {
+  observer_table %>% 
+    arrange(mbbs_county, route_num) %>%
+    write.csv(file, row.names = FALSE)
+}
+
+
 #easiest part - check year/route/stop1 has observer, if yes give that same observer to all the other year/route/stops
 #let's make a function that can do this for just county - the processing runs on each county individualy so that's the way to go
 #for data QC:
@@ -57,7 +131,7 @@ update_observer_table <- function(mbbs_county) {
   for(i in 1:nrow(rocombos)) {
     
     #filter observer table to same route and name
-    if(county_observer_table %>% filter(route == rocombos$route_num[i]) %>% filter(observers == rocombos$observers[i]) %>% nrow() > 0) { } #route/observer combo already on table, do nothing
+    if(county_observer_table %>% filter(route_num == rocombos$route_num[i]) %>% filter(observers == rocombos$observers[i]) %>% nrow() > 0) { } #route/observer combo already on table, do nothing
     else { #this route/observer combo is not already on the conversion table
       
       #print border

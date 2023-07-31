@@ -28,7 +28,7 @@ mbbs_orange <-
     ebird_taxonomy = etax
   ) %>%
   combine_site_ebird() %>%
-  process_observers("Orange")
+  process_observers("orange")
 
 
 # import Durham
@@ -45,7 +45,7 @@ mbbs_durham <-
     ebird_taxonomy = etax
   ) %>%
   combine_site_ebird() %>%
-  process_observers("Durham")
+  process_observers("durham")
 
 # import Chatham
 mbbs_chatham <-
@@ -60,7 +60,7 @@ mbbs_chatham <-
     ebird_taxonomy = etax
   ) %>%
   combine_site_ebird() %>%
-  process_observers("Chatham")
+  process_observers("chatham")
 
 # Save results ####
 save(mbbs_orange, file = "data/mbbs_orange.rda")
