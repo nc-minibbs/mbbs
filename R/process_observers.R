@@ -47,6 +47,8 @@ update_observer_table <- function(mbbs_county, selected_county) {
       #print the survey history for the route
       print("Survey history")
       print(survey_list %>% filter(route_num == rocombos$route_num[i]) %>% filter(mbbs_county == selected_county))
+      print("----")
+      print(county_observer_table %>% filter(route_num == rocombos$route_num[i]))
       
       #reprint the new route/observer combo
       print(paste("New route/observer combo:",list(rocombos[i,])))
@@ -65,7 +67,7 @@ update_observer_table <- function(mbbs_county, selected_county) {
       else {
         #add new row to overall observer_table
         observer_table <- observer_table %>% 
-          add_row(mbbs_county = selected_county,
+          dplyr::add_row(mbbs_county = selected_county,
                   route_num = rocombos$route_num[i], 
                   observers = rocombos$observers[i],
                   primary_observer = new_primaryobs)
@@ -98,11 +100,11 @@ observers_extractor <- function(mbbs_county) {
     observers = case_when(
       is.na(observers) == FALSE ~ observers, #if observer column exists leave it
       #if observer column is NA, extract from comments after observer and before ;
-      str_detect(checklist_comments,".*[oO]bserver(s)?=") == TRUE ~
+      stringr::str_detect(checklist_comments,".*[oO]bserver(s)?=") == TRUE ~
         sub(".*[oO]bserver(s)?=", "", checklist_comments) %>% #extract after observer
         {sub(";.*", "", .)}, #extract before ;
       #if observer column is NA but comments doesn't include observers, leave as is
-      str_detect(checklist_comments,".*[oO]bserver(s)?=") == FALSE ~ observers
+      stringr::str_detect(checklist_comments,".*[oO]bserver(s)?=") == FALSE ~ observers
     ))
   
   return(mbbs_county)
@@ -138,7 +140,7 @@ process_observers <- function(mbbs_county, county) {
 
 
 #' Updates survey_list if needed by rbinding the new year, then updates survey_events
-#' @importFrom dplyr filter group_by summarize ungroup arrange left_join mutate select
+#' @importFrom dplyr filter group_by summarize ungroup arrange left_join mutate select ungroup n_distinct cur_group_id
 #' @importFrom stringr str_to_lower
 #' @param envir uses the local environment of import_data 
 update_survey_events <- function(envir = parent.frame()) {
@@ -151,11 +153,11 @@ update_survey_events <- function(envir = parent.frame()) {
   latest_surveys <- rbind(mbbs_chatham, mbbs_durham, mbbs_orange) %>%
     filter(count > 0 | count_raw > 0) %>%
     group_by(mbbs_county, route_num, year)%>%
-    summarize(S = n_distinct(common_name), 
+    dplyr::summarize(S = dplyr::n_distinct(common_name), 
               N = sum(count),
               observers = observers[!is.na(observers)][1]) %>%
     filter(year == max(year)) %>%
-    ungroup()
+    dplyr::ungroup()
   options(dplyr.summarise.inform = TRUE) #return this to normal
   
   #if the latest year is already on the survey_list, don't update. Otherwise, add in the new rows to survey_list and save the updated list
@@ -177,8 +179,8 @@ update_survey_events <- function(envir = parent.frame()) {
   
   mbbs_survey_events <- left_join(survey_list, observer_table, by = c("mbbs_county", "route_num", "observers")) %>%
     group_by(primary_observer) %>%
-    mutate(observer_ID = cur_group_id()) %>%   #add observer ID
-    ungroup() #%>% Removing this for now for testing purposes
+    mutate(observer_ID = dplyr::cur_group_id()) %>%   #add observer ID
+    dplyr::ungroup() #%>% Removing this for now for testing purposes
     #select(-observers, -primary_observer) #remove the observers and primary_observer column to anonymize information
   
   #save survey_events
