@@ -12,7 +12,6 @@ rename_ebird_data <- function(dt) {
     tax_order   = Taxonomic.Order,
     count_raw   = Count,
     state       = State.Province,
-    county      = County,
     loc         = Location,
     locid       = Location.ID,
     lat         = Latitude,
@@ -129,7 +128,7 @@ exclude_submissions <- function(dt, exclusions) {
 #' Import an ebird export into R
 #' @param path path/to/ebird_export.csv
 #' @param run_checks run integrity checks or not?
-#' @importFrom dplyr left_join as_tibble if_else mutate
+#' @importFrom dplyr left_join as_tibble if_else mutate select
 #' @importFrom stringr str_match
 #' @importFrom utils read.csv
 #' @export
