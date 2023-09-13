@@ -124,7 +124,7 @@ propogate_observers_across_stops <- function(mbbs_county) {
 
 #' Full workflow for processing observers 
 #' @param mbbs_county mbbs data.frame
-#' @importFrom dplyr
+#' @importFrom dplyr %>%
 #' @export
 process_observers <- function(mbbs_county, county) {
   mbbs_county <- mbbs_county %>% 

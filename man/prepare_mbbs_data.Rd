@@ -18,7 +18,7 @@ website for a single county.}
 of ebird taxonomy}
 }
 \value{
-a `list` containing `site` (processed "website" data) and `ebird` 
+a `list` containing `site` (processed "website" data) and `ebird`
    (processed ebird data)
 }
 \description{

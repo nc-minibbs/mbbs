@@ -8,11 +8,13 @@ make_comment_extractor(
   field_pattern,
   data_pattern,
   delimiter = ";",
-  post = function(x, ...) {     ifelse(length(x) == 0, NA_character_, x) }
+  post = function(x, ...) {
+     ifelse(length(x) == 0, NA_character_, x)
+ }
 )
 }
 \arguments{
-\item{field_pattern}{a regex defining the valid pattern for the name of the 
+\item{field_pattern}{a regex defining the valid pattern for the name of the
 field (e.g. observer) from eBird comments}
 
 \item{data_pattern}{a regex defining the valid pattern for the field's data}
