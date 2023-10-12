@@ -10,7 +10,7 @@ check_number_of_stops(dt)
 \item{dt}{a `data.frame` imported using `import_ebird_data`}
 }
 \value{
-a `data.frame` with observations that have a number of stops *other* 
+a `data.frame` with observations that have a number of stops *other*
   than 1 or 20
 }
 \description{

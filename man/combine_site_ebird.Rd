@@ -4,7 +4,7 @@
 \alias{combine_site_ebird}
 \title{Combine MBBS site data with eBird data}
 \usage{
-combine_site_ebird(x, at_year = 2009)
+combine_site_ebird(x, at_year = 2010)
 }
 \arguments{
 \item{x}{the output of `prepare_mbbs_data`}

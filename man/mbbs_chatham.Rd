@@ -5,7 +5,7 @@
 \alias{mbbs_chatham}
 \title{Data from the Mini-Bird Breeding Survey}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 14967 rows and 35 columns.
+An object of class \code{grouped_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 19841 rows and 33 columns.
 }
 \usage{
 mbbs_chatham

@@ -9,7 +9,7 @@
 #------------------------------------------------------------------------------#
 
 library(magrittr)
-# library(mbbs)
+library(mbbs)
 devtools::load_all()
 
 etax <- get_ebird_taxonomy()
@@ -22,12 +22,13 @@ mbbs_orange <-
       readr::read_csv("inst/extdata/orange_1999-2009_from_website.csv") %>%
       dplyr::mutate(
         # NOTE: date format is different in orange county data
-        date = lubridate::ymd(date),
+        date = lubridate::mdy(date), #date format here WAS ymd before 
         time = as.character(time)
       ),
     ebird_taxonomy = etax
   ) %>%
-  combine_site_ebird()
+  combine_site_ebird() %>%
+  process_observers("orange")
 
 
 # import Durham
@@ -43,7 +44,8 @@ mbbs_durham <-
         ),
     ebird_taxonomy = etax
   ) %>%
-  combine_site_ebird()
+  combine_site_ebird() %>%
+  process_observers("durham")
 
 # import Chatham
 mbbs_chatham <-
@@ -57,12 +59,14 @@ mbbs_chatham <-
         ),
     ebird_taxonomy = etax
   ) %>%
-  combine_site_ebird()
+  combine_site_ebird() %>%
+  process_observers("chatham")
 
 # Save results ####
 save(mbbs_orange, file = "data/mbbs_orange.rda")
 save(mbbs_durham, file = "data/mbbs_durham.rda")
 save(mbbs_chatham, file = "data/mbbs_chatham.rda")
+update_survey_events()
 
 # Create CSV version ####
 write.csv(mbbs_orange, file = sprintf(
