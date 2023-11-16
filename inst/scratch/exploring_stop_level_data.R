@@ -1,6 +1,7 @@
 ##Exploring stop-level data
 
 library(dplyr)
+library(stringr)
 
 load("data/mbbs_orange.rda")
 load("data/mbbs_durham.rda")
@@ -26,3 +27,5 @@ mbbs_all <- mbbs_all %>%
 table(mbbs_all$stop_num, mbbs_all$year)
 #so, 18211 records with all the stops, buuuut basically all from 2020+
 #and plenty of cases where stop_num hasn't been pulled in the recent years too
+
+
