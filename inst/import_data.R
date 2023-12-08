@@ -62,10 +62,18 @@ mbbs_chatham <-
   combine_site_ebird() %>%
   process_observers("chatham")
 
+# Combine counties
+mbbs <- bind_rows(mbbs_orange, mbbs_chatham, mbbs_durham) %>%
+  mutate(route_ID = route_num + case_when(
+    mbbs_county == "orange" ~ 100L,
+    mbbs_county == "durham" ~ 200L,
+    mbbs_county == "chatham" ~ 300L))
+
 # Save results ####
 save(mbbs_orange, file = "data/mbbs_orange.rda")
 save(mbbs_durham, file = "data/mbbs_durham.rda")
 save(mbbs_chatham, file = "data/mbbs_chatham.rda")
+save(mbbs, file = "data/mbbs.rda")
 update_survey_events()
 
 # Create CSV version ####
