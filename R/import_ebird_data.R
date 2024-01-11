@@ -23,7 +23,8 @@ rename_ebird_data <- function(dt) {
     area_covered = Area.Covered..ha.,
     all_obs     = All.Obs.Reported,
     breed_code  = Breeding.Code,
-    checklist_comments = Checklist.Comments
+    checklist_comments = Checklist.Comments,
+    species_comments = Observation.Details 
   )
 }
 
