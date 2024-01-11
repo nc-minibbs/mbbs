@@ -5,7 +5,7 @@
 #' Arranges and saves a new version of the observer table 
 #' @param observer_table observer table data.frame
 #' @importFrom dplyr arrange
-save_observer_table <- function(observer_table, file = "inst/extdata/observer_conversion_table.csv") {
+save_observer_table <- function(observer_table, file = "inst/extdata/main_observer_conversion_table.csv") {
   observer_table %>% 
     arrange(mbbs_county, route_num) %>%
     write.csv(file, row.names = FALSE)
@@ -20,7 +20,7 @@ save_observer_table <- function(observer_table, file = "inst/extdata/observer_co
 update_observer_table <- function(mbbs_county, selected_county) {
   
   #load the observer conversion table
-  observer_table <- read.csv("inst/extdata/observer_conversion_table.csv", header = TRUE)
+  observer_table <- read.csv("inst/extdata/main_observer_conversion_table.csv", header = TRUE)
   
   #load survey events
   survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE) %>% select(-S, -N)
@@ -174,7 +174,7 @@ update_survey_events <- function(envir = parent.frame()) {
   }
 
   #load in observer table
-  observer_table <- read.csv("inst/extdata/observer_conversion_table.csv", header = TRUE)
+  observer_table <- read.csv("inst/extdata/main_observer_conversion_table.csv", header = TRUE)
   #Observer table may be updated several times during a year. So we regenerate and update survey_events even when we don't update(by rbinding new columns to) survey_list. 
   
   mbbs_survey_events <- left_join(survey_list, observer_table, by = c("mbbs_county", "route_num", "observers")) %>%
