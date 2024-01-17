@@ -19,8 +19,11 @@ save_observer_table <- function(observer_table, file = "inst/extdata/main_observ
 #' @importFrom dplyr filter add_row
 update_observer_table <- function(mbbs_county, selected_county) {
   
-  #load the observer conversion table
+  #load the main observer conversion table
   observer_table <- read.csv("inst/extdata/main_observer_conversion_table.csv", header = TRUE)
+  
+  #load the mini observer conversion table (for obs1,obs2,obs3)
+  mini_observer_table <- read.csv("inst/extdata/mini_observer_conversion_table.csv", header = TRUE)
   
   #load survey events
   survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE) %>% select(-S, -N)
@@ -34,8 +37,13 @@ update_observer_table <- function(mbbs_county, selected_county) {
   #check if each row of the newobsrtcombos is already on the conversion table
   for(i in 1:nrow(rocombos)) {
     
-    #filter observer table to same route and name
-    if(county_observer_table %>% filter(route_num == rocombos$route_num[i]) %>% filter(observers == rocombos$observers[i]) %>% nrow() > 0) { } #route/observer combo already on table, do nothing
+    #filter observer table to same route and name as the conversion table. If there's a row, it's already on the conversion table
+    if(county_observer_table %>% filter(route_num == rocombos$route_num[i]) %>% filter(observers == rocombos$observers[i]) %>% nrow() > 0) { } 
+      #route/observer combo already on table, do nothing
+    #if the observer of the rocombo is NA and it's already on the survey_list, we don't need to update anything. This just represents that there's a row in the mbbs dataframe where observers did not fully propagate, and that's fine. 
+    if(is.na(rocombos$observers[i]) == TRUE & ) {
+      #row where observers did not fully propagate, but everything is on the survey_events. Do nothing
+    }
     else { #this route/observer combo is not already on the conversion table
       
       #print border
