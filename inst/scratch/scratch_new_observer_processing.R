@@ -85,7 +85,7 @@ observer_table <- convert_based_on_mini_table(observer_table, mini_observer_tabl
 obs_columns <- c("obs1", "obs2", "obs3")
 
 #combine obs1 obs2 and obs3 into the final observers
-observer_table <- observer_table %>% rowwise() %>% mutate(obs_sorted = paste(sort(c_across(all_of(obs_columns))), collapse = ", "))
+observer_table <- observer_table %>% rowwise() %>% mutate(standardized_observers = paste(sort(c_across(all_of(obs_columns))), collapse = ", "))
 
 
 
