@@ -12,7 +12,7 @@ save_observer_table <- function(observer_table, file = "inst/extdata/main_observ
 }
 
 
-#' Interactive program to update the observer table when new route 
+#' Interactive program to update both the main observer table and mini observer table when new route 
 #' + observer combos are present
 #' @param mbbs_county mbbs data.frame, must end in and underscore then the name of the county ie: _durham, _orange, _chatham
 #' @param selected_county county that the observer table should be filtered on
@@ -34,17 +34,42 @@ update_observer_table <- function(mbbs_county, selected_county) {
   #generate list of unique route number/observer combinations from the mbbs_county dataframe
   rocombos <- as.data.frame(unique(mbbs_county[c("route_num","observers")]))
   
+  #create a placeholder we can use in evaluating any NA rocombos
+  placeholder_na_rows <- mbbs_county[1,]
+  
   #check if each row of the newobsrtcombos is already on the conversion table
   for(i in 1:nrow(rocombos)) {
     
     #filter observer table to same route and name as the conversion table. If there's a row, it's already on the conversion table
     if(county_observer_table %>% filter(route_num == rocombos$route_num[i]) %>% filter(observers == rocombos$observers[i]) %>% nrow() > 0) { } 
       #route/observer combo already on table, do nothing
-    #if the observer of the rocombo is NA and it's already on the survey_list, we don't need to update anything. This just represents that there's a row in the mbbs dataframe where observers did not fully propagate, and that's fine. 
-    if(is.na(rocombos$observers[i]) == TRUE & ) {
-      #row where observers did not fully propagate, but everything is on the survey_events. Do nothing
-    }
-    else { #this route/observer combo is not already on the conversion table
+    #if the observer for this rocombo is NA, evaluate whether it's fine or throw an error if a year genuinely has no recorded observer either in another row or on the survey_list. 
+    if(is.na(rocombos$observers[i]) == TRUE) {
+      #if the observer of this rocombo is NA (oh no! missing data?), evaluate if it should be ignored or should throw an error. 
+      ##!!!!!!!!!!!!Right now this is SUPER messy and hard to read with this all in here. This should be it's own function that gets called within this.!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      #replace the placeholder_na_rows with actual na rows we're trying to represent from the mbbs_county
+      placeholder_na_rows <- mbbs_county %>% #take county df
+        filter(is.na(observers) == TRUE) %>% #filter to the NA rows
+        filter(route_num == rocombos$route_num[i]) %>% #filter to the NA rows for this route
+        anti_join(survey_list, join_by(mbbs_county, route_num, year)) #only keep any rows with NA observers if that route/year combo is not already represented on the survey list.
+      
+      if(nrow(placeholder_na_rows) == 0) {
+        #the NA observer seen on the rocombos[i] has been corrected elsewhere, it's on the survey_list. Do nothing.
+      } else {
+        #this NA observer is not already on the survey list. This is probably because it's a new year, and survey_list gets updated after observer_conversion_table. This is only a problem if in this new year on this route, ALL the 'observers' columns are NA and we have NO recorded observer anywhere in the data. We need to evaluate. 
+        #replace placeholder, will contains rows if the route/year has any recorded observer information. Will have no rows if the route/year is completely lacking data in the observer column
+        placeholder_na_rows <- mbbs_county %>% #take the county df
+          filter(year %in% placeholder_na_rows$year) %>% #filter to the year we've got NA values
+          filter(route_num == rocombos$route_num[i]) %>% #filter to the route in question
+          filter(!is.na(observers)) #filter to any rows where in this year/route combo, observers is NOT NA
+        
+          if(nrow(placeholder_na_rows) == 0) {
+            print(paste("ERROR!", placeholder_na_rows$year, "only has NA values for observers and no corrected record in mbbs_survey_events. The ebird entry for stop 1 is missing observer information."))
+          }
+        
+      } else {}
+        #No need to worry about this NA rocombos. Move on to the next rocombo
+    } else { #this route/observer combo is not already on the conversion table, and is not NA
       
       #print border
       print("------------------------------------------------")
@@ -65,7 +90,7 @@ update_observer_table <- function(mbbs_county, selected_county) {
       cat("\nWhat should the new primary observer be?:
       Type QUIT to save and exit function,
       TYPE !QUIT to exit function w/o saving,
-      Type NA to not add to conversion table") #change wording
+      Type NA to skip to next without adding to conversion table") #change wording
       new_primaryobs <- readline(":")
       
       if(new_primaryobs == "QUIT") {save_observer_table(observer_table); #save and quit
