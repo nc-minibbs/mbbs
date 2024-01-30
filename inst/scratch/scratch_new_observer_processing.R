@@ -31,6 +31,26 @@ obs_list <- unique(obs_list)
 #that's the input_name for mini_observer_conversion_table
 mini_observer_table <- read.csv("C:/git/mbbs/inst/extdata/mini_observer_conversion_table.csv", header = TRUE)
 
+#take input for the out_put name if it's not yet on the mini_conversion_table
+input_name <- "example";output_name <- "example";
+temp_row <- data.frame(input_name, output_name)
+for(a in 1:length(obs_list)) {
+  if(mini_observer_table %>% filter(input_name == obs_list[a]) %>% nrow() > 0) { 
+    #name is already on the list, do nothing
+  } else {
+      #name is not already on list, take input for the output name
+    print("New observer name needs standardizing for the mini_observer_conversion_table:")
+    print(mini_observer_table$input_name[a])
+    print("What should this be converted to? Enter a standardized name or NA:")
+    temp_row$input_name <- obs_list[a]
+    temp_row$output_name <- readline(":")
+    
+    #add to mini_observer_table
+    mini_observer_table <- rbind(mini_observer_table, temp_row)
+    }
+  
+}
+
 #then take input for the output_name
 #for(a in 1:length(obs_list)){
 #  #set input name
