@@ -34,41 +34,18 @@ update_observer_table <- function(mbbs_county, selected_county) {
   #generate list of unique route number/observer combinations from the mbbs_county dataframe
   rocombos <- as.data.frame(unique(mbbs_county[c("route_num","observers")]))
   
-  #create a placeholder we can use in evaluating any NA rocombos
-  placeholder_na_rows <- mbbs_county[1,]
-  
   #check if each row of the newobsrtcombos is already on the conversion table
   for(i in 1:nrow(rocombos)) {
     
     #filter observer table to same route and name as the conversion table. If there's a row, it's already on the conversion table
-    if(county_observer_table %>% filter(route_num == rocombos$route_num[i]) %>% filter(observers == rocombos$observers[i]) %>% nrow() > 0) { } 
+    if(county_observer_table %>% filter(route_num == rocombos$route_num[i]) %>% filter(observers == rocombos$observers[i]) %>% nrow() > 0) { 
       #route/observer combo already on table, do nothing
+    
     #if the observer for this rocombo is NA, evaluate whether it's fine or throw an error if a year genuinely has no recorded observer either in another row or on the survey_list. 
-    if(is.na(rocombos$observers[i]) == TRUE) {
-      #if the observer of this rocombo is NA (oh no! missing data?), evaluate if it should be ignored or should throw an error. 
-      ##!!!!!!!!!!!!Right now this is SUPER messy and hard to read with this all in here. This should be it's own function that gets called within this.!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      #replace the placeholder_na_rows with actual na rows we're trying to represent from the mbbs_county
-      placeholder_na_rows <- mbbs_county %>% #take county df
-        filter(is.na(observers) == TRUE) %>% #filter to the NA rows
-        filter(route_num == rocombos$route_num[i]) %>% #filter to the NA rows for this route
-        anti_join(survey_list, join_by(mbbs_county, route_num, year)) #only keep any rows with NA observers if that route/year combo is not already represented on the survey list.
+    } else if (is.na(rocombos$observers[i]) == TRUE) {
       
-      if(nrow(placeholder_na_rows) == 0) {
-        #the NA observer seen on the rocombos[i] has been corrected elsewhere, it's on the survey_list. Do nothing.
-      } else {
-        #this NA observer is not already on the survey list. This is probably because it's a new year, and survey_list gets updated after observer_conversion_table. This is only a problem if in this new year on this route, ALL the 'observers' columns are NA and we have NO recorded observer anywhere in the data. We need to evaluate. 
-        #replace placeholder, will contains rows if the route/year has any recorded observer information. Will have no rows if the route/year is completely lacking data in the observer column
-        placeholder_na_rows <- mbbs_county %>% #take the county df
-          filter(year %in% placeholder_na_rows$year) %>% #filter to the year we've got NA values
-          filter(route_num == rocombos$route_num[i]) %>% #filter to the route in question
-          filter(!is.na(observers)) #filter to any rows where in this year/route combo, observers is NOT NA
-        
-          if(nrow(placeholder_na_rows) == 0) {
-            print(paste("ERROR!", placeholder_na_rows$year, "only has NA values for observers and no corrected record in mbbs_survey_events. The ebird entry for stop 1 is missing observer information."))
-          }
-        
-      } else {}
-        #No need to worry about this NA rocombos. Move on to the next rocombo
+      confirm_observer_NA(rocombos[i,], mbbs_county, county_observer_table, survey_list)
+
     } else { #this route/observer combo is not already on the conversion table, and is not NA
       
       #print border
@@ -80,7 +57,7 @@ update_observer_table <- function(mbbs_county, selected_county) {
       #print the survey history for the route
       print("Survey history")
       print(survey_list %>% filter(route_num == rocombos$route_num[i]) %>% filter(mbbs_county == selected_county))
-      print("----")
+      print("---- Current Conversion Table ----")
       print(county_observer_table %>% filter(route_num == rocombos$route_num[i]))
       
       #reprint the new route/observer combo
@@ -222,4 +199,52 @@ update_survey_events <- function(envir = parent.frame()) {
 }
 
 
+#' Takes an observer/route combo where observer is NA and throws an error if the
+#' survey for that route/year genuinely has no recorded observer either 
+#' within the mbbs_county dataframe or on the survey_list   
+#' @importFrom dplyr filter anti_join join_by 
+#' @param rocombos a dataframe with a single route_num and observer
+#' @param mbbs_county an mbbs dataset that's restricted to just one county (as we use route_num which is not distinct between counties)
+#' @param county_observer_table a main_observer_table that has already been filtered to just the relevant county
+#' @param survey_list list of all mbbs surveys
+confirm_observer_NA <- function(rocombos, mbbs_county, county_observer_table, survey_list) {
+  
+  #confirm that the rocombos passed is an NA, if it's not just return and exit this function
+  if(is.na(rocombos$observers) == FALSE) {
+    #return("observers not NA") #for testing
+    return(invisible(NULL))
+  }
+  
+  #since the observer of this rocombo is NA (oh no! missing data?), evaluate if it should be ignored (not missing data) or should throw an error (we're missing data) 
+  
+  #filter to the na rows in mbbs_county that this rocombo represents 
+  na_rows <- mbbs_county %>% #take county df
+    filter(is.na(observers) == TRUE) %>% #filter to the NA rows
+    filter(route_num == rocombos$route_num) %>% #filter to the NA rows for this route
+    anti_join(survey_list, join_by(mbbs_county, route_num, year)) #only keep any rows with NA observers if that route/year combo is not already represented on the survey list. Years where observers == NA, but that are on the survey_list (and so have an observer) are cut.
+  
+  #evaluate if this route has all it's observers on the survey_list
+  if(nrow(na_rows) == 0) {
+    #the NA observer seen on this rocombos has been corrected elsewhere, it's on the survey_list. 
+    #return("observers corrected elsewhere") #for testing 
+    return(invisible(NULL))
+  } else {
+    #this NA observer is not already on the survey list. This is likely because
+    #(1). It's a new year of data, observers did not propogate to all the rows, and survey_list gets updated after observer_conversion_table.
+    #(2). It's a year of data where it's not on the survey_list and ALL the route's 'observers' column are NA
 
+    #filter mbbs_county to evaluate if ANY row of data from this route/year combo contains an observers value (and will therefore have been caught in a non-NA rowcombos[i])
+    non_na_rows <- mbbs_county %>% #take the county df
+      filter(year %in% na_rows$year) %>% #filter to the year we've got NA values
+      filter(route_num == rocombos$route_num) %>% #filter to the route in question
+      filter(!is.na(observers)) #filter to any rows where in this year/route combo, observers is NOT NA
+    
+    #if there are NO rows in the mbbs where this route/year combo has a non-NA observer, flag the error
+    if(nrow(non_na_rows) == 0) {
+      print(paste("ERROR!", na_rows$year, "route", na_rows$route_num, "has only NA values for observers and no corrected record in mbbs_survey_events. Likely source of error: the ebird entry for stop 1 is missing observer information."))
+    }
+  #regardless of if there's an error or not, NA has now been fully evaluated.
+  #return("Other row not NA") #for testing
+  return(invisible(NULL))
+  }  
+}
