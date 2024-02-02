@@ -18,7 +18,7 @@ for(w in 1:length(observer_table$observers)) {
   
   if(str_detect(string = observer_table$observers[w],
                 pattern = '^[\\w]+,\\s[\\w]+$')) { #one word comma one word
-    #then give check just the whole thing. It's one name.
+    #then give obs1 just the whole thing. It's one name.
     observer_table$obs1[w] <- observer_table$observers[w]
     observer_table$obs2[w] <- "blank"
     
