@@ -12,7 +12,23 @@ save_observer_table <- function(observer_table, file = "inst/extdata/main_observ
 }
 
 
-#' Interactive program to update both the main observer table and mini observer table when new route 
+#' Full workflow for processing observers 
+#' @param mbbs_county mbbs data.frame
+#' @importFrom dplyr %>%
+#' @export
+process_observers <- function(mbbs_county, county) {
+  mbbs_county <- mbbs_county %>% 
+    observers_extractor() %>% 
+    propogate_observers_across_stops()
+  
+  update_observer_table(mbbs_county, county)
+  update_mini_observer_table()
+  
+  return(mbbs_county)
+}
+
+
+#' Interactive program to update the main observer table when new route 
 #' + observer combos are present
 #' @param mbbs_county mbbs data.frame, must end in and underscore then the name of the county ie: _durham, _orange, _chatham
 #' @param selected_county county that the observer table should be filtered on
@@ -21,9 +37,6 @@ update_observer_table <- function(mbbs_county, selected_county) {
   
   #load the main observer conversion table
   observer_table <- read.csv("inst/extdata/main_observer_conversion_table.csv", header = TRUE)
-  
-  #load the mini observer conversion table (for obs1,obs2,obs3)
-  mini_observer_table <- read.csv("inst/extdata/mini_observer_conversion_table.csv", header = TRUE)
   
   #load survey events
   survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE) %>% select(-S, -N)
@@ -58,7 +71,7 @@ update_observer_table <- function(mbbs_county, selected_county) {
       print("Survey history")
       print(survey_list %>% filter(route_num == rocombos$route_num[i]) %>% filter(mbbs_county == selected_county))
       print("---- Current Conversion Table ----")
-      print(county_observer_table %>% filter(route_num == rocombos$route_num[i]))
+      print(county_observer_table[,1:4] %>% filter(route_num == rocombos$route_num[i]))
       
       #reprint the new route/observer combo
       print(paste("New route/observer combo:",list(rocombos[i,])))
@@ -89,7 +102,7 @@ update_observer_table <- function(mbbs_county, selected_county) {
   
   #save updated version of observer conversion table
   save_observer_table(observer_table)
-  print("No more new route/observer combos. Done!")
+  print("No more new route/observer combos. Observer table update done!")
 } #end function
 
 
@@ -133,20 +146,6 @@ propogate_observers_across_stops <- function(mbbs_county) {
   return(mbbs_county)
 }
 
-
-#' Full workflow for processing observers 
-#' @param mbbs_county mbbs data.frame
-#' @importFrom dplyr %>%
-#' @export
-process_observers <- function(mbbs_county, county) {
-  mbbs_county <- mbbs_county %>% 
-    observers_extractor() %>% 
-    propogate_observers_across_stops()
-  
-  update_observer_table(mbbs_county, county)
-  
-  return(mbbs_county)
-}
 
 
 #' Updates survey_list if needed by rbinding the new year, then updates survey_events
@@ -192,10 +191,12 @@ update_survey_events <- function(envir = parent.frame()) {
     mutate(observer_ID = dplyr::cur_group_id()) %>%   #add observer ID
     dplyr::ungroup() #%>% Removing this for now for testing purposes
     #select(-observers, -primary_observer) #remove the observers and primary_observer column to anonymize information
+    #%>% rank_observers() #and it just gets passed the table, then returns it
   
   #save survey_events
   save(mbbs_survey_events, file = "data/mbbs_survey_events.rda")
   cat("\nsurvey_events updated")
+
 }
 
 
@@ -314,15 +315,15 @@ update_mini_observer_table <- function() {
   #combine obs1 obs2 and obs3 
   observer_table <- observer_table %>% rowwise() %>% mutate(standardized_observers = paste(sort(c_across(all_of(obs_columns))), collapse = ", "))
   
-  #save_observer_table(observer_table)
+  save_observer_table(observer_table)
   
 }
 
 
-#'
+#' Standardize the names in the obs1, obs2, and obs3 columns of the main observer table
 #'@importFrom dplyr left_join mutate %>% select
-#' @param observer_table
-#' @param mini_observer_table 
+#' @param observer_table main_observer_table
+#' @param mini_observer_table the mini_observer_table, has only columns 'input_name' and 'output name'
 convert_based_on_mini_table <- function(observer_table, mini_observer_table){
 
   #add obs1 obs2 and obs3 to the observer_table
@@ -340,3 +341,106 @@ convert_based_on_mini_table <- function(observer_table, mini_observer_table){
   return(observer_table)
   
 }
+
+#' 
+#'
+#'
+#' @param mbbs_survey_events a dataframe with the list of survey events, importantly needs to include information about number of species and the observers for each survey
+rank_observers <- function(mbbs_survey_events) {
+  
+  #goal is to create a fixed effect of observer quality
+  
+  #need a table of average n species seen on each route, so group_by route county route, summarize
+  S_average_route <- mbbs_survey_events %>% group_by(mbbs_county, route_num) %>% summarize(route_meanS = mean(S))
+  
+  #summary of number of mean(S) across routes for each observer, and how many surveys they've done
+  observer_average <- mbbs_survey_events %>%
+    tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>% #obs1/obs2/obs3 don't matter now
+    filter(is.na(obs) == FALSE) %>% #remove NAs 
+    group_by(obs) %>% #group by just how many times the observer has surveyed at all
+    summarize(obs_meanS = mean(S), 
+              n_surveys_obs = n())
+  
+  #main working table
+  observer_average_route <- mbbs_survey_events %>% 
+    tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>% #obs1/obs2/obs3 don't matter now
+    filter(is.na(obs) == FALSE) %>% #remove NAs
+    group_by(mbbs_county, route_num, obs) %>% #group to each county/route/observer
+    summarize(obsroute_meanS = mean(S), 
+              n_surveys_obsroute = n()) %>%
+    ungroup() %>%
+    #left join dfs we created above
+    left_join(S_average_route, by = c("mbbs_county", "route_num")) %>%
+    left_join(observer_average, by = c("obs")) %>%
+    relocate(n_surveys_obsroute, n_surveys_obs, .after = "obs_meanS") %>% #readability
+    #observer quality score based on observed richness compared to mean richness that's been estimated on that route. Standardize by dividing by the mean for the route
+    mutate(obs_deviation = (obsroute_meanS - route_meanS)/route_meanS)
+  
+  #assign observer rank back to mbbs_survey_events
+  temp <- fake_mbbs_survey_events %>%
+    #add obs1_deviation
+    left_join(observer_average_route[,c("mbbs_county", "route_num", "obs","obs_deviation", "n_surveys_obs")], by = c("mbbs_county", "route_num", "obs1" = "obs")) %>%
+    mutate(obs1_deviation = obs_deviation,
+           obs1_nsurveys = n_surveys_obs) %>%
+    dplyr::select(-obs_deviation, -n_surveys_obs) %>%
+    #add obs2_deviation
+    left_join(observer_average_route[,c("mbbs_county", "route_num", "obs","obs_deviation", "n_surveys_obs")], by = c("mbbs_county", "route_num", "obs2" = "obs")) %>%
+    mutate(obs2_deviation = obs_deviation,
+           obs2_nsurveys = n_surveys_obs) %>%
+    dplyr::select(-obs_deviation, -n_surveys_obs) %>%
+    #add obs3 deviation
+    left_join(observer_average_route[,c("mbbs_county", "route_num", "obs","obs_deviation", "n_surveys_obs")], by = c("mbbs_county", "route_num", "obs3" = "obs")) %>%
+    mutate(obs3_deviation = obs_deviation,
+           obs3_nsurveys = n_surveys_obs) %>%
+    dplyr::select(-obs_deviation, -n_surveys_obs) %>%
+    #get the maximum value between obs1, obs2, obs, and which column it comes from
+    group_by(mbbs_county, route_num, year) %>%
+    mutate(observer_quality = max(obs1_deviation, obs2_deviation, obs3_deviation, na.rm = TRUE),
+           max_column = which.max(c(obs1_deviation, obs2_deviation, obs3_deviation)))
+  
+  
+  # Find the maximum value among columns a, b, and c
+  #     max_value <- max(data$a, data$b, data$c)
+  
+  # Find which column reported the maximum value
+  #      max_column <- which.max(c(data$a, data$b, data$c))
+
+  
+  fake_rows <- mbbs_survey_events %>% filter(mbbs_county == "orange", route_num == 1) %>%
+    tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>% #obs1/obs2/obs3 don't matter now
+    filter(is.na(obs) == FALSE) %>% #remove NAs
+    group_by(mbbs_county, route_num, obs) %>% #group to each county/route/observer
+    summarize(obsroute_meanS = mean(S), 
+              n_surveys_obsroute = n()) %>%
+    ungroup() %>%
+    #left join dfs we created above
+    left_join(S_average_route, by = c("mbbs_county", "route_num")) %>%
+    left_join(observer_average, by = c("obs")) %>%
+    relocate(n_surveys_obsroute, n_surveys_obs, .after = "obs_meanS") %>% #readability
+    #observer quality score based on observed richness compared to mean richness that's been estimated on that route. Standardize by dividing by the mean for the route
+    mutate(obs_deviation = (obsroute_meanS - route_meanS)/route_meanS)
+  
+  fake_mbbs_survey_events <- mbbs_survey_events %>% filter(mbbs_county == "orange", route_num == 1)
+  
+  fake_mbbs_survey <- fake_mbbs_survey %>%
+    mutate(obs_rank = case_when(
+      
+    ))
+  #what cases do I want to evaluate?
+  #i want the highest observer route deviation among obs1, obs2, obs3
+  #store which observer has that highest score
+                # Find the maximum value among columns a, b, and c
+           #     max_value <- max(data$a, data$b, data$c)
+                
+                # Find which column reported the maximum value
+          #      max_column <- which.max(c(data$a, data$b, data$c))
+  
+  #if that observer has only surveyed once (n_surveys_obsroute), and the other person has surveyed more surveys than them, assign it to that second person who's got more contributions rather than a one-off person arriving on a good yr
+  #if there's more than one observer and they have equal standard deviation bc they've both only surveyed the route once, it doesn't matter, bc this is a fixed effect of observer quality rather than a random effect, and they have the same numerical value. 
+    
+  #if observer only has one time on that route and there's another obs1/2/3 from that year that has more yrs of observations, drop from consideration the person who's only got one observation. This isn't solving the Noah effect, but does solve for the case where like, M. Graves joins and it happens to be a good year and so it's assigned to M. Graves rather than Tom Driscoll? Hmmmmmmmmm, think about this. Also then removing first time observer effect which yes we do want to that. No problem with Noah/Jennifer/Robin routes bc he's run it with them a ocuple times.
+
+  return(mbbs_survey_events)
+}
+
+check <- rank_observers(mbbs_survey_events)
