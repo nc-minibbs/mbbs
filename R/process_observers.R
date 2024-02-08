@@ -380,24 +380,36 @@ rank_observers <- function(mbbs_survey_events) {
   temp <- fake_mbbs_survey_events %>%
     #add obs1_deviation
     left_join(observer_average_route[,c("mbbs_county", "route_num", "obs","obs_deviation", "n_surveys_obs")], by = c("mbbs_county", "route_num", "obs1" = "obs")) %>%
-    mutate(obs1_deviation = obs_deviation,
+    rename(obs1_Sdeviation = obs_deviation,
            obs1_nsurveys = n_surveys_obs) %>%
-    dplyr::select(-obs_deviation, -n_surveys_obs) %>%
     #add obs2_deviation
     left_join(observer_average_route[,c("mbbs_county", "route_num", "obs","obs_deviation", "n_surveys_obs")], by = c("mbbs_county", "route_num", "obs2" = "obs")) %>%
-    mutate(obs2_deviation = obs_deviation,
+    rename(obs2_Sdeviation = obs_deviation,
            obs2_nsurveys = n_surveys_obs) %>%
-    dplyr::select(-obs_deviation, -n_surveys_obs) %>%
     #add obs3 deviation
     left_join(observer_average_route[,c("mbbs_county", "route_num", "obs","obs_deviation", "n_surveys_obs")], by = c("mbbs_county", "route_num", "obs3" = "obs")) %>%
-    mutate(obs3_deviation = obs_deviation,
+    rename(obs3_Sdeviation = obs_deviation,
            obs3_nsurveys = n_surveys_obs) %>%
-    dplyr::select(-obs_deviation, -n_surveys_obs) %>%
     #get the maximum value between obs1, obs2, obs, and which column it comes from
     group_by(mbbs_county, route_num, year) %>%
-    mutate(observer_quality = max(obs1_deviation, obs2_deviation, obs3_deviation, na.rm = TRUE),
-           max_column = which.max(c(obs1_deviation, obs2_deviation, obs3_deviation)))
+    mutate(observer_quality = max(obs1_Sdeviation, obs2_Sdeviation, obs3_Sdeviation, na.rm = TRUE),
+           max_qual_observer = which.max(c(obs1_Sdeviation, obs2_Sdeviation, obs3_Sdeviation)),
+          #However, if the max observer just happens to have surveyed *only once* on a particularly good year
+          #we actually want to assign the other observer (unless they are the only obs)
+           observer_quality = case_when(
+             max_qual_observer == 1 & obs1_nsurveys == 1 & is.na(obs2) == FALSE ~ max(obs2_Sdeviation, obs3_Sdeviation, na.rm = TRUE),
+             max_qual_observer == 2 & obs2_nsurveys == 1 ~ max(obs1_Sdeviation, obs3_Sdeviation, na.rm = TRUE),
+             max_qual_observer == 3 & obs3_nsurveys == 1 ~ max(obs1_Sdeviation, obs2_Sdeviation, na.rm = TRUE),
+           )) 
   
+  #next step, testing this new code - need to rbind some new fake rows to fake_survey_events that fit these four situations to ensure they work out properly
+  
+  fake_rows <- fake_rows[1,]
+  fake_rows$obs1_Sdeviation <- 1
+  fake_rows$obs2_Sdeviation <- 1
+  
+  temp <- rbind(temp, fake_rows) 
+
   
   # Find the maximum value among columns a, b, and c
   #     max_value <- max(data$a, data$b, data$c)
