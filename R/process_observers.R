@@ -116,7 +116,7 @@ observers_extractor <- function(mbbs_county) {
   
   #fix unicode 
   mbbs_county$checklist_comments <- mbbs_county$checklist_comments %>%
-    str_replace_all("&#61;| =", "=")
+    stringr::str_replace_all("&#61;| =", "=")
   
   #when checklist comments contain "observer(s)", extract after observer(s) and before a ;
   mbbs_county <- mbbs_county %>% mutate(
@@ -189,8 +189,8 @@ update_survey_events <- function(envir = parent.frame()) {
   mbbs_survey_events <- left_join(survey_list, observer_table, by = c("mbbs_county", "route_num", "observers")) %>%
     group_by(primary_observer) %>%
     mutate(observer_ID = dplyr::cur_group_id()) %>%   #add observer ID
-    dplyr::ungroup() #%>% 
-    #%>% rank_observers() #and it just gets passed the table, then returns it
+    dplyr::ungroup() %>% 
+    rank_observers() 
   
   #save survey_events
   save(mbbs_survey_events, file = "data/mbbs_survey_events.rda")
@@ -251,7 +251,8 @@ confirm_observer_NA <- function(rocombos, mbbs_county, county_observer_table, su
 
 
 #' Add new entries to the mini_observer_conversion_table
-#' @importFrom dplyr filter anti_join join_by 
+#' @importFrom dplyr filter anti_join join_by
+#' @importFrom stringr str_split_fixed str_detect
 #' @param rocombos a dataframe with a single route_num and observer
 update_mini_observer_table <- function() {
   
@@ -263,14 +264,14 @@ update_mini_observer_table <- function() {
   #separate out observers into obs1,obs2,obs3
   observer_table[c('obs1', 'obs2', 'obs3')] <- 
     #split into at most 3 strings based off <,and> <,> <and> <&>
-    str_split_fixed(observer_table$observers,
+    stringr::str_split_fixed(observer_table$observers,
                     n = 3, 
                     pattern = ", and |, and|,and|, |,| and | and| & | &|& |&") 
   #make corrections:
   #if there's one name but split by comma ie: Driscoll, Tom
   for(w in 1:length(observer_table$observers)) {
     
-    if(str_detect(string = observer_table$observers[w],
+    if(stringr::str_detect(string = observer_table$observers[w],
                   pattern = '^[\\w]+,\\s[\\w]+$')) { #one word comma one word
       #then give obs1 just the whole thing. It's one name.
       observer_table$obs1[w] <- observer_table$observers[w]
@@ -413,8 +414,8 @@ rank_observers <- function(mbbs_survey_events) {
       TRUE ~ observer_quality
     )) %>%
     ungroup()
+  
+  rm(observer_average, observer_average_route, S_average_route)
 
   return(mbbs_survey_events)
 }
-
-check <- rank_observers(mbbs_survey_events)
