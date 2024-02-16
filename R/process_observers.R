@@ -189,8 +189,7 @@ update_survey_events <- function(envir = parent.frame()) {
   mbbs_survey_events <- left_join(survey_list, observer_table, by = c("mbbs_county", "route_num", "observers")) %>%
     group_by(primary_observer) %>%
     mutate(observer_ID = dplyr::cur_group_id()) %>%   #add observer ID
-    dplyr::ungroup() #%>% Removing this for now for testing purposes
-    #select(-observers, -primary_observer) #remove the observers and primary_observer column to anonymize information
+    dplyr::ungroup() #%>% 
     #%>% rank_observers() #and it just gets passed the table, then returns it
   
   #save survey_events
@@ -342,18 +341,24 @@ convert_based_on_mini_table <- function(observer_table, mini_observer_table){
   
 }
 
-#' 
-#'
-#'
+#' Creates a fixed effect (numeric value) of observer quality, which reflects
+#' the standardized number of species the top observer in that year saw compared
+#' to the mean number of species seen on that route across all years
+#' observer_quality = max(obs1_Sdeviation, obs2_Sdeviation, obs3_Sdeviation, na.rm = TRUE)
+#' Corrects for cases where a one-time observer accompanied a more experienced observer
+#' and saw a high number of species in a particularly good year (putting their Sdeviation
+#' above that of the more experienced observer)
+#' @importFrom dplyr group_by summarize filter ungroup left_join relocate mutate rename select rowwise case_when 
+#' @importFrom tidyr pivot_longer
 #' @param mbbs_survey_events a dataframe with the list of survey events, importantly needs to include information about number of species and the observers for each survey
 rank_observers <- function(mbbs_survey_events) {
   
-  #goal is to create a fixed effect of observer quality
+  #goal is to create a fixed effect of observer quality, based off the standardized number of species each observer observers above the mean number of species on that route
   
-  #need a table of average n species seen on each route, so group_by route county route, summarize
+  #table of average n species seen on each route
   S_average_route <- mbbs_survey_events %>% group_by(mbbs_county, route_num) %>% summarize(route_meanS = mean(S))
   
-  #summary of number of mean(S) across routes for each observer, and how many surveys they've done
+  #summary of number of mean(S) across routes for each observer, + n surveys they've done
   observer_average <- mbbs_survey_events %>%
     tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>% #obs1/obs2/obs3 don't matter now
     filter(is.na(obs) == FALSE) %>% #remove NAs 
@@ -361,7 +366,7 @@ rank_observers <- function(mbbs_survey_events) {
     summarize(obs_meanS = mean(S), 
               n_surveys_obs = n())
   
-  #main working table
+  #main working table, calculate deviation from route mean n species for each observer
   observer_average_route <- mbbs_survey_events %>% 
     tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>% #obs1/obs2/obs3 don't matter now
     filter(is.na(obs) == FALSE) %>% #remove NAs
@@ -376,8 +381,8 @@ rank_observers <- function(mbbs_survey_events) {
     #observer quality score based on observed richness compared to mean richness that's been estimated on that route. Standardize by dividing by the mean for the route
     mutate(obs_deviation = (obsroute_meanS - route_meanS)/route_meanS)
   
-  #assign observer rank back to mbbs_survey_events
-  temp <- fake_mbbs_survey_events %>%
+  #assign observer_quality based on the performance of the top observer
+  mbbs_survey_events <- mbbs_survey_events %>%
     #add obs1_deviation
     left_join(observer_average_route[,c("mbbs_county", "route_num", "obs","obs_deviation", "n_surveys_obs")], by = c("mbbs_county", "route_num", "obs1" = "obs")) %>%
     rename(obs1_Sdeviation = obs_deviation,
@@ -390,67 +395,24 @@ rank_observers <- function(mbbs_survey_events) {
     left_join(observer_average_route[,c("mbbs_county", "route_num", "obs","obs_deviation", "n_surveys_obs")], by = c("mbbs_county", "route_num", "obs3" = "obs")) %>%
     rename(obs3_Sdeviation = obs_deviation,
            obs3_nsurveys = n_surveys_obs) %>%
-    #get the maximum value between obs1, obs2, obs, and which column it comes from
-    group_by(mbbs_county, route_num, year) %>%
-    mutate(observer_quality = max(obs1_Sdeviation, obs2_Sdeviation, obs3_Sdeviation, na.rm = TRUE),
-           max_qual_observer = which.max(c(obs1_Sdeviation, obs2_Sdeviation, obs3_Sdeviation)),
-          #However, if the max observer just happens to have surveyed *only once* on a particularly good year
-          #we actually want to assign the other observer (unless they are the only obs)
-           observer_quality = case_when(
-             max_qual_observer == 1 & obs1_nsurveys == 1 & is.na(obs2) == FALSE ~ max(obs2_Sdeviation, obs3_Sdeviation, na.rm = TRUE),
-             max_qual_observer == 2 & obs2_nsurveys == 1 ~ max(obs1_Sdeviation, obs3_Sdeviation, na.rm = TRUE),
-             max_qual_observer == 3 & obs3_nsurveys == 1 ~ max(obs1_Sdeviation, obs2_Sdeviation, na.rm = TRUE),
-           )) 
-  
-  #next step, testing this new code - need to rbind some new fake rows to fake_survey_events that fit these four situations to ensure they work out properly
-  
-  fake_rows <- fake_rows[1,]
-  fake_rows$obs1_Sdeviation <- 1
-  fake_rows$obs2_Sdeviation <- 1
-  
-  temp <- rbind(temp, fake_rows) 
-
-  
-  # Find the maximum value among columns a, b, and c
-  #     max_value <- max(data$a, data$b, data$c)
-  
-  # Find which column reported the maximum value
-  #      max_column <- which.max(c(data$a, data$b, data$c))
-
-  
-  fake_rows <- mbbs_survey_events %>% filter(mbbs_county == "orange", route_num == 1) %>%
-    tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>% #obs1/obs2/obs3 don't matter now
-    filter(is.na(obs) == FALSE) %>% #remove NAs
-    group_by(mbbs_county, route_num, obs) %>% #group to each county/route/observer
-    summarize(obsroute_meanS = mean(S), 
-              n_surveys_obsroute = n()) %>%
-    ungroup() %>%
-    #left join dfs we created above
-    left_join(S_average_route, by = c("mbbs_county", "route_num")) %>%
-    left_join(observer_average, by = c("obs")) %>%
-    relocate(n_surveys_obsroute, n_surveys_obs, .after = "obs_meanS") %>% #readability
-    #observer quality score based on observed richness compared to mean richness that's been estimated on that route. Standardize by dividing by the mean for the route
-    mutate(obs_deviation = (obsroute_meanS - route_meanS)/route_meanS)
-  
-  fake_mbbs_survey_events <- mbbs_survey_events %>% filter(mbbs_county == "orange", route_num == 1)
-  
-  fake_mbbs_survey <- fake_mbbs_survey %>%
-    mutate(obs_rank = case_when(
-      
-    ))
-  #what cases do I want to evaluate?
-  #i want the highest observer route deviation among obs1, obs2, obs3
-  #store which observer has that highest score
-                # Find the maximum value among columns a, b, and c
-           #     max_value <- max(data$a, data$b, data$c)
-                
-                # Find which column reported the maximum value
-          #      max_column <- which.max(c(data$a, data$b, data$c))
-  
-  #if that observer has only surveyed once (n_surveys_obsroute), and the other person has surveyed more surveys than them, assign it to that second person who's got more contributions rather than a one-off person arriving on a good yr
-  #if there's more than one observer and they have equal standard deviation bc they've both only surveyed the route once, it doesn't matter, bc this is a fixed effect of observer quality rather than a random effect, and they have the same numerical value. 
-    
-  #if observer only has one time on that route and there's another obs1/2/3 from that year that has more yrs of observations, drop from consideration the person who's only got one observation. This isn't solving the Noah effect, but does solve for the case where like, M. Graves joins and it happens to be a good year and so it's assigned to M. Graves rather than Tom Driscoll? Hmmmmmmmmm, think about this. Also then removing first time observer effect which yes we do want to that. No problem with Noah/Jennifer/Robin routes bc he's run it with them a ocuple times.
+    rowwise() %>%
+    #get the maximum Sdeivation between obs1, obs2, obs, and which column it comes from
+    mutate(observer_quality = max(obs1_Sdeviation, obs2_Sdeviation, obs3_Sdeviation, na.rm = TRUE), #observer quality is max btwn the three obs deviations
+           max_qual_observer = which.max(c(obs1_Sdeviation, obs2_Sdeviation, obs3_Sdeviation))) %>% #record which observer was the best 
+  #Correct for cases where 1-time surveyor winds up with higher Sdeviation than experienced observer
+    mutate(observer_quality = case_when(
+      #if there's only one observer
+      (sum(is.na(c(obs1,obs2,obs3)) == FALSE) == 1) ~ observer_quality, #don't change obs_quality
+      #obs 1 is the best observer but only has one survey across all routes
+      (max_qual_observer == 1 & obs1_nsurveys == 1) ~ suppressWarnings(max(obs2_Sdeviation, obs3_Sdeviation, na.rm = TRUE)), #take max of obs2 and obs3
+      #obs 2 is the best observer but only has one survey across all routes
+      (max_qual_observer == 2 & obs2_nsurveys == 1) ~ suppressWarnings(max(obs1_Sdeviation, obs3_Sdeviation, na.rm = TRUE)), #take max of obs1 and obs3
+      #obs 3 is the best observer but only has one survey across all routes
+      (max_qual_observer == 3 & obs3_nsurveys == 1) ~ suppressWarnings(max(obs1_Sdeviation, obs2_Sdeviation, na.rm = TRUE)), #take max of obs1 and obs2
+      #if none of the other statements are true, leave obs_quality the same
+      TRUE ~ observer_quality
+    )) %>%
+    ungroup()
 
   return(mbbs_survey_events)
 }
