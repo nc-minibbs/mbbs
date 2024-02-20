@@ -382,6 +382,21 @@ rank_observers <- function(mbbs_survey_events) {
     #observer quality score based on observed richness compared to mean richness that's been estimated on that route. Standardize by dividing by the mean for the route
     mutate(obs_deviation = (obsroute_meanS - route_meanS)/route_meanS)
   
+  ##comparing obs_rmean to mean of all other observers on that route
+  #371-376, then do a nested for loop with that dataframe, for every route for every observer calculate their mean compared to the mean of other people. If there's only one observer, mean = 0
+  #divide by mean of all observer's means - removes bias from n_surveys of any given observer, but remove the insufficient observerations, if n_surveys = 1, remove from mean calculation
+  #if n_surveys =1, they should get a quality value of 0
+  #denominator of mean richness for each combination of observers ie: /(Jen+Robin)(Jen+Robin+Noah)(Noah)(Jen+Other) - rather than /(Jen)(Robin)(Noah)
+  #(observer's mean on this route - mean richness of years they are not one of the obs1-3)/(mean richness of years they are not one of the obs1-3) ie: (x-y)/y. Proportion relative to what other people observe on that route. Improvement over dividing by mean of whole route bc x influences that
+  
+  #can back calculate with the means - 
+  #add in the number of years each route was run.
+  #((route_meanS * n_surveys_route) - (obsroute_meanS * n_surveys_obsroute))/(n_surveys_route - n_surveys_obsroute) #divided by the number of years ie Marsha did not run the route. That gives y
+  #if there's no other person on that route, going to throw an NA or INF, assign the NAs to 0s, observer quality does not vary for that route.
+  #esentially remove her portion of the mean from consideration
+  
+  #each observer is going to have a mean compared to their multiple routes - but each observer needs to get a SINGLE quality value. If he ran routes 1, 4, 5 - need the mean between those routes. just another group_by mutate. And THEN take max observer quality. 
+  
   #assign observer_quality based on the performance of the top observer
   mbbs_survey_events <- mbbs_survey_events %>%
     #add obs1_deviation
