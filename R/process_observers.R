@@ -28,6 +28,58 @@ process_observers <- function(mbbs_county, county) {
 }
 
 
+
+#' Updates survey_list if needed by rbinding the new year, then updates survey_events
+#' @importFrom dplyr filter group_by summarize ungroup arrange left_join mutate select ungroup n_distinct cur_group_id
+#' @importFrom stringr str_to_lower
+#' @param envir uses the local environment of import_data 
+update_survey_events <- function(envir = parent.frame()) {
+  
+  #load in survey list
+  survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE)
+  
+  #generate the list of the latest year's surveys
+  options(dplyr.summarise.inform = FALSE) #suppress dplyr "has grouped outby by"
+  latest_surveys <- rbind(mbbs_chatham, mbbs_durham, mbbs_orange) %>%
+    filter(count > 0 | count_raw > 0) %>%
+    group_by(mbbs_county, route_num, year)%>%
+    dplyr::summarize(S = dplyr::n_distinct(common_name), 
+                     N = sum(count),
+                     observers = observers[!is.na(observers)][1]) %>%
+    filter(year == max(year)) %>%
+    dplyr::ungroup()
+  options(dplyr.summarise.inform = TRUE) #return this to normal
+  
+  #if the latest year is already on the survey_list, don't update. Otherwise, add in the new rows to survey_list and save the updated list
+  if(max(latest_surveys$year) <= max(survey_list$year)) {
+    cat(max(latest_surveys$year), "already in survey_list") #do nothing
+  } else {
+    
+    cat(max(latest_surveys$year), "data has been added to survey_list")
+    survey_list <- rbind(survey_list, latest_surveys)
+    survey_list <- survey_list %>% 
+      arrange(mbbs_county, route_num, year)
+    write.csv(survey_list, "inst/extdata/survey_list.csv", row.names = FALSE)
+    
+  }
+  
+  #load in observer table
+  observer_table <- read.csv("inst/extdata/main_observer_conversion_table.csv", header = TRUE)
+  #Observer table may be updated several times during a year. So we regenerate and update survey_events even when we don't update(by rbinding new columns to) survey_list. 
+  
+  mbbs_survey_events <- left_join(survey_list, observer_table, by = c("mbbs_county", "route_num", "observers")) %>%
+    group_by(primary_observer) %>%
+    mutate(observer_ID = dplyr::cur_group_id()) %>%   #add observer ID
+    dplyr::ungroup() %>% 
+    rank_observers() 
+  
+  #save survey_events
+  save(mbbs_survey_events, file = "data/mbbs_survey_events.rda")
+  cat("\nsurvey_events updated")
+  
+}
+
+
 #' Interactive program to update the main observer table when new route 
 #' + observer combos are present
 #' @param mbbs_county mbbs data.frame, must end in and underscore then the name of the county ie: _durham, _orange, _chatham
@@ -144,58 +196,6 @@ propogate_observers_across_stops <- function(mbbs_county) {
   mbbs_county <-  mbbs_county %>% group_by(route_num, date) %>% mutate(observers = observers[!is.na(observers)][1])
   #will fill in stops 2:20 with checklist comments like v;3 and won't change data from pre-2019 because all the observations on the same route_num and date will already have the same comments/observer columns
   return(mbbs_county)
-}
-
-
-
-#' Updates survey_list if needed by rbinding the new year, then updates survey_events
-#' @importFrom dplyr filter group_by summarize ungroup arrange left_join mutate select ungroup n_distinct cur_group_id
-#' @importFrom stringr str_to_lower
-#' @param envir uses the local environment of import_data 
-update_survey_events <- function(envir = parent.frame()) {
-  
-  #load in survey list
-  survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE)
-  
-  #generate the list of the latest year's surveys
-  options(dplyr.summarise.inform = FALSE) #suppress dplyr "has grouped outby by"
-  latest_surveys <- rbind(mbbs_chatham, mbbs_durham, mbbs_orange) %>%
-    filter(count > 0 | count_raw > 0) %>%
-    group_by(mbbs_county, route_num, year)%>%
-    dplyr::summarize(S = dplyr::n_distinct(common_name), 
-              N = sum(count),
-              observers = observers[!is.na(observers)][1]) %>%
-    filter(year == max(year)) %>%
-    dplyr::ungroup()
-  options(dplyr.summarise.inform = TRUE) #return this to normal
-  
-  #if the latest year is already on the survey_list, don't update. Otherwise, add in the new rows to survey_list and save the updated list
-  if(max(latest_surveys$year) <= max(survey_list$year)) {
-    cat(max(latest_surveys$year), "already in survey_list") #do nothing
-  } else {
-    
-    cat(max(latest_surveys$year), "data has been added to survey_list")
-    survey_list <- rbind(survey_list, latest_surveys)
-    survey_list <- survey_list %>% 
-      arrange(mbbs_county, route_num, year)
-    write.csv(survey_list, "inst/extdata/survey_list.csv", row.names = FALSE)
-    
-  }
-
-  #load in observer table
-  observer_table <- read.csv("inst/extdata/main_observer_conversion_table.csv", header = TRUE)
-  #Observer table may be updated several times during a year. So we regenerate and update survey_events even when we don't update(by rbinding new columns to) survey_list. 
-  
-  mbbs_survey_events <- left_join(survey_list, observer_table, by = c("mbbs_county", "route_num", "observers")) %>%
-    group_by(primary_observer) %>%
-    mutate(observer_ID = dplyr::cur_group_id()) %>%   #add observer ID
-    dplyr::ungroup() %>% 
-    rank_observers() 
-  
-  #save survey_events
-  save(mbbs_survey_events, file = "data/mbbs_survey_events.rda")
-  cat("\nsurvey_events updated")
-
 }
 
 
@@ -343,13 +343,13 @@ convert_based_on_mini_table <- function(observer_table, mini_observer_table){
 }
 
 #' Creates a fixed effect (numeric value) of observer quality, which reflects
-#' the standardized number of species the top observer in that year saw compared
-#' to the mean number of species seen on that route across all years
+#'!!!!! the standardized number of species the top observer in that year saw compared !!!EDIT
+#' !!!!!!to the mean number of species seen on that route across all years !!!EDIT
 #' observer_quality = max(obs1_Sdeviation, obs2_Sdeviation, obs3_Sdeviation, na.rm = TRUE)
 #' Corrects for cases where a one-time observer accompanied a more experienced observer
 #' and saw a high number of species in a particularly good year (putting their Sdeviation
 #' above that of the more experienced observer)
-#' @importFrom dplyr group_by summarize filter ungroup left_join relocate mutate rename select rowwise case_when 
+#' @importFrom dplyr group_by summarize filter ungroup left_join relocate mutate rename select rowwise case_when n
 #' @importFrom tidyr pivot_longer
 #' @param mbbs_survey_events a dataframe with the list of survey events, importantly needs to include information about number of species and the observers for each survey
 rank_observers <- function(mbbs_survey_events) {
@@ -357,7 +357,9 @@ rank_observers <- function(mbbs_survey_events) {
   #goal is to create a fixed effect of observer quality, based off the standardized number of species each observer observers above the mean number of species on that route
   
   #table of average n species seen on each route
-  S_average_route <- mbbs_survey_events %>% group_by(mbbs_county, route_num) %>% summarize(route_meanS = mean(S))
+  S_average_route <- mbbs_survey_events %>% group_by(mbbs_county, route_num) %>% 
+    summarize(route_meanS = mean(S),
+              n_surveys_route = n())
   
   #summary of number of mean(S) across routes for each observer, + n surveys they've done
   observer_average <- mbbs_survey_events %>%
@@ -379,23 +381,21 @@ rank_observers <- function(mbbs_survey_events) {
     left_join(S_average_route, by = c("mbbs_county", "route_num")) %>%
     left_join(observer_average, by = c("obs")) %>%
     relocate(n_surveys_obsroute, n_surveys_obs, .after = "obs_meanS") %>% #readability
-    #observer quality score based on observed richness compared to mean richness that's been estimated on that route. Standardize by dividing by the mean for the route
-    mutate(obs_deviation = (obsroute_meanS - route_meanS)/route_meanS)
+    #meanS on route in years not run by that row's observer, back calculated with means, essentially removing the observer's proportion of contribution towards the route_meanS
+    mutate(non_focal_obsroute_meanS = ((route_meanS * n_surveys_route) - (obsroute_meanS * n_surveys_obsroute))/(n_surveys_route - n_surveys_obsroute)) 
+    
+  observer_quality <- observer_average_route %>%
+    #proportion of species observer observes relative to what other people observe on that route. Improvement over dividing by mean of whole route b/c the observer's meanS influences that. pushes the spreads further apart and really distinguishes when observers are doing better or worse than the others on their route - ie: one person ran 16/22 years of the route, and their deviation before was -0.08 (they basically set the mean) and now it's -0.24 (they saw 24% fewer species than the observers in the other 6 years)
+    #(x-y)/y 
+    #(observer's mean on this route - mean richness of years they are not one of the obs1-3)/(mean richness of years they are not one of the obs1-3) 
+    mutate(obs_proportion_route = (obsroute_meanS - non_focal_obsroute_meanS)/non_focal_obsroute_meanS) %>%
+    mutate(obs_proportion_route = ifelse(is.nan(obs_proportion_route), 0, obs_proportion_route)) %>% #NaN to 0 (only observer on that route for the whole period)
+    #get one consistent score for each obs across all their surveyed routes
+    group_by(obs) %>%
+    summarize(obs_quality = mean(obs_proportion_route),
+              n_surveys_obs = first(n_surveys_obs)) 
   
-  ##comparing obs_rmean to mean of all other observers on that route
-  #371-376, then do a nested for loop with that dataframe, for every route for every observer calculate their mean compared to the mean of other people. If there's only one observer, mean = 0
-  #divide by mean of all observer's means - removes bias from n_surveys of any given observer, but remove the insufficient observerations, if n_surveys = 1, remove from mean calculation
-  #if n_surveys =1, they should get a quality value of 0
-  #denominator of mean richness for each combination of observers ie: /(Jen+Robin)(Jen+Robin+Noah)(Noah)(Jen+Other) - rather than /(Jen)(Robin)(Noah)
-  #(observer's mean on this route - mean richness of years they are not one of the obs1-3)/(mean richness of years they are not one of the obs1-3) ie: (x-y)/y. Proportion relative to what other people observe on that route. Improvement over dividing by mean of whole route bc x influences that
-  
-  #can back calculate with the means - 
-  #add in the number of years each route was run.
-  #((route_meanS * n_surveys_route) - (obsroute_meanS * n_surveys_obsroute))/(n_surveys_route - n_surveys_obsroute) #divided by the number of years ie Marsha did not run the route. That gives y
-  #if there's no other person on that route, going to throw an NA or INF, assign the NAs to 0s, observer quality does not vary for that route.
-  #esentially remove her portion of the mean from consideration
-  
-  #each observer is going to have a mean compared to their multiple routes - but each observer needs to get a SINGLE quality value. If he ran routes 1, 4, 5 - need the mean between those routes. just another group_by mutate. And THEN take max observer quality. 
+  #!!! stuff below needs to be re-labled, some variable names are now incorrect.
   
   #assign observer_quality based on the performance of the top observer
   mbbs_survey_events <- mbbs_survey_events %>%
