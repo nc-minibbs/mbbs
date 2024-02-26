@@ -5,7 +5,8 @@
 
 #' Arranges and saves a new version of the observer table 
 #' @param observer_table observer table data.frame
-#' @importFrom dplyr arrange
+#' @param file where the observer table is being saved
+#' @importFrom dplyr arrange %>%
 save_observer_table <- function(observer_table, file = "inst/extdata/main_observer_conversion_table.csv") {
   observer_table %>% 
     arrange(mbbs_county, route_num) %>%
@@ -15,6 +16,7 @@ save_observer_table <- function(observer_table, file = "inst/extdata/main_observ
 
 #' Full workflow for processing observers 
 #' @param mbbs_county mbbs data.frame
+#' @param county which county is being processed, orange, durham, or chatham lower case
 #' @importFrom dplyr %>%
 #' @export
 process_observers <- function(mbbs_county, county) {
@@ -252,7 +254,7 @@ confirm_observer_NA <- function(rocombos, mbbs_county, county_observer_table, su
 
 
 #' Add new entries to the mini_observer_conversion_table
-#' @importFrom dplyr filter anti_join join_by
+#' @importFrom dplyr filter anti_join join_by rowwise
 #' @importFrom stringr str_split_fixed str_detect
 #' @param rocombos a dataframe with a single route_num and observer
 update_mini_observer_table <- function() {

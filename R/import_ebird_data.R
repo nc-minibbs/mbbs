@@ -30,7 +30,7 @@ rename_ebird_data <- function(dt) {
 
 #' Removes subspecies, subgroup, or domestic type designations from the common
 #' and scienfic name columns of an ebird csv
-#'
+#' @param dt data table / data frame
 rename_subspecies <- function(dt) {
   dplyr::mutate(dt,
     sci_name = stringr::word(sci_name, 1, 2),  #dropping subspecies or domestic type designations
