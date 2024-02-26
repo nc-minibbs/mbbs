@@ -7,6 +7,7 @@
 #' @param observer_table observer table data.frame
 #' @param file where the observer table is being saved
 #' @importFrom dplyr arrange %>%
+#' @importFrom utils write.csv 
 save_observer_table <- function(observer_table, file = "inst/extdata/main_observer_conversion_table.csv") {
   observer_table %>% 
     arrange(mbbs_county, route_num) %>%
@@ -35,6 +36,7 @@ process_observers <- function(mbbs_county, county) {
 #' Updates survey_list if needed by rbinding the new year, then updates survey_events
 #' @importFrom dplyr filter group_by summarize ungroup arrange left_join mutate select ungroup n_distinct cur_group_id
 #' @importFrom stringr str_to_lower
+#' @importFrom utils write.csv
 #' @param envir uses the local environment of import_data 
 update_survey_events <- function(envir = parent.frame()) {
   
@@ -256,6 +258,7 @@ confirm_observer_NA <- function(rocombos, mbbs_county, county_observer_table, su
 #' Add new entries to the mini_observer_conversion_table
 #' @importFrom dplyr filter anti_join join_by rowwise
 #' @importFrom stringr str_split_fixed str_detect
+#' @importFrom utils write.csv
 #' @param rocombos a dataframe with a single route_num and observer
 update_mini_observer_table <- function() {
   
