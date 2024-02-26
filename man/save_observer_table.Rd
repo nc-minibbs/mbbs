@@ -6,11 +6,13 @@
 \usage{
 save_observer_table(
   observer_table,
-  file = "inst/extdata/observer_conversion_table.csv"
+  file = "inst/extdata/main_observer_conversion_table.csv"
 )
 }
 \arguments{
 \item{observer_table}{observer table data.frame}
+
+\item{file}{where the observer table is being saved}
 }
 \description{
 Arranges and saves a new version of the observer table

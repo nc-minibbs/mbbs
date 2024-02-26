@@ -259,7 +259,6 @@ confirm_observer_NA <- function(rocombos, mbbs_county, county_observer_table, su
 #' @importFrom dplyr filter anti_join join_by rowwise
 #' @importFrom stringr str_split_fixed str_detect
 #' @importFrom utils write.csv
-#' @param rocombos a dataframe with a single route_num and observer
 update_mini_observer_table <- function() {
   
   #load the main observer conversion table
