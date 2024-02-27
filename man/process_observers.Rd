@@ -8,6 +8,8 @@ process_observers(mbbs_county, county)
 }
 \arguments{
 \item{mbbs_county}{mbbs data.frame}
+
+\item{county}{which county is being processed, orange, durham, or chatham lower case}
 }
 \description{
 Full workflow for processing observers

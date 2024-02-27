@@ -7,6 +7,9 @@ and scienfic name columns of an ebird csv}
 \usage{
 rename_subspecies(dt)
 }
+\arguments{
+\item{dt}{data table / data frame}
+}
 \description{
 Removes subspecies, subgroup, or domestic type designations from the common
 and scienfic name columns of an ebird csv

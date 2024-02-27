@@ -49,6 +49,8 @@ clean_common_names <- function(dt) {
       common_name_c = str_replace(common_name_c, "^White-br ", "White-breasted "),
       common_name_c = str_replace(common_name_c, "-Poor-Will", "-poor-will"),
       common_name_c = str_replace(common_name_c, "Will's-Widow", "will's-widow"),
+      common_name_c = str_replace(common_name_c, "Great Horned \r Owl", "Great Horned Owl"),
+      common_name_c = str_replace(common_name_c, "House\r Wren", "House Wren"),
       common_name_c = case_when(
         common_name_c == "Accipiter species" ~ "Accipiter sp.",
         common_name_c == "Rock Dove" ~ "Rock Pigeon",
