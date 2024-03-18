@@ -62,9 +62,10 @@ for(i in 1:nrow(df)) {
       #convert empty strings (nothing between commas) into 0s
       str_replace_all("^$", "0") %>% #"^$" denotes empty string in regex
       #case by case error fixes
-      str_replace_all("; another bird seen just before counting at stop 16", "") %>%
-      str_replace_all(" song clearly heard in extensive pines with thinned understory in same habitat and general location where this species has occurred on these censuses for the past 20 years", "") %>%
-      str_replace_all("; singing from trees in grassy field at 35.6383,-79.0035", "") %>%
+      str_replace_all("; another bird seen just before counting at stop 16", "0") %>%
+      str_replace_all(" song clearly heard in extensive pines with thinned understory in same habitat and general location where this species has occurred on these censuses for the past 20 years", "0") %>%
+      str_replace_all("; singing from trees in grassy field at 35.6383", "0") %>%
+      str_replace_all("-79.0035", "0") %>%
       #turn characters to numbers
       as.numeric()
     
