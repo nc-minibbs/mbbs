@@ -49,15 +49,22 @@ stop <- NA
 count <- NA
 
 for(i in 1:nrow(df)) {
-  if(is.na(df$input[i]) == TRUE | is.null(df$input[i])) { #if the row is blank or is an NA
+  if(is.na(df$input[i]) == TRUE | is.null(df$input[i]) == TRUE) { #if the row is null or is an NA
     print("error, skip row")
     df$note[i] <- "error, skip row"
+  } else if (df$input[i] == "") {
+    print("blank row")
+    df$note[i] <- "blank row"
   } else if(stringr::str_starts(df$input[i], ",|[0-9]+,") == TRUE) { #follows ,,,,,,1,,,, format
 
     #split the species_comment based on commas
     split_list <- (str_split(df$input[i], ","))[[1]] %>%
       #convert empty strings (nothing between commas) into 0s
       str_replace_all("^$", "0") %>% #"^$" denotes empty string in regex
+      #case by case error fixes
+      str_replace_all("; another bird seen just before counting at stop 16", "") %>%
+      str_replace_all(" song clearly heard in extensive pines with thinned understory in same habitat and general location where this species has occurred on these censuses for the past 20 years", "") %>%
+      str_replace_all("; singing from trees in grassy field at 35.6383,-79.0035", "") %>%
       #turn characters to numbers
       as.numeric()
     
@@ -77,7 +84,7 @@ for(i in 1:nrow(df)) {
     #split the species_comments based on , or ;
     split_list <- str_split(df$input[i], ",|;")[[1]] %>%
       #if it starts with st we're going to remove the sts
-      str_replace_all("( )?st(op)?( )?", "")
+      str_replace_all("( )?st(op)?( )?", "") 
     
     df$note[i] <- paste("X=X,",length(split_list))
     
