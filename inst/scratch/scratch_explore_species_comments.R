@@ -6,8 +6,8 @@ library(stringr)
 library(dplyr)
 
 
-test <- unique(mbbs_chatham$species_comments)
-#test <- unique(mbbs$species_comments)
+#test <- unique(mbbs_chatham$species_comments)
+test <- unique(mbbs$species_comments)
 #test <- test[is.na()==FALSE]
 test <- as.data.frame(test) 
 
@@ -50,10 +50,8 @@ count <- NA
 
 for(i in 1:nrow(df)) {
   if(is.na(df$input[i]) == TRUE | is.null(df$input[i]) == TRUE) { #if the row is null or is an NA
-    print("error, skip row")
-    df$note[i] <- "error, skip row"
+    df$note[i] <- "row NA or NULL"
   } else if (df$input[i] == "") {
-    print("blank row")
     df$note[i] <- "blank row"
   } else if(stringr::str_starts(df$input[i], ",|[0-9]+,") == TRUE) { #follows ,,,,,,1,,,, format
 
@@ -111,7 +109,7 @@ for(i in 1:nrow(df)) {
   }
 }
 
-#convert leftover NAs in df[,1:20] to 0s
+#if note starts with "comma sep" or any of the other relevant notes, then the NAs should be converted to 0s. 
 
 report_leftovers <- function(df) {
   return(sum(is.na(df$note) == TRUE))
