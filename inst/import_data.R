@@ -49,7 +49,7 @@ mbbs_durham <-
 
 # import Chatham
 mbbs_chatham <-
-  import_ebird_data("inst/extdata/MyEBirdData_Chatham_20230713.csv") %>%
+  import_ebird_data("inst/extdata/MyEBirdData_Chatham_20240319.csv") %>%
   prepare_mbbs_data(
     mbbs_site_dt =
       readr::read_csv("inst/extdata/chatham_2000-2009_from_website.csv") %>%
