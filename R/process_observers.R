@@ -256,7 +256,7 @@ confirm_observer_NA <- function(rocombos, mbbs_county, county_observer_table, su
 
 
 #' Add new entries to the mini_observer_conversion_table
-#' @importFrom dplyr filter anti_join join_by rowwise
+#' @importFrom dplyr filter anti_join join_by rowwise c_across
 #' @importFrom stringr str_split_fixed str_detect
 #' @importFrom utils write.csv
 update_mini_observer_table <- function() {
