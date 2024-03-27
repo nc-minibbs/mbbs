@@ -21,7 +21,14 @@ test <- test %>%
 
 #first step is probably to change the unicode errors on the enter signs
 test$input <- test$input %>%
-  stringr::str_replace_all("&#61;| =", "=")
+  stringr::str_replace_all("&#61;| =", "=") %>%
+  #fixing specific errors
+  str_replace_all("1=-,2=0", "1=0,2=0") %>%
+  str_replace_all(",,,,,1,,,,,,,,,,,,,,\t,1", ",,,,,1,,,,,,,,,,,,,,1") %>%
+  str_replace_all("1=0,2=013=1,", "1=0,2=0,3=1,") %>%
+  str_replace_all("11=1212=0", "11=0,12=0") %>%
+  str_replace_all("9=0110=0", "9=1,10=0") ##double check with the count if this should be a 1 or a 0. You need to move to the full dataset filtering anyway. So that way you can keep the species name, year, and original count and then solve more problems better. 
+  
 
 #let's make the dataframe we want to put the new information into.
 reset_df <- function() {
@@ -64,6 +71,8 @@ for(i in 1:nrow(df)) {
       str_replace_all(" song clearly heard in extensive pines with thinned understory in same habitat and general location where this species has occurred on these censuses for the past 20 years", "0") %>%
       str_replace_all("; singing from trees in grassy field at 35.6383", "0") %>%
       str_replace_all("-79.0035", "0") %>%
+      #remove all spaces
+      str_replace_all(" ", "") %>%
       #turn characters to numbers
       as.numeric()
     
