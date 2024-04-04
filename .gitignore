@@ -6,4 +6,4 @@
 packrat/lib*/
 *rsconnect*
 .direnv*/
-inst/scratch/*
+scratch
