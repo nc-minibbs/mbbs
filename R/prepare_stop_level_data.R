@@ -10,16 +10,13 @@ granulate_to_stop <- function(mbbs) {
   #get information from routes with stop info from species_comments
   #get information from routes with stop info in checklist notes (there's at least one) (add info to that df extracted from when information is by quarter route in notes)
   #get information from the transcription work datasets
+    #read in files that end in paper_files.csv, won't have to change that when final file comes in
   #get information from the extdata/stop_level_data_files
   #compile and compare to current mbbs routes - do counts match?
   #where counts DONT match, have .csv where that decision is recorded, and correct one way or another. Usually should default to the starting route-level mbbs. At the least check mbbs$source to see where error is
   #where counts DO match, replace route-level information with stop information in the overall mbbs/mbbs_county dataset that this function is given. mbbs$source == "granulated to stop"
   #add in the stop num = 1 for routes that have all 19 stops aside from stop 1 and have 20 records for the route (like, within a species.)
 }
-
-###code below comes from the scratch file, and needs to be modified to take the entire dataset rather than just a subset of columns. Things need renaming, to be turned into a function, etc. We ought to write it to work using either just one county's mbbs or the mbbs as a whole
-#this also needs the step of when the species_comment is "st 6" <- count 
-#should check if the sum of s1:s20 adds up to count already in this function, we can fix errors as they arise early here perhaps. MAYBE. YES - we need to, because in each row we're going to generate we're going to replace count with the information from ie: s1
 
 #' Processes the stop level information left in the species_comments column of mbbs rows imported from ebird
 #'
