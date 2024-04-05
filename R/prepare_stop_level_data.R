@@ -3,11 +3,14 @@
 #' when available.
 #' Works with any mbbs dataset, either the whole mbbs or one county.
 #'@importFrom dplyr %>%
+#'@importFrom beepr beep
 #'@param mbbs Any mbbs dataset, either the whole survey area or one county
 granulate_to_stop <- function(mbbs) {
   #is this function name a little silly? yes hehe! Also specific
+  print("This function takes a minute to run. Listen for a beep when it's done.")
   #maybe print that this takes a minute to run. could use a beepr
   #get information from routes with stop info from species_comments
+  process_species_comments(mbbs)
   #get information from routes with stop info in checklist notes (there's at least one) (add info to that df extracted from when information is by quarter route in notes)
   #get information from the transcription work datasets
     #read in files that end in paper_files.csv, won't have to change that when final file comes in
@@ -16,6 +19,7 @@ granulate_to_stop <- function(mbbs) {
   #where counts DONT match, have .csv where that decision is recorded, and correct one way or another. Usually should default to the starting route-level mbbs. At the least check mbbs$source to see where error is
   #where counts DO match, replace route-level information with stop information in the overall mbbs/mbbs_county dataset that this function is given. mbbs$source == "granulated to stop"
   #add in the stop num = 1 for routes that have all 19 stops aside from stop 1 and have 20 records for the route (like, within a species.)
+  beep()
 }
 
 #' Processes the stop level information left in the species_comments column of mbbs rows imported from ebird
@@ -51,7 +55,7 @@ process_species_comments <- function(mbbs) {
   stopsmbbs <- stopsmbbs %>%
     mutate("s1" = NA, 's2' = NA,'s3' = NA,'s4' = NA,"s5" = NA,"s6" = NA,"s7" = NA,"s8" = NA,"s9" = NA,"s10" = NA,"s11" = NA,"s12" = NA,"s13" = NA,"s14" = NA,"s15" = NA,"s16" = NA,"s17" = NA,"s18" = NA,"s19" = NA,"s20" = NA, 
            "sc_note" = NA) %>%
-    relocate(s1:s20, species_comments, count, sc_note) #relocate to be the first columns is necessary b/c later data is added to a given [row,column] based on columns 1:20. Also helpful for testing and error identification
+    relocate(s1:s20, species_comments, count, sc_note) #relocate to be the first columns is necessary b/c later data is added to a given [row,column] based on columns 1:20. Also helpful for temp and error identification
 
   #set up for-loop to fill in s1:s20 with information from species_commentts
   split_list <- NA; stop <- NA; count <- NA
@@ -144,18 +148,74 @@ process_species_comments <- function(mbbs) {
   #remove rows that are pre-dawn owling checklists
     filter(!(sc_note %in% c("comma sep, 3"))) %>%
   #mark that these routes came from this function to help with tracing any errors
-    mutate(source = "stop level functions, psc")
-  
+    mutate(source = "stop level functions, psc") %>%
   #now..pivot! 
-  pivote <- stopsmbbs %>%
     pivot_longer(cols = s1:s20, names_to = "stop_num_psc", names_prefix = "s", values_to = "count_psc") %>%
     #mutate count and stop_num with the new values
-  #rearrange columns back to match what's typical for mbbs. remove extraneous rows. 
-    select(-sc_notes, -stop_num_psc, -count_psc)
+    mutate(count = count_psc, 
+           stop_num = stop_num_psc) %>%
+    #remove extraneous rows and rearrange columns back to match what's typical for mbbs
+    select(-sc_note, -stop_num_psc, -count_psc) %>%
+    relocate(species_comments, .after=checklist_comments) %>%
+    relocate(count, .after = notes)
+  
+  return(stopsmbbs)
   
 } #end function
 
 #' Function to return if any rows of stopsmbbs have not been accounted for. Used for testing
 psc_report_leftovers <- function(df) {
   return(sum(is.na(df$sc_note) == TRUE))
+}
+
+#'
+#'
+#'
+#'
+process_checklist_notes_tallies <- function(mbbs) {
+  
+  #can just assign the birds to the first stop, ie: stop 1, stop 6, stop 11, stop 16 I think. It's like, one checklist that's like this. Actually, the proper way to do this may be to check if the mbbs that's passed includes this route, and if so, run function, and if not, don't. 
+  checklistnote <- mbbs %>% filter(mbbs_county == "durham", year == 2014, route_num == 2)
+  
+  four <- str_split(checklistnote$checklist_comments[1], "Stops ")[[1]]
+  four <- four[2:5]
+  stops <- str_extract(four, "[0-9]([0-9])?")
+  four <- str_remove(four, "[0-9]([0-9])?-[0-9]([0-9])?")
+  #initalize a dataframe
+  cols_list <- c("list", "stop_num", "common_name", "count")
+  df <- as.data.frame(matrix(ncol=length(cols_list), nrow = 0))
+  colnames(df) <- cols_list
+  df[1,] <- NA
+  trend_table[s,1] <- rows_list[s]
+  temp <- NA; counter <- 1;
+  
+  list <- c(str_split(four[1], ",")[[1]], str_split(four[2], ",")[[1]], str_split(four[3], ",")[[1]], str_split(four[4], ",")[[1]])
+  
+  for(b in 1:length(list)){
+    df[b,1] <- list[b]
+  }
+  
+  for(i in 1:4) {
+    
+    temp <- str_split(four[i], ",")[[1]]
+    
+    for(a in 1:length(temp)) {
+      
+      df$stop_num[counter] <- stops[i]
+      df$common_name[counter] <-  str_extract(temp[a], "[A-Za-z]+( )?(-)?([A-Za-z]+)?( )?(-)?([A-Za-z]+)?")
+      df$count[counter] <-  str_extract(temp[a], "[0-9]([0-9])?")
+      
+      counter <- counter+1
+    }
+  } 
+
+  df <- df %>%
+    filter(!common_name %in% c("cars", "Cars")) %>%
+    mutate(common_name = ifelse(common_name == "Yellow-shafted Flicker", "Northern Flicker", common_name)) %>%
+    mutate(common_name = ifelse(common_name == "Chimney Swifts", "Chinmey Swift", common_name)) %>%
+    mutate(common_name = ifelse(common_name == "Hood Warbler", "Hooded Warbler", common_name)) %>%
+    mutate(common_name = ifelse(common_name == "Tufted  Titmouse", "Tufted Titmouse", common_name))
+  
+  #then need to add back in the route and the year. 
+    
 }
