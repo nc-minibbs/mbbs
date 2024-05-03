@@ -1,3 +1,7 @@
+#
+# WIP!
+#
+
 
 #' Replaces mbbs route-level data with the more granular stop-level information 
 #' when available.
@@ -23,8 +27,8 @@ granulate_to_stop <- function(mbbs) {
 }
 
 #' Processes the stop level information left in the species_comments column of mbbs rows imported from ebird
-#'
-#'@importFrom dplyr %>% filter mutate relocate %in% select
+#' Returns df of mbbs data that had an informative species_comments broken down to the stop level
+#'@importFrom dplyr %>% filter mutate relocate select
 #'@importFrom stringr str_replace_all str_starts str_split str_extract 
 #'@importFrom tidyr pivot_longer
 #'@param mbbs Any mbbs dataset, either the whole survey area or one county
@@ -163,9 +167,5 @@ process_species_comments <- function(mbbs) {
   
 } #end function
 
-#' Function to return if any rows of stopsmbbs have not been accounted for. Used for testing
-psc_report_leftovers <- function(df) {
-  return(sum(is.na(df$sc_note) == TRUE))
-}
 
 
