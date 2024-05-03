@@ -348,8 +348,9 @@ convert_based_on_mini_table <- function(observer_table, mini_observer_table){
 }
 
 #' Creates a fixed effect (numeric value) of observer quality, which reflects
-#'!!!!! the standardized number of species the top observer in that year saw compared !!!EDIT
-#' !!!!!!to the mean number of species seen on that route across all years !!!EDIT
+#' (observer's mean on this route - mean richness of years they are not one of the obs1-3)/
+#' (mean richness of years they are not one of the obs1-3) ie:
+#' (x-y)/y
 #' observer_quality = max(obs1_quality, obs2_quality, obs3_quality, na.rm = TRUE)
 #' Corrects for cases where a one-time observer accompanied a more experienced observer
 #' and saw a high number of species in a particularly good year (putting their quality
@@ -359,7 +360,7 @@ convert_based_on_mini_table <- function(observer_table, mini_observer_table){
 #' @param mbbs_survey_events a dataframe with the list of survey events, importantly needs to include information about number of species and the observers for each survey
 get_observer_quality <- function(mbbs_survey_events) {
   
-  #goal is to create a fixed effect of observer quality, based off the standardized number of species each observer observers above the mean number of species on that route
+  #goal is to create a fixed effect of observer quality
   
   #table of average n species seen on each route
   S_average_route <- mbbs_survey_events %>% group_by(mbbs_county, route_num) %>% 
@@ -399,8 +400,6 @@ get_observer_quality <- function(mbbs_survey_events) {
     group_by(obs) %>%
     summarize(obs_quality = mean(obs_proportion_route),
               n_surveys_obs = first(n_surveys_obs)) 
-  
-  #!!! stuff below needs to be re-labled, some variable names are now incorrect.
   
   #assign observer_quality based on the performance of the top observer
   mbbs_survey_events <- mbbs_survey_events %>%
