@@ -18,6 +18,7 @@ Imports:
     glue (>= 1.4),
     assertthat,
     yaml,
+    beepr,
     tidyr
 License: MIT + file LICENSE
 Encoding: UTF-8

@@ -3,8 +3,9 @@
 \name{get_observer_quality}
 \alias{get_observer_quality}
 \title{Creates a fixed effect (numeric value) of observer quality, which reflects
-!!!!! the standardized number of species the top observer in that year saw compared !!!EDIT
-!!!!!!to the mean number of species seen on that route across all years !!!EDIT
+(observer's mean on this route - mean richness of years they are not one of the obs1-3)/
+(mean richness of years they are not one of the obs1-3) ie:
+(x-y)/y
 observer_quality = max(obs1_quality, obs2_quality, obs3_quality, na.rm = TRUE)
 Corrects for cases where a one-time observer accompanied a more experienced observer
 and saw a high number of species in a particularly good year (putting their quality
@@ -17,8 +18,9 @@ get_observer_quality(mbbs_survey_events)
 }
 \description{
 Creates a fixed effect (numeric value) of observer quality, which reflects
-!!!!! the standardized number of species the top observer in that year saw compared !!!EDIT
-!!!!!!to the mean number of species seen on that route across all years !!!EDIT
+(observer's mean on this route - mean richness of years they are not one of the obs1-3)/
+(mean richness of years they are not one of the obs1-3) ie:
+(x-y)/y
 observer_quality = max(obs1_quality, obs2_quality, obs3_quality, na.rm = TRUE)
 Corrects for cases where a one-time observer accompanied a more experienced observer
 and saw a high number of species in a particularly good year (putting their quality
