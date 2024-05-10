@@ -152,7 +152,7 @@ process_species_comments <- function(mbbs) {
   #remove rows that are pre-dawn owling checklists
     filter(!(sc_note %in% c("comma sep, 3"))) %>%
   #mark that these routes came from this function to help with tracing any errors
-    mutate(source = "stop level functions, psc") %>%
+    mutate(source = "prepare_stop_level_data, psc") %>%
   #now..pivot! 
     pivot_longer(cols = s1:s20, names_to = "stop_num_psc", names_prefix = "s", values_to = "count_psc") %>%
     #mutate count and stop_num with the new values
