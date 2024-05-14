@@ -141,3 +141,17 @@ combine_site_ebird <- function(x, at_year = 2010) {
     x$site %>% filter(year < !!at_year)
   )
 }
+
+#' Add route_ID column
+#' 
+#' @param x the output of combine_site_ebird
+#' @importFrom dplyr mutate case_when
+#' @export
+mbbs_generate_route_ID <- function(x){
+ x <- x %>%
+    mutate(route_ID = route_num + case_when(
+      mbbs_county == "orange" ~ 100L,
+      mbbs_county == "durham" ~ 200L,
+      mbbs_county == "chatham" ~ 300L))
+  return(x)
+}
