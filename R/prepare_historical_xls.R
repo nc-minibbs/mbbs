@@ -2,7 +2,7 @@
 #' Folders of historical .xls
 #' and processes them all into one df
 #' @importFrom purrr map_dfr
-hist_xls_purrr_directories <- function(directory = "inst/extdata/stop_level_data_files"){
+hist_xls_purrr_directories <- function(directory = "inst/extdata/stop_level_data"){
 
   filenames <- list.files(dir)  #get list of folders in directory
   filenames <- filenames[str_detect(filenames,"\\_stops$")] #only keep folders ending in _stops
@@ -21,7 +21,7 @@ hist_xls_purrr_directories <- function(directory = "inst/extdata/stop_level_data
 #' @importFrom stringr str_detect
 #' @importFrom tidyr pivot_longer
 #' @importFrom dplyr %>%
-hist_xls_purrr_files_in_directory <- function(directory = "inst/extdata/stop_level_data_files/Pippen_Durham_stops") {
+hist_xls_purrr_files_in_directory <- function(directory = "inst/extdata/stop_level_data/Pippen_Durham_stops") {
   
   filenames <- list.files(directory) #list directory files
   filenames <- filenames[str_detect(filenames, "\\.xls$")] #keep only .xls files
@@ -84,11 +84,9 @@ hist_xls_rename_columns <- \(x){
 
 #' Flags if a species code has been missed
 #' @param df a dataframe that contains the column "sequence"
-#' @importFrom beepr beep
 hist_xls_flag_missed_species <- function(df){
   
   if(nrow(df) != max(df$sequence)) {
-    beep(11)
     return("Error! nrows does not match expected number of species codes")
   } 
   
