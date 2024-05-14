@@ -6,24 +6,24 @@
 #' Replaces mbbs route-level data with the more granular stop-level information 
 #' when available.
 #' Works with any mbbs dataset, either the whole mbbs or one county.
-#'@importFrom dplyr %>%
+#'@importFrom dplyr bind_rows
 #'@importFrom beepr beep
 #'@param mbbs Any mbbs dataset, either the whole survey area or one county
 granulate_to_stop <- function(mbbs) {
   #is this function name a little silly? yes hehe! Also specific
   print("This function takes a minute to run. Listen for a beep when it's done.")
-  #maybe print that this takes a minute to run. could use a beepr
-  #get information from routes with stop info from species_comments
-  process_species_comments(mbbs)
+  stopsmbbs <- bind_rows(process_species_comments(mbbs), #get information from routes with stop info from species_comments
+            hist_xls_purrr_directories()) #get information from the extdata/stop_level_data files
   #get information from routes with stop info in checklist notes (there's at least one) (add info to that df extracted from when information is by quarter route in notes)
   #get information from the transcription work datasets
     #read in files that end in paper_files.csv, won't have to change that when final file comes in
-  #get information from the extdata/stop_level_data_files
+
   #compile and compare to current mbbs routes - do counts match?
   #where counts DONT match, have .csv where that decision is recorded, and correct one way or another. Usually should default to the starting route-level mbbs. At the least check mbbs$source to see where error is
   #where counts DO match, replace route-level information with stop information in the overall mbbs/mbbs_county dataset that this function is given. mbbs$source == "granulated to stop"
   #add in the stop num = 1 for routes that have all 19 stops aside from stop 1 and have 20 records for the route (like, within a species.)
   beep()
+  return(stopsmbbs)
 }
 
 #' Processes the stop level information left in the species_comments column of mbbs rows imported from ebird
@@ -81,7 +81,7 @@ process_species_comments <- function(mbbs) {
         str_replace_all("; singing from trees in grassy field at 35.6383", "0") %>%
         str_replace_all("-79.0035", "0") %>%
         #turn characters to numbers
-        as.numeric()
+        as.integer()
       
       #record how many stops there were for testing. Checking records, there's a 2 cases of 19 stops but after discussion, this represents a minor difference of 1 or 2 birds on either side of a quarter route. OK to leave as is. In all cases where length split_list == 21, the "21st stop" is from a comma with nothing after it. Muscle memory from adding a comma after each stop for 20 stops in a row, leave as it. Three cases of "comma sep, 3" - which represents a pre-dawn owling checklist. These are removed from consideration later on, as they should be handled separately.
       stopsmbbs$sc_note[i] <- paste("comma sep,", length(split_list))
@@ -106,8 +106,8 @@ process_species_comments <- function(mbbs) {
       
       #for each entry in split_list, use the start of the entry for what stop, and the end of the entry for what count
       for(a in 1:length(split_list)) {
-        stop <- as.numeric(str_extract(split_list[a], "[0-9]+")) #extracts the first set of numbers
-        count <- as.numeric(str_extract(split_list[a], "(?<=\\=)[0-9]+")) #extracts a set of numbers after an equal sign 
+        stop <- as.integer(str_extract(split_list[a], "[0-9]+")) #extracts the first set of numbers
+        count <- as.integer(str_extract(split_list[a], "(?<=\\=)[0-9]+")) #extracts a set of numbers after an equal sign 
         stopsmbbs[i,stop] <- count 
       }
       #convert NAs to 0
@@ -121,7 +121,7 @@ process_species_comments <- function(mbbs) {
       stopsmbbs$sc_note[i] <- paste("S:/=,",length(split_list))
       
       for(a in 1:20) {
-        stopsmbbs[i,a] <- as.numeric(split_list[a])  
+        stopsmbbs[i,a] <- as.integer(split_list[a])  
       } #end 1:20 for loop
     } else if(stringr::str_starts(stopsmbbs$species_comments[i], "st(op)?") == TRUE) { #when gives ie: Stop 6 and the count for that stop is just the count for the whole route 
       
@@ -132,7 +132,7 @@ process_species_comments <- function(mbbs) {
         str_extract("[0-9]([0-9])?")
       
       #give that stop the count that's already within that row, and set all the other stops to 0
-      stopsmbbs[i,as.numeric(stop)] <- stopsmbbs[i,22] #($count)
+      stopsmbbs[i,as.integer(stop)] <- stopsmbbs[i,22] #($count)
       stopsmbbs[i, 1:20][is.na(stopsmbbs[i, 1:20])] <- 0
       
       stopsmbbs$sc_note[i] <- "a_ one st no ="
@@ -157,7 +157,8 @@ process_species_comments <- function(mbbs) {
     pivot_longer(cols = s1:s20, names_to = "stop_num_psc", names_prefix = "s", values_to = "count_psc") %>%
     #mutate count and stop_num with the new values
     mutate(count = count_psc, 
-           stop_num = stop_num_psc) %>%
+           stop_num = stop_num_psc,
+           stop_num = as.integer(stop_num)) %>%
     #remove extraneous rows and rearrange columns back to match what's typical for mbbs
     select(-sc_note, -stop_num_psc, -count_psc) %>%
     relocate(species_comments, .after=checklist_comments) %>%
