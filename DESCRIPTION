@@ -19,6 +19,7 @@ Imports:
     assertthat,
     yaml,
     beepr,
+    readxl,
     tidyr
 License: MIT + file LICENSE
 Encoding: UTF-8
