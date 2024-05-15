@@ -8,6 +8,9 @@ as compiled by Haven Wiley}
 \usage{
 hist_xls_change_xs_to_ones(hist_xls)
 }
+\arguments{
+\item{hist_xls}{a historical mbbs excel file}
+}
 \description{
 Converts 'x' and 'X' counts to 1
 following method of mbbs route information

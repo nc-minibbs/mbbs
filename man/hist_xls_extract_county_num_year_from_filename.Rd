@@ -9,6 +9,9 @@ year MUST BE the second number in the filename}
 \usage{
 hist_xls_extract_county_num_year_from_filename(filename)
 }
+\arguments{
+\item{filename}{a filename that contains the county, route num, and year}
+}
 \description{
 Pull mbbs_county, route_num, and year
 out of a historical MBBS_XL

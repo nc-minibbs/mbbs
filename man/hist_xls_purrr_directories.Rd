@@ -8,6 +8,9 @@ and processes them all into one df}
 \usage{
 hist_xls_purrr_directories(directory = "inst/extdata/stop_level_data")
 }
+\arguments{
+\item{directory}{the mbbs directory that has folders containing historical xls files.}
+}
 \description{
 Takes a file directory that contains
 Folders of historical .xls

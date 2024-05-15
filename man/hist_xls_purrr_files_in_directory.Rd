@@ -12,6 +12,9 @@ hist_xls_purrr_files_in_directory(
   directory = "inst/extdata/stop_level_data/Pippen_Durham_stops"
 )
 }
+\arguments{
+\item{directory}{a directory that has folders containing historical xls files. Has a default for testing purposes}
+}
 \description{
 Takes a file directory of historical .xls
 files, and processes them,

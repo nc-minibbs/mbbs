@@ -3,6 +3,7 @@
 #' Folders of historical .xls
 #' and processes them all into one df
 #' @importFrom purrr map_dfr
+#' @param directory the mbbs directory that has folders containing historical xls files. 
 hist_xls_purrr_directories <- function(directory = "inst/extdata/stop_level_data"){
 
   filenames <- list.files(directory)  #get list of folders in directory
@@ -22,6 +23,7 @@ hist_xls_purrr_directories <- function(directory = "inst/extdata/stop_level_data
 #' @importFrom stringr str_detect
 #' @importFrom tidyr pivot_longer
 #' @importFrom dplyr %>%
+#' @param directory a directory that has folders containing historical xls files. Has a default for testing purposes
 hist_xls_purrr_files_in_directory <- function(directory = "inst/extdata/stop_level_data/Pippen_Durham_stops") {
   
   filenames <- list.files(directory) #list directory files
@@ -53,6 +55,7 @@ hist_xls_correct_common_names <- \(x){
 #'@importFrom dplyr %>% mutate relocate select matches mutate_all mutate_at
 #'@importFrom readxl read_excel
 #'@importFrom stringr str_extract
+#'@param filenames  a list of historical mbbs .xls files within a folder
 hist_xls_process_xls <- function(filenames) {
   
   filename <- str_extract(filenames, "_stops/.*")
@@ -115,6 +118,7 @@ hist_xls_flag_missed_species <- function(df){
 #' route_num MUST BE the first number in the filename
 #' year MUST BE the second number in the filename
 #' @importFrom stringr str_extract str_extract_all
+#' @param filename a filename that contains the county, route num, and year
 hist_xls_extract_county_num_year_from_filename <- function(filename) {
   
   mbbs_county <- str_extract(filename, "[cC]hatham|[dD]urham|[oO]range") %>%
@@ -136,6 +140,7 @@ hist_xls_extract_county_num_year_from_filename <- function(filename) {
 #'as compiled by Haven Wiley
 #'@importFrom purrr map_dfr
 #'@importFrom dplyr %>%
+#'@param hist_xls a historical mbbs excel file
 hist_xls_change_xs_to_ones <- function(hist_xls) {
   hist_xls <- hist_xls %>%
   purrr::map_dfr(., ~ifelse(.=="x",1,.)) %>%
@@ -149,6 +154,8 @@ hist_xls_change_xs_to_ones <- function(hist_xls) {
 #' But fills in those for species or route info
 #' that are expected
 #' @importFrom dplyr left_join select
+#' @param hist_xls a historical mbbs excel file
+#' @param mbbs_survey_events rda of all surveys that have been run on the mbbs
 hist_xls_match_mbbs_format <- function(hist_xls, mbbs_survey_events = "data/mbbs_survey_events.rda"){
   
   #bring in other dfs

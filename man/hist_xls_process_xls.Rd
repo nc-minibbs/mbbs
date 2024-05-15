@@ -9,6 +9,9 @@ there will be errors}
 \usage{
 hist_xls_process_xls(filenames)
 }
+\arguments{
+\item{filenames}{a list of historical mbbs .xls files within a folder}
+}
 \description{
 Process historical excel sheets
 They should all have the same format,

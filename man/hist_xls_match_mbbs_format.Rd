@@ -12,6 +12,11 @@ hist_xls_match_mbbs_format(
   mbbs_survey_events = "data/mbbs_survey_events.rda"
 )
 }
+\arguments{
+\item{hist_xls}{a historical mbbs excel file}
+
+\item{mbbs_survey_events}{rda of all surveys that have been run on the mbbs}
+}
 \description{
 Match MMBS format
 This doesn't add every mbbs column
