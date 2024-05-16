@@ -23,9 +23,11 @@
             purrr
             stringr
             lubridate
-            readr 
+            readr
             magrittr
             dplyr
+            tidyr
+            beepr
             glue
             assertthat
             yaml
