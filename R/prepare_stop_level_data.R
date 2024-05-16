@@ -10,10 +10,13 @@
 #'@importFrom beepr beep
 #'@param mbbs Any mbbs dataset, either the whole survey area or one county
 granulate_to_stop <- function(mbbs) {
+
   #is this function name a little silly? yes hehe! Also specific
   print("This function takes a minute to run. Listen for a beep when it's done.")
+  
   #maybe print that this takes a minute to run. could use a beepr
   #get information from routes with stop info from species_comments
+  
   process_species_comments(mbbs)
   #get information from routes with stop info in checklist notes (there's at least one) (add info to that df extracted from when information is by quarter route in notes)
   #get information from the transcription work datasets
@@ -26,20 +29,14 @@ granulate_to_stop <- function(mbbs) {
   beep()
 }
 
-#' Processes the stop level information left in the species_comments column of mbbs rows imported from ebird
-#' Returns df of mbbs data that had an informative species_comments broken down to the stop level
-#'@importFrom dplyr %>% filter mutate relocate select
-#'@importFrom stringr str_replace_all str_starts str_split str_extract 
-#'@importFrom tidyr pivot_longer
-#'@param mbbs Any mbbs dataset, either the whole survey area or one county
-process_species_comments <- function(mbbs) {
-  
-  #pull rows that have non-blank species_comments
-  stopsmbbs <- mbbs %>%
-    filter(species_comments != "") 
-  
-  #fix unicode errors on enter signs, and known typos within the dataset
-  stopsmbbs$species_comments <- stopsmbbs$species_comments %>%
+#' Fix species comments
+#' 
+#' Fix unicode errors on enter signs,
+#' and known typos within the dataset
+#' @param x a character vector of species comments
+#' @importFrom stringr str_replace_all
+fix_species_comments <- \(x) {
+    x %>%
     #fix unicode = errors
     str_replace_all("&#61;| =", "=") %>% 
     #fixing specific errors
@@ -53,33 +50,72 @@ process_species_comments <- function(mbbs) {
     str_replace_all("7=28=", "7=2,8=") %>%
     str_replace_all("1=12=", "1=1,2=") %>%
     str_replace_all("8=09=", "8=0,9=") %>%
-    str_replace_all("10=011=", "10=0,11=") 
+    str_replace_all("10=011=", "10=0,11=") %>%
+    str_replace_all("; another bird seen just before counting at stop 16", "") %>%
+    str_replace_all(" song clearly heard in extensive pines with thinned understory in same habitat and general location where this species has occurred on these censuses for the past 20 years", "") %>%
+    str_replace_all("; singing from trees in grassy field at 35.6383,-79.0035", "")
     
-  #we need to add the rows for imputing the stop information to stopsmbbs
-  stopsmbbs <- stopsmbbs %>%
-    mutate("s1" = NA, 's2' = NA,'s3' = NA,'s4' = NA,"s5" = NA,"s6" = NA,"s7" = NA,"s8" = NA,"s9" = NA,"s10" = NA,"s11" = NA,"s12" = NA,"s13" = NA,"s14" = NA,"s15" = NA,"s16" = NA,"s17" = NA,"s18" = NA,"s19" = NA,"s20" = NA, 
-           "sc_note" = NA) %>%
-    relocate(s1:s20, species_comments, count, sc_note) #relocate to be the first columns is necessary b/c later data is added to a given [row,column] based on columns 1:20. Also helpful for temp and error identification
+}
+
+#' Fix split species comments
+#' 
+#' Convert empty strings to 0s,
+#' remove "st", "stop", "Stops =" 
+#' @param x a list of character vectors from species comments
+#' @importFrom stringr str_replace_all
+fix_split_species_comments <- \(x){
+  x %>%
+    #convert empty strings (nothing between commas) into 0s
+    str_replace_all("^$", "0") %>% #"^$" denotes empty string in regex
+    #remove the Stops = / Stops:
+    str_replace_all("Stop(s)?( )?(=)?(:)?( )?", "") %>%
+    #if it starts with st we're going to remove the sts
+    str_replace_all("( )?st(op)?( )?", "") 
+}
+
+#' Prepare mbbs dataset for processing species comments
+#' 
+prepare_to_process <- \(mbbs) {
+  mbbs %>%
+    # Keep rows that have non-blank species_comments
+    filter(species_comments != "") %>%
+    mutate(species_comments = fix_species_comments(species_comments)) %>%
+    dplyr::bind_cols(
+      dplyr::tibble(
+        !!! rlang::set_names(rep(NA_character_, 21), 
+                c(paste0("s", 1:20), "sc_note"))
+      )
+    ) %>%
+    # relocate to be the first columns is necessary b/c
+    # later data is added to a given [row,column] based on columns 1:20. 
+    # Also helpful for temp and error identification
+    relocate(s1:s20, species_comments, count, sc_note)
+}
+
+#' Process species comments
+#' 
+#' Processes the stop level information 
+#' left in the species_comments column of mbbs rows imported from ebird
+#'
+#' @importFrom dplyr %>% filter mutate relocate select
+#' @importFrom stringr str_replace_all str_starts str_split str_extract 
+#' @importFrom tidyr pivot_longer
+#' @param mbbs Any mbbs dataset, either the whole survey area or one county
+#' @result data.frame of mbbs data that had an informative species_comments 
+#'         split out down to the stop level
+process_species_comments <- function(mbbs) {
+  
+  stopsmbbs <- prepare_to_process(mbbs)
 
   #set up for-loop to fill in s1:s20 with information from species_commentts
-  split_list <- NA; stop <- NA; count <- NA
-  #for-loop 
+  split_list <- stop <- count <- NA
+
   for(i in 1:nrow(stopsmbbs)) {
-    if(is.na(stopsmbbs$species_comments[i]) == TRUE | is.null(stopsmbbs$species_comments[i]) == TRUE) { #if the row is null or is an NA
-      stopsmbbs$sc_note[i] <- "ignore, row NA or NULL"
-    } else if (stopsmbbs$species_comments[i] == "") {
-      stopsmbbs$sc_note[i] <- "ignore, blank row"
-    } else if(stringr::str_starts(stopsmbbs$species_comments[i], ",|[0-9]+,") == TRUE) { #follows ,,,,,,1,,,, format
+      if(stringr::str_starts(stopsmbbs$species_comments[i], ",|[0-9]+,") == TRUE) { #follows ,,,,,,1,,,, format
       
       #split the species_comment based on commas
       split_list <- (str_split(stopsmbbs$species_comments[i], ","))[[1]] %>%
-        #convert empty strings (nothing between commas) into 0s
-        str_replace_all("^$", "0") %>% #"^$" denotes empty string in regex
-        #case by case error fixes
-        str_replace_all("; another bird seen just before counting at stop 16", "0") %>%
-        str_replace_all(" song clearly heard in extensive pines with thinned understory in same habitat and general location where this species has occurred on these censuses for the past 20 years", "0") %>%
-        str_replace_all("; singing from trees in grassy field at 35.6383", "0") %>%
-        str_replace_all("-79.0035", "0") %>%
+        fix_split_species_comments() %>%
         #turn characters to numbers
         as.numeric()
       
@@ -88,7 +124,7 @@ process_species_comments <- function(mbbs) {
       
       #for each entry in split_list, put it in the associated s#
       #if split_list is short, ie: length 4, other entries after 4 will be NA
-      #if split_list is 21, ie: they put a final comma into the dataset at stop 20 ex: 1 vs 1, - we just leave that last 0 out. In the testing dataset, which is just mbbs_orange, all examples with a split_list of length 21 this seemed to be the exact issue. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Will need more testing when move to full dataset to confirm no other errors
+      #if split_list is 21, ie: they put a final comma into the dataset at stop 20 ex: 1 vs 1, - we just leave that last 0 out. In the testing dataset, which is just mbbs_orange, all examples with a split_list of length 21 this seemed to be the exact issue. 
       for(a in 1:20) {
         stopsmbbs[i,a] <- split_list[a]
       }
@@ -99,8 +135,7 @@ process_species_comments <- function(mbbs) {
     } else if(stringr::str_starts(stopsmbbs$species_comments[i], "[0-9]+=[0-9]+|st(op)?( )?[0-9]+=[0-9]+") == TRUE) { #
       #split the species_comments based on , or ;
       split_list <- str_split(stopsmbbs$species_comments[i], ",|;")[[1]] %>%
-        #if it starts with st we're going to remove the sts
-        str_replace_all("( )?st(op)?( )?", "") 
+        fix_split_species_comments()
       
       stopsmbbs$sc_note[i] <- paste("X=X,",length(split_list))
       
@@ -115,8 +150,7 @@ process_species_comments <- function(mbbs) {
     } else if(stringr::str_starts(stopsmbbs$species_comments[i], "Stop(s)?( )?(=)?(:)?") == TRUE) { #starts with Stops: or Stops = 
       #split the species_comments based on ,
       split_list <- str_split(stopsmbbs$species_comments[i], ",")[[1]] %>%
-        #remove the Stops = / Stops:
-        str_replace_all("Stop(s)?( )?(=)?(:)?( )?", "")
+        fix_split_species_comments()
       
       stopsmbbs$sc_note[i] <- paste("S:/=,",length(split_list))
       
@@ -165,7 +199,7 @@ process_species_comments <- function(mbbs) {
   
   return(stopsmbbs)
   
-} #end function
+}
 
 
 
