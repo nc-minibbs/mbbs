@@ -73,9 +73,24 @@ fix_split_species_comments <- \(x){
     str_replace_all("( )?st(op)?( )?", "") 
 }
 
-
-
-
+#' Prepare mbbs dataset for processing species comments
+#' 
+prepare_to_process <- \(mbbs) {
+  mbbs %>%
+    # Keep rows that have non-blank species_comments
+    filter(species_comments != "") %>%
+    mutate(species_comments = fix_species_comments(species_comments)) %>%
+    bind_cols(
+      dplyr::tibble(
+        !!! rlang::set_names(rep(NA_character_, 21), 
+                c(paste0("s", 1:20), "sc_note"))
+      )
+    ) %>%
+    # relocate to be the first columns is necessary b/c
+    # later data is added to a given [row,column] based on columns 1:20. 
+    # Also helpful for temp and error identification
+    relocate(s1:s20, species_comments, count, sc_note)
+}
 
 #' Process species comments
 #' 
@@ -90,17 +105,7 @@ fix_split_species_comments <- \(x){
 #'         split out down to the stop level
 process_species_comments <- function(mbbs) {
   
-  #pull rows that have non-blank species_comments
-  stopsmbbs <- mbbs %>%
-    filter(species_comments != "") %>%
-    mutate(species_comments = fix_species_comments(species_comments))
-  
-  #we need to add the rows for imputing the stop information to stopsmbbs
-  stopsmbbs <- stopsmbbs %>%
-    mutate("s1" = NA, 's2' = NA,'s3' = NA,'s4' = NA,"s5" = NA,"s6" = NA,"s7" = NA,"s8" = NA,"s9" = NA,"s10" = NA,"s11" = NA,"s12" = NA,"s13" = NA,"s14" = NA,"s15" = NA,"s16" = NA,"s17" = NA,"s18" = NA,"s19" = NA,"s20" = NA, 
-           "sc_note" = NA) %>%
-    relocate(s1:s20, species_comments, count, sc_note)
-    #relocate to be the first columns is necessary b/c later data is added to a given [row,column] based on columns 1:20. Also helpful for temp and error identification
+  stopsmbbs <- prepare_to_process(mbbs)
 
   #set up for-loop to fill in s1:s20 with information from species_commentts
   split_list <- stop <- count <- NA
