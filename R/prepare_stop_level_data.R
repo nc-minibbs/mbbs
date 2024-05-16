@@ -80,7 +80,7 @@ prepare_to_process <- \(mbbs) {
     # Keep rows that have non-blank species_comments
     filter(species_comments != "") %>%
     mutate(species_comments = fix_species_comments(species_comments)) %>%
-    bind_cols(
+    dplyr::bind_cols(
       dplyr::tibble(
         !!! rlang::set_names(rep(NA_character_, 21), 
                 c(paste0("s", 1:20), "sc_note"))
