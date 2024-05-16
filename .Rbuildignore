@@ -10,3 +10,4 @@
 ^\.flake\.lock$
 ^\.flake\.nix$
 ^\.shell\.nix$
+^\.envrcx$
