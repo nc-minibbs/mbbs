@@ -194,11 +194,14 @@ observers_extractor <- function(mbbs_county) {
 
 #' Function to add observers to route stops 2:20
 #' @param mbbs_county mbbs data.frame
-#' @importFrom dplyr group_by mutate
+#' @importFrom dplyr group_by mutate ungroup
 #' @export
 propogate_observers_across_stops <- function(mbbs_county) {
   #group by route and date (all observations on that route, inclusive of stops 1:20 on ebird checklists after 2019) and give all observer columns the same value as whatever column is not NA
-  mbbs_county <-  mbbs_county %>% group_by(route_num, date) %>% mutate(observers = observers[!is.na(observers)][1])
+  mbbs_county <-  mbbs_county %>% 
+    group_by(route_num, date) %>% 
+    mutate(observers = observers[!is.na(observers)][1]) %>%
+    ungroup()
   #will fill in stops 2:20 with checklist comments like v;3 and won't change data from pre-2019 because all the observations on the same route_num and date will already have the same comments/observer columns
   return(mbbs_county)
 }

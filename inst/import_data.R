@@ -64,10 +64,7 @@ mbbs_chatham <-
 
 # Combine counties
 mbbs <- bind_rows(mbbs_orange, mbbs_chatham, mbbs_durham) %>%
-  mutate(route_ID = route_num + case_when(
-    mbbs_county == "orange" ~ 100L,
-    mbbs_county == "durham" ~ 200L,
-    mbbs_county == "chatham" ~ 300L))
+  mbbs_generate_route_ID()
 
 # Save results ####
 save(mbbs_orange, file = "data/mbbs_orange.rda")
