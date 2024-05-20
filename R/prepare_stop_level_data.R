@@ -117,7 +117,7 @@ process_species_comments <- function(mbbs) {
       split_list <- (str_split(stopsmbbs$species_comments[i], ","))[[1]] %>%
         fix_split_species_comments() %>%
         #turn characters to numbers
-        as.numeric()
+        as.integer()
       
       #record how many stops there were for testing. Checking records, there's a 2 cases of 19 stops but after discussion, this represents a minor difference of 1 or 2 birds on either side of a quarter route. OK to leave as is. In all cases where length split_list == 21, the "21st stop" is from a comma with nothing after it. Muscle memory from adding a comma after each stop for 20 stops in a row, leave as it. Three cases of "comma sep, 3" - which represents a pre-dawn owling checklist. These are removed from consideration later on, as they should be handled separately.
       stopsmbbs$sc_note[i] <- paste("comma sep,", length(split_list))
@@ -141,8 +141,8 @@ process_species_comments <- function(mbbs) {
       
       #for each entry in split_list, use the start of the entry for what stop, and the end of the entry for what count
       for(a in 1:length(split_list)) {
-        stop <- as.numeric(str_extract(split_list[a], "[0-9]+")) #extracts the first set of numbers
-        count <- as.numeric(str_extract(split_list[a], "(?<=\\=)[0-9]+")) #extracts a set of numbers after an equal sign 
+        stop <- as.integer(str_extract(split_list[a], "[0-9]+")) #extracts the first set of numbers
+        count <- as.integer(str_extract(split_list[a], "(?<=\\=)[0-9]+")) #extracts a set of numbers after an equal sign 
         stopsmbbs[i,stop] <- count 
       }
       #convert NAs to 0
@@ -155,7 +155,7 @@ process_species_comments <- function(mbbs) {
       stopsmbbs$sc_note[i] <- paste("S:/=,",length(split_list))
       
       for(a in 1:20) {
-        stopsmbbs[i,a] <- as.numeric(split_list[a])  
+        stopsmbbs[i,a] <- as.integer(split_list[a])  
       } #end 1:20 for loop
     } else if(stringr::str_starts(stopsmbbs$species_comments[i], "st(op)?") == TRUE) { #when gives ie: Stop 6 and the count for that stop is just the count for the whole route 
       
@@ -166,7 +166,7 @@ process_species_comments <- function(mbbs) {
         str_extract("[0-9]([0-9])?")
       
       #give that stop the count that's already within that row, and set all the other stops to 0
-      stopsmbbs[i,as.numeric(stop)] <- stopsmbbs[i,22] #($count)
+      stopsmbbs[i,as.integer(stop)] <- stopsmbbs[i,22] #($count)
       stopsmbbs[i, 1:20][is.na(stopsmbbs[i, 1:20])] <- 0
       
       stopsmbbs$sc_note[i] <- "a_ one st no ="
