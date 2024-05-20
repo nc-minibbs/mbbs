@@ -10,7 +10,7 @@
 #'@importFrom beepr beep
 #'@param mbbs Any mbbs dataset, either the whole survey area or one county
 granulate_to_stop <- function(mbbs) {
-
+  
   #is this function name a little silly? yes hehe! Also specific
   print("This function takes a minute to run. Listen for a beep when it's done.")
   
@@ -20,7 +20,7 @@ granulate_to_stop <- function(mbbs) {
   process_species_comments(mbbs)
   #get information from routes with stop info in checklist notes (there's at least one) (add info to that df extracted from when information is by quarter route in notes)
   #get information from the transcription work datasets
-    #read in files that end in paper_files.csv, won't have to change that when final file comes in
+  #read in files that end in paper_files.csv, won't have to change that when final file comes in
   #get information from the extdata/stop_level_data_files
   #compile and compare to current mbbs routes - do counts match?
   #where counts DONT match, have .csv where that decision is recorded, and correct one way or another. Usually should default to the starting route-level mbbs. At the least check mbbs$source to see where error is
@@ -36,7 +36,7 @@ granulate_to_stop <- function(mbbs) {
 #' @param x a character vector of species comments
 #' @importFrom stringr str_replace_all
 fix_species_comments <- \(x) {
-    x %>%
+  x %>%
     #fix unicode = errors
     str_replace_all("&#61;| =", "=") %>% 
     #fixing specific errors
@@ -54,7 +54,7 @@ fix_species_comments <- \(x) {
     str_replace_all("; another bird seen just before counting at stop 16", "") %>%
     str_replace_all(" song clearly heard in extensive pines with thinned understory in same habitat and general location where this species has occurred on these censuses for the past 20 years", "") %>%
     str_replace_all("; singing from trees in grassy field at 35.6383,-79.0035", "")
-    
+  
 }
 
 #' Fix split species comments
@@ -73,9 +73,24 @@ fix_split_species_comments <- \(x){
     str_replace_all("( )?st(op)?( )?", "") 
 }
 
-
-
-
+#' Prepare mbbs dataset for processing species comments
+#' 
+prepare_to_process <- \(mbbs) {
+  mbbs %>%
+    # Keep rows that have non-blank species_comments
+    filter(species_comments != "") %>%
+    mutate(species_comments = fix_species_comments(species_comments)) %>%
+    dplyr::bind_cols(
+      dplyr::tibble(
+        !!! rlang::set_names(rep(NA_character_, 21), 
+                             c(paste0("s", 1:20), "sc_note"))
+      )
+    ) %>%
+    # relocate to be the first columns is necessary b/c
+    # later data is added to a given [row,column] based on columns 1:20. 
+    # Also helpful for temp and error identification
+    relocate(s1:s20, species_comments, count, sc_note)
+}
 
 #' Process species comments
 #' 
@@ -90,23 +105,13 @@ fix_split_species_comments <- \(x){
 #'         split out down to the stop level
 process_species_comments <- function(mbbs) {
   
-  #pull rows that have non-blank species_comments
-  stopsmbbs <- mbbs %>%
-    filter(species_comments != "") %>%
-    mutate(species_comments = fix_species_comments(species_comments))
+  stopsmbbs <- prepare_to_process(mbbs)
   
-  #we need to add the rows for imputing the stop information to stopsmbbs
-  stopsmbbs <- stopsmbbs %>%
-    mutate("s1" = NA, 's2' = NA,'s3' = NA,'s4' = NA,"s5" = NA,"s6" = NA,"s7" = NA,"s8" = NA,"s9" = NA,"s10" = NA,"s11" = NA,"s12" = NA,"s13" = NA,"s14" = NA,"s15" = NA,"s16" = NA,"s17" = NA,"s18" = NA,"s19" = NA,"s20" = NA, 
-           "sc_note" = NA) %>%
-    relocate(s1:s20, species_comments, count, sc_note)
-    #relocate to be the first columns is necessary b/c later data is added to a given [row,column] based on columns 1:20. Also helpful for temp and error identification
-
   #set up for-loop to fill in s1:s20 with information from species_commentts
   split_list <- stop <- count <- NA
-
+  
   for(i in 1:nrow(stopsmbbs)) {
-      if(stringr::str_starts(stopsmbbs$species_comments[i], ",|[0-9]+,") == TRUE) { #follows ,,,,,,1,,,, format
+    if(stringr::str_starts(stopsmbbs$species_comments[i], ",|[0-9]+,") == TRUE) { #follows ,,,,,,1,,,, format
       
       #split the species_comment based on commas
       split_list <- (str_split(stopsmbbs$species_comments[i], ","))[[1]] %>%
@@ -178,11 +183,11 @@ process_species_comments <- function(mbbs) {
   #remove rows where sc_note starts with "ignore"
   stopsmbbs <- stopsmbbs %>% 
     filter(!(sc_note %in% c("ignore", "ignore, row NA or NULL", "ignore, blank row"))) %>%
-  #remove rows that are pre-dawn owling checklists
+    #remove rows that are pre-dawn owling checklists
     filter(!(sc_note %in% c("comma sep, 3"))) %>%
-  #mark that these routes came from this function to help with tracing any errors
-    mutate(source = "prep_sld, psc") %>%
-  #now..pivot! 
+    #mark that these routes came from this function to help with tracing any errors
+    mutate(source = "stop level functions, psc") %>%
+    #now..pivot! 
     pivot_longer(cols = s1:s20, names_to = "stop_num_psc", names_prefix = "s", values_to = "count_psc") %>%
     #mutate count and stop_num with the new values
     mutate(count = count_psc, 
@@ -195,6 +200,5 @@ process_species_comments <- function(mbbs) {
   return(stopsmbbs)
   
 }
-
 
 
