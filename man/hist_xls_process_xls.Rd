@@ -5,16 +5,21 @@
 \title{Process historical excel sheets
 They should all have the same format,
 if it is in the wrong format
-there will be errors}
+there will be errors
+Call this function with purrr to process multiple files into one df}
 \usage{
 hist_xls_process_xls(filenames)
 }
 \arguments{
 \item{filenames}{a list of historical mbbs .xls files within a folder}
 }
+\value{
+hist_xls each row is a species with columns s1:s20 containing the count at each stop
+}
 \description{
 Process historical excel sheets
 They should all have the same format,
 if it is in the wrong format
 there will be errors
+Call this function with purrr to process multiple files into one df
 }

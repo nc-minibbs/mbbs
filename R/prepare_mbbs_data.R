@@ -1,5 +1,6 @@
 #' Gets the ebird taxonomy dataset
-#' @importFrom readr read_csv
+#' @importFrom dplyr select
+#' @importFrom stringr str_sub
 #' @export
 get_ebird_taxonomy <- function() {
   
@@ -8,7 +9,7 @@ get_ebird_taxonomy <- function() {
     list.files("inst/taxonomy") %>% 
     max(stringr::str_sub(-8, -5))
   read.csv(paste("inst/taxonomy/",latest_taxonomy,sep = "")) %>%
-    select(
+    dplyr::select(
       tax_order = TAXON_ORDER,
       sci_name = SCI_NAME,
       common_name = PRIMARY_COM_NAME
@@ -146,12 +147,10 @@ combine_site_ebird <- function(x, at_year = 2010) {
 #' 
 #' @param x the output of combine_site_ebird
 #' @importFrom dplyr mutate case_when
-#' @export
 mbbs_generate_route_ID <- function(x){
  x <- x %>%
     mutate(route_ID = route_num + case_when(
       mbbs_county == "orange" ~ 100L,
       mbbs_county == "durham" ~ 200L,
       mbbs_county == "chatham" ~ 300L))
-  return(x)
 }

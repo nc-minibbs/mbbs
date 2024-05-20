@@ -2,7 +2,8 @@
 % Please edit documentation in R/prepare_historical_xls.R
 \name{hist_xls_flag_missed_species}
 \alias{hist_xls_flag_missed_species}
-\title{Flags if a species code has been missed}
+\title{Flags if a species code has been missed
+Used to ensure there are no errors with any new .xls sheets that come in}
 \usage{
 hist_xls_flag_missed_species(df)
 }
@@ -11,4 +12,5 @@ hist_xls_flag_missed_species(df)
 }
 \description{
 Flags if a species code has been missed
+Used to ensure there are no errors with any new .xls sheets that come in
 }

@@ -9,7 +9,7 @@ or acsp - "Accipiter sp."}
 hist_xls_filter_to_species_code_rows(x)
 }
 \arguments{
-\item{x}{a historical .xls}
+\item{x}{a dataframe from a historical .xls}
 }
 \description{
 Filters to only rows where the first column is a species code

@@ -15,6 +15,9 @@ hist_xls_purrr_files_in_directory(
 \arguments{
 \item{directory}{a directory that has folders containing historical xls files. Has a default for testing purposes}
 }
+\value{
+stopsmbbs a df of all the point count information from .xls files in the directory. Each row is a count of a species at a stop
+}
 \description{
 Takes a file directory of historical .xls
 files, and processes them,

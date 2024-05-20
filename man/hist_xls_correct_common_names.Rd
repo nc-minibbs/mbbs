@@ -8,7 +8,7 @@ taxonomic standard}
 hist_xls_correct_common_names(x)
 }
 \arguments{
-\item{x}{a historical .xls}
+\item{x}{a dataframe from a historical .xls}
 }
 \description{
 Corrects species common_names to 

@@ -7,7 +7,7 @@
 hist_xls_rename_columns(x)
 }
 \arguments{
-\item{x}{a historical .xls}
+\item{x}{a dataframe from a historical .xls}
 }
 \description{
 Rename the columns of a historical xls

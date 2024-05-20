@@ -11,6 +11,9 @@ hist_xls_purrr_directories(directory = "inst/extdata/stop_level_data")
 \arguments{
 \item{directory}{the mbbs directory that has folders containing historical xls files.}
 }
+\value{
+stopsmbbs a df of all the point count information from .xls files in all folders in the directory. Each row is a count of a species at a stop
+}
 \description{
 Takes a file directory that contains
 Folders of historical .xls
