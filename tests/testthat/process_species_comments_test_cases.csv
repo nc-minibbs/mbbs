@@ -4,3 +4,4 @@ American Kestrel,30,,"st 1=1, st 2=2, st 3=3, st 4=4, st 20=20",wake,1,401,2030,
 American Kestrel,20,,st 20,wake,1,401,2030,
 American Kestrel,30,,"1,2,3,4,,,,,,,,,,,,,,,,20",wake,1,401,2030,
 American Kestrel,30,,"1=1,2=2,3=3,4=4,20=20",wake,1,401,2030,
+American Kestrel,30,,"1,2,3,4,,,,,,,,,,,,,,,20",wake,1,401,2030,"comma sep, 19"
