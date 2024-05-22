@@ -59,20 +59,55 @@ fix_species_comments <- \(x) {
   
 }
 
-#' Fix split species comments
+# #' Fix split species comments
+# #' 
+# #' Convert empty strings to 0s,
+# #' remove "st", "stop", "Stops =" 
+# #' @param x a list of character vectors from species comments
+# #' @importFrom stringr str_replace_all
+# fix_split_species_comments <- \(x){
+#   x |>
+#     str_replace_all(
+#       c( # Convert empty strings 0
+#         "^$" = "0",
+#         # Remove the Stops = / Stops:
+#         "Stop(s)?( )?(=)?(:)?( )?" = "",
+#         # If it starts with st, drop
+#         "( )?st(op)?( )?" = ""
+#         )
+#     )
+# }
+
+#' Process a single species comment
 #' 
 #' Convert empty strings to 0s,
 #' remove "st", "stop", "Stops =" 
-#' @param x a list of character vectors from species comments
+#' @param x a (scalar) string
+#' @return an integer vector of length 20
 #' @importFrom stringr str_replace_all
-fix_split_species_comments <- \(x){
-  x %>%
-    #convert empty strings (nothing between commas) into 0s
-    str_replace_all("^$", "0") %>% #"^$" denotes empty string in regex
-    #remove the Stops = / Stops:
-    str_replace_all("Stop(s)?( )?(=)?(:)?( )?", "") %>%
-    #if it starts with st we're going to remove the sts
-    str_replace_all("( )?st(op)?( )?", "") 
+process_comment <- \(x){
+
+  assertthat::assert_that(
+    rlang::is_scalar_character(x)
+  )
+
+  x |>
+    stringr::str_split_1(",") |>
+    str_replace_all(
+      c( # Convert empty strings 0
+        "^$" = "0",
+        # Remove the Stops = / Stops:
+        "Stop(s)?( )?(=)?(:)?( )?" = "",
+        # If it starts with st, drop
+        "( )?st(op)?( )?" = ""
+        )
+    ) |>
+    (\(out) {
+      assertthat::assert_that(
+        length(out) == 20
+      )
+      as.integer(out)
+    })()
 }
 
 #' Prepare mbbs dataset for processing species comments
@@ -93,6 +128,8 @@ prepare_to_process <- \(mbbs) {
     # Also helpful for temp and error identification
     relocate(s1:s20, species_comments, count, sc_note)
 }
+
+
 
 
 #'
