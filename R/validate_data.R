@@ -1,4 +1,3 @@
-
 #' Check that dates are within the study dates
 #'
 #' @param x a date vector
@@ -23,7 +22,6 @@ validate_date_range <- function(x) {
 #' @importFrom rlang .data
 #' @export
 check_number_of_stops <- function(dt) {
-
   dt %>%
     distinct(.data$sub_id, .data$year, .data$route_num, .data$stop_num) %>%
     group_by(.data$sub_id, .data$year, .data$route_num) %>%

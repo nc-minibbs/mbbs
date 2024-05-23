@@ -3,9 +3,8 @@
 #' @importFrom stringr str_sub
 #' @export
 get_ebird_taxonomy <- function() {
-  
-  #select the file that's from the lastest version year (ie: ebird_taxonomy_v2022)
-  latest_taxonomy <- 
+  # select the file that's from the lastest version year (ie: ebird_taxonomy_v2022)
+  latest_taxonomy <-
     list.files("inst/taxonomy") %>%
     max(stringr::str_sub(-8, -5))
   read.csv(paste("inst/taxonomy/", latest_taxonomy, sep = "")) %>%
@@ -26,34 +25,36 @@ clean_common_names <- function(dt) {
       common_name_c = trimws(.data$common_name),
       common_name_c = str_replace(
         .data$common_name_c,
-        c("\\n" = " ",
-        "  "  = " ",
-        "^Am |^Amer " = "American ",
-        "Fc$" = "Flycatcher",
-        "B-g" = "Blue-gray",
-        "^Br-" = "Brown-",
-        "Nuth$" = "Nuthatch",
-        "^Car " = "Carolina ",
-        "^Com " = "Common ",
-        "^Double-cr " = "Double-crested ",
-        "^E " = "Eastern ",
-         "^Eur " = "European ",
-         "^Gr " = "Great ",
-         "^La " = "Louisiana ",
-         "^N "  = "Northern ",
-         "Nutchatch" = "Nuthatch",
-         "^Red-wing " = "Red-winged ",
-         "^Ruby-thr " = "Ruby-throated ",
-         "Sparow" = "Sparrow",
-         "Swal$" = "Swallow",
-         "Swall$" = "Swallow",
-         "Swallo$" = "Swallow",
-         "^Yellow-thr " = "Yellow-throated ",
-         "^White-br " = "White-breasted ",
-         "-Poor-Will" = "-poor-will",
-         "Will's-Widow" = "will's-widow",
-         "Great Horned \r Owl" = "Great Horned Owl",
-         "House\r Wren" = "House Wren")
+        c(
+          "\\n" = " ",
+          "  " = " ",
+          "^Am |^Amer " = "American ",
+          "Fc$" = "Flycatcher",
+          "B-g" = "Blue-gray",
+          "^Br-" = "Brown-",
+          "Nuth$" = "Nuthatch",
+          "^Car " = "Carolina ",
+          "^Com " = "Common ",
+          "^Double-cr " = "Double-crested ",
+          "^E " = "Eastern ",
+          "^Eur " = "European ",
+          "^Gr " = "Great ",
+          "^La " = "Louisiana ",
+          "^N " = "Northern ",
+          "Nutchatch" = "Nuthatch",
+          "^Red-wing " = "Red-winged ",
+          "^Ruby-thr " = "Ruby-throated ",
+          "Sparow" = "Sparrow",
+          "Swal$" = "Swallow",
+          "Swall$" = "Swallow",
+          "Swallo$" = "Swallow",
+          "^Yellow-thr " = "Yellow-throated ",
+          "^White-br " = "White-breasted ",
+          "-Poor-Will" = "-poor-will",
+          "Will's-Widow" = "will's-widow",
+          "Great Horned \r Owl" = "Great Horned Owl",
+          "House\r Wren" = "House Wren"
+        )
       ),
       common_name_c = case_when(
         common_name_c == "Accipiter species" ~ "Accipiter sp.",
@@ -150,13 +151,14 @@ combine_site_ebird <- function(x, at_year = 2010) {
 }
 
 #' Add route_ID column
-#' 
+#'
 #' @param x the output of combine_site_ebird
 #' @importFrom dplyr mutate case_when
-mbbs_generate_route_ID <- function(x){
- x <- x %>%
+mbbs_generate_route_ID <- function(x) {
+  x <- x %>%
     mutate(route_ID = .data$route_num + case_when(
       .data$mbbs_county == "orange" ~ 100L,
       .data$mbbs_county == "durham" ~ 200L,
-      .data$mbbs_county == "chatham" ~ 300L))
+      .data$mbbs_county == "chatham" ~ 300L
+    ))
 }

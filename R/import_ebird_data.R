@@ -1,4 +1,3 @@
-
 #' Renames and selects columns from data.frame created from the ebird csv export.
 #'
 #' @param dt a data.frame imported from an ebird export.
@@ -6,25 +5,25 @@
 rename_ebird_data <- function(dt) {
   dplyr::select(
     dt,
-    sub_id      = .data$Submission.ID,
-    common_name = .data$Common.Name, 
-    sci_name    = .data$Scientific.Name,
-    tax_order   = .data$Taxonomic.Order,
-    count_raw   = .data$Count,
-    state       = .data$State.Province,
-    loc         = .data$Location,
-    locid       = .data$Location.ID,
-    lat         = .data$Latitude,
-    lon         = .data$Longitude,
-    date        = .data$Date,
-    time        = .data$Time,
-    protocol    = .data$Protocol,
+    sub_id = .data$Submission.ID,
+    common_name = .data$Common.Name,
+    sci_name = .data$Scientific.Name,
+    tax_order = .data$Taxonomic.Order,
+    count_raw = .data$Count,
+    state = .data$State.Province,
+    loc = .data$Location,
+    locid = .data$Location.ID,
+    lat = .data$Latitude,
+    lon = .data$Longitude,
+    date = .data$Date,
+    time = .data$Time,
+    protocol = .data$Protocol,
     distance_traveled = .data$Distance.Traveled..km.,
     area_covered = .data$Area.Covered..ha.,
-    all_obs     = .data$All.Obs.Reported,
-    breed_code  = .data$Breeding.Code,
+    all_obs = .data$All.Obs.Reported,
+    breed_code = .data$Breeding.Code,
     checklist_comments = .data$Checklist.Comments,
-    species_comments = .data$Observation.Details 
+    species_comments = .data$Observation.Details
   )
 }
 
@@ -33,8 +32,8 @@ rename_ebird_data <- function(dt) {
 #' @param dt data table / data frame
 rename_subspecies <- function(dt) {
   dplyr::mutate(dt,
-    sci_name = stringr::word(sci_name, 1, 2),  #dropping subspecies or domestic type designations
-    common_name = stringr::word(common_name, 1, sep = stringr::fixed(" ("))# dropping subspecies and subgroup designations
+    sci_name = stringr::word(sci_name, 1, 2), # dropping subspecies or domestic type designations
+    common_name = stringr::word(common_name, 1, sep = stringr::fixed(" (")) # dropping subspecies and subgroup designations
   )
 }
 
@@ -57,7 +56,6 @@ filter_ebird_data <- function(dt) {
 #' @importFrom dplyr distinct summarise mutate group_by pull filter
 #' @keywords internal
 run_import_checks <- function(dt) {
-
   # Check for missing values where there shouldn't be.
   purrr::walk(
     .x = c("date", "mbbs_county", "route_num", "count"),
