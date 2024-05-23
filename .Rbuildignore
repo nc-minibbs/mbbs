@@ -14,3 +14,4 @@
 ^\.shell\.nix$
 ^\.vscode$
 ^inst/scratch$
+^docs$
