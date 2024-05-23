@@ -47,6 +47,8 @@
           pkgs.R
           pkgs.rPackages.devtools
           pkgs.rPackages.usethis
+          pkgs.rPackages.languageserver
+          pkgs.rPackages.styler
         ] ++ mbbsDeps ;
       }; 
 
