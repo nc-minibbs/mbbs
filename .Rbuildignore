@@ -7,3 +7,9 @@
 ^LICENSE\.md$
 ^\.direnv$
 ^\.github$
+^\.envrc$
+^\.vscode$
+^flake\.nix$
+^flake\.lock$
+^\.vscode$
+^inst/scratch$

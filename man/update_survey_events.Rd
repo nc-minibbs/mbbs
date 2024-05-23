@@ -2,7 +2,8 @@
 % Please edit documentation in R/process_observers.R
 \name{update_survey_events}
 \alias{update_survey_events}
-\title{Updates survey_list if needed by rbinding the new year, then updates survey_events}
+\title{Updates survey_list if needed by rbinding the new year,
+  then updates survey_events}
 \usage{
 update_survey_events(envir = parent.frame())
 }
@@ -10,5 +11,6 @@ update_survey_events(envir = parent.frame())
 \item{envir}{uses the local environment of import_data}
 }
 \description{
-Updates survey_list if needed by rbinding the new year, then updates survey_events
+Updates survey_list if needed by rbinding the new year,
+  then updates survey_events
 }

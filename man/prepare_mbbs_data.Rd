@@ -8,8 +8,8 @@ with ebird data.}
 prepare_mbbs_data(ebird_dt, mbbs_site_dt, ebird_taxonomy)
 }
 \arguments{
-\item{ebird_dt}{a `data.frame` imported using `import_ebird_data` for a single
-county}
+\item{ebird_dt}{a `data.frame` imported using `import_ebird_data`
+for a single county}
 
 \item{mbbs_site_dt}{a `data.frame` containing MBBS data scraped from the old
 website for a single county.}

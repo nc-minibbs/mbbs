@@ -20,6 +20,9 @@
       inherit (gitignore.lib) gitignoreSource;
 
       mbbsDeps = with pkgs.rPackages; [
+            beepr
+            readxl
+            tidyr
             purrr
             stringr
             lubridate

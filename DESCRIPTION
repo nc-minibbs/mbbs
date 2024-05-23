@@ -16,6 +16,7 @@ Imports:
     dplyr (>= 1.0),
     glue (>= 1.4),
     assertthat,
+    rlang,
     yaml,
     beepr,
     readxl,
