@@ -4,6 +4,6 @@
 
 test_that("get_exclusions runs",
   {
-    expect_no_error(get_exclusions("../../inst/excluded_submissions.yml"))
+    expect_no_error(get_exclusions("inst/excluded_submissions.yml"))
   }
 )
