@@ -13,3 +13,4 @@
 ^flake\.lock$
 ^\.vscode$
 ^inst/scratch$
+^docs$
