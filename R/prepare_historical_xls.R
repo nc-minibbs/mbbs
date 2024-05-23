@@ -62,19 +62,19 @@ hist_xls_process_xls <- function(filenames) {
     hist_xls_filter_to_species_code_rows() %>%
     hist_xls_rename_columns() %>%
     mutate(sequence = as.integer(sequence)) %>% #ensure sequence is number
-    dplyr::relocate(common_name, .before = species_code) %>% #readability
+    dplyr::relocate(.data$common_name, .before = .data$species_code) %>% #readability
     hist_xls_correct_common_names() %>%
     hist_xls_flag_missed_species() %>%
-    dplyr::select(common_name, matches("s[0-9]+")) %>% #remove extraneous rows, keep only common name and stops
+    dplyr::select(.data$common_name, matches("s[0-9]+")) %>% #remove extraneous rows, keep only common name and stops
     mutate(hist_xls_extract_county_num_year_from_filename(filename),
            source = "prep_sld, hist xls",
-           route_num = as.integer(route_num)) %>%
-    mutate(across(s1:s20, ~ifelse(is.na(.), 0, .))) %>% #change NAs to 0
+           route_num = as.integer(.data$route_num)) %>%
+    mutate(across(.data$s1:.data$s20, ~ifelse(is.na(.), 0, .))) %>% #change NAs to 0
     #change x and X to 1, following Haven Wiley's example
     purrr::map_dfr(., ~ifelse(.=="x",1,.)) %>%
     purrr::map_dfr(., ~ifelse(.=="X",1,.)) %>%
     #ensure counts are integers, not characters
-    mutate(across(s1:s20, as.integer)) %>%
+    mutate(across(.data$s1:.data$s20, as.integer)) %>%
     hist_xls_add_species_and_route_info()
 }
 
@@ -134,7 +134,7 @@ hist_xls_extract_county_num_year_from_filename <- function(filename) {
     tolower()
   
   nums <- str_extract_all(filename, "[0-9]+")[[1]]
-  route_num <- nums[1] %>% 
+  route_num <- nums[1] %>%
     as.integer()
   year <- nums[2] %>%
     as.integer()
@@ -155,7 +155,7 @@ hist_xls_add_species_and_route_info <- function(hist_xls, mbbs_survey_events = "
   taxonomy <- get_ebird_taxonomy()
   load(mbbs_survey_events)
   mbbs_survey_events <- mbbs_survey_events %>%
-    dplyr::select(mbbs_county, route_num, year, observers) 
+    dplyr::select(.data$mbbs_county, .data$route_num, .data$year, .data$observers)
   
   #add columns
   hist_xls <- hist_xls %>%
