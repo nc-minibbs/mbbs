@@ -62,7 +62,6 @@ hist_xls_process_xls <- function(filenames) {
     mutate(sequence = as.integer(sequence)) %>% # ensure sequence is number
     dplyr::relocate(.data$common_name, .before = .data$species_code) %>% # readability
     hist_xls_correct_common_names() %>%
-    hist_xls_flag_missed_species() %>%
     dplyr::select(.data$common_name, matches("s[0-9]+")) %>% # remove extraneous rows, keep only common name and stops
     mutate(hist_xls_extract_county_num_year_from_filename(filename),
       source = "prep_sld, hist xls",
@@ -109,18 +108,6 @@ hist_xls_correct_common_names <- \(x){
       common_name = str_replace(common_name, "^Whip-poor-will$", "Eastern Whip-poor-will")
     )
 }
-
-
-#' Flags if a species code has been missed
-#' Used to ensure there are no errors with any new .xls sheets that come in
-#' @param df a dataframe that contains the column "sequence"
-hist_xls_flag_missed_species <- function(df) {
-  if (nrow(df) != max(df$sequence)) {
-    stop("Error! nrows does not match expected number of species codes")
-  }
-  df # return to pipe
-}
-
 
 #' Pull mbbs_county, route_num, and year
 #' out of a historical MBBS_XL
