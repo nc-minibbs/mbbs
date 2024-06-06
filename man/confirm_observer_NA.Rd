@@ -3,7 +3,7 @@
 \name{confirm_observer_NA}
 \alias{confirm_observer_NA}
 \title{Takes an observer/route combo where observer is NA and throws an error if the
-survey for that route/year genuinely has no recorded observer either 
+survey for that route/year genuinely has no recorded observer either
 within the mbbs_county dataframe or on the survey_list}
 \usage{
 confirm_observer_NA(rocombos, mbbs_county, county_observer_table, survey_list)
@@ -19,6 +19,6 @@ confirm_observer_NA(rocombos, mbbs_county, county_observer_table, survey_list)
 }
 \description{
 Takes an observer/route combo where observer is NA and throws an error if the
-survey for that route/year genuinely has no recorded observer either 
+survey for that route/year genuinely has no recorded observer either
 within the mbbs_county dataframe or on the survey_list
 }
