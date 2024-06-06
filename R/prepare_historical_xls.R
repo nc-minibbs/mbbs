@@ -5,9 +5,12 @@
 #' @param directory the mbbs directory that has folders containing historical xls files.
 #' @returns stopsmbbs a df of all the point count information from .xls files in all folders in the directory. Each row is a count of a species at a stop
 hist_xls_purrr_directories <- function(directory = "inst/extdata/stop_level_data") {
-  filenames <- list.files(directory) # get list of folders in directory
-  filenames <- filenames[str_detect(filenames, "\\_stops$")] # only keep folders ending in _stops
-  filenames <- paste(directory, filenames, sep = "/") # add in the rest of the file path
+  # get list of folders in directory
+  filenames <- list.files(directory)
+  # only keep folders ending in _stops
+  filenames <- filenames[str_detect(filenames, "\\_stops$")] 
+  # add in the rest of the file path
+  filenames <- paste(directory, filenames, sep = "/") 
   # create a df combining all the .xls data in all the folders in the directory
   stopsmbbs <- purrr::map_dfr(filenames, hist_xls_purrr_files_in_directory)
 }
@@ -21,19 +24,19 @@ hist_xls_purrr_directories <- function(directory = "inst/extdata/stop_level_data
 #' @importFrom stringr str_detect
 #' @importFrom tidyr pivot_longer
 #' @importFrom dplyr %>%
-#' @param directory a directory that has folders containing historical xls files. Has a default for testing purposes
-#' @returns stopsmbbs a df of all the point count information from .xls files in the directory. Each row is a count of a species at a stop
+#' @param directory a directory that has folders containing historical 
+#'    xls files. Has a default for testing purposes
+#' @returns stopsmbbs a df of all the point count information from .xls files
+#'    in the directory. Each row is a count of a species at a stop
 hist_xls_purrr_files_in_directory <- function(directory = "inst/extdata/stop_level_data/Pippen_Durham_stops") {
-  filenames <- list.files(directory) # list directory files
-  filenames <- filenames[str_detect(filenames, "\\.xls$")] # keep only .xls files
-  filenames <- paste(directory, filenames, sep = "/") # add in the rest of the path
-  stopsmbbs <- purrr::map_dfr(filenames, hist_xls_process_xls) %>% # process all xls in the directory
-    # pivot
-    pivot_longer(
-      cols = s1:s20,
-      names_to = "stop_num", names_prefix = "s", values_to = "count"
-    ) %>%
-    mutate(stop_num = as.integer(stop_num))
+  # list directory files
+  filenames <- list.files(directory) 
+  # keep only .xls files
+  filenames <- filenames[str_detect(filenames, "\\.xls$")] 
+  # add in the rest of the path
+  filenames <- paste(directory, filenames, sep = "/") 
+  # process all xls in the directory
+  stopsmbbs <- purrr::map_dfr(filenames, hist_xls_process_xls) 
 
   # return
   stopsmbbs
@@ -50,7 +53,8 @@ hist_xls_purrr_files_in_directory <- function(directory = "inst/extdata/stop_lev
 #' @importFrom stringr str_extract
 #' @importFrom purrr map_dfr
 #' @param filenames  a list of historical mbbs .xls files within a folder
-#' @returns hist_xls each row is a species with columns s1:s20 containing the count at each stop
+#' @returns hist_xls each row is a species with columns s1:s20 
+#'    containing the count at each stop
 hist_xls_process_xls <- function(filenames) {
   # cut down the filename to the unique information about the route
   filename <- str_extract(filenames, "_stops/.*")
@@ -60,20 +64,27 @@ hist_xls_process_xls <- function(filenames) {
     hist_xls_filter_to_species_code_rows() %>%
     hist_xls_rename_columns() %>%
     mutate(sequence = as.integer(sequence)) %>% # ensure sequence is number
-    dplyr::relocate(.data$common_name, .before = .data$species_code) %>% # readability
+    dplyr::relocate(common_name, .before = species_code) %>% # readability
     hist_xls_correct_common_names() %>%
-    dplyr::select(.data$common_name, matches("s[0-9]+")) %>% # remove extraneous rows, keep only common name and stops
+    # remove extraneous rows, keep only common name and stops
+    dplyr::select(common_name, dplyr::matches("s[0-9]+")) %>% 
     mutate(hist_xls_extract_county_num_year_from_filename(filename),
       source = "prep_sld, hist xls",
-      route_num = as.integer(.data$route_num)
+      route_num = as.integer(route_num)
     ) %>%
-    mutate(across(.data$s1:.data$s20, ~ ifelse(is.na(.), 0, .))) %>% # change NAs to 0
+    mutate(across(s1:s20, ~ ifelse(is.na(.), 0, .))) %>% # change NAs to 0
     # change x and X to 1, following Haven Wiley's example
     purrr::map_dfr(., ~ ifelse(. == "x", 1, .)) %>%
     purrr::map_dfr(., ~ ifelse(. == "X", 1, .)) %>%
     # ensure counts are integers, not characters
-    mutate(across(.data$s1:.data$s20, as.integer)) %>%
-    hist_xls_add_species_and_route_info()
+    mutate(across(s1:s20, as.integer)) %>%
+    hist_xls_add_species_and_route_info() %>%
+    # pivot
+    pivot_longer(
+      cols = s1:s20,
+      names_to = "stop_num", names_prefix = "s", values_to = "count"
+    ) %>%
+    mutate(stop_num = as.integer(stop_num))
 }
 
 #' Filters to only rows where the first column is a species code
@@ -93,7 +104,8 @@ hist_xls_filter_to_species_code_rows <- \(x){
 #' @param x a dataframe from a historical .xls
 hist_xls_rename_columns <- \(x){
   x %>%
-    `colnames<-`(c("species_code", paste("s", 1:20, sep = ""), "sum", "sequence", "species_code2", "common_name"))
+    `colnames<-`(c("species_code", paste("s", 1:20, sep = ""), "sum", 
+                   "sequence", "species_code2", "common_name"))
 }
 
 
@@ -105,7 +117,8 @@ hist_xls_correct_common_names <- \(x){
   x %>%
     mutate(
       common_name = str_replace(common_name, "Rock Dove", "Rock Pigeon"),
-      common_name = str_replace(common_name, "^Whip-poor-will$", "Eastern Whip-poor-will")
+      common_name = str_replace(common_name, "^Whip-poor-will$", 
+                                "Eastern Whip-poor-will")
     )
 }
 
@@ -116,7 +129,9 @@ hist_xls_correct_common_names <- \(x){
 #' @importFrom stringr str_extract str_extract_all
 #' @param filename a filename that contains the county, route num, and year
 hist_xls_extract_county_num_year_from_filename <- function(filename) {
-  mbbs_county <- str_extract(filename, "[cC]hatham|[dD]urham|[oO]range") %>%
+  
+  mbbs_county <-
+    str_extract(filename, "[cC]hatham|[dD]urham|[oO]range") %>%
     tolower()
 
   nums <- str_extract_all(filename, "[0-9]+")[[1]]
@@ -140,11 +155,71 @@ hist_xls_add_species_and_route_info <- function(hist_xls, mbbs_survey_events = "
   taxonomy <- get_ebird_taxonomy()
   load(mbbs_survey_events)
   mbbs_survey_events <- mbbs_survey_events %>%
-    dplyr::select(.data$mbbs_county, .data$route_num, .data$year, .data$observers)
+    dplyr::select(mbbs_county, route_num, year, observers)
 
   # add columns
   hist_xls <- hist_xls %>%
     left_join(taxonomy, by = "common_name") %>%
     mbbs_generate_route_ID() %>%
     left_join(mbbs_survey_events, by = c("mbbs_county", "route_num", "year"))
+}
+
+
+### Tests ###
+#' A set of integrity checks
+#' These do not check the validity of the data.
+#' @importFrom purrr walk
+#' @importFrom assertthat assert_that
+#' @importFrom dplyr group_by summarize n
+#' @param df a df from an .xls that has just been processed through
+#'   the rest of the hist_xls_process_xls function
+hist_xls_run_checks <- function(df) {
+  
+  #check for missing values where there shouldn't be.
+  purrr::walk(
+    .x = c("common_name", "mbbs_county", "year", "route_num", 
+           "stop_num", "count", "route_ID"),
+    .f = ~{
+      assertthat::assert_that(
+        !anyNA(df[[.x]]),
+        msg = sprintf("Found NA %s values; there shouldn't be.", .x)
+      )
+    }
+  )
+  
+  #check for missing sci_name values, except for "Accipiter species"
+  hist_xls_sci_name_check(df)
+  
+  #check that all species have exactly 20 rows (20 stops)
+  entries <- 
+    df %>% 
+    dplyr::group_by(common_name) %>%
+    dplyr::summarize(n_stops = n())
+  
+  purrr::walk(
+    .x = c("n_stops"),
+    .f = ~{
+      assertthat::assert_that(
+        all(entries[[.x]] == 20), 
+        msg = sprintf("At least one species does not have 20 stops")
+      )
+    }
+  )
+  
+}
+
+#' Defined separately from run_checks for testing purposes
+#' Tests that all rows except for where common_name is
+#' 'Accipiter species' have a non-NA sci_name column
+#' @importFrom assertthat assert_that
+#' @param df a df from an .xls that has just been processed through
+#'   the rest of the hist_xls_process_xls function
+hist_xls_sci_name_check <- function(df) {
+  
+  #check that all rows (except accipiter spp.) have sci_name 
+  assertthat::assert_that(
+    !anyNA(df[df$common_name != "Accipiter species",]$sci_name),
+    msg = sprintf("Found NA sci_name values; there shouldn't be.")
+  )
+  
 }
