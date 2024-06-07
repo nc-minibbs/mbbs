@@ -86,7 +86,7 @@ hist_xls_process_xls <- function(filenames) {
     ) %>%
     mutate(stop_num = as.integer(stop_num))
 
-  # hist_xls_run_checks()
+   hist_xls_run_checks(hist_xls)
 }
 
 #' Filters to only rows where the first column is a species code
@@ -121,10 +121,7 @@ hist_xls_correct_common_names <- \(x){
   x %>%
     mutate(
       common_name = str_replace(common_name, "Rock Dove", "Rock Pigeon"),
-      common_name = str_replace(
-        common_name, "^Whip-poor-will$",
-        "Eastern Whip-poor-will"
-      )
+      common_name = str_replace(common_name, "^Whip-poor-will$", "Eastern Whip-poor-will")
     )
 }
 
