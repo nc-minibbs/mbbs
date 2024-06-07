@@ -86,7 +86,7 @@ hist_xls_process_xls <- function(filenames) {
     ) %>%
     mutate(stop_num = as.integer(stop_num))
 
-   hist_xls_run_checks(hist_xls)
+  hist_xls_run_checks(hist_xls)
 }
 
 #' Filters to only rows where the first column is a species code
