@@ -2,15 +2,18 @@
 % Please edit documentation in R/process_observers.R
 \name{convert_based_on_mini_table}
 \alias{convert_based_on_mini_table}
-\title{Standardize the names in the obs1, obs2, and obs3 columns of the main observer table}
+\title{Standardize the names in the obs1, obs2, and obs3 columns
+   of the main observer table}
 \usage{
 convert_based_on_mini_table(observer_table, mini_observer_table)
 }
 \arguments{
 \item{observer_table}{main_observer_table}
 
-\item{mini_observer_table}{the mini_observer_table, has only columns 'input_name' and 'output name'}
+\item{mini_observer_table}{the mini_observer_table, has only columns 
+'input_name' and 'output name'}
 }
 \description{
-Standardize the names in the obs1, obs2, and obs3 columns of the main observer table
+Standardize the names in the obs1, obs2, and obs3 columns
+   of the main observer table
 }

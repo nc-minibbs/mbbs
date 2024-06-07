@@ -9,6 +9,9 @@ propogate_observers_across_stops(mbbs_county)
 \arguments{
 \item{mbbs_county}{mbbs data.frame}
 }
+\value{
+mbbs_county input dataframe with the observer column added to all stops
+}
 \description{
 Function to add observers to route stops 2:20
 }
