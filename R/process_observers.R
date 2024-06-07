@@ -190,10 +190,10 @@ observers_extractor <- function(mbbs_county) {
     stringr::str_replace_all("&#61;| =", "=")
 
   # when checklist comments contain "observer(s)", extract after observer(s) and before a ;
-  mbbs_county <- mbbs_county %>% 
+  mbbs_county <- mbbs_county %>%
     mutate(observers = case_when(
       # if observer column exists leave it
-      is.na(observers) == FALSE ~ observers, 
+      is.na(observers) == FALSE ~ observers,
       # if observer column is NA, extract from comments after observer +before ;
       stringr::str_detect(checklist_comments, ".*[oO]bserver(s)?=") == TRUE ~
         sub(".*[oO]bserver(s)?=", "", checklist_comments) %>% # extract after observer
@@ -202,8 +202,7 @@ observers_extractor <- function(mbbs_county) {
         }, # extract before ;
       # if observer column is NA but comments doesn't include observers, leave as is
       stringr::str_detect(checklist_comments, ".*[oO]bserver(s)?=") == FALSE ~ observers
-    )
-  )
+    ))
 }
 
 
@@ -234,52 +233,54 @@ confirm_observer_NA <- function(rocombos, mbbs_county, county_observer_table, su
   # confirm that the rocombos passed is an NA, if it's not just return and exit this function
   if (is.na(rocombos$observers) == FALSE) {
     # return("observers not NA") #for testing
-    return(invisible(NULL)) #return is correct to use, exit function early.
+    return(invisible(NULL)) # return is correct to use, exit function early.
   }
 
-  # since the observer of this rocombo is NA, 
-  # evaluate if it should be ignored (we're not missing data) 
+  # since the observer of this rocombo is NA,
+  # evaluate if it should be ignored (we're not missing data)
   # or should throw an error (we're missing data)
 
   # filter to the na rows in mbbs_county that this rocombo represents
   na_rows <- mbbs_county %>% # take county df
     filter(is.na(.data$observers) == TRUE) %>% # filter to the NA rows
     filter(route_num == rocombos$route_num) %>% # filter to the NA rows for this route
-    anti_join(survey_list, join_by(mbbs_county, route_num, year)) 
+    anti_join(survey_list, join_by(mbbs_county, route_num, year))
   # only keep any rows with NA observers if that route/year combo is not already
-  # represented on the survey list. 
-  # Years where observers == NA, but that are on the survey_list 
+  # represented on the survey list.
+  # Years where observers == NA, but that are on the survey_list
   # (and so have an observer) are cut.
 
   # evaluate if this route has all it's observers on the survey_list
   if (nrow(na_rows) == 0) {
-    # the NA observer seen on this rocombos has been corrected elsewhere, 
-    #it's on the survey_list.
+    # the NA observer seen on this rocombos has been corrected elsewhere,
+    # it's on the survey_list.
     # return("observers corrected elsewhere") #for testing
     return(invisible(NULL))
   } else {
     # this NA observer is not already on the survey list. This is likely because
-    # (1). It's a new year of data, observers did not propogate to all the rows, 
+    # (1). It's a new year of data, observers did not propogate to all the rows,
     # and survey_list gets updated after observer_conversion_table.
     # (2). It's a year of data where it's not on the survey_list and ALL the
     # route's 'observers' column are NA
 
-    # filter mbbs_county to evaluate if ANY row of data from this route/year 
-    #combo contains an observers value 
-    #(and will therefore have been caught in a non-NA rowcombos[i])
+    # filter mbbs_county to evaluate if ANY row of data from this route/year
+    # combo contains an observers value
+    # (and will therefore have been caught in a non-NA rowcombos[i])
     non_na_rows <- mbbs_county %>% # take the county df
       filter(.data$year %in% na_rows$year) %>% # filter to the year we've got NA
-      filter(.data$route_num == rocombos$route_num) %>% # filter to the route 
+      filter(.data$route_num == rocombos$route_num) %>% # filter to the route
       filter(!is.na(.data$observers)) # filter to any rows where obs is NOT NA
 
-    # if there are NO rows in the mbbs where this route/year combo 
+    # if there are NO rows in the mbbs where this route/year combo
     # has a non-NA observer, flag the error
     if (nrow(non_na_rows) == 0) {
-      print(paste("ERROR!", 
-                  na_rows$year, 
-                  "route",
-                  na_rows$route_num,
-                  "has only NA values for observers and no corrected record in mbbs_survey_events. Likely source of error: the ebird entry for stop 1 is missing observer information."))
+      print(paste(
+        "ERROR!",
+        na_rows$year,
+        "route",
+        na_rows$route_num,
+        "has only NA values for observers and no corrected record in mbbs_survey_events. Likely source of error: the ebird entry for stop 1 is missing observer information."
+      ))
     }
     # regardless of if there's an error or not, NA has now been fully evaluated.
     # return("Other row not NA") #for testing
@@ -294,10 +295,10 @@ confirm_observer_NA <- function(rocombos, mbbs_county, county_observer_table, su
 #' @importFrom utils write.csv
 update_mini_observer_table <- function() {
   # load the main observer conversion table
-  observer_table <- 
+  observer_table <-
     read.csv("inst/extdata/main_observer_conversion_table.csv", header = TRUE)
   # load the mini observer conversion table (for obs1,obs2,obs3)
-  mini_observer_table <- 
+  mini_observer_table <-
     read.csv("inst/extdata/mini_observer_conversion_table.csv", header = TRUE)
 
   # separate out observers into obs1,obs2,obs3
@@ -358,8 +359,9 @@ update_mini_observer_table <- function() {
   observer_table <- observer_table %>%
     rowwise() %>%
     mutate(
-      standardized_observers = 
-        paste(sort(c_across(all_of(obs_columns))), collapse = ", "))
+      standardized_observers =
+        paste(sort(c_across(all_of(obs_columns))), collapse = ", ")
+    )
 
   save_observer_table(observer_table)
 }
@@ -369,7 +371,7 @@ update_mini_observer_table <- function() {
 #'    of the main observer table
 #' @importFrom dplyr left_join mutate %>% select
 #' @param observer_table main_observer_table
-#' @param mini_observer_table the mini_observer_table, has only columns 
+#' @param mini_observer_table the mini_observer_table, has only columns
 #'    'input_name' and 'output name'
 convert_based_on_mini_table <- function(observer_table, mini_observer_table) {
   # add obs1 obs2 and obs3 to the observer_table
@@ -423,7 +425,7 @@ get_observer_quality <- function(mbbs_survey_events) {
       n_surveys_obs = n()
     )
 
-  # Calculate proportion deviation from mean species of other observers 
+  # Calculate proportion deviation from mean species of other observers
   # on the route for each observer
   observer_average_route <-
     mbbs_survey_events %>%
@@ -526,7 +528,7 @@ get_observer_quality <- function(mbbs_survey_events) {
       observer_quality = case_when(
         # if there's only one observer
         # don't change obs_quality
-        (sum(is.na(c(.data$obs1, .data$obs2, .data$obs3)) == FALSE) == 1) ~ .data$observer_quality, 
+        (sum(is.na(c(.data$obs1, .data$obs2, .data$obs3)) == FALSE) == 1) ~ .data$observer_quality,
         # obs 1 is the best observer but only has one survey across all routes
         # take max of obs2 and obs3
         (max_qual_observer == 1 & obs1_nsurveys == 1) ~ suppressWarnings(max(obs2_quality, obs3_quality, na.rm = TRUE)),
@@ -535,13 +537,13 @@ get_observer_quality <- function(mbbs_survey_events) {
         (max_qual_observer == 2 & obs2_nsurveys == 1) ~ suppressWarnings(max(obs1_quality, obs3_quality, na.rm = TRUE)),
         # obs 3 is the best observer but only has one survey across all routes
         # take max of obs1 and obs2
-        (max_qual_observer == 3 & obs3_nsurveys == 1) ~ suppressWarnings(max(obs1_quality, obs2_quality, na.rm = TRUE)), 
+        (max_qual_observer == 3 & obs3_nsurveys == 1) ~ suppressWarnings(max(obs1_quality, obs2_quality, na.rm = TRUE)),
         # if none of the other statements are true, leave obs_quality the same
         TRUE ~ .data$observer_quality
       )
     ) %>%
     ungroup()
 
-  #return
+  # return
   mbbs_survey_events
 }
