@@ -203,6 +203,8 @@ observers_extractor <- function(mbbs_county) {
       # if observer column is NA but comments doesn't include observers, leave as is
       stringr::str_detect(checklist_comments, ".*[oO]bserver(s)?=") == FALSE ~ observers
     ))
+  
+  mbbs_county
 }
 
 
@@ -218,6 +220,8 @@ propogate_observers_across_stops <- function(mbbs_county) {
     mutate(observers = observers[!is.na(observers)][1]) %>%
     ungroup()
   # will fill in stops 2:20 with checklist comments like v;3 and won't change data from pre-2019 because all the observations on the same route_num and date will already have the same comments/observer columns
+  
+  mbbs_county
 }
 
 
@@ -385,6 +389,8 @@ convert_based_on_mini_table <- function(observer_table, mini_observer_table) {
     left_join(mini_observer_table, by = c("obs3" = "input_name")) %>%
     mutate(obs3 = .data$output_name) %>%
     dplyr::select(-.data$output_name)
+  
+  observer_table
 }
 
 #' Creates a fixed effect (numeric value) of observer quality, which reflects
