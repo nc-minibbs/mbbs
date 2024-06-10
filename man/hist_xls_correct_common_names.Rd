@@ -2,7 +2,7 @@
 % Please edit documentation in R/prepare_historical_xls.R
 \name{hist_xls_correct_common_names}
 \alias{hist_xls_correct_common_names}
-\title{Corrects species common_names to 
+\title{Corrects species common_names to
 taxonomic standard}
 \usage{
 hist_xls_correct_common_names(x)
@@ -11,6 +11,6 @@ hist_xls_correct_common_names(x)
 \item{x}{a dataframe from a historical .xls}
 }
 \description{
-Corrects species common_names to 
+Corrects species common_names to
 taxonomic standard
 }

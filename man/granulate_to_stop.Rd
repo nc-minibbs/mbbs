@@ -2,7 +2,7 @@
 % Please edit documentation in R/prepare_stop_level_data.R
 \name{granulate_to_stop}
 \alias{granulate_to_stop}
-\title{Replaces mbbs route-level data with the more granular stop-level information 
+\title{Replaces mbbs route-level data with the more granular stop-level information
 when available.
 Works with any mbbs dataset, either the whole mbbs or one county.}
 \usage{
@@ -12,7 +12,7 @@ granulate_to_stop(mbbs)
 \item{mbbs}{Any mbbs dataset, either the whole survey area or one county}
 }
 \description{
-Replaces mbbs route-level data with the more granular stop-level information 
+Replaces mbbs route-level data with the more granular stop-level information
 when available.
 Works with any mbbs dataset, either the whole mbbs or one county.
 }
