@@ -9,6 +9,9 @@ observers_extractor(mbbs_county)
 \arguments{
 \item{mbbs_county}{mbbs data.frame}
 }
+\value{
+mbbs_county the input dataframe with fixed observers
+}
 \description{
 Pull out observers from the checklist_comments column that process_comments missed
 }
