@@ -41,22 +41,23 @@ fix_species_comments <- \(x) {
     str_replace_all("&#61;| =", "=") %>% 
     #convert "Stops=" and "Stops:" to format where commas separate counts at each stop
     str_replace_all("Stop(s)?( )?(=)?(:)?( )?", "") %>%
+    #replace tabs with empty string
+    str_replace_all("\t", "") %>%
     #fixing specific errors
-    str_replace_all("\t", "") %>% #replace tabs with empty string
-    str_replace_all("1=-,2=0", "1=0,2=0") %>%
-    str_replace_all(",,,,,1,,,,,,,,,,,,,,\t,1", ",,,,,1,,,,,,,,,,,,,,1") %>%
-    str_replace_all("1=0,2=013=1,", "1=0,2=0,3=1,") %>%
-    str_replace_all("11=1212=0", "11=0,12=0")%>%
-    str_replace_all("9=0110=0", "9=1,10=0") %>%
-    str_replace_all("4=0.5=", "4=0,5=") %>%
-    str_replace_all("7=28=", "7=2,8=") %>%
-    str_replace_all("1=12=", "1=1,2=") %>%
-    str_replace_all("8=09=", "8=0,9=") %>%
-    str_replace_all("10=011=", "10=0,11=") %>%
-    str_replace_all("; another bird seen just before counting at stop 16", "") %>%
-    str_replace_all(" song clearly heard in extensive pines with thinned understory in same habitat and general location where this species has occurred on these censuses for the past 20 years", "") %>%
-    str_replace_all("; singing from trees in grassy field at 35.6383,-79.0035", "")
-  
+    str_replace_all(c(
+      "1=-,2=0" = "1=0,2=0",
+      ",,,,,1,,,,,,,,,,,,,,\t,1" = ",,,,,1,,,,,,,,,,,,,,1",
+      "1=0,2=013=1," = "1=0,2=0,3=1,",
+      "11=1212=0" = "11=0,12=0",
+      "9=0110=0" = "9=1,10=0",
+      "4=0.5=" = "4=0,5=",
+      "7=28=" = "7=2,8=",
+      "1=12=" = "1=1,2=",
+      "8=09=" = "8=0,9=",
+      "10=011=" = "10=0,11=",
+      "; another bird seen just before counting at stop 16" = "",
+      " song clearly heard in extensive pines with thinned understory in same habitat and general location where this species has occurred on these censuses for the past 20 years" = "",
+      "; singing from trees in grassy field at 35.6383,-79.0035" = "")) 
 }
 
 # #' Fix split species comments
@@ -83,16 +84,19 @@ fix_species_comments <- \(x) {
 #' Convert empty strings to 0s,
 #' remove "st", "stop", "Stops =" 
 #' @param x a (scalar) string
+#' @param count an integer
 #' @return an integer vector of length 20
 #' @importFrom stringr str_replace_all
-process_comment <- \(x){
+process_comment <- \(x, count){
 
+  #ensure x is of length 1, count is number
   assertthat::assert_that(
-    rlang::is_scalar_character(x)
+    rlang::is_scalar_character(x),
+    is.numeric(count)
   )
-
-  x |>
-    stringr::str_split_1(",") |>
+  
+  x %>%
+    stringr::str_split_1(",") %>%
     str_replace_all(
       c( # Convert empty strings 0
         "^$" = "0",
@@ -101,21 +105,27 @@ process_comment <- \(x){
         # If it starts with st, drop
         "( )?st(op)?( )?" = ""
         )
-    ) |>
+    ) %>%
+    # additional step go here
     (\(out) {
       assertthat::assert_that(
         length(out) == 20
+        #additional checks go here.
       )
       as.integer(out)
     })()
 }
 
 #' Prepare mbbs dataset for processing species comments
-#' 
+#' @importFrom dplyr filter mutate bind_cols tibble relocate
+#' @importFrom rlang set_names
+#' @importFrom stringr str_detect
 prepare_to_process <- \(mbbs) {
   mbbs %>%
     # Keep rows that have non-blank species_comments
     filter(species_comments != "") %>%
+    # Keep rows that contain at least one number
+    filter(str_detect(species_comments, "[0-9]")) %>%
     mutate(species_comments = fix_species_comments(species_comments)) %>%
     dplyr::bind_cols(
       dplyr::tibble(
@@ -337,8 +347,8 @@ standardize_stops_equals <- \(split_list){
 
 
 ###########! This function is NOT working. I'm not sure what's going wrong, but... here's what I'm putting in the console that's generating errors.
-# mbbs %>% filter(remove_predown_owling_checklists(species_comments) == TRUE)
-remove_predown_owling_checklists <- function(x) {
+# mbbs %>% filter(remove_predawn_owling_checklists(species_comments) == TRUE)
+remove_predawn_owling_checklists <- function(x) {
   if(str_starts(x, ",|[0-9]+,")){
     split_list <- str_split(x, ",")[[1]] %>%
       fix_split_species_comments() %>%
