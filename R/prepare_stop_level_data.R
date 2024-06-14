@@ -57,7 +57,28 @@ fix_species_comments <- \(x) {
       "10=011=" = "10=0,11=",
       "; another bird seen just before counting at stop 16" = "",
       " song clearly heard in extensive pines with thinned understory in same habitat and general location where this species has occurred on these censuses for the past 20 years" = "",
-      "; singing from trees in grassy field at 35.6383,-79.0035" = "")) 
+      "; singing from trees in grassy field at 35.6383,-79.0035" = "",
+      "(stop 3, )?heard at 3rd stop( )?-- it was hard to mistake." = "stop 3",
+      "18 were perched at 14 on power lines" = "",
+      "This is a breeding bird survey route with 20 stops." = "",
+      "including 3 chasing each other!" = "",
+      "this was over 10 miles on traveling count" = "",
+      "over a 10 mile area" = "",
+      "I had 2 additional vireos that I thought sounded like.*" = "",
+      "3 white geese or ducks, walking.*" = "",
+      "3 hens with 12 young birds!.*" = "",
+      "Singing from field on south side of road, heard.*" = "",
+      "Nesting in Eastern chimney of 1407 Baptist road" = "",
+      "2 adults 5 young" = "",
+      "Counted 2 groups of 5 with a couple additional birds" = "",
+      "All 8 were roosting on powerline" = "",
+      "One Horned Lark singing and walking.*" = "",
+      "22 on wire at stop 17 (new school)" = "",
+      "flying and twittering at 20" = "st 20",
+      "heard at stop 17 on Mann's Chapel Road" = "st 17",
+      "One flyover flock.*" = "",
+      "Durham Mini Breeding Bird Survey, 20 stops" = ""
+      )) 
 }
 
 # #' Fix split species comments
@@ -95,6 +116,12 @@ process_comment <- \(x, count){
     is.numeric(count)
   )
   
+  # x <- x %>%
+  #   case_when(
+  #     str_starts(",|[0-9]+,") ~ function1(X),
+  #     str_starts("[0-9]+=[0-9]+|st(op)?( )?[0-9]+=[0-9]+") ~ function2(x),
+  #     str_starts("st(op)?") ~ function3(x, count))
+  # 
   x %>%
     stringr::str_split_1(",") %>%
     str_replace_all(
@@ -116,6 +143,43 @@ process_comment <- \(x, count){
     })()
 }
 
+#' Use when species comments follows ,,,,,,1,,,, format
+#' eg. where commas seperate counts at each stop. 
+#' Takes a character and returns a list of 20 numbers
+sp_com_comma_seperated <- function(x, count) {
+  
+  assertthat::assert_that(
+    str_detect(x, ",") # check has commas as format requires
+  )
+  
+  # split based on commas
+  x %>% 
+    stringr::str_split_1(",") %>%
+    str_replace_all(
+      c( # Convert empty strings 0
+        "^$" = "0",
+        # Remove the Stops = / Stops:
+        "Stop(s)?( )?(=)?(:)?( )?" = "",
+        # If it starts with st, drop
+        "( )?st(op)?( )?" = ""
+      )) %>%
+  # make standard list of 20
+  # 2 cases of 19 stops - minor dif in birds on either side of quarter route
+  # leave as is.
+  # Cases with 21st stop where it comes from extra comma after 20th stop
+    pad_or_truncate() %>%
+    as.integer() %>%
+    (\(out) {
+      assertthat::assert_that(
+        length(out) == 20,
+        sum(out) == count
+        #additional checks go here.
+      )
+      out # return
+    })
+  
+}
+
 #' Prepare mbbs dataset for processing species comments
 #' @importFrom dplyr filter mutate bind_cols tibble relocate
 #' @importFrom rlang set_names
@@ -126,7 +190,12 @@ prepare_to_process <- \(mbbs) {
     filter(species_comments != "") %>%
     # Keep rows that contain at least one number
     filter(str_detect(species_comments, "[0-9]")) %>%
+    # Remove pre-dawn owling checklist
+    filter(sub_id != "S46296942") %>%
+    
     mutate(species_comments = fix_species_comments(species_comments)) %>%
+    # Remove rows that were changed to have blank species_comments
+    filter(species_comments != "") %>%
     dplyr::bind_cols(
       dplyr::tibble(
         !!! rlang::set_names(rep(NA_character_, 21), 
@@ -315,12 +384,20 @@ process_species_comments <- function(mbbs) {
 
 
 #' takes a list and either extends it with 0s to the max_length or cuts it down
+#' @importFrom assertthat assert_that
 pad_or_truncate <- \(x, max_length = 20) {
   #pad with 0s if less than 20
   pad <- min(length(x), max_length)
   x <- c(x, rep(as.integer(0), max_length - pad))
   #truncate if longer than 20
   x <- x[1:max_length]
+  
+  #confirm no errors
+  assertthat::assert_that(
+    length(x) == 20
+  )
+  
+  x #return
 }
 
 
@@ -343,19 +420,4 @@ standardize_stops_equals <- \(split_list){
   }
   #re-assign split_list
   split_list <- temp_list
-}
-
-
-###########! This function is NOT working. I'm not sure what's going wrong, but... here's what I'm putting in the console that's generating errors.
-# mbbs %>% filter(remove_predawn_owling_checklists(species_comments) == TRUE)
-remove_predawn_owling_checklists <- function(x) {
-  if(str_starts(x, ",|[0-9]+,")){
-    split_list <- str_split(x, ",")[[1]] %>%
-      fix_split_species_comments() %>%
-      as.integer()
-    
-    if(length(split_list == 3)) {
-      #returns TRUE
-    } #list is longer than 3, returns FALSE
-  } #doesn't start with ",|[0-9]", returns FALSE
 }

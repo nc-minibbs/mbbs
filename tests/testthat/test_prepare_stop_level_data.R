@@ -26,3 +26,10 @@ test_that("process_comment works on test cases",
 
   }
 )
+
+
+test_that("pad_or_truncate runs properly",
+  {
+    expect_no_error(pad_or_truncate(rep(1,7)))
+    expect_no_error(pad_or_truncate(rep(1,30)))
+  })
