@@ -188,6 +188,8 @@ prepare_to_process <- \(mbbs) {
   mbbs %>%
     # Keep rows that have non-blank species_comments
     filter(species_comments != "") %>%
+    # Keep rows that aren't already separated by stop
+    filter(is.na(stop_num)) %>%
     # Keep rows that contain at least one number
     filter(str_detect(species_comments, "[0-9]")) %>%
     # Remove pre-dawn owling checklist
