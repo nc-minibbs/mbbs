@@ -81,25 +81,6 @@ fix_species_comments <- \(x) {
       )) 
 }
 
-# #' Fix split species comments
-# #' 
-# #' Convert empty strings to 0s,
-# #' remove "st", "stop", "Stops =" 
-# #' @param x a list of character vectors from species comments
-# #' @importFrom stringr str_replace_all
-# fix_split_species_comments <- \(x){
-#   x |>
-#     str_replace_all(
-#       c( # Convert empty strings 0
-#         "^$" = "0",
-#         # Remove the Stops = / Stops:
-#         "Stop(s)?( )?(=)?(:)?( )?" = "",
-#         # If it starts with st, drop
-#         "( )?st(op)?( )?" = ""
-#         )
-#     )
-# }
-
 #' Process a single species comment
 #' 
 #' Convert empty strings to 0s,
@@ -115,6 +96,23 @@ process_comment <- \(x, count){
     rlang::is_scalar_character(x),
     is.numeric(count)
   )
+  
+  x %>%
+    case_when(
+      str_starts(",|[0-9]+,") ~ sp_com_comma_seperated(x, count),
+      str_starts("[0-9]+=[0-9]+|st(op)?( )?[0-9]+=[0-9]+") ~ sp_com_equals_seperated(x, count),
+      str_starts("st(op)?") ~ sp_com_only_stop(x, count)
+    )
+  
+  stopsmbbs %>%
+    case_when(
+      str_starts(species_comments, ",|[0-9]+,") == TRUE ~
+        sp_com_comma_seperated(species_comments, count),
+      str_starts(species_comments,"[0-9]+=[0-9]+|st(op)?( )?[0-9]+=[0-9]+") == TRUE ~
+        sp_com_equals_seperated(species_comments, count),
+      str_starts(species_comments,"st(op)?") == TRUE ~ 
+        sp_com_only_stop(species_comments, count)
+    )
   
   # x <- x %>%
   #   case_when(
@@ -145,8 +143,10 @@ process_comment <- \(x, count){
 
 #' Use when species comments follows ,,,,,,1,,,, format
 #' eg. where commas seperate counts at each stop. 
-#' Takes a character and returns a list of 20 numbers
-sp_com_comma_seperated <- function(x, count) {
+#' Takes a string and returns a list of 20 numbers
+#' @param x a string from the species_comment column formatted with commas
+#' @param count an integer from the count column of the mbbs
+sp_com_comma_seperated <- function(x, count = -99) {
   
   assertthat::assert_that(
     str_detect(x, ",") # check has commas as format requires
@@ -178,6 +178,78 @@ sp_com_comma_seperated <- function(x, count) {
       out # return
     })
   
+}
+
+#' Use when species comments follows 1=5 or st 1=5 to stop 1=5 format
+#' Takes a string and returns a list of 20 numbers
+#' @param x a string from the species_comment column formatted by "stop=count"
+#' @param count an integer from the count column of the mbbs
+#' @importFrom stringr str_split_1 str_detect str_replace_all
+#' @importFrom assertthat assert_that
+#' @returns out a standardized list of 20 integers, representing the 
+#'    species count at 20 stops.
+sp_com_stop_equals_count <- function(x, count = -99) {
+  
+  assertthat::assert_that(
+    str_detect(x, "=") # check has equals as format requires
+  )
+  
+  # split based , or ;
+  x %>% 
+    stringr::str_split_1(",|;") %>%
+    str_replace_all(
+      c( # Convert empty strings 0
+        "^$" = "0",
+        # Remove the Stops = / Stops:
+        "Stop(s)?( )?(=)?(:)?( )?" = "",
+        # If it starts with st, drop
+        "( )?st(op)?( )?" = ""
+      )) %>%
+    # make standard list of 20
+    standardize_stops_equals() %>%
+    (\(out) {
+      assertthat::assert_that(
+        length(out) == 20,
+        sum(out) == count
+        #additional checks go here.
+      )
+      out # return
+    })
+}
+
+
+#' Use when species comment is ie: "Stop 6"
+#' The count for that stop is the count for the whole route
+#' and the species was not seen at any other stops
+#' @param x a string from the species_comment column formatted by "stop=count"
+#' @param count an integer from the count column of the mbbs
+#' @importFrom stringr str_count
+sp_com_only_stop <- function(x, count = -99) {
+  
+  assertthat::assert_that(
+    # check there's only one number, up to two digits
+    str_count(x, "[0-9]([0-9])?") == 1,
+    # count has been given
+    count > 0 
+  )
+  
+  x %>%
+    # remove anything after a comma (ie: descriptive notes)
+    str_extract(".*(,)?") %>%
+    # extract numbers
+    str_extract("[0-9]([0-9])?") %>%
+    as.numeric() %>%
+    # make standard list of 20
+    paste("=", count, sep = "") %>%
+    standardize_stops_equals() %>%
+    (\(out) {
+      assertthat::assert_that(
+        length(out) == 20,
+        sum(out) == count
+        # additional checks go here.
+      )
+      out # return
+    })
 }
 
 #' Prepare mbbs dataset for processing species comments
@@ -216,63 +288,146 @@ prepare_to_process <- \(mbbs) {
 #'
 ######should this x = species_comment be... x = .$species_comment ? same goes for count. That way it's set as default to take those columns from what's passed to it?
 #########If we can figure out a way to handle species comments where it only has the stop, and then count represents the count at that stop, eg species_comments = "Stop 6" in a different function, then *this* function only needs to take species_comments, and not species_comments AND count.
-convert_species_comments_to_list <- function(x = species_comments, count) {
+# convert_species_comments_to_list <- function(x = species_comments, count) {
+#   
+#   #species comments follows ,,,,,,1,,,, format where commas separate counts 
+#   #at each stop
+#   if(str_starts(x, ",|[0-9]+,")) {
+#     
+#     #split based on commas
+#     split_list <- str_split(x, ",")[[1]] %>%
+#       fix_split_species_comments() %>%
+#       as.integer()
+#     
+#     #record n stops for testing
+#     #2 cases of 19 stops - represents minor dif of 1 or 2 birds on either side
+#     #of a quarter route. OK to leave as is
+#     #21 stops - all cases where 21st stop is from an extra comma after 20th stop.
+#     #Trim
+#     #3 cases of 3 stops - represents pre-dawn ownling checklists.
+#     #Remove from considerationg as they should be handled seperately.
+#     sc_note <- paste("comma sep,", length(split_list))
+#     
+#     #make standard list of 20
+#     split_list <- pad_or_truncate(split_list)
+#     
+#   } else if(str_starts(x, "[0-9]+=[0-9]+|st(op)?( )?[0-9]+=[0-9]+")) { #species comments follows 1=5 or st1=5 or stop 1 = 5 format
+#     
+#     #split species_comment based on , or ;
+#     split_list <- str_split(x, ",|;")[[1]] %>%
+#       fix_split_species_comments() 
+#     
+#     #add note
+#     sc_note <- paste("X=X", length(split_list))
+#     
+#     #standardize list to 20
+#     split_list <- standardize_stops_equals(split_list)
+#     
+#   } else if(str_starts(x, "st(op)?")) { #species comment is ie: "Stop 6", count for that stop is count for the whole route.
+#     ####If we can figure out a way to handle this section in a different function, then *this* function only needs to take species_comments, and not species_comments AND count. 
+#     
+#     #extract the stop
+#     stop <- x %>%
+#       #remove anything after a comma (ie: descriptive notes)
+#       str_extract(".*(,)?") %>%
+#       #extract numbers
+#       str_extract("[0-9]([0-9])?") %>%
+#       as.numeric()
+#     
+#     #standardize list to 20
+#     split_list <- paste(stop, "=", count, sep = "") %>%
+#       standardize_stops_equals()
+#     
+#     #add note
+#     sc_note <- paste("one st")
+#   }
+#   
+#   split_list
+#   ########sc_note is really only needed to remove pre-owling checklists. Otherwise, those get added erroenously as routes with 20 stops...Probably the solution is to remove pre-owling checklists BEFORE. I've drafted another function to do this below, but it's not working. 
+# }
+
+#'
+#'
+#'
+direct_to_sp_com_function <- function(species_comments, count) {
   
-  #species comments follows ,,,,,,1,,,, format where commas separate counts 
-  #at each stop
-  if(str_starts(x, ",|[0-9]+,")) {
+  #route species comments to the relevent function to process it.
+  if(str_starts(species_comments, ",|[0-9]+,")) {
     
-    #split based on commas
-    split_list <- str_split(x, ",")[[1]] %>%
-      fix_split_species_comments() %>%
-      as.integer()
+    stop_counts_list <-
+    sp_com_comma_seperated(species_comments, count)
     
-    #record n stops for testing
-    #2 cases of 19 stops - represents minor dif of 1 or 2 birds on either side
-    #of a quarter route. OK to leave as is
-    #21 stops - all cases where 21st stop is from an extra comma after 20th stop.
-    #Trim
-    #3 cases of 3 stops - represents pre-dawn ownling checklists.
-    #Remove from considerationg as they should be handled seperately.
-    sc_note <- paste("comma sep,", length(split_list))
+  } else if (str_starts(species_comments, "[0-9]+=[0-9]+|st(op)?( )?[0-9]+=[0-9]+")) {
     
-    #make standard list of 20
-    split_list <- pad_or_truncate(split_list)
+    stop_counts_list <- 
+    sp_com_stop_equals_count(species_comments, count)
     
-  } else if(str_starts(x, "[0-9]+=[0-9]+|st(op)?( )?[0-9]+=[0-9]+")) { #species comments follows 1=5 or st1=5 or stop 1 = 5 format
+  } else if (str_starts(species_comments, "st(op)?")) {
     
-    #split species_comment based on , or ;
-    split_list <- str_split(x, ",|;")[[1]] %>%
-      fix_split_species_comments() 
+    stop_counts_list <- 
+    sp_com_only_stop(species_comments, count)
     
-    #add note
-    sc_note <- paste("X=X", length(split_list))
-    
-    #standardize list to 20
-    split_list <- standardize_stops_equals(split_list)
-    
-  } else if(str_starts(x, "st(op)?")) { #species comment is ie: "Stop 6", count for that stop is count for the whole route.
-    ####If we can figure out a way to handle this section in a different function, then *this* function only needs to take species_comments, and not species_comments AND count. 
-    
-    #extract the stop
-    stop <- x %>%
-      #remove anything after a comma (ie: descriptive notes)
-      str_extract(".*(,)?") %>%
-      #extract numbers
-      str_extract("[0-9]([0-9])?") %>%
-      as.numeric()
-    
-    #standardize list to 20
-    split_list <- paste(stop, "=", count, sep = "") %>%
-      standardize_stops_equals()
-    
-    #add note
-    sc_note <- paste("one st")
   }
   
-  split_list
-  ########sc_note is really only needed to remove pre-owling checklists. Otherwise, those get added erroenously as routes with 20 stops...Probably the solution is to remove pre-owling checklists BEFORE. I've drafted another function to do this below, but it's not working. 
+  stop_counts_list #return
 }
+
+
+#' Process species comments
+#' 
+#' 
+process_species_comments <- function(mbbs) {
+  
+  
+  #Oh, I think I was thinking in terms of list processing... start with a function that takes a single comment and creates a list of the information for the 20 stops (this list should have a length of 20). And then run that function on each comment (i.e. each row). And then reshape the result from a list of lists to a data.frame.
+  
+  stopsmbbs <- 
+    mbbs %>%
+    ungroup %>% #need to open a new issue for this. 
+    prepare_to_process() 
+
+  #figure out a way to purr:map this or otherwise, get a list of the lists! Multiple ways explored below that aren't working properly 
+  direct_to_sp_com_function(stopsmbbs$species_comments, stopsmbbs$count)
+  
+  stopsmbbs %>%
+  purrr::map(
+    .f = purr_species_comments(species_comments, count)
+  )
+  #returns a 0x0 tibble
+  
+  
+  #oohhh so beautiful, so not functional. But, the problem here is inherent in using across.....that's not what I want. I want to mutate SPECIES_COMMENTS into 20 columns.
+c <-  stopsmbbs %>%
+    mutate(
+      across(.cols = starts_with("s") & ends_with("[0-9]([0-9])?"),
+             .fns = ~case_when(
+                 str_starts(species_comments, "[0-9]+=[0-9]+|st(op)?( )?[0-9]+=[0-9]+") ~
+                   sp_com_stop_equals_count(species_comments, count),
+                 str_starts(species_comments, ",|[0-9]+,") ~ 
+                   sp_com_comma_seperated(species_comments, count),
+                 str_starts(species_comments, "st(op)?") ~
+                   sp_com_only_stop(species_comments, count)
+                 )
+             )
+      )
+  
+  
+  #if I were returning a dataset.... it would include the species_comments, count, and then the list of s1:s20, which might as well be columns individually. And then I could just left_join that back to stopsmbbs?
+  
+ 
+  purrr:map_df()
+  stopsmbbs <- prepare_to_process(mbbs)
+  
+  # x <- x %>%
+  #   case_when(
+  #     str_starts(",|[0-9]+,") ~ function1(X),
+  #     str_starts("[0-9]+=[0-9]+|st(op)?( )?[0-9]+=[0-9]+") ~ function2(x),
+  #     str_starts("st(op)?") ~ function3(x, count))
+  # 
+  
+}
+
+
 
 
 #' Process species comments
@@ -289,6 +444,8 @@ convert_species_comments_to_list <- function(x = species_comments, count) {
 process_species_comments <- function(mbbs) {
   
   stopsmbbs <- prepare_to_process(mbbs)
+  
+  #pipe species_comments to the different sp_com paths based on matching patterns.
   
   #set up for-loop to fill in s1:s20 with information from species_commentts
   split_list <- stop <- count <- NA
@@ -408,18 +565,26 @@ pad_or_truncate <- \(x, max_length = 20) {
 #' and the second number becomes the value of the list at that index.
 #' Indexes not explicitly changed in the list of 20 are set to have value '0'
 #' @importFrom stringr str_extract
-standardize_stops_equals <- \(split_list){
+standardize_stops_equals <- \(x){
   #make standard list of 20 
   #we create a temp as some stops may not have been included when the count was 0
   temp_list <- rep(as.integer(0), 20)
+  
   #fill in list of 20
   #for each entry in the list, the start is the stop and end is the count
-  #######worlds tiniest for loop? Bradley I will let you unloop this one!
-  for(a in 1:length(split_list)){
-    stop <- as.integer(str_extract(split_list[a], "[0-9]+")) #first set of nums
-    count <- as.integer(str_extract(split_list[a], "(?<=\\=)( )?[0-9]+")) #nums after =
+  for(a in 1:length(x)){
+    stop <- as.integer(str_extract(x[a], "[0-9]+")) #first set of nums
+    count <- as.integer(str_extract(x[a], "(?<=\\=)( )?[0-9]+")) #nums after =
     temp_list[stop] <- count
   }
-  #re-assign split_list
-  split_list <- temp_list
+  #re-assign x
+  x <- temp_list
+  
+  assertthat::assert_that(
+    length(x) == 20,
+    is.integer(x)
+  )
+  
+  #return
+  x
 }
