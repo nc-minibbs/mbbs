@@ -85,8 +85,7 @@ fix_species_comments <- \(x) {
 #' eg. where commas seperate counts at each stop. 
 #' Takes a string and returns a list of 20 numbers
 #' @param x a string from the species_comment column formatted with commas
-#' @param count an integer from the count column of the mbbs
-sp_com_comma_seperated <- function(x, count = -99) {
+sp_com_comma_seperated <- function(x) {
   
   assertthat::assert_that(
     str_detect(x, ",") # check has commas as format requires
@@ -112,7 +111,6 @@ sp_com_comma_seperated <- function(x, count = -99) {
     (\(out) {
       assertthat::assert_that(
         length(out) == 20
-        #sum(out) == count #this check is no longer done here.
         #additional checks go here.
       )
       out # return
@@ -123,12 +121,11 @@ sp_com_comma_seperated <- function(x, count = -99) {
 #' Use when species comments follows 1=5 or st 1=5 to stop 1=5 format
 #' Takes a string and returns a list of 20 numbers
 #' @param x a string from the species_comment column formatted by "stop=count"
-#' @param count an integer from the count column of the mbbs
 #' @importFrom stringr str_split_1 str_detect str_replace_all
 #' @importFrom assertthat assert_that
 #' @returns out a standardized list of 20 integers, representing the 
 #'    species count at 20 stops.
-sp_com_stop_equals_count <- function(x, count = -99) {
+sp_com_stop_equals_count <- function(x) {
   
   assertthat::assert_that(
     str_detect(x, "=") # check has equals as format requires
@@ -150,8 +147,6 @@ sp_com_stop_equals_count <- function(x, count = -99) {
     (\(out) {
       assertthat::assert_that(
         length(out) == 20
-        #sum(out) == count #this check is no longer done here.
-        #additional checks go here.
       )
       out # return
     })
@@ -162,15 +157,14 @@ sp_com_stop_equals_count <- function(x, count = -99) {
 #' The count for that stop is the count for the whole route
 #' and the species was not seen at any other stops
 #' @param x a string from the species_comment column formatted by "stop=count"
-#' @param count an integer from the count column of the mbbs
+#' @param count an integer, from the count column of the mbbs
 #' @importFrom stringr str_count
 sp_com_only_stop <- function(x, count = -99) {
   
   assertthat::assert_that(
     # check there's only one number, up to two digits
     str_count(x, "[0-9]([0-9])?") == 1,
-    # count has been given
-    count > 0 
+    is.numeric(count)
   )
   
   x %>%
@@ -185,7 +179,6 @@ sp_com_only_stop <- function(x, count = -99) {
     (\(out) {
       assertthat::assert_that(
         length(out) == 20
-        #sum(out) == count #this check is no longer done here.
         # additional checks go here.
       )
       out # return
@@ -210,60 +203,63 @@ prepare_to_process <- \(mbbs) {
     mutate(species_comments = fix_species_comments(species_comments)) %>%
     # Remove rows that were changed to have blank species_comments
     filter(species_comments != "") %>%
-    dplyr::bind_cols(
-      dplyr::tibble(
-        !!! rlang::set_names(rep(NA_character_, 21), 
-                             c(paste0("s", 1:20), "sc_note"))
-      )
-    ) %>%
-    #set s1:s20 to integer columns
-    mutate(across(.cols = s1:s20, .fns = as.integer)) %>%
-    # relocate to be the first columns is necessary b/c
-    # later data is added to a given [row,column] based on columns 1:20. 
-    # Also helpful for temp and error identification
+     dplyr::bind_cols(
+       dplyr::tibble(
+         !!! rlang::set_names(rep(NA_character_, 21), 
+                              c(paste0("s", 1:20), "sc_note"))
+       )
+     ) %>%
+     #set s1:s20 to integer columns
+     mutate(across(.cols = s1:s20, .fns = as.integer)) %>%
+    # relocate helpful for temp and error identification
     relocate(s1:s20, species_comments, count, sc_note)
 }
 
 
 #'
 #'
-#' @param stopsmbbs a row from the mbbs that's gone through the prepare_to_process
+#' @param stopsmbbs_row a row from the mbbs that's gone through the prepare_to_process
 #'      function, ie: stopsmbbs. MUST have $species_comments, $count, and $s1:s20
-direct_to_sp_com_function <- function(stopsmbbs) {
+direct_to_sp_com_function <- function(stopsmbbs_row) {
   
   assertthat::assert_that(
-    is.character(stopsmbbs$species_comments),
-    is.numeric(stopsmbbs$count),
-    nrow(stopsmbbs) == 1
+    is.character(stopsmbbs_row$species_comments),
+    is.numeric(stopsmbbs_row$count),
+    nrow(stopsmbbs_row) == 1
   )
   
   #initiate stop counts list
   stop_counts_list <- NA
+  #pull out just species_comments
+  species_comments <- stopsmbbs_row$species_comments
   
   #route species comments to the relevent function to process it.
-  if(str_starts(stopsmbbs$species_comments, ",|[0-9]+,")) {
+  if(str_starts(species_comments, ",|[0-9]+,")) {
     
     stop_counts_list <- 
-      sp_com_comma_seperated(stopsmbbs$species_comments, stopsmbbs$count)
+      sp_com_comma_seperated(species_comments)
     
-  } else if (str_starts(stopsmbbs$species_comments, "[0-9]+=[0-9]+|st(op)?( )?[0-9]+=[0-9]+")) {
-    
-    stop_counts_list <- 
-      sp_com_stop_equals_count(stopsmbbs$species_comments, stopsmbbs$count)
-    
-  } else if (str_starts(stopsmbbs$species_comments, "st(op)?")) {
+  } else if (str_starts(species_comments, "[0-9]+=[0-9]+|st(op)?( )?[0-9]+=[0-9]+")) {
     
     stop_counts_list <- 
-      sp_com_only_stop(stopsmbbs$species_comments, stopsmbbs$count)
+      sp_com_stop_equals_count(species_comments)
+    
+  } else if (str_starts(species_comments, "st(op)?")) {
+    
+    stop_counts_list <- 
+      sp_com_only_stop(species_comments, stopsmbbs_row$count)
     
   }
+  
   
   #add the new list to s1:s20 of stopsmbbs
+  snum <- paste0("s", 1:20)
   for(i in 1:length(stop_counts_list)) { #which will always be 20
-    stopsmbbs[,i] <- stop_counts_list[i]
+    stopsmbbs_row <- stopsmbbs_row %>%
+      mutate(!!as.name(snum[i]) := stop_counts_list[i])
   }
   
-  stopsmbbs #return
+  stopsmbbs_row #return
 }
 
 
