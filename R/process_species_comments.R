@@ -51,7 +51,7 @@ process_species_comments <- function(mbbs) {
         "inst/extdata/species_comments_errors.csv"))
   
   #remove rows where output doesn't match count 
-  stopsmbbs <- anti_join(stopsmbbs, catch_errors, by = c("species_comments", "count", "sub_id", "common_name", "loc", "year"))
+  stopsmbbs <- anti_join(stopsmbbs, catch_errors)
   
   #pivot s1:s20 into stop_num and give count for each stop
   stopsmbbs <- 
@@ -161,6 +161,7 @@ fix_species_comments <- \(x) {
 #'      function, ie: stopsmbbs. MUST have $species_comments, $count, and $s1:s20
 #' @importFrom assertthat assert_that
 #' @importFrom dplyr mutate
+#' @importFrom stringr str_starts
 direct_to_sp_com_function <- function(stopsmbbs_row) {
   
   assertthat::assert_that(
@@ -288,7 +289,8 @@ sp_com_only_stop <- function(x, count = -999) {
   assertthat::assert_that(
     # check there's only one number, up to two digits
     str_count(x, "[0-9]([0-9])?") == 1,
-    is.numeric(count)
+    is.numeric(count),
+    count != -999
   )
   
   x %>%
