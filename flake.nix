@@ -4,7 +4,7 @@
     bash-prompt = "🐦> ";
   };
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     flake-utils.url = "github:numtide/flake-utils";
     gitignore = {
       url = "github:hercules-ci/gitignore.nix";
@@ -20,6 +20,9 @@
       inherit (gitignore.lib) gitignoreSource;
 
       mbbsDeps = with pkgs.rPackages; [
+            beepr
+            readxl
+            tidyr
             purrr
             stringr
             lubridate
@@ -49,6 +52,8 @@
           pkgs.R
           pkgs.rPackages.devtools
           pkgs.rPackages.usethis
+          pkgs.rPackages.languageserver
+          pkgs.rPackages.styler
         ] ++ mbbsDeps ;
       }; 
 

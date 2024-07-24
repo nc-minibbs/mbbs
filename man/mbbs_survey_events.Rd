@@ -5,7 +5,7 @@
 \alias{mbbs_survey_events}
 \title{Data from the Mini-Bird Breeding Survey}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 749 rows and 20 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 751 rows and 22 columns.
 }
 \usage{
 mbbs_survey_events

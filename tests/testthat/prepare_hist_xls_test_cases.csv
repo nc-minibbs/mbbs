@@ -1,0 +1,63 @@
+common_name,mbbs_county,route_num,year,source,tax_order,sci_name,route_ID,observers,stop_num,count
+NA,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,1,0
+Great Blue Heron,NA,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,2,0
+Great Blue Heron,chatham,NA,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,3,0
+Great Blue Heron,chatham,4,NA,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,4,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,NA,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,6,NA
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,NA,Michael Schultz,7,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,NA,304,Michael Schultz,8,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,9,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,10,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,11,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,12,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,13,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,14,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,15,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,16,1
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,17,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,18,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,19,0
+Great Blue Heron,chatham,4,2011,"prep_sld, hist xls",7291,Ardea herodias,304,Michael Schultz,20,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,1,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,2,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,3,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,4,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,5,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,6,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,7,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,8,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,9,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,10,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,11,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,12,6
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,13,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,14,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,15,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,16,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,17,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,18,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,19,0
+Black Vulture,chatham,4,2011,"prep_sld, hist xls",7546,Coragyps atratus,304,Michael Schultz,20,0
+Canada Goose,chatham,4,2011,"prep_sld, hist xls",319,Branta canadensis,304,Michael Schultz,1,0
+Accipiter species,chatham,4,2011,"prep_sld, hist xls",NA,NA,304,Michael Schultz,1,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,1,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,2,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,3,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,4,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,5,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,6,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,7,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,8,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,9,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,10,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,11,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,12,6
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,13,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,14,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,15,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,16,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,17,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,18,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,19,0
+Turkey Vulture,chatham,4,2011,"prep_sld, hist xls",7545,Coragyps aura,304,Michael Schultz,20,0

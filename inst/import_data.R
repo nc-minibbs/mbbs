@@ -16,7 +16,7 @@ etax <- get_ebird_taxonomy()
 
 # import Orange
 mbbs_orange <-
-  import_ebird_data("inst/extdata/MyEBirdData_Orange_20230713.csv") %>%
+  import_ebird_data("inst/extdata/MyEBirdData_Orange_20240523.csv") %>%
   prepare_mbbs_data(
     mbbs_site_dt =
       readr::read_csv("inst/extdata/orange_1999-2009_from_website.csv") %>%
@@ -64,10 +64,7 @@ mbbs_chatham <-
 
 # Combine counties
 mbbs <- bind_rows(mbbs_orange, mbbs_chatham, mbbs_durham) %>%
-  mutate(route_ID = route_num + case_when(
-    mbbs_county == "orange" ~ 100L,
-    mbbs_county == "durham" ~ 200L,
-    mbbs_county == "chatham" ~ 300L))
+  mbbs_generate_route_ID()
 
 # Save results ####
 save(mbbs_orange, file = "data/mbbs_orange.rda")

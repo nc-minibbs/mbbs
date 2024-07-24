@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_observers.R
 \name{update_observer_table}
 \alias{update_observer_table}
-\title{Interactive program to update the main observer table when new route 
+\title{Interactive program to update the main observer table when new route
 + observer combos are present}
 \usage{
 update_observer_table(mbbs_county, selected_county)
@@ -13,6 +13,6 @@ update_observer_table(mbbs_county, selected_county)
 \item{selected_county}{county that the observer table should be filtered on}
 }
 \description{
-Interactive program to update the main observer table when new route 
+Interactive program to update the main observer table when new route
 + observer combos are present
 }

@@ -1,17 +1,17 @@
 #' Gets the ebird taxonomy dataset
-#' @importFrom readr read_csv
+#' @importFrom dplyr select
+#' @importFrom stringr str_sub
 #' @export
 get_ebird_taxonomy <- function() {
-  
-  #select the file that's from the lastest version year (ie: ebird_taxonomy_v2022)
-  latest_taxonomy <- 
-    list.files("inst/taxonomy") %>% 
+  # select the file that's from the lastest version year (ie: ebird_taxonomy_v2022)
+  latest_taxonomy <-
+    list.files("inst/taxonomy") %>%
     max(stringr::str_sub(-8, -5))
-  read.csv(paste("inst/taxonomy/",latest_taxonomy,sep = "")) %>%
-    select(
-      tax_order = TAXON_ORDER,
-      sci_name = SCI_NAME,
-      common_name = PRIMARY_COM_NAME
+  read.csv(paste("inst/taxonomy/", latest_taxonomy, sep = "")) %>%
+    dplyr::select(
+      tax_order = .data$TAXON_ORDER,
+      sci_name = .data$SCI_NAME,
+      common_name = .data$PRIMARY_COM_NAME
     )
 }
 
@@ -22,35 +22,40 @@ get_ebird_taxonomy <- function() {
 clean_common_names <- function(dt) {
   dt %>%
     mutate(
-      common_name_c = trimws(common_name),
-      common_name_c = str_replace(common_name_c, "\\n", " "),
-      common_name_c = str_replace(common_name_c, "  ", " "),
-      common_name_c = str_replace(common_name_c, "^Am |^Amer ", "American "),
-      common_name_c = str_replace(common_name_c, "Fc$", "Flycatcher"),
-      common_name_c = str_replace(common_name_c, "B-g", "Blue-gray"),
-      common_name_c = str_replace(common_name_c, "^Br-", "Brown-"),
-      common_name_c = str_replace(common_name_c, "Nuth$", "Nuthatch"),
-      common_name_c = str_replace(common_name_c, "^Car ", "Carolina "),
-      common_name_c = str_replace(common_name_c, "^Com ", "Common "),
-      common_name_c = str_replace(common_name_c, "^Double-cr ", "Double-crested "),
-      common_name_c = str_replace(common_name_c, "^E ", "Eastern "),
-      common_name_c = str_replace(common_name_c, "^Eur ", "European "),
-      common_name_c = str_replace(common_name_c, "^Gr ", "Great "),
-      common_name_c = str_replace(common_name_c, "^La ", "Louisiana "),
-      common_name_c = str_replace(common_name_c, "^N ", "Northern "),
-      common_name_c = str_replace(common_name_c, "Nutchatch", "Nuthatch"),
-      common_name_c = str_replace(common_name_c, "^Red-wing ", "Red-winged "),
-      common_name_c = str_replace(common_name_c, "^Ruby-thr ", "Ruby-throated "),
-      common_name_c = str_replace(common_name_c, "Sparow", "Sparrow"),
-      common_name_c = str_replace(common_name_c, "Swal$", "Swallow"),
-      common_name_c = str_replace(common_name_c, "Swall$", "Swallow"),
-      common_name_c = str_replace(common_name_c, "Swallo$", "Swallow"),
-      common_name_c = str_replace(common_name_c, "^Yellow-thr ", "Yellow-throated "),
-      common_name_c = str_replace(common_name_c, "^White-br ", "White-breasted "),
-      common_name_c = str_replace(common_name_c, "-Poor-Will", "-poor-will"),
-      common_name_c = str_replace(common_name_c, "Will's-Widow", "will's-widow"),
-      common_name_c = str_replace(common_name_c, "Great Horned \r Owl", "Great Horned Owl"),
-      common_name_c = str_replace(common_name_c, "House\r Wren", "House Wren"),
+      common_name_c = trimws(.data$common_name),
+      common_name_c = str_replace(
+        .data$common_name_c,
+        c(
+          "\\n" = " ",
+          "  " = " ",
+          "^Am |^Amer " = "American ",
+          "Fc$" = "Flycatcher",
+          "B-g" = "Blue-gray",
+          "^Br-" = "Brown-",
+          "Nuth$" = "Nuthatch",
+          "^Car " = "Carolina ",
+          "^Com " = "Common ",
+          "^Double-cr " = "Double-crested ",
+          "^E " = "Eastern ",
+          "^Eur " = "European ",
+          "^Gr " = "Great ",
+          "^La " = "Louisiana ",
+          "^N " = "Northern ",
+          "Nutchatch" = "Nuthatch",
+          "^Red-wing " = "Red-winged ",
+          "^Ruby-thr " = "Ruby-throated ",
+          "Sparow" = "Sparrow",
+          "Swal$" = "Swallow",
+          "Swall$" = "Swallow",
+          "Swallo$" = "Swallow",
+          "^Yellow-thr " = "Yellow-throated ",
+          "^White-br " = "White-breasted ",
+          "-Poor-Will" = "-poor-will",
+          "Will's-Widow" = "will's-widow",
+          "Great Horned \r Owl" = "Great Horned Owl",
+          "House\r Wren" = "House Wren"
+        )
+      ),
       common_name_c = case_when(
         common_name_c == "Accipiter species" ~ "Accipiter sp.",
         common_name_c == "Rock Dove" ~ "Rock Pigeon",
@@ -62,8 +67,8 @@ clean_common_names <- function(dt) {
         TRUE ~ common_name_c
       )
     ) %>%
-    select(-common_name, -spec_code) %>%
-    select(common_name = common_name_c, everything())
+    select(-.data$common_name, -.data$spec_code) %>%
+    select(common_name = .data$common_name_c, everything())
 }
 
 #' Add route info to data scraped from old MBBS site
@@ -72,9 +77,12 @@ clean_common_names <- function(dt) {
 #' @param county the name of the county to merge
 add_route_info <- function(dt, county) {
   dt %>%
-    mutate(route_num = as.integer(route_num)) %>%
-    select(-route) %>%
-    left_join(filter(mbbs_routes, mbbs_county == county), by = "route_num")
+    mutate(route_num = as.integer(.data$route_num)) %>%
+    select(-.data$route) %>%
+    left_join(
+      filter(mbbs_routes, .data$mbbs_county == county),
+      by = "route_num"
+    )
 }
 
 #' A function that combines and aligns MBBS data scraped from the old website
@@ -84,8 +92,8 @@ add_route_info <- function(dt, county) {
 #'
 #' @param mbbs_site_dt a `data.frame` containing MBBS data scraped from the old
 #'    website for a single county.
-#' @param ebird_dt a `data.frame` imported using `import_ebird_data` for a single
-#'    county
+#' @param ebird_dt a `data.frame` imported using `import_ebird_data`
+#'    for a single county
 #' @param ebird_taxonomy a `data.frame` containing common and scientific names
 #'    of ebird taxonomy
 #' @importFrom dplyr case_when row_number full_join right_join
@@ -132,12 +140,25 @@ prepare_mbbs_data <- function(ebird_dt, mbbs_site_dt, ebird_taxonomy) {
 combine_site_ebird <- function(x, at_year = 2010) {
   if (nrow(x$site) == 0 || is.null(x$site)) {
     return(
-      x$ebird %>% filter(year >= !!at_year)
+      x$ebird %>% filter(.data$year >= !!at_year)
     )
   }
 
   bind_rows(
-    x$ebird %>% filter(year >= !!at_year),
-    x$site %>% filter(year < !!at_year)
+    x$ebird %>% filter(.data$year >= !!at_year),
+    x$site %>% filter(.data$year < !!at_year)
   )
+}
+
+#' Add route_ID column
+#'
+#' @param x the output of combine_site_ebird
+#' @importFrom dplyr mutate case_when
+mbbs_generate_route_ID <- function(x) {
+  x <- x %>%
+    mutate(route_ID = .data$route_num + case_when(
+      .data$mbbs_county == "orange" ~ 100L,
+      .data$mbbs_county == "durham" ~ 200L,
+      .data$mbbs_county == "chatham" ~ 300L
+    ))
 }

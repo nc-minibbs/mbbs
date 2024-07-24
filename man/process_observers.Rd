@@ -11,6 +11,9 @@ process_observers(mbbs_county, county)
 
 \item{county}{which county is being processed, orange, durham, or chatham lower case}
 }
+\value{
+mbbs_county
+}
 \description{
 Full workflow for processing observers
 }

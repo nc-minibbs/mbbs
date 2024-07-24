@@ -1,4 +1,3 @@
-
 #' Renames and selects columns from data.frame created from the ebird csv export.
 #'
 #' @param dt a data.frame imported from an ebird export.
@@ -6,25 +5,25 @@
 rename_ebird_data <- function(dt) {
   dplyr::select(
     dt,
-    sub_id      = Submission.ID,
-    common_name = Common.Name, 
-    sci_name    = Scientific.Name,
-    tax_order   = Taxonomic.Order,
-    count_raw   = Count,
-    state       = State.Province,
-    loc         = Location,
-    locid       = Location.ID,
-    lat         = Latitude,
-    lon         = Longitude,
-    date        = Date,
-    time        = Time,
-    protocol    = Protocol,
-    distance_traveled = Distance.Traveled..km.,
-    area_covered = Area.Covered..ha.,
-    all_obs     = All.Obs.Reported,
-    breed_code  = Breeding.Code,
-    checklist_comments = Checklist.Comments,
-    species_comments = Observation.Details 
+    sub_id = .data$Submission.ID,
+    common_name = .data$Common.Name,
+    sci_name = .data$Scientific.Name,
+    tax_order = .data$Taxonomic.Order,
+    count_raw = .data$Count,
+    state = .data$State.Province,
+    loc = .data$Location,
+    locid = .data$Location.ID,
+    lat = .data$Latitude,
+    lon = .data$Longitude,
+    date = .data$Date,
+    time = .data$Time,
+    protocol = .data$Protocol,
+    distance_traveled = .data$Distance.Traveled..km.,
+    area_covered = .data$Area.Covered..ha.,
+    all_obs = .data$All.Obs.Reported,
+    breed_code = .data$Breeding.Code,
+    checklist_comments = .data$Checklist.Comments,
+    species_comments = .data$Observation.Details
   )
 }
 
@@ -33,8 +32,8 @@ rename_ebird_data <- function(dt) {
 #' @param dt data table / data frame
 rename_subspecies <- function(dt) {
   dplyr::mutate(dt,
-    sci_name = stringr::word(sci_name, 1, 2),  #dropping subspecies or domestic type designations
-    common_name = stringr::word(common_name, 1, sep = stringr::fixed(" ("))# dropping subspecies and subgroup designations
+    sci_name = stringr::word(sci_name, 1, 2), # dropping subspecies or domestic type designations
+    common_name = stringr::word(common_name, 1, sep = stringr::fixed(" (")) # dropping subspecies and subgroup designations
   )
 }
 
@@ -46,7 +45,7 @@ filter_ebird_data <- function(dt) {
   dt %>%
     dplyr::filter(
       # remove highly non-specific observations.
-      sci_name != "Passeriformes sp."
+      .data$sci_name != "Passeriformes sp."
     )
 }
 
@@ -57,7 +56,6 @@ filter_ebird_data <- function(dt) {
 #' @importFrom dplyr distinct summarise mutate group_by pull filter
 #' @keywords internal
 run_import_checks <- function(dt) {
-
   # Check for missing values where there shouldn't be.
   purrr::walk(
     .x = c("date", "mbbs_county", "route_num", "count"),
@@ -78,11 +76,11 @@ run_import_checks <- function(dt) {
   # Check that routes have exactly 1 or 20 non-owling submissions.
   # TODO: 2020 and after should have 20 submissions
   dt %>%
-    distinct(year, mbbs_county, route_num, stop_num) %>%
-    group_by(year, mbbs_county, route_num) %>%
+    distinct(.data$year, .data$mbbs_county, .data$route_num, .data$stop_num) %>%
+    group_by(.data$year, .data$mbbs_county, .data$route_num) %>%
     dplyr::summarise(
       n = dplyr::n(),
-      flag = !(n %in% c(1, 20))
+      flag = !(.data$n %in% c(1, 20))
     ) %>%
     {
       x <- .
@@ -91,7 +89,7 @@ run_import_checks <- function(dt) {
         mutate(
           desc = glue::glue("{mbbs_county}, {year}, {route_num}")
         ) %>%
-        pull(desc) %>%
+        pull(.data$desc) %>%
         paste0(collapse = "\n * ")
 
       if (any(x$flag)) {
@@ -123,7 +121,7 @@ get_exclusions <- function(path = "inst/excluded_submissions.yml") {
 #' @export
 exclude_submissions <- function(dt, exclusions) {
   dt %>%
-    filter(!(sub_id %in% exclusions))
+    filter(!(.data$sub_id %in% exclusions))
 }
 
 #' Import an ebird export into R
@@ -137,7 +135,7 @@ import_ebird_data <- function(path, run_checks = TRUE) {
   read.csv(path, stringsAsFactors = FALSE) %>%
     # TODO: revisit read_csv; can't get past parse errors.
     rename_ebird_data() %>%
-    rename_subspecies() %>% 
+    rename_subspecies() %>%
     filter_ebird_data() %>%
     ## Process comments ##
     left_join(
@@ -146,18 +144,18 @@ import_ebird_data <- function(path, run_checks = TRUE) {
     ) %>%
     mutate(
       # See: https://github.com/nc-minibbs/mbbs/issues/14
-      count = if_else(count_raw == "X", "1", count_raw),
-      count = as.integer(count),
-      date = lubridate::ymd(date),
-      year = lubridate::year(date),
+      count = if_else(.data$count_raw == "X", "1", .data$count_raw),
+      count = as.integer(.data$count),
+      date = lubridate::ymd(.data$date),
+      year = lubridate::year(.data$date),
 
       # Get county from location and clean up.
-      mbbs_county = str_extract(loc, "[Oo]range|[Cc]hatham|Chatman|[Dd]urham"),
-      mbbs_county = str_replace(mbbs_county, "Chatman", "Chatham"),
-      mbbs_county = tolower(mbbs_county),
-      route_num = as.integer(str_match(loc, "[0-1]{0,1}[0-9]{1}")),
+      mbbs_county = str_extract(.data$loc, "[Oo]range|[Cc]hatham|Chatman|[Dd]urham"),
+      mbbs_county = str_replace(.data$mbbs_county, "Chatman", "Chatham"),
+      mbbs_county = tolower(.data$mbbs_county),
+      route_num = as.integer(str_match(.data$loc, "[0-1]{0,1}[0-9]{1}")),
       # Getting stop from numbers at end (this is fragile):
-      stop_num = as.integer(str_extract(loc, "([0-9]{1,2}$)")),
+      stop_num = as.integer(str_extract(.data$loc, "([0-9]{1,2}$)")),
 
       # TODO: Flag the pre-dawn "owling" submissions
       # is_owling =
