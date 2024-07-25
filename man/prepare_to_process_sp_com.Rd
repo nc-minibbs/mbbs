@@ -6,6 +6,9 @@
 \usage{
 prepare_to_process_sp_com(mbbs)
 }
+\arguments{
+\item{mbbs}{mbbs.rda}
+}
 \description{
 Prepare mbbs dataset for processing species comments
 }

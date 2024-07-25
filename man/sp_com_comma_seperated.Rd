@@ -3,7 +3,7 @@
 \name{sp_com_comma_seperated}
 \alias{sp_com_comma_seperated}
 \title{Use when species comments follows ,,,,,,1,,,, format
-eg. where commas seperate counts at each stop. 
+eg. where commas seperate counts at each stop.
 Takes a string and returns a list of 20 numbers}
 \usage{
 sp_com_comma_seperated(x)
@@ -13,6 +13,6 @@ sp_com_comma_seperated(x)
 }
 \description{
 Use when species comments follows ,,,,,,1,,,, format
-eg. where commas seperate counts at each stop. 
+eg. where commas seperate counts at each stop.
 Takes a string and returns a list of 20 numbers
 }

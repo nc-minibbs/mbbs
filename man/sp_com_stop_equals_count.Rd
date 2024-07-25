@@ -11,7 +11,7 @@ sp_com_stop_equals_count(x)
 \item{x}{a string from the species_comment column formatted by "stop=count"}
 }
 \value{
-out a standardized list of 20 integers, representing the 
+out a standardized list of 20 integers, representing the
    species count at 20 stops.
 }
 \description{

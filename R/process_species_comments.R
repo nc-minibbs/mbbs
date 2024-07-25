@@ -74,6 +74,7 @@ process_species_comments <- function(mbbs) {
 #' @importFrom dplyr filter mutate bind_cols tibble relocate across
 #' @importFrom rlang set_names
 #' @importFrom stringr str_detect
+#' @param mbbs mbbs.rda
 prepare_to_process_sp_com <- \(mbbs) {
   mbbs %>%
     # Keep rows that have non-blank species_comments
@@ -317,6 +318,9 @@ sp_com_only_stop <- function(x, count = -999) {
 
 #' takes a list and either extends it with 0s to the max_length or cuts it down
 #' @importFrom assertthat assert_that
+#' @param x a list of numbers
+#' @returns x either cut down to the max_length or with 0's added to the end to
+#'  get it to the max_length
 pad_or_truncate <- \(x, max_length = 20) {
   # pad with 0s if less than 20
   pad <- min(length(x), max_length)
@@ -339,6 +343,7 @@ pad_or_truncate <- \(x, max_length = 20) {
 #' Indexes not explicitly changed in the list of 20 are set to have value '0'
 #' @importFrom stringr str_extract
 #' @importFrom assertthat assert_that
+#' @param x list of characters formatted as [0-9]+=[0-9]+
 sp_com_standardize_stops_equals <- \(x){
   # make standard list of 20
   # we create a temp as some stops may not have been included when the count was 0

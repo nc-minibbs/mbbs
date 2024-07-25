@@ -9,6 +9,9 @@ Indexes not explicitly changed in the list of 20 are set to have value '0'}
 \usage{
 sp_com_standardize_stops_equals(x)
 }
+\arguments{
+\item{x}{list of characters formatted as [0-9]+=[0-9]+}
+}
 \description{
 takes a list of [0-9]=[0=9] and returns a list of length 20
 where the first number becomes the index in the list
