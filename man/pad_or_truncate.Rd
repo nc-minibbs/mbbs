@@ -8,6 +8,8 @@ pad_or_truncate(x, max_length = 20)
 }
 \arguments{
 \item{x}{a list of numbers}
+
+\item{max_length}{the final length that list x should be.}
 }
 \value{
 x either cut down to the max_length or with 0's added to the end to

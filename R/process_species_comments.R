@@ -319,6 +319,7 @@ sp_com_only_stop <- function(x, count = -999) {
 #' takes a list and either extends it with 0s to the max_length or cuts it down
 #' @importFrom assertthat assert_that
 #' @param x a list of numbers
+#' @param max_length the final length that list x should be.
 #' @returns x either cut down to the max_length or with 0's added to the end to
 #'  get it to the max_length
 pad_or_truncate <- \(x, max_length = 20) {
