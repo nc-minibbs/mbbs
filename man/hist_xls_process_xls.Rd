@@ -14,7 +14,7 @@ hist_xls_process_xls(filenames)
 \item{filenames}{a list of historical mbbs .xls files within a folder}
 }
 \value{
-hist_xls each row is a species with columns s1:s20 
+hist_xls each row is a species with columns s1:s20
    containing the count at each stop
 }
 \description{

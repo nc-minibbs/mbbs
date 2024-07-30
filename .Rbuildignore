@@ -11,5 +11,6 @@
 ^\.vscode$
 ^flake\.nix$
 ^flake\.lock$
+^\.shell\.nix$
 ^\.vscode$
 ^inst/scratch$

@@ -13,7 +13,7 @@ hist_xls_purrr_files_in_directory(
 )
 }
 \arguments{
-\item{directory}{a directory that has folders containing historical 
+\item{directory}{a directory that has folders containing historical
 xls files. Has a default for testing purposes}
 }
 \value{

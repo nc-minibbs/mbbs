@@ -10,7 +10,7 @@ convert_based_on_mini_table(observer_table, mini_observer_table)
 \arguments{
 \item{observer_table}{main_observer_table}
 
-\item{mini_observer_table}{the mini_observer_table, has only columns 
+\item{mini_observer_table}{the mini_observer_table, has only columns
 'input_name' and 'output name'}
 }
 \description{

@@ -1,0 +1,7 @@
+﻿common_name,count,checklist_comments,species_comments,mbbs_county,route_num,route_ID,year,notes,sub_id,stop_num,loc
+American Kestrel,30,,"Stops: 1,2,3,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20",wake,1,401,2030,,testdata,NA,1
+American Kestrel,30,,"st 1=1, st 2=2, st 3=3, st 4=4, st 20=20",wake,1,401,2030,,testdata,NA,2
+American Kestrel,20,,st 20,wake,1,401,2030,,testdata,NA,3
+American Kestrel,30,,"1,2,3,4,,,,,,,,,,,,,,,,20",wake,1,401,2030,,testdata,NA,4
+American Kestrel,30,,"1=1,2=2,3=3,4=4,20=20",wake,1,401,2030,,testdata,NA,5
+American Kestrel,30,,"1,2,3,4,,,,,,,,,,,,,,,20",wake,1,401,2030,"comma sep, 19",testdata,NA,6
