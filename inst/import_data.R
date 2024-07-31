@@ -16,7 +16,7 @@ etax <- get_ebird_taxonomy()
 
 # import Orange
 mbbs_orange <-
-  import_ebird_data("inst/extdata/MyEBirdData_Orange_20240523.csv") %>%
+  import_ebird_data("inst/extdata/MyEBirdData_Orange_20240730.csv") %>%
   prepare_mbbs_data(
     mbbs_site_dt =
       readr::read_csv("inst/extdata/orange_1999-2009_from_website.csv") %>%
@@ -33,7 +33,7 @@ mbbs_orange <-
 
 # import Durham
 mbbs_durham <-
-  import_ebird_data("inst/extdata/MyEBirdData_Durham_20240117.csv") %>%
+  import_ebird_data("inst/extdata/MyEBirdData_Durham_20240730.csv") %>%
   prepare_mbbs_data(
     mbbs_site_dt =
       readr::read_csv("inst/extdata/durham_2002-2009_from_website.csv") %>%
@@ -49,7 +49,7 @@ mbbs_durham <-
 
 # import Chatham
 mbbs_chatham <-
-  import_ebird_data("inst/extdata/MyEBirdData_Chatham_20240319.csv") %>%
+  import_ebird_data("inst/extdata/MyEBirdData_Chatham_20240730.csv") %>%
   prepare_mbbs_data(
     mbbs_site_dt =
       readr::read_csv("inst/extdata/chatham_2000-2009_from_website.csv") %>%
