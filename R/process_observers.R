@@ -55,7 +55,9 @@ update_survey_events <- function(envir = parent.frame()) {
     dplyr::summarize(
       S = dplyr::n_distinct(.data$common_name),
       N = sum(.data$count),
-      observers = .data$observers[!is.na(.data$observers)][1]
+      observers = .data$observers[!is.na(.data$observers)][1],
+      month = str_sub(first(.data$date), start = -5, end = -4),
+      day = str_sub(first(.data$date), start = -2, end = -1) 
     ) %>%
     filter(year == max(year)) %>%
     dplyr::ungroup()
