@@ -342,7 +342,7 @@ update_mini_observer_table <- function() {
     } else {
       # name is not already on list, take input for the output name
       print("New observer name needs standardizing for the mini_observer_conversion_table:")
-      print(mini_observer_table$input_name[a])
+      print(obs_list[a])
       print("What should this be converted to? Enter a standardized name or NA:")
       temp_row$input_name <- obs_list[a]
       temp_row$output_name <- readline(":")
