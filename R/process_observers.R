@@ -57,7 +57,7 @@ update_survey_events <- function(envir = parent.frame()) {
       N = sum(.data$count),
       observers = .data$observers[!is.na(.data$observers)][1],
       month = str_sub(first(.data$date), start = -5, end = -4),
-      day = str_sub(first(.data$date), start = -2, end = -1) 
+      day = str_sub(first(.data$date), start = -2, end = -1)
     ) %>%
     filter(year == max(year)) %>%
     dplyr::ungroup()
