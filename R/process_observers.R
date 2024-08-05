@@ -418,7 +418,8 @@ get_observer_quality <- function(mbbs_survey_events) {
     summarize(
       route_meanS = mean(.data$S),
       n_surveys_route = n()
-    )
+    ) %>%
+    ungroup()
 
   # summary of number of mean(S) across routes for each observer,
   # + n surveys they've done
@@ -431,7 +432,8 @@ get_observer_quality <- function(mbbs_survey_events) {
     summarize(
       obs_meanS = mean(.data$S),
       n_surveys_obs = n()
-    )
+    ) %>%
+    ungroup()
 
   # Calculate proportion deviation from mean species of other observers
   # on the route for each observer
@@ -492,7 +494,8 @@ get_observer_quality <- function(mbbs_survey_events) {
     summarize(
       obs_quality = mean(.data$obs_proportion_route),
       n_surveys_obs = first(.data$n_surveys_obs)
-    )
+    ) %>%
+    ungroup()
 
   # assign observer_quality based on the performance of the top observer
   mbbs_survey_events <-
