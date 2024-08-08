@@ -23,7 +23,7 @@ clean_common_names <- function(dt) {
   dt %>%
     mutate(
       common_name_c = trimws(.data$common_name),
-      common_name_c = str_replace(
+      common_name_c = str_replace_all(
         .data$common_name_c,
         c(
           "\\n" = " ",

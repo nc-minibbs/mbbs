@@ -1,240 +1,252 @@
-mbbs_county,route_num,observers,primary_observer,obs1,obs2,obs3,standardized_observers
-chatham,1,Marsha Stephens and Patsy Bailey,Patsy Bailey,Marsha Stephens,Patsy Bailey,NA,"Marsha Stephens, Patsy Bailey"
-chatham,1,Patricia Bailey and Marsha Stephens,Patsy Bailey,Patsy Bailey,Marsha Stephens,NA,"Marsha Stephens, Patsy Bailey"
-chatham,1,Patsy Bailey,Patsy Bailey,Patsy Bailey,NA,NA,Patsy Bailey
-chatham,1,Patsy Bailey and Marsha Stephens,Patsy Bailey,Patsy Bailey,Marsha Stephens,NA,"Marsha Stephens, Patsy Bailey"
-chatham,1,P. Bailey,Patsy Bailey,Patsy Bailey,NA,NA,Patsy Bailey
-chatham,1,"Patsy Bailey, Norman Budnitz",Patsy Bailey,Patsy Bailey,Norman Budnitz,NA,"Norman Budnitz, Patsy Bailey"
-chatham,1,"Patsy Bailey, weather=58F at start, clear skies, no wind, vehicles=56, no pre-5:30 am whip-poor-wills at stop 1 and no YB-cuckoos this year, otherwise nothing unusual.",Patsy Bailey,Patsy Bailey,NA,NA,Patsy Bailey
-chatham,1,?,?,?,NA,NA,?
-chatham,1,? ,?,?,NA,NA,?
-chatham,2,Norm Budnitz & Mike Schultz,Norman Budnitz,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
-chatham,2,"Norm Budnitz, Mike Schultz",Norman Budnitz,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
-chatham,2,"Norman Budnitz, Mike Schultz",Norman Budnitz,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
-chatham,2,"Norman Budnitz, Mike Schultz, Karen Hogan",Norman Budnitz,Norman Budnitz,Michael Schultz,Karen Hogan,"Karen Hogan, Michael Schultz, Norman Budnitz"
-chatham,2,"N. Budnitz, M. Schultz",Norman Budnitz,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
-chatham,2,Patsy Bailey,Patsy Bailey,Patsy Bailey,NA,NA,Patsy Bailey
-chatham,2,Norm Budnitz,Norman Budnitz,Norman Budnitz,NA,NA,Norman Budnitz
-chatham,2,Norm Budnitz and Mike Schultz,Norman Budnitz,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
-chatham,3,Haven and Minna Wiley,Haven Wiley,Haven Wiley,NA,NA,Haven Wiley
-chatham,3,Haven Wiley,Haven Wiley,Haven Wiley,NA,NA,Haven Wiley
-chatham,3,"Haven Wiley, Minna Wiley",Haven Wiley,Haven Wiley,NA,NA,Haven Wiley
-chatham,3,Haven and Minna Wiley (6-10-2007 and 6-14-2007),Haven Wiley,Haven Wiley,NA,NA,Haven Wiley
-chatham,4,Michael and Lois Schultz,Michael Schultz,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
-chatham,4,Michael Schultz,Michael Schultz,Michael Schultz,NA,NA,Michael Schultz
-chatham,4,"Mike Schultz, Lois Schultz",Michael Schultz,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
-chatham,4,"Schultz, Michael",Michael Schultz,Michael Schultz,NA,NA,Michael Schultz
-chatham,4,"M. Schultz, L. Schultz",Michael Schultz,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
-chatham,4,"M. Schultz, K. Hogan",Michael Schultz,Michael Schultz,Karen Hogan,NA,"Karen Hogan, Michael Schultz"
-chatham,4,"Mike Schultz, Norm Budnitz",Michael Schultz,Michael Schultz,Norman Budnitz,NA,"Michael Schultz, Norman Budnitz"
-chatham,4," Mike Schultz, Norm Budnitz",Michael Schultz,Michael Schultz,Norman Budnitz,NA,"Michael Schultz, Norman Budnitz"
-chatham,4,"Norm Budnitz, Mike Schultz",Michael Schultz,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
-chatham,5,"driscoll, tom",Tom Driscoll,Tom Driscoll,NA,NA,Tom Driscoll
-chatham,5,Haven and Minna Wiley,Haven Wiley,Haven Wiley,NA,NA,Haven Wiley
-chatham,5,Jeff Pippen and Julie Rice,Jeff Pippen,Jeff Pippen,Julie Rice,NA,"Jeff Pippen, Julie Rice"
-chatham,5,"Marsha Tuttle, Thomas Driscoll, Colyer Durovich",Tom Driscoll,Marsha Tuttle,Tom Driscoll,Colyer Durovich,"Colyer Durovich, Marsha Tuttle, Tom Driscoll"
-chatham,5,tom driscoll,Tom Driscoll,Tom Driscoll,NA,NA,Tom Driscoll
-chatham,5,Tom Driscoll,Tom Driscoll,Tom Driscoll,NA,NA,Tom Driscoll
-chatham,5,"Tom Driscoll, Edison Buenano",Tom Driscoll,Tom Driscoll,Edison Buenano,NA,"Edison Buenano, Tom Driscoll"
-chatham,5,"tom driscoll, Vern Bothwell",Tom Driscoll,Tom Driscoll,Vern Bothwell,NA,"Tom Driscoll, Vern Bothwell"
-chatham,5,"tom driscoll, Elizabeth Keating",Tom Driscoll,Tom Driscoll,Elizabeth Keating,NA,"Elizabeth Keating, Tom Driscoll"
-chatham,5,"Tom Driscoll, Colyer Durovich, and Marsha Stephens",Tom Driscoll,Tom Driscoll,Colyer Durovich,Marsha Stephens,"Colyer Durovich, Marsha Stephens, Tom Driscoll"
-chatham,5,Tom Driscoll and Marsha Stephens,Tom Driscoll,Tom Driscoll,Marsha Stephens,NA,"Marsha Stephens, Tom Driscoll"
-chatham,5, tom driscoll,Tom Driscoll,Tom Driscoll,NA,NA,Tom Driscoll
-chatham,6,Cynthia Fox and Marsha Stephens,Marsha Stephens,Cynthia Fox,Marsha Stephens,NA,"Cynthia Fox, Marsha Stephens"
-chatham,6,"Marsha Tuttle, Thomas Driscoll, Laurie Kucharik",Marsha Stephens,Marsha Tuttle,Tom Driscoll,Laurie Kucharik,"Laurie Kucharik, Marsha Tuttle, Tom Driscoll"
-chatham,6,Roger Shaw,Roger Shaw,Roger Shaw,NA,NA,Roger Shaw
-chatham,7,Will Cook,Will Cook,Will Cook,NA,NA,Will Cook
-chatham,7,"Will Cook, Catherine Carter",Will Cook,Will Cook,Catherine Carter,NA,"Catherine Carter, Will Cook"
-chatham,7,"Will Cook, Lesley Starke",Will Cook,Will Cook,Lesley Starke,NA,"Lesley Starke, Will Cook"
-chatham,7, Will Cook,Will Cook,Will Cook,NA,NA,Will Cook
-chatham,8,Judy Murray and Marty Girolami,Judy Murray,Judy Murray,Martha Girolami,NA,"Judy Murray, Martha Girolami"
-chatham,8,"Martha Girolami, Judy Murray",Martha Girolami,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
-chatham,8,"Martha Girolami, Pat Reid and Judy Murray",Martha Girolami,Martha Girolami,Pat Reid,Judy Murray,"Judy Murray, Martha Girolami, Pat Reid"
-chatham,8,Nan Dewire and Fleeta Wilkinson,Nan Dewire,Nan Dewire,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Nan Dewire"
-chatham,8,"M. Girolami, P. Reid, J. Murray",Martha Girolami,Martha Girolami,Pat Reid,Judy Murray,"Judy Murray, Martha Girolami, Pat Reid"
-chatham,8,Nan Dewire and Fleeta Chauvigne,Nan Dewire,Nan Dewire,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Nan Dewire"
-chatham,8, Nan Dewire and Fleeta Chauvigne,Nan Dewire,Nan Dewire,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Nan Dewire"
-chatham,8,Nan Dewire and fleeta Chauvigne,Nan Dewire,Nan Dewire,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Nan Dewire"
-chatham,8,Marty Girolami and Judy Murray,Martha Girolami,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
-chatham,8,"Marty Girolami, Pat Reid, and Judy Murray",Martha Girolami,Martha Girolami,Pat Reid,Judy Murray,"Judy Murray, Martha Girolami, Pat Reid"
-chatham,8," Nan Dewire, Fleeta Chauvigne, Suzanne Roberts",Nan Dewire,Nan Dewire,Fleeta Chauvigne,Suzanne Roberts,"Fleeta Chauvigne, Nan Dewire, Suzanne Roberts"
-chatham,9,Shelley Theye and Lee Van Malssen,Shelley Theye,Shelley Theye,Lee Van Malssen,NA,"Lee Van Malssen, Shelley Theye"
-chatham,9,Shelley Theye,Shelley Theye,Shelley Theye,NA,NA,Shelley Theye
-chatham,9,S. Theye,Shelley Theye,Shelley Theye,NA,NA,Shelley Theye
-chatham,9,"S. Theye, L. Van Malssen",Shelley Theye,Shelley Theye,Lee Van Malssen,NA,"Lee Van Malssen, Shelley Theye"
-chatham,9,"Shelley Theye, Lee Van Malssen",Shelley Theye,Shelley Theye,Lee Van Malssen,NA,"Lee Van Malssen, Shelley Theye"
-chatham,9,Shelley Theye and Marsha Sephens,Shelley Theye,Shelley Theye,Marsha Stephens,NA,"Marsha Stephens, Shelley Theye"
-chatham,10,"Fleeta Chauvigne, Mark Montazer",Fleeta Chauvigne,Fleeta Chauvigne,Mark Montazer,NA,"Fleeta Chauvigne, Mark Montazer"
-chatham,10,Brian Strong,Brian Strong,Brian Strong,NA,NA,Brian Strong
-chatham,10,Sue Brady,Sue Brady,Sue Brady,NA,NA,Sue Brady
-chatham,10,Will Cook,Will Cook,Will Cook,NA,NA,Will Cook
-chatham,10,"Brian Strong, weather-60F, slight drizzle",Brian Strong,Brian Strong,NA,NA,Brian Strong
-chatham,10,"Mark Montazer, Fleeta Wilkinson",Fleeta Chauvigne,Mark Montazer,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Mark Montazer"
-chatham,11,Bob Chase,Bob Chase,Bob Chase,NA,NA,Bob Chase
-chatham,11,M. Graves and B. Chase,Bob Chase,M. Graves,Bob Chase,NA,"Bob Chase, M. Graves"
-chatham,11,Allen Hurlbert,Allen Hurlbert,Allen Hurlbert,NA,NA,Allen Hurlbert
-chatham,11,Nathan Howell,Nathan Howell,Nathan Howell,NA,NA,Nathan Howell
-chatham,12,Kate Finlayson and Chris Canfield,Kate Finlayson,Kate Finlayson,Chris Canfield,NA,"Chris Canfield, Kate Finlayson"
-chatham,12,"tom driscoll, Elizabeth Keating",Tom Driscoll,Tom Driscoll,Elizabeth Keating,NA,"Elizabeth Keating, Tom Driscoll"
-chatham,12,"tom driscoll, Fleeta Wilkinson",Tom Driscoll,Tom Driscoll,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Tom Driscoll"
-chatham,12, tom driscoll,Tom Driscoll,Tom Driscoll,NA,NA,Tom Driscoll
-chatham,12,Tom Driscoll,Tom Driscoll,Tom Driscoll,NA,NA,Tom Driscoll
-chatham,12,Chris Canfield and Kate Finlayson,Kate Finlayson,Chris Canfield,Kate Finlayson,NA,"Chris Canfield, Kate Finlayson"
-chatham,12,tom driscoll,Tom Driscoll,Tom Driscoll,NA,NA,Tom Driscoll
-chatham,13,Marsha Stephens,Marsha Stephens,Marsha Stephens,NA,NA,Marsha Stephens
-chatham,13,Marsha Stephens and Patsy Bailey,Marsha Stephens,Marsha Stephens,Patsy Bailey,NA,"Marsha Stephens, Patsy Bailey"
-chatham,13,"Marsha Tuttle, Thomas Driscoll, Laurie Kucharik",Marsha Stephens,Marsha Tuttle,Tom Driscoll,Laurie Kucharik,"Laurie Kucharik, Marsha Tuttle, Tom Driscoll"
-chatham,13,Tom Driscoll,Tom Driscoll,Tom Driscoll,NA,NA,Tom Driscoll
-chatham,13,tom driscoll,Tom Driscoll,Tom Driscoll,NA,NA,Tom Driscoll
-chatham,13,"tom driscoll, Bradley Saul",Tom Driscoll,Tom Driscoll,Bradley Saul,NA,"Bradley Saul, Tom Driscoll"
-chatham,13,"tom driscoll, Nan DeWire",Tom Driscoll,Tom Driscoll,Nan Dewire,NA,"Nan Dewire, Tom Driscoll"
-chatham,13, tom driscoll,Tom Driscoll,Tom Driscoll,NA,NA,Tom Driscoll
-chatham,13, Tom Driscoll,Tom Driscoll,Tom Driscoll,NA,NA,Tom Driscoll
-chatham,13,"tom driscoll, Elizabeth Keating",Tom Driscoll,Tom Driscoll,Elizabeth Keating,NA,"Elizabeth Keating, Tom Driscoll"
-chatham,13,Haven and Minna Wiley,Haven Wiley,Haven Wiley,NA,NA,Haven Wiley
-chatham,13,?,?,?,NA,NA,?
-chatham,13,JA and HS,JA and HS,JA,HS,NA,"HS, JA"
-chatham,14,Josh Sims,Josh Sims,Josh Sims,NA,NA,Josh Sims
-chatham,14,Kent Fiala,Kent Fiala,Kent Fiala,NA,NA,Kent Fiala
-chatham,14,Richard Snow,Richard Snow,Richard Snow,NA,NA,Richard Snow
-chatham,14,"Will Bennett, Jonathan Bennett",Will Bennett,Will Bennett,Jonathan Bennett,NA,"Jonathan Bennett, Will Bennett"
-chatham,14,"Will Bennett, Jon Bennett",Will Bennett,Will Bennett,Jonathan Bennett,NA,"Jonathan Bennett, Will Bennett"
-chatham,14,Allen Hurlbert,Allen Hurlbert,Allen Hurlbert,NA,NA,Allen Hurlbert
-durham,1,judy murray,Judy Murray,Judy Murray,NA,NA,Judy Murray
-durham,1,Judy Murray,Judy Murray,Judy Murray,NA,NA,Judy Murray
-durham,1,"Judy Murray, Robin Moran",Judy Murray,Judy Murray,Robin Moran,NA,"Judy Murray, Robin Moran"
-durham,1,"Robin Moran, Judy Murray",Judy Murray,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
-durham,1,robin moran and jennifer maher,Robin Moran,Robin Moran,Jennifer Maher,NA,"Jennifer Maher, Robin Moran"
-durham,1,"Robin Moran, Jennifer Maher, Noah Rokoske",Robin Moran,Robin Moran,Jennifer Maher,Noah Rokoske,"Jennifer Maher, Noah Rokoske, Robin Moran"
-durham,1,"judy murray, robin moran""",Judy Murray,Judy Murray,Robin Moran,NA,"Judy Murray, Robin Moran"
-durham,1,"jennifer maher, robin moran, noah rokoske",Robin Moran,Jennifer Maher,Robin Moran,Noah Rokoske,"Jennifer Maher, Noah Rokoske, Robin Moran"
-durham,1,Judy Murray and Tom Krakauer,Judy Murray,Judy Murray,Tom Krakauer,NA,"Judy Murray, Tom Krakauer"
-durham,1,"judy murray, robin moran",Judy Murray,Judy Murray,Robin Moran,NA,"Judy Murray, Robin Moran"
-durham,1,"Noah Rokoske, Robin Moran, Jennifer Maher",Robin Moran,Noah Rokoske,Robin Moran,Jennifer Maher,"Jennifer Maher, Noah Rokoske, Robin Moran"
-durham,2,Bruce Young,Bruce Young,Bruce Young,NA,NA,Bruce Young
-durham,2,"Edith Tatum, Clea",Edith Tatum,Edith Tatum,Clea ,NA,"Clea , Edith Tatum"
-durham,2,Jeffrey Pippen,Jeff Pippen,Jeff Pippen,NA,NA,Jeff Pippen
-durham,2,Elizabeth Tatum,Elizabeth Tatum,Edith Tatum,NA,NA,Edith Tatum
-durham,2,Edith Tatum,Edith Tatum,Edith Tatum,NA,NA,Edith Tatum
-durham,2,?,?,?,NA,NA,?
-durham,2,Jeff Pippen,Jeff Pippen,Jeff Pippen,NA,NA,Jeff Pippen
-durham,3,Carol Williamson and Norm Budnitz,Norman Budnitz,Carol Williamson,Norman Budnitz,NA,"Carol Williamson, Norman Budnitz"
-durham,3,Norman Budnitz,Norman Budnitz,Norman Budnitz,NA,NA,Norman Budnitz
-durham,3,"Patsy Bailey, Norman Budnitz",Norman Budnitz,Patsy Bailey,Norman Budnitz,NA,"Norman Budnitz, Patsy Bailey"
-durham,3,"N. Budnitz, C. Williamson",Norman Budnitz,Norman Budnitz,Carol Williamson,NA,"Carol Williamson, Norman Budnitz"
-durham,3,Norm Budnitz,Norman Budnitz,Norman Budnitz,NA,NA,Norman Budnitz
-durham,4,Jeff Pippen and Julie Rice,Jeff Pippen,Jeff Pippen,Julie Rice,NA,"Jeff Pippen, Julie Rice"
-durham,4,Jeffrey Pippen,Jeff Pippen,Jeff Pippen,NA,NA,Jeff Pippen
-durham,4,Patsy Bailey,Patsy Bailey,Patsy Bailey,NA,NA,Patsy Bailey
-durham,4,Roger Shaw,Roger Shaw,Roger Shaw,NA,NA,Roger Shaw
-durham,4, Roger Shaw,Roger Shaw,Roger Shaw,NA,NA,Roger Shaw
-durham,4,Jeffrey Pippin and Julie Rice,Jeff Pippen,Jeff Pippen,Julie Rice,NA,"Jeff Pippen, Julie Rice"
-durham,4," Roger Shaw, Stephen Brooks, Carey Jefferson",Roger Shaw,Roger Shaw,Stephen Brooks,Carey Jefferson,"Carey Jefferson, Roger Shaw, Stephen Brooks"
-durham,4,"Stephen Brooks, Carey Jefferson",Stephen Brooks,Stephen Brooks,Carey Jefferson,NA,"Carey Jefferson, Stephen Brooks"
-durham,4,Stephen Brooks,Stephen Brooks,Stephen Brooks,NA,NA,Stephen Brooks
-durham,5,Alan Johnston and Shantanu Phukan,Alan Johnston,Alan Johnston,Shantanu Phukan,NA,"Alan Johnston, Shantanu Phukan"
-durham,5,Alan Johnston and Denny Dobbin,Alan Johnston,Alan Johnston,Denny Dobbin,NA,"Alan Johnston, Denny Dobbin"
-durham,5,"David Smith, Judy Smith",David Smith,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
-durham,5,"Alan Johnston, Bobbie Johnston, and Pamela Clark",Alan Johnston,Alan Johnston,Bobbie Johnston,Pamela Clark,"Alan Johnston, Bobbie Johnston, Pamela Clark"
-durham,5,"A. Johnston, D. Dobbins",Alan Johnston,Alan Johnston,Denny Dobbin,NA,"Alan Johnston, Denny Dobbin"
-durham,5,Alan Johnston and Sally Johnston,Alan Johnston,Alan Johnston,Sally Johnston,NA,"Alan Johnston, Sally Johnston"
-durham,5,Alan Johnstorn and Denny Dobbin,Alan Johnston,Alan Johnston,Denny Dobbin,NA,"Alan Johnston, Denny Dobbin"
-durham,5,Alan Johnston and David Welch,Alan Johnston,Alan Johnston,David Welch,NA,"Alan Johnston, David Welch"
-durham,5,Alan Johnston and Dan Williams,Alan Johnston,Alan Johnston,Dan Williams,NA,"Alan Johnston, Dan Williams"
-durham,5,"Alan Johnston, Denny Dobbin",Alan Johnston,Alan Johnston,Denny Dobbin,NA,"Alan Johnston, Denny Dobbin"
-durham,6,David Smith,David Smith,David Smith,NA,NA,David Smith
-durham,6,"David Smith, Judy Smith",David Smith,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
-durham,6,Rick Payne,Rick Payne,Rick Payne,NA,NA,Rick Payne
-durham,7,Brian Strong,Brian Strong,Brian Strong,NA,NA,Brian Strong
-durham,7,"Brian Strong, weather=75F, clear",Brian Strong,Brian Strong,NA,NA,Brian Strong
-durham,7,Noah Rokoske,Noah Rokoske,Noah Rokoske,NA,NA,Noah Rokoske
-durham,7, Noah Rokoske,Noah Rokoske,Noah Rokoske,NA,NA,Noah Rokoske
-durham,8,Brian Bockhahn,Brian Bockhahn,Brian Bockhahn,NA,NA,Brian Bockhahn
-durham,8,Brian Strong,Brian Strong,Brian Strong,NA,NA,Brian Strong
-durham,8,"Brian Bockhahn, weather=57, clear, sunny, vehicles=32, habitat@1=B, habitat@2=B, habitat@3=M, habitat@4=M, habitat@5=M, habitat@6=M, habitat@7=M, habitat@8=B, habitat@9=B, habitat@10=B, habitat@11=M, habitat@12=B, habitat@13=M, habitat@14=B, habitat@15=B, habitat@16=B, habitat@17=M, habitat@18=M, habitat@19=B, habitat@20=M",Brian Bockhahn,Brian Bockhahn,NA,NA,Brian Bockhahn
-orange,1,"Ginger Travis, Barb Brooks",Ginger Travis,Ginger Travis,Barb Brooks,NA,"Barb Brooks, Ginger Travis"
-orange,1,Ginger Travis and Cathy Packer,Ginger Travis,Ginger Travis,Cathy Packer,NA,"Cathy Packer, Ginger Travis"
-orange,1,Ginger Travis and Doug Shadwick,Ginger Travis,Ginger Travis,Doug Shadwick,NA,"Doug Shadwick, Ginger Travis"
-orange,1,"Norman Budnitz, Mike Schultz",Norman Budnitz,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
-orange,1,"N. Budnitz, M. Schultz",Norman Budnitz,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
-orange,1,"Norm Budnitz, Mike Schultz",Norman Budnitz,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
-orange,1,Norm Budnitz,Norman Budnitz,Norman Budnitz,NA,NA,Norman Budnitz
-orange,2,Barb Brooks,Barb Brooks,Barb Brooks,NA,NA,Barb Brooks
-orange,2,barb brooks,Barb Brooks,Barb Brooks,NA,NA,Barb Brooks
-orange,2,Barbara Brooks,Barb Brooks,Barb Brooks,NA,NA,Barb Brooks
-orange,2,B. BROOKS,Barb Brooks,Barb Brooks,NA,NA,Barb Brooks
-orange,2,barb Brooks,Barb Brooks,Barb Brooks,NA,NA,Barb Brooks
-orange,3,barb brooks,Barb Brooks,Barb Brooks,NA,NA,Barb Brooks
-orange,3,Barb Brooks,Barb Brooks,Barb Brooks,NA,NA,Barb Brooks
-orange,3,"Bradley Saul, Charity Kirk",Bradley Saul,Bradley Saul,Charity Kirk,NA,"Bradley Saul, Charity Kirk"
-orange,3,Karen Piplani,Karen Piplani,Karen Piplani,NA,NA,Karen Piplani
-orange,3,Kate Finlayson and Karen Piplani,Karen Piplani,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
-orange,3,"Kate Finlayson, Karen Piplani",Karen Piplani,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
-orange,3,Bradley Saul,Bradley Saul,Bradley Saul,NA,NA,Bradley Saul
-orange,4,Allen Hurlbert,Allen Hurlbert,Allen Hurlbert,NA,NA,Allen Hurlbert
-orange,4,"Allen Hurlbert, Grace Di Cecco, Allison Duprey",Allen Hurlbert,Allen Hurlbert,Grace Di Cecco,Allison Duprey,"Allen Hurlbert, Allison Duprey, Grace Di Cecco"
-orange,4,"Allen Hurlbert, Sarah Pollack",Allen Hurlbert,Allen Hurlbert,Sarah Pollack,NA,"Allen Hurlbert, Sarah Pollack"
-orange,4,"Jill Paul, Tom Driscoll",Tom Driscoll,Jill Paul,Tom Driscoll,NA,"Jill Paul, Tom Driscoll"
-orange,4,Kent Fiala,Kent Fiala,Kent Fiala,NA,NA,Kent Fiala
-orange,4,Kent Kiala,Kent Fiala,Kent Fiala,NA,NA,Kent Fiala
-orange,4,"Will Cook, Catherine Carter",Will Cook,Will Cook,Catherine Carter,NA,"Catherine Carter, Will Cook"
-orange,4,"Allen Hurlbert, Ashley Moore, Ellen Weaver",Allen Hurlbert,Allen Hurlbert,Ashley Moore,Ellen Weaver,"Allen Hurlbert, Ashley Moore, Ellen Weaver"
-orange,5,Will Cook,Will Cook,Will Cook,NA,NA,Will Cook
-orange,5,"Will Cook, Catherine Anderson",Will Cook,Will Cook,Catherine Anderson,NA,"Catherine Anderson, Will Cook"
-orange,5,"Will Cook, Catherine Carter",Will Cook,Will Cook,Catherine Carter,NA,"Catherine Carter, Will Cook"
-orange,5, Will Cook,Will Cook,Will Cook,NA,NA,Will Cook
-orange,6,Judy Murray,Judy Murray,Judy Murray,NA,NA,Judy Murray
-orange,6,Judy Murray and Robin Moran,Judy Murray,Judy Murray,Robin Moran,NA,"Judy Murray, Robin Moran"
-orange,6,"Judy Murray, Robin Moran",Judy Murray,Judy Murray,Robin Moran,NA,"Judy Murray, Robin Moran"
-orange,6,"Karen Hogan, Robin Moran",Robin Moran,Karen Hogan,Robin Moran,NA,"Karen Hogan, Robin Moran"
-orange,6,Robin Moran & Judy Murray,Robin Moran,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
-orange,6,Robin Moran and Judy Murray,Robin Moran,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
-orange,6,"Robin Moran, Judy Murray",Robin Moran,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
-orange,6,"R. Moran, J. Murray",Robin Moran,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
-orange,6,"Karen Hogan, Mark Hogan",Karen Hogan,Karen Hogan,Mark Hogan,NA,"Karen Hogan, Mark Hogan"
-orange,6,Karen Hogan,Karen Hogan,Karen Hogan,NA,NA,Karen Hogan
-orange,7,Betty King,Betty King,Betty King,NA,NA,Betty King
-orange,7,Betty and John King,Betty King,Betty King,NA,NA,Betty King
-orange,7,"Betty King, John King (driver)",Betty King,Betty King,NA,NA,Betty King
-orange,7,brian bockhahn,Brian Bockhahn,Brian Bockhahn,NA,NA,Brian Bockhahn
-orange,7,Brian Bockhahn,Brian Bockhahn,Brian Bockhahn,NA,NA,Brian Bockhahn
-orange,7,"Brian Bockhahn, weather=69, clear, sunny, vehicles=31, habitat@1=B, habitat@2=P, habitat@3=M, habitat@4=M, habitat@5=B, habitat@6=H, habitat@7=B, habitat@8=H, habitat@9=O, habitat@10=O, habitat@11=H, habitat@12=O, habitat@13=H, habitat@14=M, habitat@15=M, habitat@16=B, habitat@17=O, habitat@18=O, habitat@19=O, habitat@20=M",Brian Bockhahn,Brian Bockhahn,NA,NA,Brian Bockhahn
-orange,7,?,?,?,NA,NA,?
-orange,8,Barb Brooks,Barb Brooks,Barb Brooks,NA,NA,Barb Brooks
-orange,8,Barbara Brooks,Barb Brooks,Barb Brooks,NA,NA,Barb Brooks
-orange,8,"B. Brooks, A. Nester",Barb Brooks,Barb Brooks,A. Nester,NA,"A. Nester, Barb Brooks"
-orange,8,barb brooks,Barb Brooks,Barb Brooks,NA,NA,Barb Brooks
-orange,8,"Barb Brooks, Laura Durlacher",Barb Brooks,Barb Brooks,Laura Durlacher,NA,"Barb Brooks, Laura Durlacher"
-orange,9,David Curtin,David Curtin,David Curtin,NA,NA,David Curtin
-orange,9,"Karen Hogan, Mark Hogan",Karen Hogan,Karen Hogan,Mark Hogan,NA,"Karen Hogan, Mark Hogan"
-orange,9,S. Phukan and T. Williams,Shantanu Phukan,Shantanu Phukan,T. Williams,NA,"Shantanu Phukan, T. Williams"
-orange,9,? (NOT Shantanu),?,?,NA,NA,?
-orange,9,Shantanu Phukan,Shantanu Phukan,Shantanu Phukan,NA,NA,Shantanu Phukan
-orange,9,Shantanu Phukan and Alan Johnston,Shantanu Phukan,Shantanu Phukan,Alan Johnston,NA,"Alan Johnston, Shantanu Phukan"
-orange,9,Sandy Cash,Sandy Cash,Sandy Cash,NA,NA,Sandy Cash
-orange,9,Karen Hogan,Karen Hogan,Karen Hogan,NA,NA,Karen Hogan
-orange,10,Barb Brooks,Barb Brooks,Barb Brooks,NA,NA,Barb Brooks
-orange,10,Nate Swick,Nathan Swick,Nathan Swick,NA,NA,Nathan Swick
-orange,10,Nathan Swick,Nathan Swick,Nathan Swick,NA,NA,Nathan Swick
-orange,10,"Vern Bothwell, Nan Dewire",Vern Bothwell,Vern Bothwell,Nan Dewire,NA,"Nan Dewire, Vern Bothwell"
-orange,10,Will Cook,Will Cook,Will Cook,NA,NA,Will Cook
-orange,10,Vern Bothwell,Vern Bothwell,Vern Bothwell,NA,NA,Vern Bothwell
-orange,10,Allen Hurlbert,Allen Hurlbert,Allen Hurlbert,NA,NA,Allen Hurlbert
-orange,10,"Will Cook, Doug Shadwick",Will Cook,Will Cook,Doug Shadwick,NA,"Doug Shadwick, Will Cook"
-orange,10,Doug Shadwick,Doug Shadwick,Doug Shadwick,NA,NA,Doug Shadwick
-orange,11,?,?,?,NA,NA,?
-orange,11,Ali Iyoob,Ali Iyoob,Ali Iyoob,NA,NA,Ali Iyoob
-orange,11,Marsha Stephens,Marsha Stephens,Marsha Stephens,NA,NA,Marsha Stephens
-orange,11,"Loren Hintz: weather=66F then warming, partially cloudy, no wind",Loren Hintz,Loren Hintz,NA,NA,Loren Hintz
-orange,11,Loren Hintz,Loren Hintz,Loren Hintz,NA,NA,Loren Hintz
-orange,11,"Loren Hintz: weather=64F then warming, sunny, no wind",Loren Hintz,Loren Hintz,NA,NA,Loren Hintz
-orange,11,"Loren Hintz: weather=61F then warming, sunny, no wind",Loren Hintz,Loren Hintz,NA,NA,Loren Hintz
-orange,11,"Loren Hintz, Margaret Vimmerstedt",Loren Hintz,Loren Hintz,Margaret Vimmerstedt,NA,"Loren Hintz, Margaret Vimmerstedt"
-orange,11,"Suzanne Roberts, Vicki Nebes",Suzanne Roberts,Suzanne Roberts,Vicki Nebes,NA,"Suzanne Roberts, Vicki Nebes"
-orange,12,Haven and Minna Wiley,Haven Wiley,Haven Wiley,NA,NA,Haven Wiley
-orange,12,Haven Wiley,Haven Wiley,Haven Wiley,NA,NA,Haven Wiley
-orange,12,"Haven Wiley (Minna Wiley, recorder)",Haven Wiley,Haven Wiley,NA,NA,Haven Wiley
-orange,12,Minna and Haven Wiley,Haven Wiley,NA,Haven Wiley,NA,Haven Wiley
-orange,12,H. Wiley,Haven Wiley,Haven Wiley,NA,NA,Haven Wiley
-orange,12,"Haven Wiley, Minna Wiley",Haven Wiley,Haven Wiley,NA,NA,Haven Wiley
+"mbbs_county","route_num","observers","primary_observer","obs1","obs2","obs3","standardized_observers"
+"chatham",1,"Marsha Stephens and Patsy Bailey","Patsy Bailey","Marsha Stephens","Patsy Bailey",NA,"Marsha Stephens, Patsy Bailey"
+"chatham",1,"Patricia Bailey and Marsha Stephens","Patsy Bailey","Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey"
+"chatham",1,"Patsy Bailey","Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey"
+"chatham",1,"Patsy Bailey and Marsha Stephens","Patsy Bailey","Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey"
+"chatham",1,"P. Bailey","Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey"
+"chatham",1,"Patsy Bailey, Norman Budnitz","Patsy Bailey","Patsy Bailey","Norman Budnitz",NA,"Norman Budnitz, Patsy Bailey"
+"chatham",1,"Patsy Bailey, weather=58F at start, clear skies, no wind, vehicles=56, no pre-5:30 am whip-poor-wills at stop 1 and no YB-cuckoos this year, otherwise nothing unusual.","Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey"
+"chatham",1,"?","?","?",NA,NA,"?"
+"chatham",1,"? ","?","?",NA,NA,"?"
+"chatham",2,"Norm Budnitz & Mike Schultz","Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
+"chatham",2,"Norm Budnitz, Mike Schultz","Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
+"chatham",2,"Norman Budnitz, Mike Schultz","Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
+"chatham",2,"Norman Budnitz, Mike Schultz, Karen Hogan","Norman Budnitz","Norman Budnitz","Michael Schultz","Karen Hogan","Karen Hogan, Michael Schultz, Norman Budnitz"
+"chatham",2,"N. Budnitz, M. Schultz","Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
+"chatham",2,"Patsy Bailey","Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey"
+"chatham",2,"Norm Budnitz","Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz"
+"chatham",2,"Norm Budnitz and Mike Schultz","Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
+"chatham",2,"Mike Schultz, Norm Budnitz","Norman Budnitz","Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz"
+"chatham",3,"Haven and Minna Wiley","Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley"
+"chatham",3,"Haven Wiley","Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley"
+"chatham",3,"Haven Wiley, Minna Wiley","Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley"
+"chatham",3,"Haven and Minna Wiley (6-10-2007 and 6-14-2007)","Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley"
+"chatham",4,"Michael and Lois Schultz","Michael Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
+"chatham",4,"Michael Schultz","Michael Schultz","Michael Schultz",NA,NA,"Michael Schultz"
+"chatham",4,"Mike Schultz, Lois Schultz","Michael Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
+"chatham",4,"Schultz, Michael","Michael Schultz","Michael Schultz",NA,NA,"Michael Schultz"
+"chatham",4,"M. Schultz, L. Schultz","Michael Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
+"chatham",4,"M. Schultz, K. Hogan","Michael Schultz","Michael Schultz","Karen Hogan",NA,"Karen Hogan, Michael Schultz"
+"chatham",4,"Mike Schultz, Norm Budnitz","Michael Schultz","Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz"
+"chatham",4," Mike Schultz, Norm Budnitz","Michael Schultz","Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz"
+"chatham",4,"Norm Budnitz, Mike Schultz","Michael Schultz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
+"chatham",5,"driscoll, tom","Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll"
+"chatham",5,"Haven and Minna Wiley","Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley"
+"chatham",5,"Jeff Pippen and Julie Rice","Jeff Pippen","Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice"
+"chatham",5,"Marsha Tuttle, Thomas Driscoll, Colyer Durovich","Tom Driscoll","Marsha Tuttle","Tom Driscoll","Colyer Durovich","Colyer Durovich, Marsha Tuttle, Tom Driscoll"
+"chatham",5,"tom driscoll","Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll"
+"chatham",5,"Tom Driscoll","Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll"
+"chatham",5,"Tom Driscoll, Edison Buenano","Tom Driscoll","Tom Driscoll","Edison Buenano",NA,"Edison Buenano, Tom Driscoll"
+"chatham",5,"tom driscoll, Vern Bothwell","Tom Driscoll","Tom Driscoll","Vern Bothwell",NA,"Tom Driscoll, Vern Bothwell"
+"chatham",5,"tom driscoll, Elizabeth Keating","Tom Driscoll","Tom Driscoll","Elizabeth Keating",NA,"Elizabeth Keating, Tom Driscoll"
+"chatham",5,"Tom Driscoll, Colyer Durovich, and Marsha Stephens","Tom Driscoll","Tom Driscoll","Colyer Durovich","Marsha Stephens","Colyer Durovich, Marsha Stephens, Tom Driscoll"
+"chatham",5,"Tom Driscoll and Marsha Stephens","Tom Driscoll","Tom Driscoll","Marsha Stephens",NA,"Marsha Stephens, Tom Driscoll"
+"chatham",5," tom driscoll","Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll"
+"chatham",6,"Cynthia Fox and Marsha Stephens","Marsha Stephens","Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens"
+"chatham",6,"Marsha Tuttle, Thomas Driscoll, Laurie Kucharik","Marsha Stephens","Marsha Tuttle","Tom Driscoll","Laurie Kucharik","Laurie Kucharik, Marsha Tuttle, Tom Driscoll"
+"chatham",6,"Roger Shaw","Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw"
+"chatham",7,"Will Cook","Will Cook","Will Cook",NA,NA,"Will Cook"
+"chatham",7,"Will Cook, Catherine Carter","Will Cook","Will Cook","Catherine Carter",NA,"Catherine Carter, Will Cook"
+"chatham",7,"Will Cook, Lesley Starke","Will Cook","Will Cook","Lesley Starke",NA,"Lesley Starke, Will Cook"
+"chatham",7," Will Cook","Will Cook","Will Cook",NA,NA,"Will Cook"
+"chatham",8,"Judy Murray and Marty Girolami","Judy Murray","Judy Murray","Martha Girolami",NA,"Judy Murray, Martha Girolami"
+"chatham",8,"Martha Girolami, Judy Murray","Martha Girolami","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
+"chatham",8,"Martha Girolami, Pat Reid and Judy Murray","Martha Girolami","Martha Girolami","Pat Reid","Judy Murray","Judy Murray, Martha Girolami, Pat Reid"
+"chatham",8,"Nan Dewire and Fleeta Wilkinson","Nan Dewire","Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire"
+"chatham",8,"M. Girolami, P. Reid, J. Murray","Martha Girolami","Martha Girolami","Pat Reid","Judy Murray","Judy Murray, Martha Girolami, Pat Reid"
+"chatham",8,"Nan Dewire and Fleeta Chauvigne","Nan Dewire","Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire"
+"chatham",8," Nan Dewire and Fleeta Chauvigne","Nan Dewire","Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire"
+"chatham",8,"Nan Dewire and fleeta Chauvigne","Nan Dewire","Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire"
+"chatham",8,"Marty Girolami and Judy Murray","Martha Girolami","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
+"chatham",8,"Marty Girolami, Pat Reid, and Judy Murray","Martha Girolami","Martha Girolami","Pat Reid","Judy Murray","Judy Murray, Martha Girolami, Pat Reid"
+"chatham",8," Nan Dewire, Fleeta Chauvigne, Suzanne Roberts","Nan Dewire","Nan Dewire","Fleeta Chauvigne","Suzanne Roberts","Fleeta Chauvigne, Nan Dewire, Suzanne Roberts"
+"chatham",8,"Nan Dewire, Fleeta Chauvigne","Nan Dewire","Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire"
+"chatham",9,"Shelley Theye and Lee Van Malssen","Shelley Theye","Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye"
+"chatham",9,"Shelley Theye","Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye"
+"chatham",9,"S. Theye","Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye"
+"chatham",9,"S. Theye, L. Van Malssen","Shelley Theye","Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye"
+"chatham",9,"Shelley Theye, Lee Van Malssen","Shelley Theye","Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye"
+"chatham",9,"Shelley Theye and Marsha Sephens","Shelley Theye","Shelley Theye","Marsha Stephens",NA,"Marsha Stephens, Shelley Theye"
+"chatham",10,"Fleeta Chauvigne, Mark Montazer","Fleeta Chauvigne","Fleeta Chauvigne","Mark Montazer",NA,"Fleeta Chauvigne, Mark Montazer"
+"chatham",10,"Brian Strong","Brian Strong","Brian Strong",NA,NA,"Brian Strong"
+"chatham",10,"Sue Brady","Sue Brady","Sue Brady",NA,NA,"Sue Brady"
+"chatham",10,"Will Cook","Will Cook","Will Cook",NA,NA,"Will Cook"
+"chatham",10,"Brian Strong, weather-60F, slight drizzle","Brian Strong","Brian Strong",NA,NA,"Brian Strong"
+"chatham",10,"Mark Montazer, Fleeta Wilkinson","Fleeta Chauvigne","Mark Montazer","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Mark Montazer"
+"chatham",10,"Fleeta Wilkinson Chauvigné, Mark Montazer, Nan DeWire","Fleeta Chauvigne","Fleeta Wilkinson","Mark Montazer","Nan Dewire","Fleeta Wilkinson, Mark Montazer, Nan Dewire"
+"chatham",11,"Bob Chase","Bob Chase","Bob Chase",NA,NA,"Bob Chase"
+"chatham",11,"M. Graves and B. Chase","Bob Chase","M. Graves","Bob Chase",NA,"Bob Chase, M. Graves"
+"chatham",11,"Allen Hurlbert","Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert"
+"chatham",11,"Nathan Howell","Nathan Howell","Nathan Howell",NA,NA,"Nathan Howell"
+"chatham",11," Allen Hurlbert, Ivara Goulden","Allen Hurlbert","Allen Hurlbert","Ivara Goulden",NA,"Allen Hurlbert, Ivara Goulden"
+"chatham",11,"?","?","?",NA,NA,"?"
+"chatham",12,"Kate Finlayson and Chris Canfield","Kate Finlayson","Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson"
+"chatham",12,"tom driscoll, Elizabeth Keating","Tom Driscoll","Tom Driscoll","Elizabeth Keating",NA,"Elizabeth Keating, Tom Driscoll"
+"chatham",12,"tom driscoll, Fleeta Wilkinson","Tom Driscoll","Tom Driscoll","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Tom Driscoll"
+"chatham",12," tom driscoll","Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll"
+"chatham",12,"Tom Driscoll","Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll"
+"chatham",12,"Chris Canfield and Kate Finlayson","Kate Finlayson","Chris Canfield","Kate Finlayson",NA,"Chris Canfield, Kate Finlayson"
+"chatham",12,"tom driscoll","Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll"
+"chatham",13,"Marsha Stephens","Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens"
+"chatham",13,"Marsha Stephens and Patsy Bailey","Marsha Stephens","Marsha Stephens","Patsy Bailey",NA,"Marsha Stephens, Patsy Bailey"
+"chatham",13,"Marsha Tuttle, Thomas Driscoll, Laurie Kucharik","Marsha Stephens","Marsha Tuttle","Tom Driscoll","Laurie Kucharik","Laurie Kucharik, Marsha Tuttle, Tom Driscoll"
+"chatham",13,"Tom Driscoll","Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll"
+"chatham",13,"tom driscoll","Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll"
+"chatham",13,"tom driscoll, Bradley Saul","Tom Driscoll","Tom Driscoll","Bradley Saul",NA,"Bradley Saul, Tom Driscoll"
+"chatham",13,"tom driscoll, Nan DeWire","Tom Driscoll","Tom Driscoll","Nan Dewire",NA,"Nan Dewire, Tom Driscoll"
+"chatham",13," tom driscoll","Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll"
+"chatham",13," Tom Driscoll","Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll"
+"chatham",13,"tom driscoll, Elizabeth Keating","Tom Driscoll","Tom Driscoll","Elizabeth Keating",NA,"Elizabeth Keating, Tom Driscoll"
+"chatham",13,"Haven and Minna Wiley","Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley"
+"chatham",13,"?","?","?",NA,NA,"?"
+"chatham",13,"JA and HS","JA and HS","JA","HS",NA,"HS, JA"
+"chatham",14,"Josh Sims","Josh Sims","Josh Sims",NA,NA,"Josh Sims"
+"chatham",14,"Kent Fiala","Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala"
+"chatham",14,"Richard Snow","Richard Snow","Richard Snow",NA,NA,"Richard Snow"
+"chatham",14,"Will Bennett, Jonathan Bennett","Will Bennett","Will Bennett","Jonathan Bennett",NA,"Jonathan Bennett, Will Bennett"
+"chatham",14,"Will Bennett, Jon Bennett","Will Bennett","Will Bennett","Jonathan Bennett",NA,"Jonathan Bennett, Will Bennett"
+"chatham",14,"Allen Hurlbert","Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert"
+"durham",1,"judy murray","Judy Murray","Judy Murray",NA,NA,"Judy Murray"
+"durham",1,"Judy Murray","Judy Murray","Judy Murray",NA,NA,"Judy Murray"
+"durham",1,"Judy Murray, Robin Moran","Judy Murray","Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran"
+"durham",1,"Robin Moran, Judy Murray","Judy Murray","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
+"durham",1,"robin moran and jennifer maher","Robin Moran","Robin Moran","Jennifer Maher",NA,"Jennifer Maher, Robin Moran"
+"durham",1,"Robin Moran, Jennifer Maher, Noah Rokoske","Robin Moran","Robin Moran","Jennifer Maher","Noah Rokoske","Jennifer Maher, Noah Rokoske, Robin Moran"
+"durham",1,"judy murray, robin moran""","Judy Murray","Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran"
+"durham",1,"jennifer maher, robin moran, noah rokoske","Robin Moran","Jennifer Maher","Robin Moran","Noah Rokoske","Jennifer Maher, Noah Rokoske, Robin Moran"
+"durham",1,"Judy Murray and Tom Krakauer","Judy Murray","Judy Murray","Tom Krakauer",NA,"Judy Murray, Tom Krakauer"
+"durham",1,"judy murray, robin moran","Judy Murray","Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran"
+"durham",1,"Noah Rokoske, Robin Moran, Jennifer Maher","Robin Moran","Noah Rokoske","Robin Moran","Jennifer Maher","Jennifer Maher, Noah Rokoske, Robin Moran"
+"durham",2,"Bruce Young","Bruce Young","Bruce Young",NA,NA,"Bruce Young"
+"durham",2,"Edith Tatum, Clea","Edith Tatum","Edith Tatum","Clea ",NA,"Clea , Edith Tatum"
+"durham",2,"Jeffrey Pippen","Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen"
+"durham",2,"Elizabeth Tatum","Elizabeth Tatum","Edith Tatum",NA,NA,"Edith Tatum"
+"durham",2,"Edith Tatum","Edith Tatum","Edith Tatum",NA,NA,"Edith Tatum"
+"durham",2,"?","?","?",NA,NA,"?"
+"durham",2,"Jeff Pippen","Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen"
+"durham",3,"Carol Williamson and Norm Budnitz","Norman Budnitz","Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz"
+"durham",3,"Norman Budnitz","Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz"
+"durham",3,"Patsy Bailey, Norman Budnitz","Norman Budnitz","Patsy Bailey","Norman Budnitz",NA,"Norman Budnitz, Patsy Bailey"
+"durham",3,"N. Budnitz, C. Williamson","Norman Budnitz","Norman Budnitz","Carol Williamson",NA,"Carol Williamson, Norman Budnitz"
+"durham",3,"Norm Budnitz","Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz"
+"durham",4,"Jeff Pippen and Julie Rice","Jeff Pippen","Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice"
+"durham",4,"Jeffrey Pippen","Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen"
+"durham",4,"Patsy Bailey","Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey"
+"durham",4,"Roger Shaw","Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw"
+"durham",4," Roger Shaw","Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw"
+"durham",4,"Jeffrey Pippin and Julie Rice","Jeff Pippen","Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice"
+"durham",4," Roger Shaw, Stephen Brooks, Carey Jefferson","Roger Shaw","Roger Shaw","Stephen Brooks","Carey Jefferson","Carey Jefferson, Roger Shaw, Stephen Brooks"
+"durham",4,"Stephen Brooks, Carey Jefferson","Stephen Brooks","Stephen Brooks","Carey Jefferson",NA,"Carey Jefferson, Stephen Brooks"
+"durham",4,"Stephen Brooks","Stephen Brooks","Stephen Brooks",NA,NA,"Stephen Brooks"
+"durham",5,"Alan Johnston and Shantanu Phukan","Alan Johnston","Alan Johnston","Shantanu Phukan",NA,"Alan Johnston, Shantanu Phukan"
+"durham",5,"Alan Johnston and Denny Dobbin","Alan Johnston","Alan Johnston","Denny Dobbin",NA,"Alan Johnston, Denny Dobbin"
+"durham",5,"David Smith, Judy Smith","David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith"
+"durham",5,"Alan Johnston, Bobbie Johnston, and Pamela Clark","Alan Johnston","Alan Johnston","Bobbie Johnston","Pamela Clark","Alan Johnston, Bobbie Johnston, Pamela Clark"
+"durham",5,"A. Johnston, D. Dobbins","Alan Johnston","Alan Johnston","Denny Dobbin",NA,"Alan Johnston, Denny Dobbin"
+"durham",5,"Alan Johnston and Sally Johnston","Alan Johnston","Alan Johnston","Sally Johnston",NA,"Alan Johnston, Sally Johnston"
+"durham",5,"Alan Johnstorn and Denny Dobbin","Alan Johnston","Alan Johnston","Denny Dobbin",NA,"Alan Johnston, Denny Dobbin"
+"durham",5,"Alan Johnston and David Welch","Alan Johnston","Alan Johnston","David Welch",NA,"Alan Johnston, David Welch"
+"durham",5,"Alan Johnston and Dan Williams","Alan Johnston","Alan Johnston","Dan Williams",NA,"Alan Johnston, Dan Williams"
+"durham",5,"Alan Johnston, Denny Dobbin","Alan Johnston","Alan Johnston","Denny Dobbin",NA,"Alan Johnston, Denny Dobbin"
+"durham",5," David Smith, Judy Smith","David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith"
+"durham",6,"David Smith","David Smith","David Smith",NA,NA,"David Smith"
+"durham",6,"David Smith, Judy Smith","David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith"
+"durham",6,"Rick Payne","Rick Payne","Rick Payne",NA,NA,"Rick Payne"
+"durham",7,"Brian Strong","Brian Strong","Brian Strong",NA,NA,"Brian Strong"
+"durham",7,"Brian Strong, weather=75F, clear","Brian Strong","Brian Strong",NA,NA,"Brian Strong"
+"durham",7,"Noah Rokoske","Noah Rokoske","Noah Rokoske",NA,NA,"Noah Rokoske"
+"durham",7," Noah Rokoske","Noah Rokoske","Noah Rokoske",NA,NA,"Noah Rokoske"
+"durham",7,"William Mackin","William Mackin","William Mackin",NA,NA,"William Mackin"
+"durham",8,"Brian Bockhahn","Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn"
+"durham",8,"Brian Strong","Brian Strong","Brian Strong",NA,NA,"Brian Strong"
+"durham",8,"Brian Bockhahn, weather=57, clear, sunny, vehicles=32, habitat@1=B, habitat@2=B, habitat@3=M, habitat@4=M, habitat@5=M, habitat@6=M, habitat@7=M, habitat@8=B, habitat@9=B, habitat@10=B, habitat@11=M, habitat@12=B, habitat@13=M, habitat@14=B, habitat@15=B, habitat@16=B, habitat@17=M, habitat@18=M, habitat@19=B, habitat@20=M","Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn"
+"orange",1,"Ginger Travis, Barb Brooks","Ginger Travis","Ginger Travis","Barb Brooks",NA,"Barb Brooks, Ginger Travis"
+"orange",1,"Ginger Travis and Cathy Packer","Ginger Travis","Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis"
+"orange",1,"Ginger Travis and Doug Shadwick","Ginger Travis","Ginger Travis","Doug Shadwick",NA,"Doug Shadwick, Ginger Travis"
+"orange",1,"Norman Budnitz, Mike Schultz","Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
+"orange",1,"N. Budnitz, M. Schultz","Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
+"orange",1,"Norm Budnitz, Mike Schultz","Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
+"orange",1,"Norm Budnitz","Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz"
+"orange",1,"Mike Schultz, Norm Budnitz","Norman Budnitz","Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz"
+"orange",2,"Barb Brooks","Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks"
+"orange",2,"barb brooks","Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks"
+"orange",2,"Barbara Brooks","Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks"
+"orange",2,"B. BROOKS","Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks"
+"orange",2,"barb Brooks","Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks"
+"orange",2," Barb Brooks, Will Mackin","Barb Brooks","Barb Brooks","William Mackin",NA,"Barb Brooks, William Mackin"
+"orange",3,"barb brooks","Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks"
+"orange",3,"Barb Brooks","Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks"
+"orange",3,"Bradley Saul, Charity Kirk","Bradley Saul","Bradley Saul","Charity Kirk",NA,"Bradley Saul, Charity Kirk"
+"orange",3,"Karen Piplani","Karen Piplani","Karen Piplani",NA,NA,"Karen Piplani"
+"orange",3,"Kate Finlayson and Karen Piplani","Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
+"orange",3,"Kate Finlayson, Karen Piplani","Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
+"orange",3,"Bradley Saul","Bradley Saul","Bradley Saul",NA,NA,"Bradley Saul"
+"orange",4,"Allen Hurlbert","Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert"
+"orange",4,"Allen Hurlbert, Grace Di Cecco, Allison Duprey","Allen Hurlbert","Allen Hurlbert","Grace Di Cecco","Allison Duprey","Allen Hurlbert, Allison Duprey, Grace Di Cecco"
+"orange",4,"Allen Hurlbert, Sarah Pollack","Allen Hurlbert","Allen Hurlbert","Sarah Pollack",NA,"Allen Hurlbert, Sarah Pollack"
+"orange",4,"Jill Paul, Tom Driscoll","Tom Driscoll","Jill Paul","Tom Driscoll",NA,"Jill Paul, Tom Driscoll"
+"orange",4,"Kent Fiala","Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala"
+"orange",4,"Kent Kiala","Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala"
+"orange",4,"Will Cook, Catherine Carter","Will Cook","Will Cook","Catherine Carter",NA,"Catherine Carter, Will Cook"
+"orange",4,"Allen Hurlbert, Ashley Moore, Ellen Weaver","Allen Hurlbert","Allen Hurlbert","Ashley Moore","Ellen Weaver","Allen Hurlbert, Ashley Moore, Ellen Weaver"
+"orange",5,"Will Cook","Will Cook","Will Cook",NA,NA,"Will Cook"
+"orange",5,"Will Cook, Catherine Anderson","Will Cook","Will Cook","Catherine Anderson",NA,"Catherine Anderson, Will Cook"
+"orange",5,"Will Cook, Catherine Carter","Will Cook","Will Cook","Catherine Carter",NA,"Catherine Carter, Will Cook"
+"orange",5," Will Cook","Will Cook","Will Cook",NA,NA,"Will Cook"
+"orange",6,"Judy Murray","Judy Murray","Judy Murray",NA,NA,"Judy Murray"
+"orange",6,"Judy Murray and Robin Moran","Judy Murray","Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran"
+"orange",6,"Judy Murray, Robin Moran","Judy Murray","Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran"
+"orange",6,"Karen Hogan, Robin Moran","Robin Moran","Karen Hogan","Robin Moran",NA,"Karen Hogan, Robin Moran"
+"orange",6,"Robin Moran & Judy Murray","Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
+"orange",6,"Robin Moran and Judy Murray","Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
+"orange",6,"Robin Moran, Judy Murray","Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
+"orange",6,"R. Moran, J. Murray","Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
+"orange",6,"Karen Hogan, Mark Hogan","Karen Hogan","Karen Hogan","Mark Hogan",NA,"Karen Hogan, Mark Hogan"
+"orange",6,"Karen Hogan","Karen Hogan","Karen Hogan",NA,NA,"Karen Hogan"
+"orange",7,"Betty King","Betty King","Betty King",NA,NA,"Betty King"
+"orange",7,"Betty and John King","Betty King","Betty King",NA,NA,"Betty King"
+"orange",7,"Betty King, John King (driver)","Betty King","Betty King",NA,NA,"Betty King"
+"orange",7,"brian bockhahn","Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn"
+"orange",7,"Brian Bockhahn","Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn"
+"orange",7,"Brian Bockhahn, weather=69, clear, sunny, vehicles=31, habitat@1=B, habitat@2=P, habitat@3=M, habitat@4=M, habitat@5=B, habitat@6=H, habitat@7=B, habitat@8=H, habitat@9=O, habitat@10=O, habitat@11=H, habitat@12=O, habitat@13=H, habitat@14=M, habitat@15=M, habitat@16=B, habitat@17=O, habitat@18=O, habitat@19=O, habitat@20=M","Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn"
+"orange",7,"?","?","?",NA,NA,"?"
+"orange",8,"Barb Brooks","Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks"
+"orange",8,"Barbara Brooks","Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks"
+"orange",8,"B. Brooks, A. Nester","Barb Brooks","Barb Brooks","A. Nester",NA,"A. Nester, Barb Brooks"
+"orange",8,"barb brooks","Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks"
+"orange",8,"Barb Brooks, Laura Durlacher","Barb Brooks","Barb Brooks","Laura Durlacher",NA,"Barb Brooks, Laura Durlacher"
+"orange",8," Barb Brooks, Will Makin","Barb Brooks","Barb Brooks","William Mackin",NA,"Barb Brooks, William Mackin"
+"orange",9,"David Curtin","David Curtin","David Curtin",NA,NA,"David Curtin"
+"orange",9,"Karen Hogan, Mark Hogan","Karen Hogan","Karen Hogan","Mark Hogan",NA,"Karen Hogan, Mark Hogan"
+"orange",9,"S. Phukan and T. Williams","Shantanu Phukan","Shantanu Phukan","T. Williams",NA,"Shantanu Phukan, T. Williams"
+"orange",9,"? (NOT Shantanu)","?","?",NA,NA,"?"
+"orange",9,"Shantanu Phukan","Shantanu Phukan","Shantanu Phukan",NA,NA,"Shantanu Phukan"
+"orange",9,"Shantanu Phukan and Alan Johnston","Shantanu Phukan","Shantanu Phukan","Alan Johnston",NA,"Alan Johnston, Shantanu Phukan"
+"orange",9,"Sandy Cash","Sandy Cash","Sandy Cash",NA,NA,"Sandy Cash"
+"orange",9,"Karen Hogan","Karen Hogan","Karen Hogan",NA,NA,"Karen Hogan"
+"orange",10,"Barb Brooks","Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks"
+"orange",10,"Nate Swick","Nathan Swick","Nathan Swick",NA,NA,"Nathan Swick"
+"orange",10,"Nathan Swick","Nathan Swick","Nathan Swick",NA,NA,"Nathan Swick"
+"orange",10,"Vern Bothwell, Nan Dewire","Vern Bothwell","Vern Bothwell","Nan Dewire",NA,"Nan Dewire, Vern Bothwell"
+"orange",10,"Will Cook","Will Cook","Will Cook",NA,NA,"Will Cook"
+"orange",10,"Vern Bothwell","Vern Bothwell","Vern Bothwell",NA,NA,"Vern Bothwell"
+"orange",10,"Allen Hurlbert","Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert"
+"orange",10,"Will Cook, Doug Shadwick","Will Cook","Will Cook","Doug Shadwick",NA,"Doug Shadwick, Will Cook"
+"orange",10,"Doug Shadwick","Doug Shadwick","Doug Shadwick",NA,NA,"Doug Shadwick"
+"orange",10," Paul Taillie","Paul Taillie","Paul Taillie",NA,NA,"Paul Taillie"
+"orange",11,"?","?","?",NA,NA,"?"
+"orange",11,"Ali Iyoob","Ali Iyoob","Ali Iyoob",NA,NA,"Ali Iyoob"
+"orange",11,"Marsha Stephens","Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens"
+"orange",11,"Loren Hintz: weather=66F then warming, partially cloudy, no wind","Loren Hintz","Loren Hintz",NA,NA,"Loren Hintz"
+"orange",11,"Loren Hintz","Loren Hintz","Loren Hintz",NA,NA,"Loren Hintz"
+"orange",11,"Loren Hintz: weather=64F then warming, sunny, no wind","Loren Hintz","Loren Hintz",NA,NA,"Loren Hintz"
+"orange",11,"Loren Hintz: weather=61F then warming, sunny, no wind","Loren Hintz","Loren Hintz",NA,NA,"Loren Hintz"
+"orange",11,"Loren Hintz, Margaret Vimmerstedt","Loren Hintz","Loren Hintz","Margaret Vimmerstedt",NA,"Loren Hintz, Margaret Vimmerstedt"
+"orange",11,"Suzanne Roberts, Vicki Nebes","Suzanne Roberts","Suzanne Roberts","Vicki Nebes",NA,"Suzanne Roberts, Vicki Nebes"
+"orange",11,"Suzanne Roberts,Vicki Nebes","Suzanne Roberts","Suzanne Roberts","Vicki Nebes",NA,"Suzanne Roberts, Vicki Nebes"
+"orange",12,"Haven and Minna Wiley","Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley"
+"orange",12,"Haven Wiley","Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley"
+"orange",12,"Haven Wiley (Minna Wiley, recorder)","Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley"
+"orange",12,"Minna and Haven Wiley","Haven Wiley",NA,"Haven Wiley",NA,"Haven Wiley"
+"orange",12,"H. Wiley","Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley"
+"orange",12,"Haven Wiley, Minna Wiley","Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley"

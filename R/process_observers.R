@@ -55,7 +55,9 @@ update_survey_events <- function(envir = parent.frame()) {
     dplyr::summarize(
       S = dplyr::n_distinct(.data$common_name),
       N = sum(.data$count),
-      observers = .data$observers[!is.na(.data$observers)][1]
+      observers = .data$observers[!is.na(.data$observers)][1],
+      month = str_sub(first(.data$date), start = -5, end = -4),
+      day = str_sub(first(.data$date), start = -2, end = -1)
     ) %>%
     filter(year == max(year)) %>%
     dplyr::ungroup()
@@ -340,7 +342,7 @@ update_mini_observer_table <- function() {
     } else {
       # name is not already on list, take input for the output name
       print("New observer name needs standardizing for the mini_observer_conversion_table:")
-      print(mini_observer_table$input_name[a])
+      print(obs_list[a])
       print("What should this be converted to? Enter a standardized name or NA:")
       temp_row$input_name <- obs_list[a]
       temp_row$output_name <- readline(":")
@@ -416,7 +418,8 @@ get_observer_quality <- function(mbbs_survey_events) {
     summarize(
       route_meanS = mean(.data$S),
       n_surveys_route = n()
-    )
+    ) %>%
+    ungroup()
 
   # summary of number of mean(S) across routes for each observer,
   # + n surveys they've done
@@ -429,7 +432,8 @@ get_observer_quality <- function(mbbs_survey_events) {
     summarize(
       obs_meanS = mean(.data$S),
       n_surveys_obs = n()
-    )
+    ) %>%
+    ungroup()
 
   # Calculate proportion deviation from mean species of other observers
   # on the route for each observer
@@ -490,7 +494,8 @@ get_observer_quality <- function(mbbs_survey_events) {
     summarize(
       obs_quality = mean(.data$obs_proportion_route),
       n_surveys_obs = first(.data$n_surveys_obs)
-    )
+    ) %>%
+    ungroup()
 
   # assign observer_quality based on the performance of the top observer
   mbbs_survey_events <-
