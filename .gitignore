@@ -8,3 +8,4 @@ packrat/lib*/
 *rsconnect*
 .direnv*/
 scratch
+*result
