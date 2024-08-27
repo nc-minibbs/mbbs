@@ -2,14 +2,13 @@
 # Functions/workflows for cleaning and processing MBBS comments
 #------------------------------------------------------------------------------#
 
-
-#' Clean up the eBird
+#' Clean up comments in eBird data
+#'
 #' @param comments a `character` vector of MBBS eBird comments
 #' @importFrom stringr str_replace_all
-#' @importFrom magrittr "%>%"
 clean_comments <- function(comments) {
   # change unicode equals and = to ==
-  stringr::str_replace_all(comments, "&#61;|=", "==") %>%
+  stringr::str_replace_all(comments, "&#61;|=", "==") |>
     # Add additional as needed
     identity()
 }
@@ -35,7 +34,7 @@ make_comment_extractor <- function(field_pattern, data_pattern, delimiter = ";",
   )
 
   function(comments, ...) {
-    stringr::str_extract_all(comments, pattern = valid_pattern) %>%
+    stringr::str_extract_all(comments, pattern = valid_pattern) |>
       purrr::map(~ post(.x, ...))
   }
 }
@@ -50,27 +49,81 @@ extract_observers <- make_comment_extractor("observer(s)?", "[A-Za-z\\s,]*")
 #' @param ... additional arguments passed to the `post` function
 extract_vehicles <- make_comment_extractor("vehicle(s)?", "[\\d]*")
 
-#' Extract notes from eBird comments
+#' Extract weather from eBird comments
 #' @inheritParams clean_comments
 #' @param ... additional arguments passed to the `post` function
 extract_weather <- make_comment_extractor("weather", "[A-Za-z\\s\\d,]*")
-
-# Extract notes from eBird comments
-# @export
-# TODO: habitat is a bit complicated
-# extract_habitat <- make_comment_extractor("habitat(@\\d{1,2}(R|L))?", "[BHMPSOW\\s\\d,]+")
 
 #' Extract notes from eBird comments
 #' @inheritParams clean_comments
 #' @param ... additional arguments passed to the `post` function
 extract_notes <- make_comment_extractor("note(s)?", "[A-Za-z\\s\\d,]*")
 
+## Habitat munging ####
+
+#' Extract habitat from eBird comments
+#' @inheritParams clean_comments
+extract_habitat <-
+  make_comment_extractor("habitat(@\\d{1,2}(R|L))?", "[BHMPSOW\\s\\d,]+")
+
+#' Handle habitat comments in the complete case
+#' (all 40 habitats recorded).
+#' 
+#' @param x a character vector representing habitat for a single checklist
+get_habitat_complete <- \(x) {
+  x |>
+    (\(x){
+      assertthat::assert_that(
+        length(x) == 40,
+        msg = 
+          paste(
+            "get_habitat_complete requires habitit splits into 40 points",
+            "(2 sides x 20 stops).",
+            "Got length of", length(x)
+          ))
+      x
+    })()|>
+    matrix(ncol = 2, byrow = TRUE) |>
+    (\(x) {
+      colnames(x) <- c("L", "R")
+      x
+    })() |>
+    as_tibble() |>
+    mutate(
+      stop_num = as.numeric(stringr::str_extract(L, "[0-9]{1,2}")),
+      L = stringr::str_replace(L , "[0-9]{1,2}", "")
+    ) |>
+    (\(x) {
+       assertthat::assert_that(
+        isTRUE(all.equal(sort(x$stop_num), seq_along(1:20))),
+        msg = 
+          paste(
+            "get_habitat_complete expects each of the 20 stops",
+            "to be represented in the output.",
+            "But that's not what we got."
+          ))
+      x
+    })()
+}
+
+#' Get habitat data from a *single* eBird checklist
+#' @param x a single string of checklist habitat information
+#'          obtained from `extract_habitat`
+get_habitat <- \(x) {
+  x |>
+    stringr::str_split(",", simplify = TRUE) |>
+    (\(x) {
+      `if`(length(x) == 40,
+          get_habitat_complete(x),
+          stop("Oops! We haven't handled this case in the get_habitat() function yet!"))
+    })()
+}
+
 #' Workflow for preprocessing eBird comments
 #' @inheritParams clean_comments
-#' @importFrom magrittr "%>%"
 preprocess_comments <- function(comments) {
-  comments %>%
-    clean_comments() %>%
+  comments |>
+    clean_comments() |>
     identity() # replace with addition steps as need
 }
 
@@ -85,12 +138,11 @@ globalVariables(c(
 
 #' Workflow for processing eBird comments
 #' @inheritParams clean_comments
-#' @importFrom magrittr "%>%"
 #' @importFrom purrr transpose map_dfr
 #' @importFrom dplyr as_tibble
 process_comments <- function(comments) {
   comments %>%
-    {
+   {
       dt <- .
       purrr::map(
         .x =
@@ -102,9 +154,9 @@ process_comments <- function(comments) {
           ),
         .f = ~ .x(dt)
       )
-    } %>%
-    purrr::transpose() %>%
-    purrr::map_dfr(dplyr::as_tibble) %>%
+    } |>
+    purrr::transpose() |>
+    purrr::map_dfr(dplyr::as_tibble) |>
     identity() # Add additional steps as needed
 }
 
@@ -113,10 +165,10 @@ process_comments <- function(comments) {
 #' @inheritParams clean_comments
 #' @importFrom dplyr mutate
 postprocess_comments <- function(comments) {
-  comments %>%
+  comments |>
     dplyr::mutate(
       vehicles = as.integer(vehicles)
-    ) %>%
+    ) |>
     identity() # Add additional steps as needed
 }
 
@@ -126,16 +178,16 @@ postprocess_comments <- function(comments) {
 #' @return a `data.frame` with one row per submission ID in `eBird_dt`
 #' @export
 comment_workflow <- function(eBird_dt) {
-  eBird_dt %>%
+  eBird_dt |>
     distinct(
       sub_id,
       checklist_comments
-    ) %>%
+    ) |>
     mutate(
-      checklist_comments %>%
-        preprocess_comments() %>%
-        process_comments() %>%
+      checklist_comments |>
+        preprocess_comments() |>
+        process_comments() |>
         postprocess_comments()
-    ) %>%
+    ) |>
     dplyr::select(-checklist_comments)
 }
