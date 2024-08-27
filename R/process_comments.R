@@ -68,21 +68,22 @@ extract_habitat <-
 
 #' Handle habitat comments in the complete case
 #' (all 40 habitats recorded).
-#' 
+#'
 #' @param x a character vector representing habitat for a single checklist
 get_habitat_complete <- \(x) {
   x |>
     (\(x){
       assertthat::assert_that(
         length(x) == 40,
-        msg = 
+        msg =
           paste(
             "get_habitat_complete requires habitit splits into 40 points",
             "(2 sides x 20 stops).",
             "Got length of", length(x)
-          ))
+          )
+      )
       x
-    })()|>
+    })() |>
     matrix(ncol = 2, byrow = TRUE) |>
     (\(x) {
       colnames(x) <- c("L", "R")
@@ -91,17 +92,18 @@ get_habitat_complete <- \(x) {
     as_tibble() |>
     mutate(
       stop_num = as.numeric(stringr::str_extract(L, "[0-9]{1,2}")),
-      L = stringr::str_replace(L , "[0-9]{1,2}", "")
+      L = stringr::str_replace(L, "[0-9]{1,2}", "")
     ) |>
     (\(x) {
-       assertthat::assert_that(
+      assertthat::assert_that(
         isTRUE(all.equal(sort(x$stop_num), seq_along(1:20))),
-        msg = 
+        msg =
           paste(
             "get_habitat_complete expects each of the 20 stops",
             "to be represented in the output.",
             "But that's not what we got."
-          ))
+          )
+      )
       x
     })()
 }
@@ -113,9 +115,11 @@ get_habitat <- \(x) {
   x |>
     stringr::str_split(",", simplify = TRUE) |>
     (\(x) {
-      `if`(length(x) == 40,
-          get_habitat_complete(x),
-          stop("Oops! We haven't handled this case in the get_habitat() function yet!"))
+      `if`(
+        length(x) == 40,
+        get_habitat_complete(x),
+        stop("Oops! We haven't handled this case in the get_habitat() function yet!")
+      )
     })()
 }
 
@@ -142,7 +146,7 @@ globalVariables(c(
 #' @importFrom dplyr as_tibble
 process_comments <- function(comments) {
   comments %>%
-   {
+    {
       dt <- .
       purrr::map(
         .x =
