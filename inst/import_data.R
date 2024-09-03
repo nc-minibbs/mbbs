@@ -33,7 +33,7 @@ mbbs_orange <-
 
 # import Durham
 mbbs_durham <-
-  import_ebird_data("inst/extdata/MyEBirdData_Durham_20240730.csv") %>%
+  import_ebird_data("inst/extdata/MyEBirdData_Durham_20240903.csv") %>%
   prepare_mbbs_data(
     mbbs_site_dt =
       readr::read_csv("inst/extdata/durham_2002-2009_from_website.csv") %>%
