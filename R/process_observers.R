@@ -466,23 +466,23 @@ get_observer_quality <- function(mbbs_survey_events) {
           (obsroute_meanS * n_surveys_obsroute)) /
           (n_surveys_route - n_surveys_obsroute)
     )
-  
-  #use all the information we have about an observer to calculate how they do
-  #compared to all other observers on the mbbs.
-  #On each survey they've done, calculate their performance as follows:
-    # (obsroute_year_S(route, year, observer) - non_focal_obsroute_meanS)
-    # / non_focal_obsroute_meanS
-  #If an observer has 5 route_years they've run, they will have 5 rows of data
-  #and each row will contain a comparison score of how well they did that year
-  #on that route
-  #compared to every other year that route has been done by someone else.
-  #To get their total performance or observer quality across all years and routes
-  #group by observer and average their route_year observer qualities.
-  #This method also produces a value where routes the observer has run more
-  #frequently have more impact on their observer quality. 
-  #and we have more information about their performance than a single datapoint
-  #for each route they've participated in. 
-  observer_year_average_route <- 
+
+  # use all the information we have about an observer to calculate how they do
+  # compared to all other observers on the mbbs.
+  # On each survey they've done, calculate their performance as follows:
+  # (obsroute_year_S(route, year, observer) - non_focal_obsroute_meanS)
+  # / non_focal_obsroute_meanS
+  # If an observer has 5 route_years they've run, they will have 5 rows of data
+  # and each row will contain a comparison score of how well they did that year
+  # on that route
+  # compared to every other year that route has been done by someone else.
+  # To get their total performance or observer quality across all years and routes
+  # group by observer and average their route_year observer qualities.
+  # This method also produces a value where routes the observer has run more
+  # frequently have more impact on their observer quality.
+  # and we have more information about their performance than a single datapoint
+  # for each route they've participated in.
+  observer_year_average_route <-
     mbbs_survey_events %>%
     tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>%
     filter(!is.na(obs)) %>%
@@ -491,18 +491,17 @@ get_observer_quality <- function(mbbs_survey_events) {
     summarize(
       obsroute_year_S = S
     ) %>%
-    #left join the above dataframes bc we need some of that info
+    # left join the above dataframes bc we need some of that info
     left_join(observer_average_route, by = c("obs", "mbbs_county", "route_num")) %>%
-    mutate( #create comparison score within the route year
-      obs_yr_rt_quality = 
+    mutate( # create comparison score within the route year
+      obs_yr_rt_quality =
         (obsroute_year_S - non_focal_obsroute_meanS) / non_focal_obsroute_meanS,
-      obs_yr_rt_quality = 
+      obs_yr_rt_quality =
         ifelse(is.nan(obs_yr_rt_quality), 0, obs_yr_rt_quality)
     ) %>%
-  
-  ###should add this in as the new format, just want to investigate a little more with c
-  #observer_quality <- 
-   # observer_year_average_route %>%
+    ### should add this in as the new format, just want to investigate a little more with c
+    # observer_quality <-
+    # observer_year_average_route %>%
     group_by(obs) %>%
     summarize(
       obs_crossroute_quality = mean(obs_yr_rt_quality)
@@ -538,10 +537,10 @@ get_observer_quality <- function(mbbs_survey_events) {
       n_surveys_obs = first(n_surveys_obs)
     ) %>%
     ungroup()
-  
-  #CHECK REMOVE LATER
+
+  # CHECK REMOVE LATER
   c <- left_join(observer_year_average_route, observer_quality)
-  #why is EG Bradley's obs_quality changing so much from 8 to -2, is Ali Lyoob's influence still really present? I think that year has to be removed from survey events totally to remove it's influence
+  # why is EG Bradley's obs_quality changing so much from 8 to -2, is Ali Lyoob's influence still really present? I think that year has to be removed from survey events totally to remove it's influence
 
   # assign observer_quality based on the performance of the top observer
   mbbs_survey_events <-
