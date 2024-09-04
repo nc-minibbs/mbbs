@@ -414,9 +414,9 @@ get_observer_quality <- function(mbbs_survey_events) {
   # table of average n species seen on each route
   S_average_route <-
     mbbs_survey_events %>%
-    group_by(.data$mbbs_county, .data$route_num) %>%
+    group_by(mbbs_county, route_num) %>%
     summarize(
-      route_meanS = mean(.data$S),
+      route_meanS = mean(S),
       n_surveys_route = n()
     ) %>%
     ungroup()
@@ -425,12 +425,12 @@ get_observer_quality <- function(mbbs_survey_events) {
   # + n surveys they've done
   observer_average <- mbbs_survey_events %>%
     # obs1/obs2/obs3 don't matter now
-    tidyr::pivot_longer(.data$obs1:.data$obs3, values_to = "obs") %>%
-    filter(!is.na(.data$obs)) %>%
+    tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>%
+    filter(!is.na(obs)) %>%
     # group by just how many times the observer has surveyed at all
     group_by(obs) %>%
     summarize(
-      obs_meanS = mean(.data$S),
+      obs_meanS = mean(S),
       n_surveys_obs = n()
     ) %>%
     ungroup()
@@ -439,11 +439,12 @@ get_observer_quality <- function(mbbs_survey_events) {
   # on the route for each observer
   observer_average_route <-
     mbbs_survey_events %>%
-    tidyr::pivot_longer(.data$obs1:.data$obs3, values_to = "obs") %>%
-    filter(!is.na(.data$obs)) %>%
-    group_by(.data$mbbs_county, .data$route_num, .data$obs) %>%
+    tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>%
+    filter(!is.na(obs)) %>%
+    filter(obs != "Ali Iyoob") %>%
+    group_by(mbbs_county, route_num, obs) %>%
     summarize(
-      obsroute_meanS = mean(.data$S),
+      obsroute_meanS = mean(S),
       n_surveys_obsroute = n()
     ) %>%
     ungroup() %>%
@@ -451,8 +452,8 @@ get_observer_quality <- function(mbbs_survey_events) {
     left_join(S_average_route, by = c("mbbs_county", "route_num")) %>%
     left_join(observer_average, by = c("obs")) %>%
     relocate(
-      .data$n_surveys_obsroute,
-      .data$n_surveys_obs,
+      n_surveys_obsroute,
+      n_surveys_obs,
       .after = "obs_meanS"
     ) %>%
     # meanS on route in years not run by that row's observer,
@@ -461,9 +462,50 @@ get_observer_quality <- function(mbbs_survey_events) {
     # removing the observer's proportion of contribution towards the route_meanS
     mutate(
       non_focal_obsroute_meanS =
-        ((.data$route_meanS * .data$n_surveys_route) -
-          (.data$obsroute_meanS * .data$n_surveys_obsroute)) /
-          (.data$n_surveys_route - .data$n_surveys_obsroute)
+        ((route_meanS * n_surveys_route) -
+          (obsroute_meanS * n_surveys_obsroute)) /
+          (n_surveys_route - n_surveys_obsroute)
+    )
+  
+  #use all the information we have about an observer to calculate how they do
+  #compared to all other observers on the mbbs.
+  #On each survey they've done, calculate their performance as follows:
+    # (obsroute_year_S(route, year, observer) - non_focal_obsroute_meanS)
+    # / non_focal_obsroute_meanS
+  #If an observer has 5 route_years they've run, they will have 5 rows of data
+  #and each row will contain a comparison score of how well they did that year
+  #on that route
+  #compared to every other year that route has been done by someone else.
+  #To get their total performance or observer quality across all years and routes
+  #group by observer and average their route_year observer qualities.
+  #This method also produces a value where routes the observer has run more
+  #frequently have more impact on their observer quality. 
+  #and we have more information about their performance than a single datapoint
+  #for each route they've participated in. 
+  observer_year_average_route <- 
+    mbbs_survey_events %>%
+    tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>%
+    filter(!is.na(obs)) %>%
+    filter(obs != "Ali Iyoob") %>%
+    group_by(mbbs_county, route_num, obs, year) %>%
+    summarize(
+      obsroute_year_S = S
+    ) %>%
+    #left join the above dataframes bc we need some of that info
+    left_join(observer_average_route, by = c("obs", "mbbs_county", "route_num")) %>%
+    mutate( #create comparison score within the route year
+      obs_yr_rt_quality = 
+        (obsroute_year_S - non_focal_obsroute_meanS) / non_focal_obsroute_meanS,
+      obs_yr_rt_quality = 
+        ifelse(is.nan(obs_yr_rt_quality), 0, obs_yr_rt_quality)
+    ) %>%
+  
+  ###should add this in as the new format, just want to investigate a little more with c
+  #observer_quality <- 
+   # observer_year_average_route %>%
+    group_by(obs) %>%
+    summarize(
+      obs_crossroute_quality = mean(obs_yr_rt_quality)
     )
 
   observer_quality <-
@@ -484,18 +526,22 @@ get_observer_quality <- function(mbbs_survey_events) {
     #  / (mean richness of years they are not one of the obs1-3)
     mutate(
       obs_proportion_route =
-        (.data$obsroute_meanS - .data$non_focal_obsroute_meanS) /
-          .data$non_focal_obsroute_meanS,
+        (obsroute_meanS - non_focal_obsroute_meanS) /
+          non_focal_obsroute_meanS,
       obs_proportion_route =
-        ifelse(is.nan(.data$obs_proportion_route), 0, obs_proportion_route)
+        ifelse(is.nan(obs_proportion_route), 0, obs_proportion_route)
     ) %>%
     # get one consistent score for each obs across all their surveyed routes
-    group_by(.data$obs) %>%
+    group_by(obs) %>%
     summarize(
-      obs_quality = mean(.data$obs_proportion_route),
-      n_surveys_obs = first(.data$n_surveys_obs)
+      obs_quality = mean(obs_proportion_route),
+      n_surveys_obs = first(n_surveys_obs)
     ) %>%
     ungroup()
+  
+  #CHECK REMOVE LATER
+  c <- left_join(observer_year_average_route, observer_quality)
+  #why is EG Bradley's obs_quality changing so much from 8 to -2, is Ali Lyoob's influence still really present? I think that year has to be removed from survey events totally to remove it's influence
 
   # assign observer_quality based on the performance of the top observer
   mbbs_survey_events <-
@@ -506,40 +552,40 @@ get_observer_quality <- function(mbbs_survey_events) {
       by = c("obs1" = "obs")
     ) %>%
     mutate(
-      obs1_quality = .data$obs_quality,
-      obs1_nsurveys = .data$n_surveys_obs
+      obs1_quality = obs_quality,
+      obs1_nsurveys = n_surveys_obs
     ) %>%
-    select(-c(.data$obs_quality, .data$n_surveys_obs)) %>%
+    select(-c(obs_quality, n_surveys_obs)) %>%
     # add obs2_deviation
     left_join(observer_quality, by = c("obs2" = "obs")) %>%
     mutate(
-      obs2_quality = .data$obs_quality,
-      obs2_nsurveys = .data$n_surveys_obs
+      obs2_quality = obs_quality,
+      obs2_nsurveys = n_surveys_obs
     ) %>%
-    select(-c(.data$obs_quality, .data$n_surveys_obs)) %>%
+    select(-c(obs_quality, n_surveys_obs)) %>%
     # add obs3 deviation
     left_join(observer_quality, by = c("obs3" = "obs")) %>%
     mutate(
-      obs3_quality = .data$obs_quality,
-      obs3_nsurveys = .data$n_surveys_obs
+      obs3_quality = obs_quality,
+      obs3_nsurveys = n_surveys_obs
     ) %>%
-    select(-c(.data$obs_quality, .data$n_surveys_obs)) %>%
+    select(-c(obs_quality, n_surveys_obs)) %>%
     rowwise() %>%
     # Get the maximum obsquality between obs1, obs2, obs,
     # and which column it comes from
     mutate(
       # observer quality is max btwn the three obs deviations
       observer_quality =
-        max(.data$obs1_quality, .data$obs2_quality, .data$obs3_quality,
+        max(obs1_quality, obs2_quality, obs3_quality,
           na.rm = TRUE
         ),
       # record which observer was the best
       max_qual_observer =
-        which.max(c(.data$obs1_quality, .data$obs2_quality, .data$obs3_quality)),
+        which.max(c(obs1_quality, obs2_quality, obs3_quality)),
       observer_quality = case_when(
         # if there's only one observer
         # don't change obs_quality
-        (sum(is.na(c(.data$obs1, .data$obs2, .data$obs3)) == FALSE) == 1) ~ .data$observer_quality,
+        (sum(is.na(c(obs1, obs2, obs3)) == FALSE) == 1) ~ observer_quality,
         # obs 1 is the best observer but only has one survey across all routes
         # take max of obs2 and obs3
         (max_qual_observer == 1 & obs1_nsurveys == 1) ~ suppressWarnings(max(obs2_quality, obs3_quality, na.rm = TRUE)),
@@ -550,7 +596,7 @@ get_observer_quality <- function(mbbs_survey_events) {
         # take max of obs1 and obs2
         (max_qual_observer == 3 & obs3_nsurveys == 1) ~ suppressWarnings(max(obs1_quality, obs2_quality, na.rm = TRUE)),
         # if none of the other statements are true, leave obs_quality the same
-        TRUE ~ .data$observer_quality
+        TRUE ~ observer_quality
       )
     ) %>%
     ungroup()
