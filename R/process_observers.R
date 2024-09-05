@@ -441,7 +441,6 @@ get_observer_quality <- function(mbbs_survey_events) {
     mbbs_survey_events %>%
     tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>%
     filter(!is.na(obs)) %>%
-    filter(obs != "Ali Iyoob") %>%
     group_by(mbbs_county, route_num, obs) %>%
     summarize(
       obsroute_meanS = mean(S),
@@ -486,7 +485,6 @@ get_observer_quality <- function(mbbs_survey_events) {
     mbbs_survey_events %>%
     tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>%
     filter(!is.na(obs)) %>%
-    filter(obs != "Ali Iyoob") %>%
     group_by(mbbs_county, route_num, obs, year) %>%
     summarize(
       obsroute_year_S = S
@@ -498,50 +496,28 @@ get_observer_quality <- function(mbbs_survey_events) {
         (obsroute_year_S - non_focal_obsroute_meanS) / non_focal_obsroute_meanS,
       obs_yr_rt_quality = 
         ifelse(is.nan(obs_yr_rt_quality), 0, obs_yr_rt_quality)
-    ) %>%
-  
-  ###should add this in as the new format, just want to investigate a little more with c
-  #observer_quality <- 
-   # observer_year_average_route %>%
-    group_by(obs) %>%
-    summarize(
-      obs_crossroute_quality = mean(obs_yr_rt_quality)
     )
-
-  observer_quality <-
-    observer_average_route %>%
-    # proportion of species observer observes relative
-    # to what other people observe on that route.
-    # Improvement over dividing by mean of whole route b/c
-    # the observer's meanS influences that.
-    # Pushes the spreads further apart and really distinguishes
-    # when observers are doing better or worse than the others on their route
-    # - ie: one person ran 16/22 years of the route,
-    # and their deviation before was -0.08 (they basically set the mean)
-    # and now it's -0.24
-    # (they saw 24% fewer species than the observers in the other 6 years)
-    # (x-y)/y
-    # (observer's mean on this route -
-    #    mean richness of years they are not one of the obs1-3)
-    #  / (mean richness of years they are not one of the obs1-3)
-    mutate(
-      obs_proportion_route =
-        (obsroute_meanS - non_focal_obsroute_meanS) /
-          non_focal_obsroute_meanS,
-      obs_proportion_route =
-        ifelse(is.nan(obs_proportion_route), 0, obs_proportion_route)
-    ) %>%
-    # get one consistent score for each obs across all their surveyed routes
+  
+  #group by observer and take the mean quality from all their route-years
+  #to get the average quality of each observer
+  #proportion of species each observer observes relative 
+  #to what other people observe on their route(s) 
+  #using data from ALL their years of observations (each route-year combo)
+  #instead of taking the average in each route and then averaging that (prev way)
+  #which (prev way) gave equal influence to a route run once and a route run 15x
+  #in (prev way) determining obs_quality
+  #Interpretation is as follows:
+  #a -0.08 observer quality means that observer on average sees 8% fewer
+  #species on their route(s) compared to the average number of species
+  #seen on their route(s) in years run by other observers
+  observer_quality <- 
+    observer_year_average_route %>%
     group_by(obs) %>%
     summarize(
-      obs_quality = mean(obs_proportion_route),
+      obs_quality = mean(obs_yr_rt_quality),
       n_surveys_obs = first(n_surveys_obs)
     ) %>%
     ungroup()
-  
-  #CHECK REMOVE LATER
-  c <- left_join(observer_year_average_route, observer_quality)
-  #why is EG Bradley's obs_quality changing so much from 8 to -2, is Ali Lyoob's influence still really present? I think that year has to be removed from survey events totally to remove it's influence
 
   # assign observer_quality based on the performance of the top observer
   mbbs_survey_events <-
@@ -586,13 +562,13 @@ get_observer_quality <- function(mbbs_survey_events) {
         # if there's only one observer
         # don't change obs_quality
         (sum(is.na(c(obs1, obs2, obs3)) == FALSE) == 1) ~ observer_quality,
-        # obs 1 is the best observer but only has one survey across all routes
+        # if obs 1 is the best observer but only has one survey across all routes
         # take max of obs2 and obs3
         (max_qual_observer == 1 & obs1_nsurveys == 1) ~ suppressWarnings(max(obs2_quality, obs3_quality, na.rm = TRUE)),
-        # obs 2 is the best observer but only has one survey across all routes
+        # if obs 2 is the best observer but only has one survey across all routes
         # take max of obs1 and obs3
         (max_qual_observer == 2 & obs2_nsurveys == 1) ~ suppressWarnings(max(obs1_quality, obs3_quality, na.rm = TRUE)),
-        # obs 3 is the best observer but only has one survey across all routes
+        # if obs 3 is the best observer but only has one survey across all routes
         # take max of obs1 and obs2
         (max_qual_observer == 3 & obs3_nsurveys == 1) ~ suppressWarnings(max(obs1_quality, obs2_quality, na.rm = TRUE)),
         # if none of the other statements are true, leave obs_quality the same
