@@ -497,20 +497,20 @@ get_observer_quality <- function(mbbs_survey_events) {
       obs_yr_rt_quality =
         ifelse(is.nan(obs_yr_rt_quality), 0, obs_yr_rt_quality)
     )
-  
-  #group by observer and take the mean quality from all their route-years
-  #to get the average quality of each observer
-  #proportion of species each observer observes relative 
-  #to what other people observe on their route(s) 
-  #using data from ALL their years of observations (each route-year combo)
-  #instead of taking the average in each route and then averaging that (prev way)
-  #which (prev way) gave equal influence to a route run once and a route run 15x
-  #in (prev way) determining obs_quality
-  #Interpretation is as follows:
-  #a -0.08 observer quality means that observer on average sees 8% fewer
-  #species on their route(s) compared to the average number of species
-  #seen on their route(s) in years run by other observers
-  observer_quality <- 
+
+  # group by observer and take the mean quality from all their route-years
+  # to get the average quality of each observer
+  # proportion of species each observer observes relative
+  # to what other people observe on their route(s)
+  # using data from ALL their years of observations (each route-year combo)
+  # instead of taking the average in each route and then averaging that (prev way)
+  # which (prev way) gave equal influence to a route run once and a route run 15x
+  # in (prev way) determining obs_quality
+  # Interpretation is as follows:
+  # a -0.08 observer quality means that observer on average sees 8% fewer
+  # species on their route(s) compared to the average number of species
+  # seen on their route(s) in years run by other observers
+  observer_quality <-
     observer_year_average_route %>%
     group_by(obs) %>%
     summarize(
