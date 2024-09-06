@@ -36,7 +36,7 @@
 ## Get test cases
 
 comment_test_cases <- read.csv("tests/testthat/test_process_comments.csv")
- 
+
 ## Test cleaning step
 test_that(
   "clean_comments runs and does what is expected",
