@@ -124,11 +124,28 @@ exclude_submissions <- function(dt, exclusions) {
     filter(!(.data$sub_id %in% exclusions))
 }
 
+#' Parse route id from the location string
+#'
+#' @param location character vector: the `Location` column in the raw eBird data
+#' @importFrom stringr str_match
+parse_route_from_location <- function(x) {
+  as.integer(stringr::str_match(x, "[0-1]{0,1}[0-9]{1}"))
+}
+
+#' Parse stop id from the location string
+#'
+#' @param location character vector: the `Location` column in the raw eBird data
+#' @importFrom stringr str_extract
+parse_stop_from_location <- function(x) {
+  # Getting stop from numbers at end (this is fragile):
+  as.integer(stringr::str_extract(x, "([0-9]{1,2}$)"))
+}
+
 #' Import an ebird export into R
 #' @param path path/to/ebird_export.csv
 #' @param run_checks run integrity checks or not?
 #' @importFrom dplyr left_join as_tibble if_else mutate select
-#' @importFrom stringr str_match
+#' @importFrom stringr str_match str_extract str_replace
 #' @importFrom utils read.csv
 #' @export
 import_ebird_data <- function(path, run_checks = TRUE) {
@@ -153,9 +170,8 @@ import_ebird_data <- function(path, run_checks = TRUE) {
       mbbs_county = str_extract(.data$loc, "[Oo]range|[Cc]hatham|Chatman|[Dd]urham"),
       mbbs_county = str_replace(.data$mbbs_county, "Chatman", "Chatham"),
       mbbs_county = tolower(.data$mbbs_county),
-      route_num = as.integer(str_match(.data$loc, "[0-1]{0,1}[0-9]{1}")),
-      # Getting stop from numbers at end (this is fragile):
-      stop_num = as.integer(str_extract(.data$loc, "([0-9]{1,2}$)")),
+      route_num = parse_route_from_location(.data$loc),
+      stop_num = parse_stop_from_location(.data$loc),
 
       # TODO: Flag the pre-dawn "owling" submissions
       # is_owling =
