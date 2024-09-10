@@ -13,50 +13,59 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, gitignore }:
-    flake-utils.lib.eachDefaultSystem (system: let
-      
-      pkgs = nixpkgs.legacyPackages.${system};
-      inherit (gitignore.lib) gitignoreSource;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      gitignore,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
 
-      mbbsDeps = with pkgs.rPackages; [
-            beepr
-            readxl
-            tidyr
-            purrr
-            stringr
-            lubridate
-            readr
-            magrittr
-            dplyr
-            tidyr
-            beepr
-            glue
-            assertthat
-            yaml
-          ];
-  
-    in {
+        pkgs = nixpkgs.legacyPackages.${system};
+        inherit (gitignore.lib) gitignoreSource;
 
-      packages.mbbs = pkgs.rPackages.buildRPackage {
+        mbbsDeps = with pkgs.rPackages; [
+          beepr
+          readxl
+          tidyr
+          purrr
+          stringr
+          lubridate
+          readr
+          magrittr
+          dplyr
+          tidyr
+          beepr
+          glue
+          assertthat
+          yaml
+        ];
+      in
+      {
+
+        formatter = pkgs.nixfmt-rfc-style;
+
+        packages.mbbs = pkgs.rPackages.buildRPackage {
           name = "mbbs";
           src = gitignoreSource ./.;
           propagatedBuildInputs = mbbsDeps;
         };
-      
-      packages.default = self.packages.${system}.mbbs;
 
-      devShells.default =  pkgs.mkShell {
-        nativeBuildInputs = [ pkgs.bashInteractive ];
-        buildInputs = [
-          pkgs.R
-          pkgs.rPackages.devtools
-          pkgs.rPackages.usethis
-          pkgs.rPackages.languageserver
-          pkgs.rPackages.styler
-        ] ++ mbbsDeps ;
-      }; 
+        packages.default = self.packages.${system}.mbbs;
 
-    });
+        devShells.default = pkgs.mkShell {
+          nativeBuildInputs = [ pkgs.bashInteractive ];
+          buildInputs = [
+            pkgs.R
+            pkgs.rPackages.devtools
+            pkgs.rPackages.usethis
+            pkgs.rPackages.languageserver
+            pkgs.rPackages.styler
+          ] ++ mbbsDeps;
+        };
+      }
+    );
 }
-
