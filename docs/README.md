@@ -1,3 +1,5 @@
-# The MBBS data site
+---
+title: MBBS data
+---
 
 Hello

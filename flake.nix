@@ -55,6 +55,7 @@
         };
 
         packages.pages = import ./pages.nix {
+          self = self;
           pkgs = pkgs;
           gitignoreSource = gitignoreSource;
         };
