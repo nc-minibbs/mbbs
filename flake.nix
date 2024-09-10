@@ -54,6 +54,11 @@
           propagatedBuildInputs = mbbsDeps;
         };
 
+        packages.pages = import ./pages.nix {
+          pkgs = pkgs;
+          gitignoreSource = gitignoreSource;
+        };
+
         packages.default = self.packages.${system}.mbbs;
 
         devShells.default = pkgs.mkShell {
