@@ -28,5 +28,6 @@ stdenv.mkDerivation {
   installPhase = ''
     mkdir -p $out
     cp index.html $out
+    cp inst/analysis_data/mbbs_chatham_20240205.csv data/
   '';
 }
