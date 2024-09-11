@@ -27,7 +27,8 @@ stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out
+    mkdir -p $out/data
     cp index.html $out
-    cp inst/analysis_data/mbbs_chatham_20240205.csv data/
+    cp inst/analysis_data/mbbs_chatham_20240205.csv $out/data/mbbs_chatham_20240205.csv
   '';
 }
