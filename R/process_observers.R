@@ -40,6 +40,7 @@ process_observers <- function(mbbs_county, county) {
 #'   Called from import_data after updating the data/mbbs.rda files
 #' @importFrom dplyr filter group_by summarize ungroup arrange
 #'   left_join mutate select ungroup n_distinct cur_group_id
+#'   rows_update
 #' @importFrom stringr str_to_lower
 #' @importFrom utils write.csv
 #' @param envir uses the local environment of import_data
@@ -49,7 +50,7 @@ update_survey_events <- function(envir = parent.frame()) {
 
   #generate list of new surveys not yet on the survey_list
   options(dplyr.summarise.inform = FALSE) # suppress dplyr "has grouped outby by"
-  new_surveys <- 
+  surveys <- 
     mbbs %>%
     filter(count > 0 | count_raw > 0) %>%
     group_by(mbbs_county, route_num, year) %>%
@@ -60,7 +61,9 @@ update_survey_events <- function(envir = parent.frame()) {
       month = str_sub(first(date), start = -5, end = -4),
       day = str_sub(first(date), start = -2, end = -1)
     ) %>%
-    dplyr::ungroup() %>%
+    dplyr::ungroup()
+  
+  new_surveys <- surveys %>%
     anti_join(survey_list, by = c("route_num", "year", "mbbs_county"))
   #differing observers does not affect this join. 
   #Which is good because the survey_list should be the true source of data 
@@ -77,6 +80,24 @@ update_survey_events <- function(envir = parent.frame()) {
     cat(nrow(new_surveys), "surveys have been added to survey_list")
   } else { #report that there were no new surveys
     cat("No new surveys to add to survey_list")
+  }
+  
+  #also need to check if any surveys have been updated, eg. 
+  #One stop wasn't uploaded for a route before and now has been
+  #so that N and S may have changed.
+  #We continue to not include observer in the anti_join because
+  #survey_list is the ultimate source of information for some older
+  #routes where the observers are not in the data
+  updated_surveys <- 
+    surveys %>%
+    mutate(month = as.integer(month), 
+           day = as.integer(day)) %>%
+    anti_join(survey_list, by = c("route_num", "year", "mbbs_county", "S", "N"))
+  
+  if(nrow(updated_surveys) > 0) {
+    survey_list <- rows_update(survey_list, updated_surveys, by = c("route_num", "year", "mbbs_county"))
+    write.csv(survey_list, "inst/extdata/survey_list.csv", row.names = FALSE)
+    cat(nrow(updated_surveys), "surveys updated on survey_list with new 'S' or 'N'")
   }
 
   # load in observer table
