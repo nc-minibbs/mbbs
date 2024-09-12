@@ -18,8 +18,7 @@ UpSurEv_tcs <- read.csv("tests/testthat/update_survey_events_test_cases.csv", he
 test_that("update_survey_events catches when data is not yet on survey_list", {
   UpSurEv_tcs <- read.csv("tests/testthat/update_survey_events_test_cases.csv", header = TRUE)
   load("data/mbbs.rda")
-  
-  #run survey_events, expect no error. 
-  #run survey_events, expect that new_surveys has an output with more than 0 rows
-  
+
+  # run survey_events, expect no error.
+  # run survey_events, expect that new_surveys has an output with more than 0 rows
 })
