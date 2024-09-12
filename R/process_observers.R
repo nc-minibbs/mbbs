@@ -37,43 +37,46 @@ process_observers <- function(mbbs_county, county) {
 
 #' Updates survey_list if needed by rbinding the new year,
 #'   then updates survey_events
+#'   Called from import_data after updating the data/mbbs.rda files
 #' @importFrom dplyr filter group_by summarize ungroup arrange
 #'   left_join mutate select ungroup n_distinct cur_group_id
 #' @importFrom stringr str_to_lower
 #' @importFrom utils write.csv
 #' @param envir uses the local environment of import_data
 update_survey_events <- function(envir = parent.frame()) {
-  # load in survey list
+  #load in survey list
   survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE)
 
-  # generate the list of the latest year's surveys
+  #generate list of new surveys not yet on the survey_list
   options(dplyr.summarise.inform = FALSE) # suppress dplyr "has grouped outby by"
-  latest_surveys <-
-    rbind(mbbs_chatham, mbbs_durham, mbbs_orange) %>%
-    filter(.data$count > 0 | .data$count_raw > 0) %>%
-    group_by(.data$mbbs_county, .data$route_num, .data$year) %>%
+  new_surveys <- 
+    mbbs %>%
+    filter(count > 0 | count_raw > 0) %>%
+    group_by(mbbs_county, route_num, year) %>%
     dplyr::summarize(
-      S = dplyr::n_distinct(.data$common_name),
-      N = sum(.data$count),
-      observers = .data$observers[!is.na(.data$observers)][1],
-      month = str_sub(first(.data$date), start = -5, end = -4),
-      day = str_sub(first(.data$date), start = -2, end = -1)
+      S = dplyr::n_distinct(common_name),
+      N = sum(count),
+      observers = observers[!is.na(observers)][1],
+      month = str_sub(first(date), start = -5, end = -4),
+      day = str_sub(first(date), start = -2, end = -1)
     ) %>%
-    filter(year == max(year)) %>%
-    dplyr::ungroup()
-  options(dplyr.summarise.inform = TRUE) # return this to normal
+    dplyr::ungroup() %>%
+    anti_join(survey_list, by = c("route_num", "year", "mbbs_county"))
+  #differing observers does not affect this join. 
+  #Which is good because the survey_list should be the true source of data 
+  #for observers
 
-  # if the latest year is already on the survey_list,
-  # don't update. Otherwise,
-  # add in the new rows to survey_list and save the updated list
-  if (max(latest_surveys$year) <= max(survey_list$year)) {
-    cat(max(latest_surveys$year), "already in survey_list") # do nothing
-  } else {
-    cat(max(latest_surveys$year), "data has been added to survey_list")
-    survey_list <- rbind(survey_list, latest_surveys)
-    survey_list <- survey_list %>%
-      arrange(.data$mbbs_county, .data$route_num, .data$year)
+  #add new rows to survey_list if they exist
+  #and save the updated list. 
+  if(nrow(new_surveys) > 0) {
+    survey_list <-
+      rbind(survey_list, new_surveys) %>%
+      arrange(mbbs_county, route_num, year)
     write.csv(survey_list, "inst/extdata/survey_list.csv", row.names = FALSE)
+    #print message
+    cat(nrow(new_surveys), "surveys have been added to survey_list")
+  } else { #report that there were no new surveys
+    cat("No new surveys to add to survey_list")
   }
 
   # load in observer table
@@ -89,10 +92,13 @@ update_survey_events <- function(envir = parent.frame()) {
       observer_table,
       by = c("mbbs_county", "route_num", "observers")
     ) %>%
-    group_by(.data$primary_observer) %>%
-    mutate(observer_ID = dplyr::cur_group_id()) %>% # add observer ID
+    get_observer_quality() %>%
+    group_by(primary_observer) %>%
+    mutate(observer_ID = dplyr::cur_group_id()) %>% # add observer ID 
     dplyr::ungroup() %>%
-    get_observer_quality()
+    arrange(mbbs_county, route_num, year)
+  
+  options(dplyr.summarise.inform = TRUE) # return this to normal
 
   # save survey_events
   save(mbbs_survey_events, file = "data/mbbs_survey_events.rda")
@@ -575,7 +581,15 @@ get_observer_quality <- function(mbbs_survey_events) {
         TRUE ~ observer_quality
       )
     ) %>%
-    ungroup()
+    ungroup() %>%
+    #assign primary observer and observer ID based on the top observer
+    mutate(primary_observer = case_when(max_qual_observer == 1 ~ obs1,
+                                        max_qual_observer == 2 ~ obs2,
+                                        max_qual_observer == 3 ~ obs3)) %>%
+    dplyr::relocate(primary_observer, .before = "obs1") %>%
+    group_by(primary_observer) %>%
+    mutate(observer_ID = cur_group_id()) %>%
+    ungroup() 
 
   # return
   mbbs_survey_events

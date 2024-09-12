@@ -23,3 +23,9 @@ test_that("update_survey_events catches when data is not yet on survey_list", {
   #run survey_events, expect that new_surveys has an output with more than 0 rows
   
 })
+
+test_that("update_survey_events runs without error", 
+          {
+            load("data/mbbs.rda")
+            expect_no_error(update_survey_events())
+          })
