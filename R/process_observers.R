@@ -14,17 +14,17 @@ process_observers <- function(mbbs_county, county) {
     propogate_observers_across_stops()
 
   update_observer_table(mbbs_county, county)
-  #calling the mini_table update must be done HERE and not within
-  #update_observer_table in order to preserve the ability to 
-  #take input on new observer combos. 
+  # calling the mini_table update must be done HERE and not within
+  # update_observer_table in order to preserve the ability to
+  # take input on new observer combos.
   update_mini_observer_table()
-  #similarly, standardizing observers must take place after the mini
-  #table update, but cannot take place within update_observer_table
-  #because the mini_table function cannot be within it and work
-  #properly.
+  # similarly, standardizing observers must take place after the mini
+  # table update, but cannot take place within update_observer_table
+  # because the mini_table function cannot be within it and work
+  # properly.
   standardize_observer_table()
 
-  mbbs_county #return
+  mbbs_county # return
 }
 
 
@@ -150,8 +150,7 @@ update_survey_events <- function() {
 #' @importFrom dplyr filter add_row
 #' @importFrom assertthat assert_that
 update_observer_table <- function(mbbs_county, selected_county, save = TRUE) {
-  
-  #selected county must be one from the mbbs
+  # selected county must be one from the mbbs
   assertthat::assert_that(selected_county == "orange" |
     selected_county == "durham" |
     selected_county == "chatham")
@@ -168,17 +167,17 @@ update_observer_table <- function(mbbs_county, selected_county, save = TRUE) {
   county_observer_table <-
     observer_table %>%
     filter(mbbs_county == selected_county)
-  
-  #generate list of unique route number/observer combinations
+
+  # generate list of unique route number/observer combinations
   options(dplyr.summarise.inform = FALSE) # suppress dplyr "has grouped outby by"
-  rocombos <- 
+  rocombos <-
     mbbs_county %>%
     group_by(route_num, observers) %>%
-    summarize() #without argument this just gives back the unique combos
+    summarize() # without argument this just gives back the unique combos
   options(dplyr.summarise.inform = TRUE) # return this to normal
-  
-  
-  #check for any rocombos not already on the main observer conversion table
+
+
+  # check for any rocombos not already on the main observer conversion table
   not_present <-
     anti_join(rocombos, county_observer_table,
       by = c("route_num", "observers")
@@ -232,11 +231,10 @@ update_observer_table <- function(mbbs_county, selected_county, save = TRUE) {
       observer_table$obs2[w] <- "blank"
     }
   }
-  
-  if(save == TRUE){
-  save_observer_table(observer_table)
+
+  if (save == TRUE) {
+    save_observer_table(observer_table)
   }
-  
 }
 
 #' Function to convert obs1 obs2 and obs3 from the main_observer_table
@@ -245,19 +243,18 @@ update_observer_table <- function(mbbs_county, selected_county, save = TRUE) {
 #' @param save  TRUE if the updated table should be saved. Set to FALSE when testing
 #' @importFrom dplyr rowwise mutate c_across all_of
 standardize_observer_table <- function(save = TRUE) {
-  
-  #read in the latest version of the mini table
+  # read in the latest version of the mini table
   mini_observer_table <-
     read.csv(system.file("/extdata/mini_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
-  
-  #read in the latest version of the main table
-  observer_table <- 
+
+  # read in the latest version of the main table
+  observer_table <-
     read.csv(system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
-  
+
   # update the main observer table based on mini table.
   # convert obs1 obs2 and obs3 in the main table to their standardized format
   observer_table <- convert_based_on_mini_table(observer_table, mini_observer_table)
-  
+
   # create standardized_observers
   # Specify the columns to be considered for alphabetical sorting
   obs_columns <- c("obs1", "obs2", "obs3")
@@ -268,8 +265,8 @@ standardize_observer_table <- function(save = TRUE) {
       standardized_observers =
         paste(sort(c_across(all_of(obs_columns))), collapse = ", ")
     )
-  
-  if(save == TRUE){
+
+  if (save == TRUE) {
     save_observer_table(observer_table)
   }
 }
@@ -330,11 +327,10 @@ propogate_observers_across_stops <- function(mbbs_county) {
 #' @param county_observer_table a main_observer_table that has already been filtered to just the relevant county
 confirm_observer_NA <-
   function(passed_na_row, mbbs_county, county_observer_table) {
-  
-  assertthat::assert_that(nrow(passed_na_row) == 1)  
-  
-  #read in survey list
-  survey_list <- read.csv(system.file("/extdata/survey_list.csv", package = "mbbs"), header = TRUE)
+    assertthat::assert_that(nrow(passed_na_row) == 1)
+
+    # read in survey list
+    survey_list <- read.csv(system.file("/extdata/survey_list.csv", package = "mbbs"), header = TRUE)
 
     # confirm that the passed_na_row passed is an NA, if it's not just return and exit this function
     if (is.na(passed_na_row$observers) == FALSE) {
@@ -405,8 +401,7 @@ confirm_observer_NA <-
 #' @returns an updated version of the main observer conversion table
 update_mini_observer_table <- function(
     observer_table = read.csv(system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs"), header = TRUE),
-    save = TRUE){
-
+    save = TRUE) {
   # load the mini observer conversion table (for obs1,obs2,obs3)
   mini_observer_table <-
     read.csv(system.file("/extdata/mini_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
@@ -441,9 +436,9 @@ update_mini_observer_table <- function(
     }
   }
 
-  if(save == TRUE) {
-  # save mini table
-  write.csv(mini_observer_table, system.file("/extdata/mini_observer_conversion_table.csv", package = "mbbs"), row.names = FALSE)
+  if (save == TRUE) {
+    # save mini table
+    write.csv(mini_observer_table, system.file("/extdata/mini_observer_conversion_table.csv", package = "mbbs"), row.names = FALSE)
   }
 }
 
@@ -666,4 +661,3 @@ get_observer_quality <- function(mbbs_survey_events) {
   # return
   mbbs_survey_events
 }
-
