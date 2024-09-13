@@ -45,10 +45,10 @@ save_observer_table <-
 #' @importFrom utils write.csv
 update_survey_events <- function() {
   # load in survey list
-  survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE)
-  
+  survey_list <- read.csv(system.file("/extdata/survey_list.csv", package = "mbbs"), header = TRUE)
+
   #load in mbbs, when this function is called in import_data mbbs is newly updated
-  load("data/mbbs.rda")
+  load(file = system.file("data/mbbs.rda", package = "mbbs"))
 
   # generate list of new surveys not yet on the survey_list
   options(dplyr.summarise.inform = FALSE) # suppress dplyr "has grouped outby by"
@@ -107,7 +107,7 @@ update_survey_events <- function() {
 
   # load in observer table
   observer_table <-
-    read.csv("inst/extdata/main_observer_conversion_table.csv", header = TRUE)
+    read.csv(system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
   # Observer table may be updated several times during a year.
   # So we regenerate and update survey_events
   # even when we don't update(by rbinding new columns to) survey_list.
@@ -149,11 +149,11 @@ update_observer_tables <- function(mbbs_county, selected_county) {
                             selected_county == "chatham")
   
   # load the main observer conversion table
-  observer_table <- read.csv("inst/extdata/main_observer_conversion_table.csv", header = TRUE)
+  observer_table <- read.csv(system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
   
   # load survey events
   survey_list <- 
-    read.csv("inst/extdata/survey_list.csv", header = TRUE) %>% 
+    read.csv(system.file("/extdata/survey_list.csv", package = "mbbs"), header = TRUE) %>% 
     select(-S, -N, -month, -day)
   
   #filter the observer conversion table to just the one specified country
@@ -224,7 +224,7 @@ update_observer_tables <- function(mbbs_county, selected_county) {
   
   #read in the latest version of the mini table
   mini_observer_table <-
-    read.csv("inst/extdata/mini_observer_conversion_table.csv", header = TRUE)
+    read.csv(system.file("inst/extdata/mini_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
   
   # update the main observer table based on mini table.
   # convert obs1 obs2 and obs3 in the main table to their standardized format
@@ -306,7 +306,7 @@ confirm_observer_NA <-
   assertthat::assert_that(nrow(passed_na_row) == 1)  
   
   #read in survey list
-  survey_list <- read.csv("inst/extdata/survey_list.csv", header = TRUE)
+  survey_list <- read.csv(system.file("inst/extdata/survey_list.csv", package = "mbbs"), header = TRUE)
   
   # confirm that the passed_na_row passed is an NA, if it's not just return and exit this function
   if (is.na(passed_na_row$observers) == FALSE) {
@@ -374,11 +374,11 @@ confirm_observer_NA <-
 #' @importFrom utils write.csv
 #' @param observer_table the main observer conversion table. Taken as an argument so the most recent version (potentially one in progress) can be used.
 #' @returns an updated version of the main observer conversion table
-update_mini_observer_table <- function(observer_table = read.csv("inst/extdata/main_observer_conversion_table.csv", header = TRUE)) {
+update_mini_observer_table <- function(observer_table = read.csv(system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs"), header = TRUE)) {
   
   # load the mini observer conversion table (for obs1,obs2,obs3)
   mini_observer_table <-
-    read.csv("inst/extdata/mini_observer_conversion_table.csv", header = TRUE)
+    read.csv(system.file("/extdata/mini_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
 
   # make new table, get unique obs1, obs2, obs3
   obs_list <- c(observer_table$obs1, observer_table$obs2, observer_table$obs3)
