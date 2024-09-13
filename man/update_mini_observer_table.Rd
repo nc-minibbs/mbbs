@@ -5,12 +5,15 @@
 \title{Add any new entries to the mini_observer_conversion_table}
 \usage{
 update_mini_observer_table(
-  observer_table = read.csv("inst/extdata/main_observer_conversion_table.csv", header =
-    TRUE)
+  observer_table = read.csv(system.file("/extdata/main_observer_conversion_table.csv",
+    package = "mbbs"), header = TRUE),
+  save = TRUE
 )
 }
 \arguments{
 \item{observer_table}{the main observer conversion table. Taken as an argument so the most recent version (potentially one in progress) can be used.}
+
+\item{save}{TRUE if the updated table should be saved. Set to FALSE when testing}
 }
 \value{
 an updated version of the main observer conversion table
