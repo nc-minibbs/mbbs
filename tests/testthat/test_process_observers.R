@@ -28,12 +28,12 @@ test_that("mbbs_survey_events has no rows with NA observers", {
 })
 
 test_that("update_mini_observer_table runs without error", {
-  expect_no_error(update_mini_observer_table())
+  expect_no_error(update_mini_observer_table(save = FALSE))
 })
 
 
-test_that("update_observer_table runs without error (error is not in the mini_table update)", {
-  mbbs_orange <- read.csv(system.file("mbbs_orange_update_observer_table_testdata.csv", package = "mbbs"))
-  expect_no_error(update_observer_tables(mbbs_orange, "orange"))
+test_that("update_observer_table runs without error", {
+  load(file = system.file("data/mbbs_orange.rda", package = "mbbs"))
+  expect_no_error(update_observer_table(mbbs_orange, "orange", save = FALSE))
 })
 
