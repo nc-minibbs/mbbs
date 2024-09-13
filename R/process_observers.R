@@ -80,8 +80,6 @@ update_survey_events <- function() {
     write.csv(survey_list, "inst/extdata/survey_list.csv", row.names = FALSE)
     # print message
     cat(nrow(new_surveys), "surveys have been added to survey_list")
-    #save new version for testing as well
-    write.csv(survey_list, "tests/testthat/test_survey_list.csv")
   } else { # report that there were no new surveys
     cat("No new surveys to add to survey_list
     ")
@@ -105,8 +103,6 @@ update_survey_events <- function() {
     survey_list <- rows_update(survey_list, updated_surveys, by = c("route_num", "year", "mbbs_county"))
     write.csv(survey_list, "inst/extdata/survey_list.csv", row.names = FALSE)
     cat(nrow(updated_surveys), "surveys updated on survey_list with new 'S' or 'N'")
-    #save new version for testing as well
-    write.csv(survey_lists, "tests/testthat/test_survey_list.csv")
   }
 
   # load in observer table
@@ -133,8 +129,6 @@ update_survey_events <- function() {
   # save survey_events
   save(mbbs_survey_events, file = "data/mbbs_survey_events.rda")
   cat("\nsurvey_events updated")
-  #also save a version for testing
-  save(mbbs_survey_events, file = "tests/testthat/test_survey_events.rda")
 }
 
 
