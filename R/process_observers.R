@@ -56,7 +56,7 @@ update_survey_events <- function() {
   # load in survey list
   survey_list <- read.csv(system.file("/extdata/survey_list.csv", package = "mbbs"), header = TRUE)
 
-  #load in mbbs, when this function is called in import_data mbbs is newly updated
+  # load in mbbs, when this function is called in import_data mbbs is newly updated
   load(file = system.file("data/mbbs.rda", package = "mbbs"))
 
   # generate list of new surveys not yet on the survey_list
@@ -153,19 +153,19 @@ update_observer_table <- function(mbbs_county, selected_county, save = TRUE) {
   
   #selected county must be one from the mbbs
   assertthat::assert_that(selected_county == "orange" |
-                            selected_county == "durham" |
-                            selected_county == "chatham")
-  
+    selected_county == "durham" |
+    selected_county == "chatham")
+
   # load the main observer conversion table
   observer_table <- read.csv(system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
-  
+
   # load survey events
-  survey_list <- 
-    read.csv(system.file("/extdata/survey_list.csv", package = "mbbs"), header = TRUE) %>% 
+  survey_list <-
+    read.csv(system.file("/extdata/survey_list.csv", package = "mbbs"), header = TRUE) %>%
     select(-S, -N, -month, -day)
-  
-  #filter the observer conversion table to just the one specified country
-  county_observer_table <- 
+
+  # filter the observer conversion table to just the one specified country
+  county_observer_table <-
     observer_table %>%
     filter(mbbs_county == selected_county)
   
@@ -180,26 +180,29 @@ update_observer_table <- function(mbbs_county, selected_county, save = TRUE) {
   
   #check for any rocombos not already on the main observer conversion table
   not_present <-
-    anti_join(rocombos, county_observer_table, 
-              by = c("route_num", "observers"))
-  
-  #flag and stop function if any NAs represent truly missing observer data
-  for(i in 1:nrow(not_present)) {
+    anti_join(rocombos, county_observer_table,
+      by = c("route_num", "observers")
+    )
+
+  # flag and stop function if any NAs represent truly missing observer data
+  for (i in 1:nrow(not_present)) {
     assertthat::assert_that(
-      confirm_observer_NA(passed_na_row = not_present[i,], 
-                          mbbs_county, county_observer_table) == FALSE
+      confirm_observer_NA(
+        passed_na_row = not_present[i, ],
+        mbbs_county, county_observer_table
+      ) == FALSE
     )
   }
-  
-  #if all the NAs pass, remove them.
-  not_present <- 
+
+  # if all the NAs pass, remove them.
+  not_present <-
     not_present %>%
     filter(!is.na(observers))
-  
-  #add new observer combos to the main observer table
-  if(nrow(not_present) > 0) {
-    for(h in 1:nrow(not_present)) {
-      #add a new row to the overall observer_table
+
+  # add new observer combos to the main observer table
+  if (nrow(not_present) > 0) {
+    for (h in 1:nrow(not_present)) {
+      # add a new row to the overall observer_table
       observer_table <- observer_table %>%
         dplyr::add_row(
           mbbs_county = selected_county,
@@ -208,7 +211,7 @@ update_observer_table <- function(mbbs_county, selected_county, save = TRUE) {
         )
     }
   }
-  
+
   # separate out observers into columns obs1,obs2,obs3
   observer_table[c("obs1", "obs2", "obs3")] <-
     # split into at most 3 strings based off <,and> <,> <and> <&>
@@ -254,7 +257,6 @@ standardize_observer_table <- function(save = TRUE) {
   # update the main observer table based on mini table.
   # convert obs1 obs2 and obs3 in the main table to their standardized format
   observer_table <- convert_based_on_mini_table(observer_table, mini_observer_table)
-  
   
   # create standardized_observers
   # Specify the columns to be considered for alphabetical sorting
@@ -326,72 +328,72 @@ propogate_observers_across_stops <- function(mbbs_county) {
 #' @param passed_na_row a dataframe with a single route_num and observer
 #' @param mbbs_county an mbbs dataset that's restricted to just one county (as we use route_num which is not distinct between counties)
 #' @param county_observer_table a main_observer_table that has already been filtered to just the relevant county
-confirm_observer_NA <- 
+confirm_observer_NA <-
   function(passed_na_row, mbbs_county, county_observer_table) {
   
   assertthat::assert_that(nrow(passed_na_row) == 1)  
   
   #read in survey list
   survey_list <- read.csv(system.file("/extdata/survey_list.csv", package = "mbbs"), header = TRUE)
-  
-  # confirm that the passed_na_row passed is an NA, if it's not just return and exit this function
-  if (is.na(passed_na_row$observers) == FALSE) {
-    # return("observers not NA") #for testing
-    return(FALSE) # return is correct to use, exit function early.
-  }
 
-  # since the observer of this rocombo is NA,
-  # evaluate if it should be ignored (we're not missing data)
-  # or should throw an error (we're missing data)
-
-  # filter to the na rows in mbbs_county that this rocombo represents
-  na_rows <- mbbs_county %>% # take county df
-    filter(is.na(observers) == TRUE) %>% # filter to the NA rows
-    filter(route_num == passed_na_row$route_num) %>% # filter to the NA rows for this route
-    anti_join(survey_list, join_by(mbbs_county, route_num, year))
-  # only keep any rows with NA observers if that route/year combo is not already
-  # represented on the survey list.
-  # Years where observers == NA, but that are on the survey_list
-  # (and so have an observer) are cut.
-
-  # evaluate if this route has all it's observers on the survey_list
-  if (nrow(na_rows) == 0) {
-    # the NA observer seen on this passed_na_row has been corrected elsewhere,
-    # it's on the survey_list.
-    # return("observers corrected elsewhere") #for testing
-    return(FALSE)
-  } else {
-    # this NA observer is not already on the survey list. This is likely because
-    # (1). It's a new year of data, observers did not propagate to all the rows,
-    # and survey_list gets updated after observer_conversion_table.
-    # (2). It's a year of data where it's not on the survey_list and ALL the
-    # route's 'observers' column are NA
-
-    # filter mbbs_county to evaluate if ANY row of data from this route/year
-    # combo contains an observers value
-    # (and will therefore have been caught in a non-NA rowcombos[i])
-    non_na_rows <- mbbs_county %>% # take the county df
-      filter(year %in% na_rows$year) %>% # filter to the year we've got NA
-      filter(route_num == passed_na_row$route_num) %>% # filter to the route
-      filter(!is.na(observers)) # filter to any rows where obs is NOT NA
-
-    # if there are NO rows in the mbbs where this route/year combo
-    # has a non-NA observer, flag the error
-    if (nrow(non_na_rows) == 0) {
-      print(paste(
-        "ERROR!",
-        na_rows$year,
-        "route",
-        na_rows$route_num,
-        "has only NA values for observers and no corrected record in mbbs_survey_events. Likely source of error: the ebird entry for stop 1 is missing observer information."
-      ))
-      return(TRUE)
+    # confirm that the passed_na_row passed is an NA, if it's not just return and exit this function
+    if (is.na(passed_na_row$observers) == FALSE) {
+      # return("observers not NA") #for testing
+      return(FALSE) # return is correct to use, exit function early.
     }
-    # regardless of if there's an error or not, NA has now been fully evaluated.
-    # return("Other row not NA") #for testing
-    return(invisible(NULL))
+
+    # since the observer of this rocombo is NA,
+    # evaluate if it should be ignored (we're not missing data)
+    # or should throw an error (we're missing data)
+
+    # filter to the na rows in mbbs_county that this rocombo represents
+    na_rows <- mbbs_county %>% # take county df
+      filter(is.na(observers) == TRUE) %>% # filter to the NA rows
+      filter(route_num == passed_na_row$route_num) %>% # filter to the NA rows for this route
+      anti_join(survey_list, join_by(mbbs_county, route_num, year))
+    # only keep any rows with NA observers if that route/year combo is not already
+    # represented on the survey list.
+    # Years where observers == NA, but that are on the survey_list
+    # (and so have an observer) are cut.
+
+    # evaluate if this route has all it's observers on the survey_list
+    if (nrow(na_rows) == 0) {
+      # the NA observer seen on this passed_na_row has been corrected elsewhere,
+      # it's on the survey_list.
+      # return("observers corrected elsewhere") #for testing
+      return(FALSE)
+    } else {
+      # this NA observer is not already on the survey list. This is likely because
+      # (1). It's a new year of data, observers did not propagate to all the rows,
+      # and survey_list gets updated after observer_conversion_table.
+      # (2). It's a year of data where it's not on the survey_list and ALL the
+      # route's 'observers' column are NA
+
+      # filter mbbs_county to evaluate if ANY row of data from this route/year
+      # combo contains an observers value
+      # (and will therefore have been caught in a non-NA rowcombos[i])
+      non_na_rows <- mbbs_county %>% # take the county df
+        filter(year %in% na_rows$year) %>% # filter to the year we've got NA
+        filter(route_num == passed_na_row$route_num) %>% # filter to the route
+        filter(!is.na(observers)) # filter to any rows where obs is NOT NA
+
+      # if there are NO rows in the mbbs where this route/year combo
+      # has a non-NA observer, flag the error
+      if (nrow(non_na_rows) == 0) {
+        print(paste(
+          "ERROR!",
+          na_rows$year,
+          "route",
+          na_rows$route_num,
+          "has only NA values for observers and no corrected record in mbbs_survey_events. Likely source of error: the ebird entry for stop 1 is missing observer information."
+        ))
+        return(TRUE)
+      }
+      # regardless of if there's an error or not, NA has now been fully evaluated.
+      # return("Other row not NA") #for testing
+      return(invisible(NULL))
+    }
   }
-}
 
 
 #' Add any new entries to the mini_observer_conversion_table
@@ -404,7 +406,7 @@ confirm_observer_NA <-
 update_mini_observer_table <- function(
     observer_table = read.csv(system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs"), header = TRUE),
     save = TRUE){
-  
+
   # load the mini observer conversion table (for obs1,obs2,obs3)
   mini_observer_table <-
     read.csv(system.file("/extdata/mini_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
@@ -423,8 +425,8 @@ update_mini_observer_table <- function(
     } else {
       # name is not already on list, take input for the output name
       first_letter <- (str_sub(obs_list[a], start = 1, end = 1))
-      pattern <- paste0("^[", toupper(first_letter), tolower (first_letter), "].*")
-      letter_matches <- str_extract(mini_observer_table$output_name, pattern) 
+      pattern <- paste0("^[", toupper(first_letter), tolower(first_letter), "].*")
+      letter_matches <- str_extract(mini_observer_table$output_name, pattern)
       letter_matches <- unique(letter_matches[!is.na(letter_matches)])
       print("New observer name needs standardizing for the mini_observer_conversion_table:")
       print(obs_list[a])
@@ -443,7 +445,6 @@ update_mini_observer_table <- function(
   # save mini table
   write.csv(mini_observer_table, system.file("/extdata/mini_observer_conversion_table.csv", package = "mbbs"), row.names = FALSE)
   }
-
 }
 
 
@@ -465,8 +466,8 @@ convert_based_on_mini_table <- function(observer_table, mini_observer_table) {
     left_join(mini_observer_table, by = c("obs3" = "input_name")) %>%
     mutate(obs3 = output_name) %>%
     dplyr::select(-output_name)
-  
-  #returns
+
+  # returns
   observer_table
 }
 
