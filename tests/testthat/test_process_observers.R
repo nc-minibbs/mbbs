@@ -10,7 +10,7 @@ test_that("survey_list has no rows with NA observers", {
   )
 })
 
-#load in test cases
+# load in test cases
 mbbs_survey_events <- read.csv("update_survey_events_test_cases.csv", header = TRUE)
 
 test_that("mbbs_survey_events has no rows with NA observers", {
