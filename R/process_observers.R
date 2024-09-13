@@ -138,6 +138,8 @@ update_survey_events <- function() {
   # save survey_events
   save(mbbs_survey_events, file = system.file("data/mbbs_survey_events.rda", package = "mbbs"))
   cat("\nsurvey_events updated")
+  # save a version for testing as well.
+  write.csv(mbbs_survey_events, file = system.file("tests/testthat/update_survey_events_test_cases.csv", package = "mbbs"), row.names = FALSE)
 }
 
 
