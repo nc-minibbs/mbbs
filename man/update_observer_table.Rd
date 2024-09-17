@@ -2,17 +2,21 @@
 % Please edit documentation in R/process_observers.R
 \name{update_observer_table}
 \alias{update_observer_table}
-\title{Interactive program to update the main observer table when new route
-+ observer combos are present}
+\title{Updates the main observer table when new route
++ observer combos are present
+Called from import_data as part of process_obervers() during the processing of new data}
 \usage{
-update_observer_table(mbbs_county, selected_county)
+update_observer_table(mbbs_county, selected_county, save = TRUE)
 }
 \arguments{
 \item{mbbs_county}{mbbs data.frame, must end in and underscore then the name of the county ie: _durham, _orange, _chatham}
 
 \item{selected_county}{county that the observer table should be filtered on}
+
+\item{save}{TRUE if the updated table should be saved. Set to FALSE when testing}
 }
 \description{
-Interactive program to update the main observer table when new route
+Updates the main observer table when new route
 + observer combos are present
+Called from import_data as part of process_obervers() during the processing of new data
 }

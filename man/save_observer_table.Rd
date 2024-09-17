@@ -6,7 +6,7 @@
 \usage{
 save_observer_table(
   observer_table,
-  file = "inst/extdata/main_observer_conversion_table.csv"
+  file = system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs")
 )
 }
 \arguments{

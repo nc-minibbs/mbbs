@@ -2,15 +2,16 @@
 % Please edit documentation in R/process_observers.R
 \name{update_survey_events}
 \alias{update_survey_events}
-\title{Updates survey_list if needed by rbinding the new year,
-  then updates survey_events}
+\title{Updates survey_list if needed by rbinding new and updated surveys,
+  then updates survey_events
+  Called from import_data after updating the data/mbbs.rda files
+  Not part of the process_observers workflow.}
 \usage{
-update_survey_events(envir = parent.frame())
-}
-\arguments{
-\item{envir}{uses the local environment of import_data}
+update_survey_events()
 }
 \description{
-Updates survey_list if needed by rbinding the new year,
+Updates survey_list if needed by rbinding new and updated surveys,
   then updates survey_events
+  Called from import_data after updating the data/mbbs.rda files
+  Not part of the process_observers workflow.
 }

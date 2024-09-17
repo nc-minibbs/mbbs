@@ -83,8 +83,6 @@ prepare_to_process_sp_com <- \(mbbs) {
     filter(is.na(stop_num)) %>%
     # Keep rows that contain at least one number
     filter(str_detect(species_comments, "[0-9]")) %>%
-    # Remove pre-dawn owling checklist
-    filter(sub_id != "S46296942") %>%
     mutate(species_comments = fix_species_comments(species_comments)) %>%
     # Remove rows that were changed to have blank species_comments
     filter(species_comments != "") %>%

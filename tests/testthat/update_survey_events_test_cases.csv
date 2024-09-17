@@ -1,0 +1,786 @@
+"mbbs_county","route_num","year","S","N","observers","month","day","primary_observer","obs1","obs2","obs3","standardized_observers","obs1_quality","obs1_nsurveys","obs2_quality","obs2_nsurveys","obs3_quality","obs3_nsurveys","observer_quality","max_qual_observer","observer_ID"
+"chatham",1,2000,34,220,"Patricia Bailey and Marsha Stephens",6,11,"Patsy Bailey","Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey",-0.00108830919496879,28,-0.14424950185068,34,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2001,48,337,"Patricia Bailey and Marsha Stephens",6,9,"Patsy Bailey","Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey",-0.00108830919496879,28,-0.14424950185068,34,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2002,47,373,"Marsha Stephens and Patsy Bailey",6,9,"Patsy Bailey","Marsha Stephens","Patsy Bailey",NA,"Marsha Stephens, Patsy Bailey",-0.14424950185068,34,-0.00108830919496879,28,NA,NA,-0.00108830919496879,2,48
+"chatham",1,2003,48,374,"Patsy Bailey and Marsha Stephens",6,9,"Patsy Bailey","Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey",-0.00108830919496879,28,-0.14424950185068,34,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2004,37,210,"Patsy Bailey and Marsha Stephens",6,13,"Patsy Bailey","Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey",-0.00108830919496879,28,-0.14424950185068,34,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2005,41,250,"Patsy Bailey and Marsha Stephens",6,19,"Patsy Bailey","Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey",-0.00108830919496879,28,-0.14424950185068,34,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2006,41,300,"Patsy Bailey and Marsha Stephens",6,18,"Patsy Bailey","Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey",-0.00108830919496879,28,-0.14424950185068,34,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2007,44,283,"Patsy Bailey",6,17,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2008,47,284,"Patsy Bailey",5,25,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2009,36,181,"Patsy Bailey",6,11,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2010,40,251,"Patsy Bailey",6,5,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2011,50,246,"Patsy Bailey, Norman Budnitz",6,5,"Norman Budnitz","Patsy Bailey","Norman Budnitz",NA,"Norman Budnitz, Patsy Bailey",-0.00108830919496879,28,0.0198821801563299,68,NA,NA,0.0198821801563299,2,46
+"chatham",1,2012,45,392,"Patsy Bailey",6,3,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2013,44,294,"Patsy Bailey",5,26,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2014,43,288,"Patsy Bailey",5,26,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2015,47,272,"Patsy Bailey",5,17,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2016,34,204,"Patsy Bailey",5,22,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2017,47,266,"Patsy Bailey",6,4,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2018,40,214,"Patsy Bailey",5,28,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2019,41,235,"Patsy Bailey",5,27,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2020,39,213,"Patsy Bailey",5,25,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2021,44,248,"Patsy Bailey",6,6,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2022,39,239,"Patsy Bailey",5,22,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2023,33,146,"Patsy Bailey",5,28,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",1,2024,42,192,"Patsy Bailey",6,16,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"chatham",2,2000,45,297,"Norm Budnitz & Mike Schultz",5,28,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2001,51,347,"Norm Budnitz & Mike Schultz",6,3,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2002,52,327,"Norm Budnitz & Mike Schultz",5,26,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2003,40,291,"Norm Budnitz & Mike Schultz",6,11,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2004,51,269,"Norm Budnitz and Mike Schultz",5,23,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2005,54,299,"Norm Budnitz and Mike Schultz",5,22,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2006,48,245,"Norm Budnitz and Mike Schultz",6,13,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2007,43,302,"Norm Budnitz and Mike Schultz",5,20,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2008,51,305,"Norm Budnitz and Mike Schultz",5,25,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2009,47,299,"Norm Budnitz and Mike Schultz",5,31,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2010,45,264,"N. Budnitz, M. Schultz",6,20,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2011,53,274,"Norm Budnitz, Mike Schultz",5,15,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2012,53,337,"Norm Budnitz, Mike Schultz",5,20,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2013,46,262,"Norman Budnitz, Mike Schultz",6,19,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2014,43,291,"Norman Budnitz, Mike Schultz",6,15,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2015,45,261,"Norman Budnitz, Mike Schultz",5,17,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2016,57,288,"Norman Budnitz, Mike Schultz",5,15,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2017,48,284,"Norman Budnitz, Mike Schultz",5,29,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2018,53,302,"Norman Budnitz, Mike Schultz",5,27,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2019,48,299,"Norman Budnitz, Mike Schultz, Karen Hogan",5,19,"Norman Budnitz","Norman Budnitz","Michael Schultz","Karen Hogan","Karen Hogan, Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,0.00854025787807335,14,0.0198821801563299,1,46
+"chatham",2,2020,52,444,"Norm Budnitz",5,25,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"chatham",2,2021,43,230,"Norm Budnitz, Mike Schultz",5,16,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2022,43,214,"Norm Budnitz, Mike Schultz",5,29,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2023,40,157,"Norm Budnitz, Mike Schultz",5,27,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"chatham",2,2024,46,201,"Mike Schultz, Norm Budnitz",5,25,"Norman Budnitz","Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz",-0.00814426384768592,63,0.0198821801563299,68,NA,NA,0.0198821801563299,2,46
+"chatham",3,2000,48,261,"Haven and Minna Wiley",6,3,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2001,48,228,"Haven and Minna Wiley",6,10,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2002,49,253,"Haven and Minna Wiley",6,2,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2003,42,251,"Haven and Minna Wiley",6,8,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2004,44,248,"Haven and Minna Wiley",5,31,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2005,49,325,"Haven and Minna Wiley",5,15,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2006,40,237,"Haven and Minna Wiley",6,18,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2007,44,230,"Haven and Minna Wiley (6-10-2007 and 6-14-2007)",6,17,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2008,41,235,"Haven and Minna Wiley",6,15,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2009,44,381,"Haven and Minna Wiley",6,21,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2010,47,248,"Haven Wiley",5,30,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2011,46,251,"Haven Wiley",6,18,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2012,49,257,"Haven Wiley",6,3,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2013,42,218,"Haven Wiley",6,9,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2014,41,244,"Haven Wiley",6,15,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2015,39,211,"Haven Wiley",5,17,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2016,41,229,"Haven Wiley",6,5,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2017,37,186,"Haven Wiley",6,4,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2018,38,186,"Haven Wiley",6,3,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2019,41,216,"Haven Wiley",6,9,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2020,46,277,"Haven Wiley, Minna Wiley",5,25,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2021,40,187,"Haven Wiley, Minna Wiley",6,13,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2022,38,178,"Haven Wiley, Minna Wiley",6,5,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2023,38,153,"Haven Wiley, Minna Wiley",6,25,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",3,2024,39,163,"Haven Wiley, Minna Wiley",6,9,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",4,2000,46,292,"Michael and Lois Schultz",6,11,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2001,46,257,"Michael and Lois Schultz",6,10,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2002,44,302,"Michael and Lois Schultz",5,27,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2003,41,239,"Michael and Lois Schultz",6,8,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2004,44,252,"Michael and Lois Schultz",6,13,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2005,52,279,"Michael and Lois Schultz",5,30,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2006,46,293,"Michael and Lois Schultz",6,18,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2007,50,299,"Michael and Lois Schultz",5,28,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2008,51,278,"M. Schultz, L. Schultz",5,18,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2009,52,288,"M. Schultz, L. Schultz",6,7,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2010,45,250,"M. Schultz, L. Schultz",6,1,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2011,45,255,"Michael Schultz",5,28,"Michael Schultz","Michael Schultz",NA,NA,"Michael Schultz",-0.00814426384768592,63,NA,NA,NA,NA,-0.00814426384768592,1,41
+"chatham",4,2012,46,297,"Mike Schultz, Lois Schultz",5,28,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2013,44,286,"Mike Schultz, Lois Schultz",5,26,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2014,45,282,"Mike Schultz, Lois Schultz",5,25,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2015,45,263,"Schultz, Michael",5,25,"Michael Schultz","Michael Schultz",NA,NA,"Michael Schultz",-0.00814426384768592,63,NA,NA,NA,NA,-0.00814426384768592,1,41
+"chatham",4,2016,41,212,"M. Schultz, L. Schultz",6,14,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2017,38,208,"M. Schultz, L. Schultz",6,4,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2018,41,219,"M. Schultz, L. Schultz",5,31,"Lois Schultz","Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz",-0.00814426384768592,63,0.000810241451952682,17,NA,NA,0.000810241451952682,2,35
+"chatham",4,2019,45,223,"M. Schultz, K. Hogan",6,2,"Karen Hogan","Michael Schultz","Karen Hogan",NA,"Karen Hogan, Michael Schultz",-0.00814426384768592,63,0.00854025787807335,14,NA,NA,0.00854025787807335,2,29
+"chatham",4,2020,48,208,"Michael Schultz",5,25,"Michael Schultz","Michael Schultz",NA,NA,"Michael Schultz",-0.00814426384768592,63,NA,NA,NA,NA,-0.00814426384768592,1,41
+"chatham",4,2021,39,222,"Mike Schultz, Norm Budnitz",6,1,"Norman Budnitz","Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz",-0.00814426384768592,63,0.0198821801563299,68,NA,NA,0.0198821801563299,2,46
+"chatham",4,2022,45,231," Mike Schultz, Norm Budnitz",5,23,"Norman Budnitz","Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz",-0.00814426384768592,63,0.0198821801563299,68,NA,NA,0.0198821801563299,2,46
+"chatham",4,2023,48,207,"Mike Schultz, Norm Budnitz",5,26,"Norman Budnitz","Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz",-0.00814426384768592,63,0.0198821801563299,68,NA,NA,0.0198821801563299,2,46
+"chatham",4,2024,48,216,"Mike Schultz, Norm Budnitz",5,24,"Norman Budnitz","Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz",-0.00814426384768592,63,0.0198821801563299,68,NA,NA,0.0198821801563299,2,46
+"chatham",5,2000,42,264,"Jeff Pippen and Julie Rice",6,16,"Jeff Pippen","Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice",0.12031185358827,21,-0.00336877120594413,7,NA,NA,0.12031185358827,1,24
+"chatham",5,2001,46,278,"Jeff Pippen and Julie Rice",5,30,"Jeff Pippen","Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice",0.12031185358827,21,-0.00336877120594413,7,NA,NA,0.12031185358827,1,24
+"chatham",5,2002,43,315,"Haven and Minna Wiley",5,27,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",5,2003,43,299,"Haven and Minna Wiley",6,29,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",5,2004,41,278,"Haven and Minna Wiley",6,6,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",5,2005,39,288,"Haven and Minna Wiley",6,26,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",5,2006,51,483,"Tom Driscoll, Colyer Durovich, and Marsha Stephens",6,10,"Tom Driscoll","Tom Driscoll","Colyer Durovich","Marsha Stephens","Colyer Durovich, Marsha Stephens, Tom Driscoll",0.266884457576338,43,0.191190706679574,2,-0.14424950185068,34,0.266884457576338,1,61
+"chatham",5,2007,44,471,"Tom Driscoll",6,24,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",5,2008,44,359,"Tom Driscoll",6,8,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",5,2009,54,555,"Tom Driscoll and Marsha Stephens",6,14,"Tom Driscoll","Tom Driscoll","Marsha Stephens",NA,"Marsha Stephens, Tom Driscoll",0.266884457576338,43,-0.14424950185068,34,NA,NA,0.266884457576338,1,61
+"chatham",5,2010,56,714,"Marsha Tuttle, Thomas Driscoll, Colyer Durovich",6,5,"Marsha Tuttle","Marsha Tuttle","Tom Driscoll","Colyer Durovich","Colyer Durovich, Marsha Tuttle, Tom Driscoll",0.316738158382262,3,0.266884457576338,43,0.191190706679574,2,0.316738158382262,1,40
+"chatham",5,2011,50,532,"Tom Driscoll",6,4,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",5,2012,48,480,"Tom Driscoll",5,27,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",5,2013,53,530,"tom driscoll",5,26,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",5,2014,41,485,"tom driscoll",6,21,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",5,2015,45,500,"tom driscoll, Vern Bothwell",6,16,"Tom Driscoll","Tom Driscoll","Vern Bothwell",NA,"Tom Driscoll, Vern Bothwell",0.266884457576338,43,-0.213187190515777,4,NA,NA,0.266884457576338,1,61
+"chatham",5,2016,47,368,"driscoll, tom",6,3,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",5,2017,38,350,"Tom Driscoll, Edison Buenano",5,21,"Tom Driscoll","Tom Driscoll","Edison Buenano",NA,"Edison Buenano, Tom Driscoll",0.266884457576338,43,-0.172413793103448,1,NA,NA,0.266884457576338,1,61
+"chatham",5,2018,42,446,"tom driscoll",6,2,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",5,2019,42,325,"tom driscoll",5,27,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",5,2020,45,284,"tom driscoll, Elizabeth Keating",5,27,"Tom Driscoll","Tom Driscoll","Elizabeth Keating",NA,"Elizabeth Keating, Tom Driscoll",0.266884457576338,43,0.059939796131037,4,NA,NA,0.266884457576338,1,61
+"chatham",5,2021,43,285,"Tom Driscoll",5,31,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",5,2022,49,256,"tom driscoll",6,4,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",5,2023,49,296,"tom driscoll",6,3,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",5,2024,45,267,"tom driscoll",6,15,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",6,2000,37,333,"Cynthia Fox and Marsha Stephens",6,24,"Marsha Stephens","Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens",-0.148663101604278,10,-0.14424950185068,34,NA,NA,-0.14424950185068,2,39
+"chatham",6,2001,44,367,"Cynthia Fox and Marsha Stephens",6,16,"Marsha Stephens","Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens",-0.148663101604278,10,-0.14424950185068,34,NA,NA,-0.14424950185068,2,39
+"chatham",6,2002,47,288,"Cynthia Fox and Marsha Stephens",6,23,"Marsha Stephens","Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens",-0.148663101604278,10,-0.14424950185068,34,NA,NA,-0.14424950185068,2,39
+"chatham",6,2003,30,237,"Cynthia Fox and Marsha Stephens",7,6,"Marsha Stephens","Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens",-0.148663101604278,10,-0.14424950185068,34,NA,NA,-0.14424950185068,2,39
+"chatham",6,2004,23,201,"Cynthia Fox and Marsha Stephens",6,20,"Marsha Stephens","Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens",-0.148663101604278,10,-0.14424950185068,34,NA,NA,-0.14424950185068,2,39
+"chatham",6,2005,47,382,"Cynthia Fox and Marsha Stephens",6,1,"Marsha Stephens","Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens",-0.148663101604278,10,-0.14424950185068,34,NA,NA,-0.14424950185068,2,39
+"chatham",6,2006,44,308,"Cynthia Fox and Marsha Stephens",6,11,"Marsha Stephens","Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens",-0.148663101604278,10,-0.14424950185068,34,NA,NA,-0.14424950185068,2,39
+"chatham",6,2007,34,272,"Cynthia Fox and Marsha Stephens",6,17,"Marsha Stephens","Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens",-0.148663101604278,10,-0.14424950185068,34,NA,NA,-0.14424950185068,2,39
+"chatham",6,2008,44,309,"Cynthia Fox and Marsha Stephens",6,1,"Marsha Stephens","Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens",-0.148663101604278,10,-0.14424950185068,34,NA,NA,-0.14424950185068,2,39
+"chatham",6,2009,48,355,"Cynthia Fox and Marsha Stephens",6,21,"Marsha Stephens","Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens",-0.148663101604278,10,-0.14424950185068,34,NA,NA,-0.14424950185068,2,39
+"chatham",6,2010,56,663,"Marsha Tuttle, Thomas Driscoll, Laurie Kucharik",6,20,"Laurie Kucharik","Marsha Tuttle","Tom Driscoll","Laurie Kucharik","Laurie Kucharik, Marsha Tuttle, Tom Driscoll",0.316738158382262,3,0.266884457576338,43,0.3551810383114,2,0.3551810383114,3,33
+"chatham",6,2018,51,330,"Roger Shaw",6,10,"Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw",0.0868382388701524,11,NA,NA,NA,NA,0.0868382388701524,1,53
+"chatham",6,2019,41,264,"Roger Shaw",6,29,"Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw",0.0868382388701524,11,NA,NA,NA,NA,0.0868382388701524,1,53
+"chatham",6,2020,42,293,"Roger Shaw",6,7,"Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw",0.0868382388701524,11,NA,NA,NA,NA,0.0868382388701524,1,53
+"chatham",6,2021,43,289,"Roger Shaw",6,15,"Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw",0.0868382388701524,11,NA,NA,NA,NA,0.0868382388701524,1,53
+"chatham",6,2022,53,278,"Roger Shaw",6,6,"Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw",0.0868382388701524,11,NA,NA,NA,NA,0.0868382388701524,1,53
+"chatham",6,2023,44,281,"Roger Shaw",6,3,"Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw",0.0868382388701524,11,NA,NA,NA,NA,0.0868382388701524,1,53
+"chatham",6,2024,44,267,"Roger Shaw",5,19,"Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw",0.0868382388701524,11,NA,NA,NA,NA,0.0868382388701524,1,53
+"chatham",7,2000,43,267,"Will Cook",6,18,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2001,54,323,"Will Cook",6,16,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2002,49,325,"Will Cook",6,8,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2003,44,317,"Will Cook",6,28,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2004,47,332,"Will Cook",6,19,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2005,51,316,"Will Cook",7,9,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2006,44,245,"Will Cook",6,24,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2007,42,293,"Will Cook",6,23,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2008,52,302,"Will Cook",6,8,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2009,52,321,"Will Cook",6,28,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2010,51,264,"Will Cook, Catherine Carter",6,13,"Will Cook","Will Cook","Catherine Carter",NA,"Catherine Carter, Will Cook",0.0497144344661238,60,7.61337486274727e-05,3,NA,NA,0.0497144344661238,1,65
+"chatham",7,2011,43,297,"Will Cook, Lesley Starke",6,19,"Will Cook","Will Cook","Lesley Starke",NA,"Lesley Starke, Will Cook",0.0497144344661238,60,0.0262588816805684,3,NA,NA,0.0497144344661238,1,65
+"chatham",7,2012,54,347,"Will Cook, Lesley Starke",6,9,"Will Cook","Will Cook","Lesley Starke",NA,"Lesley Starke, Will Cook",0.0497144344661238,60,0.0262588816805684,3,NA,NA,0.0497144344661238,1,65
+"chatham",7,2013,54,330,"Will Cook, Lesley Starke",6,9,"Will Cook","Will Cook","Lesley Starke",NA,"Lesley Starke, Will Cook",0.0497144344661238,60,0.0262588816805684,3,NA,NA,0.0497144344661238,1,65
+"chatham",7,2014,48,303,"Will Cook",7,13,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2015,50,295,"Will Cook",6,27,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2016,50,341,"Will Cook",6,19,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2017,48,328,"Will Cook",7,2,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2018,52,298,"Will Cook",6,16,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2019,55,337,"Will Cook",6,15,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2020,52,320,"Will Cook",6,28,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2021,44,237,"Will Cook",6,27,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2022,52,300,"Will Cook",6,26,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2023,49,281,"Will Cook",6,18,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",7,2024,50,328,"Will Cook",6,16,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",8,2000,43,322,"Judy Murray and Marty Girolami",6,18,"Judy Murray","Judy Murray","Martha Girolami",NA,"Judy Murray, Martha Girolami",-0.13222845146819,53,-0.141914191419142,18,NA,NA,-0.13222845146819,1,28
+"chatham",8,2001,45,399,"Judy Murray and Marty Girolami",6,10,"Judy Murray","Judy Murray","Martha Girolami",NA,"Judy Murray, Martha Girolami",-0.13222845146819,53,-0.141914191419142,18,NA,NA,-0.13222845146819,1,28
+"chatham",8,2002,45,333,"Judy Murray and Marty Girolami",6,18,"Judy Murray","Judy Murray","Martha Girolami",NA,"Judy Murray, Martha Girolami",-0.13222845146819,53,-0.141914191419142,18,NA,NA,-0.13222845146819,1,28
+"chatham",8,2003,42,342,"Judy Murray and Marty Girolami",6,22,"Judy Murray","Judy Murray","Martha Girolami",NA,"Judy Murray, Martha Girolami",-0.13222845146819,53,-0.141914191419142,18,NA,NA,-0.13222845146819,1,28
+"chatham",8,2004,37,262,"Marty Girolami and Judy Murray",6,27,"Judy Murray","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami",-0.141914191419142,18,-0.13222845146819,53,NA,NA,-0.13222845146819,2,28
+"chatham",8,2005,44,230,"Marty Girolami and Judy Murray",6,26,"Judy Murray","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami",-0.141914191419142,18,-0.13222845146819,53,NA,NA,-0.13222845146819,2,28
+"chatham",8,2006,42,272,"Marty Girolami, Pat Reid, and Judy Murray",6,18,"Pat Reid","Martha Girolami","Pat Reid","Judy Murray","Judy Murray, Martha Girolami, Pat Reid",-0.141914191419142,18,-0.0866388308977036,3,-0.13222845146819,53,-0.0866388308977036,2,47
+"chatham",8,2007,42,240,"Marty Girolami and Judy Murray",6,17,"Judy Murray","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami",-0.141914191419142,18,-0.13222845146819,53,NA,NA,-0.13222845146819,2,28
+"chatham",8,2008,44,296,"Marty Girolami and Judy Murray",6,15,"Judy Murray","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami",-0.141914191419142,18,-0.13222845146819,53,NA,NA,-0.13222845146819,2,28
+"chatham",8,2009,47,268,"Marty Girolami and Judy Murray",5,17,"Judy Murray","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami",-0.141914191419142,18,-0.13222845146819,53,NA,NA,-0.13222845146819,2,28
+"chatham",8,2010,43,266,"M. Girolami, P. Reid, J. Murray",6,6,"Pat Reid","Martha Girolami","Pat Reid","Judy Murray","Judy Murray, Martha Girolami, Pat Reid",-0.141914191419142,18,-0.0866388308977036,3,-0.13222845146819,53,-0.0866388308977036,2,47
+"chatham",8,2011,48,238,"Martha Girolami, Judy Murray",5,29,"Judy Murray","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami",-0.141914191419142,18,-0.13222845146819,53,NA,NA,-0.13222845146819,2,28
+"chatham",8,2012,46,302,"Martha Girolami, Judy Murray",6,17,"Judy Murray","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami",-0.141914191419142,18,-0.13222845146819,53,NA,NA,-0.13222845146819,2,28
+"chatham",8,2013,41,217,"Martha Girolami, Judy Murray",6,30,"Judy Murray","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami",-0.141914191419142,18,-0.13222845146819,53,NA,NA,-0.13222845146819,2,28
+"chatham",8,2014,49,250,"Martha Girolami, Judy Murray",5,25,"Judy Murray","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami",-0.141914191419142,18,-0.13222845146819,53,NA,NA,-0.13222845146819,2,28
+"chatham",8,2015,41,241,"Martha Girolami, Judy Murray",5,24,"Judy Murray","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami",-0.141914191419142,18,-0.13222845146819,53,NA,NA,-0.13222845146819,2,28
+"chatham",8,2016,41,201,"Martha Girolami, Judy Murray",6,5,"Judy Murray","Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami",-0.141914191419142,18,-0.13222845146819,53,NA,NA,-0.13222845146819,2,28
+"chatham",8,2017,40,220,"Martha Girolami, Pat Reid and Judy Murray",6,11,"Pat Reid","Martha Girolami","Pat Reid","Judy Murray","Judy Murray, Martha Girolami, Pat Reid",-0.141914191419142,18,-0.0866388308977036,3,-0.13222845146819,53,-0.0866388308977036,2,47
+"chatham",8,2019,52,361,"Nan Dewire and Fleeta Wilkinson",6,23,"Fleeta Chauvigne","Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire",0.1478621168618,9,0.15526277717088,8,NA,NA,0.15526277717088,2,18
+"chatham",8,2020,45,243,"Nan Dewire and Fleeta Chauvigne",6,14,"Fleeta Chauvigne","Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire",0.1478621168618,9,0.15526277717088,8,NA,NA,0.15526277717088,2,18
+"chatham",8,2021,48,313,"Nan Dewire and fleeta Chauvigne",5,31,"Fleeta Chauvigne","Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire",0.1478621168618,9,0.15526277717088,8,NA,NA,0.15526277717088,2,18
+"chatham",8,2022,55,360,"Nan Dewire and Fleeta Chauvigne",5,29,"Fleeta Chauvigne","Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire",0.1478621168618,9,0.15526277717088,8,NA,NA,0.15526277717088,2,18
+"chatham",8,2023,51,260," Nan Dewire and Fleeta Chauvigne",5,21,"Fleeta Chauvigne","Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire",0.1478621168618,9,0.15526277717088,8,NA,NA,0.15526277717088,2,18
+"chatham",8,2024,52,338,"Nan Dewire, Fleeta Chauvigne",6,2,"Fleeta Chauvigne","Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire",0.1478621168618,9,0.15526277717088,8,NA,NA,0.15526277717088,2,18
+"chatham",9,2000,47,256,"Shelley Theye and Lee Van Malssen",5,24,"Lee Van Malssen","Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye",0,24,0.0220746590093324,7,NA,NA,0.0220746590093324,2,34
+"chatham",9,2001,54,504,"Shelley Theye and Lee Van Malssen",6,16,"Lee Van Malssen","Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye",0,24,0.0220746590093324,7,NA,NA,0.0220746590093324,2,34
+"chatham",9,2002,52,339,"Shelley Theye and Lee Van Malssen",6,16,"Lee Van Malssen","Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye",0,24,0.0220746590093324,7,NA,NA,0.0220746590093324,2,34
+"chatham",9,2003,54,427,"Shelley Theye and Lee Van Malssen",6,22,"Lee Van Malssen","Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye",0,24,0.0220746590093324,7,NA,NA,0.0220746590093324,2,34
+"chatham",9,2005,53,339,"S. Theye",6,19,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2006,49,341,"Shelley Theye and Marsha Sephens",6,24,"Shelley Theye","Shelley Theye","Marsha Stephens",NA,"Marsha Stephens, Shelley Theye",0,24,-0.14424950185068,34,NA,NA,0,1,57
+"chatham",9,2007,47,357,"S. Theye",6,24,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2008,51,421,"S. Theye",6,5,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2009,45,455,"S. Theye",6,27,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2010,49,378,"S. Theye",6,20,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2011,49,345,"S. Theye",7,2,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2012,44,210,"S. Theye",6,17,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2013,48,230,"S. Theye",6,16,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2014,47,361,"S. Theye",6,22,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2015,43,322,"S. Theye",6,30,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2016,46,316,"S. Theye",6,19,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2017,45,300,"S. Theye, L. Van Malssen",6,25,"Lee Van Malssen","Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye",0,24,0.0220746590093324,7,NA,NA,0.0220746590093324,2,34
+"chatham",9,2018,45,362,"S. Theye",6,17,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2019,49,287,"S. Theye",6,23,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2020,44,302,"S. Theye",6,20,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2021,36,223,"Shelley Theye, Lee Van Malssen",6,20,"Lee Van Malssen","Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye",0,24,0.0220746590093324,7,NA,NA,0.0220746590093324,2,34
+"chatham",9,2022,47,280,"Shelley Theye, Lee Van Malssen",6,19,"Lee Van Malssen","Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye",0,24,0.0220746590093324,7,NA,NA,0.0220746590093324,2,34
+"chatham",9,2023,43,267,"Shelley Theye",6,11,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",9,2024,44,254,"Shelley Theye",6,25,"Shelley Theye","Shelley Theye",NA,NA,"Shelley Theye",0,24,NA,NA,NA,NA,0,1,57
+"chatham",10,2000,43,304,"Sue Brady",6,17,"Sue Brady","Sue Brady",NA,NA,"Sue Brady",0.0269989615784008,1,NA,NA,NA,NA,0.0269989615784008,1,59
+"chatham",10,2001,51,275,"Will Cook",6,23,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"chatham",10,2002,49,246,"Brian Strong",6,16,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2003,41,169,"Brian Strong",6,22,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2004,42,200,"Brian Strong",6,13,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2005,40,166,"Brian Strong",6,19,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2006,33,137,"Brian Strong",6,24,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2007,38,164,"Brian Strong",6,24,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2008,46,156,"Brian Strong",6,1,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2009,37,143,"Brian Strong",6,21,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2010,35,156,"Brian Strong",6,20,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2011,47,186,"Brian Strong",6,19,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2012,41,209,"Brian Strong",6,17,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2013,40,168,"Brian Strong",6,23,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2015,31,135,"Brian Strong",6,27,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2016,40,169,"Brian Strong",6,26,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2017,45,222,"Brian Strong",6,18,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2018,44,178,"Brian Strong",6,24,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2019,37,155,"Brian Strong",6,25,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2020,39,161,"Brian Strong",6,29,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2021,42,148,"Brian Strong",6,20,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2022,46,188,"Brian Strong",6,24,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"chatham",10,2023,48,251,"Fleeta Chauvigne, Mark Montazer",6,4,"Mark Montazer","Fleeta Chauvigne","Mark Montazer",NA,"Fleeta Chauvigne, Mark Montazer",0.15526277717088,8,0.200661521499449,2,NA,NA,0.200661521499449,2,38
+"chatham",10,2024,51,317,"Fleeta Wilkinson Chauvigné, Mark Montazer, Nan DeWire",6,9,"Fleeta Wilkinson","Fleeta Wilkinson","Mark Montazer","Nan Dewire","Fleeta Wilkinson, Mark Montazer, Nan Dewire",0.228272251308901,1,0.200661521499449,2,0.1478621168618,9,0.200661521499449,1,19
+"chatham",11,2000,35,199,"M. Graves and B. Chase",5,27,"Bob Chase","M. Graves","Bob Chase",NA,"Bob Chase, M. Graves",-0.164362519201229,2,-0.156985871271586,14,NA,NA,-0.156985871271586,2,8
+"chatham",11,2001,33,208,"M. Graves and B. Chase",6,17,"Bob Chase","M. Graves","Bob Chase",NA,"Bob Chase, M. Graves",-0.164362519201229,2,-0.156985871271586,14,NA,NA,-0.156985871271586,2,8
+"chatham",11,2002,37,233,"Bob Chase",6,29,"Bob Chase","Bob Chase",NA,NA,"Bob Chase",-0.156985871271586,14,NA,NA,NA,NA,-0.156985871271586,1,8
+"chatham",11,2003,37,233,"Bob Chase",6,6,"Bob Chase","Bob Chase",NA,NA,"Bob Chase",-0.156985871271586,14,NA,NA,NA,NA,-0.156985871271586,1,8
+"chatham",11,2005,43,222,"Bob Chase",6,1,"Bob Chase","Bob Chase",NA,NA,"Bob Chase",-0.156985871271586,14,NA,NA,NA,NA,-0.156985871271586,1,8
+"chatham",11,2006,48,258,"Bob Chase",5,17,"Bob Chase","Bob Chase",NA,NA,"Bob Chase",-0.156985871271586,14,NA,NA,NA,NA,-0.156985871271586,1,8
+"chatham",11,2007,49,292,"Bob Chase",5,24,"Bob Chase","Bob Chase",NA,NA,"Bob Chase",-0.156985871271586,14,NA,NA,NA,NA,-0.156985871271586,1,8
+"chatham",11,2008,47,256,"Bob Chase",5,20,"Bob Chase","Bob Chase",NA,NA,"Bob Chase",-0.156985871271586,14,NA,NA,NA,NA,-0.156985871271586,1,8
+"chatham",11,2009,40,214,"Bob Chase",5,25,"Bob Chase","Bob Chase",NA,NA,"Bob Chase",-0.156985871271586,14,NA,NA,NA,NA,-0.156985871271586,1,8
+"chatham",11,2010,38,212,"Bob Chase",6,11,"Bob Chase","Bob Chase",NA,NA,"Bob Chase",-0.156985871271586,14,NA,NA,NA,NA,-0.156985871271586,1,8
+"chatham",11,2011,37,210,"Bob Chase",6,12,"Bob Chase","Bob Chase",NA,NA,"Bob Chase",-0.156985871271586,14,NA,NA,NA,NA,-0.156985871271586,1,8
+"chatham",11,2012,32,180,"Bob Chase",6,16,"Bob Chase","Bob Chase",NA,NA,"Bob Chase",-0.156985871271586,14,NA,NA,NA,NA,-0.156985871271586,1,8
+"chatham",11,2013,34,135,"Bob Chase",6,19,"Bob Chase","Bob Chase",NA,NA,"Bob Chase",-0.156985871271586,14,NA,NA,NA,NA,-0.156985871271586,1,8
+"chatham",11,2016,27,108,"Bob Chase",5,29,"Bob Chase","Bob Chase",NA,NA,"Bob Chase",-0.156985871271586,14,NA,NA,NA,NA,-0.156985871271586,1,8
+"chatham",11,2020,43,162,"Nathan Howell",6,25,"Nathan Howell","Nathan Howell",NA,NA,"Nathan Howell",0.0813609467455621,1,NA,NA,NA,NA,0.0813609467455621,1,43
+"chatham",11,2022,44,231,"Allen Hurlbert",5,29,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"chatham",11,2023,47,210,"Allen Hurlbert",6,4,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"chatham",11,2024,48,266," Allen Hurlbert, Ivara Goulden",6,9,"Ivara Goulden","Allen Hurlbert","Ivara Goulden",NA,"Allen Hurlbert, Ivara Goulden",0.0232681353687694,18,0.216095380029806,1,NA,NA,0.0232681353687694,2,22
+"chatham",12,2000,38,295,"Kate Finlayson and Chris Canfield",6,18,"Kate Finlayson","Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson",0.257663035888842,21,-0.0374999999999999,10,NA,NA,0.257663035888842,1,31
+"chatham",12,2001,41,228,"Kate Finlayson and Chris Canfield",6,10,"Kate Finlayson","Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson",0.257663035888842,21,-0.0374999999999999,10,NA,NA,0.257663035888842,1,31
+"chatham",12,2002,47,283,"Kate Finlayson and Chris Canfield",6,23,"Kate Finlayson","Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson",0.257663035888842,21,-0.0374999999999999,10,NA,NA,0.257663035888842,1,31
+"chatham",12,2003,47,248,"Kate Finlayson and Chris Canfield",6,21,"Kate Finlayson","Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson",0.257663035888842,21,-0.0374999999999999,10,NA,NA,0.257663035888842,1,31
+"chatham",12,2004,42,265,"Chris Canfield and Kate Finlayson",6,13,"Kate Finlayson","Chris Canfield","Kate Finlayson",NA,"Chris Canfield, Kate Finlayson",-0.0374999999999999,10,0.257663035888842,21,NA,NA,0.257663035888842,2,31
+"chatham",12,2005,46,306,"Chris Canfield and Kate Finlayson",6,12,"Kate Finlayson","Chris Canfield","Kate Finlayson",NA,"Chris Canfield, Kate Finlayson",-0.0374999999999999,10,0.257663035888842,21,NA,NA,0.257663035888842,2,31
+"chatham",12,2006,47,290,"Chris Canfield and Kate Finlayson",6,18,"Kate Finlayson","Chris Canfield","Kate Finlayson",NA,"Chris Canfield, Kate Finlayson",-0.0374999999999999,10,0.257663035888842,21,NA,NA,0.257663035888842,2,31
+"chatham",12,2007,50,269,"Kate Finlayson and Chris Canfield",6,17,"Kate Finlayson","Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson",0.257663035888842,21,-0.0374999999999999,10,NA,NA,0.257663035888842,1,31
+"chatham",12,2008,47,257,"Kate Finlayson and Chris Canfield",6,15,"Kate Finlayson","Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson",0.257663035888842,21,-0.0374999999999999,10,NA,NA,0.257663035888842,1,31
+"chatham",12,2009,46,215,"Kate Finlayson and Chris Canfield",5,31,"Kate Finlayson","Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson",0.257663035888842,21,-0.0374999999999999,10,NA,NA,0.257663035888842,1,31
+"chatham",12,2017,48,340,"tom driscoll, Elizabeth Keating",6,25,"Tom Driscoll","Tom Driscoll","Elizabeth Keating",NA,"Elizabeth Keating, Tom Driscoll",0.266884457576338,43,0.059939796131037,4,NA,NA,0.266884457576338,1,61
+"chatham",12,2019,50,310,"tom driscoll, Fleeta Wilkinson",6,20,"Tom Driscoll","Tom Driscoll","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Tom Driscoll",0.266884457576338,43,0.15526277717088,8,NA,NA,0.266884457576338,1,61
+"chatham",12,2020,47,354,"tom driscoll, Elizabeth Keating",6,7,"Tom Driscoll","Tom Driscoll","Elizabeth Keating",NA,"Elizabeth Keating, Tom Driscoll",0.266884457576338,43,0.059939796131037,4,NA,NA,0.266884457576338,1,61
+"chatham",12,2021,42,307,"Tom Driscoll",6,2,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",12,2022,45,250," tom driscoll",6,12,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",12,2023,46,204,"tom driscoll",5,27,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",12,2024,50,260,"tom driscoll",6,5,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",13,2000,40,320,"Marsha Stephens and Patsy Bailey",7,2,"Patsy Bailey","Marsha Stephens","Patsy Bailey",NA,"Marsha Stephens, Patsy Bailey",-0.14424950185068,34,-0.00108830919496879,28,NA,NA,-0.00108830919496879,2,48
+"chatham",13,2001,30,285,"Marsha Stephens",7,7,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"chatham",13,2002,25,327,"Marsha Stephens",6,30,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"chatham",13,2003,21,230,"Marsha Stephens",6,29,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"chatham",13,2004,23,273,"Marsha Stephens",6,27,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"chatham",13,2005,19,134,"Marsha Stephens",6,13,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"chatham",13,2006,23,140,"JA and HS",6,24,"JA","JA","HS",NA,"HS, JA",-0.441295546558704,1,-0.441295546558704,1,NA,NA,-0.441295546558704,1,23
+"chatham",13,2007,44,289,"Haven and Minna Wiley",7,15,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"chatham",13,2008,43,322,"?",5,25,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"chatham",13,2009,33,329,"?",6,20,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"chatham",13,2010,55,546,"Marsha Tuttle, Thomas Driscoll, Laurie Kucharik",6,6,"Laurie Kucharik","Marsha Tuttle","Tom Driscoll","Laurie Kucharik","Laurie Kucharik, Marsha Tuttle, Tom Driscoll",0.316738158382262,3,0.266884457576338,43,0.3551810383114,2,0.3551810383114,3,33
+"chatham",13,2011,46,577,"Tom Driscoll",6,12,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",13,2012,46,456,"Tom Driscoll",6,24,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",13,2013,47,509,"tom driscoll",6,2,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",13,2014,43,435,"tom driscoll",6,8,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",13,2015,43,486,"tom driscoll",6,14,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",13,2016,47,446,"tom driscoll",6,26,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",13,2017,50,384,"tom driscoll, Bradley Saul",6,4,"Tom Driscoll","Tom Driscoll","Bradley Saul",NA,"Bradley Saul, Tom Driscoll",0.266884457576338,43,-0.0252322005332264,7,NA,NA,0.266884457576338,1,61
+"chatham",13,2018,45,362,"tom driscoll",6,9,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",13,2019,52,343,"tom driscoll, Nan DeWire",6,14,"Tom Driscoll","Tom Driscoll","Nan Dewire",NA,"Nan Dewire, Tom Driscoll",0.266884457576338,43,0.1478621168618,9,NA,NA,0.266884457576338,1,61
+"chatham",13,2020,47,283,"tom driscoll, Elizabeth Keating",6,1,"Tom Driscoll","Tom Driscoll","Elizabeth Keating",NA,"Elizabeth Keating, Tom Driscoll",0.266884457576338,43,0.059939796131037,4,NA,NA,0.266884457576338,1,61
+"chatham",13,2021,46,336," Tom Driscoll",6,6,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",13,2022,53,313," tom driscoll",6,11,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",13,2023,45,293,"tom driscoll",6,4,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",13,2024,45,242," tom driscoll",6,2,"Tom Driscoll","Tom Driscoll",NA,NA,"Tom Driscoll",0.266884457576338,43,NA,NA,NA,NA,0.266884457576338,1,61
+"chatham",14,2000,46,247,"Kent Fiala",5,21,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"chatham",14,2001,47,307,"Kent Fiala",5,27,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"chatham",14,2002,51,288,"Kent Fiala",6,2,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"chatham",14,2003,42,209,"Kent Fiala",6,1,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"chatham",14,2004,43,228,"Kent Fiala",5,31,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"chatham",14,2005,43,237,"Kent Fiala",5,30,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"chatham",14,2006,46,251,"Kent Fiala",5,21,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"chatham",14,2007,45,238,"Kent Fiala",6,10,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"chatham",14,2008,41,207,"Kent Fiala",5,26,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"chatham",14,2009,38,200,"Kent Fiala",5,25,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"chatham",14,2014,45,321,"Josh Sims",6,1,"Josh Sims","Josh Sims",NA,NA,"Josh Sims",0.0444763271162123,2,NA,NA,NA,NA,0.0444763271162123,1,27
+"chatham",14,2015,46,235,"Josh Sims",6,14,"Josh Sims","Josh Sims",NA,NA,"Josh Sims",0.0444763271162123,2,NA,NA,NA,NA,0.0444763271162123,1,27
+"chatham",14,2019,14,87,"Richard Snow",6,30,"Richard Snow","Richard Snow",NA,NA,"Richard Snow",-0.69250645994832,1,NA,NA,NA,NA,-0.69250645994832,1,50
+"chatham",14,2020,49,297,"Will Bennett, Jonathan Bennett",5,24,"Will Bennett","Will Bennett","Jonathan Bennett",NA,"Jonathan Bennett, Will Bennett",0.24405705229794,3,0.24405705229794,3,NA,NA,0.24405705229794,1,64
+"chatham",14,2021,61,413,"Will Bennett, Jonathan Bennett",5,16,"Will Bennett","Will Bennett","Jonathan Bennett",NA,"Jonathan Bennett, Will Bennett",0.24405705229794,3,0.24405705229794,3,NA,NA,0.24405705229794,1,64
+"chatham",14,2022,47,273,"Will Bennett, Jon Bennett",6,30,"Will Bennett","Will Bennett","Jonathan Bennett",NA,"Jonathan Bennett, Will Bennett",0.24405705229794,3,0.24405705229794,3,NA,NA,0.24405705229794,1,64
+"chatham",14,2023,41,242,"Allen Hurlbert",6,11,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"chatham",14,2024,43,201,"Allen Hurlbert",6,23,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"durham",1,2002,40,239,"Judy Murray",6,6,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"durham",1,2003,37,211,"Judy Murray",6,28,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"durham",1,2004,42,262,"Judy Murray",6,13,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"durham",1,2005,43,249,"Judy Murray",6,19,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"durham",1,2006,40,301,"Judy Murray and Tom Krakauer",6,17,"Tom Krakauer","Judy Murray","Tom Krakauer",NA,"Judy Murray, Tom Krakauer",-0.13222845146819,53,-0.108409321175279,1,NA,NA,-0.13222845146819,2,62
+"durham",1,2007,47,245,"Judy Murray",6,24,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"durham",1,2008,45,281,"Judy Murray",6,1,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"durham",1,2009,32,135,"Judy Murray",5,31,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"durham",1,2010,45,234,"Judy Murray",5,9,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"durham",1,2011,40,225,"Judy Murray",5,28,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"durham",1,2012,41,209,"Judy Murray",5,27,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"durham",1,2013,38,237,"judy murray",6,16,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"durham",1,2014,43,205,"Judy Murray, Robin Moran",6,1,"Robin Moran","Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran",-0.13222845146819,53,0.0927592002724039,29,NA,NA,0.0927592002724039,2,52
+"durham",1,2015,44,193,"Robin Moran, Judy Murray",5,24,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"durham",1,2016,34,180,"Judy Murray",6,26,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"durham",1,2017,40,221,"judy murray, robin moran",6,4,"Robin Moran","Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran",-0.13222845146819,53,0.0927592002724039,29,NA,NA,0.0927592002724039,2,52
+"durham",1,2018,48,219,"robin moran and jennifer maher",6,3,"Jennifer Maher","Robin Moran","Jennifer Maher",NA,"Jennifer Maher, Robin Moran",0.0927592002724039,29,0.320166776387975,7,NA,NA,0.320166776387975,2,25
+"durham",1,2019,49,423,"robin moran and jennifer maher",5,26,"Jennifer Maher","Robin Moran","Jennifer Maher",NA,"Jennifer Maher, Robin Moran",0.0927592002724039,29,0.320166776387975,7,NA,NA,0.320166776387975,2,25
+"durham",1,2020,48,227,"robin moran and jennifer maher",5,24,"Jennifer Maher","Robin Moran","Jennifer Maher",NA,"Jennifer Maher, Robin Moran",0.0927592002724039,29,0.320166776387975,7,NA,NA,0.320166776387975,2,25
+"durham",1,2021,60,329,"Robin Moran, Jennifer Maher, Noah Rokoske",5,31,"Noah Rokoske","Robin Moran","Jennifer Maher","Noah Rokoske","Jennifer Maher, Noah Rokoske, Robin Moran",0.0927592002724039,29,0.320166776387975,7,0.331760101623359,5,0.331760101623359,3,45
+"durham",1,2022,61,429,"Robin Moran, Jennifer Maher, Noah Rokoske",5,22,"Noah Rokoske","Robin Moran","Jennifer Maher","Noah Rokoske","Jennifer Maher, Noah Rokoske, Robin Moran",0.0927592002724039,29,0.320166776387975,7,0.331760101623359,5,0.331760101623359,3,45
+"durham",1,2023,55,339,"Noah Rokoske, Robin Moran, Jennifer Maher",5,21,"Noah Rokoske","Noah Rokoske","Robin Moran","Jennifer Maher","Jennifer Maher, Noah Rokoske, Robin Moran",0.331760101623359,5,0.0927592002724039,29,0.320166776387975,7,0.331760101623359,1,45
+"durham",1,2024,55,309,"Robin Moran, Jennifer Maher, Noah Rokoske",6,2,"Noah Rokoske","Robin Moran","Jennifer Maher","Noah Rokoske","Jennifer Maher, Noah Rokoske, Robin Moran",0.0927592002724039,29,0.320166776387975,7,0.331760101623359,5,0.331760101623359,3,45
+"durham",2,2002,40,359,"Bruce Young",5,27,"Bruce Young","Bruce Young",NA,NA,"Bruce Young",-0.11791730474732,5,NA,NA,NA,NA,-0.11791730474732,1,12
+"durham",2,2003,31,233,"Bruce Young",5,31,"Bruce Young","Bruce Young",NA,NA,"Bruce Young",-0.11791730474732,5,NA,NA,NA,NA,-0.11791730474732,1,12
+"durham",2,2004,44,226,"Bruce Young",6,6,"Bruce Young","Bruce Young",NA,NA,"Bruce Young",-0.11791730474732,5,NA,NA,NA,NA,-0.11791730474732,1,12
+"durham",2,2005,34,230,"Bruce Young",5,29,"Bruce Young","Bruce Young",NA,NA,"Bruce Young",-0.11791730474732,5,NA,NA,NA,NA,-0.11791730474732,1,12
+"durham",2,2006,31,199,"Bruce Young",6,17,"Bruce Young","Bruce Young",NA,NA,"Bruce Young",-0.11791730474732,5,NA,NA,NA,NA,-0.11791730474732,1,12
+"durham",2,2007,34,252,"?",5,28,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"durham",2,2008,36,281,"?",5,25,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"durham",2,2009,35,223,"?",5,31,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"durham",2,2010,39,167,"?",6,13,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"durham",2,2011,36,201,"?",6,5,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"durham",2,2012,41,164,"?",6,23,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"durham",2,2013,39,116,"Elizabeth Tatum",6,14,"Edith Tatum","Edith Tatum",NA,NA,"Edith Tatum",-0.115702479338843,3,NA,NA,NA,NA,-0.115702479338843,1,17
+"durham",2,2014,36,140,"Edith Tatum",6,7,"Edith Tatum","Edith Tatum",NA,NA,"Edith Tatum",-0.115702479338843,3,NA,NA,NA,NA,-0.115702479338843,1,17
+"durham",2,2015,32,121,"Edith Tatum, Clea",6,1,"Edith Tatum","Edith Tatum","Clea ",NA,"Clea , Edith Tatum",-0.115702479338843,3,-0.200998751560549,1,NA,NA,-0.115702479338843,1,17
+"durham",2,2017,46,244,"Jeffrey Pippen",6,10,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",2,2018,39,263,"Jeffrey Pippen",6,10,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",2,2019,40,251,"Jeffrey Pippen",6,30,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",2,2020,50,312,"Jeffrey Pippen",6,7,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",2,2022,52,374,"Jeffrey Pippen",6,19,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",2,2023,49,356,"Jeffrey Pippen",6,11,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",2,2024,49,374,"Jeff Pippen",6,16,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",3,2002,41,315,"Carol Williamson and Norm Budnitz",6,2,"Carol Williamson","Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz",0.0978509373571102,9,0.0198821801563299,68,NA,NA,0.0978509373571102,1,13
+"durham",3,2003,39,317,"Carol Williamson and Norm Budnitz",6,22,"Carol Williamson","Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz",0.0978509373571102,9,0.0198821801563299,68,NA,NA,0.0978509373571102,1,13
+"durham",3,2004,40,294,"Carol Williamson and Norm Budnitz",6,20,"Carol Williamson","Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz",0.0978509373571102,9,0.0198821801563299,68,NA,NA,0.0978509373571102,1,13
+"durham",3,2005,35,227,"Carol Williamson and Norm Budnitz",6,26,"Carol Williamson","Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz",0.0978509373571102,9,0.0198821801563299,68,NA,NA,0.0978509373571102,1,13
+"durham",3,2006,37,305,"Carol Williamson and Norm Budnitz",5,28,"Carol Williamson","Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz",0.0978509373571102,9,0.0198821801563299,68,NA,NA,0.0978509373571102,1,13
+"durham",3,2007,44,319,"Carol Williamson and Norm Budnitz",5,27,"Carol Williamson","Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz",0.0978509373571102,9,0.0198821801563299,68,NA,NA,0.0978509373571102,1,13
+"durham",3,2008,35,308,"Carol Williamson and Norm Budnitz",6,1,"Carol Williamson","Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz",0.0978509373571102,9,0.0198821801563299,68,NA,NA,0.0978509373571102,1,13
+"durham",3,2009,37,320,"Carol Williamson and Norm Budnitz",6,21,"Carol Williamson","Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz",0.0978509373571102,9,0.0198821801563299,68,NA,NA,0.0978509373571102,1,13
+"durham",3,2010,35,263,"N. Budnitz, C. Williamson",6,13,"Carol Williamson","Norman Budnitz","Carol Williamson",NA,"Carol Williamson, Norman Budnitz",0.0198821801563299,68,0.0978509373571102,9,NA,NA,0.0978509373571102,2,13
+"durham",3,2011,41,326,"Patsy Bailey, Norman Budnitz",6,9,"Norman Budnitz","Patsy Bailey","Norman Budnitz",NA,"Norman Budnitz, Patsy Bailey",-0.00108830919496879,28,0.0198821801563299,68,NA,NA,0.0198821801563299,2,46
+"durham",3,2012,40,334,"Norman Budnitz",6,17,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",3,2013,35,250,"Norman Budnitz",6,16,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",3,2014,32,180,"Norman Budnitz",6,12,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",3,2015,37,243,"Norman Budnitz",6,13,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",3,2016,38,211,"Norman Budnitz",6,11,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",3,2017,34,195,"Norman Budnitz",6,10,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",3,2018,34,233,"Norman Budnitz",6,2,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",3,2019,33,175,"Norman Budnitz",6,15,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",3,2020,33,218,"Norm Budnitz",6,13,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",3,2021,29,169,"Norm Budnitz",6,12,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",3,2022,31,173,"Norm Budnitz",6,4,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",3,2023,33,189,"Norm Budnitz",6,1,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",3,2024,36,187,"Norm Budnitz",6,1,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"durham",4,2002,49,215,"Jeff Pippen and Julie Rice",6,11,"Jeff Pippen","Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice",0.12031185358827,21,-0.00336877120594413,7,NA,NA,0.12031185358827,1,24
+"durham",4,2003,43,179,"Jeff Pippen and Julie Rice",6,11,"Jeff Pippen","Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice",0.12031185358827,21,-0.00336877120594413,7,NA,NA,0.12031185358827,1,24
+"durham",4,2004,43,207,"Jeff Pippen and Julie Rice",6,10,"Jeff Pippen","Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice",0.12031185358827,21,-0.00336877120594413,7,NA,NA,0.12031185358827,1,24
+"durham",4,2005,46,239,"Jeff Pippen and Julie Rice",6,8,"Jeff Pippen","Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice",0.12031185358827,21,-0.00336877120594413,7,NA,NA,0.12031185358827,1,24
+"durham",4,2006,46,267,"Jeffrey Pippin and Julie Rice",6,17,"Jeff Pippen","Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice",0.12031185358827,21,-0.00336877120594413,7,NA,NA,0.12031185358827,1,24
+"durham",4,2007,41,222,"Jeffrey Pippen",6,7,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",4,2008,53,276,"Jeffrey Pippen",6,1,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",4,2009,52,251,"Jeffrey Pippen",5,30,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",4,2011,46,251,"Jeffrey Pippen",5,22,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",4,2012,47,278,"Jeffrey Pippen",6,10,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",4,2013,45,272,"Jeffrey Pippen",6,9,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",4,2014,40,196,"Jeffrey Pippen",5,15,"Jeff Pippen","Jeff Pippen",NA,NA,"Jeff Pippen",0.12031185358827,21,NA,NA,NA,NA,0.12031185358827,1,24
+"durham",4,2018,38,196,"Patsy Bailey",6,10,"Patsy Bailey","Patsy Bailey",NA,NA,"Patsy Bailey",-0.00108830919496879,28,NA,NA,NA,NA,-0.00108830919496879,1,48
+"durham",4,2019,47,225,"Roger Shaw",5,25,"Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw",0.0868382388701524,11,NA,NA,NA,NA,0.0868382388701524,1,53
+"durham",4,2020,51,272,"Roger Shaw",5,24,"Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw",0.0868382388701524,11,NA,NA,NA,NA,0.0868382388701524,1,53
+"durham",4,2021,45,182,"Roger Shaw",6,16,"Roger Shaw","Roger Shaw",NA,NA,"Roger Shaw",0.0868382388701524,11,NA,NA,NA,NA,0.0868382388701524,1,53
+"durham",4,2022,46,243," Roger Shaw, Stephen Brooks, Carey Jefferson",6,5,"Roger Shaw","Roger Shaw","Stephen Brooks","Carey Jefferson","Carey Jefferson, Roger Shaw, Stephen Brooks",0.0868382388701524,11,-0.0965391621129326,3,-0.0965391621129326,3,0.0868382388701524,1,53
+"durham",4,2023,39,229,"Stephen Brooks, Carey Jefferson",6,3,"Stephen Brooks","Stephen Brooks","Carey Jefferson",NA,"Carey Jefferson, Stephen Brooks",-0.0965391621129326,3,-0.0965391621129326,3,NA,NA,-0.0965391621129326,1,58
+"durham",4,2024,39,190,"Stephen Brooks, Carey Jefferson",6,30,"Stephen Brooks","Stephen Brooks","Carey Jefferson",NA,"Carey Jefferson, Stephen Brooks",-0.0965391621129326,3,-0.0965391621129326,3,NA,NA,-0.0965391621129326,1,58
+"durham",5,2002,43,373,"Alan Johnston and Shantanu Phukan",6,2,"Alan Johnston","Alan Johnston","Shantanu Phukan",NA,"Alan Johnston, Shantanu Phukan",0.283072859344046,11,0.184052843560173,8,NA,NA,0.283072859344046,1,2
+"durham",5,2003,42,256,"Alan Johnston and Shantanu Phukan",6,1,"Alan Johnston","Alan Johnston","Shantanu Phukan",NA,"Alan Johnston, Shantanu Phukan",0.283072859344046,11,0.184052843560173,8,NA,NA,0.283072859344046,1,2
+"durham",5,2004,39,285,"Alan Johnston and Sally Johnston",5,31,"Alan Johnston","Alan Johnston","Sally Johnston",NA,"Alan Johnston, Sally Johnston",0.283072859344046,11,0.0916030534351145,1,NA,NA,0.283072859344046,1,2
+"durham",5,2005,45,292,"Alan Johnston and Denny Dobbin",6,13,"Alan Johnston","Alan Johnston","Denny Dobbin",NA,"Alan Johnston, Denny Dobbin",0.283072859344046,11,0.205547112462006,4,NA,NA,0.283072859344046,1,2
+"durham",5,2006,43,337,"Alan Johnston and Dan Williams",6,17,"Alan Johnston","Alan Johnston","Dan Williams",NA,"Alan Johnston, Dan Williams",0.283072859344046,11,0.209718670076726,1,NA,NA,0.283072859344046,1,2
+"durham",5,2007,36,263,"Alan Johnston and David Welch",6,24,"Alan Johnston","Alan Johnston","David Welch",NA,"Alan Johnston, David Welch",0.283072859344046,11,0.0038022813688212,1,NA,NA,0.283072859344046,1,2
+"durham",5,2008,42,359,"Alan Johnston, Bobbie Johnston, and Pamela Clark",6,8,"Alan Johnston","Alan Johnston","Bobbie Johnston","Pamela Clark","Alan Johnston, Bobbie Johnston, Pamela Clark",0.283072859344046,11,0.18007662835249,1,0.18007662835249,1,0.283072859344046,1,2
+"durham",5,2009,39,334,"Alan Johnston and Denny Dobbin",6,14,"Alan Johnston","Alan Johnston","Denny Dobbin",NA,"Alan Johnston, Denny Dobbin",0.283072859344046,11,0.205547112462006,4,NA,NA,0.283072859344046,1,2
+"durham",5,2010,40,266,"Alan Johnston and Denny Dobbin",6,13,"Alan Johnston","Alan Johnston","Denny Dobbin",NA,"Alan Johnston, Denny Dobbin",0.283072859344046,11,0.205547112462006,4,NA,NA,0.283072859344046,1,2
+"durham",5,2011,43,293,"Alan Johnston and Denny Dobbin",5,15,"Alan Johnston","Alan Johnston","Denny Dobbin",NA,"Alan Johnston, Denny Dobbin",0.283072859344046,11,0.205547112462006,4,NA,NA,0.283072859344046,1,2
+"durham",5,2012,30,196,"David Smith, Judy Smith",5,27,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",5,2013,35,193,"David Smith, Judy Smith",6,9,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",5,2014,33,225,"David Smith, Judy Smith",6,8,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",5,2015,32,224,"David Smith, Judy Smith",5,24,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",5,2016,28,188,"David Smith, Judy Smith",5,22,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",5,2017,31,194,"David Smith, Judy Smith",6,4,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",5,2018,28,172,"David Smith, Judy Smith",6,3,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",5,2019,32,229,"David Smith, Judy Smith",5,26,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",5,2020,29,205,"David Smith, Judy Smith",5,24,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",5,2021,30,165,"David Smith, Judy Smith",5,30,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",5,2022,36,221,"David Smith, Judy Smith",5,29,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",5,2023,32,175,"David Smith, Judy Smith",6,4,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",5,2024,37,182," David Smith, Judy Smith",6,2,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2002,29,151,"Rick Payne",6,30,"Rick Payne","Rick Payne",NA,NA,"Rick Payne",-0.00884955752212365,9,NA,NA,NA,NA,-0.00884955752212365,1,51
+"durham",6,2003,26,117,"Rick Payne",6,15,"Rick Payne","Rick Payne",NA,NA,"Rick Payne",-0.00884955752212365,9,NA,NA,NA,NA,-0.00884955752212365,1,51
+"durham",6,2004,36,159,"Rick Payne",6,6,"Rick Payne","Rick Payne",NA,NA,"Rick Payne",-0.00884955752212365,9,NA,NA,NA,NA,-0.00884955752212365,1,51
+"durham",6,2005,35,174,"Rick Payne",6,19,"Rick Payne","Rick Payne",NA,NA,"Rick Payne",-0.00884955752212365,9,NA,NA,NA,NA,-0.00884955752212365,1,51
+"durham",6,2006,33,210,"Rick Payne",6,18,"Rick Payne","Rick Payne",NA,NA,"Rick Payne",-0.00884955752212365,9,NA,NA,NA,NA,-0.00884955752212365,1,51
+"durham",6,2007,30,179,"Rick Payne",6,24,"Rick Payne","Rick Payne",NA,NA,"Rick Payne",-0.00884955752212365,9,NA,NA,NA,NA,-0.00884955752212365,1,51
+"durham",6,2008,37,204,"Rick Payne",6,8,"Rick Payne","Rick Payne",NA,NA,"Rick Payne",-0.00884955752212365,9,NA,NA,NA,NA,-0.00884955752212365,1,51
+"durham",6,2009,32,166,"Rick Payne",6,14,"Rick Payne","Rick Payne",NA,NA,"Rick Payne",-0.00884955752212365,9,NA,NA,NA,NA,-0.00884955752212365,1,51
+"durham",6,2010,30,172,"Rick Payne",6,13,"Rick Payne","Rick Payne",NA,NA,"Rick Payne",-0.00884955752212365,9,NA,NA,NA,NA,-0.00884955752212365,1,51
+"durham",6,2011,34,260,"David Smith",5,29,"David Smith","David Smith",NA,NA,"David Smith",-0.105582524271844,27,NA,NA,NA,NA,-0.105582524271844,1,15
+"durham",6,2012,30,238,"David Smith, Judy Smith",5,20,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2013,33,194,"David Smith, Judy Smith",6,2,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2014,28,178,"David Smith, Judy Smith",6,1,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2015,32,203,"David Smith, Judy Smith",5,17,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2016,29,183,"David Smith, Judy Smith",5,15,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2017,33,171,"David Smith, Judy Smith",5,29,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2018,37,186,"David Smith, Judy Smith",5,27,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2019,34,207,"David Smith, Judy Smith",5,19,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2020,35,206,"David Smith, Judy Smith",5,17,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2021,33,190,"David Smith, Judy Smith",5,23,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2022,34,186,"David Smith, Judy Smith",5,22,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2023,31,221,"David Smith, Judy Smith",6,3,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",6,2024,29,188,"David Smith, Judy Smith",5,27,"David Smith","David Smith","Judy Smith",NA,"David Smith, Judy Smith",-0.105582524271844,27,-0.115167757527403,26,NA,NA,-0.105582524271844,1,15
+"durham",7,2002,44,193,"Brian Strong",6,13,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2003,41,153,"Brian Strong",6,13,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2004,40,162,"Brian Strong",6,15,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2005,45,193,"Brian Strong",6,13,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2006,38,176,"Brian Strong",6,15,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2007,45,181,"Brian Strong",6,22,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2008,33,167,"Brian Strong",6,3,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2009,33,154,"Brian Strong",6,30,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2010,39,161,"Brian Strong",6,15,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2011,36,153,"Brian Strong",6,16,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2012,34,147,"Brian Strong",6,12,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2013,39,143,"Brian Strong",6,20,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2015,34,162,"Brian Strong",6,24,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2016,36,136,"Brian Strong",6,25,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2017,38,175,"Brian Strong",6,17,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2018,37,160,"Brian Strong",6,17,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2019,38,164,"Brian Strong",6,23,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2020,37,155,"Brian Strong",6,14,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2021,37,179,"Brian Strong",6,18,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2022,48,195,"Brian Strong",6,26,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",7,2023,44,234,"Noah Rokoske",6,28,"Noah Rokoske","Noah Rokoske",NA,NA,"Noah Rokoske",0.331760101623359,5,NA,NA,NA,NA,0.331760101623359,1,45
+"durham",7,2024,35,188,"William Mackin",6,26,"William Mackin","William Mackin",NA,NA,"William Mackin",0.220214045898082,3,NA,NA,NA,NA,0.220214045898082,1,66
+"durham",8,2002,43,223,"Brian Strong",6,13,"Brian Strong","Brian Strong",NA,NA,"Brian Strong",-0.0861535937146011,41,NA,NA,NA,NA,-0.0861535937146011,1,11
+"durham",8,2003,40,230,"Brian Bockhahn",6,13,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2004,32,194,"Brian Bockhahn",6,11,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2005,43,227,"Brian Bockhahn",6,25,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2006,42,228,"Brian Bockhahn",6,17,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2007,28,155,"Brian Bockhahn",7,2,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2008,34,212,"Brian Bockhahn",6,24,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2011,37,244,"Brian Bockhahn",6,19,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2012,41,301,"Brian Bockhahn",6,10,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2013,38,311,"Brian Bockhahn",6,16,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2014,42,312,"Brian Bockhahn, weather=57, clear, sunny, vehicles=32, habitat@1=B, habitat@2=B, habitat@3=M, habitat@4=M, habitat@5=M, habitat@6=M, habitat@7=M, habitat@8=B, habitat@9=B, habitat@10=B, habitat@11=M, habitat@12=B, habitat@13=M, habitat@14=B, habitat@15=B, habitat@16=B, habitat@17=M, habitat@18=M, habitat@19=B, habitat@20=M",6,1,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2015,41,275,"Brian Bockhahn",6,14,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2016,42,468,"Brian Bockhahn",6,19,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2017,42,324,"Brian Bockhahn",6,18,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2018,44,280,"Brian Bockhahn",6,3,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2019,43,273,"Brian Bockhahn",6,16,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2020,38,233,"Brian Bockhahn",5,31,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2021,47,245,"Brian Bockhahn",6,6,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2022,41,283,"Brian Bockhahn",6,19,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2023,43,260,"Brian Bockhahn",6,11,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"durham",8,2024,43,256,"Brian Bockhahn",6,9,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"orange",1,1999,45,255,"Ginger Travis, Barb Brooks",6,6,"Barb Brooks","Ginger Travis","Barb Brooks",NA,"Barb Brooks, Ginger Travis",-0.0737923164701407,11,-0.0645932307703099,61,NA,NA,-0.0645932307703099,2,6
+"orange",1,2000,39,220,"Ginger Travis and Cathy Packer",6,4,"Ginger Travis","Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis",-0.0737923164701407,11,-0.134877171021749,7,NA,NA,-0.0737923164701407,1,20
+"orange",1,2001,41,243,"Ginger Travis and Cathy Packer",6,3,"Ginger Travis","Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis",-0.0737923164701407,11,-0.134877171021749,7,NA,NA,-0.0737923164701407,1,20
+"orange",1,2002,41,211,"Ginger Travis and Cathy Packer",6,2,"Ginger Travis","Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis",-0.0737923164701407,11,-0.134877171021749,7,NA,NA,-0.0737923164701407,1,20
+"orange",1,2003,54,376,"Ginger Travis and Doug Shadwick",6,7,"Doug Shadwick","Ginger Travis","Doug Shadwick",NA,"Doug Shadwick, Ginger Travis",-0.0737923164701407,11,0.19588101131817,8,NA,NA,0.19588101131817,2,16
+"orange",1,2004,57,395,"Ginger Travis and Doug Shadwick",6,6,"Doug Shadwick","Ginger Travis","Doug Shadwick",NA,"Doug Shadwick, Ginger Travis",-0.0737923164701407,11,0.19588101131817,8,NA,NA,0.19588101131817,2,16
+"orange",1,2005,54,419,"Ginger Travis and Cathy Packer",5,23,"Ginger Travis","Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis",-0.0737923164701407,11,-0.134877171021749,7,NA,NA,-0.0737923164701407,1,20
+"orange",1,2006,42,216,"Ginger Travis and Cathy Packer",6,10,"Ginger Travis","Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis",-0.0737923164701407,11,-0.134877171021749,7,NA,NA,-0.0737923164701407,1,20
+"orange",1,2007,40,210,"Ginger Travis and Doug Shadwick",5,26,"Doug Shadwick","Ginger Travis","Doug Shadwick",NA,"Doug Shadwick, Ginger Travis",-0.0737923164701407,11,0.19588101131817,8,NA,NA,0.19588101131817,2,16
+"orange",1,2008,40,187,"Ginger Travis and Cathy Packer",6,15,"Ginger Travis","Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis",-0.0737923164701407,11,-0.134877171021749,7,NA,NA,-0.0737923164701407,1,20
+"orange",1,2009,34,202,"Ginger Travis and Cathy Packer",6,7,"Ginger Travis","Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis",-0.0737923164701407,11,-0.134877171021749,7,NA,NA,-0.0737923164701407,1,20
+"orange",1,2010,54,278,"N. Budnitz, M. Schultz",6,17,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2011,57,335,"Norm Budnitz, Mike Schultz",5,22,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2012,51,343,"Norman Budnitz, Mike Schultz",6,10,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2013,46,288,"Norman Budnitz, Mike Schultz",6,13,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2014,45,249,"Norman Budnitz, Mike Schultz",6,22,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2015,55,345,"Norman Budnitz, Mike Schultz",5,24,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2016,50,291,"Norman Budnitz, Mike Schultz",5,16,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2017,53,285,"Norman Budnitz, Mike Schultz",5,28,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2018,43,315,"Norman Budnitz, Mike Schultz",5,28,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2019,45,284,"Norman Budnitz, Mike Schultz",5,18,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2020,39,226,"Norm Budnitz",5,24,"Norman Budnitz","Norman Budnitz",NA,NA,"Norman Budnitz",0.0198821801563299,68,NA,NA,NA,NA,0.0198821801563299,1,46
+"orange",1,2021,41,255,"Norm Budnitz, Mike Schultz",5,31,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2022,51,325,"Norm Budnitz, Mike Schultz",5,30,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2023,44,262,"Norm Budnitz, Mike Schultz",6,3,"Norman Budnitz","Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz",0.0198821801563299,68,-0.00814426384768592,63,NA,NA,0.0198821801563299,1,46
+"orange",1,2024,43,264,"Mike Schultz, Norm Budnitz",5,26,"Norman Budnitz","Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz",-0.00814426384768592,63,0.0198821801563299,68,NA,NA,0.0198821801563299,2,46
+"orange",2,1999,35,167,"Barb Brooks",5,23,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2000,32,170,"Barbara Brooks",5,27,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2001,31,179,"Barbara Brooks",6,3,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2002,41,242,"Barbara Brooks",6,2,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2003,34,183,"Barb Brooks",6,8,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2004,34,186,"Barb Brooks",5,28,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2005,34,192,"Barb Brooks",5,8,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2006,30,243,"Barb Brooks",5,28,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2007,26,182,"Barb Brooks",5,27,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2008,37,163,"barb Brooks",6,6,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2009,30,143,"barb brooks",6,3,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2010,35,132,"B. BROOKS",5,29,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2011,31,171,"Barb Brooks",5,30,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2012,27,168,"Barb Brooks",5,28,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2013,25,132,"Barb Brooks",5,26,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2014,20,128,"Barb Brooks",5,25,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2015,33,147,"Barb Brooks",5,31,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2016,20,92,"barb brooks",5,29,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2017,19,83,"Barb Brooks",5,28,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2018,24,108,"Barb Brooks",5,27,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2019,21,61,"Barb Brooks",6,9,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2020,16,73,"Barb Brooks",5,24,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2021,25,92,"barb Brooks",6,6,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2022,24,82,"barb Brooks",6,18,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2023,25,93,"barb brooks",6,3,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",2,2024,39,217," Barb Brooks, Will Mackin",5,26,"William Mackin","Barb Brooks","William Mackin",NA,"Barb Brooks, William Mackin",-0.0645932307703099,61,0.220214045898082,3,NA,NA,0.220214045898082,2,66
+"orange",3,1999,40,347,"Kate Finlayson, Karen Piplani",6,6,"Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson",0.257663035888842,21,0.4265625,12,NA,NA,0.4265625,2,30
+"orange",3,2000,40,281,"Kate Finlayson and Karen Piplani",6,11,"Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson",0.257663035888842,21,0.4265625,12,NA,NA,0.4265625,2,30
+"orange",3,2001,43,266,"Kate Finlayson and Karen Piplani",5,23,"Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson",0.257663035888842,21,0.4265625,12,NA,NA,0.4265625,2,30
+"orange",3,2002,48,272,"Kate Finlayson and Karen Piplani",6,9,"Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson",0.257663035888842,21,0.4265625,12,NA,NA,0.4265625,2,30
+"orange",3,2003,43,331,"Kate Finlayson and Karen Piplani",6,22,"Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson",0.257663035888842,21,0.4265625,12,NA,NA,0.4265625,2,30
+"orange",3,2004,44,271,"Kate Finlayson and Karen Piplani",5,23,"Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson",0.257663035888842,21,0.4265625,12,NA,NA,0.4265625,2,30
+"orange",3,2005,45,233,"Kate Finlayson and Karen Piplani",6,23,"Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson",0.257663035888842,21,0.4265625,12,NA,NA,0.4265625,2,30
+"orange",3,2006,46,300,"Kate Finlayson and Karen Piplani",6,23,"Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson",0.257663035888842,21,0.4265625,12,NA,NA,0.4265625,2,30
+"orange",3,2007,44,195,"Kate Finlayson and Karen Piplani",6,17,"Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson",0.257663035888842,21,0.4265625,12,NA,NA,0.4265625,2,30
+"orange",3,2008,44,224,"Kate Finlayson and Karen Piplani",6,1,"Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson",0.257663035888842,21,0.4265625,12,NA,NA,0.4265625,2,30
+"orange",3,2009,40,252,"Kate Finlayson and Karen Piplani",6,1,"Karen Piplani","Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson",0.257663035888842,21,0.4265625,12,NA,NA,0.4265625,2,30
+"orange",3,2011,21,120,"Karen Piplani",6,12,"Karen Piplani","Karen Piplani",NA,NA,"Karen Piplani",0.4265625,12,NA,NA,NA,NA,0.4265625,1,30
+"orange",3,2014,23,97,"Barb Brooks",6,1,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",3,2015,28,142,"Barb Brooks",6,7,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",3,2016,23,81,"barb brooks",6,5,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",3,2017,23,121,"Barb Brooks",6,4,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",3,2018,21,98,"barb brooks",6,3,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",3,2019,29,203,"Bradley Saul, Charity Kirk",6,29,"Bradley Saul","Bradley Saul","Charity Kirk",NA,"Bradley Saul, Charity Kirk",-0.0252322005332264,7,-0.191381495564005,1,NA,NA,-0.0252322005332264,1,9
+"orange",3,2020,31,179,"Bradley Saul",6,14,"Bradley Saul","Bradley Saul",NA,NA,"Bradley Saul",-0.0252322005332264,7,NA,NA,NA,NA,-0.0252322005332264,1,9
+"orange",3,2021,28,217,"Bradley Saul",6,13,"Bradley Saul","Bradley Saul",NA,NA,"Bradley Saul",-0.0252322005332264,7,NA,NA,NA,NA,-0.0252322005332264,1,9
+"orange",3,2022,31,211,"Bradley Saul",6,12,"Bradley Saul","Bradley Saul",NA,NA,"Bradley Saul",-0.0252322005332264,7,NA,NA,NA,NA,-0.0252322005332264,1,9
+"orange",3,2023,39,212,"Bradley Saul",6,11,"Bradley Saul","Bradley Saul",NA,NA,"Bradley Saul",-0.0252322005332264,7,NA,NA,NA,NA,-0.0252322005332264,1,9
+"orange",3,2024,44,225,"Bradley Saul",6,16,"Bradley Saul","Bradley Saul",NA,NA,"Bradley Saul",-0.0252322005332264,7,NA,NA,NA,NA,-0.0252322005332264,1,9
+"orange",4,1999,37,194,"Kent Fiala",5,30,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"orange",4,2000,39,197,"Kent Kiala",5,27,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"orange",4,2001,45,231,"Kent Kiala",6,10,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"orange",4,2002,41,184,"Kent Fiala",6,9,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"orange",4,2003,36,194,"Kent Fiala",5,26,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"orange",4,2004,40,210,"Kent Fiala",6,6,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"orange",4,2005,45,238,"Kent Fiala",5,29,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"orange",4,2006,36,168,"Kent Fiala",5,27,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"orange",4,2007,36,173,"Kent Fiala",5,28,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"orange",4,2008,34,160,"Kent Fiala",5,25,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"orange",4,2009,27,155,"Kent Fiala",5,24,"Kent Fiala","Kent Fiala",NA,NA,"Kent Fiala",-0.0145488893773504,21,NA,NA,NA,NA,-0.0145488893773504,1,32
+"orange",4,2010,40,235,"Will Cook, Catherine Carter",7,18,"Will Cook","Will Cook","Catherine Carter",NA,"Catherine Carter, Will Cook",0.0497144344661238,60,7.61337486274727e-05,3,NA,NA,0.0497144344661238,1,65
+"orange",4,2011,52,439,"Jill Paul, Tom Driscoll",6,19,"Jill Paul","Jill Paul","Tom Driscoll",NA,"Jill Paul, Tom Driscoll",0.356521739130435,1,0.266884457576338,43,NA,NA,0.266884457576338,1,26
+"orange",4,2013,39,210,"Allen Hurlbert",6,9,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"orange",4,2014,36,178,"Allen Hurlbert",6,15,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"orange",4,2015,36,208,"Allen Hurlbert",5,31,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"orange",4,2016,31,151,"Allen Hurlbert",6,5,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"orange",4,2017,32,184,"Allen Hurlbert",6,4,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"orange",4,2018,37,249,"Allen Hurlbert, Grace Di Cecco, Allison Duprey",6,3,"Allen Hurlbert","Allen Hurlbert","Grace Di Cecco","Allison Duprey","Allen Hurlbert, Allison Duprey, Grace Di Cecco",0.0232681353687694,18,-0.0502673796791444,1,-0.0502673796791444,1,0.0232681353687694,1,4
+"orange",4,2019,45,228,"Allen Hurlbert, Sarah Pollack",5,26,"Sarah Pollack","Allen Hurlbert","Sarah Pollack",NA,"Allen Hurlbert, Sarah Pollack",0.0232681353687694,18,0.16504854368932,1,NA,NA,0.0232681353687694,2,55
+"orange",4,2020,39,230,"Allen Hurlbert",5,31,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"orange",4,2021,40,225,"Allen Hurlbert",6,6,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"orange",4,2022,47,233,"Allen Hurlbert, Ashley Moore, Ellen Weaver",6,5,"Ashley Moore","Allen Hurlbert","Ashley Moore","Ellen Weaver","Allen Hurlbert, Ashley Moore, Ellen Weaver",0.0232681353687694,18,0.219459459459459,1,0.219459459459459,1,0.219459459459459,2,5
+"orange",4,2023,39,208,"Allen Hurlbert",6,3,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"orange",4,2024,43,243,"Allen Hurlbert",6,2,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"orange",5,1999,53,419,"Will Cook",6,12,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2000,47,359,"Will Cook",5,29,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2001,58,445,"Will Cook",6,9,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2002,48,375,"Will Cook",6,15,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2003,56,341,"Will Cook",6,21,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2004,56,478,"Will Cook",5,29,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2005,49,363,"Will Cook",6,11,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2006,53,389,"Will Cook",6,24,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2007,48,321,"Will Cook",6,17,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2008,57,424,"Will Cook",6,7,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2009,59,425,"Will Cook",6,20,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2010,51,377,"Will Cook, Catherine Anderson",5,30,"Will Cook","Will Cook","Catherine Anderson",NA,"Catherine Anderson, Will Cook",0.0497144344661238,60,-0.0679824561403509,1,NA,NA,0.0497144344661238,1,65
+"orange",5,2011,51,433,"Will Cook, Catherine Carter",6,25,"Will Cook","Will Cook","Catherine Carter",NA,"Catherine Carter, Will Cook",0.0497144344661238,60,7.61337486274727e-05,3,NA,NA,0.0497144344661238,1,65
+"orange",5,2012,60,423,"Will Cook",6,2,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2013,57,415,"Will Cook",6,2,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2014,53,429,"Will Cook",6,29,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2015,54,385,"Will Cook",5,31,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2016,53,356,"Will Cook",6,5,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2017,54,348,"Will Cook",6,10,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2018,53,345,"Will Cook",6,24,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2019,59,369,"Will Cook",6,2,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2020,55,455,"Will Cook",6,14,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2021,58,527,"Will Cook",6,19,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2022,58,385," Will Cook",6,25,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2023,61,365,"Will Cook",6,11,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",5,2024,58,382,"Will Cook",6,9,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",6,1999,34,250,"Judy Murray, Robin Moran",6,13,"Robin Moran","Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran",-0.13222845146819,53,0.0927592002724039,29,NA,NA,0.0927592002724039,2,52
+"orange",6,2000,38,245,"Judy Murray and Robin Moran",6,4,"Robin Moran","Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran",-0.13222845146819,53,0.0927592002724039,29,NA,NA,0.0927592002724039,2,52
+"orange",6,2001,36,288,"Judy Murray and Robin Moran",6,3,"Robin Moran","Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran",-0.13222845146819,53,0.0927592002724039,29,NA,NA,0.0927592002724039,2,52
+"orange",6,2002,32,237,"Robin Moran and Judy Murray",6,9,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2003,40,245,"Robin Moran & Judy Murray",6,30,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2004,38,254,"Robin Moran and Judy Murray",6,6,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2005,34,215,"Robin Moran and Judy Murray",6,21,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2006,38,251,"Robin Moran and Judy Murray",5,28,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2007,41,255,"Robin Moran and Judy Murray",5,27,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2008,42,227,"Robin Moran and Judy Murray",5,18,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2009,38,191,"Robin Moran and Judy Murray",6,7,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2010,36,193,"R. Moran, J. Murray",6,8,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2011,38,204,"Robin Moran, Judy Murray",5,30,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2012,41,209,"Judy Murray, Robin Moran",6,3,"Robin Moran","Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran",-0.13222845146819,53,0.0927592002724039,29,NA,NA,0.0927592002724039,2,52
+"orange",6,2013,38,159,"Robin Moran, Judy Murray",6,2,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2014,38,212,"Robin Moran, Judy Murray",6,8,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2015,28,165,"Judy Murray",6,7,"Judy Murray","Judy Murray",NA,NA,"Judy Murray",-0.13222845146819,53,NA,NA,NA,NA,-0.13222845146819,1,28
+"orange",6,2016,31,155,"Robin Moran, Judy Murray",5,15,"Robin Moran","Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran",0.0927592002724039,29,-0.13222845146819,53,NA,NA,0.0927592002724039,1,52
+"orange",6,2017,30,155,"Judy Murray, Robin Moran",5,28,"Robin Moran","Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran",-0.13222845146819,53,0.0927592002724039,29,NA,NA,0.0927592002724039,2,52
+"orange",6,2019,35,186,"Karen Hogan, Robin Moran",6,9,"Robin Moran","Karen Hogan","Robin Moran",NA,"Karen Hogan, Robin Moran",0.00854025787807335,14,0.0927592002724039,29,NA,NA,0.0927592002724039,2,52
+"orange",6,2020,38,248,"Karen Hogan, Mark Hogan",6,7,"Karen Hogan","Karen Hogan","Mark Hogan",NA,"Karen Hogan, Mark Hogan",0.00854025787807335,14,-0.0213871494185199,3,NA,NA,0.00854025787807335,1,29
+"orange",6,2021,40,236,"Karen Hogan",6,6,"Karen Hogan","Karen Hogan",NA,NA,"Karen Hogan",0.00854025787807335,14,NA,NA,NA,NA,0.00854025787807335,1,29
+"orange",6,2022,38,201,"Karen Hogan",6,5,"Karen Hogan","Karen Hogan",NA,NA,"Karen Hogan",0.00854025787807335,14,NA,NA,NA,NA,0.00854025787807335,1,29
+"orange",6,2023,35,182,"Karen Hogan",6,9,"Karen Hogan","Karen Hogan",NA,NA,"Karen Hogan",0.00854025787807335,14,NA,NA,NA,NA,0.00854025787807335,1,29
+"orange",6,2024,39,221,"Karen Hogan",6,2,"Karen Hogan","Karen Hogan",NA,NA,"Karen Hogan",0.00854025787807335,14,NA,NA,NA,NA,0.00854025787807335,1,29
+"orange",7,1999,40,293,"Betty King, John King (driver)",6,10,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2000,41,284,"Betty and John King",5,25,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2001,43,267,"Betty and John King",5,23,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2002,44,300,"Betty King",5,22,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2003,36,268,"Betty King",5,15,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2004,51,343,"Betty King",5,22,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2005,45,265,"Betty King",5,23,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2006,49,343,"Betty King",5,21,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2007,47,298,"Betty King",5,21,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2008,43,337,"Betty King",5,21,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2009,39,258,"Betty King",5,31,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2010,40,261,"Betty King",5,23,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2011,42,260,"Betty King",5,15,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2012,40,295,"Betty King",5,17,"Betty King","Betty King",NA,NA,"Betty King",-0.117174959871589,14,NA,NA,NA,NA,-0.117174959871589,1,7
+"orange",7,2014,51,373,"Brian Bockhahn, weather=69, clear, sunny, vehicles=31, habitat@1=B, habitat@2=P, habitat@3=M, habitat@4=M, habitat@5=B, habitat@6=H, habitat@7=B, habitat@8=H, habitat@9=O, habitat@10=O, habitat@11=H, habitat@12=O, habitat@13=H, habitat@14=M, habitat@15=M, habitat@16=B, habitat@17=O, habitat@18=O, habitat@19=O, habitat@20=M",5,27,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"orange",7,2015,48,327,"Brian Bockhahn",5,31,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"orange",7,2016,48,303,"Brian Bockhahn",6,26,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"orange",7,2017,53,334,"Brian Bockhahn",6,6,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"orange",7,2018,49,294,"Brian Bockhahn",6,5,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"orange",7,2019,47,280,"brian bockhahn",5,23,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"orange",7,2020,42,232,"Brian Bockhahn",6,1,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"orange",7,2021,50,243,"Brian Bockhahn",6,3,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"orange",7,2022,43,284,"Brian Bockhahn",6,9,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"orange",7,2023,53,279,"Brian Bockhahn",6,6,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"orange",7,2024,50,294,"Brian Bockhahn",6,6,"Brian Bockhahn","Brian Bockhahn",NA,NA,"Brian Bockhahn",0.00283570892723184,31,NA,NA,NA,NA,0.00283570892723184,1,10
+"orange",8,1999,39,245,"Barb Brooks",5,30,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2000,30,151,"Barbara Brooks",5,28,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2001,37,178,"Barbara Brooks",5,27,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2002,31,140,"Barbara Brooks",6,30,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2003,23,110,"Barb Brooks",6,1,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2004,25,182,"Barb Brooks",6,2,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2005,32,169,"Barb Brooks",5,15,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2006,28,194,"Barb Brooks",5,21,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2007,27,179,"Barb Brooks",5,20,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2008,29,190,"Barb Brooks",6,1,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2009,27,160,"Barb Brooks",5,29,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2010,33,152,"Barb Brooks",6,1,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2011,28,188,"Barb Brooks",6,5,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2012,29,167,"Barb Brooks",5,13,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2013,24,98,"Barb Brooks",5,19,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2014,24,111,"Barb Brooks",5,18,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2015,30,124,"Barb Brooks",5,24,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2016,16,88,"Barb Brooks",5,22,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2017,20,95,"Barb Brooks",5,21,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2018,16,66,"Barb Brooks",5,20,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2019,17,72,"Barb Brooks",6,2,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2020,20,70,"Barb Brooks",5,17,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2021,24,92,"Barb Brooks",5,16,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2022,34,130,"Barb Brooks",6,4,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2023,25,77,"barb brooks",5,20,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",8,2024,37,150," Barb Brooks, Will Makin",5,19,"William Mackin","Barb Brooks","William Mackin",NA,"Barb Brooks, William Mackin",-0.0645932307703099,61,0.220214045898082,3,NA,NA,0.220214045898082,2,66
+"orange",9,1999,44,264,"S. Phukan and T. Williams",5,31,"Shantanu Phukan","Shantanu Phukan","T. Williams",NA,"Shantanu Phukan, T. Williams",0.184052843560173,8,0.173333333333333,1,NA,NA,0.184052843560173,1,56
+"orange",9,2000,37,158,"Sandy Cash",6,8,"Sandy Cash","Sandy Cash",NA,NA,"Sandy Cash",-0.0216346153846154,1,NA,NA,NA,NA,-0.0216346153846154,1,54
+"orange",9,2001,49,270,"Shantanu Phukan",6,19,"Shantanu Phukan","Shantanu Phukan",NA,NA,"Shantanu Phukan",0.184052843560173,8,NA,NA,NA,NA,0.184052843560173,1,56
+"orange",9,2002,43,300,"Shantanu Phukan and Alan Johnston",5,31,"Alan Johnston","Shantanu Phukan","Alan Johnston",NA,"Alan Johnston, Shantanu Phukan",0.184052843560173,8,0.283072859344046,11,NA,NA,0.283072859344046,2,2
+"orange",9,2003,32,248,"Shantanu Phukan",7,27,"Shantanu Phukan","Shantanu Phukan",NA,NA,"Shantanu Phukan",0.184052843560173,8,NA,NA,NA,NA,0.184052843560173,1,56
+"orange",9,2004,42,186,"Shantanu Phukan",6,24,"Shantanu Phukan","Shantanu Phukan",NA,NA,"Shantanu Phukan",0.184052843560173,8,NA,NA,NA,NA,0.184052843560173,1,56
+"orange",9,2005,45,248,"Shantanu Phukan",6,7,"Shantanu Phukan","Shantanu Phukan",NA,NA,"Shantanu Phukan",0.184052843560173,8,NA,NA,NA,NA,0.184052843560173,1,56
+"orange",9,2006,33,248,"? (NOT Shantanu)",6,16,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"orange",9,2007,36,207,"? (NOT Shantanu)",6,26,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"orange",9,2008,39,263,"? (NOT Shantanu)",6,27,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"orange",9,2009,37,228,"? (NOT Shantanu)",6,28,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"orange",9,2011,32,228,"David Curtin",6,12,"David Curtin","David Curtin",NA,NA,"David Curtin",-0.11404833836858,6,NA,NA,NA,NA,-0.11404833836858,1,14
+"orange",9,2012,36,260,"David Curtin",6,10,"David Curtin","David Curtin",NA,NA,"David Curtin",-0.11404833836858,6,NA,NA,NA,NA,-0.11404833836858,1,14
+"orange",9,2013,35,244,"David Curtin",6,16,"David Curtin","David Curtin",NA,NA,"David Curtin",-0.11404833836858,6,NA,NA,NA,NA,-0.11404833836858,1,14
+"orange",9,2014,37,305,"David Curtin",5,25,"David Curtin","David Curtin",NA,NA,"David Curtin",-0.11404833836858,6,NA,NA,NA,NA,-0.11404833836858,1,14
+"orange",9,2015,35,213,"David Curtin",5,24,"David Curtin","David Curtin",NA,NA,"David Curtin",-0.11404833836858,6,NA,NA,NA,NA,-0.11404833836858,1,14
+"orange",9,2016,32,223,"David Curtin",6,9,"David Curtin","David Curtin",NA,NA,"David Curtin",-0.11404833836858,6,NA,NA,NA,NA,-0.11404833836858,1,14
+"orange",9,2019,33,192,"Karen Hogan, Mark Hogan",6,10,"Karen Hogan","Karen Hogan","Mark Hogan",NA,"Karen Hogan, Mark Hogan",0.00854025787807335,14,-0.0213871494185199,3,NA,NA,0.00854025787807335,1,29
+"orange",9,2020,39,205,"Karen Hogan, Mark Hogan",6,8,"Karen Hogan","Karen Hogan","Mark Hogan",NA,"Karen Hogan, Mark Hogan",0.00854025787807335,14,-0.0213871494185199,3,NA,NA,0.00854025787807335,1,29
+"orange",9,2021,37,174,"Karen Hogan",6,7,"Karen Hogan","Karen Hogan",NA,NA,"Karen Hogan",0.00854025787807335,14,NA,NA,NA,NA,0.00854025787807335,1,29
+"orange",9,2022,42,209,"Karen Hogan",6,4,"Karen Hogan","Karen Hogan",NA,NA,"Karen Hogan",0.00854025787807335,14,NA,NA,NA,NA,0.00854025787807335,1,29
+"orange",9,2023,33,171,"Karen Hogan",6,7,"Karen Hogan","Karen Hogan",NA,NA,"Karen Hogan",0.00854025787807335,14,NA,NA,NA,NA,0.00854025787807335,1,29
+"orange",9,2024,41,212,"Karen Hogan",6,5,"Karen Hogan","Karen Hogan",NA,NA,"Karen Hogan",0.00854025787807335,14,NA,NA,NA,NA,0.00854025787807335,1,29
+"orange",10,1999,53,391,"Will Cook",6,13,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",10,2000,49,320,"Will Cook",6,3,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",10,2001,49,397,"Will Cook",6,10,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",10,2002,50,358,"Will Cook",6,16,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",10,2003,45,357,"Will Cook",6,22,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",10,2004,50,317,"Will Cook",5,31,"Will Cook","Will Cook",NA,NA,"Will Cook",0.0497144344661238,60,NA,NA,NA,NA,0.0497144344661238,1,65
+"orange",10,2005,52,365,"Will Cook, Doug Shadwick",6,12,"Doug Shadwick","Will Cook","Doug Shadwick",NA,"Doug Shadwick, Will Cook",0.0497144344661238,60,0.19588101131817,8,NA,NA,0.19588101131817,2,16
+"orange",10,2006,46,303,"Doug Shadwick",6,18,"Doug Shadwick","Doug Shadwick",NA,NA,"Doug Shadwick",0.19588101131817,8,NA,NA,NA,NA,0.19588101131817,1,16
+"orange",10,2007,51,314,"Doug Shadwick",6,10,"Doug Shadwick","Doug Shadwick",NA,NA,"Doug Shadwick",0.19588101131817,8,NA,NA,NA,NA,0.19588101131817,1,16
+"orange",10,2008,47,369,"Doug Shadwick",6,1,"Doug Shadwick","Doug Shadwick",NA,NA,"Doug Shadwick",0.19588101131817,8,NA,NA,NA,NA,0.19588101131817,1,16
+"orange",10,2009,43,249,"Doug Shadwick",6,7,"Doug Shadwick","Doug Shadwick",NA,NA,"Doug Shadwick",0.19588101131817,8,NA,NA,NA,NA,0.19588101131817,1,16
+"orange",10,2012,42,425,"Nate Swick",6,17,"Nathan Swick","Nathan Swick",NA,NA,"Nathan Swick",0.0293733681462141,2,NA,NA,NA,NA,0.0293733681462141,1,44
+"orange",10,2013,41,309,"Nathan Swick",5,26,"Nathan Swick","Nathan Swick",NA,NA,"Nathan Swick",0.0293733681462141,2,NA,NA,NA,NA,0.0293733681462141,1,44
+"orange",10,2016,14,70,"Barb Brooks",6,12,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",10,2017,15,106,"Barb Brooks",6,11,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",10,2018,18,102,"Barb Brooks",5,28,"Barb Brooks","Barb Brooks",NA,NA,"Barb Brooks",-0.0645932307703099,61,NA,NA,NA,NA,-0.0645932307703099,1,6
+"orange",10,2019,33,213,"Vern Bothwell, Nan Dewire",6,6,"Nan Dewire","Vern Bothwell","Nan Dewire",NA,"Nan Dewire, Vern Bothwell",-0.213187190515777,4,0.1478621168618,9,NA,NA,0.1478621168618,2,42
+"orange",10,2020,28,158,"Vern Bothwell",6,24,"Vern Bothwell","Vern Bothwell",NA,NA,"Vern Bothwell",-0.213187190515777,4,NA,NA,NA,NA,-0.213187190515777,1,63
+"orange",10,2021,30,185,"Vern Bothwell",6,1,"Vern Bothwell","Vern Bothwell",NA,NA,"Vern Bothwell",-0.213187190515777,4,NA,NA,NA,NA,-0.213187190515777,1,63
+"orange",10,2023,42,254,"Allen Hurlbert",6,25,"Allen Hurlbert","Allen Hurlbert",NA,NA,"Allen Hurlbert",0.0232681353687694,18,NA,NA,NA,NA,0.0232681353687694,1,4
+"orange",10,2024,51,282,"Paul Taillie",6,2,"Paul Taillie","Paul Taillie",NA,NA,"Paul Taillie",0.278195488721805,1,NA,NA,NA,NA,0.278195488721805,1,49
+"orange",11,1999,42,397,"Marsha Stephens",6,6,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"orange",11,2000,37,291,"Marsha Stephens",6,18,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"orange",11,2001,38,266,"Marsha Stephens",6,24,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"orange",11,2002,37,266,"Marsha Stephens",6,24,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"orange",11,2003,19,175,"Marsha Stephens",6,22,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"orange",11,2004,24,201,"Marsha Stephens",6,6,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"orange",11,2005,31,199,"Marsha Stephens",6,26,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"orange",11,2006,40,333,"Marsha Stephens",6,26,"Marsha Stephens","Marsha Stephens",NA,NA,"Marsha Stephens",-0.14424950185068,34,NA,NA,NA,NA,-0.14424950185068,1,39
+"orange",11,2007,35,247,"?",6,16,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"orange",11,2008,24,238,"?",6,7,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"orange",11,2009,26,215,"?",6,13,"?","?",NA,NA,"?",-0.11635948968511,15,NA,NA,NA,NA,-0.11635948968511,1,1
+"orange",11,2012,73,700,"Ali Iyoob",6,17,"Ali Iyoob","Ali Iyoob",NA,NA,"Ali Iyoob",1.03970588235294,1,NA,NA,NA,NA,1.03970588235294,1,3
+"orange",11,2017,36,151,"Loren Hintz",6,18,"Loren Hintz","Loren Hintz",NA,NA,"Loren Hintz",0.0455128205128204,6,NA,NA,NA,NA,0.0455128205128204,1,36
+"orange",11,2018,40,137,"Loren Hintz",6,2,"Loren Hintz","Loren Hintz",NA,NA,"Loren Hintz",0.0455128205128204,6,NA,NA,NA,NA,0.0455128205128204,1,36
+"orange",11,2019,38,169,"Loren Hintz: weather=64F then warming, sunny, no wind",6,16,"Loren Hintz","Loren Hintz",NA,NA,"Loren Hintz",0.0455128205128204,6,NA,NA,NA,NA,0.0455128205128204,1,36
+"orange",11,2020,40,212,"Loren Hintz: weather=61F then warming, sunny, no wind",6,14,"Loren Hintz","Loren Hintz",NA,NA,"Loren Hintz",0.0455128205128204,6,NA,NA,NA,NA,0.0455128205128204,1,36
+"orange",11,2021,39,182,"Loren Hintz: weather=66F then warming, partially cloudy, no wind",6,5,"Loren Hintz","Loren Hintz",NA,NA,"Loren Hintz",0.0455128205128204,6,NA,NA,NA,NA,0.0455128205128204,1,36
+"orange",11,2022,40,191,"Loren Hintz, Margaret Vimmerstedt",6,4,"Margaret Vimmerstedt","Loren Hintz","Margaret Vimmerstedt",NA,"Loren Hintz, Margaret Vimmerstedt",0.0455128205128204,6,0.0659186535764376,1,NA,NA,0.0455128205128204,2,37
+"orange",11,2023,48,298,"Suzanne Roberts, Vicki Nebes",6,3,"Suzanne Roberts","Suzanne Roberts","Vicki Nebes",NA,"Suzanne Roberts, Vicki Nebes",0.283763277693475,2,0.283763277693475,2,NA,NA,0.283763277693475,1,60
+"orange",11,2024,46,289,"Suzanne Roberts,Vicki Nebes",6,16,"Suzanne Roberts","Suzanne Roberts","Vicki Nebes",NA,"Suzanne Roberts, Vicki Nebes",0.283763277693475,2,0.283763277693475,2,NA,NA,0.283763277693475,1,60
+"orange",12,1999,45,330,"Haven Wiley (Minna Wiley, recorder)",5,23,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2000,37,297,"Minna and Haven Wiley",5,28,"Haven Wiley",NA,"Haven Wiley",NA,"Haven Wiley",NA,NA,-0.00587334517820854,56,NA,NA,-0.00587334517820854,2,21
+"orange",12,2001,41,308,"Minna and Haven Wiley",6,6,"Haven Wiley",NA,"Haven Wiley",NA,"Haven Wiley",NA,NA,-0.00587334517820854,56,NA,NA,-0.00587334517820854,2,21
+"orange",12,2002,36,311,"Haven and Minna Wiley",5,27,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2003,38,284,"Haven and Minna Wiley",5,18,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2004,43,282,"Haven and Minna Wiley",5,23,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2005,32,258,"Haven and Minna Wiley",6,11,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2006,43,294,"Haven and Minna Wiley",5,21,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2007,38,329,"Haven and Minna Wiley",6,10,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2008,40,321,"Haven and Minna Wiley",6,8,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2009,32,271,"Haven and Minna Wiley",7,5,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2010,39,314,"H. Wiley",5,31,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2011,36,252,"Haven Wiley",5,29,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2012,37,239,"Haven Wiley",6,17,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2013,26,230,"Haven Wiley",6,2,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2014,30,216,"Haven Wiley",6,8,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2015,27,175,"Haven Wiley",6,28,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2016,32,210,"Haven Wiley",5,22,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2017,32,181,"Haven Wiley",5,28,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2018,29,176,"Haven Wiley",5,27,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2019,34,223,"Haven Wiley",6,2,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2020,40,215,"Haven Wiley, Minna Wiley",5,24,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2021,37,183,"Haven Wiley, Minna Wiley",6,27,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2022,29,199,"Haven Wiley, Minna Wiley",5,22,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2023,31,158,"Haven Wiley, Minna Wiley",5,21,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
+"orange",12,2024,32,154,"Haven Wiley, Minna Wiley",6,2,"Haven Wiley","Haven Wiley",NA,NA,"Haven Wiley",-0.00587334517820854,56,NA,NA,NA,NA,-0.00587334517820854,1,21
