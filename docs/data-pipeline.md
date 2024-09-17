@@ -39,6 +39,9 @@ or files provided by Haven Wiley.
 participants have provided stop-level records.
 When possible, this data is used to disaggregate route-level checklists.
 
+`survey-events`
+: complete listing of years/route/stop where an observation was made.
+
 `taxonomy`
 : The
 [eBird taxonomy](https://support.ebird.org/en/support/solutions/articles/48000837816-the-ebird-taxonomy)
@@ -54,7 +57,7 @@ The `get_latest_taxonomy` function is used internally for accessing the taxonomy
 : TODO Lat/Lon of stops
 
 `excluded-submissions`
-: A file contained a list of eBird checklists
+: A file containing a list of eBird checklists
 to exclude.
 
 ## Relations between sources and products
@@ -67,7 +70,8 @@ flowchart TD
   D[taxonomy]
   E[observer]
   F[coordinates]
-  G[excluded]
+  G[excluded-submissions]
+  H[survey-events]
   O1(by-stop)
   O2(by-route)
 
@@ -76,11 +80,15 @@ flowchart TD
   C --> O1
   D --> A
   D --> B
+  A --> H
+  C --> H
+  H --> O1
   A --> E
   B --> E
   G --> A
   E --> O1
   F --> O1
+  A --> O2
   O1 --> O2
 ```
 
