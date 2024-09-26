@@ -126,14 +126,15 @@ Files are stored in `inst/extdata/ebird/`.
 
 ### `historical`
 
-TODO
-Checklists scraped from the old website
-Stored as .csv files and sitrscrape .rds files
+Prior to 2009,
+checklists were available on the old MBBS website.
+These files were collated into single `csv` file for each county.
 Files are stored in `inst/extdata/historical/`.
+These data are not updated.
 
 ### `stop-level`
 
-For many years surveys were summarized to routes.
+Prior to 2022, survey counts were aggregated at the route level.
 This data is the un-summarized version of the routes for which records exist.
 The `stop-level` data comes from a variety of sources,
 and is all stored in
@@ -141,19 +142,31 @@ and is all stored in
 The data is considered stable and not updated.
 
 The sources are as follows:
-A) historical excel sheets
-The raw data are stored in 'inst/extdata/stop_level_data/' in folders by the name of the observer who sent them.
-'R/prepare_historical_xls' is used to create the processed 'stop_level_hist_xls.csv'
 
-B) Scraped from the species_comments column
-Some checklists summarizing routes on ebird contain stop-level information in the notes for each species. 
-'R/process_species_comments' R script processes this data into a stop-level format to create 'stop_level_species_comments.csv'
+1. Excel files provided by observers.
+The raw data are stored in `inst/extdata/stop-level/`
+in folders by the name of the observer who sent them.
+Code in `R/prepare_historical_xls`
+creates the processed `stop_level_hist_xls.csv`.
 
-C) Transcribed paper files
-Many surveyors sent Haven Wiley their paper recording sheets which were then summarized to route for the old website. These sheets have been transcribed with double-entry to prevent errors. The 'transcribed_paper_files_NAME' spreadsheets are processed to create 'stop_level_transcribed_paper.csv'
+2. Scraped from the `ebird` `species_comments` column.
+Some checklists summarizing routes
+on ebird contain stop-level information in the notes for each species.
+The `R/process_species_comments` R script processes this data
+into a stop-level format to create `stop_level_species_comments.csv`.
 
-Overall:
-When there is disagreement between the route-level data and the stop-level data, such as cases where the route-level is higher by 1, the stop-level data is taken as the 'truth'
+3. Transcribed paper files.
+Many surveyors sent Haven Wiley their paper recording sheets
+which were then summarized to route for the old website.
+These sheets have been transcribed with double-entry to prevent errors.
+The `transcribed_paper_files_NAME` spreadsheets
+are processed to create `stop_level_transcribed_paper.csv`
+
+NOTE:
+When there is disagreement between counts
+at the route-level and the stop-level,
+such as cases where the route-level is higher by 1,
+the stop-level data is .
 
 ## Data products
 
