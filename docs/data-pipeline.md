@@ -25,22 +25,24 @@ MBBS data comes from several sources.
 They are briefly here
 and explained in more detail below.
 
-`eBird`
+[`eBird`](#ebird) [![info on ebird](../resources/img/info-16x16.svg)](#ebird)
+
 : As as 2009, all MBBS checklists are submitted to [eBird](https://ebird.org).
 These checklists are downloaded manually as CSV files.
 Prior to 2022, checklists were submitted at the route-level.
 
-`historical`
+
+[`historical`](#historical) [![info on historical data](../resources/img/info-16x16.svg)](#historical)
 : Checklists scraped from the old MBBS site
 or files provided by Haven Wiley.
 
-`stop-level`
+[`stop-level`](#stop-level) [![info on stop-level data](../resources/img/info-16x16.svg)](#stop-level)
 : For some routes prior to 2022,
 participants have provided stop-level records.
 When possible, this data is used to disaggregate route-level checklists.
 
-`survey-events`
-: complete listing of years/route/stop where an observation was made.
+[`survey-events`](#survey-events) [![info on survey-event data](../resources/img/info-16x16.svg)](#survey-events)
+: Complete listing of years/route/stop where an observation was made.
 
 `taxonomy`
 : The
@@ -50,23 +52,8 @@ Taxonomy CSV files are manually downloaded and stored in
 `inst/taxonomy/ebird_taxonomy_vXXXX.csv`.
 The `get_latest_taxonomy` function is used internally for accessing the taxonomy.
 
-`observer`
-: End users will find data about which surveyors ran each route, and which observer is the 'primary_observer' in 'data/survey_events' which contains the: route, year, number of stops, and primary_observer - as well as other information about the observers. 
-'data/survey_events' is updated every time the overall dataset is updated, at least once a year when the new data is downloaded.
-
-'inst/survey_list'
-This is the 'truth' record of all surveys, and contains information from ebird, scraped from the old website, and confirmed independently with surveyors about who ran which routes each year. It also summarized the number of species (S) and total birds seen (N). It is updated when new surveys have been added to ebird.
-
-'main_observer_conversion_table'
-This table contains a list of the expected observers for each route, used in calculating the primary_observer. It is updated when a route is surveyed by someone who hasn't run that route before. 
-
-'mini_observer_conversion_table'
-This table contains the conversions used to standardize observer names, eg 'Tom driscoll' and 'Tom Driscol' both become 'Tome Driscoll'
-
-Processing of observers happens in 'R/process_observers'
-The primary_observer is the highest quality observer who was part of the survey for a given route. 'observer_quality' is calculated as
-N_species[route,year,observer(i)] - mean(N_species[route,!observer(i)]  / mean(N_species[route,!observer(i)] 
-These comparison scores (one for every observer on every route-year) are then averaged for each observer to get their 'observer_quality'. A score of '.05' is interpretable as 'On average, this observer sees 5% more species than other surveyors on the same routes'.
+[`observer`](#observer) [![info on observer data](../resources/img/info-16x16.svg)](#observer)
+: Observer datasets contain information on who observed which routes and when.
 
 `stop-coordinates`
 : TODO Lat/Lon of the first stops for each route (right now)
@@ -166,14 +153,46 @@ NOTE:
 When there is disagreement between counts
 at the route-level and the stop-level,
 such as cases where the route-level is higher by 1,
-the stop-level data is .
+the stop-level data is taken as the source of truth.
+
+### `survey-events`
+
+The `inst/survey-events.csv` file contains a basic summary of all
+route/years for which a survey was completed.
+This data is taken from ebird, scraped from the old website,
+and/or confirmed independently
+with surveyors about who ran which routes each year.
+It also summarizes the number of species (S) and total birds seen (N).
+It is updated when new surveys have been added to ebird.
+
+A normalized version of this file is availble as a [data product](#data-products).
+
+### `observer`
+
+End users will find data about which surveyors ran each route,
+and which observer is the `primary_observer` in  which contains the: route, year, number of stops, and primary_observer - as well as other information about the observers.
+`data/survey_events` is updated every time the overall dataset is updated, at least once a year when the new data is downloaded.
+
+'main_observer_conversion_table'
+This table contains a list of the expected observers for each route, used in calculating the primary_observer. It is updated when a route is surveyed by someone who hasn't run that route before. 
+
+'mini_observer_conversion_table'
+This table contains the conversions used to standardize observer names, eg 'Tom driscoll' and 'Tom Driscol' both become 'Tome Driscoll'
+
+Processing of observers happens in 'R/process_observers'
+The primary_observer is the highest quality observer who was part of the survey for a given route. 'observer_quality' is calculated as
+N_species[route,year,observer(i)] - mean(N_species[route,!observer(i)]  / mean(N_species[route,!observer(i)] 
+These comparison scores (one for every observer on every route-year) are then averaged for each observer to get their 'observer_quality'. A score of '.05' is interpretable as 'On average, this observer sees 5% more species than other surveyors on the same routes'.
+
 
 ## Data products
 
+* `survey-events`
 * "raw" data
 * "analysis-ready" data
 * Summarized by stop
 * Summarized by route
+
 
 ### Versioning
 
