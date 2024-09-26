@@ -12,7 +12,7 @@ test_that("survey_list has no rows with NA observers", {
 
 test_that("survey_list has only one entry for every route-year", {
   survey_list <- read.csv(system.file("extdata/survey_list.csv", package = "mbbs"), header = TRUE)
-  survey_list <- 
+  survey_list <-
     survey_list %>%
     group_by(mbbs_county, route_num, year) %>%
     summarize(N = n())
