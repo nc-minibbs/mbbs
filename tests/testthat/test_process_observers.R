@@ -45,10 +45,10 @@ test_that("mbbs_survey_events has one record per route-year", {
     mbbs_survey_events %>%
     group_by(mbbs_county, route_num, year) %>%
     summarize(N = n())
-  
+
   expect_no_error(
     assertthat::assert_that(
-      sum(check$N) == nrow(check) #no N can be greater than 1
+      sum(check$N) == nrow(check) # no N can be greater than 1
     )
   )
 })
