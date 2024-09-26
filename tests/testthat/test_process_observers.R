@@ -40,6 +40,18 @@ test_that("mbbs_survey_events has no rows with NA observers", {
   )
 })
 
+test_that("mbbs_survey_events has one record per route-year," {
+  check <-
+    mbbs_survey_events %>%
+    group_by(mbbs_county, route_num, year) %>%
+    summarize(N = n())
+  expect_no_error(
+    assertthat::assert_that(
+      sum(check$N) == nrow(check) #no N can be greater than 1
+    )
+  )
+})
+
 test_that("update_mini_observer_table runs without error", {
   expect_no_error(update_mini_observer_table(save = FALSE))
 })
