@@ -1,681 +1,681 @@
-"County_Route_Stop","County_Route","mbbs_county","route_num","stop_num","lat","lon","stop_notes"
-"Chatham-1-1","Chatham-01","chatham",1,1,35.768194,-79.18409,NA
-"Chatham-1-2","Chatham-01","chatham",1,2,35.768061,-79.175666,NA
-"Chatham-1-3","Chatham-01","chatham",1,3,35.767089,-79.165578,NA
-"Chatham-1-4","Chatham-01","chatham",1,4,35.766264,-79.15756,NA
-"Chatham-1-5","Chatham-01","chatham",1,5,35.771066,-79.151922,NA
-"Chatham-1-6","Chatham-01","chatham",1,6,35.777919,-79.144074,NA
-"Chatham-1-7","Chatham-01","chatham",1,7,35.784027,-79.147646,NA
-"Chatham-1-8","Chatham-01","chatham",1,8,35.790649,-79.150232,NA
-"Chatham-1-9","Chatham-01","chatham",1,9,35.796262,-79.150871,NA
-"Chatham-1-10","Chatham-01","chatham",1,10,35.803606,-79.1532756,NA
-"Chatham-1-11","Chatham-01","chatham",1,11,35.808863,-79.157316,NA
-"Chatham-1-12","Chatham-01","chatham",1,12,35.815893,-79.153156,NA
-"Chatham-1-13","Chatham-01","chatham",1,13,35.821153,-79.147977,NA
-"Chatham-1-14","Chatham-01","chatham",1,14,35.8276,-79.143853,NA
-"Chatham-1-15","Chatham-01","chatham",1,15,35.833699,-79.139403,NA
-"Chatham-1-16","Chatham-01","chatham",1,16,35.840145,-79.134252,NA
-"Chatham-1-17","Chatham-01","chatham",1,17,35.843794,-79.125918,NA
-"Chatham-1-18","Chatham-01","chatham",1,18,35.846032,-79.116841,NA
-"Chatham-1-19","Chatham-01","chatham",1,19,35.84653,-79.108612,NA
-"Chatham-1-20","Chatham-01","chatham",1,20,35.846079,-79.098248,NA
-"Chatham-2-1","Chatham-02","chatham",2,1,35.8602659,-78.990665,NA
-"Chatham-2-2","Chatham-02","chatham",2,2,35.8639551,-78.9978547,NA
-"Chatham-2-3","Chatham-02","chatham",2,3,35.86792,-79.00082,NA
-"Chatham-2-4","Chatham-02","chatham",2,4,35.8625383,-79.0082845,NA
-"Chatham-2-5","Chatham-02","chatham",2,5,35.8573224,-79.0144718,NA
-"Chatham-2-6","Chatham-02","chatham",2,6,35.8520403,-79.0189869,NA
-"Chatham-2-7","Chatham-02","chatham",2,7,35.8455345,-79.0258997,NA
-"Chatham-2-8","Chatham-02","chatham",2,8,35.8381628,-79.0281508,NA
-"Chatham-2-9","Chatham-02","chatham",2,9,35.831003,-79.0234399,NA
-"Chatham-2-10","Chatham-02","chatham",2,10,35.8245885,-79.0182671,NA
-"Chatham-2-11","Chatham-02","chatham",2,11,35.8190108,-79.0209792,NA
-"Chatham-2-12","Chatham-02","chatham",2,12,35.8193091,-79.0293806,NA
-"Chatham-2-13","Chatham-02","chatham",2,13,35.8199538,-79.0396638,NA
-"Chatham-2-14","Chatham-02","chatham",2,14,35.8139108,-79.0445884,NA
-"Chatham-2-15","Chatham-02","chatham",2,15,35.8145049,-79.0539119,NA
-"Chatham-2-16","Chatham-02","chatham",2,16,35.8178023,-79.0617823,NA
-"Chatham-2-17","Chatham-02","chatham",2,17,35.8154438,-79.0713797,NA
-"Chatham-2-18","Chatham-02","chatham",2,18,35.8157816,-79.0799655,NA
-"Chatham-2-19","Chatham-02","chatham",2,19,35.810236,-79.0974469,NA
-"Chatham-2-20","Chatham-02","chatham",2,20,35.8124578,-79.1076962,NA
-"Chatham-3-1","Chatham-03","chatham",3,1,35.6733378,-78.9858872,NA
-"Chatham-3-2","Chatham-03","chatham",3,2,35.666351,-78.9801295,NA
-"Chatham-3-3","Chatham-03","chatham",3,3,35.6595899,-78.9777834,NA
-"Chatham-3-4","Chatham-03","chatham",3,4,35.655182,-78.9831765,NA
-"Chatham-3-5","Chatham-03","chatham",3,5,35.6509829,-78.9907833,NA
-"Chatham-3-6","Chatham-03","chatham",3,6,35.6473864,-78.99724,NA
-"Chatham-3-7","Chatham-03","chatham",3,7,35.6431243,-79.0050542,NA
-"Chatham-3-8","Chatham-03","chatham",3,8,35.6381369,-79.0035399,NA
-"Chatham-3-9","Chatham-03","chatham",3,9,35.6319633,-79.0030893,NA
-"Chatham-3-10","Chatham-03","chatham",3,10,35.6255625,-79.0025528,NA
-"Chatham-3-11","Chatham-03","chatham",3,11,35.618867,-79.0027127,NA
-"Chatham-3-12","Chatham-03","chatham",3,12,35.6123772,-79.0052136,NA
-"Chatham-3-13","Chatham-03","chatham",3,13,35.6049423,-79.0050848,NA
-"Chatham-3-14","Chatham-03","chatham",3,14,35.5985573,-79.0075727,NA
-"Chatham-3-15","Chatham-03","chatham",3,15,35.592432,-79.0122105,NA
-"Chatham-3-16","Chatham-03","chatham",3,16,35.586462,-79.0176232,NA
-"Chatham-3-17","Chatham-03","chatham",3,17,35.5832378,-79.0214676,NA
-"Chatham-3-18","Chatham-03","chatham",3,18,35.5823524,-79.0269309,NA
-"Chatham-3-19","Chatham-03","chatham",3,19,35.5754405,-79.029214,NA
-"Chatham-3-20","Chatham-03","chatham",3,20,35.567644,-79.0285998,NA
-"Chatham-4-1","Chatham-04","chatham",4,1,35.5801738,-79.2743729,NA
-"Chatham-4-2","Chatham-04","chatham",4,2,35.5728397,-79.2824815,NA
-"Chatham-4-3","Chatham-04","chatham",4,3,35.5743843,-79.2867818,NA
-"Chatham-4-4","Chatham-04","chatham",4,4,35.5789036,-79.2926441,NA
-"Chatham-4-5","Chatham-04","chatham",4,5,35.5865283,-79.293837,NA
-"Chatham-4-6","Chatham-04","chatham",4,6,35.596687,-79.3009093,NA
-"Chatham-4-7","Chatham-04","chatham",4,7,35.5960411,-79.308629,NA
-"Chatham-4-8","Chatham-04","chatham",4,8,35.5952532,-79.3185968,NA
-"Chatham-4-9","Chatham-04","chatham",4,9,35.5927954,-79.3262783,NA
-"Chatham-4-10","Chatham-04","chatham",4,10,35.5966128,-79.3260674,NA
-"Chatham-4-11","Chatham-04","chatham",4,11,35.6036168,-79.3197012,NA
-"Chatham-4-12","Chatham-04","chatham",4,12,35.6102677,-79.323178,NA
-"Chatham-4-13","Chatham-04","chatham",4,13,35.6174446,-79.3258163,NA
-"Chatham-4-14","Chatham-04","chatham",4,14,35.6214633,-79.3309071,NA
-"Chatham-4-15","Chatham-04","chatham",4,15,35.6220722,-79.3399475,NA
-"Chatham-4-16","Chatham-04","chatham",4,16,35.6305218,-79.3382976,NA
-"Chatham-4-17","Chatham-04","chatham",4,17,35.6369013,-79.3400344,NA
-"Chatham-4-18","Chatham-04","chatham",4,18,35.6486759,-79.3349673,NA
-"Chatham-4-19","Chatham-04","chatham",4,19,35.6510179,-79.3424229,NA
-"Chatham-4-20","Chatham-04","chatham",4,20,35.6452243,-79.3589087,NA
-"Chatham-5-1","Chatham-05","chatham",5,1,35.66617,-79.48569,NA
-"Chatham-5-2","Chatham-05","chatham",5,2,35.661167,-79.490189,NA
-"Chatham-5-3","Chatham-05","chatham",5,3,35.6549811,-79.4861775,NA
-"Chatham-5-4","Chatham-05","chatham",5,4,35.6549225,-79.4783964,NA
-"Chatham-5-5","Chatham-05","chatham",5,5,35.650359,-79.47403,NA
-"Chatham-5-6","Chatham-05","chatham",5,6,35.641631,-79.475362,NA
-"Chatham-5-7","Chatham-05","chatham",5,7,35.637177,-79.470007,NA
-"Chatham-5-8","Chatham-05","chatham",5,8,35.640322,-79.461139,NA
-"Chatham-5-9","Chatham-05","chatham",5,9,35.638346,-79.457952,NA
-"Chatham-5-10","Chatham-05","chatham",5,10,35.631624,-79.457816,NA
-"Chatham-5-11","Chatham-05","chatham",5,11,35.625694,-79.457334,NA
-"Chatham-5-12","Chatham-05","chatham",5,12,35.617446,-79.455179,NA
-"Chatham-5-13","Chatham-05","chatham",5,13,35.611642,-79.450102,NA
-"Chatham-5-14","Chatham-05","chatham",5,14,35.6086766,-79.4421586,NA
-"Chatham-5-15","Chatham-05","chatham",5,15,35.604648,-79.438066,NA
-"Chatham-5-16","Chatham-05","chatham",5,16,35.596575,-79.435343,NA
-"Chatham-5-17","Chatham-05","chatham",5,17,35.587973,-79.433613,NA
-"Chatham-5-18","Chatham-05","chatham",5,18,35.580027,-79.430549,NA
-"Chatham-5-19","Chatham-05","chatham",5,19,35.571881,-79.433184,NA
-"Chatham-5-20","Chatham-05","chatham",5,20,35.566441,-79.430292,NA
-"Chatham-6-1","Chatham-06","chatham",6,1,35.81981,-79.47866,NA
-"Chatham-6-2","Chatham-06","chatham",6,2,35.821921,-79.480549,NA
-"Chatham-6-3","Chatham-06","chatham",6,3,35.830756,-79.480129,NA
-"Chatham-6-4","Chatham-06","chatham",6,4,35.837472,-79.479996,NA
-"Chatham-6-5","Chatham-06","chatham",6,5,35.843036,-79.478017,NA
-"Chatham-6-6","Chatham-06","chatham",6,6,35.841359,-79.468721,NA
-"Chatham-6-7","Chatham-06","chatham",6,7,35.842234,-79.459836,NA
-"Chatham-6-8","Chatham-06","chatham",6,8,35.837041,-79.454318,NA
-"Chatham-6-9","Chatham-06","chatham",6,9,35.831381,-79.449306,NA
-"Chatham-6-10","Chatham-06","chatham",6,10,35.824808,-79.448311,NA
-"Chatham-6-11","Chatham-06","chatham",6,11,35.817855,-79.445535,NA
-"Chatham-6-12","Chatham-06","chatham",6,12,35.813909,-79.439801,NA
-"Chatham-6-13","Chatham-06","chatham",6,13,35.808945,-79.433373,NA
-"Chatham-6-14","Chatham-06","chatham",6,14,35.802477,-79.424753,NA
-"Chatham-6-15","Chatham-06","chatham",6,15,35.79937,-79.421166,NA
-"Chatham-6-16","Chatham-06","chatham",6,16,35.794998,-79.414447,NA
-"Chatham-6-17","Chatham-06","chatham",6,17,35.792698,-79.406864,NA
-"Chatham-6-18","Chatham-06","chatham",6,18,35.790804,-79.397076,NA
-"Chatham-6-19","Chatham-06","chatham",6,19,35.788643,-79.389903,NA
-"Chatham-6-20","Chatham-06","chatham",6,20,35.78529,-79.379675,NA
-"Chatham-7-1","Chatham-07","chatham",7,1,35.7128722,-79.3712036,NA
-"Chatham-7-2","Chatham-07","chatham",7,2,35.7061355,-79.3740055,NA
-"Chatham-7-3","Chatham-07","chatham",7,3,35.7001185,-79.3756967,NA
-"Chatham-7-4","Chatham-07","chatham",7,4,35.7017803,-79.3672945,NA
-"Chatham-7-5","Chatham-07","chatham",7,5,35.7046057,-79.360453,NA
-"Chatham-7-6","Chatham-07","chatham",7,6,35.7094153,-79.3531007,NA
-"Chatham-7-7","Chatham-07","chatham",7,7,35.7071309,-79.3458036,NA
-"Chatham-7-8","Chatham-07","chatham",7,8,35.7050258,-79.3371755,NA
-"Chatham-7-9","Chatham-07","chatham",7,9,35.7087703,-79.3362319,NA
-"Chatham-7-10","Chatham-07","chatham",7,10,35.710583,-79.3282106,NA
-"Chatham-7-11","Chatham-07","chatham",7,11,35.7127298,-79.3208465,NA
-"Chatham-7-12","Chatham-07","chatham",7,12,35.7158568,-79.3125491,NA
-"Chatham-7-13","Chatham-07","chatham",7,13,35.7211741,-79.3103521,NA
-"Chatham-7-14","Chatham-07","chatham",7,14,35.7201954,-79.3006551,NA
-"Chatham-7-15","Chatham-07","chatham",7,15,35.7210019,-79.2930304,NA
-"Chatham-7-16","Chatham-07","chatham",7,16,35.7137957,-79.2953427,NA
-"Chatham-7-17","Chatham-07","chatham",7,17,35.7132929,-79.2894732,NA
-"Chatham-7-18","Chatham-07","chatham",7,18,35.7160022,-79.2809379,NA
-"Chatham-7-19","Chatham-07","chatham",7,19,35.7125989,-79.2771865,NA
-"Chatham-7-20","Chatham-07","chatham",7,20,35.705373,-79.2773259,NA
-"Chatham-8-1","Chatham-08","chatham",8,1,35.782637,-79.207965,NA
-"Chatham-8-2","Chatham-08","chatham",8,2,35.789967,-79.210325,NA
-"Chatham-8-3","Chatham-08","chatham",8,3,35.797211,-79.211255,NA
-"Chatham-8-4","Chatham-08","chatham",8,4,35.804574,-79.211822,NA
-"Chatham-8-5","Chatham-08","chatham",8,5,35.811297,-79.216393,NA
-"Chatham-8-6","Chatham-08","chatham",8,6,35.814045,-79.225265,NA
-"Chatham-8-7","Chatham-08","chatham",8,7,35.820159,-79.230642,NA
-"Chatham-8-8","Chatham-08","chatham",8,8,35.817804,-79.240028,NA
-"Chatham-8-9","Chatham-08","chatham",8,9,35.81518,-79.248376,NA
-"Chatham-8-10","Chatham-08","chatham",8,10,35.810451,-79.251885,NA
-"Chatham-8-11","Chatham-08","chatham",8,11,35.804434,-79.252052,NA
-"Chatham-8-12","Chatham-08","chatham",8,12,35.804864,-79.261296,NA
-"Chatham-8-13","Chatham-08","chatham",8,13,35.805263,-79.270823,NA
-"Chatham-8-14","Chatham-08","chatham",8,14,35.806004,-79.281216,NA
-"Chatham-8-15","Chatham-08","chatham",8,15,35.812398,-79.286235,NA
-"Chatham-8-16","Chatham-08","chatham",8,16,35.814745,-79.288611,NA
-"Chatham-8-17","Chatham-08","chatham",8,17,35.819226,-79.293771,NA
-"Chatham-8-18","Chatham-08","chatham",8,18,35.821235,-79.299888,NA
-"Chatham-8-19","Chatham-08","chatham",8,19,35.823759,-79.310191,NA
-"Chatham-8-20","Chatham-08","chatham",8,20,35.833841,-79.31898,NA
-"Chatham-9-1","Chatham-09","chatham",9,1,35.78602,-79.09268,NA
-"Chatham-9-2","Chatham-09","chatham",9,2,35.77783,-79.09412,NA
-"Chatham-9-3","Chatham-09","chatham",9,3,35.77046,-79.0933,NA
-"Chatham-9-4","Chatham-09","chatham",9,4,35.76417,-79.09083,NA
-"Chatham-9-5","Chatham-09","chatham",9,5,35.75695,-79.08784,NA
-"Chatham-9-6","Chatham-09","chatham",9,6,35.7495,-79.08702,NA
-"Chatham-9-7","Chatham-09","chatham",9,7,35.7412,-79.08465,NA
-"Chatham-9-8","Chatham-09","chatham",9,8,35.73337,-79.08245,NA
-"Chatham-9-9","Chatham-09","chatham",9,9,35.73337,-79.08245,NA
-"Chatham-9-10","Chatham-09","chatham",9,10,35.72046,-79.07359,NA
-"Chatham-9-11","Chatham-09","chatham",9,11,35.71547,-79.06816,NA
-"Chatham-9-12","Chatham-09","chatham",9,12,35.711,-79.0609,NA
-"Chatham-9-13","Chatham-09","chatham",9,13,35.70982,-79.07409,NA
-"Chatham-9-14","Chatham-09","chatham",9,14,35.70468,-79.07623,NA
-"Chatham-9-15","Chatham-09","chatham",9,15,35.71899,-79.05994,NA
-"Chatham-9-16","Chatham-09","chatham",9,16,35.72614,-79.05731,NA
-"Chatham-9-17","Chatham-09","chatham",9,17,35.73419,-79.05825,NA
-"Chatham-9-18","Chatham-09","chatham",9,18,35.72962,-79.00367,NA
-"Chatham-9-19","Chatham-09","chatham",9,19,35.72154,-79.00648,NA
-"Chatham-9-20","Chatham-09","chatham",9,20,35.71445,-79.00917,NA
-"Chatham-10-1","Chatham-10","chatham",10,1,35.665815,-79.09656,"""Just be aware the mileage might be correct but some of the landmarks have changed."" Clark Poe Road - 0.0m"
-"Chatham-10-2","Chatham-10","chatham",10,2,35.660276,-79.102497,"Just past first house on left (Gum Springs Road) - 0.55m"
-"Chatham-10-3","Chatham-10","chatham",10,3,35.654274,-79.106031,"Just past house on left in valley - 1.0m"
-"Chatham-10-4","Chatham-10","chatham",10,4,35.649215,-79.113949,"Gum Springs Baptist Church - 1.55m"
-"Chatham-10-5","Chatham-10","chatham",10,5,35.650185,-79.120723,"Mt. View AME Zion Church - 2.1m"
-"Chatham-10-6","Chatham-10","chatham",10,6,35.655079,-79.126862,"4783 Moncure Pittsboro Road - 2.6m"
-"Chatham-10-7","Chatham-10","chatham",10,7,35.659943,-79.133407,"Across from Pond - 3.1m"
-"Chatham-10-8","Chatham-10","chatham",10,8,35.664852,-79.138095,"Ruby Red - 3.6m"
-"Chatham-10-9","Chatham-10","chatham",10,9,35.669197,-79.139533,"Abeyance - 3.9m"
-"Chatham-10-10","Chatham-10","chatham",10,10,35.676245,-79.142404,"Pullover on right - 4.55m"
-"Chatham-10-11","Chatham-10","chatham",10,11,35.685151,-79.150835,"Thrift Shepard Shop - 5.1m"
-"Chatham-10-12","Chatham-10","chatham",10,12,35.68882,-79.153637,"Bill Thomas Road - 5.6m"
-"Chatham-10-13","Chatham-10","chatham",10,13,35.695673,-79.158038,"Mt. Zion Road - 6.1m"
-"Chatham-10-14","Chatham-10","chatham",10,14,35.698913,-79.165924,"All Our Children - 6.6m"
-"Chatham-10-15","Chatham-10","chatham",10,15,35.701214,-79.170651,"Install Inc (496 Pittsboro Moncure Road) - 7.0m"
-"Chatham-10-16","Chatham-10","chatham",10,16,35.706328,-79.178572,"Sandford Road - 7.4m"
-"Chatham-10-17","Chatham-10","chatham",10,17,35.724089,-79.186482,"Chatham Office Building - 0.0m"
-"Chatham-10-18","Chatham-10","chatham",10,18,35.732249,-79.187493,"Oakview - 0.5m"
-"Chatham-10-19","Chatham-10","chatham",10,19,35.737101,-79.185359,"1289 - 1.0m"
-"Chatham-10-20","Chatham-10","chatham",10,20,35.745641,-79.185047,"1692 - 1.5m"
-"Chatham-11-1","Chatham-11","chatham",11,1,35.610067,-79.277234,NA
-"Chatham-11-2","Chatham-11","chatham",11,2,35.617213,-79.280087,NA
-"Chatham-11-3","Chatham-11","chatham",11,3,35.624326,-79.282354,NA
-"Chatham-11-4","Chatham-11","chatham",11,4,35.630384,-79.278142,NA
-"Chatham-11-5","Chatham-11","chatham",11,5,35.636241,-79.27303,NA
-"Chatham-11-6","Chatham-11","chatham",11,6,35.640177,-79.265754,NA
-"Chatham-11-7","Chatham-11","chatham",11,7,35.645549,-79.260014,NA
-"Chatham-11-8","Chatham-11","chatham",11,8,35.647728,-79.251628,NA
-"Chatham-11-9","Chatham-11","chatham",11,9,35.649957,-79.243551,NA
-"Chatham-11-10","Chatham-11","chatham",11,10,35.655993,-79.238861,NA
-"Chatham-11-11","Chatham-11","chatham",11,11,35.662042,-79.238741,NA
-"Chatham-11-12","Chatham-11","chatham",11,12,35.660991,-79.22949,NA
-"Chatham-11-13","Chatham-11","chatham",11,13,35.659237,-79.221114,NA
-"Chatham-11-14","Chatham-11","chatham",11,14,35.653321,-79.217613,NA
-"Chatham-11-15","Chatham-11","chatham",11,15,35.649422,-79.210774,NA
-"Chatham-11-16","Chatham-11","chatham",11,16,35.649934,-79.201461,NA
-"Chatham-11-17","Chatham-11","chatham",11,17,35.655131,-79.195402,NA
-"Chatham-11-18","Chatham-11","chatham",11,18,35.660411,-79.189171,NA
-"Chatham-11-19","Chatham-11","chatham",11,19,35.664052,-79.181776,NA
-"Chatham-11-20","Chatham-11","chatham",11,20,35.670503,-79.179763,NA
-"Chatham-12-1","Chatham-12","chatham",12,1,35.61934,-79.520667,NA
-"Chatham-12-2","Chatham-12","chatham",12,2,35.6123,-79.519864,NA
-"Chatham-12-3","Chatham-12","chatham",12,3,35.611316,-79.513973,NA
-"Chatham-12-4","Chatham-12","chatham",12,4,35.61231,-79.506445,NA
-"Chatham-12-5","Chatham-12","chatham",12,5,35.618754,-79.507419,NA
-"Chatham-12-6","Chatham-12","chatham",12,6,35.625751,-79.507858,NA
-"Chatham-12-7","Chatham-12","chatham",12,7,35.630478,-79.50084,NA
-"Chatham-12-8","Chatham-12","chatham",12,8,35.634097,-79.492706,NA
-"Chatham-12-9","Chatham-12","chatham",12,9,35.635362,-79.484652,NA
-"Chatham-12-10","Chatham-12","chatham",12,10,35.637038,-79.477247,NA
-"Chatham-12-11","Chatham-12","chatham",12,11,35.644083,-79.475305,NA
-"Chatham-12-12","Chatham-12","chatham",12,12,35.653061,-79.472714,NA
-"Chatham-12-13","Chatham-12","chatham",12,13,35.653875,-79.463584,NA
-"Chatham-12-14","Chatham-12","chatham",12,14,35.654176,-79.455471,NA
-"Chatham-12-15","Chatham-12","chatham",12,15,35.658828,-79.448449,NA
-"Chatham-12-16","Chatham-12","chatham",12,16,35.66213,-79.440104,NA
-"Chatham-12-17","Chatham-12","chatham",12,17,35.666845,-79.433407,NA
-"Chatham-12-18","Chatham-12","chatham",12,18,35.668752,-79.4242,NA
-"Chatham-12-19","Chatham-12","chatham",12,19,35.666441,-79.416244,NA
-"Chatham-12-20","Chatham-12","chatham",12,20,35.666394,-79.409569,NA
-"Chatham-13-1","Chatham-13","chatham",13,1,35.71054,-79.54496,NA
-"Chatham-13-2","Chatham-13","chatham",13,2,35.708805,-79.536187,NA
-"Chatham-13-3","Chatham-13","chatham",13,3,35.712742,-79.527683,NA
-"Chatham-13-4","Chatham-13","chatham",13,4,35.716027,-79.518248,NA
-"Chatham-13-5","Chatham-13","chatham",13,5,35.720391,-79.510899,NA
-"Chatham-13-6","Chatham-13","chatham",13,6,35.72386,-79.501118,NA
-"Chatham-13-7","Chatham-13","chatham",13,7,35.721897,-79.491209,NA
-"Chatham-13-8","Chatham-13","chatham",13,8,35.720503,-79.481442,NA
-"Chatham-13-9","Chatham-13","chatham",13,9,35.722715,-79.470945,NA
-"Chatham-13-10","Chatham-13","chatham",13,10,35.725414,-79.46294,NA
-"Chatham-13-11","Chatham-13","chatham",13,11,35.730273,-79.45828,NA
-"Chatham-13-12","Chatham-13","chatham",13,12,35.737272,-79.455461,NA
-"Chatham-13-13","Chatham-13","chatham",13,13,35.744238,-79.449902,NA
-"Chatham-13-14","Chatham-13","chatham",13,14,35.751029,-79.444366,NA
-"Chatham-13-15","Chatham-13","chatham",13,15,35.759489,-79.442942,NA
-"Chatham-13-16","Chatham-13","chatham",13,16,35.766154,-79.440593,NA
-"Chatham-13-17","Chatham-13","chatham",13,17,35.768435,-79.430661,NA
-"Chatham-13-18","Chatham-13","chatham",13,18,35.771026,-79.423848,NA
-"Chatham-13-19","Chatham-13","chatham",13,19,35.776769,-79.416071,NA
-"Chatham-13-20","Chatham-13","chatham",13,20,35.783286,-79.411567,NA
-"Chatham-14-1","Chatham-14","chatham",14,1,35.7437305,-79.0044304,NA
-"Chatham-14-2","Chatham-14","chatham",14,2,35.7511476,-79.0078207,NA
-"Chatham-14-3","Chatham-14","chatham",14,3,35.7582663,-79.0102389,NA
-"Chatham-14-4","Chatham-14","chatham",14,4,35.7650553,-79.0066394,NA
-"Chatham-14-5","Chatham-14","chatham",14,5,35.7711038,-79.0027502,NA
-"Chatham-14-6","Chatham-14","chatham",14,6,35.7768952,-79.0064446,NA
-"Chatham-14-7","Chatham-14","chatham",14,7,35.7849402,-79.0093468,NA
-"Chatham-14-8","Chatham-14","chatham",14,8,35.7894141,-79.006155,NA
-"Chatham-14-9","Chatham-14","chatham",14,9,35.7894464,-78.9990063,NA
-"Chatham-14-10","Chatham-14","chatham",14,10,35.7919107,-78.9897438,NA
-"Chatham-14-11","Chatham-14","chatham",14,11,35.7951207,-78.9822449,NA
-"Chatham-14-12","Chatham-14","chatham",14,12,35.7946336,-78.9746531,NA
-"Chatham-14-13","Chatham-14","chatham",14,13,35.7904302,-78.9668748,NA
-"Chatham-14-14","Chatham-14","chatham",14,14,35.7940963,-78.9642201,NA
-"Chatham-14-15","Chatham-14","chatham",14,15,35.8017524,-78.9639626,NA
-"Chatham-14-16","Chatham-14","chatham",14,16,35.8069171,-78.9619799,NA
-"Chatham-14-17","Chatham-14","chatham",14,17,35.8079852,-78.9537736,NA
-"Chatham-14-18","Chatham-14","chatham",14,18,35.8121338,-78.9465209,NA
-"Chatham-14-19","Chatham-14","chatham",14,19,35.817586,-78.9428178,NA
-"Chatham-14-20","Chatham-14","chatham",14,20,35.8250782,-78.9421833,NA
-"Durham-1-1","Durham-01","durham",1,1,36.146827,-78.94738,NA
-"Durham-1-2","Durham-01","durham",1,2,36.153833,-78.945099,NA
-"Durham-1-3","Durham-01","durham",1,3,36.159448,-78.950115,NA
-"Durham-1-4","Durham-01","durham",1,4,36.165366,-78.947431,NA
-"Durham-1-5","Durham-01","durham",1,5,36.167614,-78.939551,NA
-"Durham-1-6","Durham-01","durham",1,6,36.165791,-78.931553,NA
-"Durham-1-7","Durham-01","durham",1,7,36.171284,-78.924783,NA
-"Durham-1-8","Durham-01","durham",1,8,36.174101,-78.918697,NA
-"Durham-1-9","Durham-01","durham",1,9,36.177046,-78.910515,NA
-"Durham-1-10","Durham-01","durham",1,10,36.198361,-78.903929,NA
-"Durham-1-11","Durham-01","durham",1,11,36.199336,-78.894878,NA
-"Durham-1-12","Durham-01","durham",1,12,36.200371,-78.886693,NA
-"Durham-1-13","Durham-01","durham",1,13,36.203491,-78.879702,NA
-"Durham-1-14","Durham-01","durham",1,14,36.206463,-78.871907,NA
-"Durham-1-15","Durham-01","durham",1,15,36.212495,-78.868406,NA
-"Durham-1-16","Durham-01","durham",1,16,36.21665,-78.874843,NA
-"Durham-1-17","Durham-01","durham",1,17,36.222575,-78.881816,NA
-"Durham-1-18","Durham-01","durham",1,18,36.227544,-78.88045,NA
-"Durham-1-19","Durham-01","durham",1,19,36.229474,-78.871102,NA
-"Durham-1-20","Durham-01","durham",1,20,36.230211,-78.863988,NA
-"Durham-2-1","Durham-02","durham",2,1,36.121814,-78.839884,NA
-"Durham-2-2","Durham-02","durham",2,2,36.127101,-78.84921,NA
-"Durham-2-3","Durham-02","durham",2,3,36.132187,-78.853069,NA
-"Durham-2-4","Durham-02","durham",2,4,36.138897,-78.857054,NA
-"Durham-2-5","Durham-02","durham",2,5,36.144576,-78.860898,NA
-"Durham-2-6","Durham-02","durham",2,6,36.150464,-78.866347,NA
-"Durham-2-7","Durham-02","durham",2,7,36.15219,-78.872216,NA
-"Durham-2-8","Durham-02","durham",2,8,36.148358,-78.878233,NA
-"Durham-2-9","Durham-02","durham",2,9,36.144251,-78.882879,NA
-"Durham-2-10","Durham-02","durham",2,10,36.144997,-78.892117,NA
-"Durham-2-11","Durham-02","durham",2,11,36.147595,-78.897946,NA
-"Durham-2-12","Durham-02","durham",2,12,36.154477,-78.895765,NA
-"Durham-2-13","Durham-02","durham",2,13,36.160831,-78.895588,NA
-"Durham-2-14","Durham-02","durham",2,14,36.167231,-78.891647,NA
-"Durham-2-15","Durham-02","durham",2,15,36.170638,-78.883845,NA
-"Durham-2-16","Durham-02","durham",2,16,36.175338,-78.881963,NA
-"Durham-2-17","Durham-02","durham",2,17,36.180032,-78.887381,NA
-"Durham-2-18","Durham-02","durham",2,18,36.185202,-78.88971,NA
-"Durham-2-19","Durham-02","durham",2,19,36.191652,-78.898034,NA
-"Durham-2-20","Durham-02","durham",2,20,36.193735,-78.903379,NA
-"Durham-3-1","Durham-03","durham",3,1,36.0174968,-78.9190325,NA
-"Durham-3-2","Durham-03","durham",3,2,36.0244489,-78.9197512,NA
-"Durham-3-3","Durham-03","durham",3,3,36.0302437,-78.9254672,NA
-"Durham-3-4","Durham-03","durham",3,4,36.0360277,-78.929253,NA
-"Durham-3-5","Durham-03","durham",3,5,36.0371268,-78.9365445,NA
-"Durham-3-6","Durham-03","durham",3,6,36.0386392,-78.9475227,NA
-"Durham-3-7","Durham-03","durham",3,7,36.0426801,-78.955214,NA
-"Durham-3-8","Durham-03","durham",3,8,36.0428468,-78.9625931,NA
-"Durham-3-9","Durham-03","durham",3,9,36.0472806,-78.9693279,NA
-"Durham-3-10","Durham-03","durham",3,10,36.0531853,-78.9732269,NA
-"Durham-3-11","Durham-03","durham",3,11,36.0593967,-78.9780444,NA
-"Durham-3-12","Durham-03","durham",3,12,36.0653133,-78.9774317,NA
-"Durham-3-13","Durham-03","durham",3,13,36.0727903,-78.9730363,NA
-"Durham-3-14","Durham-03","durham",3,14,36.0760626,-78.9664597,NA
-"Durham-3-15","Durham-03","durham",3,15,36.0761728,-78.9569745,NA
-"Durham-3-16","Durham-03","durham",3,16,36.0775314,-78.9488686,NA
-"Durham-3-17","Durham-03","durham",3,17,36.0823143,-78.9415308,NA
-"Durham-3-18","Durham-03","durham",3,18,36.0948432,-78.9325766,NA
-"Durham-3-19","Durham-03","durham",3,19,36.1032818,-78.9310083,NA
-"Durham-3-20","Durham-03","durham",3,20,36.1098165,-78.9295937,NA
-"Durham-4-1","Durham-04","durham",4,1,36.09356,-78.909942,NA
-"Durham-4-2","Durham-04","durham",4,2,36.09265,-78.90081,NA
-"Durham-4-3","Durham-04","durham",4,3,36.095121,-78.89222,NA
-"Durham-4-4","Durham-04","durham",4,4,36.093249,-78.883716,NA
-"Durham-4-5","Durham-04","durham",4,5,36.087356,-78.877485,NA
-"Durham-4-6","Durham-04","durham",4,6,36.083043,-78.871214,NA
-"Durham-4-7","Durham-04","durham",4,7,36.083335,-78.864523,NA
-"Durham-4-8","Durham-04","durham",4,8,36.074626,-78.863454,NA
-"Durham-4-9","Durham-04","durham",4,9,36.075709,-78.860588,NA
-"Durham-4-10","Durham-04","durham",4,10,36.082363,-78.853651,NA
-"Durham-4-11","Durham-04","durham",4,11,36.086306,-78.847129,NA
-"Durham-4-12","Durham-04","durham",4,12,36.091449,-78.840976,NA
-"Durham-4-13","Durham-04","durham",4,13,36.094726,-78.834778,NA
-"Durham-4-14","Durham-04","durham",4,14,36.091571,-78.829924,NA
-"Durham-4-15","Durham-04","durham",4,15,36.084415,-78.824493,NA
-"Durham-4-16","Durham-04","durham",4,16,36.076406,-78.821093,NA
-"Durham-4-17","Durham-04","durham",4,17,36.06637,-78.820962,NA
-"Durham-4-18","Durham-04","durham",4,18,36.060492,-78.817566,NA
-"Durham-4-19","Durham-04","durham",4,19,36.052976,-78.815265,NA
-"Durham-4-20","Durham-04","durham",4,20,36.04377,-78.814958,NA
-"Durham-5-1","Durham-05","durham",5,1,35.8828612,-78.9927439,NA
-"Durham-5-2","Durham-05","durham",5,2,35.8868399,-78.9864874,NA
-"Durham-5-3","Durham-05","durham",5,3,35.8922646,-78.9807503,NA
-"Durham-5-4","Durham-05","durham",5,4,35.9007635,-78.9806876,NA
-"Durham-5-5","Durham-05","durham",5,5,35.9055098,-78.9832843,NA
-"Durham-5-6","Durham-05","durham",5,6,35.910952,-78.9841122,NA
-"Durham-5-7","Durham-05","durham",5,7,35.9194738,-78.9863458,NA
-"Durham-5-8","Durham-05","durham",5,8,35.9262418,-78.9893718,NA
-"Durham-5-9","Durham-05","durham",5,9,35.932457,-78.9894436,NA
-"Durham-5-10","Durham-05","durham",5,10,35.9398126,-78.9841876,NA
-"Durham-5-11","Durham-05","durham",5,11,35.9425889,-78.9795975,NA
-"Durham-5-12","Durham-05","durham",5,12,35.946114,-78.9715172,NA
-"Durham-5-13","Durham-05","durham",5,13,35.9508564,-78.9655766,NA
-"Durham-5-14","Durham-05","durham",5,14,35.9533748,-78.9581148,NA
-"Durham-5-15","Durham-05","durham",5,15,35.9573191,-78.9511531,NA
-"Durham-5-16","Durham-05","durham",5,16,35.9610426,-78.9474957,NA
-"Durham-5-17","Durham-05","durham",5,17,35.9669508,-78.9457455,NA
-"Durham-5-18","Durham-05","durham",5,18,35.9735894,-78.9428726,NA
-"Durham-5-19","Durham-05","durham",5,19,35.9843204,-78.9410977,NA
-"Durham-5-20","Durham-05","durham",5,20,35.9897964,-78.9388187,NA
-"Durham-6-1","Durham-06","durham",6,1,35.8687576,-78.8298885,NA
-"Durham-6-2","Durham-06","durham",6,2,35.8744067,-78.8366567,NA
-"Durham-6-3","Durham-06","durham",6,3,35.8795416,-78.8406627,NA
-"Durham-6-4","Durham-06","durham",6,4,35.8805364,-78.8454915,NA
-"Durham-6-5","Durham-06","durham",6,5,35.8874673,-78.8491849,NA
-"Durham-6-6","Durham-06","durham",6,6,35.8972234,-78.8497119,NA
-"Durham-6-7","Durham-06","durham",6,7,35.9021586,-78.8538769,NA
-"Durham-6-8","Durham-06","durham",6,8,35.9070053,-78.8618308,NA
-"Durham-6-9","Durham-06","durham",6,9,35.9148937,-78.8681787,NA
-"Durham-6-10","Durham-06","durham",6,10,35.9197207,-78.8732447,NA
-"Durham-6-11","Durham-06","durham",6,11,35.9247973,-78.8806132,NA
-"Durham-6-12","Durham-06","durham",6,12,35.9300092,-78.8853173,NA
-"Durham-6-13","Durham-06","durham",6,13,35.9341271,-78.8901052,NA
-"Durham-6-14","Durham-06","durham",6,14,35.9421815,-78.8998308,NA
-"Durham-6-15","Durham-06","durham",6,15,35.9478616,-78.9031045,NA
-"Durham-6-16","Durham-06","durham",6,16,35.9574454,-78.9087501,NA
-"Durham-6-17","Durham-06","durham",6,17,35.9638489,-78.9179103,NA
-"Durham-6-18","Durham-06","durham",6,18,35.9674861,-78.9225563,NA
-"Durham-6-19","Durham-06","durham",6,19,35.9728573,-78.9333264,NA
-"Durham-6-20","Durham-06","durham",6,20,35.9758196,-78.937776,NA
-"Durham-7-1","Durham-07","durham",7,1,35.951236,-78.836051,"""Just be aware the mileage might be correct but some of the landmarks have changed. For example, the abandoned house is now the food lion shopping center"" 0.0 storage area"
-"Durham-7-2","Durham-07","durham",7,2,35.95625,-78.82648,"0.55 1615 Sheron Rd"
-"Durham-7-3","Durham-07","durham",7,3,35.959794,-78.819419,"1.1 Fields"
-"Durham-7-4","Durham-07","durham",7,4,35.962164,-78.813438,"1.5 RTP Lock and Key"
-"Durham-7-5","Durham-07","durham",7,5,35.964661,-78.805792,"2.0 Cemetery"
-"Durham-7-6","Durham-07","durham",7,6,35.970668,-78.800716,"2.6 312 Sheron Rd"
-"Durham-7-7","Durham-07","durham",7,7,35.974903,-78.792632,"3.0 Food Lion near Rte 98"
-"Durham-7-8","Durham-07","durham",7,8,35.977794,-78.781118,"0.0 98 and Baptist Middle School"
-"Durham-7-9","Durham-07","durham",7,9,35.982075,-78.775266,"0.55 Cemetery"
-"Durham-7-10","Durham-07","durham",7,10,35.989001,-78.769871,"1.1 Field"
-"Durham-7-11","Durham-07","durham",7,11,35.992371,-78.76502,"1.5 Greenbrier Rd"
-"Durham-7-12","Durham-07","durham",7,12,35.99169,-78.75632,"2.0 Intersection of 1908 Southview at Church"
-"Durham-7-13","Durham-07","durham",7,13,35.98609,-78.75113,"0.5 510 Southview"
-"Durham-7-14","Durham-07","durham",7,14,35.97808,-78.75011,"1.0 Powerline crossing"
-"Durham-7-15","Durham-07","durham",7,15,35.97198,-78.74944,"1.5 Past Bridge"
-"Durham-7-16","Durham-07","durham",7,16,35.96481,-78.75342,"2.0 Edge of field"
-"Durham-7-17","Durham-07","durham",7,17,35.96113,-78.74909,"2.5 Kemp and Southview"
-"Durham-7-18","Durham-07","durham",7,18,35.95701,-78.74222,"0.6 Old Kemp Road"
-"Durham-7-19","Durham-07","durham",7,19,35.95484,-78.73421,"1.2 Power line"
-"Durham-7-20","Durham-07","durham",7,20,35.95004,-78.73453,"1.7 Carpenter Pond and Soral Gin"
-"Durham-8-1","Durham-08","durham",8,1,35.926474,-78.761981,NA
-"Durham-8-2","Durham-08","durham",8,2,35.933695,-78.767016,NA
-"Durham-8-3","Durham-08","durham",8,3,35.939618,-78.771087,NA
-"Durham-8-4","Durham-08","durham",8,4,35.945499,-78.771726,NA
-"Durham-8-5","Durham-08","durham",8,5,35.952134,-78.774109,NA
-"Durham-8-6","Durham-08","durham",8,6,35.958573,-78.778001,NA
-"Durham-8-7","Durham-08","durham",8,7,35.966321,-78.782952,NA
-"Durham-8-8","Durham-08","durham",8,8,35.970357,-78.784644,NA
-"Durham-8-9","Durham-08","durham",8,9,35.974939,-78.785642,NA
-"Durham-8-10","Durham-08","durham",8,10,35.979455,-78.794692,NA
-"Durham-8-11","Durham-08","durham",8,11,35.984999,-78.798088,NA
-"Durham-8-12","Durham-08","durham",8,12,35.99131,-78.801438,NA
-"Durham-8-13","Durham-08","durham",8,13,35.998118,-78.801612,NA
-"Durham-8-14","Durham-08","durham",8,14,36.010964,-78.802016,NA
-"Durham-8-15","Durham-08","durham",8,15,36.018845,-78.805619,NA
-"Durham-8-16","Durham-08","durham",8,16,36.024588,-78.809631,NA
-"Durham-8-17","Durham-08","durham",8,17,36.031722,-78.81219,NA
-"Durham-8-18","Durham-08","durham",8,18,36.038641,-78.817245,NA
-"Durham-8-19","Durham-08","durham",8,19,36.046454,-78.808834,NA
-"Durham-8-20","Durham-08","durham",8,20,36.04858,-78.803373,NA
-"Orange-1-1","Orange-01","orange",1,1,36.233011,-79.2100081,NA
-"Orange-1-2","Orange-01","orange",1,2,36.226355,-79.2076375,NA
-"Orange-1-3","Orange-01","orange",1,3,36.2198271,-79.2040793,NA
-"Orange-1-4","Orange-01","orange",1,4,36.2186924,-79.1975596,NA
-"Orange-1-5","Orange-01","orange",1,5,36.217693,-79.1874463,NA
-"Orange-1-6","Orange-01","orange",1,6,36.2168212,-79.1793409,NA
-"Orange-1-7","Orange-01","orange",1,7,36.2129025,-79.1752011,NA
-"Orange-1-8","Orange-01","orange",1,8,36.2055901,-79.1732061,NA
-"Orange-1-9","Orange-01","orange",1,9,36.197842,-79.1698197,NA
-"Orange-1-10","Orange-01","orange",1,10,36.1914892,-79.1711946,NA
-"Orange-1-11","Orange-01","orange",1,11,36.1848891,-79.1687648,NA
-"Orange-1-12","Orange-01","orange",1,12,36.1784716,-79.1661589,NA
-"Orange-1-13","Orange-01","orange",1,13,36.1712192,-79.1666161,NA
-"Orange-1-14","Orange-01","orange",1,14,36.1634163,-79.1676926,NA
-"Orange-1-15","Orange-01","orange",1,15,36.1568915,-79.1671602,NA
-"Orange-1-16","Orange-01","orange",1,16,36.148553,-79.1647151,NA
-"Orange-1-17","Orange-01","orange",1,17,36.1433722,-79.1631181,NA
-"Orange-1-18","Orange-01","orange",1,18,36.1373916,-79.157413,NA
-"Orange-1-19","Orange-01","orange",1,19,36.1331914,-79.1497279,NA
-"Orange-1-20","Orange-01","orange",1,20,36.1353571,-79.1426814,NA
-"Orange-2-1","Orange-02","orange",2,1,36.1607243,-79.10446,NA
-"Orange-2-2","Orange-02","orange",2,2,36.1648819,-79.1067797,NA
-"Orange-2-3","Orange-02","orange",2,3,36.1719249,-79.1077866,NA
-"Orange-2-4","Orange-02","orange",2,4,36.178134,-79.1031725,NA
-"Orange-2-5","Orange-02","orange",2,5,36.1834933,-79.0998945,NA
-"Orange-2-6","Orange-02","orange",2,6,36.1905204,-79.0945574,NA
-"Orange-2-7","Orange-02","orange",2,7,36.1958907,-79.090263,NA
-"Orange-2-8","Orange-02","orange",2,8,36.2018214,-79.0889036,NA
-"Orange-2-9","Orange-02","orange",2,9,36.2106719,-79.0864088,NA
-"Orange-2-10","Orange-02","orange",2,10,36.2105579,-79.0783783,NA
-"Orange-2-11","Orange-02","orange",2,11,36.2144818,-79.073337,NA
-"Orange-2-12","Orange-02","orange",2,12,36.2187551,-79.0694902,NA
-"Orange-2-13","Orange-02","orange",2,13,36.2245305,-79.0633293,NA
-"Orange-2-14","Orange-02","orange",2,14,36.2258305,-79.0535216,NA
-"Orange-2-15","Orange-02","orange",2,15,36.2276568,-79.0459151,NA
-"Orange-2-16","Orange-02","orange",2,16,36.2296369,-79.0371049,NA
-"Orange-2-17","Orange-02","orange",2,17,36.2290851,-79.0297367,NA
-"Orange-2-18","Orange-02","orange",2,18,36.2332235,-79.0253032,NA
-"Orange-2-19","Orange-02","orange",2,19,36.2386926,-79.0230702,NA
-"Orange-2-20","Orange-02","orange",2,20,36.2387572,-79.0147295,NA
-"Orange-3-1","Orange-03","orange",3,1,36.119491,-79.176668,NA
-"Orange-3-2","Orange-03","orange",3,2,36.120662,-79.186229,NA
-"Orange-3-3","Orange-03","orange",3,3,36.121532,-79.19038,NA
-"Orange-3-4","Orange-03","orange",3,4,36.115745,-79.195547,NA
-"Orange-3-5","Orange-03","orange",3,5,36.111012,-79.201137,NA
-"Orange-3-6","Orange-03","orange",3,6,36.105687,-79.202453,NA
-"Orange-3-7","Orange-03","orange",3,7,36.105685,-79.211613,NA
-"Orange-3-8","Orange-03","orange",3,8,36.099722,-79.214267,NA
-"Orange-3-9","Orange-03","orange",3,9,36.092438,-79.213933,NA
-"Orange-3-10","Orange-03","orange",3,10,36.087875,-79.220204,NA
-"Orange-3-11","Orange-03","orange",3,11,36.085925,-79.226127,NA
-"Orange-3-12","Orange-03","orange",3,12,36.077617,-79.224286,NA
-"Orange-3-13","Orange-03","orange",3,13,36.070867,-79.22445,NA
-"Orange-3-14","Orange-03","orange",3,14,36.065727,-79.226937,NA
-"Orange-3-15","Orange-03","orange",3,15,36.058951,-79.232453,NA
-"Orange-3-16","Orange-03","orange",3,16,36.055865,-79.237684,NA
-"Orange-3-17","Orange-03","orange",3,17,36.050985,-79.243826,NA
-"Orange-3-18","Orange-03","orange",3,18,36.047216,-79.251302,NA
-"Orange-3-19","Orange-03","orange",3,19,36.042172,-79.257245,NA
-"Orange-3-20","Orange-03","orange",3,20,36.036967,-79.26018,NA
-"Orange-4-1","Orange-04","orange",4,1,36.082941,-79.099012,"Town Hall pull out"
-"Orange-4-2","Orange-04","orange",4,2,36.077555,-79.096478,"gravel shoulder on right just N of Tryon St"
-"Orange-4-3","Orange-04","orange",4,3,36.072344,-79.099331,"""Park on W side of Eno River, count from bridge"""
-"Orange-4-4","Orange-04","orange",4,4,36.066604,-79.093864,"Sports Endeavors driveway"
-"Orange-4-5","Orange-04","orange",4,5,36.064862,-79.085604,"Valley Forge @ Rt 86"
-"Orange-4-6","Orange-04","orange",4,6,36.057989,-79.08186,"Just across I-85 before exit ramp and One Way sign"
-"Orange-4-7","Orange-04","orange",4,7,36.053026,-79.076169,"Gravel pullout in front of truck yard"
-"Orange-4-8","Orange-04","orange",4,8,36.048521,-79.069083,"Byrdsville driveway"
-"Orange-4-9","Orange-04","orange",4,9,36.043341,-79.062869,"""Across from house #2212, in front of 35 mph sign"""
-"Orange-4-10","Orange-04","orange",4,10,36.038145,-79.058871,"First driveway past RxR"
-"Orange-4-11","Orange-04","orange",4,11,36.03457,-79.051005,"Telephone pole with No Trespassing sign"
-"Orange-4-12","Orange-04","orange",4,12,36.033587,-79.042454,"""Just past house #3519, not a safe pull-off"""
-"Orange-4-13","Orange-04","orange",4,13,36.033016,-79.033138,"1st driveway after RxR"
-"Orange-4-14","Orange-04","orange",4,14,36.03172,-79.024012,"Telephone pole and ""stop sign ahead"" sign"
-"Orange-4-15","Orange-04","orange",4,15,36.026079,-79.023783,"#6110 Mt. Hermon Church Rd"
-"Orange-4-16","Orange-04","orange",4,16,36.021894,-79.016261,"In front of Stop sign @ Murphy School Rd"
-"Orange-4-17","Orange-04","orange",4,17,36.017273,-79.008623,"""Orange No Hunting signs on both L and R, just before telephone pole with 2 yellow support wires""; land on right cleared for housing in 2016"
-"Orange-4-18","Orange-04","orange",4,18,36.013561,-79.001183,"Far end of lawn and fence on L"
-"Orange-4-19","Orange-04","orange",4,19,36.010719,-78.992958,"3 black mailboxes"
-"Orange-4-20","Orange-04","orange",4,20,36.005137,-78.991717,"2nd driveway of pale blue house"
-"Orange-5-1","Orange-05","orange",5,1,35.9930535,-79.1493245,NA
-"Orange-5-2","Orange-05","orange",5,2,35.9935961,-79.1589658,NA
-"Orange-5-3","Orange-05","orange",5,3,35.9898849,-79.1614025,NA
-"Orange-5-4","Orange-05","orange",5,4,35.9826421,-79.1582751,NA
-"Orange-5-5","Orange-05","orange",5,5,35.9764258,-79.1606162,NA
-"Orange-5-6","Orange-05","orange",5,6,35.9725553,-79.1645755,NA
-"Orange-5-7","Orange-05","orange",5,7,35.9712556,-79.1751932,NA
-"Orange-5-8","Orange-05","orange",5,8,35.9752349,-79.1825478,NA
-"Orange-5-9","Orange-05","orange",5,9,35.975469,-79.190433,NA
-"Orange-5-10","Orange-05","orange",5,10,35.9713528,-79.1940569,NA
-"Orange-5-11","Orange-05","orange",5,11,35.964597,-79.1941635,NA
-"Orange-5-12","Orange-05","orange",5,12,35.9589448,-79.1997637,NA
-"Orange-5-13","Orange-05","orange",5,13,35.955413,-79.2069467,NA
-"Orange-5-14","Orange-05","orange",5,14,35.9550977,-79.2156431,NA
-"Orange-5-15","Orange-05","orange",5,15,35.9546748,-79.2247939,NA
-"Orange-5-16","Orange-05","orange",5,16,35.9516943,-79.2300643,NA
-"Orange-5-17","Orange-05","orange",5,17,35.947859,-79.2372159,NA
-"Orange-5-18","Orange-05","orange",5,18,35.9407976,-79.2385327,NA
-"Orange-5-19","Orange-05","orange",5,19,35.9355687,-79.2353966,NA
-"Orange-5-20","Orange-05","orange",5,20,35.9289921,-79.2316788,NA
-"Orange-6-1","Orange-06","orange",6,1,36.001686,-79.026619,NA
-"Orange-6-2","Orange-06","orange",6,2,36.001788,-79.035657,NA
-"Orange-6-3","Orange-06","orange",6,3,35.999948,-79.043202,NA
-"Orange-6-4","Orange-06","orange",6,4,35.992809,-79.043875,NA
-"Orange-6-5","Orange-06","orange",6,5,35.987944,-79.048141,NA
-"Orange-6-6","Orange-06","orange",6,6,35.980372,-79.049462,NA
-"Orange-6-7","Orange-06","orange",6,7,35.97359,-79.050566,NA
-"Orange-6-8","Orange-06","orange",6,8,35.970917,-79.059075,NA
-"Orange-6-9","Orange-06","orange",6,9,35.974595,-79.06335,NA
-"Orange-6-10","Orange-06","orange",6,10,35.969352,-79.062485,NA
-"Orange-6-11","Orange-06","orange",6,11,35.96993,-79.073413,NA
-"Orange-6-12","Orange-06","orange",6,12,35.968803,-79.08168,NA
-"Orange-6-13","Orange-06","orange",6,13,35.965614,-79.090416,NA
-"Orange-6-14","Orange-06","orange",6,14,35.959827,-79.085154,NA
-"Orange-6-15","Orange-06","orange",6,15,35.954117,-79.08125,NA
-"Orange-6-16","Orange-06","orange",6,16,35.9480714,-79.0832613,NA
-"Orange-6-17","Orange-06","orange",6,17,35.941798,-79.088232,NA
-"Orange-6-18","Orange-06","orange",6,18,35.942579,-79.095596,NA
-"Orange-6-19","Orange-06","orange",6,19,35.942829,-79.101257,NA
-"Orange-6-20","Orange-06","orange",6,20,35.942695,-79.108836,NA
-"Orange-7-1","Orange-07","orange",7,1,36.132105,-79.223926,NA
-"Orange-7-2","Orange-07","orange",7,2,36.13889,-79.22034,NA
-"Orange-7-3","Orange-07","orange",7,3,36.14466,-79.21589,NA
-"Orange-7-4","Orange-07","orange",7,4,36.1489,-79.2077,NA
-"Orange-7-5","Orange-07","orange",7,5,36.15205,-79.20053,NA
-"Orange-7-6","Orange-07","orange",7,6,36.15863,-79.19863,NA
-"Orange-7-7","Orange-07","orange",7,7,36.16424,-79.19681,NA
-"Orange-7-8","Orange-07","orange",7,8,36.17145,-79.19305,NA
-"Orange-7-9","Orange-07","orange",7,9,36.17449,-79.18509,NA
-"Orange-7-10","Orange-07","orange",7,10,36.17928,-79.17873,NA
-"Orange-7-11","Orange-07","orange",7,11,36.18373,-79.17701,NA
-"Orange-7-12","Orange-07","orange",7,12,36.188343,-79.180411,NA
-"Orange-7-13","Orange-07","orange",7,13,36.189729,-79.17355,NA
-"Orange-7-14","Orange-07","orange",7,14,36.192199,-79.16607,NA
-"Orange-7-15","Orange-07","orange",7,15,36.197774,-79.160022,NA
-"Orange-7-16","Orange-07","orange",7,16,36.206992,-79.156905,NA
-"Orange-7-17","Orange-07","orange",7,17,36.212327,-79.156839,NA
-"Orange-7-18","Orange-07","orange",7,18,36.217935,-79.153762,NA
-"Orange-7-19","Orange-07","orange",7,19,36.224038,-79.150572,NA
-"Orange-7-20","Orange-07","orange",7,20,36.2255,-79.140737,NA
-"Orange-8-1","Orange-08","orange",8,1,36.1544708,-78.9676272,NA
-"Orange-8-2","Orange-08","orange",8,2,36.1562491,-78.9702869,NA
-"Orange-8-3","Orange-08","orange",8,3,36.1565137,-78.9705606,NA
-"Orange-8-4","Orange-08","orange",8,4,36.1676647,-78.9801995,NA
-"Orange-8-5","Orange-08","orange",8,5,36.171517,-78.987614,NA
-"Orange-8-6","Orange-08","orange",8,6,36.176411,-78.9958063,NA
-"Orange-8-7","Orange-08","orange",8,7,36.177307,-79.0046091,NA
-"Orange-8-8","Orange-08","orange",8,8,36.1768262,-79.0113773,NA
-"Orange-8-9","Orange-08","orange",8,9,36.1772706,-79.0205572,NA
-"Orange-8-10","Orange-08","orange",8,10,36.1830545,-79.0259472,NA
-"Orange-8-11","Orange-08","orange",8,11,36.1831343,-79.0326892,NA
-"Orange-8-12","Orange-08","orange",8,12,36.1839426,-79.0415035,NA
-"Orange-8-13","Orange-08","orange",8,13,36.189208,-79.0449701,NA
-"Orange-8-14","Orange-08","orange",8,14,36.1911326,-79.0503781,NA
-"Orange-8-15","Orange-08","orange",8,15,36.1928451,-79.0587903,NA
-"Orange-8-16","Orange-08","orange",8,16,36.1927367,-79.0684247,NA
-"Orange-8-17","Orange-08","orange",8,17,36.1975971,-79.0737538,NA
-"Orange-8-18","Orange-08","orange",8,18,36.201572,-79.078144,NA
-"Orange-8-19","Orange-08","orange",8,19,36.2009794,-79.0886956,NA
-"Orange-8-20","Orange-08","orange",8,20,36.2032796,-79.0964527,NA
-"Orange-9-1","Orange-09","orange",9,1,35.999474,-79.11991,NA
-"Orange-9-2","Orange-09","orange",9,2,36.004015,-79.126702,NA
-"Orange-9-3","Orange-09","orange",9,3,36.006235,-79.134471,NA
-"Orange-9-4","Orange-09","orange",9,4,36.005894,-79.14348,NA
-"Orange-9-5","Orange-09","orange",9,5,36.003701,-79.152139,NA
-"Orange-9-6","Orange-09","orange",9,6,36.003496,-79.160503,NA
-"Orange-9-7","Orange-09","orange",9,7,36.007089,-79.16832,NA
-"Orange-9-8","Orange-09","orange",9,8,36.013832,-79.171554,NA
-"Orange-9-9","Orange-09","orange",9,9,36.020469,-79.174447,NA
-"Orange-9-10","Orange-09","orange",9,10,36.026191,-79.180653,NA
-"Orange-9-11","Orange-09","orange",9,11,36.023338,-79.18713,NA
-"Orange-9-12","Orange-09","orange",9,12,36.018097,-79.190063,NA
-"Orange-9-13","Orange-09","orange",9,13,36.011979,-79.19461,NA
-"Orange-9-14","Orange-09","orange",9,14,36.007153,-79.202066,NA
-"Orange-9-15","Orange-09","orange",9,15,36.010736,-79.206306,NA
-"Orange-9-16","Orange-09","orange",9,16,36.016185,-79.20434,NA
-"Orange-9-17","Orange-09","orange",9,17,36.025309,-79.204668,NA
-"Orange-9-18","Orange-09","orange",9,18,36.031653,-79.209256,NA
-"Orange-9-19","Orange-09","orange",9,19,36.038012,-79.214129,NA
-"Orange-9-20","Orange-09","orange",9,20,36.043953,-79.217745,NA
-"Orange-10-1","Orange-10","orange",10,1,35.9995355,-79.1070467,NA
-"Orange-10-2","Orange-10","orange",10,2,36.0022336,-79.097689,NA
-"Orange-10-3","Orange-10","orange",10,3,36.0057497,-79.0893531,NA
-"Orange-10-4","Orange-10","orange",10,4,36.010228,-79.0818644,NA
-"Orange-10-5","Orange-10","orange",10,5,36.0167974,-79.0755816,NA
-"Orange-10-6","Orange-10","orange",10,6,36.0198797,-79.0697536,NA
-"Orange-10-7","Orange-10","orange",10,7,36.0229458,-79.0638886,NA
-"Orange-10-8","Orange-10","orange",10,8,36.0304407,-79.0607462,NA
-"Orange-10-9","Orange-10","orange",10,9,36.033752,-79.0537372,NA
-"Orange-10-10","Orange-10","orange",10,10,36.049837,-79.0702702,NA
-"Orange-10-11","Orange-10","orange",10,11,36.058509,-79.0667173,NA
-"Orange-10-12","Orange-10","orange",10,12,36.0653397,-79.0641683,NA
-"Orange-10-13","Orange-10","orange",10,13,36.0760305,-79.0600792,NA
-"Orange-10-14","Orange-10","orange",10,14,36.0810134,-79.0587684,NA
-"Orange-10-15","Orange-10","orange",10,15,36.0856549,-79.0616071,NA
-"Orange-10-16","Orange-10","orange",10,16,36.0928806,-79.0552735,NA
-"Orange-10-17","Orange-10","orange",10,17,36.0974041,-79.0538135,NA
-"Orange-10-18","Orange-10","orange",10,18,36.106163,-79.0539574,NA
-"Orange-10-19","Orange-10","orange",10,19,36.1131349,-79.0501971,NA
-"Orange-10-20","Orange-10","orange",10,20,36.1186023,-79.0443993,NA
-"Orange-11-1","Orange-11","orange",11,1,35.8664557,-79.1124753,"0.0 orange utility left, green utility right"
-"Orange-11-2","Orange-11","orange",11,2,35.8714547,-79.1169875,"0.5 Right past turn sign, 0.05 past creek near phone pole"
-"Orange-11-3","Orange-11","orange",11,3,35.8758005,-79.1234039,"1.0 before left mail box, open field telephone line, past house 100ft deep"
-"Orange-11-4","Orange-11","orange",11,4,35.8823334,-79.1259712,"1.5 after church before left drive, 50ft pole right, around curve"
-"Orange-11-5","Orange-11","orange",11,5,35.8862418,-79.1268739,"2.0 Bowen road, in front adapt Highway sign, before drive on left, right after turn"
-"Orange-11-6","Orange-11","orange",11,6,35.8904379,-79.1344538,"2.5 right after narrow bridge, before pole and house"
-"Orange-11-7","Orange-11","orange",11,7,35.8954701,-79.1387301,"3.0 left of mailbox, right before gravel drive at phone pole"
-"Orange-11-8","Orange-11","orange",11,8,35.9021476,-79.1401078,"3.5 Old Greensboro rd, rt after turn on highway, rt past 45 mph sign"
-"Orange-11-9","Orange-11","orange",11,9,35.901678,-79.1481126,"4.0 past gravel rd, park by Big Oak house to left"
-"Orange-11-10","Orange-11","orange",11,10,35.8995696,-79.1572095,"4.5 past cricket field, mailbox white in front, big pine left"
-"Orange-11-11","Orange-11","orange",11,11,35.8973397,-79.165236,"5.0 Carl Durham rd, right after turn 5Y, house on right edge"
-"Orange-11-12","Orange-11","orange",11,12,35.9050319,-79.1650125,"5.5 7th post before metal coral, fence on both sides of road"
-"Orange-11-13","Orange-11","orange",11,13,35.9107611,-79.1660731,"6.0 across from street sign, next to brick house"
-"Orange-11-14","Orange-11","orange",11,14,35.9152892,-79.1714592,"6.5 in driveway by phone pole"
-"Orange-11-15","Orange-11","orange",11,15,35.9213541,-79.174945,"7.0 by clear cut by double pole before mail box"
-"Orange-11-16","Orange-11","orange",11,16,35.9277723,-79.1747848,"7.5 Dobson Cross Rd, past drive before transformer"
-"Orange-11-17","Orange-11","orange",11,17,35.9340505,-79.1725804,"8.0 Before Ranchlet, past Richie Rd on rt. Across from trailer"
-"Orange-11-18","Orange-11","orange",11,18,35.9424246,-79.1709356,"8.5 Rt past Montross training sign. Begin left with wt fence before road sign"
-"Orange-11-19","Orange-11","orange",11,19,35.948438,-79.1710726,"9.0 across from tall pine before pole transformers, before rd on left"
-"Orange-11-20","Orange-11","orange",11,20,35.9555746,-79.1706757,"9.5 rt before road entrance development ""Western Park Lane"""
-"Orange-12-1","Orange-12","orange",12,1,35.8669878,-79.0288844,NA
-"Orange-12-2","Orange-12","orange",12,2,35.8701749,-79.0366946,NA
-"Orange-12-3","Orange-12","orange",12,3,35.8751793,-79.0426384,NA
-"Orange-12-4","Orange-12","orange",12,4,35.8803353,-79.0499983,NA
-"Orange-12-5","Orange-12","orange",12,5,35.8857531,-79.0567146,NA
-"Orange-12-6","Orange-12","orange",12,6,35.8916171,-79.0596436,NA
-"Orange-12-7","Orange-12","orange",12,7,35.8922374,-79.068173,NA
-"Orange-12-8","Orange-12","orange",12,8,35.8938366,-79.0767132,NA
-"Orange-12-9","Orange-12","orange",12,9,35.9003691,-79.0737198,NA
-"Orange-12-10","Orange-12","orange",12,10,35.9074871,-79.0724645,NA
-"Orange-12-11","Orange-12","orange",12,11,35.9158037,-79.0720676,NA
-"Orange-12-12","Orange-12","orange",12,12,35.9207573,-79.0788222,NA
-"Orange-12-13","Orange-12","orange",12,13,35.9223293,-79.0877209,NA
-"Orange-12-14","Orange-12","orange",12,14,35.9276432,-79.093434,NA
-"Orange-12-15","Orange-12","orange",12,15,35.9332005,-79.1006521,NA
-"Orange-12-16","Orange-12","orange",12,16,35.9383188,-79.1048528,NA
-"Orange-12-17","Orange-12","orange",12,17,35.9439156,-79.1123079,NA
-"Orange-12-18","Orange-12","orange",12,18,35.947161,-79.119001,NA
-"Orange-12-19","Orange-12","orange",12,19,35.9544462,-79.122074,NA
-"Orange-12-20","Orange-12","orange",12,20,35.9613548,-79.1262375,NA
+"County_Route_Stop","County_Route","mbbs_county","route_num","stop_num","lat","lon","stop_notes","route_ID"
+"Chatham-1-1","Chatham-01","chatham",1,1,35.768194,-79.18409,NA,301
+"Chatham-1-2","Chatham-01","chatham",1,2,35.768061,-79.175666,NA,301
+"Chatham-1-3","Chatham-01","chatham",1,3,35.767089,-79.165578,NA,301
+"Chatham-1-4","Chatham-01","chatham",1,4,35.766264,-79.15756,NA,301
+"Chatham-1-5","Chatham-01","chatham",1,5,35.771066,-79.151922,NA,301
+"Chatham-1-6","Chatham-01","chatham",1,6,35.777919,-79.144074,NA,301
+"Chatham-1-7","Chatham-01","chatham",1,7,35.784027,-79.147646,NA,301
+"Chatham-1-8","Chatham-01","chatham",1,8,35.790649,-79.150232,NA,301
+"Chatham-1-9","Chatham-01","chatham",1,9,35.796262,-79.150871,NA,301
+"Chatham-1-10","Chatham-01","chatham",1,10,35.803606,-79.1532756,NA,301
+"Chatham-1-11","Chatham-01","chatham",1,11,35.808863,-79.157316,NA,301
+"Chatham-1-12","Chatham-01","chatham",1,12,35.815893,-79.153156,NA,301
+"Chatham-1-13","Chatham-01","chatham",1,13,35.821153,-79.147977,NA,301
+"Chatham-1-14","Chatham-01","chatham",1,14,35.8276,-79.143853,NA,301
+"Chatham-1-15","Chatham-01","chatham",1,15,35.833699,-79.139403,NA,301
+"Chatham-1-16","Chatham-01","chatham",1,16,35.840145,-79.134252,NA,301
+"Chatham-1-17","Chatham-01","chatham",1,17,35.843794,-79.125918,NA,301
+"Chatham-1-18","Chatham-01","chatham",1,18,35.846032,-79.116841,NA,301
+"Chatham-1-19","Chatham-01","chatham",1,19,35.84653,-79.108612,NA,301
+"Chatham-1-20","Chatham-01","chatham",1,20,35.846079,-79.098248,NA,301
+"Chatham-2-1","Chatham-02","chatham",2,1,35.8602659,-78.990665,NA,302
+"Chatham-2-2","Chatham-02","chatham",2,2,35.8639551,-78.9978547,NA,302
+"Chatham-2-3","Chatham-02","chatham",2,3,35.86792,-79.00082,NA,302
+"Chatham-2-4","Chatham-02","chatham",2,4,35.8625383,-79.0082845,NA,302
+"Chatham-2-5","Chatham-02","chatham",2,5,35.8573224,-79.0144718,NA,302
+"Chatham-2-6","Chatham-02","chatham",2,6,35.8520403,-79.0189869,NA,302
+"Chatham-2-7","Chatham-02","chatham",2,7,35.8455345,-79.0258997,NA,302
+"Chatham-2-8","Chatham-02","chatham",2,8,35.8381628,-79.0281508,NA,302
+"Chatham-2-9","Chatham-02","chatham",2,9,35.831003,-79.0234399,NA,302
+"Chatham-2-10","Chatham-02","chatham",2,10,35.8245885,-79.0182671,NA,302
+"Chatham-2-11","Chatham-02","chatham",2,11,35.8190108,-79.0209792,NA,302
+"Chatham-2-12","Chatham-02","chatham",2,12,35.8193091,-79.0293806,NA,302
+"Chatham-2-13","Chatham-02","chatham",2,13,35.8199538,-79.0396638,NA,302
+"Chatham-2-14","Chatham-02","chatham",2,14,35.8139108,-79.0445884,NA,302
+"Chatham-2-15","Chatham-02","chatham",2,15,35.8145049,-79.0539119,NA,302
+"Chatham-2-16","Chatham-02","chatham",2,16,35.8178023,-79.0617823,NA,302
+"Chatham-2-17","Chatham-02","chatham",2,17,35.8154438,-79.0713797,NA,302
+"Chatham-2-18","Chatham-02","chatham",2,18,35.8157816,-79.0799655,NA,302
+"Chatham-2-19","Chatham-02","chatham",2,19,35.810236,-79.0974469,NA,302
+"Chatham-2-20","Chatham-02","chatham",2,20,35.8124578,-79.1076962,NA,302
+"Chatham-3-1","Chatham-03","chatham",3,1,35.6733378,-78.9858872,NA,303
+"Chatham-3-2","Chatham-03","chatham",3,2,35.666351,-78.9801295,NA,303
+"Chatham-3-3","Chatham-03","chatham",3,3,35.6595899,-78.9777834,NA,303
+"Chatham-3-4","Chatham-03","chatham",3,4,35.655182,-78.9831765,NA,303
+"Chatham-3-5","Chatham-03","chatham",3,5,35.6509829,-78.9907833,NA,303
+"Chatham-3-6","Chatham-03","chatham",3,6,35.6473864,-78.99724,NA,303
+"Chatham-3-7","Chatham-03","chatham",3,7,35.6431243,-79.0050542,NA,303
+"Chatham-3-8","Chatham-03","chatham",3,8,35.6381369,-79.0035399,NA,303
+"Chatham-3-9","Chatham-03","chatham",3,9,35.6319633,-79.0030893,NA,303
+"Chatham-3-10","Chatham-03","chatham",3,10,35.6255625,-79.0025528,NA,303
+"Chatham-3-11","Chatham-03","chatham",3,11,35.618867,-79.0027127,NA,303
+"Chatham-3-12","Chatham-03","chatham",3,12,35.6123772,-79.0052136,NA,303
+"Chatham-3-13","Chatham-03","chatham",3,13,35.6049423,-79.0050848,NA,303
+"Chatham-3-14","Chatham-03","chatham",3,14,35.5985573,-79.0075727,NA,303
+"Chatham-3-15","Chatham-03","chatham",3,15,35.592432,-79.0122105,NA,303
+"Chatham-3-16","Chatham-03","chatham",3,16,35.586462,-79.0176232,NA,303
+"Chatham-3-17","Chatham-03","chatham",3,17,35.5832378,-79.0214676,NA,303
+"Chatham-3-18","Chatham-03","chatham",3,18,35.5823524,-79.0269309,NA,303
+"Chatham-3-19","Chatham-03","chatham",3,19,35.5754405,-79.029214,NA,303
+"Chatham-3-20","Chatham-03","chatham",3,20,35.567644,-79.0285998,NA,303
+"Chatham-4-1","Chatham-04","chatham",4,1,35.5801738,-79.2743729,NA,304
+"Chatham-4-2","Chatham-04","chatham",4,2,35.5728397,-79.2824815,NA,304
+"Chatham-4-3","Chatham-04","chatham",4,3,35.5743843,-79.2867818,NA,304
+"Chatham-4-4","Chatham-04","chatham",4,4,35.5789036,-79.2926441,NA,304
+"Chatham-4-5","Chatham-04","chatham",4,5,35.5865283,-79.293837,NA,304
+"Chatham-4-6","Chatham-04","chatham",4,6,35.596687,-79.3009093,NA,304
+"Chatham-4-7","Chatham-04","chatham",4,7,35.5960411,-79.308629,NA,304
+"Chatham-4-8","Chatham-04","chatham",4,8,35.5952532,-79.3185968,NA,304
+"Chatham-4-9","Chatham-04","chatham",4,9,35.5927954,-79.3262783,NA,304
+"Chatham-4-10","Chatham-04","chatham",4,10,35.5966128,-79.3260674,NA,304
+"Chatham-4-11","Chatham-04","chatham",4,11,35.6036168,-79.3197012,NA,304
+"Chatham-4-12","Chatham-04","chatham",4,12,35.6102677,-79.323178,NA,304
+"Chatham-4-13","Chatham-04","chatham",4,13,35.6174446,-79.3258163,NA,304
+"Chatham-4-14","Chatham-04","chatham",4,14,35.6214633,-79.3309071,NA,304
+"Chatham-4-15","Chatham-04","chatham",4,15,35.6220722,-79.3399475,NA,304
+"Chatham-4-16","Chatham-04","chatham",4,16,35.6305218,-79.3382976,NA,304
+"Chatham-4-17","Chatham-04","chatham",4,17,35.6369013,-79.3400344,NA,304
+"Chatham-4-18","Chatham-04","chatham",4,18,35.6486759,-79.3349673,NA,304
+"Chatham-4-19","Chatham-04","chatham",4,19,35.6510179,-79.3424229,NA,304
+"Chatham-4-20","Chatham-04","chatham",4,20,35.6452243,-79.3589087,NA,304
+"Chatham-5-1","Chatham-05","chatham",5,1,35.66617,-79.48569,NA,305
+"Chatham-5-2","Chatham-05","chatham",5,2,35.661167,-79.490189,NA,305
+"Chatham-5-3","Chatham-05","chatham",5,3,35.6549811,-79.4861775,NA,305
+"Chatham-5-4","Chatham-05","chatham",5,4,35.6549225,-79.4783964,NA,305
+"Chatham-5-5","Chatham-05","chatham",5,5,35.650359,-79.47403,NA,305
+"Chatham-5-6","Chatham-05","chatham",5,6,35.641631,-79.475362,NA,305
+"Chatham-5-7","Chatham-05","chatham",5,7,35.637177,-79.470007,NA,305
+"Chatham-5-8","Chatham-05","chatham",5,8,35.640322,-79.461139,NA,305
+"Chatham-5-9","Chatham-05","chatham",5,9,35.638346,-79.457952,NA,305
+"Chatham-5-10","Chatham-05","chatham",5,10,35.631624,-79.457816,NA,305
+"Chatham-5-11","Chatham-05","chatham",5,11,35.625694,-79.457334,NA,305
+"Chatham-5-12","Chatham-05","chatham",5,12,35.617446,-79.455179,NA,305
+"Chatham-5-13","Chatham-05","chatham",5,13,35.611642,-79.450102,NA,305
+"Chatham-5-14","Chatham-05","chatham",5,14,35.6086766,-79.4421586,NA,305
+"Chatham-5-15","Chatham-05","chatham",5,15,35.604648,-79.438066,NA,305
+"Chatham-5-16","Chatham-05","chatham",5,16,35.596575,-79.435343,NA,305
+"Chatham-5-17","Chatham-05","chatham",5,17,35.587973,-79.433613,NA,305
+"Chatham-5-18","Chatham-05","chatham",5,18,35.580027,-79.430549,NA,305
+"Chatham-5-19","Chatham-05","chatham",5,19,35.571881,-79.433184,NA,305
+"Chatham-5-20","Chatham-05","chatham",5,20,35.566441,-79.430292,NA,305
+"Chatham-6-1","Chatham-06","chatham",6,1,35.81981,-79.47866,NA,306
+"Chatham-6-2","Chatham-06","chatham",6,2,35.821921,-79.480549,NA,306
+"Chatham-6-3","Chatham-06","chatham",6,3,35.830756,-79.480129,NA,306
+"Chatham-6-4","Chatham-06","chatham",6,4,35.837472,-79.479996,NA,306
+"Chatham-6-5","Chatham-06","chatham",6,5,35.843036,-79.478017,NA,306
+"Chatham-6-6","Chatham-06","chatham",6,6,35.841359,-79.468721,NA,306
+"Chatham-6-7","Chatham-06","chatham",6,7,35.842234,-79.459836,NA,306
+"Chatham-6-8","Chatham-06","chatham",6,8,35.837041,-79.454318,NA,306
+"Chatham-6-9","Chatham-06","chatham",6,9,35.831381,-79.449306,NA,306
+"Chatham-6-10","Chatham-06","chatham",6,10,35.824808,-79.448311,NA,306
+"Chatham-6-11","Chatham-06","chatham",6,11,35.817855,-79.445535,NA,306
+"Chatham-6-12","Chatham-06","chatham",6,12,35.813909,-79.439801,NA,306
+"Chatham-6-13","Chatham-06","chatham",6,13,35.808945,-79.433373,NA,306
+"Chatham-6-14","Chatham-06","chatham",6,14,35.802477,-79.424753,NA,306
+"Chatham-6-15","Chatham-06","chatham",6,15,35.79937,-79.421166,NA,306
+"Chatham-6-16","Chatham-06","chatham",6,16,35.794998,-79.414447,NA,306
+"Chatham-6-17","Chatham-06","chatham",6,17,35.792698,-79.406864,NA,306
+"Chatham-6-18","Chatham-06","chatham",6,18,35.790804,-79.397076,NA,306
+"Chatham-6-19","Chatham-06","chatham",6,19,35.788643,-79.389903,NA,306
+"Chatham-6-20","Chatham-06","chatham",6,20,35.78529,-79.379675,NA,306
+"Chatham-7-1","Chatham-07","chatham",7,1,35.7128722,-79.3712036,NA,307
+"Chatham-7-2","Chatham-07","chatham",7,2,35.7061355,-79.3740055,NA,307
+"Chatham-7-3","Chatham-07","chatham",7,3,35.7001185,-79.3756967,NA,307
+"Chatham-7-4","Chatham-07","chatham",7,4,35.7017803,-79.3672945,NA,307
+"Chatham-7-5","Chatham-07","chatham",7,5,35.7046057,-79.360453,NA,307
+"Chatham-7-6","Chatham-07","chatham",7,6,35.7094153,-79.3531007,NA,307
+"Chatham-7-7","Chatham-07","chatham",7,7,35.7071309,-79.3458036,NA,307
+"Chatham-7-8","Chatham-07","chatham",7,8,35.7050258,-79.3371755,NA,307
+"Chatham-7-9","Chatham-07","chatham",7,9,35.7087703,-79.3362319,NA,307
+"Chatham-7-10","Chatham-07","chatham",7,10,35.710583,-79.3282106,NA,307
+"Chatham-7-11","Chatham-07","chatham",7,11,35.7127298,-79.3208465,NA,307
+"Chatham-7-12","Chatham-07","chatham",7,12,35.7158568,-79.3125491,NA,307
+"Chatham-7-13","Chatham-07","chatham",7,13,35.7211741,-79.3103521,NA,307
+"Chatham-7-14","Chatham-07","chatham",7,14,35.7201954,-79.3006551,NA,307
+"Chatham-7-15","Chatham-07","chatham",7,15,35.7210019,-79.2930304,NA,307
+"Chatham-7-16","Chatham-07","chatham",7,16,35.7137957,-79.2953427,NA,307
+"Chatham-7-17","Chatham-07","chatham",7,17,35.7132929,-79.2894732,NA,307
+"Chatham-7-18","Chatham-07","chatham",7,18,35.7160022,-79.2809379,NA,307
+"Chatham-7-19","Chatham-07","chatham",7,19,35.7125989,-79.2771865,NA,307
+"Chatham-7-20","Chatham-07","chatham",7,20,35.705373,-79.2773259,NA,307
+"Chatham-8-1","Chatham-08","chatham",8,1,35.782637,-79.207965,NA,308
+"Chatham-8-2","Chatham-08","chatham",8,2,35.789967,-79.210325,NA,308
+"Chatham-8-3","Chatham-08","chatham",8,3,35.797211,-79.211255,NA,308
+"Chatham-8-4","Chatham-08","chatham",8,4,35.804574,-79.211822,NA,308
+"Chatham-8-5","Chatham-08","chatham",8,5,35.811297,-79.216393,NA,308
+"Chatham-8-6","Chatham-08","chatham",8,6,35.814045,-79.225265,NA,308
+"Chatham-8-7","Chatham-08","chatham",8,7,35.820159,-79.230642,NA,308
+"Chatham-8-8","Chatham-08","chatham",8,8,35.817804,-79.240028,NA,308
+"Chatham-8-9","Chatham-08","chatham",8,9,35.81518,-79.248376,NA,308
+"Chatham-8-10","Chatham-08","chatham",8,10,35.810451,-79.251885,NA,308
+"Chatham-8-11","Chatham-08","chatham",8,11,35.804434,-79.252052,NA,308
+"Chatham-8-12","Chatham-08","chatham",8,12,35.804864,-79.261296,NA,308
+"Chatham-8-13","Chatham-08","chatham",8,13,35.805263,-79.270823,NA,308
+"Chatham-8-14","Chatham-08","chatham",8,14,35.806004,-79.281216,NA,308
+"Chatham-8-15","Chatham-08","chatham",8,15,35.812398,-79.286235,NA,308
+"Chatham-8-16","Chatham-08","chatham",8,16,35.814745,-79.288611,NA,308
+"Chatham-8-17","Chatham-08","chatham",8,17,35.819226,-79.293771,NA,308
+"Chatham-8-18","Chatham-08","chatham",8,18,35.821235,-79.299888,NA,308
+"Chatham-8-19","Chatham-08","chatham",8,19,35.823759,-79.310191,NA,308
+"Chatham-8-20","Chatham-08","chatham",8,20,35.833841,-79.31898,NA,308
+"Chatham-9-1","Chatham-09","chatham",9,1,35.78602,-79.09268,NA,309
+"Chatham-9-2","Chatham-09","chatham",9,2,35.77783,-79.09412,NA,309
+"Chatham-9-3","Chatham-09","chatham",9,3,35.77046,-79.0933,NA,309
+"Chatham-9-4","Chatham-09","chatham",9,4,35.76417,-79.09083,NA,309
+"Chatham-9-5","Chatham-09","chatham",9,5,35.75695,-79.08784,NA,309
+"Chatham-9-6","Chatham-09","chatham",9,6,35.7495,-79.08702,NA,309
+"Chatham-9-7","Chatham-09","chatham",9,7,35.7412,-79.08465,NA,309
+"Chatham-9-8","Chatham-09","chatham",9,8,35.73337,-79.08245,NA,309
+"Chatham-9-9","Chatham-09","chatham",9,9,35.73337,-79.08245,NA,309
+"Chatham-9-10","Chatham-09","chatham",9,10,35.72046,-79.07359,NA,309
+"Chatham-9-11","Chatham-09","chatham",9,11,35.71547,-79.06816,NA,309
+"Chatham-9-12","Chatham-09","chatham",9,12,35.711,-79.0609,NA,309
+"Chatham-9-13","Chatham-09","chatham",9,13,35.70982,-79.07409,NA,309
+"Chatham-9-14","Chatham-09","chatham",9,14,35.70468,-79.07623,NA,309
+"Chatham-9-15","Chatham-09","chatham",9,15,35.71899,-79.05994,NA,309
+"Chatham-9-16","Chatham-09","chatham",9,16,35.72614,-79.05731,NA,309
+"Chatham-9-17","Chatham-09","chatham",9,17,35.73419,-79.05825,NA,309
+"Chatham-9-18","Chatham-09","chatham",9,18,35.72962,-79.00367,NA,309
+"Chatham-9-19","Chatham-09","chatham",9,19,35.72154,-79.00648,NA,309
+"Chatham-9-20","Chatham-09","chatham",9,20,35.71445,-79.00917,NA,309
+"Chatham-10-1","Chatham-10","chatham",10,1,35.665815,-79.09656,"""Just be aware the mileage might be correct but some of the landmarks have changed."" Clark Poe Road - 0.0m",310
+"Chatham-10-2","Chatham-10","chatham",10,2,35.660276,-79.102497,"Just past first house on left (Gum Springs Road) - 0.55m",310
+"Chatham-10-3","Chatham-10","chatham",10,3,35.654274,-79.106031,"Just past house on left in valley - 1.0m",310
+"Chatham-10-4","Chatham-10","chatham",10,4,35.649215,-79.113949,"Gum Springs Baptist Church - 1.55m",310
+"Chatham-10-5","Chatham-10","chatham",10,5,35.650185,-79.120723,"Mt. View AME Zion Church - 2.1m",310
+"Chatham-10-6","Chatham-10","chatham",10,6,35.655079,-79.126862,"4783 Moncure Pittsboro Road - 2.6m",310
+"Chatham-10-7","Chatham-10","chatham",10,7,35.659943,-79.133407,"Across from Pond - 3.1m",310
+"Chatham-10-8","Chatham-10","chatham",10,8,35.664852,-79.138095,"Ruby Red - 3.6m",310
+"Chatham-10-9","Chatham-10","chatham",10,9,35.669197,-79.139533,"Abeyance - 3.9m",310
+"Chatham-10-10","Chatham-10","chatham",10,10,35.676245,-79.142404,"Pullover on right - 4.55m",310
+"Chatham-10-11","Chatham-10","chatham",10,11,35.685151,-79.150835,"Thrift Shepard Shop - 5.1m",310
+"Chatham-10-12","Chatham-10","chatham",10,12,35.68882,-79.153637,"Bill Thomas Road - 5.6m",310
+"Chatham-10-13","Chatham-10","chatham",10,13,35.695673,-79.158038,"Mt. Zion Road - 6.1m",310
+"Chatham-10-14","Chatham-10","chatham",10,14,35.698913,-79.165924,"All Our Children - 6.6m",310
+"Chatham-10-15","Chatham-10","chatham",10,15,35.701214,-79.170651,"Install Inc (496 Pittsboro Moncure Road) - 7.0m",310
+"Chatham-10-16","Chatham-10","chatham",10,16,35.706328,-79.178572,"Sandford Road - 7.4m",310
+"Chatham-10-17","Chatham-10","chatham",10,17,35.724089,-79.186482,"Chatham Office Building - 0.0m",310
+"Chatham-10-18","Chatham-10","chatham",10,18,35.732249,-79.187493,"Oakview - 0.5m",310
+"Chatham-10-19","Chatham-10","chatham",10,19,35.737101,-79.185359,"1289 - 1.0m",310
+"Chatham-10-20","Chatham-10","chatham",10,20,35.745641,-79.185047,"1692 - 1.5m",310
+"Chatham-11-1","Chatham-11","chatham",11,1,35.610067,-79.277234,NA,311
+"Chatham-11-2","Chatham-11","chatham",11,2,35.617213,-79.280087,NA,311
+"Chatham-11-3","Chatham-11","chatham",11,3,35.624326,-79.282354,NA,311
+"Chatham-11-4","Chatham-11","chatham",11,4,35.630384,-79.278142,NA,311
+"Chatham-11-5","Chatham-11","chatham",11,5,35.636241,-79.27303,NA,311
+"Chatham-11-6","Chatham-11","chatham",11,6,35.640177,-79.265754,NA,311
+"Chatham-11-7","Chatham-11","chatham",11,7,35.645549,-79.260014,NA,311
+"Chatham-11-8","Chatham-11","chatham",11,8,35.647728,-79.251628,NA,311
+"Chatham-11-9","Chatham-11","chatham",11,9,35.649957,-79.243551,NA,311
+"Chatham-11-10","Chatham-11","chatham",11,10,35.655993,-79.238861,NA,311
+"Chatham-11-11","Chatham-11","chatham",11,11,35.662042,-79.238741,NA,311
+"Chatham-11-12","Chatham-11","chatham",11,12,35.660991,-79.22949,NA,311
+"Chatham-11-13","Chatham-11","chatham",11,13,35.659237,-79.221114,NA,311
+"Chatham-11-14","Chatham-11","chatham",11,14,35.653321,-79.217613,NA,311
+"Chatham-11-15","Chatham-11","chatham",11,15,35.649422,-79.210774,NA,311
+"Chatham-11-16","Chatham-11","chatham",11,16,35.649934,-79.201461,NA,311
+"Chatham-11-17","Chatham-11","chatham",11,17,35.655131,-79.195402,NA,311
+"Chatham-11-18","Chatham-11","chatham",11,18,35.660411,-79.189171,NA,311
+"Chatham-11-19","Chatham-11","chatham",11,19,35.664052,-79.181776,NA,311
+"Chatham-11-20","Chatham-11","chatham",11,20,35.670503,-79.179763,NA,311
+"Chatham-12-1","Chatham-12","chatham",12,1,35.61934,-79.520667,NA,312
+"Chatham-12-2","Chatham-12","chatham",12,2,35.6123,-79.519864,NA,312
+"Chatham-12-3","Chatham-12","chatham",12,3,35.611316,-79.513973,NA,312
+"Chatham-12-4","Chatham-12","chatham",12,4,35.61231,-79.506445,NA,312
+"Chatham-12-5","Chatham-12","chatham",12,5,35.618754,-79.507419,NA,312
+"Chatham-12-6","Chatham-12","chatham",12,6,35.625751,-79.507858,NA,312
+"Chatham-12-7","Chatham-12","chatham",12,7,35.630478,-79.50084,NA,312
+"Chatham-12-8","Chatham-12","chatham",12,8,35.634097,-79.492706,NA,312
+"Chatham-12-9","Chatham-12","chatham",12,9,35.635362,-79.484652,NA,312
+"Chatham-12-10","Chatham-12","chatham",12,10,35.637038,-79.477247,NA,312
+"Chatham-12-11","Chatham-12","chatham",12,11,35.644083,-79.475305,NA,312
+"Chatham-12-12","Chatham-12","chatham",12,12,35.653061,-79.472714,NA,312
+"Chatham-12-13","Chatham-12","chatham",12,13,35.653875,-79.463584,NA,312
+"Chatham-12-14","Chatham-12","chatham",12,14,35.654176,-79.455471,NA,312
+"Chatham-12-15","Chatham-12","chatham",12,15,35.658828,-79.448449,NA,312
+"Chatham-12-16","Chatham-12","chatham",12,16,35.66213,-79.440104,NA,312
+"Chatham-12-17","Chatham-12","chatham",12,17,35.666845,-79.433407,NA,312
+"Chatham-12-18","Chatham-12","chatham",12,18,35.668752,-79.4242,NA,312
+"Chatham-12-19","Chatham-12","chatham",12,19,35.666441,-79.416244,NA,312
+"Chatham-12-20","Chatham-12","chatham",12,20,35.666394,-79.409569,NA,312
+"Chatham-13-1","Chatham-13","chatham",13,1,35.71054,-79.54496,NA,313
+"Chatham-13-2","Chatham-13","chatham",13,2,35.708805,-79.536187,NA,313
+"Chatham-13-3","Chatham-13","chatham",13,3,35.712742,-79.527683,NA,313
+"Chatham-13-4","Chatham-13","chatham",13,4,35.716027,-79.518248,NA,313
+"Chatham-13-5","Chatham-13","chatham",13,5,35.720391,-79.510899,NA,313
+"Chatham-13-6","Chatham-13","chatham",13,6,35.72386,-79.501118,NA,313
+"Chatham-13-7","Chatham-13","chatham",13,7,35.721897,-79.491209,NA,313
+"Chatham-13-8","Chatham-13","chatham",13,8,35.720503,-79.481442,NA,313
+"Chatham-13-9","Chatham-13","chatham",13,9,35.722715,-79.470945,NA,313
+"Chatham-13-10","Chatham-13","chatham",13,10,35.725414,-79.46294,NA,313
+"Chatham-13-11","Chatham-13","chatham",13,11,35.730273,-79.45828,NA,313
+"Chatham-13-12","Chatham-13","chatham",13,12,35.737272,-79.455461,NA,313
+"Chatham-13-13","Chatham-13","chatham",13,13,35.744238,-79.449902,NA,313
+"Chatham-13-14","Chatham-13","chatham",13,14,35.751029,-79.444366,NA,313
+"Chatham-13-15","Chatham-13","chatham",13,15,35.759489,-79.442942,NA,313
+"Chatham-13-16","Chatham-13","chatham",13,16,35.766154,-79.440593,NA,313
+"Chatham-13-17","Chatham-13","chatham",13,17,35.768435,-79.430661,NA,313
+"Chatham-13-18","Chatham-13","chatham",13,18,35.771026,-79.423848,NA,313
+"Chatham-13-19","Chatham-13","chatham",13,19,35.776769,-79.416071,NA,313
+"Chatham-13-20","Chatham-13","chatham",13,20,35.783286,-79.411567,NA,313
+"Chatham-14-1","Chatham-14","chatham",14,1,35.7437305,-79.0044304,NA,314
+"Chatham-14-2","Chatham-14","chatham",14,2,35.7511476,-79.0078207,NA,314
+"Chatham-14-3","Chatham-14","chatham",14,3,35.7582663,-79.0102389,NA,314
+"Chatham-14-4","Chatham-14","chatham",14,4,35.7650553,-79.0066394,NA,314
+"Chatham-14-5","Chatham-14","chatham",14,5,35.7711038,-79.0027502,NA,314
+"Chatham-14-6","Chatham-14","chatham",14,6,35.7768952,-79.0064446,NA,314
+"Chatham-14-7","Chatham-14","chatham",14,7,35.7849402,-79.0093468,NA,314
+"Chatham-14-8","Chatham-14","chatham",14,8,35.7894141,-79.006155,NA,314
+"Chatham-14-9","Chatham-14","chatham",14,9,35.7894464,-78.9990063,NA,314
+"Chatham-14-10","Chatham-14","chatham",14,10,35.7919107,-78.9897438,NA,314
+"Chatham-14-11","Chatham-14","chatham",14,11,35.7951207,-78.9822449,NA,314
+"Chatham-14-12","Chatham-14","chatham",14,12,35.7946336,-78.9746531,NA,314
+"Chatham-14-13","Chatham-14","chatham",14,13,35.7904302,-78.9668748,NA,314
+"Chatham-14-14","Chatham-14","chatham",14,14,35.7940963,-78.9642201,NA,314
+"Chatham-14-15","Chatham-14","chatham",14,15,35.8017524,-78.9639626,NA,314
+"Chatham-14-16","Chatham-14","chatham",14,16,35.8069171,-78.9619799,NA,314
+"Chatham-14-17","Chatham-14","chatham",14,17,35.8079852,-78.9537736,NA,314
+"Chatham-14-18","Chatham-14","chatham",14,18,35.8121338,-78.9465209,NA,314
+"Chatham-14-19","Chatham-14","chatham",14,19,35.817586,-78.9428178,NA,314
+"Chatham-14-20","Chatham-14","chatham",14,20,35.8250782,-78.9421833,NA,314
+"Durham-1-1","Durham-01","durham",1,1,36.146827,-78.94738,NA,201
+"Durham-1-2","Durham-01","durham",1,2,36.153833,-78.945099,NA,201
+"Durham-1-3","Durham-01","durham",1,3,36.159448,-78.950115,NA,201
+"Durham-1-4","Durham-01","durham",1,4,36.165366,-78.947431,NA,201
+"Durham-1-5","Durham-01","durham",1,5,36.167614,-78.939551,NA,201
+"Durham-1-6","Durham-01","durham",1,6,36.165791,-78.931553,NA,201
+"Durham-1-7","Durham-01","durham",1,7,36.171284,-78.924783,NA,201
+"Durham-1-8","Durham-01","durham",1,8,36.174101,-78.918697,NA,201
+"Durham-1-9","Durham-01","durham",1,9,36.177046,-78.910515,NA,201
+"Durham-1-10","Durham-01","durham",1,10,36.198361,-78.903929,NA,201
+"Durham-1-11","Durham-01","durham",1,11,36.199336,-78.894878,NA,201
+"Durham-1-12","Durham-01","durham",1,12,36.200371,-78.886693,NA,201
+"Durham-1-13","Durham-01","durham",1,13,36.203491,-78.879702,NA,201
+"Durham-1-14","Durham-01","durham",1,14,36.206463,-78.871907,NA,201
+"Durham-1-15","Durham-01","durham",1,15,36.212495,-78.868406,NA,201
+"Durham-1-16","Durham-01","durham",1,16,36.21665,-78.874843,NA,201
+"Durham-1-17","Durham-01","durham",1,17,36.222575,-78.881816,NA,201
+"Durham-1-18","Durham-01","durham",1,18,36.227544,-78.88045,NA,201
+"Durham-1-19","Durham-01","durham",1,19,36.229474,-78.871102,NA,201
+"Durham-1-20","Durham-01","durham",1,20,36.230211,-78.863988,NA,201
+"Durham-2-1","Durham-02","durham",2,1,36.121814,-78.839884,NA,202
+"Durham-2-2","Durham-02","durham",2,2,36.127101,-78.84921,NA,202
+"Durham-2-3","Durham-02","durham",2,3,36.132187,-78.853069,NA,202
+"Durham-2-4","Durham-02","durham",2,4,36.138897,-78.857054,NA,202
+"Durham-2-5","Durham-02","durham",2,5,36.144576,-78.860898,NA,202
+"Durham-2-6","Durham-02","durham",2,6,36.150464,-78.866347,NA,202
+"Durham-2-7","Durham-02","durham",2,7,36.15219,-78.872216,NA,202
+"Durham-2-8","Durham-02","durham",2,8,36.148358,-78.878233,NA,202
+"Durham-2-9","Durham-02","durham",2,9,36.144251,-78.882879,NA,202
+"Durham-2-10","Durham-02","durham",2,10,36.144997,-78.892117,NA,202
+"Durham-2-11","Durham-02","durham",2,11,36.147595,-78.897946,NA,202
+"Durham-2-12","Durham-02","durham",2,12,36.154477,-78.895765,NA,202
+"Durham-2-13","Durham-02","durham",2,13,36.160831,-78.895588,NA,202
+"Durham-2-14","Durham-02","durham",2,14,36.167231,-78.891647,NA,202
+"Durham-2-15","Durham-02","durham",2,15,36.170638,-78.883845,NA,202
+"Durham-2-16","Durham-02","durham",2,16,36.175338,-78.881963,NA,202
+"Durham-2-17","Durham-02","durham",2,17,36.180032,-78.887381,NA,202
+"Durham-2-18","Durham-02","durham",2,18,36.185202,-78.88971,NA,202
+"Durham-2-19","Durham-02","durham",2,19,36.191652,-78.898034,NA,202
+"Durham-2-20","Durham-02","durham",2,20,36.193735,-78.903379,NA,202
+"Durham-3-1","Durham-03","durham",3,1,36.0174968,-78.9190325,NA,203
+"Durham-3-2","Durham-03","durham",3,2,36.0244489,-78.9197512,NA,203
+"Durham-3-3","Durham-03","durham",3,3,36.0302437,-78.9254672,NA,203
+"Durham-3-4","Durham-03","durham",3,4,36.0360277,-78.929253,NA,203
+"Durham-3-5","Durham-03","durham",3,5,36.0371268,-78.9365445,NA,203
+"Durham-3-6","Durham-03","durham",3,6,36.0386392,-78.9475227,NA,203
+"Durham-3-7","Durham-03","durham",3,7,36.0426801,-78.955214,NA,203
+"Durham-3-8","Durham-03","durham",3,8,36.0428468,-78.9625931,NA,203
+"Durham-3-9","Durham-03","durham",3,9,36.0472806,-78.9693279,NA,203
+"Durham-3-10","Durham-03","durham",3,10,36.0531853,-78.9732269,NA,203
+"Durham-3-11","Durham-03","durham",3,11,36.0593967,-78.9780444,NA,203
+"Durham-3-12","Durham-03","durham",3,12,36.0653133,-78.9774317,NA,203
+"Durham-3-13","Durham-03","durham",3,13,36.0727903,-78.9730363,NA,203
+"Durham-3-14","Durham-03","durham",3,14,36.0760626,-78.9664597,NA,203
+"Durham-3-15","Durham-03","durham",3,15,36.0761728,-78.9569745,NA,203
+"Durham-3-16","Durham-03","durham",3,16,36.0775314,-78.9488686,NA,203
+"Durham-3-17","Durham-03","durham",3,17,36.0823143,-78.9415308,NA,203
+"Durham-3-18","Durham-03","durham",3,18,36.0948432,-78.9325766,NA,203
+"Durham-3-19","Durham-03","durham",3,19,36.1032818,-78.9310083,NA,203
+"Durham-3-20","Durham-03","durham",3,20,36.1098165,-78.9295937,NA,203
+"Durham-4-1","Durham-04","durham",4,1,36.09356,-78.909942,NA,204
+"Durham-4-2","Durham-04","durham",4,2,36.09265,-78.90081,NA,204
+"Durham-4-3","Durham-04","durham",4,3,36.095121,-78.89222,NA,204
+"Durham-4-4","Durham-04","durham",4,4,36.093249,-78.883716,NA,204
+"Durham-4-5","Durham-04","durham",4,5,36.087356,-78.877485,NA,204
+"Durham-4-6","Durham-04","durham",4,6,36.083043,-78.871214,NA,204
+"Durham-4-7","Durham-04","durham",4,7,36.083335,-78.864523,NA,204
+"Durham-4-8","Durham-04","durham",4,8,36.074626,-78.863454,NA,204
+"Durham-4-9","Durham-04","durham",4,9,36.075709,-78.860588,NA,204
+"Durham-4-10","Durham-04","durham",4,10,36.082363,-78.853651,NA,204
+"Durham-4-11","Durham-04","durham",4,11,36.086306,-78.847129,NA,204
+"Durham-4-12","Durham-04","durham",4,12,36.091449,-78.840976,NA,204
+"Durham-4-13","Durham-04","durham",4,13,36.094726,-78.834778,NA,204
+"Durham-4-14","Durham-04","durham",4,14,36.091571,-78.829924,NA,204
+"Durham-4-15","Durham-04","durham",4,15,36.084415,-78.824493,NA,204
+"Durham-4-16","Durham-04","durham",4,16,36.076406,-78.821093,NA,204
+"Durham-4-17","Durham-04","durham",4,17,36.06637,-78.820962,NA,204
+"Durham-4-18","Durham-04","durham",4,18,36.060492,-78.817566,NA,204
+"Durham-4-19","Durham-04","durham",4,19,36.052976,-78.815265,NA,204
+"Durham-4-20","Durham-04","durham",4,20,36.04377,-78.814958,NA,204
+"Durham-5-1","Durham-05","durham",5,1,35.8828612,-78.9927439,NA,205
+"Durham-5-2","Durham-05","durham",5,2,35.8868399,-78.9864874,NA,205
+"Durham-5-3","Durham-05","durham",5,3,35.8922646,-78.9807503,NA,205
+"Durham-5-4","Durham-05","durham",5,4,35.9007635,-78.9806876,NA,205
+"Durham-5-5","Durham-05","durham",5,5,35.9055098,-78.9832843,NA,205
+"Durham-5-6","Durham-05","durham",5,6,35.910952,-78.9841122,NA,205
+"Durham-5-7","Durham-05","durham",5,7,35.9194738,-78.9863458,NA,205
+"Durham-5-8","Durham-05","durham",5,8,35.9262418,-78.9893718,NA,205
+"Durham-5-9","Durham-05","durham",5,9,35.932457,-78.9894436,NA,205
+"Durham-5-10","Durham-05","durham",5,10,35.9398126,-78.9841876,NA,205
+"Durham-5-11","Durham-05","durham",5,11,35.9425889,-78.9795975,NA,205
+"Durham-5-12","Durham-05","durham",5,12,35.946114,-78.9715172,NA,205
+"Durham-5-13","Durham-05","durham",5,13,35.9508564,-78.9655766,NA,205
+"Durham-5-14","Durham-05","durham",5,14,35.9533748,-78.9581148,NA,205
+"Durham-5-15","Durham-05","durham",5,15,35.9573191,-78.9511531,NA,205
+"Durham-5-16","Durham-05","durham",5,16,35.9610426,-78.9474957,NA,205
+"Durham-5-17","Durham-05","durham",5,17,35.9669508,-78.9457455,NA,205
+"Durham-5-18","Durham-05","durham",5,18,35.9735894,-78.9428726,NA,205
+"Durham-5-19","Durham-05","durham",5,19,35.9843204,-78.9410977,NA,205
+"Durham-5-20","Durham-05","durham",5,20,35.9897964,-78.9388187,NA,205
+"Durham-6-1","Durham-06","durham",6,1,35.8687576,-78.8298885,NA,206
+"Durham-6-2","Durham-06","durham",6,2,35.8744067,-78.8366567,NA,206
+"Durham-6-3","Durham-06","durham",6,3,35.8795416,-78.8406627,NA,206
+"Durham-6-4","Durham-06","durham",6,4,35.8805364,-78.8454915,NA,206
+"Durham-6-5","Durham-06","durham",6,5,35.8874673,-78.8491849,NA,206
+"Durham-6-6","Durham-06","durham",6,6,35.8972234,-78.8497119,NA,206
+"Durham-6-7","Durham-06","durham",6,7,35.9021586,-78.8538769,NA,206
+"Durham-6-8","Durham-06","durham",6,8,35.9070053,-78.8618308,NA,206
+"Durham-6-9","Durham-06","durham",6,9,35.9148937,-78.8681787,NA,206
+"Durham-6-10","Durham-06","durham",6,10,35.9197207,-78.8732447,NA,206
+"Durham-6-11","Durham-06","durham",6,11,35.9247973,-78.8806132,NA,206
+"Durham-6-12","Durham-06","durham",6,12,35.9300092,-78.8853173,NA,206
+"Durham-6-13","Durham-06","durham",6,13,35.9341271,-78.8901052,NA,206
+"Durham-6-14","Durham-06","durham",6,14,35.9421815,-78.8998308,NA,206
+"Durham-6-15","Durham-06","durham",6,15,35.9478616,-78.9031045,NA,206
+"Durham-6-16","Durham-06","durham",6,16,35.9574454,-78.9087501,NA,206
+"Durham-6-17","Durham-06","durham",6,17,35.9638489,-78.9179103,NA,206
+"Durham-6-18","Durham-06","durham",6,18,35.9674861,-78.9225563,NA,206
+"Durham-6-19","Durham-06","durham",6,19,35.9728573,-78.9333264,NA,206
+"Durham-6-20","Durham-06","durham",6,20,35.9758196,-78.937776,NA,206
+"Durham-7-1","Durham-07","durham",7,1,35.951236,-78.836051,"""Just be aware the mileage might be correct but some of the landmarks have changed. For example, the abandoned house is now the food lion shopping center"" 0.0 storage area",207
+"Durham-7-2","Durham-07","durham",7,2,35.95625,-78.82648,"0.55 1615 Sheron Rd",207
+"Durham-7-3","Durham-07","durham",7,3,35.959794,-78.819419,"1.1 Fields",207
+"Durham-7-4","Durham-07","durham",7,4,35.962164,-78.813438,"1.5 RTP Lock and Key",207
+"Durham-7-5","Durham-07","durham",7,5,35.964661,-78.805792,"2.0 Cemetery",207
+"Durham-7-6","Durham-07","durham",7,6,35.970668,-78.800716,"2.6 312 Sheron Rd",207
+"Durham-7-7","Durham-07","durham",7,7,35.974903,-78.792632,"3.0 Food Lion near Rte 98",207
+"Durham-7-8","Durham-07","durham",7,8,35.977794,-78.781118,"0.0 98 and Baptist Middle School",207
+"Durham-7-9","Durham-07","durham",7,9,35.982075,-78.775266,"0.55 Cemetery",207
+"Durham-7-10","Durham-07","durham",7,10,35.989001,-78.769871,"1.1 Field",207
+"Durham-7-11","Durham-07","durham",7,11,35.992371,-78.76502,"1.5 Greenbrier Rd",207
+"Durham-7-12","Durham-07","durham",7,12,35.99169,-78.75632,"2.0 Intersection of 1908 Southview at Church",207
+"Durham-7-13","Durham-07","durham",7,13,35.98609,-78.75113,"0.5 510 Southview",207
+"Durham-7-14","Durham-07","durham",7,14,35.97808,-78.75011,"1.0 Powerline crossing",207
+"Durham-7-15","Durham-07","durham",7,15,35.97198,-78.74944,"1.5 Past Bridge",207
+"Durham-7-16","Durham-07","durham",7,16,35.96481,-78.75342,"2.0 Edge of field",207
+"Durham-7-17","Durham-07","durham",7,17,35.96113,-78.74909,"2.5 Kemp and Southview",207
+"Durham-7-18","Durham-07","durham",7,18,35.95701,-78.74222,"0.6 Old Kemp Road",207
+"Durham-7-19","Durham-07","durham",7,19,35.95484,-78.73421,"1.2 Power line",207
+"Durham-7-20","Durham-07","durham",7,20,35.95004,-78.73453,"1.7 Carpenter Pond and Soral Gin",207
+"Durham-8-1","Durham-08","durham",8,1,35.926474,-78.761981,NA,208
+"Durham-8-2","Durham-08","durham",8,2,35.933695,-78.767016,NA,208
+"Durham-8-3","Durham-08","durham",8,3,35.939618,-78.771087,NA,208
+"Durham-8-4","Durham-08","durham",8,4,35.945499,-78.771726,NA,208
+"Durham-8-5","Durham-08","durham",8,5,35.952134,-78.774109,NA,208
+"Durham-8-6","Durham-08","durham",8,6,35.958573,-78.778001,NA,208
+"Durham-8-7","Durham-08","durham",8,7,35.966321,-78.782952,NA,208
+"Durham-8-8","Durham-08","durham",8,8,35.970357,-78.784644,NA,208
+"Durham-8-9","Durham-08","durham",8,9,35.974939,-78.785642,NA,208
+"Durham-8-10","Durham-08","durham",8,10,35.979455,-78.794692,NA,208
+"Durham-8-11","Durham-08","durham",8,11,35.984999,-78.798088,NA,208
+"Durham-8-12","Durham-08","durham",8,12,35.99131,-78.801438,NA,208
+"Durham-8-13","Durham-08","durham",8,13,35.998118,-78.801612,NA,208
+"Durham-8-14","Durham-08","durham",8,14,36.010964,-78.802016,NA,208
+"Durham-8-15","Durham-08","durham",8,15,36.018845,-78.805619,NA,208
+"Durham-8-16","Durham-08","durham",8,16,36.024588,-78.809631,NA,208
+"Durham-8-17","Durham-08","durham",8,17,36.031722,-78.81219,NA,208
+"Durham-8-18","Durham-08","durham",8,18,36.038641,-78.817245,NA,208
+"Durham-8-19","Durham-08","durham",8,19,36.046454,-78.808834,NA,208
+"Durham-8-20","Durham-08","durham",8,20,36.04858,-78.803373,NA,208
+"Orange-1-1","Orange-01","orange",1,1,36.233011,-79.2100081,NA,101
+"Orange-1-2","Orange-01","orange",1,2,36.226355,-79.2076375,NA,101
+"Orange-1-3","Orange-01","orange",1,3,36.2198271,-79.2040793,NA,101
+"Orange-1-4","Orange-01","orange",1,4,36.2186924,-79.1975596,NA,101
+"Orange-1-5","Orange-01","orange",1,5,36.217693,-79.1874463,NA,101
+"Orange-1-6","Orange-01","orange",1,6,36.2168212,-79.1793409,NA,101
+"Orange-1-7","Orange-01","orange",1,7,36.2129025,-79.1752011,NA,101
+"Orange-1-8","Orange-01","orange",1,8,36.2055901,-79.1732061,NA,101
+"Orange-1-9","Orange-01","orange",1,9,36.197842,-79.1698197,NA,101
+"Orange-1-10","Orange-01","orange",1,10,36.1914892,-79.1711946,NA,101
+"Orange-1-11","Orange-01","orange",1,11,36.1848891,-79.1687648,NA,101
+"Orange-1-12","Orange-01","orange",1,12,36.1784716,-79.1661589,NA,101
+"Orange-1-13","Orange-01","orange",1,13,36.1712192,-79.1666161,NA,101
+"Orange-1-14","Orange-01","orange",1,14,36.1634163,-79.1676926,NA,101
+"Orange-1-15","Orange-01","orange",1,15,36.1568915,-79.1671602,NA,101
+"Orange-1-16","Orange-01","orange",1,16,36.148553,-79.1647151,NA,101
+"Orange-1-17","Orange-01","orange",1,17,36.1433722,-79.1631181,NA,101
+"Orange-1-18","Orange-01","orange",1,18,36.1373916,-79.157413,NA,101
+"Orange-1-19","Orange-01","orange",1,19,36.1331914,-79.1497279,NA,101
+"Orange-1-20","Orange-01","orange",1,20,36.1353571,-79.1426814,NA,101
+"Orange-2-1","Orange-02","orange",2,1,36.1607243,-79.10446,NA,102
+"Orange-2-2","Orange-02","orange",2,2,36.1648819,-79.1067797,NA,102
+"Orange-2-3","Orange-02","orange",2,3,36.1719249,-79.1077866,NA,102
+"Orange-2-4","Orange-02","orange",2,4,36.178134,-79.1031725,NA,102
+"Orange-2-5","Orange-02","orange",2,5,36.1834933,-79.0998945,NA,102
+"Orange-2-6","Orange-02","orange",2,6,36.1905204,-79.0945574,NA,102
+"Orange-2-7","Orange-02","orange",2,7,36.1958907,-79.090263,NA,102
+"Orange-2-8","Orange-02","orange",2,8,36.2018214,-79.0889036,NA,102
+"Orange-2-9","Orange-02","orange",2,9,36.2106719,-79.0864088,NA,102
+"Orange-2-10","Orange-02","orange",2,10,36.2105579,-79.0783783,NA,102
+"Orange-2-11","Orange-02","orange",2,11,36.2144818,-79.073337,NA,102
+"Orange-2-12","Orange-02","orange",2,12,36.2187551,-79.0694902,NA,102
+"Orange-2-13","Orange-02","orange",2,13,36.2245305,-79.0633293,NA,102
+"Orange-2-14","Orange-02","orange",2,14,36.2258305,-79.0535216,NA,102
+"Orange-2-15","Orange-02","orange",2,15,36.2276568,-79.0459151,NA,102
+"Orange-2-16","Orange-02","orange",2,16,36.2296369,-79.0371049,NA,102
+"Orange-2-17","Orange-02","orange",2,17,36.2290851,-79.0297367,NA,102
+"Orange-2-18","Orange-02","orange",2,18,36.2332235,-79.0253032,NA,102
+"Orange-2-19","Orange-02","orange",2,19,36.2386926,-79.0230702,NA,102
+"Orange-2-20","Orange-02","orange",2,20,36.2387572,-79.0147295,NA,102
+"Orange-3-1","Orange-03","orange",3,1,36.119491,-79.176668,NA,103
+"Orange-3-2","Orange-03","orange",3,2,36.120662,-79.186229,NA,103
+"Orange-3-3","Orange-03","orange",3,3,36.121532,-79.19038,NA,103
+"Orange-3-4","Orange-03","orange",3,4,36.115745,-79.195547,NA,103
+"Orange-3-5","Orange-03","orange",3,5,36.111012,-79.201137,NA,103
+"Orange-3-6","Orange-03","orange",3,6,36.105687,-79.202453,NA,103
+"Orange-3-7","Orange-03","orange",3,7,36.105685,-79.211613,NA,103
+"Orange-3-8","Orange-03","orange",3,8,36.099722,-79.214267,NA,103
+"Orange-3-9","Orange-03","orange",3,9,36.092438,-79.213933,NA,103
+"Orange-3-10","Orange-03","orange",3,10,36.087875,-79.220204,NA,103
+"Orange-3-11","Orange-03","orange",3,11,36.085925,-79.226127,NA,103
+"Orange-3-12","Orange-03","orange",3,12,36.077617,-79.224286,NA,103
+"Orange-3-13","Orange-03","orange",3,13,36.070867,-79.22445,NA,103
+"Orange-3-14","Orange-03","orange",3,14,36.065727,-79.226937,NA,103
+"Orange-3-15","Orange-03","orange",3,15,36.058951,-79.232453,NA,103
+"Orange-3-16","Orange-03","orange",3,16,36.055865,-79.237684,NA,103
+"Orange-3-17","Orange-03","orange",3,17,36.050985,-79.243826,NA,103
+"Orange-3-18","Orange-03","orange",3,18,36.047216,-79.251302,NA,103
+"Orange-3-19","Orange-03","orange",3,19,36.042172,-79.257245,NA,103
+"Orange-3-20","Orange-03","orange",3,20,36.036967,-79.26018,NA,103
+"Orange-4-1","Orange-04","orange",4,1,36.082941,-79.099012,"Town Hall pull out",104
+"Orange-4-2","Orange-04","orange",4,2,36.077555,-79.096478,"gravel shoulder on right just N of Tryon St",104
+"Orange-4-3","Orange-04","orange",4,3,36.072344,-79.099331,"""Park on W side of Eno River, count from bridge""",104
+"Orange-4-4","Orange-04","orange",4,4,36.066604,-79.093864,"Sports Endeavors driveway",104
+"Orange-4-5","Orange-04","orange",4,5,36.064862,-79.085604,"Valley Forge @ Rt 86",104
+"Orange-4-6","Orange-04","orange",4,6,36.057989,-79.08186,"Just across I-85 before exit ramp and One Way sign",104
+"Orange-4-7","Orange-04","orange",4,7,36.053026,-79.076169,"Gravel pullout in front of truck yard",104
+"Orange-4-8","Orange-04","orange",4,8,36.048521,-79.069083,"Byrdsville driveway",104
+"Orange-4-9","Orange-04","orange",4,9,36.043341,-79.062869,"""Across from house #2212, in front of 35 mph sign""",104
+"Orange-4-10","Orange-04","orange",4,10,36.038145,-79.058871,"First driveway past RxR",104
+"Orange-4-11","Orange-04","orange",4,11,36.03457,-79.051005,"Telephone pole with No Trespassing sign",104
+"Orange-4-12","Orange-04","orange",4,12,36.033587,-79.042454,"""Just past house #3519, not a safe pull-off""",104
+"Orange-4-13","Orange-04","orange",4,13,36.033016,-79.033138,"1st driveway after RxR",104
+"Orange-4-14","Orange-04","orange",4,14,36.03172,-79.024012,"Telephone pole and ""stop sign ahead"" sign",104
+"Orange-4-15","Orange-04","orange",4,15,36.026079,-79.023783,"#6110 Mt. Hermon Church Rd",104
+"Orange-4-16","Orange-04","orange",4,16,36.021894,-79.016261,"In front of Stop sign @ Murphy School Rd",104
+"Orange-4-17","Orange-04","orange",4,17,36.017273,-79.008623,"""Orange No Hunting signs on both L and R, just before telephone pole with 2 yellow support wires""; land on right cleared for housing in 2016",104
+"Orange-4-18","Orange-04","orange",4,18,36.013561,-79.001183,"Far end of lawn and fence on L",104
+"Orange-4-19","Orange-04","orange",4,19,36.010719,-78.992958,"3 black mailboxes",104
+"Orange-4-20","Orange-04","orange",4,20,36.005137,-78.991717,"2nd driveway of pale blue house",104
+"Orange-5-1","Orange-05","orange",5,1,35.9930535,-79.1493245,NA,105
+"Orange-5-2","Orange-05","orange",5,2,35.9935961,-79.1589658,NA,105
+"Orange-5-3","Orange-05","orange",5,3,35.9898849,-79.1614025,NA,105
+"Orange-5-4","Orange-05","orange",5,4,35.9826421,-79.1582751,NA,105
+"Orange-5-5","Orange-05","orange",5,5,35.9764258,-79.1606162,NA,105
+"Orange-5-6","Orange-05","orange",5,6,35.9725553,-79.1645755,NA,105
+"Orange-5-7","Orange-05","orange",5,7,35.9712556,-79.1751932,NA,105
+"Orange-5-8","Orange-05","orange",5,8,35.9752349,-79.1825478,NA,105
+"Orange-5-9","Orange-05","orange",5,9,35.975469,-79.190433,NA,105
+"Orange-5-10","Orange-05","orange",5,10,35.9713528,-79.1940569,NA,105
+"Orange-5-11","Orange-05","orange",5,11,35.964597,-79.1941635,NA,105
+"Orange-5-12","Orange-05","orange",5,12,35.9589448,-79.1997637,NA,105
+"Orange-5-13","Orange-05","orange",5,13,35.955413,-79.2069467,NA,105
+"Orange-5-14","Orange-05","orange",5,14,35.9550977,-79.2156431,NA,105
+"Orange-5-15","Orange-05","orange",5,15,35.9546748,-79.2247939,NA,105
+"Orange-5-16","Orange-05","orange",5,16,35.9516943,-79.2300643,NA,105
+"Orange-5-17","Orange-05","orange",5,17,35.947859,-79.2372159,NA,105
+"Orange-5-18","Orange-05","orange",5,18,35.9407976,-79.2385327,NA,105
+"Orange-5-19","Orange-05","orange",5,19,35.9355687,-79.2353966,NA,105
+"Orange-5-20","Orange-05","orange",5,20,35.9289921,-79.2316788,NA,105
+"Orange-6-1","Orange-06","orange",6,1,36.001686,-79.026619,NA,106
+"Orange-6-2","Orange-06","orange",6,2,36.001788,-79.035657,NA,106
+"Orange-6-3","Orange-06","orange",6,3,35.999948,-79.043202,NA,106
+"Orange-6-4","Orange-06","orange",6,4,35.992809,-79.043875,NA,106
+"Orange-6-5","Orange-06","orange",6,5,35.987944,-79.048141,NA,106
+"Orange-6-6","Orange-06","orange",6,6,35.980372,-79.049462,NA,106
+"Orange-6-7","Orange-06","orange",6,7,35.97359,-79.050566,NA,106
+"Orange-6-8","Orange-06","orange",6,8,35.970917,-79.059075,NA,106
+"Orange-6-9","Orange-06","orange",6,9,35.974595,-79.06335,NA,106
+"Orange-6-10","Orange-06","orange",6,10,35.969352,-79.062485,NA,106
+"Orange-6-11","Orange-06","orange",6,11,35.96993,-79.073413,NA,106
+"Orange-6-12","Orange-06","orange",6,12,35.968803,-79.08168,NA,106
+"Orange-6-13","Orange-06","orange",6,13,35.965614,-79.090416,NA,106
+"Orange-6-14","Orange-06","orange",6,14,35.959827,-79.085154,NA,106
+"Orange-6-15","Orange-06","orange",6,15,35.954117,-79.08125,NA,106
+"Orange-6-16","Orange-06","orange",6,16,35.9480714,-79.0832613,NA,106
+"Orange-6-17","Orange-06","orange",6,17,35.941798,-79.088232,NA,106
+"Orange-6-18","Orange-06","orange",6,18,35.942579,-79.095596,NA,106
+"Orange-6-19","Orange-06","orange",6,19,35.942829,-79.101257,NA,106
+"Orange-6-20","Orange-06","orange",6,20,35.942695,-79.108836,NA,106
+"Orange-7-1","Orange-07","orange",7,1,36.132105,-79.223926,NA,107
+"Orange-7-2","Orange-07","orange",7,2,36.13889,-79.22034,NA,107
+"Orange-7-3","Orange-07","orange",7,3,36.14466,-79.21589,NA,107
+"Orange-7-4","Orange-07","orange",7,4,36.1489,-79.2077,NA,107
+"Orange-7-5","Orange-07","orange",7,5,36.15205,-79.20053,NA,107
+"Orange-7-6","Orange-07","orange",7,6,36.15863,-79.19863,NA,107
+"Orange-7-7","Orange-07","orange",7,7,36.16424,-79.19681,NA,107
+"Orange-7-8","Orange-07","orange",7,8,36.17145,-79.19305,NA,107
+"Orange-7-9","Orange-07","orange",7,9,36.17449,-79.18509,NA,107
+"Orange-7-10","Orange-07","orange",7,10,36.17928,-79.17873,NA,107
+"Orange-7-11","Orange-07","orange",7,11,36.18373,-79.17701,NA,107
+"Orange-7-12","Orange-07","orange",7,12,36.188343,-79.180411,NA,107
+"Orange-7-13","Orange-07","orange",7,13,36.189729,-79.17355,NA,107
+"Orange-7-14","Orange-07","orange",7,14,36.192199,-79.16607,NA,107
+"Orange-7-15","Orange-07","orange",7,15,36.197774,-79.160022,NA,107
+"Orange-7-16","Orange-07","orange",7,16,36.206992,-79.156905,NA,107
+"Orange-7-17","Orange-07","orange",7,17,36.212327,-79.156839,NA,107
+"Orange-7-18","Orange-07","orange",7,18,36.217935,-79.153762,NA,107
+"Orange-7-19","Orange-07","orange",7,19,36.224038,-79.150572,NA,107
+"Orange-7-20","Orange-07","orange",7,20,36.2255,-79.140737,NA,107
+"Orange-8-1","Orange-08","orange",8,1,36.1544708,-78.9676272,NA,108
+"Orange-8-2","Orange-08","orange",8,2,36.1562491,-78.9702869,NA,108
+"Orange-8-3","Orange-08","orange",8,3,36.1565137,-78.9705606,NA,108
+"Orange-8-4","Orange-08","orange",8,4,36.1676647,-78.9801995,NA,108
+"Orange-8-5","Orange-08","orange",8,5,36.171517,-78.987614,NA,108
+"Orange-8-6","Orange-08","orange",8,6,36.176411,-78.9958063,NA,108
+"Orange-8-7","Orange-08","orange",8,7,36.177307,-79.0046091,NA,108
+"Orange-8-8","Orange-08","orange",8,8,36.1768262,-79.0113773,NA,108
+"Orange-8-9","Orange-08","orange",8,9,36.1772706,-79.0205572,NA,108
+"Orange-8-10","Orange-08","orange",8,10,36.1830545,-79.0259472,NA,108
+"Orange-8-11","Orange-08","orange",8,11,36.1831343,-79.0326892,NA,108
+"Orange-8-12","Orange-08","orange",8,12,36.1839426,-79.0415035,NA,108
+"Orange-8-13","Orange-08","orange",8,13,36.189208,-79.0449701,NA,108
+"Orange-8-14","Orange-08","orange",8,14,36.1911326,-79.0503781,NA,108
+"Orange-8-15","Orange-08","orange",8,15,36.1928451,-79.0587903,NA,108
+"Orange-8-16","Orange-08","orange",8,16,36.1927367,-79.0684247,NA,108
+"Orange-8-17","Orange-08","orange",8,17,36.1975971,-79.0737538,NA,108
+"Orange-8-18","Orange-08","orange",8,18,36.201572,-79.078144,NA,108
+"Orange-8-19","Orange-08","orange",8,19,36.2009794,-79.0886956,NA,108
+"Orange-8-20","Orange-08","orange",8,20,36.2032796,-79.0964527,NA,108
+"Orange-9-1","Orange-09","orange",9,1,35.999474,-79.11991,NA,109
+"Orange-9-2","Orange-09","orange",9,2,36.004015,-79.126702,NA,109
+"Orange-9-3","Orange-09","orange",9,3,36.006235,-79.134471,NA,109
+"Orange-9-4","Orange-09","orange",9,4,36.005894,-79.14348,NA,109
+"Orange-9-5","Orange-09","orange",9,5,36.003701,-79.152139,NA,109
+"Orange-9-6","Orange-09","orange",9,6,36.003496,-79.160503,NA,109
+"Orange-9-7","Orange-09","orange",9,7,36.007089,-79.16832,NA,109
+"Orange-9-8","Orange-09","orange",9,8,36.013832,-79.171554,NA,109
+"Orange-9-9","Orange-09","orange",9,9,36.020469,-79.174447,NA,109
+"Orange-9-10","Orange-09","orange",9,10,36.026191,-79.180653,NA,109
+"Orange-9-11","Orange-09","orange",9,11,36.023338,-79.18713,NA,109
+"Orange-9-12","Orange-09","orange",9,12,36.018097,-79.190063,NA,109
+"Orange-9-13","Orange-09","orange",9,13,36.011979,-79.19461,NA,109
+"Orange-9-14","Orange-09","orange",9,14,36.007153,-79.202066,NA,109
+"Orange-9-15","Orange-09","orange",9,15,36.010736,-79.206306,NA,109
+"Orange-9-16","Orange-09","orange",9,16,36.016185,-79.20434,NA,109
+"Orange-9-17","Orange-09","orange",9,17,36.025309,-79.204668,NA,109
+"Orange-9-18","Orange-09","orange",9,18,36.031653,-79.209256,NA,109
+"Orange-9-19","Orange-09","orange",9,19,36.038012,-79.214129,NA,109
+"Orange-9-20","Orange-09","orange",9,20,36.043953,-79.217745,NA,109
+"Orange-10-1","Orange-10","orange",10,1,35.9995355,-79.1070467,NA,110
+"Orange-10-2","Orange-10","orange",10,2,36.0022336,-79.097689,NA,110
+"Orange-10-3","Orange-10","orange",10,3,36.0057497,-79.0893531,NA,110
+"Orange-10-4","Orange-10","orange",10,4,36.010228,-79.0818644,NA,110
+"Orange-10-5","Orange-10","orange",10,5,36.0167974,-79.0755816,NA,110
+"Orange-10-6","Orange-10","orange",10,6,36.0198797,-79.0697536,NA,110
+"Orange-10-7","Orange-10","orange",10,7,36.0229458,-79.0638886,NA,110
+"Orange-10-8","Orange-10","orange",10,8,36.0304407,-79.0607462,NA,110
+"Orange-10-9","Orange-10","orange",10,9,36.033752,-79.0537372,NA,110
+"Orange-10-10","Orange-10","orange",10,10,36.049837,-79.0702702,NA,110
+"Orange-10-11","Orange-10","orange",10,11,36.058509,-79.0667173,NA,110
+"Orange-10-12","Orange-10","orange",10,12,36.0653397,-79.0641683,NA,110
+"Orange-10-13","Orange-10","orange",10,13,36.0760305,-79.0600792,NA,110
+"Orange-10-14","Orange-10","orange",10,14,36.0810134,-79.0587684,NA,110
+"Orange-10-15","Orange-10","orange",10,15,36.0856549,-79.0616071,NA,110
+"Orange-10-16","Orange-10","orange",10,16,36.0928806,-79.0552735,NA,110
+"Orange-10-17","Orange-10","orange",10,17,36.0974041,-79.0538135,NA,110
+"Orange-10-18","Orange-10","orange",10,18,36.106163,-79.0539574,NA,110
+"Orange-10-19","Orange-10","orange",10,19,36.1131349,-79.0501971,NA,110
+"Orange-10-20","Orange-10","orange",10,20,36.1186023,-79.0443993,NA,110
+"Orange-11-1","Orange-11","orange",11,1,35.8664557,-79.1124753,"0.0 orange utility left, green utility right",111
+"Orange-11-2","Orange-11","orange",11,2,35.8714547,-79.1169875,"0.5 Right past turn sign, 0.05 past creek near phone pole",111
+"Orange-11-3","Orange-11","orange",11,3,35.8758005,-79.1234039,"1.0 before left mail box, open field telephone line, past house 100ft deep",111
+"Orange-11-4","Orange-11","orange",11,4,35.8823334,-79.1259712,"1.5 after church before left drive, 50ft pole right, around curve",111
+"Orange-11-5","Orange-11","orange",11,5,35.8862418,-79.1268739,"2.0 Bowen road, in front adapt Highway sign, before drive on left, right after turn",111
+"Orange-11-6","Orange-11","orange",11,6,35.8904379,-79.1344538,"2.5 right after narrow bridge, before pole and house",111
+"Orange-11-7","Orange-11","orange",11,7,35.8954701,-79.1387301,"3.0 left of mailbox, right before gravel drive at phone pole",111
+"Orange-11-8","Orange-11","orange",11,8,35.9021476,-79.1401078,"3.5 Old Greensboro rd, rt after turn on highway, rt past 45 mph sign",111
+"Orange-11-9","Orange-11","orange",11,9,35.901678,-79.1481126,"4.0 past gravel rd, park by Big Oak house to left",111
+"Orange-11-10","Orange-11","orange",11,10,35.8995696,-79.1572095,"4.5 past cricket field, mailbox white in front, big pine left",111
+"Orange-11-11","Orange-11","orange",11,11,35.8973397,-79.165236,"5.0 Carl Durham rd, right after turn 5Y, house on right edge",111
+"Orange-11-12","Orange-11","orange",11,12,35.9050319,-79.1650125,"5.5 7th post before metal coral, fence on both sides of road",111
+"Orange-11-13","Orange-11","orange",11,13,35.9107611,-79.1660731,"6.0 across from street sign, next to brick house",111
+"Orange-11-14","Orange-11","orange",11,14,35.9152892,-79.1714592,"6.5 in driveway by phone pole",111
+"Orange-11-15","Orange-11","orange",11,15,35.9213541,-79.174945,"7.0 by clear cut by double pole before mail box",111
+"Orange-11-16","Orange-11","orange",11,16,35.9277723,-79.1747848,"7.5 Dobson Cross Rd, past drive before transformer",111
+"Orange-11-17","Orange-11","orange",11,17,35.9340505,-79.1725804,"8.0 Before Ranchlet, past Richie Rd on rt. Across from trailer",111
+"Orange-11-18","Orange-11","orange",11,18,35.9424246,-79.1709356,"8.5 Rt past Montross training sign. Begin left with wt fence before road sign",111
+"Orange-11-19","Orange-11","orange",11,19,35.948438,-79.1710726,"9.0 across from tall pine before pole transformers, before rd on left",111
+"Orange-11-20","Orange-11","orange",11,20,35.9555746,-79.1706757,"9.5 rt before road entrance development ""Western Park Lane""",111
+"Orange-12-1","Orange-12","orange",12,1,35.8669878,-79.0288844,NA,112
+"Orange-12-2","Orange-12","orange",12,2,35.8701749,-79.0366946,NA,112
+"Orange-12-3","Orange-12","orange",12,3,35.8751793,-79.0426384,NA,112
+"Orange-12-4","Orange-12","orange",12,4,35.8803353,-79.0499983,NA,112
+"Orange-12-5","Orange-12","orange",12,5,35.8857531,-79.0567146,NA,112
+"Orange-12-6","Orange-12","orange",12,6,35.8916171,-79.0596436,NA,112
+"Orange-12-7","Orange-12","orange",12,7,35.8922374,-79.068173,NA,112
+"Orange-12-8","Orange-12","orange",12,8,35.8938366,-79.0767132,NA,112
+"Orange-12-9","Orange-12","orange",12,9,35.9003691,-79.0737198,NA,112
+"Orange-12-10","Orange-12","orange",12,10,35.9074871,-79.0724645,NA,112
+"Orange-12-11","Orange-12","orange",12,11,35.9158037,-79.0720676,NA,112
+"Orange-12-12","Orange-12","orange",12,12,35.9207573,-79.0788222,NA,112
+"Orange-12-13","Orange-12","orange",12,13,35.9223293,-79.0877209,NA,112
+"Orange-12-14","Orange-12","orange",12,14,35.9276432,-79.093434,NA,112
+"Orange-12-15","Orange-12","orange",12,15,35.9332005,-79.1006521,NA,112
+"Orange-12-16","Orange-12","orange",12,16,35.9383188,-79.1048528,NA,112
+"Orange-12-17","Orange-12","orange",12,17,35.9439156,-79.1123079,NA,112
+"Orange-12-18","Orange-12","orange",12,18,35.947161,-79.119001,NA,112
+"Orange-12-19","Orange-12","orange",12,19,35.9544462,-79.122074,NA,112
+"Orange-12-20","Orange-12","orange",12,20,35.9613548,-79.1262375,NA,112
