@@ -54,7 +54,7 @@ The `get_latest_taxonomy` function is used internally for accessing the taxonomy
 : End users will find data about which surveyors ran each route, and which observer is the 'primary_observer' in 'data/survey_events' which contains the: route, year, number of stops, and primary_observer - as well as other information about the observers. 
 'data/survey_events' is updated every time the overall dataset is updated, at least once a year when the new data is downloaded.
 
-'inst/extdata/survey_list'
+'inst/survey_list'
 This is the 'truth' record of all surveys, and contains information from ebird, scraped from the old website, and confirmed independently with surveyors about who ran which routes each year. It also summarized the number of species (S) and total birds seen (N). It is updated when new surveys have been added to ebird.
 
 'main_observer_conversion_table'
@@ -122,14 +122,14 @@ from each of the mbbs ebird accounts:
 `mbbsorangenc`,
 `mbbsdurhamnc`,
 and `mbbschathamnc`.
-Files are stored in `inst/extdata/ebird/`.
+Files are stored in `inst/ebird/`.
 
 ### `historical`
 
 Prior to 2009,
 checklists were available on the old MBBS website.
 These files were collated into single `csv` file for each county.
-Files are stored in `inst/extdata/historical/`.
+Files are stored in `inst/historical/`.
 These data are not updated.
 
 ### `stop-level`
@@ -138,13 +138,13 @@ Prior to 2022, survey counts were aggregated at the route level.
 This data is the un-summarized version of the routes for which records exist.
 The `stop-level` data comes from a variety of sources,
 and is all stored in
-`inst/extdata/stop_level/`.
+`inst/stop_level/`.
 The data is considered stable and not updated.
 
 The sources are as follows:
 
 1. Excel files provided by observers.
-The raw data are stored in `inst/extdata/stop-level/`
+The raw data are stored in `inst/stop-level/`
 in folders by the name of the observer who sent them.
 Code in `R/prepare_historical_xls`
 creates the processed `stop_level_hist_xls.csv`.
