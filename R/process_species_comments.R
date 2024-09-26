@@ -38,7 +38,7 @@ process_species_comments <- function(mbbs) {
     filter(out != count)
   # save error rows for assessment.
   write.csv(catch_errors,
-    "inst/extdata/species_comments_errors.csv",
+    "inst/species_comments_errors.csv",
     row.names = FALSE
   )
   # notify user of errors
@@ -51,7 +51,7 @@ process_species_comments <- function(mbbs) {
     "for that species",
     "\n",
     "To follow up see:",
-    "inst/extdata/species_comments_errors.csv"
+    "inst/species_comments_errors.csv"
   ))
 
   # remove rows where output doesn't match count
