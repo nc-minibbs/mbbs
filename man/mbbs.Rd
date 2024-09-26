@@ -3,7 +3,7 @@
 \docType{data}
 \name{mbbs}
 \alias{mbbs}
-\title{Data from the Mini-Bird Breeding Survey}
+\title{Data.frame containing information about the routes}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 51121 rows and 35 columns.
 }
