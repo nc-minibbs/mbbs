@@ -51,10 +51,27 @@ Taxonomy CSV files are manually downloaded and stored in
 The `get_latest_taxonomy` function is used internally for accessing the taxonomy.
 
 `observer`
-: TODO
+: End users will find data about which surveyors ran each route, and which observer is the 'primary_observer' in 'data/survey_events' which contains the: route, year, number of stops, and primary_observer - as well as other information about the observers. 
+'data/survey_events' is updated every time the overall dataset is updated, at least once a year when the new data is downloaded.
+
+'inst/extdata/survey_list'
+This is the 'truth' record of all surveys, and contains information from ebird, scraped from the old website, and confirmed independently with surveyors about who ran which routes each year. It also summarized the number of species (S) and total birds seen (N). It is updated when new surveys have been added to ebird.
+
+'main_observer_conversion_table'
+This table contains a list of the expected observers for each route, used in calculating the primary_observer. It is updated when a route is surveyed by someone who hasn't run that route before. 
+
+'mini_observer_conversion_table'
+This table contains the conversions used to standardize observer names, eg 'Tom driscoll' and 'Tom Driscol' both become 'Tome Driscoll'
+
+Processing of observers happens in 'R/process_observers'
+The primary_observer is the highest quality observer who was part of the survey for a given route. 'observer_quality' is calculated as
+N_species[route,year,observer(i)] - mean(N_species[route,!observer(i)]  / mean(N_species[route,!observer(i)] 
+These comparison scores (one for every observer on every route-year) are then averaged for each observer to get their 'observer_quality'. A score of '.05' is interpretable as 'On average, this observer sees 5% more species than other surveyors on the same routes'.
 
 `stop-coordinates`
-: TODO Lat/Lon of stops
+: TODO Lat/Lon of the first stops for each route (right now)
+'R/mbbs_routes'
+Stable and not updated
 
 `excluded-submissions`
 : A file containing a list of eBird checklists
@@ -110,10 +127,33 @@ Files are stored in `inst/extdata/ebird/`.
 ### `historical`
 
 TODO
+Checklists scraped from the old website
+Stored as .csv files and sitrscrape .rds files
+Files are stored in 'inst/extdata/historical/'
 
 ### `stop-level`
 
-TODO
+For many years surveys were summarized to routes. This data is the un-summarized version of the routes for which records exist.
+
+The 'stop-level' data comes from a variety of sources, and is all stored in
+'inst/extdata/stop_level_data/'
+
+The data is considered stable and not updated.
+
+The sources are as follows:
+A) historical excel sheets
+The raw data are stored in 'inst/extdata/stop_level_data/' in folders by the name of the observer who sent them.
+'R/prepare_historical_xls' is used to create the processed 'stop_level_hist_xls.csv'
+
+B) Scraped from the species_comments column
+Some checklists summarizing routes on ebird contain stop-level information in the notes for each species. 
+'R/process_species_comments' R script processes this data into a stop-level format to create 'stop_level_species_comments.csv'
+
+C) Transcribed paper files
+Many surveyors sent Haven Wiley their paper recording sheets which were then summarized to route for the old website. These sheets have been transcribed with double-entry to prevent errors. The 'transcribed_paper_files_NAME' spreadsheets are processed to create 'stop_level_transcribed_paper.csv'
+
+Overall:
+When there is disagreement between the route-level data and the stop-level data, such as cases where the route-level is higher by 1, the stop-level data is taken as the 'truth'
 
 ## Data products
 
