@@ -184,7 +184,8 @@ The primary_observer is the highest quality observer who was part of the survey 
 
 ```r
 N_species[route,year,observer(i)] - mean(N_species[route,!observer(i)]  / mean(N_species[route,!observer(i)]
-``` 
+```
+
 These comparison scores (one for every observer on every route-year) are then averaged for each observer to get their 'observer_quality'. A score of '.05' is interpretable as 'On average, this observer sees 5% more species than other surveyors on the same routes'.
 
 
