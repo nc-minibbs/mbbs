@@ -129,15 +129,15 @@ Files are stored in `inst/extdata/ebird/`.
 TODO
 Checklists scraped from the old website
 Stored as .csv files and sitrscrape .rds files
-Files are stored in 'inst/extdata/historical/'
+Files are stored in `inst/extdata/historical/`.
 
 ### `stop-level`
 
-For many years surveys were summarized to routes. This data is the un-summarized version of the routes for which records exist.
-
-The 'stop-level' data comes from a variety of sources, and is all stored in
-'inst/extdata/stop_level_data/'
-
+For many years surveys were summarized to routes.
+This data is the un-summarized version of the routes for which records exist.
+The `stop-level` data comes from a variety of sources,
+and is all stored in
+`inst/extdata/stop_level/`.
 The data is considered stable and not updated.
 
 The sources are as follows:
