@@ -67,13 +67,15 @@ process_species_comments <- function(mbbs) {
     ) %>%
     dplyr::relocate(species_comments, .after = checklist_comments) %>%
     mutate(stop_num = as.integer(stop_num))
-  
-  #write csv
+
+  # write csv
   write.csv(stopsmbbs, "inst/extdata/stop_level_species_comments.csv", row.names = FALSE)
-  cat(c("\n",
+  cat(c(
+    "\n",
     "new stop_level_species_comments.csv saved",
     "\n",
-    ""))
+    ""
+  ))
 
   stopsmbbs # returns
 }
