@@ -1,4 +1,3 @@
-
 #' Clean the species names of the data scraped from the old MBBS website
 #'
 #' @param dt a data.frame
