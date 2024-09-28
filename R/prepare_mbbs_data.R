@@ -1,20 +1,3 @@
-#' Gets the ebird taxonomy dataset
-#' @importFrom dplyr select
-#' @importFrom stringr str_sub
-#' @export
-get_ebird_taxonomy <- function() {
-  # select the file that's from the lastest version year (ie: ebird_taxonomy_v2022)
-  latest_taxonomy <-
-    list.files("inst/taxonomy") %>%
-    max(stringr::str_sub(-8, -5))
-  read.csv(paste("inst/taxonomy/", latest_taxonomy, sep = "")) %>%
-    dplyr::select(
-      tax_order = .data$TAXON_ORDER,
-      sci_name = .data$SCI_NAME,
-      common_name = .data$PRIMARY_COM_NAME
-    )
-}
-
 #' Clean the species names of the data scraped from the old MBBS website
 #'
 #' @param dt a data.frame
