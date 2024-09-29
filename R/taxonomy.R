@@ -1,6 +1,13 @@
-#' Gets the ebird taxonomy dataset
+#------------------------------------------------------------------------------#
+# R code related to taxonomy used in the MBBS project
+#------------------------------------------------------------------------------#
+
+#' Get the ebird taxonomy dataset
 #'
-#' Gets the most recent ebird taxonomy dataset available in the project repo.ger
+#' Gets the most recent ebird taxonomy dataset available in the project repo.
+#' NOTE: to update the taxonomy to the latest version of the eBird taxonomy,
+#' files must be manually downloaded.
+#' See revelant information in `docs/data-pipeline.md`.
 #'
 #' @importFrom dplyr select
 #' @importFrom stringr str_extract
