@@ -13,6 +13,7 @@ config <- list(
   # Filepaths
   taxonomy_data_dir = "taxonomy",
   historical_data_dir = "historical",
+  ebird_data_dir = "ebird"
 
   # Regex patterns
   county_pattern = "orange|chatham|durham"
