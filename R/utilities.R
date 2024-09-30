@@ -7,7 +7,6 @@
 #' @importFrom dplyr if_else
 #' @include config.R
 make_route_id <- function(county, route_num) {
-
   assertthat::assert_that(
     all(grepl(config$county_pattern, county)),
     msg = paste("County must match", config$county_pattern)

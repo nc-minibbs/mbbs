@@ -5,21 +5,23 @@
 
 #' Column specification for historical data
 historical_cols <-
-  c(route       = "c",
-    date        = "c",
-    time        = "c",
-    observers   = "c",
-    spec_code   = "c",
+  c(
+    route = "c",
+    date = "c",
+    time = "c",
+    observers = "c",
+    spec_code = "c",
     common_name = "c",
-    count       = "i",
-    year        = "i",
-    route_num   = "i",
-    hab_hm      = "d",
-    hab_p       = "d",
-    hab_o       = "d",
-    hab_b       = "d",
-    hab_other   = "d",
-    vehicles    = "i")
+    count = "i",
+    year = "i",
+    route_num = "i",
+    hab_hm = "d",
+    hab_p = "d",
+    hab_o = "d",
+    hab_b = "d",
+    hab_other = "d",
+    vehicles = "i"
+  )
 
 #' Loads the historical (pre-eBird) MBBS data from disk
 #'
@@ -58,12 +60,12 @@ transform_historical_data <- function(historical) {
     dplyr::select(
       # route field in source data is missing for some routes
       # route id is created from county and route_num below
-      - "route",
+      -"route",
     ) |>
     dplyr::mutate(
       route = make_route_id(county, route_num),
-      date   = lubridate::mdy(date),
-      time   = as.character(time)
+      date = lubridate::mdy(date),
+      time = as.character(time)
     )
 }
 
