@@ -2,6 +2,28 @@
 # Functions/workflows for loading ebird data from file(s)
 #------------------------------------------------------------------------------#
 
+#' Create a data.frame listing available eBird files
+list_ebird_files <- function() {
+  list.files(config$ebird_data_dir) |>
+    (\(x) {
+      dplyr::tibble(
+        county = stringr::str_extract(x, "Durham|Orange|Chatham"),
+        export_date = stringr::str_extract(x, "\\d{8}")
+      )
+    })()
+}
+
+#' Load ebird exports into R
+#' 
+load_ebird_data <- function() {
+  list_ebird_files()
+  # |>
+    # (\(x) x[which.max(as.integer(stringr::str_extract(x, "\\d{4}")))])() |>
+    # (\(x) file.path(config$taxonomy_data_dir, x))() |>
+    # (\(x) system.file(x, package = "mbbs"))() |>
+}
+
+
 #' Renames and selects columns from data.frame
 #' created from the ebird csv export.
 #'
@@ -111,11 +133,9 @@ run_import_checks <- function(dt) {
 }
 
 #' Get exclusions
-#' @param path path/to/exclusions_map.yml
 #' @return a character vector of submission ids to exclude
-#' @export
-get_exclusions <- function(path = "inst/excluded_submissions.yml") {
-  yaml::read_yaml(path)
+get_exclusions <- function() {
+  yaml::read_yaml(config$excluded_submissions)
 }
 
 #' Exclude submissions
@@ -129,21 +149,6 @@ exclude_submissions <- function(ebird, exclusions) {
   dplyr::filter(ebird, !(.data$sub_id %in% exclusions))
 }
 
-#' 
-ebird_files <- function() {
-  list.files(config$ebird_data_dir)
-}
-ebird_files()
-
-#' Load an ebird exports into R
-#' 
-load_ebird_data <- function() {
-  list.files(config$ebird_data_dir) 
-  # |>
-    # (\(x) x[which.max(as.integer(stringr::str_extract(x, "\\d{4}")))])() |>
-    # (\(x) file.path(config$taxonomy_data_dir, x))() |>
-    # (\(x) system.file(x, package = "mbbs"))() |>
-}
 
 #' Import an ebird export into R
 #' @param path path/to/ebird_export.csv
