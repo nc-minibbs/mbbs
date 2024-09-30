@@ -7,74 +7,110 @@ list_ebird_files <- function() {
   list.files(config$ebird_data_dir) |>
     (\(x) {
       dplyr::tibble(
+        file   = x,
         county = stringr::str_extract(x, "Durham|Orange|Chatham"),
         export_date = stringr::str_extract(x, "\\d{8}")
       )
-    })()
+    })() |>
+    dplyr::group_by(county) |>
+    dplyr::mutate(
+      latest = export_date == max(export_date)
+    )
 }
+
+#' Column specification for ebird data
+#' @importFrom readr cols col_character col_skip col_number col_integer col_date
+#'                   col_time
+ebird_cols <- cols(
+  `Submission ID`          = col_character(),
+  `Common Name`            = col_character(),
+  `Scientific Name`        = col_character(),
+  `Taxonomic Order`        = col_skip(),
+  Count                    = col_character(),
+  `State/Province`         = col_skip(),
+  County                   = col_skip(),
+  `Location ID`            = col_skip(),
+  Location                 = col_character(),
+  Latitude                 = col_number(),
+  Longitude                = col_number(),
+  Date                     = col_date(format = "%Y-%m-%d"),
+  Time                     = col_time(),
+  Protocol                 = col_skip(),
+  `Duration (Min)`         = col_skip(),
+  `All Obs Reported`       = col_skip(),
+  `Distance Traveled (km)` = col_skip(),
+  `Area Covered (ha)`      = col_skip(),
+  `Number of Observers`    = col_integer(),
+  `Breeding Code`          = col_skip(),
+  `Observation Details`    = col_character(),
+  `Checklist Comments`     = col_character(),
+  `ML Catalog Numbers`     = col_skip()
+)
 
 #' Load ebird exports into R
-#' 
 load_ebird_data <- function() {
-  list_ebird_files()
-  # |>
-    # (\(x) x[which.max(as.integer(stringr::str_extract(x, "\\d{4}")))])() |>
-    # (\(x) file.path(config$taxonomy_data_dir, x))() |>
-    # (\(x) system.file(x, package = "mbbs"))() |>
+  # Get the latest file per county
+  files <-
+    list_ebird_files() |>
+    dplyr::filter(latest)
+
+  f <- \(x) {
+    # file.path(config$ebird_data_dir, x)
+
+    system.file(file.path(config$ebird_data_dir, x), package = "mbbs")
+  }
+
+  purrr::map_dfr(
+    .x = files$file,
+    .f = ~ {
+      readr::read_csv(
+        file = f(.x),
+        col_types = ebird_cols,
+      ) |>
+        dplyr::rename(
+          sub_id      = `Submission ID`,
+          common_name = `Common Name`,
+          sci_name    = `Scientific Name`,
+          count       = Count,
+          lat         = Latitude,
+          lon         = Longitude,
+          date        = Date,
+          time        = Time,
+          nobservers  = `Number of Observers`,
+          obs_details = `Observation Details`,
+          comments    = `Checklist Comments`)
+    }
+  )
 }
 
 
-#' Renames and selects columns from data.frame
-#' created from the ebird csv export.
-#'
-#' @param ebird a data.frame imported from an ebird export.
-#' @export
-rename_ebird_data <- function(ebird) {
-  dplyr::select(
-    ebird,
-    sub_id             = .data$Submission.ID,
-    common_name        = .data$Common.Name,
-    sci_name           = .data$Scientific.Name,
-    tax_order          = .data$Taxonomic.Order,
-    count_raw          = .data$Count,
-    state              = .data$State.Province,
-    loc                = .data$Location,
-    locid              = .data$Location.ID,
-    lat                = .data$Latitude,
-    lon                = .data$Longitude,
-    date               = .data$Date,
-    time               = .data$Time,
-    protocol           = .data$Protocol,
-    distance_traveled  = .data$Distance.Traveled..km.,
-    area_covered       = .data$Area.Covered..ha.,
-    all_obs            = .data$All.Obs.Reported,
-    breed_code         = .data$Breeding.Code,
-    checklist_comments = .data$Checklist.Comments,
-    species_comments   = .data$Observation.Details
-  )
+#' Get exclusions
+#' @return a character vector of submission ids to exclude
+get_exclusions <- function() {
+  yaml::read_yaml(config$excluded_submissions)
+}
+
+#' Exclude submissions
+#' @param exclusions character vector of submission ids to
+#' @inheritParams rename_ebird_data
+exclude_submissions <- function(ebird, exclusions) {
+  dplyr::filter(ebird, !(.data$sub_id %in% exclusions))
 }
 
 #' Removes subspecies, subgroup, or domestic type designations from the common
 #' and scienfic name columns of an ebird csv
-#'
-#' @inheritParams rename_ebird_data
-rename_subspecies <- function(ebird) {
-  dplyr::mutate(dt,
-    # dropping subspecies or domestic type designations
-    sci_name = stringr::word(sci_name, 1, 2),
-    # dropping subspecies and subgroup designations
-    common_name = stringr::word(common_name, 1, sep = stringr::fixed(" ("))
-  )
-}
-
-#' Filters ebird csv export.
-#'
-#' @inheritParams rename_ebird_data
-filter_ebird_data <- function(ebird) {
+tranform_ebird_data <- function(ebird) {
   dplyr::filter(
     ebird,
     # remove highly non-specific observations.
     .data$sci_name != "Passeriformes sp."
+  ) |>
+  exclude_submissions(get_exclusions()) |>
+  dplyr::mutate(
+    # dropping subspecies or domestic type designations
+    sci_name = stringr::word(sci_name, 1, 2),
+    # dropping subspecies and subgroup designations
+    common_name = stringr::word(common_name, 1, sep = stringr::fixed(" ("))
   )
 }
 
@@ -132,22 +168,6 @@ run_import_checks <- function(dt) {
   dt
 }
 
-#' Get exclusions
-#' @return a character vector of submission ids to exclude
-get_exclusions <- function() {
-  yaml::read_yaml(config$excluded_submissions)
-}
-
-#' Exclude submissions
-#'
-#' @param exclusions character vector of submission ids to
-#' @inheritParams rename_ebird_data
-#' @importFrom  dplyr filter
-#' @return a `data.frame` without the exclusions
-#' @export
-exclude_submissions <- function(ebird, exclusions) {
-  dplyr::filter(ebird, !(.data$sub_id %in% exclusions))
-}
 
 
 #' Import an ebird export into R
