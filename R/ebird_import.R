@@ -55,13 +55,12 @@ load_ebird_data <- function() {
     dplyr::filter(latest)
 
   f <- \(x) {
-    # file.path(config$ebird_data_dir, x)
-
     system.file(file.path(config$ebird_data_dir, x), package = "mbbs")
   }
 
-  purrr::map_dfr(
+  purrr::map2_dfr(
     .x = files$file,
+    .y = files$county,
     .f = ~ {
       readr::read_csv(
         file = f(.x),
@@ -78,7 +77,11 @@ load_ebird_data <- function() {
           time        = Time,
           nobservers  = `Number of Observers`,
           obs_details = `Observation Details`,
-          comments    = `Checklist Comments`)
+          comments    = `Checklist Comments`
+        ) |>
+        dplyr::mutate(
+          county = tolower(.y)
+        )
     }
   )
 }
