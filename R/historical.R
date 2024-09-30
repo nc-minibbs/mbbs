@@ -42,7 +42,7 @@ load_historical_data <- function() {
             col_types = historical_cols
           ) |>
           dplyr::mutate(
-            county = stringr::str_extract(.x, "orange|chatham|durham")
+            county = stringr::str_extract(.x, config$county_pattern)
           )
       }
     ) |>
