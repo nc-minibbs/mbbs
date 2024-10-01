@@ -134,5 +134,5 @@ comment_workflow <- function(ebird) {
         process_comments() |>
         postprocess_comments()
     ) %>%
-    dplyr::select(- "checklist_comments")
+    dplyr::select(-"checklist_comments")
 }

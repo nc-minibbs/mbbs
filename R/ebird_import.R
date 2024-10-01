@@ -8,7 +8,7 @@ list_ebird_files <- function() {
   list.files(config$ebird_data_dir) |>
     (\(x) {
       dplyr::tibble(
-        file   = x,
+        file = x,
         county = stringr::str_extract(x, "Durham|Orange|Chatham"),
         export_date = stringr::str_extract(x, "\\d{8}")
       )
@@ -114,7 +114,8 @@ exclude_submissions <- function(ebird, exclusions) {
 
   message(
     glue::glue("{n} observations were removed by excluded submissions.",
-               n = nrow(ebird) - nrow(out))
+      n = nrow(ebird) - nrow(out)
+    )
   )
 
   out
@@ -127,19 +128,22 @@ exclude_nonspecific_obs <- function(ebird) {
     dplyr::filter(
       !(.data$sci_name %in% c("Passeriformes sp.") |
         .data$common_name %in%
-            c("waterfowl sp.",
-              "crow sp.",
-              "swallow sp.",
-              "hawk sp.",
-              "Accipiter sp.",
-              "duck sp.",
-              "woodpecker sp.",
-              "Buteo sp."))
+          c(
+            "waterfowl sp.",
+            "crow sp.",
+            "swallow sp.",
+            "hawk sp.",
+            "Accipiter sp.",
+            "duck sp.",
+            "woodpecker sp.",
+            "Buteo sp."
+          ))
     )
 
   message(
-   glue::glue("{n} observations were removed due to lack of species specificity.",
-              n = nrow(ebird) - nrow(out))
+    glue::glue("{n} observations were removed due to lack of species specificity.",
+      n = nrow(ebird) - nrow(out)
+    )
   )
 
   out
@@ -163,10 +167,10 @@ filter_ebird_data <- function(ebird) {
 #'
 #' @param count character vector of ebird counts
 parse_count <- function(count) {
-
   message(
     glue::glue("{n} observations indicated count as \"X\".",
-               n = sum(count == "X"))
+      n = sum(count == "X")
+    )
   )
 
   as.integer(ifelse(count == "X", "1", count))
@@ -266,7 +270,7 @@ ebird_import_checks <- function(dt) {
           problems
         ))
       }
-    } )()
+    })()
 
   dt
 }
