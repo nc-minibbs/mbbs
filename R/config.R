@@ -20,5 +20,8 @@ config <- list(
   county_pattern = "orange|chatham|durham",
 
   # files
-  excluded_submissions = "excluded_submissions.yml"
+  excluded_submissions = "excluded_submissions.yml",
+
+  # Regex patterns
+  county_pattern = "orange|chatham|durham"
 )
