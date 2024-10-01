@@ -48,11 +48,20 @@ ebird_cols <- cols(
   `ML Catalog Numbers`     = col_skip()
 )
 
-#' Load the *most rececnt* ebird export per county
+#' Load the *most recent* ebird export per county
 #' (i.e. MBBS ebird account)
 #' into an R `data.frame`.
 #' according the `ebird_cols` specification.
 #' Additionally renames the variables.
+#'
+#' NOTE: readr::read_csv gives warnings upon parsing the ebird CSVs.
+#'       As best I (BS) can tell as of 20241001,
+#'       the problems stem from non-regularity in the ebird exports.
+#'       Sometimes, columns are missing from a row.
+#'       In other words,
+#'       the ebird csv can have different numbers of columns per row!
+#'       This issue does not seem to affect our data,
+#'       but this is something to review.
 load_ebird_data <- function() {
   # Get the latest file per county
   files <-
@@ -98,9 +107,42 @@ get_exclusions <- function() {
 
 #' Exclude submissions
 #' @param ebird data.frame loaded from `load_ebird_data`
-#' @param exclusions character vector of submission ids to
+#' @param exclusions character vector of submission ids to exclude
 exclude_submissions <- function(ebird, exclusions) {
-  dplyr::filter(ebird, !(.data$submission %in% exclusions))
+  out <- ebird |>
+    dplyr::filter(!(.data$submission %in% exclusions))
+
+  message(
+    glue::glue("{n} observations were removed by excluded submissions.",
+               n = nrow(ebird) - nrow(out))
+  )
+
+  out
+}
+
+#' Removes non specific observations
+#' @inheritParams exclude_submissions
+exclude_nonspecific_obs <- function(ebird) {
+  out <- ebird |>
+    dplyr::filter(
+      !(.data$sci_name %in% c("Passeriformes sp.") |
+        .data$common_name %in%
+            c("waterfowl sp.",
+              "crow sp.",
+              "swallow sp.",
+              "hawk sp.",
+              "Accipiter sp.",
+              "duck sp.",
+              "woodpecker sp.",
+              "Buteo sp."))
+    )
+
+  message(
+   glue::glue("{n} observations were removed due to lack of species specificity.",
+              n = nrow(ebird) - nrow(out))
+  )
+
+  out
 }
 
 #' Removes subspecies, subgroup, or domestic type designations from the common
@@ -108,10 +150,7 @@ exclude_submissions <- function(ebird, exclusions) {
 #' @inheritParams exclude_submissions
 filter_ebird_data <- function(ebird) {
   ebird |>
-    dplyr::filter(
-      # remove highly non-specific observations.
-      .data$sci_name != "Passeriformes sp."
-    ) |>
+    exclude_nonspecific_obs() |>
     exclude_submissions(get_exclusions())
 }
 
@@ -126,7 +165,7 @@ filter_ebird_data <- function(ebird) {
 parse_count <- function(count) {
 
   message(
-    glue::glue("There are {n} observations that use X",
+    glue::glue("{n} observations indicated count as \"X\".",
                n = sum(count == "X"))
   )
 
@@ -233,8 +272,9 @@ ebird_import_checks <- function(dt) {
 }
 
 #' Gets the ebird data
-#' This does *not* include parsing of the comments into
-#' habitat, observers, etc.
+#' This does *not* include:
+#' * parsing of the comments into habitat, observers, etc.
+#' * aligning common_names to standard taxonomy
 get_ebird_data <- function() {
   load_ebird_data() |>
     filter_ebird_data() |>
