@@ -1,15 +1,14 @@
 #------------------------------------------------------------------------------#
-# Functions/workflows for cleaning and processing MBBS comments
+# Functions/workflows for cleaning and processing comments
+# in eBird data
 #------------------------------------------------------------------------------#
 
-
-#' Clean up the eBird
-#' @param comments a `character` vector of MBBS eBird comments
+#' Clean up the eBird comments
+#' @param comments a `character` vector of eBird comments
 #' @importFrom stringr str_replace_all
-#' @importFrom magrittr "%>%"
 clean_comments <- function(comments) {
   # change unicode equals and = to ==
-  stringr::str_replace_all(comments, "&#61;|=", "==") %>%
+  stringr::str_replace_all(comments, "&#61;|=", "==") |>
     # Add additional as needed
     identity()
 }
@@ -35,7 +34,7 @@ make_comment_extractor <- function(field_pattern, data_pattern, delimiter = ";",
   )
 
   function(comments, ...) {
-    stringr::str_extract_all(comments, pattern = valid_pattern) %>%
+    stringr::str_extract_all(comments, pattern = valid_pattern) |>
       purrr::map(~ post(.x, ...))
   }
 }
@@ -69,11 +68,10 @@ extract_notes <- make_comment_extractor("note(s)?", "[A-Za-z\\s\\d,]*")
 #' @inheritParams clean_comments
 #' @importFrom magrittr "%>%"
 preprocess_comments <- function(comments) {
-  comments %>%
-    clean_comments() %>%
+  comments |>
+    clean_comments() |>
     identity() # replace with addition steps as need
 }
-
 
 # Workaround for "Undefined global functions or variables" CRAN check
 globalVariables(c(
@@ -108,12 +106,11 @@ process_comments <- function(comments) {
     identity() # Add additional steps as needed
 }
 
-
 #' Workflow for postprocessing eBird comments
 #' @inheritParams clean_comments
 #' @importFrom dplyr mutate
 postprocess_comments <- function(comments) {
-  comments %>%
+  comments |>
     dplyr::mutate(
       vehicles = as.integer(vehicles)
     ) %>%
@@ -121,21 +118,21 @@ postprocess_comments <- function(comments) {
 }
 
 #' Full workflow for processing comments
-#' @param eBird_dt a `data.frame` of imported eBird counts
+#' @param ebird a `data.frame` of imported eBird counts
 #' @importFrom dplyr distinct mutate select distinct
-#' @return a `data.frame` with one row per submission ID in `eBird_dt`
+#' @return a `data.frame` with one row per submission ID in `ebird`
 #' @export
-comment_workflow <- function(eBird_dt) {
-  eBird_dt %>%
-    distinct(
-      sub_id,
-      checklist_comments
+comment_workflow <- function(ebird) {
+  ebird %>%
+    dplyr::distinct(
+      "sub_id",
+      "checklist_comments"
     ) %>%
-    mutate(
-      checklist_comments %>%
-        preprocess_comments() %>%
-        process_comments() %>%
+    dplyr::mutate(
+      checklist_comments |>
+        preprocess_comments() |>
+        process_comments() |>
         postprocess_comments()
     ) %>%
-    dplyr::select(-checklist_comments)
+    dplyr::select(-"checklist_comments")
 }
