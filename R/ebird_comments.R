@@ -123,16 +123,16 @@ postprocess_comments <- function(comments) {
 #' @return a `data.frame` with one row per submission ID in `ebird`
 #' @export
 comment_workflow <- function(ebird) {
-  ebird %>%
+  ebird |>
     dplyr::distinct(
-      "sub_id",
+      "submission",
       "checklist_comments"
-    ) %>%
+    ) |>
     dplyr::mutate(
       checklist_comments |>
         preprocess_comments() |>
         process_comments() |>
         postprocess_comments()
-    ) %>%
+    ) |>
     dplyr::select(-"checklist_comments")
 }
