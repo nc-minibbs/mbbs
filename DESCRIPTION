@@ -28,3 +28,16 @@ RoxygenNote: 7.3.2
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Collate: 
+    'config.R'
+    'ebird_comments.R'
+    'utilities.R'
+    'ebird_import.R'
+    'historical.R'
+    'prepare_historical_xls.R'
+    'prepare_mbbs_data.R'
+    'prepare_stop_level_data.R'
+    'process_observers.R'
+    'process_species_comments.R'
+    'taxonomy.R'
+    'validate_data.R'
