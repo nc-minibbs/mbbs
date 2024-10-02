@@ -17,9 +17,6 @@
 ## Get test cases
 comment_test_cases <- read.csv("tests/testthat/test_ebird_comments.csv")
 
-x <- split_comment_cases(comment_test_cases)
-route_comments <- x[[1]]
-stop_comments <- x[[2]]
 
 ## Test cleaning step
 test_that(
@@ -32,6 +29,7 @@ test_that(
 test_that(
   "parse_stop_comments does something",
   {
-    expect_no_error(parse_stop_comments(stop_comments$comments))
+    expect_no_error(
+      parse_stop_comments(preprocess_comments(comment_test_cases$comments)))
   }
 )
