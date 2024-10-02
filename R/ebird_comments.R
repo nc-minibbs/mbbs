@@ -14,21 +14,11 @@ clean_comments <- function(comments) {
     identity()
 }
 
-#' Split comment ebird comment data
-#' into those with stop-level and those without
-#' @param ebird `ebird` data
-split_comment_cases <- function(ebird) {
-  ebird |>
-    dplyr::group_split(
-      stop_level = !is.na(stop_num)
-    )
-}
-
 #' Split comment ebird comments at ";"
 #' @param comments `ebird` comments
 split_comments <- function(comments) {
   stringr::str_split(comments, ";") |>
-    purrr::map(trimws)
+    purrr::map(~ unique(trimws(.x)))
 }
 
 #' Workflow for preprocessing eBird comments
@@ -37,15 +27,15 @@ split_comments <- function(comments) {
 preprocess_comments <- function(comments) {
   comments |>
     clean_comments() |>
+    split_comments() |>
     identity() # replace with addition steps as need
 }
 
-#' Parser specification for ebird stop-level checklist comments
-#' Used by `parse_stop_level_comment`
-stop_level_spec <- list(
+#' Parser specification for ebird checklist comments
+comment_spec <- list(
   habitat = list(
     field = "([Hh]abitat|[Hh])\\s{0,5}==",
-    data = "(?<=([Hh]abitat|[Hh]\\s{0,5}==)).*",
+    data = "(?<=([Hh]abitat|[Hh])\\s{0,5}==).*",
     post = trimws,
     default = NA_character_
   ),
@@ -58,13 +48,13 @@ stop_level_spec <- list(
   observers = list(
     field = "^[Oo]bserver(s)?\\s{0,5}==",
     data = "(?<=([Oo]bserver(s)?\\s{0,5}==)).*",
-    post = \(x) trimws(stringr::str_split_1(x, ",")),
-    default = NA_character_
+    post = \(x) list(trimws(stringr::str_split_1(x, ","))),
+    default = list(NA_character_)
   ),
   vehicles = list(
-    field = "^([Vv]ehicle(s)?|[Vv]|[Cc]ars)\\s{0,5}==",
-    data = "[\\d]",
-    post = as.integer,
+    field = "^([Vv]ehicle(s)?|[Vv]|[Cc]ars|TOTAL VEHICLES PASSING)\\s{0,5}==",
+    data  = "[\\d]",
+    post  = as.integer,
     default = NA_integer_
   ),
   weather = list(
@@ -75,11 +65,15 @@ stop_level_spec <- list(
   )
 )
 
-#' Parse a *single* stop-level comment
+#' Parse a *single* submission comment
+#'
+#' NOTE: This only does an *initial* parsing of habitat data;
+#'       i.e. it only extracts data to the right of (e.g.) "habitat==".
+#'
 #' @param x character vector of `ebird` of *single* submission's comments
-parse_single_stop_comment <- \(x) {
+parse_single_comment <- \(x) {
   purrr::imap(
-    .x = stop_level_spec,
+    .x = comment_spec,
     .f = ~ {
       hold <- stringr::str_subset(x, .x$field)
 
@@ -99,52 +93,14 @@ parse_single_stop_comment <- \(x) {
 
 #' Parse all stop-level comments
 #' @param x list of `ebird` comments
-parse_stop_comments <- \(x) {
-  purrr::map(x, parse_single_stop_comment)
+parse_comments <- \(x) {
+  purrr::map(x, parse_single_comment)
 }
 
-# Workaround for "Undefined global functions or variables" CRAN check
-globalVariables(c(
-  ".",
-  "sub_id",
-  "comments",
-  "vehicles"
-))
-
-#' Workflow for processing eBird comments
-#' @inheritParams clean_comments
-#' @importFrom magrittr "%>%"
-#' @importFrom purrr transpose map_dfr
-#' @importFrom dplyr as_tibble
-process_comments <- function(comments) {
-  comments %>%
-    {
-      dt <- .
-      purrr::map(
-        .x =
-          list(
-            observers = extract_observers,
-            vehicles  = extract_vehicles,
-            weather   = extract_weather,
-            notes     = extract_notes
-          ),
-        .f = ~ .x(dt)
-      )
-    } %>%
-    purrr::transpose() %>%
-    purrr::map_dfr(dplyr::as_tibble) %>%
-    identity() # Add additional steps as needed
-}
-
-#' Workflow for postprocessing eBird comments
-#' @inheritParams clean_comments
-#' @importFrom dplyr mutate
-postprocess_comments <- function(comments) {
-  comments |>
-    dplyr::mutate(
-      vehicles = as.integer(vehicles)
-    ) %>%
-    identity() # Add additional steps as needed
+#' PostProcess comments
+#' @param x list of list(vehicle, ...) obtained after `parse_comments`
+postprocess_comments <- \(x) {
+  purrr::map_dfr(x, tibble::as_tibble_row)
 }
 
 #' Full workflow for processing comments
@@ -154,15 +110,11 @@ postprocess_comments <- function(comments) {
 #' @export
 comment_workflow <- function(ebird) {
   ebird |>
-    dplyr::distinct(
-      "submission",
-      "comments"
-    ) |>
+    dplyr::distinct(submission, year, route, stop_num, comments) |>
     dplyr::mutate(
       comments |>
         preprocess_comments() |>
-        process_comments() |>
+        parse_comments() |>
         postprocess_comments()
-    ) |>
-    dplyr::select(-"comments")
+    )
 }
