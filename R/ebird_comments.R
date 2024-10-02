@@ -53,8 +53,8 @@ comment_spec <- list(
   ),
   vehicles = list(
     field = "^([Vv]ehicle(s)?|[Vv]|[Cc]ars|TOTAL VEHICLES PASSING)\\s{0,5}==",
-    data  = "[\\d]",
-    post  = as.integer,
+    data = "[\\d]",
+    post = as.integer,
     default = NA_integer_
   ),
   weather = list(

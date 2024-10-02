@@ -30,6 +30,7 @@ test_that(
   "parse_stop_comments does something",
   {
     expect_no_error(
-      parse_stop_comments(preprocess_comments(comment_test_cases$comments)))
+      parse_stop_comments(preprocess_comments(comment_test_cases$comments))
+    )
   }
 )
