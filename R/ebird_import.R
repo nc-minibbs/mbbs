@@ -22,30 +22,30 @@ list_ebird_files <- function(path = config$ebird_data_dir) {
 #' Column specification for ebird data
 #' @importFrom readr cols col_character col_skip col_number col_integer col_date
 #'                   col_time
-ebird_cols <- cols(
-  `Submission ID`          = col_character(),
-  `Common Name`            = col_character(),
-  `Scientific Name`        = col_character(),
-  `Taxonomic Order`        = col_skip(),
-  Count                    = col_character(),
-  `State/Province`         = col_skip(),
-  County                   = col_skip(),
-  `Location ID`            = col_skip(),
-  Location                 = col_character(),
-  Latitude                 = col_number(),
-  Longitude                = col_number(),
-  Date                     = col_date(format = "%Y-%m-%d"),
-  Time                     = col_time(),
-  Protocol                 = col_skip(),
-  `Duration (Min)`         = col_skip(),
-  `All Obs Reported`       = col_skip(),
-  `Distance Traveled (km)` = col_skip(),
-  `Area Covered (ha)`      = col_skip(),
-  `Number of Observers`    = col_integer(),
-  `Breeding Code`          = col_skip(),
-  `Observation Details`    = col_character(),
-  `Checklist Comments`     = col_character(),
-  `ML Catalog Numbers`     = col_skip()
+ebird_cols <- readr::cols(
+  `Submission ID`          = readr::col_character(),
+  `Common Name`            = readr::col_character(),
+  `Scientific Name`        = readr::col_character(),
+  `Taxonomic Order`        = readr::col_skip(),
+  Count                    = readr::col_character(),
+  `State/Province`         = readr::col_skip(),
+  County                   = readr::col_skip(),
+  `Location ID`            = readr::col_skip(),
+  Location                 = readr::col_character(),
+  Latitude                 = readr::col_number(),
+  Longitude                = readr::col_number(),
+  Date                     = readr::col_date(format = "%Y-%m-%d"),
+  Time                     = readr::col_time(),
+  Protocol                 = readr::col_skip(),
+  `Duration (Min)`         = readr::col_skip(),
+  `All Obs Reported`       = readr::col_skip(),
+  `Distance Traveled (km)` = readr::col_skip(),
+  `Area Covered (ha)`      = readr::col_skip(),
+  `Number of Observers`    = readr::col_integer(),
+  `Breeding Code`          = readr::col_skip(),
+  `Observation Details`    = readr::col_character(),
+  `Checklist Comments`     = readr::col_character(),
+  `ML Catalog Numbers`     = readr::col_skip()
 )
 
 #' Load the *most recent* ebird export per county
@@ -274,6 +274,7 @@ ebird_import_checks <- function(dt) {
 #' This does *not* include:
 #' * parsing of the comments into habitat, observers, etc.
 #' * aligning common_names to standard taxonomy
+#' @export
 get_ebird_data <- function() {
   load_ebird_data() |>
     filter_ebird_data() |>

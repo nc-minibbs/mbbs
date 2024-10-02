@@ -54,6 +54,24 @@
           propagatedBuildInputs = mbbsDeps;
         };
 
+        packages.data = with pkgs; stdenv.mkDerivation {
+          name = "data";
+          version = "";
+          src = gitignoreSource ./.;
+          buildInputs = [
+            R
+            self.packages.${system}.mbbs
+          ] ++ mbbsDeps;
+          buildPhase = ''
+            ${R}/bin/Rscript -e 'write.csv(mbbs::get_ebird_data(), file = "ebird.csv")'
+          '';
+          installPhase = ''
+            mkdir -p $out/files
+            cp ebird.csv $out/files
+          '';
+
+        };
+
         packages.pages = import ./pages.nix {
           self = self;
           pkgs = pkgs;

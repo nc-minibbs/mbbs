@@ -1,12 +1,13 @@
 # nix derivation to build mbbs project site
-{ 
+{
   self,
   pkgs ? import <nixpkgs> { },
   gitignoreSource,
 }:
 with pkgs;
 
-let commit = if (self ? rev) then self.rev else "dirty";
+let
+  commit = if (self ? rev) then self.rev else "dirty";
 in
 
 stdenv.mkDerivation {
@@ -29,6 +30,6 @@ stdenv.mkDerivation {
     mkdir -p $out
     mkdir -p $out/data
     cp index.html $out
-    cp inst/analysis_data/mbbs_chatham_20240205.csv $out/data/mbbs_chatham_20240205.csv
+    cp -r ${self.packages.${system}.data}/files $out/data
   '';
 }
