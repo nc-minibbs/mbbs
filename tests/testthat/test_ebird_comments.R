@@ -19,7 +19,7 @@ comment_test_cases <- read.csv("tests/testthat/test_ebird_comments.csv")
 
 x <- split_comment_cases(comment_test_cases)
 route_comments <- x[[1]]
-stop_comments  <- x[[2]]
+stop_comments <- x[[2]]
 
 ## Test cleaning step
 test_that(

@@ -45,32 +45,32 @@ preprocess_comments <- function(comments) {
 stop_level_spec <- list(
   habitat = list(
     field = "([Hh]abitat|[Hh])\\s{0,5}==",
-    data  = "(?<=([Hh]abitat|[Hh]\\s{0,5}==)).*",
-    post  = trimws,
+    data = "(?<=([Hh]abitat|[Hh]\\s{0,5}==)).*",
+    post = trimws,
     default = NA_character_
   ),
   notes = list(
     field = "^note(s)?==",
-    data  = "(?<=(note(s)?==)).*",
-    post  = \(x) x,
+    data = "(?<=(note(s)?==)).*",
+    post = \(x) x,
     default = NA_character_
   ),
   observers = list(
     field = "^[Oo]bserver(s)?\\s{0,5}==",
-    data  = "(?<=([Oo]bserver(s)?\\s{0,5}==)).*",
-    post  = \(x) trimws(stringr::str_split_1(x, ",")),
+    data = "(?<=([Oo]bserver(s)?\\s{0,5}==)).*",
+    post = \(x) trimws(stringr::str_split_1(x, ",")),
     default = NA_character_
   ),
   vehicles = list(
     field = "^([Vv]ehicle(s)?|[Vv]|[Cc]ars)\\s{0,5}==",
-    data  = "[\\d]",
-    post  = as.integer,
+    data = "[\\d]",
+    post = as.integer,
     default = NA_integer_
   ),
   weather = list(
     field = "^[Ww]eather\\s{0,5}==",
-    data  = "(?<=([Ww]eather\\s{0,5}==)).*",
-    post  = trimws,
+    data = "(?<=([Ww]eather\\s{0,5}==)).*",
+    post = trimws,
     default = NA_character_
   )
 )
@@ -78,11 +78,9 @@ stop_level_spec <- list(
 #' Parse a *single* stop-level comment
 #' @param x character vector of `ebird` of *single* submission's comments
 parse_single_stop_comment <- \(x) {
-
   purrr::imap(
     .x = stop_level_spec,
     .f = ~ {
-
       hold <- stringr::str_subset(x, .x$field)
 
       assertthat::assert_that(
