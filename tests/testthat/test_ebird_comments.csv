@@ -11,7 +11,6 @@
 "S139589316",2023,"cthm-04",16,"Vehicles=0;habitat=bo,m"
 "S111097270",2022,"cthm-04",18,"v = 3; habitat = o, owb"
 "S181993722",2024,"cthm-05",2,"vehicles=0; habitat=B, O"
-"S140307339",2023,"cthm-06",14,NA
 "S175865518",2024,"cthm-06",18,"v=2"
 "S115335621",2022,"cthm-07",12,"v=1"
 "S114470229",2022,"cthm-09",20,"vehicles=15; habitat= M/w,M; notes=retention pond behind trees"
@@ -42,7 +41,6 @@
 "S10627773",2011,"cthm-09",NA,"Mini Breeding Bird Survey, Chatham Co, NC (3 min counts, radius 0.25 miles, 0.5 miles apart, total counts 20); observers&#61;S. Theye; others&#61;none; weather&#61;clear, 62F; vehicles&#61;?; notes&#61;numerous vehicles (forgot to count), count on Sat. instead of Sun., a few weeks later than typical count date"
 "S11042851",2012,"cthm-09",NA,"Mini Breeding Bird Survey, Chatham Co, NC (3 min counts, radius 0.25 miles, 0.5 miles apart, total counts 20); observers&#61;S. Theye; others&#61;S. Edwards; weather&#61;clear, 58 F; vehicles&#61;18; notes&#61;Sue joined me for the first time this year."
 "S25232457",2015,"cthm-09",NA,"Mini Breeding Bird Survey, Chatham Co, NC (3 min counts, radius 0.25 miles, 0.5 miles apart, total counts 20); observer&#61;S. Theye; weather&#61;cloudy, 65F; vehicles&#61;121; habitat@13L&#61;M; habitat@11R&#61;M; habitat@6L&#61;M; habitat@6R&#61;B; notes&#61;clearcut in distance at stop 14R on army corps land -- week day, many cars"
-"S86557478",2020,"cthm-10",NA,NA
 "S57538998",2019,"cthm-12",NA,"observers&#61;tom driscoll, Fleeta Wilkinson;Start weather&#61;73F, partly cloudy, light wind, scattered clouds; End weather&#61; 75F, slight breeze, scattered clouds; vehicles&#61;33;"
 "S6567749",2010,"cthm-13",NA,"Mini Breeding Bird Survey, Chatham Co, NC (3 min counts, radius 0.25 miles, 0.5 miles apart, total counts 20); observers&#61;Marsha Tuttle, Thomas Driscoll, Laurie Kucharik; weather&#61;partly cloudy to clear, 75-85F, light wind, no rain; vehicles&#61;149; notes&#61;no unusual circumstances"
 "S8399981",2011,"cthm-13",NA,"observers&#61;?; others&#61;?; weather&#61;?; vehicles&#61;?; notes&#61;none"
@@ -74,9 +72,6 @@
 "S112402788",2022,"cthm-03",12,"h=S,S; v=0"
 "S142030504",2023,"cthm-07",5,"Habitat=M,O (change)"
 "S182090728",2024,"cthm-07",6,"V=0"
-"S115335606",2022,"cthm-07",8,NA
-"S142030537",2023,"cthm-07",8,NA
-"S115335624",2022,"cthm-07",9,NA
 "S10907166",2012,"cthm-03",NA,"observers&#61;Haven Wiley; others&#61;Minna Wiley; vehicles&#61;42; habitat@3R&#61;S; habitat@6L&#61;P; habitat@9R&#61;P; habitat@15L&#61;P; weather&#61;cool, 60F, sunny, calm; habitat&#61;1B,P, 2M,B, 3P,S, 4P,H, 5S,B, 6P,B, 7S,S, 8B,P, 9P,P, 10O,O, 11S,S, 12P,P, 13O,O, 14P,M, 15P,S, 16H,H, 17O,O, 18B,0, 19B,H, 20B,P; notes&#61;Chuck-will's-widow and Blue-headed Vireo in the usual locations."
 "S18795077",2014,"cthm-03",NA,"observers&#61;Haven Wiley; others&#61;Minna Wiley; vehicles&#61;12; habitat@7L&#61;P(formerly S); weather&#61;65F, clear, patchy fog, no wind; notes&#61;Whip-poor-will at the first stop and Chuck-will's-widow at the first three stops; several new clear-cuts increased Prairie Warblers to 3; no Blue-headed Vireo again this year"
 "S30095873",2016,"cthm-03",NA,"observers&#61;Haven Wiley; others&#61;Minna Wiley; vehicles&#61;9; habitat&#61;no changes; weather&#61;70F, sunny early becoming overcast, no wind; notes&#61;warm, calm, clear weather made for lots of singing; both Whip-poor-will and Chuck-will's-widow at the first few stops as usual; first Bobwhite in years"
@@ -138,7 +133,6 @@
 "S88336092",2020,"cthm-14",17,"habitat=B"
 "S88336091",2020,"cthm-14",18,"habitat=M"
 "S88292014",2021,"cthm-14",18,"vehicles=0; habitat=B,M; notes=drove too far to the church, truck idling nearby"
-"S88336089",2020,"cthm-14",20,NA
 "S88292794",2021,"cthm-14",20,"vehicles=3; habitat=B,P; notes=had to drive down New Hope Ch Rd"
 "S114146283",2022,"cthm-14",20,"vehicles=5; weather=73°F"
 "S69645921",2020,"cthm-02",1,"observers=Patsy Bailey; weather=64F at start 63F at finish, light breeze and overcast; vehicles=89; notes=heard a Barred Owl at about 5:25 am"
@@ -209,8 +203,6 @@
 "S113656213",2022,"cthm-10",16,"V=15 H=B,B"
 "S113652803",2022,"cthm-10",2,"H=H,B V=1"
 "S113657819",2022,"cthm-10",20,"V=6 H=B,M"
-"S113652929",2022,"cthm-10",3,NA
-"S113653513",2022,"cthm-10",6,NA
 "S111603636",2022,"cthm-11",1,"Observers=Allen Hurlbert; weather=60F, clear to partly cloudy; v=0; habitat=M,M"
 "S180361199",2024,"cthm-11",1,"Observers= Allen Hurlbert, Ivara Goulden; weather=62 F, clear; notes=used Merlin Sound ID for confirmation; vehicles=0"
 "S111603627",2022,"cthm-11",10,"V=O,H=p,o"
@@ -223,7 +215,6 @@
 "S111603624",2022,"cthm-11",13,"V=0;H=b,m"
 "S180361186",2024,"cthm-11",13,"V=0"
 "S111603623",2022,"cthm-11",14,"V=0;H=p,s"
-"S180361185",2024,"cthm-11",14,NA
 "S111603621",2022,"cthm-11",16,"V=0;H=b,w"
 "S180361183",2024,"cthm-11",16,"V=0"
 "S111603620",2022,"cthm-11",17,"V=0;H=b,o"
@@ -413,25 +404,17 @@
 "S90219071",2021,"cthm-06",1,"observers=Roger Shaw; weather=68 F, clear; vehicles=0; habitat=O,S"
 "S112290890",2022,"cthm-06",1,"observers=Roger Shaw; weather=54F, clear;v=0"
 "S112290881",2022,"cthm-06",10,"v=0"
-"S140307344",2023,"cthm-06",10,NA
 "S90219061",2021,"cthm-06",11,"vehicles=0; habitat=M,HO"
 "S112290880",2022,"cthm-06",11,"v=0"
-"S140307342",2023,"cthm-06",11,NA
-"S140307341",2023,"cthm-06",12,NA
 "S90219055",2021,"cthm-06",13,"vehicles=2; habitat=OS,S"
 "S112290878",2022,"cthm-06",13,"v=0"
 "S140307340",2023,"cthm-06",13,"V=2"
 "S112290877",2022,"cthm-06",14,"v=2"
 "S175865524",2024,"cthm-06",14,"v=1"
 "S112290876",2022,"cthm-06",15,"v=2"
-"S140307338",2023,"cthm-06",15,NA
-"S175865523",2024,"cthm-06",15,NA
 "S90219054",2021,"cthm-06",16,"vehicles=2; habitat=O,OSH"
 "S112290875",2022,"cthm-06",16,"v=3"
-"S140307337",2023,"cthm-06",16,NA
-"S175865521",2024,"cthm-06",16,NA
 "S90219053",2021,"cthm-06",17,"vehicles=3; habitat=S,SH"
-"S175865519",2024,"cthm-06",17,NA
 "S90219057",2021,"cthm-06",18,"vehicles=3; habitat=SO,OMS"
 "S140307335",2023,"cthm-06",18,"V=1"
 "S90219052",2021,"cthm-06",19,"vehicles=2; habitat=BOH,M"
@@ -440,90 +423,42 @@
 "S90219070",2021,"cthm-06",2,"vehicles=1; habitat=H,OS"
 "S112290889",2022,"cthm-06",2,"v=0"
 "S140307352",2023,"cthm-06",2,"V=1"
-"S175865537",2024,"cthm-06",2,NA
 "S112290871",2022,"cthm-06",20,"v=4"
 "S140307333",2023,"cthm-06",20,"V=1"
 "S175865515",2024,"cthm-06",20,"v=1"
 "S90219069",2021,"cthm-06",3,"vehicles=0; habitat=O,HW"
 "S112290888",2022,"cthm-06",3,"v=0"
-"S140307351",2023,"cthm-06",3,NA
-"S175865536",2024,"cthm-06",3,NA
 "S90219068",2021,"cthm-06",4,"vehicles=0; habitat=BMO,BMO"
 "S112290887",2022,"cthm-06",4,"v=0"
-"S140307350",2023,"cthm-06",4,NA
-"S175865535",2024,"cthm-06",4,NA
 "S90219067",2021,"cthm-06",5,"vehicles=0; habitat=O,BH"
 "S112290886",2022,"cthm-06",5,"v=0"
-"S140307349",2023,"cthm-06",5,NA
-"S175865534",2024,"cthm-06",5,NA
 "S90219066",2021,"cthm-06",6,"vehicles=1; habitat=OH,SO"
 "S112290885",2022,"cthm-06",6,"v=1"
-"S140307348",2023,"cthm-06",6,NA
-"S175865533",2024,"cthm-06",6,NA
 "S90219065",2021,"cthm-06",7,"vehicles=0; habitat=BS,BM"
 "S112290884",2022,"cthm-06",7,"v=0"
-"S140307347",2023,"cthm-06",7,NA
-"S175865532",2024,"cthm-06",7,NA
 "S90219064",2021,"cthm-06",8,"vehicles=0; habitat=SO,MSO"
-"S140307346",2023,"cthm-06",8,NA
-"S175865531",2024,"cthm-06",8,NA
 "S90219063",2021,"cthm-06",9,"vehicles=1; habitat=S,SO"
 "S112290882",2022,"cthm-06",9,"v=1"
-"S140307345",2023,"cthm-06",9,NA
 "S37925953",2017,"cthm-07",1,"Mini Breeding Bird Survey, Chatham Co, NC (3 min counts, radius 0.25 miles, 0.5 miles apart, total counts 20); observers=Will Cook; weather=72F, partly cloudy,wind SW 0-5 mph; vehicles=4; habitat=1H,M, 2O,S, 3M,S, 4S,S, 5S,S, 6P,H, 7P,P, 8P,M, 9M,M, 10H,H, 11M,B, 12H,H, 13O,B/O, 14B,O, 15B,O, 16B,H, 17M,M, 18M,H, 19H,M, 20O/P,O/B"
 "S70942273",2020,"cthm-07",1,"Mini Breeding Bird Survey, Chatham Co, NC (3 min counts, radius 0.25 miles, 0.5 miles apart, total counts 20); observers=Will Cook; weather=74F, clear,wind calm; vehicles=3"
 "S91031593",2021,"cthm-07",1,"observers=Will Cook; weather=72 F, foggy; notes=foggiest count ever, plus condensing water dripping from leaves meant low count because of difficulty seeing and hearing; vehicles=0 for all stops except 1 at last stop; habitat=1H,M, 2O,S, 3M,S, 4S,S, 5S,S, 6P,H, 7P,P, 8P,M, 9M,M, 10H,H, 11M,B, 12H,H, 13O,B/O, 14B,O, 15B,O, 16B,H, 17M,M, 18M,H, 19H,M, 20O/P,O/B"
 "S115335585",2022,"cthm-07",1,"observers = Will Cook"
 "S142030496",2023,"cthm-07",1,"observers=Will Cook; weather=fair, calm, 58-64F; vehicles=0 (total 3 for all stops); habitat=1H,M, 2S,P, 3M,S, 4S,S, 5M,O, 6M,O, 7P,P, 8P,M, 9M,M, 10H,H, 11M,B, 12H,H, 13O,B/O, 14B,O, 15B,O, 16B,H, 17M,M, 18M,H, 19H,M, 20O/P,O/B"
 "S182090691",2024,"cthm-07",1,"observers=Will Cook; weather=fair, wind ESE 5mph, 72F; vehicles=0 (total 3 for all stops); habitat=1H,M, 2S,P, 3M,S, 4S,S, 5M,O, 6M,O, 7P,P, 8P,M, 9M,M, 10H,H, 11M,B, 12H,H, 13O,B/O, 14B,O, 15B,O, 16B,H, 17M,M, 18M,H, 19H,M, 20O/P,O/B"
-"S91031584",2021,"cthm-07",10,NA
-"S115335623",2022,"cthm-07",10,NA
-"S142030534",2023,"cthm-07",10,NA
 "S182090752",2024,"cthm-07",10,"V=0"
-"S91031583",2021,"cthm-07",11,NA
-"S115335622",2022,"cthm-07",11,NA
-"S142030533",2023,"cthm-07",11,NA
 "S182090758",2024,"cthm-07",11,"V=0"
-"S91031582",2021,"cthm-07",12,NA
-"S91031581",2021,"cthm-07",13,NA
-"S115335620",2022,"cthm-07",13,NA
-"S142030531",2023,"cthm-07",13,NA
 "S182090770",2024,"cthm-07",13,"V=0"
-"S91031580",2021,"cthm-07",14,NA
-"S115335619",2022,"cthm-07",14,NA
-"S142030530",2023,"cthm-07",14,NA
 "S182090782",2024,"cthm-07",14,"Vehicles=1"
-"S91031579",2021,"cthm-07",15,NA
-"S115335618",2022,"cthm-07",15,NA
-"S142030529",2023,"cthm-07",15,NA
 "S182090790",2024,"cthm-07",15,"V=0"
-"S142030526",2023,"cthm-07",17,NA
-"S142030525",2023,"cthm-07",18,NA
-"S142030524",2023,"cthm-07",19,NA
-"S91031592",2021,"cthm-07",2,NA
-"S115335588",2022,"cthm-07",2,NA
 "S142030498",2023,"cthm-07",2,"Habitat=S,P (change)"
 "S182090697",2024,"cthm-07",2,"V=0"
 "S91031574",2021,"cthm-07",20,"Cars 2"
-"S115335592",2022,"cthm-07",3,NA
-"S142030500",2023,"cthm-07",3,NA
 "S182090706",2024,"cthm-07",3,"V=0"
-"S91031590",2021,"cthm-07",4,NA
-"S115335593",2022,"cthm-07",4,NA
-"S142030502",2023,"cthm-07",4,NA
 "S182090717",2024,"cthm-07",4,"V=0"
-"S91031589",2021,"cthm-07",5,NA
-"S115335598",2022,"cthm-07",5,NA
 "S115335600",2022,"cthm-07",6,"notes=Rt open"
 "S142030510",2023,"cthm-07",6,"Habitat=M,O (change)"
-"S91031587",2021,"cthm-07",7,NA
-"S115335603",2022,"cthm-07",7,NA
-"S142030519",2023,"cthm-07",7,NA
 "S182090735",2024,"cthm-07",7,"V=0"
-"S91031586",2021,"cthm-07",8,NA
 "S182090741",2024,"cthm-07",8,"V=0"
-"S91031585",2021,"cthm-07",9,NA
-"S142030535",2023,"cthm-07",9,NA
 "S182090747",2024,"cthm-07",9,"V=0"
 "S89550505",2021,"cthm-08",1,"Weather=Overcast five days past full moon, 54° F; observers =Nan Dewire and fleeta Chauvigne"
 "S89550494",2021,"cthm-08",12,"V= 10; H= H,H (close to intersection of 87 and Big Meadow Road)"
@@ -589,14 +524,12 @@
 "S46752364",2018,"cthm-09",NA,"Observer&#61;S. Theye; recorder&#61;L. Van Malssen; weather&#61;clear 70F; vehicles&#61;15; no ovenbirds, lots of cuckoos, turkey after 3 minutes;"
 "S70882871",2020,"cthm-09",NA,"Observer=S. Theye; weather=overcast 65F; vehicles=48; some fog; 9R=B; frogs drowning out birds at first stop; nice group of bats"
 "S12362177",2010,"cthm-10",NA,"Observer&#61;Brian Strong"
-"S14596965",2013,"cthm-10",NA,NA
 "S37105586",2015,"cthm-10",NA,"observer&#61;Brian Strong; weather 76F, clear"
 "S37111026",2016,"cthm-10",NA,"observer&#61;Brian Strong; 67F, clear; Vehicles&#61;11"
 "S41415674",2017,"cthm-10",NA,"17 vehicles, overcast 71 degrees f at start."
 "S55339673",2018,"cthm-10",NA,"Started at 5:25 and completed at 7:15 am.  Clear skies 72 degrees.  7 vehicles encountered."
 "S57762484",2019,"cthm-10",NA,"observer=Brian Strong;w=Clear 70 degrees; v=28"
 "S95633690",2021,"cthm-10",NA,"observer=Brian Strong, weather-60F, slight drizzle; vehicles 8"
-"S113652688",2022,"cthm-10",NA,NA
 "S6544204",2010,"cthm-11",NA,"observers=?;; weather=86F, wind calm; vehicles=27."
 "S8415817",2011,"cthm-11",NA,"observers&#61;Bob Chase;  weather&#61;70F, partly cloudy, light wind, little fog early;  vehicles&#61;13; habitat@14R&#61;O"
 "S11079716",2012,"cthm-11",NA,"observers&#61;Bob Chase; weather&#61;55 F, no wind; vehicles&#61;15; notes&#61;no habitat changes."
@@ -690,7 +623,6 @@
 "S89394059",2021,"cthm-05",6,"Vehicles=2; Habitat=B, H"
 "S140326871",2023,"cthm-05",8,"vehicles=0; habitat=O, M"
 "S182090762",2024,"cthm-07",12,"V=0"
-"S115335616",2022,"cthm-07",17,NA
 "S182090796",2024,"cthm-07",17,"V=0"
 "S115335612",2022,"cthm-07",20,"v=1"
 "S142030523",2023,"cthm-07",20,"Vehicles=2"
@@ -804,7 +736,6 @@
 "S112113540",2022,"cthm-05",18,"vehicles=0; habitat=B, O"
 "S141210757",2023,"cthm-14",6,"V=4"
 "S183306818",2024,"cthm-14",8,"V=0"
-"S88308747",2021,"cthm-02",4,"Vehicles=1; habitat=m,h"
 "S69224588",2020,"cthm-02",10,"Vehicles=10; habitat=S,M"
 "S177072159",2024,"cthm-02",14,"vehicles=6; habitat=S,S"
 "S177072156",2024,"cthm-02",16,"vehicles=9; habitat=M,M"
@@ -813,7 +744,6 @@
 "S139592630",2023,"cthm-01",19,"Observer=Patsy Bailey; vehicles=5; habitat=B,M"
 "S180502651",2024,"cthm-10",20,"V=1"
 "S140495465",2023,"cthm-10",4,"V=1; H=M,B"
-"S113653657",2022,"cthm-10",7,NA
 "S112824358",2022,"cthm-12",19,"observer= tom driscoll; weather= 70 F, foggy, no breeze; vehicles= 0; habitat= B, O, M"
 "S179578323",2024,"cthm-12",5,"vehicles=0; habitat= B, O, S"
 "S112824345",2022,"cthm-12",6,"observer= tom driscoll; weather = 68 F, clear, no breeze; vehicles= 1; habitat= B, O"
@@ -932,19 +862,13 @@
 "S89797138",2021,"cthm-05",5,"Vehicles=3; habitat=O, S"
 "S140326868",2023,"cthm-05",5,"vehicles=4; habitat= O, B"
 "S112113530",2022,"cthm-05",8,"vehicles=0; habitat=O,M"
-"S175865527",2024,"cthm-06",11,NA
 "S90219060",2021,"cthm-06",12,"vehicles=0; habitat=H,HO"
 "S112290879",2022,"cthm-06",12,"v=4"
 "S90219059",2021,"cthm-06",14,"vehicles=1; habitat=HOS,OS"
 "S112290874",2022,"cthm-06",17,"v=2"
 "S175865516",2024,"cthm-06",19,"v=3"
 "S90219056",2021,"cthm-06",20,"vehicles=2; habitat=SO,HO"
-"S91031578",2021,"cthm-07",16,NA
-"S115335617",2022,"cthm-07",16,NA
-"S142030528",2023,"cthm-07",16,NA
 "S182090792",2024,"cthm-07",16,"V=0"
-"S91031577",2021,"cthm-07",17,NA
-"S115335615",2022,"cthm-07",18,NA
 "S89550500",2021,"cthm-08",6,"V=0; H=H, O"
 "S90572689",2021,"cthm-09",18,"vehicles=20; habitat=B/w,H; note= rain"
 "S114470242",2022,"cthm-09",5,"vehicles=0; habitat=B,B"
@@ -986,7 +910,6 @@
 "S89764582",2021,"cthm-13",5,"Vehicles=0; habitat= H"
 "S139589321",2023,"cthm-04",11,"Vehicles=4;habitat=m,b"
 "S112113532",2022,"cthm-05",10,"vehicles=0; habitat=B, M"
-"S91031576",2021,"cthm-07",18,NA
 "S89550485",2021,"cthm-08",20,"V=0; H=O,H ( new clearing for  Possible  Home)"
 "S90572687",2021,"cthm-09",20,"vehicles=10; habitat=M,M; note= rain"
 "S184868943",2024,"cthm-09",17,"Vehicles=30+; notes=by fire department and high school"
@@ -1048,7 +971,6 @@
 "S176800939",2024,"cthm-04",5,"v=2; h=B,B"
 "S142030532",2023,"cthm-07",12,"Vehicles=1"
 "S182090802",2024,"cthm-07",19,"Vehicles=1"
-"S91031591",2021,"cthm-07",3,NA
 "S89550502",2021,"cthm-08",4,"V=1; H= H, H; by a bridge"
 "S114470228",2022,"cthm-09",14,"vehicles=0; habitat= H,M"
 "S90572705",2021,"cthm-09",2,"vehicles=1; habitat=M,M"
@@ -1116,7 +1038,6 @@
 "S176800923",2024,"cthm-04",20,"v=0; h=M,M"
 "S176800937",2024,"cthm-04",7,"v=1; h=B,B/S"
 "S181993738",2024,"cthm-05",16,"vehicles=0; habitat=B, O"
-"S175865530",2024,"cthm-06",9,NA
 "S114470234",2022,"cthm-09",13,"vehicles=0; habitat=*B,B  (*new)"
 "S139587164",2023,"cthm-01",13,"Observer=Patsy Bailey; vehicles=0; habitat=H,B"
 "S140438366",2023,"cthm-11",9,"V=0"
@@ -1131,6 +1052,7 @@
 "S69224576",2020,"cthm-02",16,"Vehicles=7; habitat=BM,M"
 "S69224574",2020,"cthm-02",17,"Vehicles=7; habitat=B,B"
 "S177072171",2024,"cthm-02",2,"vehicles=0; habitat=M,M"
+"S88308747",2021,"cthm-02",4,"Vehicles=1; habitat=m,h"
 "S177072169",2024,"cthm-02",4,"vehicles=3; habitat=M,H"
 "S184868956",2024,"cthm-09",4,"Vehicles=4"
 "S111808126",2021,"cthm-01",1,"Observers=Patsy Bailey; weather=67F, clear no wind; V=0; H=P, P"
@@ -1144,7 +1066,6 @@
 "S182578732",2024,"cthm-01",9,"Vehicles=1; Habitat=S, H"
 "S140495458",2023,"cthm-10",11,"V=1, H=P,S"
 "S113654516",2022,"cthm-10",11,"V=6 H=M,M"
-"S113655892",2022,"cthm-10",15,NA
 "S113653090",2022,"cthm-10",4,"H=B,H V=1"
 "S113654061",2022,"cthm-10",9,"V=7, H=H,H"
 "S111603635",2022,"cthm-11",2,"V=0;h=P,H"
@@ -1164,8 +1085,6 @@
 "S89456379",2021,"cthm-04",16,"Vehicles=1; habitat=bo,s"
 "S139589330",2023,"cthm-04",3,"Vehicles=0;habitat=b,b"
 "S176800941",2024,"cthm-04",3,"note=approximately 30 minute rain delay before this count; v=0; h=B,B"
-"S175865525",2024,"cthm-06",13,NA
-"S91031575",2021,"cthm-07",19,NA
 "S114470232",2022,"cthm-09",16,"vehicles=0; habitat=P,M"
 "S90572701",2021,"cthm-09",6,"vehicles=0; habitat=P,B; note=2 pitbulls by car, we didn't get out"
 "S114150770",2022,"cthm-14",16,"vehicles=0; weather=73°F"
@@ -1263,9 +1182,7 @@
 "S142701484",2023,"cthm-03",3,"v=0"
 "S180502645",2024,"cthm-03",3,"observers=Haven Wiley, Minna Wiley; weather=74 F, clear; v=0; h=no changes"
 "S69652577",2020,"cthm-03",6,"v=1; h=P,B"
-"S69652584",2020,"cthm-03",7,NA
 "S69652575",2020,"cthm-03",8,"v=2; h=B,P"
-"S91031588",2021,"cthm-07",6,NA
 "S90572704",2021,"cthm-09",3,"vehicles=0; habitat=O,B"
 "S139589276",2023,"cthm-12",13,"vehicles=0; habitat=B, O"
 "S179578322",2024,"cthm-12",6,"vehicles=5; habitat= O, B, S"
@@ -1280,9 +1197,7 @@
 "S89764927",2021,"dhrm-08",15,"v=4;h=B,M"
 "S89764923",2021,"dhrm-08",19,"h=B,W,M"
 "S117821466",2022,"dhrm-08",19,"v=0"
-"S141573512",2023,"dhrm-08",19,NA
 "S180504015",2024,"dhrm-08",19,"V=0"
-"S138780849",2023,"dhrm-01",7,NA
 "S180364384",2024,"dhrm-01",8,"v=1"
 "S90266024",2021,"dhrm-04",2,"vehicles=3; habitat=OWM,BM"
 "S193455975",2024,"dhrm-04",2,"v=1, used Merlin"
@@ -1345,7 +1260,6 @@
 "S117821443",2021,"dhrm-01",10,"vehicles=4; habitat=OF,OF"
 "S117821496",2022,"dhrm-01",10,"vehicles=3; habitat=OF,OF"
 "S46231167",2018,"dhrm-03",NA,"observers&#61;Norman Budnitz; weather&#61; 66-70F, wind-calm, clear to partly cloudy; vehicles&#61;209; habitat&#61;1B,B, 2B,B, 3B,B, 4B,B, 5B,B, 6B,B, 7BH,BH, 8B,B, 9B,B, 10B,B, 11MW,MW, 12BM,BM, 13B,B, 14B,B, 15BM,BM, 16B,B, 17B,B, 18MP,BMP, 19BH,BM, 20H,B"
-"S14597659",2013,"dhrm-07",NA,NA
 "S141303770",2023,"dhrm-02",1,"Observer=Jeff Pippen; weather=61 F, clear, calm; V=9"
 "S70350194",2020,"dhrm-02",3,"V=2;h=PB,P"
 "S70350197",2020,"dhrm-02",4,"V=1;h=MO,P"
@@ -1403,13 +1317,11 @@
 "S180504014",2024,"dhrm-08",20,"V=2"
 "S89764939",2021,"dhrm-08",3,"h=M,B,M"
 "S117821482",2022,"dhrm-08",3,"V=1"
-"S141573529",2023,"dhrm-08",3,NA
 "S180504031",2024,"dhrm-08",3,"V=0"
 "S89764938",2021,"dhrm-08",4,"v=1;h=M,M"
 "S117821481",2022,"dhrm-08",4,"V=2"
 "S89764937",2021,"dhrm-08",5,"v=3;h=S,M"
 "S117821480",2022,"dhrm-08",5,"v=0"
-"S141573527",2023,"dhrm-08",5,NA
 "S89764936",2021,"dhrm-08",6,"v=1;h=P,P"
 "S117821479",2022,"dhrm-08",6,"V=1"
 "S141573526",2023,"dhrm-08",6,"notes=Massive clearing and development;vehicles =2"
@@ -1420,7 +1332,6 @@
 "S180504025",2024,"dhrm-08",9,"V=2"
 "S117821452",2021,"dhrm-01",1,"observers=Robin Moran, Jennifer Maher, Noah Rokoske; weather=53F, partly cloudy; vehicles=0; habitat=M,O"
 "S117821495",2022,"dhrm-01",11,"vehicles=0; habitat=OF,O"
-"S138780845",2023,"dhrm-01",11,NA
 "S180364380",2024,"dhrm-01",12,"v=0; notes=possible worm-eating warbler singing. Couldn’t locate, but even Merlin agreed it wasn’t a chipper"
 "S117821440",2021,"dhrm-01",13,"vehicles=0; habitat=S,P"
 "S117821439",2021,"dhrm-01",14,"vehicles=0; habitat=MF, S; notes=1 small aircraft."
@@ -1430,7 +1341,6 @@
 "S138780841",2023,"dhrm-01",15,"V=1"
 "S180364376",2024,"dhrm-01",15,"v=0"
 "S117821437",2021,"dhrm-01",16,"vehicles=0; habitat=H,B"
-"S138780840",2023,"dhrm-01",16,NA
 "S117821436",2021,"dhrm-01",17,"vehicles=0; habitat=S,H"
 "S117821488",2022,"dhrm-01",17,"vehicles=3; habitat=S,H; notes=2 dogs which “attacked” us benevolently"
 "S138780839",2023,"dhrm-01",17,"V=2"
@@ -1448,7 +1358,6 @@
 "S180364392",2024,"dhrm-01",3,"v=0"
 "S117821449",2021,"dhrm-01",4,"vehicles=2; habitat=B,M"
 "S117821502",2022,"dhrm-01",4,"vehicles=0, habitat=B,M"
-"S138780852",2023,"dhrm-01",4,NA
 "S117821448",2021,"dhrm-01",5,"vehicles=0; habitat=B,B"
 "S117821501",2022,"dhrm-01",5,"vehicles=0; habitat=B,B"
 "S138780851",2023,"dhrm-01",5,"V=0"
@@ -1458,7 +1367,6 @@
 "S117821499",2022,"dhrm-01",7,"vehicles=0; habitat=OF,B"
 "S180364387",2024,"dhrm-01",7,"v=0"
 "S117821498",2022,"dhrm-01",8,"vehicles=0; habitat=FW,B"
-"S138780848",2023,"dhrm-01",8,NA
 "S117821444",2021,"dhrm-01",9,"vehicles=0; habitat=H,B"
 "S117821497",2022,"dhrm-01",9,"vehicles=1; habitat=H,B;notes=Wood thrush and yellow-billed cuckoo heard just after time."
 "S138780847",2023,"dhrm-01",9,"V=0"
@@ -1583,10 +1491,8 @@
 "S37093528",2016,"dhrm-07",NA,"observer&#61;Brian Strong; weather 67F, clear; vehicles&#61;12"
 "S41416893",2017,"dhrm-07",NA,"vehicles 11; overcast 71 degrees."
 "S55340440",2018,"dhrm-07",NA,"Started at 5:25 am and completed the route at 7:10 am.  Clear skies 73 degrees.  Encountered  8 vehicles."
-"S86561116",2020,"dhrm-07",NA,NA
 "S95645008",2021,"dhrm-07",NA,"observer=Brian Strong; clear=60 F"
 "S8448189",2011,"dhrm-08",NA,"observers=Brian Bockhahn; weather=70F, mostly clear, no wind; vehicles=26"
-"S15155448",2013,"dhrm-08",NA,NA
 "S141303760",2023,"dhrm-02",10,"V=0"
 "S70350211",2020,"dhrm-02",12,"V=0;h=B,B"
 "S113356363",2022,"dhrm-02",12,"V=0"
@@ -1904,7 +1810,6 @@
 "S90074824",2021,"dhrm-03",6,"Vehicles=1; habitat=B,B"
 "S112167806",2022,"dhrm-03",6,"vehicles=1"
 "S90074822",2021,"dhrm-03",8,"Vehicles=8; habitat=B,B"
-"S141573528",2023,"dhrm-08",4,NA
 "S117821476",2022,"dhrm-08",9,"V=4"
 "S138780838",2023,"dhrm-01",18,"V=4"
 "S140722902",2023,"dhrm-04",1,"observers=Stephen Brooks; weather=61 F, clear; notes=too many cars made it hard to hear a lot of the birds; vehicles=10"
@@ -2160,20 +2065,15 @@
 "S8877600",2011,"orng-05",NA,"Mini Breeding Bird Survey, Orange Co, NC (3 min counts, radius 0.25 miles, 0.5 miles apart, total counts 20); observers&#61;Will Cook, Catherine Carter; weather&#61;?; vehicles&#61; 3"
 "S111772182",2022,"orng-01",6,"vehicles=3; habitat=B,O"
 "S140325825",2023,"orng-01",8,"Vehicles=2; habitat=BOW,BO"
-"S88387953",2021,"orng-08",13,NA
 "S89419034",2021,"orng-10",17,"“observers=Vern Bothwell; weather 52 F, clear; Notes=none; vehicles=5; habitat=O,O”"
 "S180758034",2024,"orng-10",17,"Vehicles= 3; habitat= O,O"
-"S141205163",2023,"orng-05",15,NA
-"S181472993",2024,"orng-05",5,NA
 "S175678421",2024,"orng-08",16,"V=0"
 "S6659587",2009,"orng-06",NA,"Mini Breeding Bird Survey, Orange Co, NC (3 min counts, radius 0.25 miles, 0.5 miles apart, total counts 20); observers&#61;Robin Moran, Judy Murray; weather&#61;65-70F, partly cloudy to cloudy, no wind; vehicles&#61;35; notes&#61;none"
 "S18983398",2014,"orng-07",NA,"Observers&#61;Brian Bockhahn, weather&#61;69, clear, sunny, vehicles&#61;31, habitat@1&#61;B, habitat@2&#61;P, habitat@3&#61;M, habitat@4&#61;M, habitat@5&#61;B, habitat@6&#61;H, habitat@7&#61;B, habitat@8&#61;H, habitat@9&#61;O, habitat@10&#61;O, habitat@11&#61;H, habitat@12&#61;O, habitat@13&#61;H, habitat@14&#61;M, habitat@15&#61;M, habitat@16&#61;B, habitat@17&#61;O, habitat@18&#61;O, habitat@19&#61;O, habitat@20&#61;M"
-"S46326652",2018,"orng-07",NA,NA
 "S89540200",2021,"orng-07",14,"v=3; h=M,O,M,O"
 "S70448323",2020,"orng-03",6,"notes=;vehicles=2;habitat=OM"
 "S181992745",2024,"orng-11",8,"V=4,H=B,O"
 "S179697910",2024,"orng-12",17,"observers=Haven Wiley, Minna Wiley; weather=65 F, overcast; v=0; h=no changes"
-"S91031345",2021,"orng-05",17,NA
 "S29713521",2016,"orng-01",NA,"observers&#61;Norman Budnitz, Mike Schultz; weather&#61;40F, wind-calm, sky clear, no precipitation; vehicles&#61;121; habitat&#61;1O,S, 2OH,H, 3O,B, 4B,BO, 5B,OS, 6B,O, 7 O,O, 8O,O, 9BO,BO, 10BO,BO, 11B,B, 12 OM,B, 13B,B, 14MO,HO, 15W,OW, 16B,B, 17O,O, 18HW,HW, 19BO,BO, 20O,O; notes&#61;1 Eastern Whip-poor-will in 15 minutes before the start, 1 Blackpoll Warbler at stop #9"
 "S56446906",2019,"orng-01",NA,"observers&#61;Norman Budnitz, Mike Schultz; weather&#61;70F, wind-calm, sky clear; vehicles&#61;52; habitat&#61;1O,S, 2OH,H, 3O,B, 4B,BO, 5B,OS, 6B,O, 7 O,O, 8O,O, 9BO,BO, 10BO,BO, 11B,B, 12OM,B, 13B,B, 14MO,HO, 15W,OW, 16B,B, 17O,O, 18HW,HW, 19BO,BO, 20O,O; notes&#61; weather&#61;70F, wind-calm, sky clear; 8 Chimney Swifts between various stops along the route, 1 Cedar Waxwing after stop 17, 1 Northern Parula after stop 18"
 "S37285997",2017,"orng-06",NA,"observers&#61;Judy Murray, Robin Moran; weather&#61;67F,no wind,light rain first two stops only then partial sun;vehicles&#61;70;habitat&#61;1M,OB,2M,S,3S,S,4B,B,5B,M,6B,B,7B,B,8M,B,9S,M,10OB,OB,11B,M,12B,M,13B,M,14B,B,15B,B,16B,M,17B,M,18B,B,19O,B,20B,M; habitat@11R&#61;O,12R&#61;O; notes&#61;11R and 12R are now clearcuts, lovely male box turtle at stop 3"
@@ -2190,8 +2090,6 @@
 "S30491626",2016,"orng-07",NA,"observers&#61;Brian Bockhahn; weather&#61;65F, clear, no wind; vehicles&#61;1; habitat@4L&#61;S"
 "S89539612",2021,"orng-07",11,"h=S,M,W"
 "S113194638",2022,"orng-02",13,"V=0; notes=nobo called many times"
-"S140714448",2023,"orng-07",18,NA
-"S91031354",2021,"orng-05",8,NA
 "S91031353",2021,"orng-05",9,"Cars 1"
 "S88387945",2021,"orng-08",5,"V=1"
 "S8939440",2011,"orng-08",NA,"observers=Barb Brooks; others=0; vehicles=3; weather=partly cloudy, 70's"
@@ -2208,8 +2106,6 @@
 "S89538373",2021,"orng-07",6,"v=1; h=B,M,W"
 "S89539151",2021,"orng-07",8,"h=M,M"
 "S181992741",2024,"orng-11",12,"V=0;h=O,O"
-"S172456403",2018,"orng-05",8,NA
-"S141205185",2023,"orng-05",8,NA
 "S112111257",2022,"orng-09",8,"Vehicles=0"
 "S138614702",2023,"orng-08",12,"v=1"
 "S57529072",2019,"orng-10",NA,"observers&#61;Vern Bothwell, Nan Dewire; Weather&#61;73F, partly cloudy, minimal wind; vehicles&#61;81"
@@ -2217,10 +2113,6 @@
 "S6784944",2010,"orng-04",NA,"Mini Breeding Bird Survey, Orange Co, NC (3 min counts, radius 0.25 miles, 0.5 miles apart, total counts 20); observers&#61;Will Cook, Catherine Carter; weather&#61;?; vehicles&#61;23"
 "S113201316",2022,"orng-03",17,"v=1;h=O,O;"
 "S183103997",2024,"orng-03",17,"v=2;h=O,O;"
-"S172456410",2018,"orng-05",15,NA
-"S91031347",2021,"orng-05",15,NA
-"S115335792",2022,"orng-05",15,NA
-"S181472980",2024,"orng-05",17,NA
 "S14167938",2013,"orng-08",NA,"observers&#61;Barb Brooks; weather&#61;60's F, cloudy; vehicles&#61;8; habitat&#61;1H,H, 2H,BO, 3OB,B, 4B,B, 5H,O, 6B,B, 7B,S, 8B,O, 9O,H, 10B,M, 11P,B, 12S,O, 13H,B, 14S,B, 15M,MW, 16B,B,17O,B, 18B,OB, 19B,O, 20OB,OB; notes&#61;stop 6 logging trucks noted."
 "S29832255",2016,"orng-08",NA,"observer&#61;Barb Brooks;weather&#61;60Fcloudy;vehicles&#61;7;habitat@14L&#61;BS"
 "S37031309",2017,"orng-08",NA,"observer&#61;Barb Brooks; weather&#61;63,light mist;vehicles&#61;7"
@@ -2403,53 +2295,14 @@
 "S113918192",2022,"orng-07",1,"“Observers=Brian Bockhahn; weather=70 F, cloudy; vehicles=19 total”"
 "S140714465",2023,"orng-07",1,"Observers=Brian Bockhahn; weather=60 F, clear; notes=vehicle total for route is 17, but not recorded by stop"
 "S179776074",2024,"orng-07",1,"observers=Brian Bockhahn; weather=67F cloudy light wind; Vehicles=4."
-"S113918183",2022,"orng-07",10,NA
-"S140714456",2023,"orng-07",10,NA
-"S179776065",2024,"orng-07",10,NA
-"S113918182",2022,"orng-07",11,NA
-"S140714455",2023,"orng-07",11,NA
-"S179776064",2024,"orng-07",11,NA
-"S113918181",2022,"orng-07",12,NA
-"S140714454",2023,"orng-07",12,NA
-"S179776062",2024,"orng-07",12,NA
-"S113918180",2022,"orng-07",13,NA
-"S140714453",2023,"orng-07",13,NA
-"S179776061",2024,"orng-07",13,NA
-"S113918179",2022,"orng-07",14,NA
 "S179776060",2024,"orng-07",14,"V =1"
-"S113918178",2022,"orng-07",15,NA
-"S140714451",2023,"orng-07",15,NA
-"S113918177",2022,"orng-07",16,NA
 "S179776058",2024,"orng-07",16,"V=8"
-"S113918176",2022,"orng-07",17,NA
-"S140714449",2023,"orng-07",17,NA
 "S179776057",2024,"orng-07",17,"V=1"
-"S113918175",2022,"orng-07",18,NA
 "S179776056",2024,"orng-07",18,"V=4"
-"S113918174",2022,"orng-07",19,NA
-"S140714447",2023,"orng-07",19,NA
-"S179776055",2024,"orng-07",19,NA
-"S113918191",2022,"orng-07",2,NA
-"S140714464",2023,"orng-07",2,NA
 "S179776073",2024,"orng-07",2,"Vehicles= 2"
-"S113918173",2022,"orng-07",20,NA
-"S140714446",2023,"orng-07",20,NA
 "S179776054",2024,"orng-07",20,"V=1"
-"S113918190",2022,"orng-07",3,NA
-"S140714463",2023,"orng-07",3,NA
-"S179776072",2024,"orng-07",3,NA
-"S113918189",2022,"orng-07",4,NA
-"S140714462",2023,"orng-07",4,NA
-"S179776071",2024,"orng-07",4,NA
-"S140714461",2023,"orng-07",5,NA
-"S179776070",2024,"orng-07",5,NA
-"S179776069",2024,"orng-07",6,NA
 "S179776068",2024,"orng-07",7,"V =1"
-"S140714458",2023,"orng-07",8,NA
 "S179776067",2024,"orng-07",8,"V= 2"
-"S113918184",2022,"orng-07",9,NA
-"S140714457",2023,"orng-07",9,NA
-"S179776066",2024,"orng-07",9,NA
 "S138614697",2023,"orng-08",17,"v=0"
 "S175678420",2024,"orng-08",17,"V=0"
 "S138614707",2023,"orng-08",7,"v=1"
@@ -2528,76 +2381,16 @@
 "S115335808",2022,"orng-05",1,"""observers = Will Cook;"""
 "S141205082",2023,"orng-05",1,"weather=59-68F, partly cloudy, wind SW 5mph; vehicles=0; notes = (vehicles all stops total 4);  observer=Will Cook; habitat=1H,M, 2O,S, 3M,S, 4P,P, 5M,M, 6P,P, 7H/O,H/W, 8P,M, 9M,M, 10H H/B, 11M,B, 12H,H, 13O,B/O, 14P,B/O, 15M/B M, 16B,H, 17M,M, 18M,H, 19H,M, 20O/P,O/B"
 "S181472997",2024,"orng-05",1,"weather=66-71F, partly cloudy, wind N 5mph; vehicles=0; notes = (vehicles all stops total 4);  observer=Will Cook; habitat=1H,M, 2O,S, 3M,S, 4P,P, 5M,M, 6P,P, 7H/O,H/W, 8P,M, 9M,M, 10H H/B, 11M,B, 12H,H, 13O,B/O, 14P,B/O, 15M/B M, 16B,H, 17M,M, 18M,H, 19H,M, 20O/P,O/B"
-"S172456405",2018,"orng-05",10,NA
 "S91031352",2021,"orng-05",10,"Cars 1"
 "S115335797",2022,"orng-05",10,"V 1"
-"S141205180",2023,"orng-05",10,NA
 "S181472987",2024,"orng-05",10,"Vehicles=2"
-"S172456406",2018,"orng-05",11,NA
-"S91031351",2021,"orng-05",11,NA
-"S115335796",2022,"orng-05",11,NA
 "S141205176",2023,"orng-05",11,"vehicles=2"
 "S181472986",2024,"orng-05",11,"Vehicles=1"
-"S91031350",2021,"orng-05",12,NA
-"S115335795",2022,"orng-05",12,NA
-"S181472985",2024,"orng-05",12,NA
-"S91031349",2021,"orng-05",13,NA
-"S115335794",2022,"orng-05",13,NA
 "S141205170",2023,"orng-05",13,"vehicles=1"
-"S181472984",2024,"orng-05",13,NA
-"S172456409",2018,"orng-05",14,NA
 "S91031348",2021,"orng-05",14,"Cars 2"
-"S141205167",2023,"orng-05",14,NA
-"S181472983",2024,"orng-05",14,NA
-"S181472982",2024,"orng-05",15,NA
-"S172456411",2018,"orng-05",16,NA
-"S91031346",2021,"orng-05",16,NA
-"S115335791",2022,"orng-05",16,NA
-"S141205158",2023,"orng-05",16,NA
-"S181472981",2024,"orng-05",16,NA
-"S115335790",2022,"orng-05",17,NA
-"S141205156",2023,"orng-05",17,NA
-"S172456414",2018,"orng-05",18,NA
-"S115335789",2022,"orng-05",18,NA
-"S141205153",2023,"orng-05",18,NA
-"S172456415",2018,"orng-05",19,NA
-"S91031339",2021,"orng-05",19,NA
-"S141205150",2023,"orng-05",19,NA
-"S181472978",2024,"orng-05",19,NA
-"S172456391",2018,"orng-05",2,NA
-"S91031360",2021,"orng-05",2,NA
-"S115335807",2022,"orng-05",2,NA
-"S141205200",2023,"orng-05",2,NA
-"S181472996",2024,"orng-05",2,NA
-"S91031338",2021,"orng-05",20,NA
-"S115335787",2022,"orng-05",20,NA
-"S141205143",2023,"orng-05",20,NA
-"S181472977",2024,"orng-05",20,NA
-"S172456393",2018,"orng-05",3,NA
-"S91031359",2021,"orng-05",3,NA
-"S115335806",2022,"orng-05",3,NA
 "S141205138",2023,"orng-05",3,"vehicles=1"
-"S181472995",2024,"orng-05",3,NA
 "S91031358",2021,"orng-05",4,"Cars 1"
-"S115335804",2022,"orng-05",4,NA
-"S141205197",2023,"orng-05",4,NA
-"S181472994",2024,"orng-05",4,NA
-"S172456396",2018,"orng-05",5,NA
 "S91031357",2021,"orng-05",5,"Cars 1"
-"S141205194",2023,"orng-05",5,NA
-"S172456397",2018,"orng-05",6,NA
-"S115335801",2022,"orng-05",6,NA
-"S141205190",2023,"orng-05",6,NA
-"S181472992",2024,"orng-05",6,NA
-"S172456398",2018,"orng-05",7,NA
-"S91031355",2021,"orng-05",7,NA
-"S115335800",2022,"orng-05",7,NA
-"S141205188",2023,"orng-05",7,NA
-"S115335799",2022,"orng-05",8,NA
-"S181472990",2024,"orng-05",8,NA
-"S172456404",2018,"orng-05",9,NA
-"S115335798",2022,"orng-05",9,NA
-"S141205184",2023,"orng-05",9,NA
 "S181472989",2024,"orng-05",9,"Vehicles=1"
 "S89764449",2021,"orng-06",1,"Observer=Karen Hogan; weather=68oF, wind-NNE 1 mph, humidity 93%, sunny with a few clouds; Vehicle=0"
 "S112251547",2022,"orng-06",1,"Observers=Karen Hogan; weather=56 F, clear and sunny, wind NE 2 mph, humidity 77%; Vehicles=2"
@@ -2656,14 +2449,8 @@
 "S140494259",2023,"orng-02",18,"V=3"
 "S113194633",2022,"orng-02",19,"V=1"
 "S112111281",2022,"orng-08",3,"V=1"
-"S177340694",2024,"orng-02",10,NA
-"S177340688",2024,"orng-02",15,NA
-"S177340687",2024,"orng-02",16,NA
 "S177340684",2024,"orng-02",18,"V=2"
-"S178972129",2024,"orng-02",2,NA
 "S177340704",2024,"orng-02",20,"H=Water, building / water, open"
-"S177340702",2024,"orng-02",3,NA
-"S177340697",2024,"orng-02",7,NA
 "S177340696",2024,"orng-02",8,"V=1"
 "S177340695",2024,"orng-02",9,"V=1"
 "S178972117",2024,"orng-04",12,"V=2"
@@ -2678,15 +2465,9 @@
 "S140351293",2023,"orng-11",17,"V=5; H=B(M), M"
 "S181992753",2024,"orng-11",19,"V=2;H=M,M"
 "S181992748",2024,"orng-11",5,"V=1;h=B,M"
-"S172456407",2018,"orng-05",12,NA
-"S115335793",2022,"orng-05",14,NA
-"S172456413",2018,"orng-05",17,NA
-"S172456416",2018,"orng-05",20,NA
 "S112111252",2022,"orng-09",13,"Vehicles=0"
 "S179576313",2024,"orng-09",3,"Vehicles=1"
 "S179576312",2024,"orng-09",4,"Vehicles=0"
-"S177340691",2024,"orng-02",12,NA
-"S177340690",2024,"orng-02",13,NA
 "S138725838",2023,"orng-12",2,"v=0"
 "S89540697",2021,"orng-07",17,"v=3; h=M,O"
 "S37523618",2017,"orng-10",NA,"observer&#61;Barb Brooks;weather&#61;65,pc;vehicles&#61;28"
@@ -2706,7 +2487,6 @@
 "S113201326",2022,"orng-03",7,"v=1;h=B,B;"
 "S70448328",2020,"orng-03",9,"notes=;vehicles=0;habitat=PP"
 "S183104005",2024,"orng-03",9,"v=0;h=P,P;"
-"S88387960",2021,"orng-08",20,NA
 "S112111266",2022,"orng-08",20,"V=1"
 "S112125011",2022,"orng-11",17,"""v=2;h=B,M"""
 "S140351301",2023,"orng-11",9,"V=4; H=O, B"
@@ -2737,7 +2517,6 @@
 "S112111277",2022,"orng-08",8,"v=0"
 "S69896704",2020,"orng-04",18,"v=0"
 "S89716870",2021,"orng-04",3,"V=6"
-"S181472979",2024,"orng-05",18,NA
 "S140999356",2023,"orng-06",11,"Vehicles=9"
 "S69896716",2020,"orng-04",11,"v=3"
 "S140325791",2023,"orng-04",19,"V=1"
@@ -2771,7 +2550,6 @@
 "S140325830",2023,"orng-01",2,"Vehicles=0; habitat=OH,OH"
 "S141455101",2023,"orng-03",3,"v=0;h=S,B;"
 "S142665212",2023,"orng-10",1,"observers=Allen Hurlbert; weather=69 F, clear; notes=used Merlin Sound ID for confirmation; vehicles=1"
-"S172456394",2018,"orng-05",4,NA
 "S140999365",2023,"orng-06",1,"Observers=Karen Hogan; weather=51 F, mostly clear with smoke haze, fires in Canada; notes= wind, SE 1 mph, humidity 76%; vehicles=3"
 "S89764447",2021,"orng-06",2,"Vehicle=0"
 "S89764446",2021,"orng-06",3,"Vehicle=0"
@@ -2811,9 +2589,6 @@
 "S141455086",2023,"orng-03",18,"v=0;h=B,O;"
 "S70448341",2020,"orng-03",20,"notes=;vehicles=6;habitat=OB"
 "S113201313",2022,"orng-03",20,"v=10;h=O,B;"
-"S113918186",2022,"orng-07",7,NA
-"S140714459",2023,"orng-07",7,NA
-"S113918185",2022,"orng-07",8,NA
 "S138614701",2023,"orng-08",13,"V=0"
 "S175678424",2024,"orng-08",13,"V=0"
 "S138614705",2023,"orng-08",9,"H=B ,S; v=1"
@@ -2846,8 +2621,6 @@
 "S111035718",2022,"orng-12",5,"h=H,H; v=1"
 "S138725830",2023,"orng-12",7,"v=0"
 "S69652487",2020,"orng-12",8,"v=0; h=B,B"
-"S172456408",2018,"orng-05",13,NA
-"S181472991",2024,"orng-05",7,NA
 "S112251535",2022,"orng-06",13,"Vehicles=1"
 "S112251532",2022,"orng-06",16,"Vehicles=5"
 "S89764351",2021,"orng-06",17,"Vehicle=1"
@@ -2864,9 +2637,7 @@
 "S140494255",2023,"orng-02",14,"V=0"
 "S89763733",2021,"orng-02",7,"V,=1"
 "S113194634",2022,"orng-02",18,"V=2"
-"S88387948",2021,"orng-08",8,NA
 "S138614706",2023,"orng-08",8,"v=3"
-"S177340706",2024,"orng-02",19,NA
 "S178972118",2024,"orng-04",11,"V=2"
 "S69896713",2020,"orng-04",13,"v=0"
 "S140325811",2023,"orng-01",20,"Vehicles=0; habitat=BO,BO"
@@ -2882,7 +2653,6 @@
 "S140351290",2023,"orng-11",20,"V=3; B, P"
 "S112125022",2022,"orng-11",6,"""v=0;h=H*,H*"""
 "S90900643",2021,"orng-12",12,"v=1"
-"S115335788",2022,"orng-05",19,NA
 "S89764357",2021,"orng-06",14,"Vehicle=0"
 "S179054526",2024,"orng-06",19,"vehicles=5"
 "S178972106",2024,"orng-06",4,"vehicles=0"
@@ -2922,14 +2692,11 @@
 "S140351295",2023,"orng-11",15,"V=2; H=B, S"
 "S181992747",2024,"orng-11",6,"V=0;h=B,H"
 "S179191187",2024,"orng-12",1,"observers=Haven Wiley, Minna Wiley; weather=65 F, overcast; v=0; h=no changes"
-"S91031341",2021,"orng-05",18,NA
 "S89804135",2021,"orng-09",18,"Vehicles=10"
 "S89763666",2021,"orng-02",5,"Eastern wood peewee. Heard"
 "S112111270",2022,"orng-08",16,"v=0"
 "S175678429",2024,"orng-08",8,"V=0"
-"S89901415",2021,"orng-02",17,NA
 "S140494258",2023,"orng-02",17,"V=0; H=B/B"
-"S177340692",2024,"orng-02",11,NA
 "S175678436",2024,"orng-08",1,"Observers= Barb Brooks, Will Makin; weather= cool,61; vehicle= 1 ; notes=used Merlin."
 "S113194636",2022,"orng-02",15,"V=3"
 "S140325798",2023,"orng-04",13,"V=1"
@@ -2945,12 +2712,9 @@
 "S89804150",2021,"orng-09",3,"Vehicles=1"
 "S140804228",2023,"orng-09",3,"Vehicles=1"
 "S140494253",2023,"orng-02",12,"V=0"
-"S113356002",2022,"orng-02",20,NA
 "S140494261",2023,"orng-02",20,"V=0"
-"S177340685",2024,"orng-02",17,NA
 "S88387942",2021,"orng-08",2,"V=0"
 "S138614712",2023,"orng-08",2,"V=1"
-"S175678435",2024,"orng-08",2,NA
 "S89716854",2021,"orng-04",12,"V=1"
 "S112251507",2022,"orng-04",19,"V=1"
 "S69896744",2020,"orng-04",3,"v=2"
@@ -2961,7 +2725,6 @@
 "S141455099",2023,"orng-03",5,"v=1;h=O,O;"
 "S113201324",2022,"orng-03",9,"v=0;h=P,P;"
 "S141455095",2023,"orng-03",9,"v=1;h=P,P;"
-"S113918188",2022,"orng-07",5,NA
 "S112111268",2022,"orng-08",18,"v=0"
 "S180758050",2024,"orng-10",3,"Vehicles=1; habitat= M"
 "S179697917",2024,"orng-12",10,"observers=Haven Wiley, Minna Wiley; weather=65 F, overcast; v=2; h=no changes"
@@ -2991,17 +2754,13 @@
 "S90900642",2021,"orng-12",13,"v=0"
 "S69652485",2020,"orng-12",7,"v=1; h=M,B"
 "S178972101",2024,"orng-06",8,"vehicles=1"
-"S88387954",2021,"orng-08",14,NA
 "S88387951",2021,"orng-08",11,"V=1"
 "S140325801",2023,"orng-04",10,"V=5"
 "S111772183",2022,"orng-01",5,"vehicles=0; habitat=B,S"
 "S113201315",2022,"orng-03",18,"v=4;h=B,O;"
-"S140714460",2023,"orng-07",6,NA
 "S179576310",2024,"orng-09",6,"Vehicles=0"
 "S113356005",2022,"orng-02",16,"V=1; stop 16,"
-"S89800659",2021,"orng-02",4,NA
 "S175678433",2024,"orng-08",4,"V=1"
-"S89763707",2021,"orng-02",15,NA
 "S88387946",2021,"orng-08",6,"V=2"
 "S69896718",2020,"orng-04",10,"v=0"
 "S89716849",2021,"orng-04",14,"V=1"
@@ -3019,9 +2778,7 @@
 "S113201322",2022,"orng-03",11,"v=5;h=B,B;"
 "S141455093",2023,"orng-03",11,"v=9;h=B,B;"
 "S90437361",2021,"orng-03",16,"v=0"
-"S140714452",2023,"orng-07",14,NA
 "S88387947",2021,"orng-08",7,"V=2"
-"S88387955",2021,"orng-08",15,NA
 "S88387958",2021,"orng-08",18,"V=1"
 "S175678419",2024,"orng-08",18,"V=0"
 "S138614694",2023,"orng-08",20,"v=0"
@@ -3038,7 +2795,6 @@
 "S90900637",2021,"orng-12",18,"v=0"
 "S179697909",2024,"orng-12",18,"observers=Haven Wiley, Minna Wiley; weather=65 F, overcast; v=0; h=no changes"
 "S111035719",2022,"orng-12",6,"h=P,H; v=3"
-"S91031356",2021,"orng-05",6,NA
 "S112251538",2022,"orng-06",10,"Vehicles=1"
 "S140999354",2023,"orng-06",13,"Vehicles=2"
 "S89764353",2021,"orng-06",16,"Vehicle=3"
@@ -3058,7 +2814,6 @@
 "S89800656",2021,"orng-02",3,"V=1"
 "S175678427",2024,"orng-08",10,"V=4"
 "S112111273",2022,"orng-08",12,"v=1"
-"S112205695",2022,"orng-08",14,NA
 "S138614700",2023,"orng-08",14,"v=0"
 "S175678423",2024,"orng-08",14,"V=0"
 "S175678426",2024,"orng-08",11,"V=0"
@@ -3071,7 +2826,6 @@
 "S141455091",2023,"orng-03",13,"v=3;h=S,B;"
 "S89419045",2021,"orng-10",6,"“observers=Vern Bothwell; weather 52 F, clear; Notes=none; vehicles=2; habitat=0,P”"
 "S69652496",2020,"orng-12",14,"v=3; h=B,B"
-"S115335803",2022,"orng-05",5,NA
 "S89764356",2021,"orng-06",15,"Vehicle=2"
 "S112251533",2022,"orng-06",15,"Vehicles=2"
 "S140999349",2023,"orng-06",18,"Vehicles=12"
@@ -3102,9 +2856,7 @@
 "S141455092",2023,"orng-03",12,"v=18;h=B,B;"
 "S183104002",2024,"orng-03",12,"v=19;h=B,B;"
 "S113918187",2022,"orng-07",6,"notes=Incessant barking dog"
-"S88387957",2021,"orng-08",17,NA
 "S112111278",2022,"orng-08",7,"V=1"
-"S88387959",2021,"orng-08",19,NA
 "S138614695",2023,"orng-08",19,"v=0"
 "S180758040",2024,"orng-10",12,"Vehicles= 1; habitat= H,O"
 "S180758035",2024,"orng-10",16,"Vehicles=4; habitat= O,M"
@@ -3114,7 +2866,6 @@
 "S179697915",2024,"orng-12",12,"observers=Haven Wiley, Minna Wiley; weather=65 F, overcast; v=5; h=no changes"
 "S111035707",2022,"orng-12",15,"h=B,B; v=0"
 "S179697912",2024,"orng-12",15,"observers=Haven Wiley, Minna Wiley; weather=65 F, overcast; v=3; h=no changes"
-"S141205172",2023,"orng-05",12,NA
 "S112251536",2022,"orng-06",12,"Vehicles=3"
 "S140999353",2023,"orng-06",14,"Vehicles=0"
 "S178972092",2024,"orng-06",16,"vehicles=2"
@@ -3135,21 +2886,13 @@
 "S112111264",2022,"orng-09",2,"Vehicles=0"
 "S112111258",2022,"orng-09",7,"Vehicles=0"
 "S89763726",2021,"orng-02",10,"Possible killdeer,2"
-"S113194641",2022,"orng-02",10,NA
-"S89901413",2021,"orng-02",16,NA
-"S89763692",2021,"orng-02",20,NA
 "S140494245",2023,"orng-02",4,"V=3"
-"S113194646",2022,"orng-02",5,NA
-"S88387950",2021,"orng-08",10,NA
 "S112111275",2022,"orng-08",10,"V=4"
 "S138614704",2023,"orng-08",10,"V=4"
 "S138614709",2023,"orng-08",5,"V=1"
 "S175678432",2024,"orng-08",5,"V=2"
 "S112111274",2022,"orng-08",11,"v=0"
-"S88387943",2021,"orng-08",3,NA
 "S175678434",2024,"orng-08",3,"V= 0"
-"S177340689",2024,"orng-02",14,NA
-"S178972314",2024,"orng-02",4,NA
 "S90900645",2021,"orng-12",10,"v=2"
 "S179697914",2024,"orng-12",13,"observers=Haven Wiley, Minna Wiley; weather=65 F, overcast; v=0; h=no changes"
 "S138725819",2023,"orng-12",17,"v=2"
@@ -3200,7 +2943,6 @@
 "S178972102",2024,"orng-06",7,"vehicles=1"
 "S140494251",2023,"orng-02",10,"V=0"
 "S89763717",2021,"orng-02",12,"No internet access"
-"S89763709",2021,"orng-02",14,NA
 "S175678425",2024,"orng-08",12,"V=0"
 "S138614703",2023,"orng-08",11,"v=1"
 "S140494260",2023,"orng-02",19,"V=0; notes= I heard brown headed nuthatch, Merlin confirmed"
@@ -3211,7 +2953,6 @@
 "S112251531",2022,"orng-06",17,"Vehicles=4"
 "S140999355",2023,"orng-06",12,"Vehicles=10"
 "S69896737",2020,"orng-04",6,"v=15"
-"S140714450",2023,"orng-07",16,NA
 "S140804211",2023,"orng-09",20,"Vehicles=6"
 "S112111283",2022,"orng-08",1,"observers=Barb Brooks, Laura Durlacher; weather=63, partly cloudy; vehicles=3; notes=Laura is an excellent birder and is able to hear the birds I can't.  This accounts for the increase and diversity of birds compared to previous counts."
 "S138725822",2023,"orng-12",14,"v=3"
@@ -3234,7 +2975,6 @@
 "S140804217",2023,"orng-09",14,"Vehicles=0; Habitat=O, MW"
 "S89804138",2021,"orng-09",15,"Vehicles=2; habitat=BS,M"
 "S89804146",2021,"orng-09",7,"Vehicles=1; habitat=OM, M"
-"S88387956",2021,"orng-08",16,NA
 "S138614698",2023,"orng-08",16,"v=0"
 "S138614710",2023,"orng-08",4,"V=2"
 "S89763654",2021,"orng-02",1,"observer=barb brooks; weather=67, pc; v=0"
@@ -3244,13 +2984,11 @@
 "S175678418",2024,"orng-08",19,"V=0"
 "S70448331",2020,"orng-03",12,"notes=;vehicles=7;habitat=BB"
 "S183104003",2024,"orng-03",11,"v=9;h=B,B;"
-"S175678415",2024,"orng-08",20,NA
 "S69652479",2020,"orng-12",3,"v=1; h=H,O"
 "S69652477",2020,"orng-12",1,"observers=Haven Wiley, Minna Wiley; weather=64-65F, clear, calm; v=2; h=B,O; notes=start MBBS at 0525 AM -- pre-counts before MBBS at 0510, 0515, 0520 had EWPW 1, EASO 1, BADO 1, AMRO 1, NOCA 1"
 "S90900654",2021,"orng-12",1,"observers=Haven Wiley, Minna Wiley; weather=73F, overcast, misty, calm; v=4"
 "S90900653",2021,"orng-12",2,"v=3"
 "S90900652",2021,"orng-12",3,"v=1"
-"S88387952",2021,"orng-08",12,NA
 "S113194647",2022,"orng-02",1,"Observer=barb Brooks; weather=clear, 68 F; vehicle=0; notes =detour after this stop. Missed stops 2,3,4 because of detour"
 "S140494242",2023,"orng-02",1,"Observer=barb Brooks; weather=58,clear; v=0"
 "S180758052",2024,"orng-10",1,"Observers= Paul Taillie; weather= 65 and partly cloudy; vehicles= 2; habitat= M,M"

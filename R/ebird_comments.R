@@ -9,60 +9,27 @@
 clean_comments <- function(comments) {
   # change unicode equals and = to ==
   stringr::str_replace_all(comments, "&#61;|=", "==") |>
+    trimws() |>
     # Add additional as needed
     identity()
 }
 
-#' Create a function for extracting data in the eBird comments field
-#'
-#' @param field_pattern a regex defining the valid pattern for the name of the
-#'      field (e.g. observer) from eBird comments
-#' @param data_pattern a regex defining the valid pattern for the field's data
-#' @param delimiter the delimiter between field: data entries. Defaults to ";"
-#' @param post a `function(x, ...)` to apply to the resulting strings
-#' @return a `function(comments, ...)` where `comments` is a ``character` vector
-#'    of MBBS checklist comments and returns a `list` of strings where data has
-#'    been extracted according to the provided regular expression.
-#' @importFrom stringr str_extract_all
-make_comment_extractor <- function(field_pattern, data_pattern, delimiter = ";",
-                                   post = function(x, ...) {
-                                     ifelse(length(x) == 0, NA_character_, x)
-                                   }) {
-  valid_pattern <- sprintf(
-    "(?<=(%s==){1}\\s{0,5})%s(?=%s)",
-    field_pattern, data_pattern, delimiter
-  )
-
-  function(comments, ...) {
-    stringr::str_extract_all(comments, pattern = valid_pattern) |>
-      purrr::map(~ post(.x, ...))
-  }
+#' Split comment ebird comment data
+#' into those with stop-level and those without
+#' @param ebird `ebird` data
+split_comment_cases <- function(ebird) {
+  ebird |>
+    dplyr::group_split(
+      stop_level = !is.na(stop_num)
+    )
 }
 
-#' Extract observer from eBird comments
-#' @inheritParams clean_comments
-#' @param ... additional arguments passed to the `post` function
-extract_observers <- make_comment_extractor("observer(s)?", "[A-Za-z\\s,]*")
-
-#' Extract vehicles from eBird comments
-#' @inheritParams clean_comments
-#' @param ... additional arguments passed to the `post` function
-extract_vehicles <- make_comment_extractor("vehicle(s)?", "[\\d]*")
-
-#' Extract notes from eBird comments
-#' @inheritParams clean_comments
-#' @param ... additional arguments passed to the `post` function
-extract_weather <- make_comment_extractor("weather", "[A-Za-z\\s\\d,]*")
-
-# Extract notes from eBird comments
-# @export
-# TODO: habitat is a bit complicated
-# extract_habitat <- make_comment_extractor("habitat(@\\d{1,2}(R|L))?", "[BHMPSOW\\s\\d,]+")
-
-#' Extract notes from eBird comments
-#' @inheritParams clean_comments
-#' @param ... additional arguments passed to the `post` function
-extract_notes <- make_comment_extractor("note(s)?", "[A-Za-z\\s\\d,]*")
+#' Split comment ebird comments at ";"
+#' @param comments `ebird` comments
+split_comments <- function(comments) {
+  stringr::str_split(comments, ";") |>
+    purrr::map(trimws)
+}
 
 #' Workflow for preprocessing eBird comments
 #' @inheritParams clean_comments
@@ -73,11 +40,76 @@ preprocess_comments <- function(comments) {
     identity() # replace with addition steps as need
 }
 
+#' Parser specification for ebird stop-level checklist comments
+#' Used by `parse_stop_level_comment`
+stop_level_spec <- list(
+  habitat = list(
+    field = "([Hh]abitat|[Hh])\\s{0,5}==",
+    data  = "(?<=([Hh]abitat|[Hh]\\s{0,5}==)).*",
+    post  = trimws,
+    default = NA_character_
+  ),
+  notes = list(
+    field = "^note(s)?==",
+    data  = "(?<=(note(s)?==)).*",
+    post  = \(x) x,
+    default = NA_character_
+  ),
+  observers = list(
+    field = "^[Oo]bserver(s)?\\s{0,5}==",
+    data  = "(?<=([Oo]bserver(s)?\\s{0,5}==)).*",
+    post  = \(x) trimws(stringr::str_split_1(x, ",")),
+    default = NA_character_
+  ),
+  vehicles = list(
+    field = "^([Vv]ehicle(s)?|[Vv]|[Cc]ars)\\s{0,5}==",
+    data  = "[\\d]",
+    post  = as.integer,
+    default = NA_integer_
+  ),
+  weather = list(
+    field = "^[Ww]eather\\s{0,5}==",
+    data  = "(?<=([Ww]eather\\s{0,5}==)).*",
+    post  = trimws,
+    default = NA_character_
+  )
+)
+
+#' Parse a *single* stop-level comment
+#' @param x character vector of `ebird` of *single* submission's comments
+parse_single_stop_comment <- \(x) {
+
+  purrr::imap(
+    .x = stop_level_spec,
+    .f = ~ {
+
+      hold <- stringr::str_subset(x, .x$field)
+
+      assertthat::assert_that(
+        length(hold) <= 1,
+        msg = glue::glue("Detected >1 entry for {field} in comment", field = .y)
+      )
+
+      `if`(
+        length(hold > 0),
+        .x$post(str_extract(hold, .x$data)),
+        .x$default
+      )
+    }
+  )
+}
+
+#' Parse all stop-level comments
+#' @param x list of `ebird` comments
+parse_stop_comments <- \(x) {
+  purrr::map(x, parse_single_stop_comment)
+}
+
 # Workaround for "Undefined global functions or variables" CRAN check
 globalVariables(c(
   ".",
   "sub_id",
-  "checklist_comments",
+  "comments",
   "vehicles"
 ))
 
@@ -126,13 +158,13 @@ comment_workflow <- function(ebird) {
   ebird |>
     dplyr::distinct(
       "submission",
-      "checklist_comments"
+      "comments"
     ) |>
     dplyr::mutate(
-      checklist_comments |>
+      comments |>
         preprocess_comments() |>
         process_comments() |>
         postprocess_comments()
     ) |>
-    dplyr::select(-"checklist_comments")
+    dplyr::select(-"comments")
 }
