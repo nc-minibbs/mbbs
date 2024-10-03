@@ -46,12 +46,11 @@ process_stop_level_xls <- function(file) {
       "species_code", paste("s", 1:20, sep = ""),
       "sum", "sequence", "species_code2", "common_name"
     ),
-    skip = 5,
     .name_repair = "unique_quiet"
   ) |>
     # Filters to rows where the *first* column is a species code
-    # (four capital letters OR acsp - "Accipiter sp.")
-    dplyr::filter_at(1, (\(x) stringr::str_detect(x, "^[A-Z]{4}$|acsp"))) |>
+    # (four capital letters)
+    dplyr::filter_at(1, (\(x) stringr::str_detect(x, "^[A-Z]{4}$"))) |>
     # Correct common names
     dplyr::mutate(
       common_name = str_replace_all(
