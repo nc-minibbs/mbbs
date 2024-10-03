@@ -13,6 +13,6 @@ test_that("get_ebird_data runs", {
 })
 
 test_that("get_exclusions runs", {
-  withr::local_dir("../..") 
+  withr::local_dir("../..")
   expect_no_error(get_exclusions())
 })
