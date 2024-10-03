@@ -39,23 +39,28 @@ get_stop_level_xls_data <- function(directory = config$stop_level_data_dir) {
 #' @returns hist_xls each row is a species with columns s1:s20
 #'    containing the count at each stop
 process_stop_level_xls <- function(file) {
-
   readxl::read_excel(
-      path = file,
-      col_types = rep("text", 25),
-      col_names = c("species_code", paste("s", 1:20, sep = ""),
-                    "sum", "sequence", "species_code2", "common_name"),
-      skip = 5,
-      .name_repair = "unique_quiet"
-    ) |>
+    path = file,
+    col_types = rep("text", 25),
+    col_names = c(
+      "species_code", paste("s", 1:20, sep = ""),
+      "sum", "sequence", "species_code2", "common_name"
+    ),
+    skip = 5,
+    .name_repair = "unique_quiet"
+  ) |>
     # Filters to rows where the *first* column is a species code
     # (four capital letters OR acsp - "Accipiter sp.")
     dplyr::filter_at(1, (\(x) stringr::str_detect(x, "^[A-Z]{4}$|acsp"))) |>
     # Correct common names
     dplyr::mutate(
-      common_name = str_replace_all(common_name,
-                    c("Rock Dove" = "Rock Pigeon",
-                      "^Whip-poor-will$" = "Eastern Whip-poor-will"))
+      common_name = str_replace_all(
+        common_name,
+        c(
+          "Rock Dove" = "Rock Pigeon",
+          "^Whip-poor-will$" = "Eastern Whip-poor-will"
+        )
+      )
     ) |>
     # Remove extraneous rows, keep only common name and stops
     dplyr::select(common_name, dplyr::matches("s[0-9]+")) |>
@@ -70,18 +75,19 @@ process_stop_level_xls <- function(file) {
     dplyr::mutate(
       as_tibble(extract_info_from_filename(file)),
       stop_num = as.integer(stop_num),
-      route    = make_route_id(county, route_num),
+      route = make_route_id(county, route_num),
       count = as.integer(
         case_when(
           count %in% c("x", "X") ~ "1",
-          is.na(count)           ~ "0",
-          TRUE                   ~ count))
+          is.na(count) ~ "0",
+          TRUE ~ count
+        )
+      )
     ) |>
     stop_level_xls_checks()
 
   # TODO...
   #   hist_xls_add_species_and_route_info() %>%
-
 }
 
 #' Pull mbbs_county, route_num, and year
