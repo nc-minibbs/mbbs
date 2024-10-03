@@ -2,13 +2,13 @@
 % Please edit documentation in R/ebird_comments.R
 \name{postprocess_comments}
 \alias{postprocess_comments}
-\title{Workflow for postprocessing eBird comments}
+\title{PostProcess comments}
 \usage{
-postprocess_comments(comments)
+postprocess_comments(x)
 }
 \arguments{
-\item{comments}{a `character` vector of eBird comments}
+\item{x}{list of list(vehicle, ...) obtained after `parse_comments`}
 }
 \description{
-Workflow for postprocessing eBird comments
+PostProcess comments
 }

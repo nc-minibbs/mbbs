@@ -4,7 +4,7 @@
 \alias{get_ebird_taxonomy}
 \title{Get the ebird taxonomy dataset}
 \usage{
-get_ebird_taxonomy()
+get_ebird_taxonomy(path = config$taxonomy_data_dir)
 }
 \description{
 Gets the most recent ebird taxonomy dataset available in the project repo.

@@ -4,7 +4,7 @@
 \alias{list_ebird_files}
 \title{Create a data.frame listing available eBird files}
 \usage{
-list_ebird_files()
+list_ebird_files(path = config$ebird_data_dir)
 }
 \description{
 Create a data.frame listing available eBird files

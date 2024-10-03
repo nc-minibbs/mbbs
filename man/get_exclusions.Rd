@@ -4,7 +4,7 @@
 \alias{get_exclusions}
 \title{Get exclusions}
 \usage{
-get_exclusions()
+get_exclusions(file = config$excluded_submissions)
 }
 \value{
 a character vector of submission ids to exclude

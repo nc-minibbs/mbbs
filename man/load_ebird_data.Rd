@@ -8,7 +8,7 @@ into an R `data.frame`.
 according the `ebird_cols` specification.
 Additionally renames the variables.}
 \usage{
-load_ebird_data()
+load_ebird_data(path = config$ebird_data_dir)
 }
 \description{
 NOTE: readr::read_csv gives warnings upon parsing the ebird CSVs.

@@ -4,7 +4,7 @@
 \alias{load_historical_data}
 \title{Loads the historical (pre-eBird) MBBS data from disk}
 \usage{
-load_historical_data()
+load_historical_data(path = config$historical_data_dir)
 }
 \description{
 This function simply loads the csv files
