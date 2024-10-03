@@ -13,7 +13,7 @@ config <- list(
 
   # Filepaths
   taxonomy_data_dir = "data/taxonomy",
-  historical_data_dir = "historical",
+  historical_data_dir = "data/historical",
   ebird_data_dir = "data/ebird",
 
   # Regex patterns

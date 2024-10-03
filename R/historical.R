@@ -34,12 +34,11 @@ historical_cols <-
 #' @importFrom readr read_csv
 #' @importFrom lubridate mdy
 #' @include config.R
-load_historical_data <- function() {
-  list.files(config$historical_data_dir) |>
+load_historical_data <- function(path = config$historical_data_dir) {
+  list.files(path) |>
     purrr::map(
       .f = ~ {
-        file.path(config$historical_data_dir, .x) |>
-          # system.file(package = "mbbs")() |>
+        file.path(path, .x) |>
           readr::read_csv(
             col_types = historical_cols
           ) |>
