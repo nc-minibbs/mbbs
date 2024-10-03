@@ -22,24 +22,30 @@ process_obs_details <- function(ebird) {
     ungroup() |>
     prep_obs_details_data()
 
-  stringr::str_split(obs$obs_details, ",|;") |>
-    purrr::map2(
-      .y = obs$count,
-      ~ { str_replace_all(.x, c("stop" = "", "st" = "", "\\(\\)" = "")) |>
-          trimws() |>
-          pad_or_truncate() |>
-          (\(x) {
-            tibble(
-              stop_num = 1:20,
-              count  = `if`(
-                          length(x) == 20,
-                          parse_lengtheq20(x),
-                          parse_lengthlt20(x, .y)
-                        )
-            )
-          })()
-      })
+  obs |>
+   mutate(
+    stop_data = 
+        stringr::str_split(obs$obs_details, ",|;") |>
+        purrr::map2(
+          .y = obs$count,
+          ~ { str_replace_all(.x, c("stop" = "", "st" = "", "\\(\\)" = "")) |>
+              trimws() |>
+              pad_or_truncate() |>
+              (\(x) {
+                tibble(
+                  stop_num = 1:20,
+                  count  = `if`(
+                              length(x) == 20,
+                              parse_lengtheq20(x),
+                              parse_lengthlt20(x, .y)
+                            )
+                )
+              })()
+          })
+   )
 
+
+  
   # # find rows where the output does not match count.
   # catch_errors <-
   #   stopsmbbs %>%
