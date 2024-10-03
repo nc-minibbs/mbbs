@@ -53,7 +53,7 @@ process_stop_level_xls <- function(file) {
     dplyr::filter_at(1, (\(x) stringr::str_detect(x, "^[A-Z]{4}$"))) |>
     # Correct common names
     dplyr::mutate(
-      common_name = str_replace_all(
+      common_name = stringr::str_replace_all(
         common_name,
         c(
           "Rock Dove" = "Rock Pigeon",
@@ -84,9 +84,6 @@ process_stop_level_xls <- function(file) {
       )
     ) |>
     stop_level_xls_checks()
-
-  # TODO...
-  #   hist_xls_add_species_and_route_info() %>%
 }
 
 #' Pull mbbs_county, route_num, and year
@@ -105,27 +102,6 @@ extract_info_from_filename <- function(filename) {
     year = as.integer(nums[2])
   )
 }
-
-
-#' Adds in the expected species and route info
-#' To better match the usual processed mbbs data format
-#' @importFrom dplyr left_join select
-#' @param hist_xls a dataframe from a historical .xls
-#' @param mbbs_survey_events rda of all surveys that have been run on the mbbs
-#' @returns the hist_xls with added columns c(mbbs_county, route_num, year, observers, tax_order, sci_name)
-hist_xls_add_species_and_route_info <- function(hist_xls, mbbs_survey_events = "data/mbbs_survey_events.rda") {
-  # bring in other dfs
-  taxonomy <- get_ebird_taxonomy()
-  load(mbbs_survey_events)
-  mbbs_survey_events <- mbbs_survey_events %>%
-    dplyr::select(mbbs_county, route_num, year, observers)
-
-  # add columns
-  hist_xls <- hist_xls %>%
-    left_join(taxonomy, by = "common_name") %>%
-    left_join(mbbs_survey_events, by = c("mbbs_county", "route_num", "year"))
-}
-
 
 ### Tests ###
 #' A set of integrity checks
@@ -150,9 +126,6 @@ stop_level_xls_checks <- function(df) {
     }
   )
 
-  # check for missing sci_name values, except for "Accipiter species"
-  # hist_xls_sci_name_check(df)
-
   # check that all species have exactly 20 rows (20 stops)
   entries <-
     df %>%
@@ -171,18 +144,4 @@ stop_level_xls_checks <- function(df) {
 
   # return
   df
-}
-
-#' Defined separately from run_checks for testing purposes
-#' Tests that all rows except for where common_name is
-#' 'Accipiter species' have a non-NA sci_name column
-#' @importFrom assertthat assert_that
-#' @param df a df from an .xls that has just been processed through
-#'   the rest of the hist_xls_process_xls function
-hist_xls_sci_name_check <- function(df) {
-  # check that all rows (except accipiter spp.) have sci_name
-  assertthat::assert_that(
-    !anyNA(df[df$common_name != "Accipiter species", ]$sci_name),
-    msg = sprintf("Found NA sci_name values; there shouldn't be.")
-  )
 }
