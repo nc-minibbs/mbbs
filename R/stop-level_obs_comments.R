@@ -23,29 +23,31 @@ process_obs_details <- function(ebird) {
     prep_obs_details_data()
 
   obs |>
-   mutate(
-    stop_data = 
+    mutate(
+      stop_data =
         stringr::str_split(obs$obs_details, ",|;") |>
-        purrr::map2(
-          .y = obs$count,
-          ~ { str_replace_all(.x, c("stop" = "", "st" = "", "\\(\\)" = "")) |>
-              trimws() |>
-              pad_or_truncate() |>
-              (\(x) {
-                tibble(
-                  stop_num = 1:20,
-                  count  = `if`(
-                              length(x) == 20,
-                              parse_lengtheq20(x),
-                              parse_lengthlt20(x, .y)
-                            )
-                )
-              })()
-          })
-   )
+          purrr::map2(
+            .y = obs$count,
+            ~ {
+              str_replace_all(.x, c("stop" = "", "st" = "", "\\(\\)" = "")) |>
+                trimws() |>
+                pad_or_truncate() |>
+                (\(x) {
+                  tibble(
+                    stop_num = 1:20,
+                    count = `if`(
+                      length(x) == 20,
+                      parse_lengtheq20(x),
+                      parse_lengthlt20(x, .y)
+                    )
+                  )
+                })()
+            }
+          )
+    )
 
 
-  
+
   # # find rows where the output does not match count.
   # catch_errors <-
   #   stopsmbbs %>%
@@ -115,12 +117,12 @@ fix_species_comments <- \(x) {
   x |>
     str_replace_all(
       c(
-       # fix unicode = errors
+        # fix unicode = errors
         "&#61;| =" = "=",
-       # convert "Stops=" and "Stops:" to format
-       # where commas separate counts at each stop
+        # convert "Stops=" and "Stops:" to format
+        # where commas separate counts at each stop
         "Stop(s)?( )?(=)?(:)?( )?" = "",
-       # replace tabs with empty string
+        # replace tabs with empty string
         "\t" = ""
       )
     ) |>
@@ -176,18 +178,22 @@ fix_species_comments <- \(x) {
 #' @returns x either cut down to the max_length or with 0's added to the end to
 #'  get it to the max_length
 pad_or_truncate <- \(x) {
-  `if`(length(x) == 19,
-       c(x, ""),
-       `if`(length(x) == 21,
-            x[1:20],
-            x))
+  `if`(
+    length(x) == 19,
+    c(x, ""),
+    `if`(
+      length(x) == 21,
+      x[1:20],
+      x
+    )
+  )
 }
 
 #' When obs_details splits into a vector of length 20,
 #' we assume each position corresponds to a stop (in the correct order)
 #' and extract the count accordingly.
 parse_lengtheq20 <- \(x) {
-  stringr::str_replace_all(x , pattern = "^$", "0") |>
+  stringr::str_replace_all(x, pattern = "^$", "0") |>
     stringr::str_extract("(?<=\\d{1,3}\\=|^)\\d{1,3}$") |>
     as.integer()
 }
@@ -202,7 +208,6 @@ parse_lengtheq20 <- \(x) {
 #'     where the LHS of "=" the stop numbers
 #'     and the RHS is the count
 parse_lengthlt20 <- \(x, count) {
-
   counts <- rep(0, 20)
 
   extract_stops <- \(x){
@@ -221,7 +226,8 @@ parse_lengthlt20 <- \(x, count) {
         # case (a)
         counts[as.integer(x)] <- count,
         # case (b)
-        counts[as.integer(extract_stops(x))] <- as.integer(extract_counts(x)))
+        counts[as.integer(extract_stops(x))] <- as.integer(extract_counts(x))
+      )
 
       counts
     })()
