@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------#
-# Functions/workflows for processing the species_comments field
+# Functions/workflows for processing the obs_details field
 # Goal is returns a dataframe with species-route count information
 # broken out to stop (eg. each row is species-route-stop)
 #------------------------------------------------------------------------------#
@@ -70,20 +70,17 @@ process_species_comments <- function(mbbs) {
 }
 
 
-#' Prepare mbbs dataset for processing species comments
+#' Prepare ebird dataset for processing observation comments
 #' @importFrom dplyr filter mutate bind_cols tibble relocate across
 #' @importFrom rlang set_names
 #' @importFrom stringr str_detect
-#' @param mbbs mbbs.rda
-prepare_to_process_sp_com <- \(mbbs) {
-  mbbs %>%
-    # Keep rows that have non-blank species_comments
-    filter(species_comments != "") %>%
-    # Keep rows that aren't already separated by stop
-    filter(is.na(stop_num)) %>%
-    # Keep rows that contain at least one number
-    filter(str_detect(species_comments, "[0-9]")) %>%
-    mutate(species_comments = fix_species_comments(species_comments)) %>%
+#' @param ebird ebird data 
+prepare_to_process_sp_com <- \(ebird) {
+  ebird |>
+    # Keep rows that contain at least one number in observation details
+    #           AND aren't already separated by stop
+    filter(str_detect(obs_details, "[0-9]") & is.na(stop_num)) |>
+    mutate(obs_details = fix_species_comments(obs_details)) %>%
     # Remove rows that were changed to have blank species_comments
     filter(species_comments != "") %>%
     dplyr::bind_cols(
