@@ -1,3 +1,8 @@
+#------------------------------------------------------------------------------#
+# Functions/workflows for processing stop level data
+# provided by participants
+#------------------------------------------------------------------------------#
+
 #' Takes a file directory that contains
 #' Folders of historical .xls
 #' and processes them all into one df
