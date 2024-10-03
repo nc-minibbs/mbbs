@@ -15,7 +15,7 @@
 #           row.names= FALSE)
 
 ## Get test cases
-comment_test_cases <- read.csv("tests/testthat/test_ebird_comments.csv")
+comment_test_cases <- read.csv("test_ebird_comments.csv")
 
 
 ## Test cleaning step
@@ -27,10 +27,10 @@ test_that(
 )
 
 test_that(
-  "parse_stop_comments does something",
+  "parse_comments does something",
   {
     expect_no_error(
-      parse_stop_comments(preprocess_comments(comment_test_cases$comments))
+      parse_comments(preprocess_comments(comment_test_cases$comments))
     )
   }
 )

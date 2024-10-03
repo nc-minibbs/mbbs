@@ -12,11 +12,10 @@
 #' @importFrom dplyr select
 #' @importFrom stringr str_extract
 #' @include config.R
-get_ebird_taxonomy <- function() {
-  list.files(config$taxonomy_data_dir) |>
+get_ebird_taxonomy <- function(path = config$taxonomy_data_dir) {
+  list.files(path) |>
     (\(x) x[which.max(as.integer(stringr::str_extract(x, "\\d{4}")))])() |>
-    (\(x) file.path(config$taxonomy_data_dir, x))() |>
-    (\(x) system.file(x, package = "mbbs"))() |>
+    (\(x) file.path(path, x))() |>
     read.csv() |>
     dplyr::select(
       tax_order = "TAXON_ORDER",
