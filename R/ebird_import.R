@@ -4,8 +4,8 @@
 
 #' Create a data.frame listing available eBird files
 #' @include config.R
-list_ebird_files <- function() {
-  list.files(config$ebird_data_dir) |>
+list_ebird_files <- function(path = config$ebird_data_dir) {
+  list.files(path) |>
     (\(x) {
       dplyr::tibble(
         file = x,
@@ -62,23 +62,18 @@ ebird_cols <- cols(
 #'       the ebird csv can have different numbers of columns per row!
 #'       This issue does not seem to affect our data,
 #'       but this is something to review.
-load_ebird_data <- function() {
+load_ebird_data <- function(path = config$ebird_data_dir) {
   # Get the latest file per county
   files <-
-    list_ebird_files() |>
+    list_ebird_files(path = path) |>
     dplyr::filter(latest)
-
-  f <- \(x) {
-    # file.path(config$ebird_data_dir, x)
-    system.file(file.path(config$ebird_data_dir, x), package = "mbbs")
-  }
 
   purrr::map2_dfr(
     .x = files$file,
     .y = files$county,
     .f = ~ {
       readr::read_csv(
-        file = f(.x),
+        file = file.path(path, .x),
         col_types = ebird_cols,
       ) |>
         dplyr::rename(
@@ -101,8 +96,8 @@ load_ebird_data <- function() {
 
 #' Get exclusions
 #' @return a character vector of submission ids to exclude
-get_exclusions <- function() {
-  yaml::read_yaml(config$excluded_submissions)
+get_exclusions <- function(file = config$excluded_submissions) {
+  yaml::read_yaml(file)
 }
 
 #' Exclude submissions
