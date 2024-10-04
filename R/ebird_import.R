@@ -5,7 +5,6 @@
 #' Create a data.frame listing available eBird files
 #' @include config.R
 list_ebird_files <- function(path = config$ebird_data_dir) {
-
   list.files(path) |>
     (\(x) {
       dplyr::tibble(
@@ -82,7 +81,9 @@ load_ebird_data <- function(path = config$ebird_data_dir) {
         col_types = ebird_cols
       ) |>
         (\(x) {
-          if(!is.null(x$warnings)) {logger::log_warn(x$warnings) }
+          if (!is.null(x$warnings)) {
+            logger::log_warn(x$warnings)
+          }
           x$result
         })() |>
         dplyr::rename(
