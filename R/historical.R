@@ -62,6 +62,7 @@ transform_historical_data <- function(historical) {
       -"route",
     ) |>
     dplyr::mutate(
+      common_name = clean_common_names(common_name),
       route = make_route_id(county, route_num),
       date = lubridate::mdy(date),
       time = as.character(time)
@@ -78,4 +79,50 @@ get_historical_data <- function() {
       # See: https://github.com/nc-minibbs/mbbs/issues/103
       -dplyr::starts_with("hab")
     )
+}
+
+#' Clean the species names of the data scraped from the old MBBS website
+#'
+#' @param x character vector of common names
+clean_common_names <- function(x) {
+  x |>
+    trimws() |>
+    stringr::str_replace_all(
+        c(
+          "\\n" = " ",
+          "  " = " ",
+          "^Am |^Amer " = "American ",
+          "Fc$" = "Flycatcher",
+          "B-g" = "Blue-gray",
+          "^Br-" = "Brown-",
+          "Nuth$" = "Nuthatch",
+          "^Car " = "Carolina ",
+          "^Com " = "Common ",
+          "^Double-cr " = "Double-crested ",
+          "^E " = "Eastern ",
+          "^Eur " = "European ",
+          "^Gr " = "Great ",
+          "^La " = "Louisiana ",
+          "^N " = "Northern ",
+          "Nutchatch" = "Nuthatch",
+          "^Red-wing " = "Red-winged ",
+          "^Ruby-thr " = "Ruby-throated ",
+          "Sparow" = "Sparrow",
+          "Swal$" = "Swallow",
+          "Swall$" = "Swallow",
+          "Swallo$" = "Swallow",
+          "^Yellow-thr " = "Yellow-throated ",
+          "^White-br " = "White-breasted ",
+          "-Poor-Will" = "-poor-will",
+          "Will's-Widow" = "will's-widow",
+          "Great Horned \r Owl" = "Great Horned Owl",
+          "House\r Wren" = "House Wren",
+          "^Accipiter species$" = "Accipiter sp.",
+          "^Rock Dove$" = "Rock Pigeon",
+          "^unident. duck$" = "duck sp.",
+          "^Unidentified Accipiter Hawk$" = "Accipiter sp.",
+          "^Unidentified Accipter$" = "Accipiter sp.",
+          "^unidentified hawk$" = "hawk sp.",
+          "^Whip-poor-will$" = "Eastern Whip-poor-will"
+        ))
 }
