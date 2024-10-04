@@ -5,6 +5,7 @@
 #' Create a data.frame listing available eBird files
 #' @include config.R
 list_ebird_files <- function(path = config$ebird_data_dir) {
+
   list.files(path) |>
     (\(x) {
       dplyr::tibble(
@@ -68,14 +69,22 @@ load_ebird_data <- function(path = config$ebird_data_dir) {
     list_ebird_files(path = path) |>
     dplyr::filter(latest)
 
+  logger::log_info("Loading ebird data from the following exports:")
+  logger::log_info("{files$county}: {files$file}")
+
   purrr::map2_dfr(
     .x = files$file,
     .y = files$county,
     .f = ~ {
-      readr::read_csv(
+      qread <- purrr::quietly(readr::read_csv)
+      qread(
         file = file.path(path, .x),
-        col_types = ebird_cols,
+        col_types = ebird_cols
       ) |>
+        (\(x) {
+          if(!is.null(x$warnings)) {logger::log_warn(x$warnings) }
+          x$result
+        })() |>
         dplyr::rename(
           submission  = `Submission ID`,
           location    = Location,
@@ -107,7 +116,7 @@ exclude_submissions <- function(ebird, exclusions) {
   out <- ebird |>
     dplyr::filter(!(.data$submission %in% exclusions))
 
-  message(
+  logger::log_info(
     glue::glue("{n} observations were removed by excluded submissions.",
       n = nrow(ebird) - nrow(out)
     )
@@ -135,7 +144,7 @@ exclude_nonspecific_obs <- function(ebird) {
           ))
     )
 
-  message(
+  logger::log_info(
     glue::glue("{n} observations were removed due to lack of species specificity.",
       n = nrow(ebird) - nrow(out)
     )
@@ -162,8 +171,8 @@ filter_ebird_data <- function(ebird) {
 #'
 #' @param count character vector of ebird counts
 parse_count <- function(count) {
-  message(
-    glue::glue("{n} observations indicated count as \"X\".",
+  logger::log_info(
+    glue::glue("{n} observations indicated count as \"X\" were excluded.",
       n = sum(count == "X")
     )
   )
@@ -256,14 +265,11 @@ ebird_import_checks <- function(dt) {
         dplyr::mutate(
           desc = glue::glue("{county}, {year}, {route_num}")
         ) |>
-        dplyr::pull(.data$desc) |>
-        paste0(collapse = "\n * ")
+        dplyr::pull(.data$desc)
 
       if (any(x$flag)) {
-        warning(sprintf(
-          "The following year/route don't have either 1 or 20 checklists:\n %s",
-          problems
-        ))
+        logger::log_warn("The following route/years don't have either 1 or 20 checklists:")
+        logger::log_warn("* {problems}")
       }
     })()
 
