@@ -21,6 +21,7 @@ Imports:
     beepr,
     readxl,
     readr,
+    logger,
     tidyr
 License: MIT + file LICENSE
 Encoding: UTF-8

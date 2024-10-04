@@ -42,6 +42,7 @@
           glue
           assertthat
           yaml
+          logger
         ];
       in
       {
