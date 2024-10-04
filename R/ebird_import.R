@@ -254,8 +254,10 @@ ebird_import_checks <- function(dt) {
 
   # Check that routes have exactly 1 or 20 submissions.
   dt |>
-    dplyr::distinct(.data$year, .data$county, .data$route_num,
-                    .data$stop_num) |>
+    dplyr::distinct(
+      .data$year, .data$county, .data$route_num,
+      .data$stop_num
+    ) |>
     dplyr::group_by(.data$year, .data$county, .data$route_num) |>
     dplyr::summarise(
       n = dplyr::n(),
