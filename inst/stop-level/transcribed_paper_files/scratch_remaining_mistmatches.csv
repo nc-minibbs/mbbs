@@ -13,7 +13,7 @@ orange,2002,2,10,WITU,1,yes,ADS,TUVU,1,yes,GEL,correct GEL to WITU
 orange,2002,2,13,WIFL,1,yes,ADS,WITU,1,yes,GEL,correct both ADS and GEL to WOTH (wood thrush) and check both have WOTH at stop 13 and 15
 chatham,2002,5,7,NA,NA,yes,NA,WOTH,2,NA,GEL,remove GEL row
 chatham,2002,5,8,NA,NA,yes,NA,AMCR,8,NA,GEL,remove GEL row
-chatham,2009,6,7,EABL,1,yes,IMN,BLJA,1,yes,IMN_2,"Correct IMN to add BLJA (1), correct IMN_2 to add bluebird 4"
+chatham,2009,6,7,EABL,1,yes,IMN,BLJA,1,yes,IMN_2,"Correct IMN to add BLJA (1), correct IMN to add bluebird 4"
 chatham,2009,6,11,EABL,1,yes,IMN,BLJA,1,yes,IMN_2,correct IMN to BLJA
 chatham,2009,6,15,EAKI,1,yes,IMN,NA,NA,NA,NA,fixed
 chatham,2009,6,17,AMCR,3,yes,IMN,AMRE,3,yes,IMN_2,fixed
@@ -41,9 +41,9 @@ orange,2012,7,1,YBCH,1,yes,IMN,WEVI,1,yes,IMN_2,add WEVI 1 to IMN
 orange,2012,7,1,YBCH,1,yes,IMN,YEWA,1,yes,IMN_2,correct IMN_2 to YBCH
 orange,2012,7,2,AMCR,2,yes,IMN,AMRO,2,yes,IMN_2,correct IMN_2 to AMCR
 orange,2012,7,3,AMCR,3,yes,IMN,AMRO,3,yes,IMN_2,correct IMN_2 to AMCR
-orange,2012,7,11,SUTA,1,yes,IMN,EAPH,1,yes,IMN_2,"add SUTA 2 to IMN_2, correct SUTA to 2 IMN, remove EAPH 1 IMN_2"
+orange,2012,7,11,SUTA,1,yes,IMN,EAPH,1,yes,IMN_2,"correct SUTA to 2 IMN,"
 orange,2012,7,11,SUTA,1,yes,IMN,BRTH,1,yes,IMN_2,remove BRTH (meant to be in stop 10)
-orange,2012,7,11,SUTA,1,yes,IMN,TUTI,2,yes,IMN_2,"add TUTI 1 to IMN, correct TUTI to 1 IMN_2"
+orange,2012,7,11,SUTA,1,yes,IMN,TUTI,2,yes,IMN_2,add TUTI 1 to IMN
 orange,2012,7,11,EATO,1,yes,IMN,EAPH,1,yes,IMN_2,remove EAPH IMN_2
 orange,2012,7,11,EATO,1,yes,IMN,BRTH,1,yes,IMN_2,remove BRTH IMN_2
 orange,2012,7,11,EATO,1,yes,IMN,TUTI,2,yes,IMN_2,add EATO IMN_2
@@ -83,7 +83,7 @@ durham,2006,1,4,RWBL,1,yes,IMN,INBU,1,yes,IMN_2,-
 durham,2006,1,4,BHCO,1,yes,IMN,NOCA,4,yes,IMN_2,add BHCO to IMN_2 1
 durham,2006,1,4,BHCO,1,yes,IMN,INBU,1,yes,IMN_2,-
 durham,2006,1,7,INBU,1,yes,IMN,NA,NA,NA,NA,add INBU 1 to IMN_2
-durham,2007,1,7,INBU,2,yes,IMN,INBU,1,yes,IMN_2,correct INM_2 to INBU 1
+durham,2007,1,7,INBU,2,yes,IMN,INBU,1,yes,IMN_2,correct INM to INBU 1
 durham,2007,1,7,INBU,2,yes,IMN,COGR,2,yes,IMN_2,add COGR 2 to IMN
 durham,2007,1,7,BHCO,1,yes,IMN,INBU,1,yes,IMN_2,remove BHCO IMN
 durham,2007,1,7,BHCO,1,yes,IMN,COGR,2,yes,IMN_2,-
@@ -124,7 +124,7 @@ durham,2013,1,10,AMCR,1,yes,IMN,AMCR,7,yes,IMN_2,correct IMN to 7
 durham,2013,1,11,MODO,3,yes,IMN,MODO,2,yes,IMN_2,MODO 2 IMN
 durham,2013,1,11,MODO,3,yes,IMN,AGOL,3,yes,IMN_2,add AGOL 3 IMN
 durham,2013,1,14,TUTI,NA,yes,IMN,TUTI,2,yes,IMN_2,correct to 2 IMN
-durham,2013,1,16,EATO,1,yes,IMN,YBCU,1,yes,IMN_2,"add EATO 1 to IMN_2, add YBCU to IMN"
+durham,2013,1,16,EATO,1,yes,IMN,YBCU,1,yes,IMN_2,add YBCU to IMN
 durham,2013,1,16,EATO,1,yes,IMN,YBCH,2,yes,IMN_2,IMN_2 to 1 YBCH
 durham,2013,1,16,EATO,1,yes,IMN,INBU,1,yes,IMN_2,remove INBU IMN_2
 durham,2013,1,16,EATO,1,yes,IMN,AGOL,1,yes,IMN_2,correct IMN_2 to AGOL 2
@@ -180,7 +180,7 @@ durham,2007,1,11,NA,NA,yes,NA,BLGR,1,NA,IMN_2,add to IMN
 durham,2006,1,10,NA,NA,yes,NA,ROPI,2,NA,IMN_2,add to IMN
 durham,2004,1,17,NA,NA,yes,NA,SUTA,1,NA,IMN_2,add to IMN
 durham,2003,1,6,NA,NA,yes,NA,NOCA,2,NA,IMN_2,add to IMN
-orange,2012,7,5,NA,NA,yes,NA,AMRO,1,NA,IMN_2,"add to IMN AMRO 3, correct to 3 IMN_2"
+orange,2012,7,5,NA,NA,yes,NA,AMRO,3,NA,IMN_2,add to IMN AMRO 3
 orange,2012,7,9,NA,NA,yes,NA,RBWO,1,NA,IMN_2,"remove from IMN_2, confirm on stop 10"
 chatham,2012,11,17,NA,NA,yes,NA,EAKI,1,NA,IMN_2,remove from IMN_2
 chatham,2009,6,20,NA,NA,yes,NA,BLJA,1,NA,IMN_2,
