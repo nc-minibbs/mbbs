@@ -84,7 +84,7 @@ update_transcribed_paper <- function() {
   write.csv(transcribed_paper, "inst/extdata/stop_level_transcribed_paper.csv", row.names = FALSE)
   print("stop_level_transcribed_paper updated")
 
-  #transcribed_paper # return, just in case it's called that way.
+  # transcribed_paper # return, just in case it's called that way.
 }
 
 
