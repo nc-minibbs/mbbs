@@ -17,12 +17,12 @@
 #' @importFrom tidyr pivot_longer
 #' @returns a df where each row is a count of a species at a stop
 process_obs_details <- function(ebird) {
-  obs <-
+  obs <- 
     ebird |>
     ungroup() |>
     prep_obs_details_data()
 
-  obs |>
+  obs|>
     mutate(
       stop_data =
         stringr::str_split(obs$obs_details, ",|;") |>
@@ -177,13 +177,15 @@ fix_species_comments <- \(x) {
 #' @param max_length the final length that list x should be.
 #' @returns x either cut down to the max_length or with 0's added to the end to
 #'  get it to the max_length
-pad_or_truncate <- \(x) {
+pad_or_truncate <- \(x, subid = "") {
   `if`(
     length(x) == 19,
     c(x, ""),
     `if`(
-      length(x) == 21,
-      x[1:20],
+      length(x) > 20,
+      { logger::log_warn("{subid} has a parsed length > 20.")
+        x[1:20] 
+      },
       x
     )
   )
