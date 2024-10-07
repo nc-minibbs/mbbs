@@ -17,7 +17,7 @@
 #' @importFrom tidyr pivot_longer
 #' @returns a df where each row is a count of a species at a stop
 process_obs_details <- function(ebird) {
-  obs <- 
+  obs <-
     ebird |>
     ungroup() |>
     prep_obs_details_data()
@@ -26,30 +26,30 @@ process_obs_details <- function(ebird) {
     mutate(
       stop_data =
         stringr::str_split(obs$obs_details, ",|;") |>
-        (\(x) {
-          purrr::pmap(
-            .l = list(x, count = obs$count,
-                      subid = obs$submission,
-                      cname = obs$common_name),
-            function(x, count, subid, cname) {
+          (\(x) {
+            purrr::pmap(
+              .l = list(x,
+                count = obs$count,
+                subid = obs$submission,
+                cname = obs$common_name
+              ),
+              function(x, count, subid, cname) {
                 str_replace_all(x, c("stop" = "", "st" = "", "\\(\\)" = "")) |>
-                trimws() |>
-                pad_or_truncate(subid = subid, common_name = cname) |>
-                (\(x) {
-                  tibble(
-                    stop_num = 1:20,
-                    count = `if`(
-                      length(x) == 20,
-                      parse_lengtheq20(x),
-                      parse_lengthlt20(x, count)
+                  trimws() |>
+                  pad_or_truncate(subid = subid, common_name = cname) |>
+                  (\(x) {
+                    tibble(
+                      stop_num = 1:20,
+                      count = `if`(
+                        length(x) == 20,
+                        parse_lengtheq20(x),
+                        parse_lengthlt20(x, count)
+                      )
                     )
-                  )
-                })()
-
-            
-            }
-          )
-        })()
+                  })()
+              }
+            )
+          })()
     )
 }
 
@@ -139,11 +139,14 @@ fix_species_comments <- \(x) {
 pad_or_truncate <- \(x, subid, common_name) {
   `if`(
     length(x) == 19,
-    { logger::log_warn("{subid} {common_name}: observation details parsed to length == 19.")
-      c(x, "")},
+    {
+      logger::log_warn("{subid} {common_name}: observation details parsed to length == 19.")
+      c(x, "")
+    },
     `if`(
       length(x) > 20,
-      { logger::log_error("{subid} {common_name}: observation details parsed to length > 20.")
+      {
+        logger::log_error("{subid} {common_name}: observation details parsed to length > 20.")
         x[1:20]
       },
       x
@@ -170,7 +173,6 @@ parse_lengtheq20 <- \(x) {
 #'     where the LHS of "=" the stop numbers
 #'     and the RHS is the count
 parse_lengthlt20 <- \(x, count, subid) {
-
   extract_stops <- \(x){
     stringr::str_extract(x, "\\d{1,3}(?=\\s{0,1}\\=)")
   }
