@@ -22,77 +22,36 @@ process_obs_details <- function(ebird) {
     ungroup() |>
     prep_obs_details_data()
 
-  obs|>
+  obs |>
     mutate(
       stop_data =
         stringr::str_split(obs$obs_details, ",|;") |>
-          purrr::map2(
-            .y = obs$count,
-            ~ {
-              str_replace_all(.x, c("stop" = "", "st" = "", "\\(\\)" = "")) |>
+        (\(x) {
+          purrr::pmap(
+            .l = list(x, count = obs$count,
+                      subid = obs$submission,
+                      cname = obs$common_name),
+            function(x, count, subid, cname) {
+                str_replace_all(x, c("stop" = "", "st" = "", "\\(\\)" = "")) |>
                 trimws() |>
-                pad_or_truncate() |>
+                pad_or_truncate(subid = subid, common_name = cname) |>
                 (\(x) {
                   tibble(
                     stop_num = 1:20,
                     count = `if`(
                       length(x) == 20,
                       parse_lengtheq20(x),
-                      parse_lengthlt20(x, .y)
+                      parse_lengthlt20(x, count)
                     )
                   )
                 })()
+
+            
             }
           )
+        })()
     )
-
-
-
-  # # find rows where the output does not match count.
-  # catch_errors <-
-  #   stopsmbbs %>%
-  #   group_by(sub_id, common_name, loc, year, species_comments) %>%
-  #   summarize(
-  #     out = sum(
-  #       s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14,
-  #       s15, s16, s17, s18, s19, s20
-  #     ),
-  #     count = count
-  #   ) %>%
-  #   filter(out != count)
-  # # save error rows for assessment.
-  # write.csv(catch_errors,
-  #   "inst/species_comments_errors.csv",
-  #   row.names = FALSE
-  # )
-  # # notify user of errors
-  # cat(c(
-  #   "In processing species_comments:",
-  #   "\n",
-  #   nrow(catch_errors),
-  #   "rows have been removed where the sum of the processed counts",
-  #   "did not match the original ebird checklist's route-total count",
-  #   "for that species",
-  #   "\n",
-  #   "To follow up see:",
-  #   "inst/species_comments_errors.csv"
-  # ))
-
-  # # remove rows where output doesn't match count
-  # stopsmbbs <- anti_join(stopsmbbs, catch_errors)
-
-  # # pivot s1:s20 into stop_num and give count for each stop
-  # stopsmbbs <-
-  #   stopsmbbs %>%
-  #   select(-stop_num, -count, -sc_note) %>%
-  #   pivot_longer(
-  #     cols = s1:s20,
-  #     names_to = "stop_num", names_prefix = "s", values_to = "count"
-  #   )
-
-  # stopsmbbs # returns
 }
-
 
 #' Prepare ebird dataset for processing observation comments
 #' @importFrom dplyr filter mutate bind_cols tibble relocate across
@@ -177,14 +136,15 @@ fix_species_comments <- \(x) {
 #' @param max_length the final length that list x should be.
 #' @returns x either cut down to the max_length or with 0's added to the end to
 #'  get it to the max_length
-pad_or_truncate <- \(x, subid = "") {
+pad_or_truncate <- \(x, subid, common_name) {
   `if`(
     length(x) == 19,
-    c(x, ""),
+    { logger::log_warn("{subid} {common_name}: observation details parsed to length == 19.")
+      c(x, "")},
     `if`(
       length(x) > 20,
-      { logger::log_warn("{subid} has a parsed length > 20.")
-        x[1:20] 
+      { logger::log_error("{subid} {common_name}: observation details parsed to length > 20.")
+        x[1:20]
       },
       x
     )
@@ -209,8 +169,7 @@ parse_lengtheq20 <- \(x) {
 #' (b) a pattern of i=#,j=#, etc,
 #'     where the LHS of "=" the stop numbers
 #'     and the RHS is the count
-parse_lengthlt20 <- \(x, count) {
-  counts <- rep(0, 20)
+parse_lengthlt20 <- \(x, count, subid) {
 
   extract_stops <- \(x){
     stringr::str_extract(x, "\\d{1,3}(?=\\s{0,1}\\=)")
@@ -223,8 +182,10 @@ parse_lengthlt20 <- \(x, count) {
   # Remove any empty strings
   stringr::str_subset(x, pattern = "^$", negate = TRUE) |>
     (\(x) {
+      counts <- rep(0, 20)
+
       `if`(
-        length(x) == 1 && all(str_detect(x, "=", negate = TRUE)),
+        length(x) == 1 && all(stringr::str_detect(x, "=", negate = TRUE)),
         # case (a)
         counts[as.integer(x)] <- count,
         # case (b)
