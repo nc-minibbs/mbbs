@@ -9,9 +9,9 @@ get_ebird_taxonomy <- function() {
     max(stringr::str_sub(-8, -5))
   read.csv(paste("inst/taxonomy/", latest_taxonomy, sep = "")) %>%
     dplyr::select(
-      tax_order = .data$TAXON_ORDER,
-      sci_name = .data$SCI_NAME,
-      common_name = .data$PRIMARY_COM_NAME
+      tax_order = TAXON_ORDER,
+      sci_name = SCI_NAME,
+      common_name = PRIMARY_COM_NAME
     )
 }
 
