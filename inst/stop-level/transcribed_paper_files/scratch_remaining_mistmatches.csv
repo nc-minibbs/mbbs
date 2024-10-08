@@ -1,15 +1,1 @@
-mbbs_county,year,route,stop_num,species_code_s1,count_s1,both.x,s1,species_code_s2,count_s2,both.y,s2,"going to have to do these based on counts on mbbs, because I have maybe lost these two sheets??"
-chatham,2009,6,11,COYA,1,yes,IMN,COYE,1,yes,IMN_2,
-chatham,2009,6,13,EAME,3,yes,IMN,EAME,2,yes,IMN_2,
-chatham,2009,6,14,COGR,18,yes,IMN,COGR,1,yes,IMN_2,
-chatham,2009,6,15,EAKI,1,yes,IMN,NA,NA,NA,NA,
-chatham,2009,6,17,AMCR,3,yes,IMN,AMRE,3,yes,IMN_2,
-chatham,2009,6,18,AMRO,4,yes,IMN,AMCR,4,yes,IMN_2,
-durham,2010,1,11,EAME,2,yes,IMN,NA,NA,NA,NA,
-durham,2013,1,16,YBCH,1,yes,IMN,YBCH,2,yes,IMN_2,
-chatham,2009,6,20,NA,NA,yes,NA,BLJA,1,NA,IMN_2,
-orange,2009,1,5,NA,NA,yes,NA,AMCR,2,NA,IMN_2,
-orange,2009,1,6,NA,NA,yes,NA,AMCR,1,NA,IMN_2,
-orange,2009,1,7,NA,NA,yes,NA,AMCR,1,NA,IMN_2,
-orange,2009,1,8,NA,NA,yes,NA,GBHE,2,NA,IMN_2,
-orange,2009,1,12,NA,NA,yes,NA,AMCR,4,NA,IMN_2,
+"mbbs_county","year","route","stop_num","species_code_s1","count_s1","both.x","s1","species_code_s2","count_s2","both.y","s2"
