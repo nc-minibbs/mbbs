@@ -72,7 +72,7 @@ process_stop_level_xls <- function(file) {
     ) |>
     # Parse counts as integers
     dplyr::mutate(
-      as_tibble(extract_info_from_filename(file)),
+      dplyr::as_tibble(extract_info_from_filename(file)),
       stop_num = as.integer(stop_num),
       route = make_route_id(county, route_num),
       count = as.integer(
