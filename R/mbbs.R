@@ -5,7 +5,6 @@
 #' Create the stop level dataset
 #'
 create_stop_level_0 <- function(config = config) {
-
   all_ebird <- get_ebird_data()
   stop_ebird <- all_ebird |>
     dplyr::filter(!is.na(stop_num)) |>
@@ -19,7 +18,6 @@ create_stop_level_0 <- function(config = config) {
 }
 
 create_stop_level <- function(config = config) {
-
   df <- create_stop_level_0(config = config)
 
   yrs_in <- dplyr::distinct(df, year, route, stop_num) |>
@@ -28,9 +26,9 @@ create_stop_level <- function(config = config) {
   logger::log_trace("Preliminary stop-level data has {nrow(df)} observations.")
 
   df |>
-  # For each year that a route was run,
-  # add 0 count for those species that were *not* observed
-  # in that route / stop / year.
+    # For each year that a route was run,
+    # add 0 count for those species that were *not* observed
+    # in that route / stop / year.
     tidyr::complete(
       tidyr::nesting(
         year, date, time, county, route, route_num, stop_num, lat, lon
@@ -39,7 +37,6 @@ create_stop_level <- function(config = config) {
       fill = list(count = 0)
     ) |>
     (\(x) {
-
       # Check that we didn't add observations for route-stop-years
       # not in the input data.
 
@@ -50,7 +47,7 @@ create_stop_level <- function(config = config) {
       assertthat::assert_that(
         identical(yrs_in, yrs_out),
         msg =
-         "create_stop_level added or lost year/route/stops and shouldn't have."
+          "create_stop_level added or lost year/route/stops and shouldn't have."
       )
 
       logger::log_trace(
@@ -58,17 +55,14 @@ create_stop_level <- function(config = config) {
       )
       x
     })()
-
 }
 
 #' Create the route level dataset
 #'
 create_route_level_0 <- function(stop_level_data, config = config) {
-
   # Get the historical data.
   # NOTE:
   historical <- get_historical_data()
-
 }
 
 
@@ -77,7 +71,6 @@ create_route_level_0 <- function(stop_level_data, config = config) {
 #' @param df a dataset with a `common_name` field
 #' @param taxonomy data.frame from `get_ebird_taxonomy`
 conform_taxonomy <- function(df, taxonomy) {
-
   assertthat::assert_that(
     all(unique(df$common_name) %in% taxonomy$common_name),
     msg = "df has common_names that taxonomy does not have."
