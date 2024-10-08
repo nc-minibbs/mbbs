@@ -9,7 +9,7 @@
 #' and processes the row from a full-route summary of count for each species
 #' to break it out by stop_num.
 #' @param mbbs mbbs.rda
-#' @importFrom dplyr group_by summarize filter anti_join select
+#' @importFrom dplyr group_by summarize filter anti_join select relocate
 #' @importFrom tidyr pivot_longer
 #' @returns a df where each row is a count of a species at a stop
 process_species_comments <- function(mbbs) {
@@ -64,7 +64,18 @@ process_species_comments <- function(mbbs) {
     pivot_longer(
       cols = s1:s20,
       names_to = "stop_num", names_prefix = "s", values_to = "count"
-    )
+    ) %>%
+    dplyr::relocate(species_comments, .after = checklist_comments) %>%
+    mutate(stop_num = as.integer(stop_num))
+
+  # write csv
+  write.csv(stopsmbbs, "inst/extdata/stop_level_species_comments.csv", row.names = FALSE)
+  cat(c(
+    "\n",
+    "new stop_level_species_comments.csv saved",
+    "\n",
+    ""
+  ))
 
   stopsmbbs # returns
 }
