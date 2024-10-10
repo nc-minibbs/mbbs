@@ -23,3 +23,34 @@ make_route_id <- function(county, route_num) {
     )
   )
 }
+
+#' UnSpecific common_name exclusions
+unspecific_common_names <-
+ c("waterfowl sp.",
+   "crow sp.",
+   "swallow sp.",
+   "hawk sp.",
+   "Accipiter sp.",
+   "Accipiter species",
+   "duck sp.",
+   "woodpecker sp.",
+   "Buteo sp.",
+   "passerine sp."
+  )
+
+#' Removes non specific observations
+exclude_nonspecific_obs <- function(df, source) {
+  out <- df |>
+    dplyr::filter(
+      !(.data$common_name %in% unspecific_common_names)
+    )
+
+  n <- nrow(df) - nrow(out)
+  if (n > 0) {
+    logger::log_info(
+      glue::glue("{n} {source} observations were removed due to lack of species specificity.")
+    )
+  }
+
+  out
+}
