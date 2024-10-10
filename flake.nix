@@ -90,6 +90,7 @@
             pkgs.rPackages.usethis
             pkgs.rPackages.languageserver
             pkgs.rPackages.styler
+            pkgs.rPackages.jsonlite
           ] ++ mbbsDeps;
         };
       }
