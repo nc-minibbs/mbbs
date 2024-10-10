@@ -26,16 +26,17 @@ make_route_id <- function(county, route_num) {
 
 #' UnSpecific common_name exclusions
 unspecific_common_names <-
- c("waterfowl sp.",
-   "crow sp.",
-   "swallow sp.",
-   "hawk sp.",
-   "Accipiter sp.",
-   "Accipiter species",
-   "duck sp.",
-   "woodpecker sp.",
-   "Buteo sp.",
-   "passerine sp."
+  c(
+    "waterfowl sp.",
+    "crow sp.",
+    "swallow sp.",
+    "hawk sp.",
+    "Accipiter sp.",
+    "Accipiter species",
+    "duck sp.",
+    "woodpecker sp.",
+    "Buteo sp.",
+    "passerine sp."
   )
 
 #' Removes non specific observations

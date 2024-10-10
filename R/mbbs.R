@@ -7,7 +7,7 @@
 create_stop_level_0 <- function(ebird, taxonomy, config = config) {
   stop_ebird <- ebird |>
     dplyr::filter(!is.na(stop_num)) |>
-    dplyr::select(year, route, stop_num, common_name , sci_name, count, county, route_num)
+    dplyr::select(year, route, stop_num, common_name, sci_name, count, county, route_num)
 
 
   # browser()
@@ -15,12 +15,12 @@ create_stop_level_0 <- function(ebird, taxonomy, config = config) {
     conform_taxonomy(taxonomy)
 
   stop_obs <- process_obs_details(ebird) |>
-    select(year, route, stop_num, common_name , sci_name, count, county, route_num)
+    select(year, route, stop_num, common_name, sci_name, count, county, route_num)
 
   dplyr::bind_rows(
     stop_ebird |> mutate(source = "ebird"),
-    stop_xls   |> mutate(source = "observer xls"),
-    stop_obs   |> mutate(source = "obs details")
+    stop_xls |> mutate(source = "observer xls"),
+    stop_obs |> mutate(source = "obs details")
   ) |>
     # Validity checks
     (\(df) {
@@ -34,10 +34,11 @@ create_stop_level_0 <- function(ebird, taxonomy, config = config) {
         dplyr::filter(n > 1) |>
         (\(x) {
           logger::log_error(
-          paste(
-            "Route {x$route}-{x$stop_num} has multiple entries",
-            "for {x$common_name}",
-            "in {x$year} coming from {x$sources}")
+            paste(
+              "Route {x$route}-{x$stop_num} has multiple entries",
+              "for {x$common_name}",
+              "in {x$year} coming from {x$sources}"
+            )
           )
         })()
       df
@@ -86,7 +87,6 @@ create_stop_level <- function(ebird, taxonomy, config = config) {
 #' Create the route level dataset
 #'
 create_route_level_0 <- function(ebird, stop_level_data, taxonomy, config = config) {
-
   # Get the historical data.
   historical <- get_historical_data() |>
     select(
@@ -110,18 +110,17 @@ create_route_level_0 <- function(ebird, stop_level_data, taxonomy, config = conf
     )
 
   dplyr::bind_rows(
-    historical    |> mutate(source = "historical"),
+    historical |> mutate(source = "historical"),
     stop_to_route |> mutate(source = "stop-level"),
     ebird_no_stop |> mutate(source = "ebird")
   )
 }
 
 create_route_level <- function(ebird, stop_level_data, taxonomy, config = config) {
-  
   df <- create_route_level_0(ebird, stop_level_data, taxonomy, config)
 
   yrs_in <- dplyr::distinct(df, year, route) |> arrange(year, route)
-  
+
   df |>
     # For each year that a route was run,
     # add 0 count for those species that were *not* observed
@@ -133,7 +132,7 @@ create_route_level <- function(ebird, stop_level_data, taxonomy, config = config
       tidyr::nesting(common_name, sci_name),
       fill = list(count = 0)
     ) |>
-  ## ADD CHECKS
+    ## ADD CHECKS
     (\(x) {
       # Check that we didn't add observations for route-stop-years
       # not in the input data.
@@ -159,14 +158,13 @@ create_mbbs <- function(config) {
   taxonomy <- get_ebird_taxonomy()
   ebird <- get_ebird_data()
 
-  stop_level  <- create_stop_level(ebird, taxonomy, config)
+  stop_level <- create_stop_level(ebird, taxonomy, config)
   route_level <- create_route_level(ebird, stop_level, taxonomy, config)
 
   list(
     stop_level  = stop_level,
     route_level = route_level
   )
-
 }
 
 
