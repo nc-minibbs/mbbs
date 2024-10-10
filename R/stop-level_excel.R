@@ -36,6 +36,7 @@ get_stop_level_xls_data <- function(directory = config$stop_level_xls_dir) {
 #' @importFrom readxl read_excel
 #' @importFrom stringr str_extract
 #' @param file name of xls file to process
+#' @include utilities.R
 #' @returns hist_xls each row is a species with columns s1:s20
 #'    containing the count at each stop
 process_stop_level_xls <- function(file) {
@@ -57,7 +58,8 @@ process_stop_level_xls <- function(file) {
         common_name,
         c(
           "Rock Dove" = "Rock Pigeon",
-          "^Whip-poor-will$" = "Eastern Whip-poor-will"
+          "^Whip-poor-will$" = "Eastern Whip-poor-will",
+          "Accipiter species" = "Accipiter sp."
         )
       )
     ) |>
@@ -83,6 +85,7 @@ process_stop_level_xls <- function(file) {
         )
       )
     ) |>
+    exclude_nonspecific_obs("stop xls") |>
     stop_level_xls_checks()
 }
 
