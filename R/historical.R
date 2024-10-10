@@ -70,7 +70,7 @@ transform_historical_data <- function(historical) {
 }
 
 #' Get the historical (pre-eBird) data
-#'
+#' @include utilities.R
 get_historical_data <- function() {
   load_historical_data() |>
     transform_historical_data() |>
@@ -78,7 +78,8 @@ get_historical_data <- function() {
       # Drop the habitat data available for (some) routes in historical data.
       # See: https://github.com/nc-minibbs/mbbs/issues/103
       -dplyr::starts_with("hab")
-    )
+    ) |>
+    exclude_nonspecific_obs("historical")
 }
 
 #' Clean the species names of the data scraped from the old MBBS website
@@ -117,7 +118,7 @@ clean_common_names <- function(x) {
         "Will's-Widow" = "will's-widow",
         "Great Horned \r Owl" = "Great Horned Owl",
         "House\r Wren" = "House Wren",
-        "^Accipiter species$" = "Accipiter sp.",
+        "Accipiter species" = "Accipiter sp.",
         "^Rock Dove$" = "Rock Pigeon",
         "^unident. duck$" = "duck sp.",
         "^Unidentified Accipiter Hawk$" = "Accipiter sp.",
