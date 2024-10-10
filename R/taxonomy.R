@@ -18,7 +18,6 @@ get_ebird_taxonomy <- function(path = config$taxonomy_data_dir) {
     (\(x) file.path(path, x))() |>
     read.csv() |>
     dplyr::select(
-      tax_order = "TAXON_ORDER",
       sci_name = "SCI_NAME",
       common_name = "PRIMARY_COM_NAME"
     )
