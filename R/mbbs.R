@@ -78,7 +78,7 @@ create_stop_level <- function(ebird, taxonomy, config = config) {
       )
 
       logger::log_trace(
-        "Completing stop-level data added {nrow(x) - nrow(df)} 0 counts."
+        "Completing stop-level data added {nrow(x) - nrow(df)} observations with count of 0."
       )
       x
     })()
@@ -146,7 +146,7 @@ create_route_level <- function(ebird, stop_level_data, taxonomy, config = config
       )
 
       logger::log_trace(
-        "Completing route-level data added {nrow(x) - nrow(df)} 0 counts."
+        "Completing route-level data added {nrow(x) - nrow(df)} observations with count of 0."
       )
       x
     })()
