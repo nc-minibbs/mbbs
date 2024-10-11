@@ -13,7 +13,6 @@
 #' @returns transcribed_paper df of all the observations transcribed from the paper files,
 #'  returned just in case this function is called to set a variable.
 update_transcribed_paper <- function() {
-
   # browser()
   # set path
   path <- config$stop_level_transcribed_dir
@@ -26,7 +25,7 @@ update_transcribed_paper <- function() {
       full.names = TRUE
     )
   # load in species_code to common_name converter
-  sp_code_converter <- 
+  sp_code_converter <-
     read.csv(config$code_to_common_name) %>%
     dplyr::select(common_name, species_code)
   # get taxonomy
