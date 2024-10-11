@@ -85,7 +85,6 @@ process_stop_level_xls <- function(file) {
         )
       )
     ) |>
-    exclude_nonspecific_obs("stop xls") |>
     stop_level_xls_checks()
 }
 

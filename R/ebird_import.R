@@ -132,7 +132,6 @@ exclude_submissions <- function(ebird, exclusions) {
 #' @include utilities.R
 filter_ebird_data <- function(ebird) {
   ebird |>
-    exclude_nonspecific_obs("ebird") |>
     exclude_submissions(get_exclusions())
 }
 

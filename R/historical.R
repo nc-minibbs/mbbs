@@ -78,8 +78,7 @@ get_historical_data <- function() {
       # Drop the habitat data available for (some) routes in historical data.
       # See: https://github.com/nc-minibbs/mbbs/issues/103
       -dplyr::starts_with("hab")
-    ) |>
-    exclude_nonspecific_obs("historical")
+    )
 }
 
 #' Clean the species names of the data scraped from the old MBBS website
