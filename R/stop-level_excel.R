@@ -9,7 +9,7 @@
 #' @param directory directory containing containing historical xls files.
 #' @include config.R
 #' @returns vector of filenames of stop level files
-list_stop_level_files <- function(directory = config$stop_level_data_dir) {
+list_stop_level_xls_files <- function(directory = config$stop_level_xls_dir) {
   # get list of folders in directory
   list.files(directory, recursive = TRUE) |>
     # only keep xls files in stops directories
@@ -23,8 +23,8 @@ list_stop_level_files <- function(directory = config$stop_level_data_dir) {
 #' @param directory directory containing containing historical xls files.
 #' @include config.R
 #' @returns vector of filenames of stop level files
-get_stop_level_xls_data <- function(directory = config$stop_level_data_dir) {
-  list_stop_level_files(directory) |>
+get_stop_level_xls_data <- function(directory = config$stop_level_xls_dir) {
+  list_stop_level_xls_files(directory) |>
     purrr::map_dfr(process_stop_level_xls)
 }
 
