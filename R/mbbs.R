@@ -89,7 +89,6 @@ create_stop_level <- function(ebird, taxonomy, config = config) {
 #' Create the route level dataset
 #'
 create_route_level_0 <- function(ebird, stop_level_data, taxonomy, config = config) {
-
   logger::log_trace("Computing route level data from stop level")
   stop_to_route <- stop_level_data |>
     group_by(year, county, route, route_num, common_name, sci_name) |>
@@ -104,8 +103,7 @@ create_route_level_0 <- function(ebird, stop_level_data, taxonomy, config = conf
     select(
       year, common_name, sci_name, route, route_num, county, count
     ) |>
-      (\(df) {
-
+    (\(df) {
       df |>
         filter(!(paste(year, route) %in% paste(stop_to_route$year, stop_to_route$route))) |>
         (\(x) {
@@ -114,7 +112,7 @@ create_route_level_0 <- function(ebird, stop_level_data, taxonomy, config = conf
           )
           x
         })()
-        })()
+    })()
 
   logger::log_trace("Getting historical data")
   historical <- get_historical_data() |>
@@ -123,7 +121,6 @@ create_route_level_0 <- function(ebird, stop_level_data, taxonomy, config = conf
     ) |>
     conform_taxonomy(taxonomy) |>
     (\(df) {
-
       df |>
         filter(!(paste(year, route) %in% paste(ebird_no_stop$year, ebird_no_stop$route))) |>
         (\(x) {
@@ -139,9 +136,6 @@ create_route_level_0 <- function(ebird, stop_level_data, taxonomy, config = conf
           )
           x
         })()
-
-
-
     })()
 
 
