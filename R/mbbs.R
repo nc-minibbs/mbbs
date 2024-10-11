@@ -17,6 +17,8 @@ create_stop_level_0 <- function(ebird, taxonomy, config = config) {
   stop_obs <- process_obs_details(ebird) |>
     select(year, route, stop_num, common_name, sci_name, count, county, route_num)
 
+  logger::log_trace("Combining stop level data.")
+
   dplyr::bind_rows(
     stop_ebird |> mutate(source = "ebird"),
     stop_xls |> mutate(source = "observer xls"),
@@ -87,15 +89,8 @@ create_stop_level <- function(ebird, taxonomy, config = config) {
 #' Create the route level dataset
 #'
 create_route_level_0 <- function(ebird, stop_level_data, taxonomy, config = config) {
-  # Get the historical data.
-  historical <- get_historical_data() |>
-    select(
-      year, common_name, route, route_num, county, count
-    ) |>
-    conform_taxonomy(taxonomy)
 
-  # browser()
-
+  logger::log_trace("Computing route level data from stop level")
   stop_to_route <- stop_level_data |>
     group_by(year, county, route, route_num, common_name, sci_name) |>
     summarise(count = sum(count)) |>
@@ -103,12 +98,54 @@ create_route_level_0 <- function(ebird, stop_level_data, taxonomy, config = conf
       year, common_name, sci_name, route, route_num, county, count
     )
 
+  logger::log_trace("Getting ebird data without stop-level information")
   ebird_no_stop <- ebird |>
     dplyr::filter(is.na(stop_num)) |>
     select(
       year, common_name, sci_name, route, route_num, county, count
-    )
+    ) |>
+      (\(df) {
 
+      df |>
+        filter(!(paste(year, route) %in% paste(stop_to_route$year, stop_to_route$route))) |>
+        (\(x) {
+          logger::log_trace(
+            "Removed {nrow(df) - nrow(x)} ebird observations for route/years that were also in stop-level data."
+          )
+          x
+        })()
+        })()
+
+  logger::log_trace("Getting historical data")
+  historical <- get_historical_data() |>
+    select(
+      year, common_name, route, route_num, county, count
+    ) |>
+    conform_taxonomy(taxonomy) |>
+    (\(df) {
+
+      df |>
+        filter(!(paste(year, route) %in% paste(ebird_no_stop$year, ebird_no_stop$route))) |>
+        (\(x) {
+          logger::log_trace(
+            "Removed {nrow(df) - nrow(x)} historical observations for route/years that were also entered in ebird."
+          )
+          x
+        })() |>
+        filter(!(paste(year, route) %in% paste(stop_to_route$year, stop_to_route$route))) |>
+        (\(x) {
+          logger::log_trace(
+            "Removed {nrow(df) - nrow(x)} historical observations for route/years that were also in stop-level data."
+          )
+          x
+        })()
+
+
+
+    })()
+
+
+  logger::log_trace("Combining route level data.")
   dplyr::bind_rows(
     historical |> mutate(source = "historical"),
     stop_to_route |> mutate(source = "stop-level"),
@@ -154,7 +191,7 @@ create_route_level <- function(ebird, stop_level_data, taxonomy, config = config
 
 #' Create the MBBS datasets
 #'
-create_mbbs <- function(config) {
+create_mbbs_counts <- function(config) {
   taxonomy <- get_ebird_taxonomy()
   ebird <- get_ebird_data()
 
