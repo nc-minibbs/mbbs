@@ -23,5 +23,3 @@ make_route_id <- function(county, route_num) {
     )
   )
 }
-
-
