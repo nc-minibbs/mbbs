@@ -15,7 +15,8 @@ config <- list(
   taxonomy_data_dir = "data/taxonomy",
   historical_data_dir = "data/historical",
   ebird_data_dir = "data/ebird",
-  stop_level_data_dir = "data/stop-level",
+  stop_level_xls_dir = "data/stop-level/xls",
+  stop_level_transcribed_dir = "data/stop-level/transcribed",
 
   # Regex patterns
   county_pattern = "orange|chatham|durham",
