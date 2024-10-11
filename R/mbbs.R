@@ -17,12 +17,16 @@ create_stop_level_0 <- function(ebird, taxonomy, config = config) {
   stop_obs <- process_obs_details(ebird) |>
     select(year, route, stop_num, common_name, sci_name, count, county, route_num)
 
+  stop_transcribed <- get_stop_level_transcribed() |>
+    select(year, route, stop_num, common_name, sci_name, count, county, route_num, source)
+
   logger::log_trace("Combining stop level data.")
 
   dplyr::bind_rows(
     stop_ebird |> mutate(source = "ebird"),
     stop_xls |> mutate(source = "observer xls"),
-    stop_obs |> mutate(source = "obs details")
+    stop_obs |> mutate(source = "obs details"),
+    stop_transcribed
   ) |>
     # Validity checks
     (\(df) {
