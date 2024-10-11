@@ -9,30 +9,36 @@
 #' writes the stop-level-transcribed-paper csv
 #' @importFrom dplyr select mutate rename left_join filter
 #' @importFrom assertthat assert_that
+#' @include config.R
 #' @returns transcribed_paper df of all the observations transcribed from the paper files,
 #'  returned just in case this function is called to set a variable.
 update_transcribed_paper <- function() {
+
+  # browser()
   # set path
-  path <- "inst/stop-level/transcribed_paper_files/"
+  path <- config$stop_level_transcribed_dir
 
   # load in the list of transcribed files
   transcribed <-
     list.files(
       path = path,
-      pattern = "transcribed_paper_files"
+      pattern = "transcribed_paper_files",
+      full.names = TRUE
     )
   # load in species_code to common_name converter
-  sp_code_converter <- read.csv("inst/stop-level/transcribed_paper_files/bird_code_to_common_name.csv") %>%
+  sp_code_converter <- 
+    read.csv(config$code_to_common_name) %>%
     dplyr::select(common_name, species_code)
   # get taxonomy
   taxonomy <- get_ebird_taxonomy()
 
+
   # read in all the transcribed files
-  t1 <- read_transcribed_csv(filepath = paste0(path, transcribed[1]))
-  t2 <- read_transcribed_csv(filepath = paste0(path, transcribed[2]))
-  t3 <- read_transcribed_csv(filepath = paste0(path, transcribed[3])) %>%
+  t1 <- read_transcribed_csv(filepath = transcribed[1])
+  t2 <- read_transcribed_csv(filepath = transcribed[2])
+  t3 <- read_transcribed_csv(filepath = transcribed[3]) %>%
     dplyr::mutate(count = as.integer(count))
-  t4 <- read_transcribed_csv(filepath = paste0(path, transcribed[4]))
+  t4 <- read_transcribed_csv(filepath = transcribed[4])
 
   # check files against each other, report mis-matches
   mismatches <-
@@ -46,7 +52,7 @@ update_transcribed_paper <- function() {
     )
 
   # save mismatches
-  write.csv(mismatches, "inst/stop-level/transcribed_paper_files/scratch_remaining_mistmatches.csv", row.names = FALSE)
+  write.csv(mismatches, config$transcribed_mismatches, row.names = FALSE)
 
   # add all the files together where they overlap!
   # assumes no mismatches remaining.
@@ -81,10 +87,8 @@ update_transcribed_paper <- function() {
     dplyr::select(-species_code, )
 
   # write csv
-  write.csv(transcribed_paper, "inst/extdata/stop_level_transcribed_paper.csv", row.names = FALSE)
-  print("stop_level_transcribed_paper updated")
-
-  # transcribed_paper # return, just in case it's called that way.
+  write.csv(transcribed_paper, config$stop_level_transcribed, row.names = FALSE)
+  logger::log_trace("stop_level_transcribed_paper updated")
 }
 
 
@@ -118,7 +122,7 @@ tpaper_find_mismatches <- function(
     df2 = read.csv("inst/stop-level/transcribed_paper_files/transcribed_paper_files_ADS.csv"),
     source1 = "GEL",
     source2 = "ADS",
-    overlap = read.csv("inst/stop-level/transcribed_paper_files/mbbs_paper_files_list.csv")) {
+    overlap = read.csv(config$transcribed_paper_list)) {
   # filter only to the rows where we expect overlap
   overlap <- overlap %>%
     # pick out just the columns we need, including the columns "transcribed_by_SOURCE1|2"
@@ -180,7 +184,7 @@ tpaper_find_overlap <- function(
     df2 = read.csv("inst/stop-level/transcribed_paper_files/transcribed_paper_files_ADS.csv"),
     source1 = "GEL",
     source2 = "ADS",
-    overlap = read.csv("inst/stop-level/transcribed_paper_files/mbbs_paper_files_list.csv")) {
+    overlap = read.csv(config$transcribed_paper_list)) {
   # filter only to the rows where we expect overlap between the two dfs
   overlap <- overlap %>%
     # pick out just the columns we need, including the columns "transcribed_by_SOURCE1|2"
