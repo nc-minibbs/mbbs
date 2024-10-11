@@ -223,9 +223,8 @@ get_stop_level_transcribed <- function() {
       sci_name = readr::col_character()
     )
   ) |>
-  rename(county = mbbs_county) |>
-  mutate(
-    route = make_route_id(county, route_num)
-  )
+    rename(county = mbbs_county) |>
+    mutate(
+      route = make_route_id(county, route_num)
+    )
 }
-
