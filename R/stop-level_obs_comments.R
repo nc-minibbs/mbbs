@@ -62,7 +62,10 @@ prep_obs_details_data <- \(ebird) {
     # Keep rows that contain at least one number in observation details
     #           AND aren't already separated by stop
     filter(str_detect(obs_details, "[0-9]") & is.na(stop_num)) |>
-    mutate(obs_details = fix_species_comments(obs_details)) |>
+    # Only apply to observations from 2022 and prior
+    # as after that year all checklists are submitted at stop-level
+    filter(year <= 2022) |>
+    mutate(obs_details = fix_obs_details(obs_details)) |>
     # Remove rows that were changed to have blank species_comments
     filter(obs_details != "")
 }
@@ -72,7 +75,7 @@ prep_obs_details_data <- \(ebird) {
 #' and known typos within the dataset
 #' @param x a character vector of observation details
 #' @importFrom stringr str_replace_all
-fix_species_comments <- \(x) {
+fix_obs_details <- \(x) {
   x |>
     str_replace_all(
       c(
@@ -126,7 +129,12 @@ fix_species_comments <- \(x) {
       "\\(flyover\\)" = "",
       "on Mann's Chapel Road, heard" = "",
       "flying and twittering at" = "",
-      "12=0113=0" = "12=0,13=0"
+      "12=0113=0" = "12=0,13=0",
+
+      # Passerine sp. records
+      # Not going to try to split this to two separate species
+      "1 Woodpecker sp.. just heard tapping, 1 sparrow sp., fast flyby" = "",
+      "female about the size of Blue Grosbeak but with eyeline, around clear cut area at 19" = ""
     ))
 }
 
