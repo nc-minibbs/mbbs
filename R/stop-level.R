@@ -33,23 +33,23 @@ granulate_to_stop <- function(mbbs) {
 
   routes_with_ext_stop_level <- stop_level_external %>%
     group_by(mbbs_county, route_num, year) %>%
-    summarize() #%>%
-    #group_by(mbbs_county, route_num) %>%
-    #summarize(num_years = n())
+    summarize() # %>%
+  # group_by(mbbs_county, route_num) %>%
+  # summarize(num_years = n())
 
   # add in stop_num = 1 for routes that have all stops aside from stop 1 and have 20 records for the route
   mbbs <- mbbs %>%
-  # one way to filter for this may be to group by route_ID, year and look for routes where EITHER and stop_num is not 0 or where any common_name appears more than once. These will be routes with stop_level information.
-  # stop_level_internal <- mbbs %>%
-  #   function to add stop_num where stop_num == 1 is missing
-  #   then filter to all rows where !is.na(stop_num)
-  #   and that should give all the mbbs rows with stop level information.
+    # one way to filter for this may be to group by route_ID, year and look for routes where EITHER and stop_num is not 0 or where any common_name appears more than once. These will be routes with stop_level information.
+    # stop_level_internal <- mbbs %>%
+    #   function to add stop_num where stop_num == 1 is missing
+    #   then filter to all rows where !is.na(stop_num)
+    #   and that should give all the mbbs rows with stop level information.
 
-  # compile and compare to current mbbs routes - do counts match?
-  # where counts DONT match, have .csv where that decision is recorded, and correct one way or another. Usually should default to the starting route-level mbbs. At the least check mbbs$source to see where error is
-  # where counts DO match, replace route-level information with stop information in the overall mbbs/mbbs_county dataset that this function is given. mbbs$source == "granulated to stop"
-  # add in the stop num = 1 for routes that have all 19 stops aside from stop 1 and have 20 records for the route (like, within a species.)
-  beep()
+    # compile and compare to current mbbs routes - do counts match?
+    # where counts DONT match, have .csv where that decision is recorded, and correct one way or another. Usually should default to the starting route-level mbbs. At the least check mbbs$source to see where error is
+    # where counts DO match, replace route-level information with stop information in the overall mbbs/mbbs_county dataset that this function is given. mbbs$source == "granulated to stop"
+    # add in the stop num = 1 for routes that have all 19 stops aside from stop 1 and have 20 records for the route (like, within a species.)
+    beep()
   return(stopsmbbs)
 }
 
@@ -64,23 +64,22 @@ run_process_species_comments <- function() {
 }
 
 
-#we will...worry about this later
+# we will...worry about this later
 add_stop_one <- function(mbbs) {
-  
-  #better way to do this would be to select routes with any stop_nums filled in, and then filter for that county,route,year within a filter x %in% y$x
-  
-  missing_stop_one <- 
-    mbbs %>% 
+  # better way to do this would be to select routes with any stop_nums filled in, and then filter for that county,route,year within a filter x %in% y$x
+
+  missing_stop_one <-
+    mbbs %>%
     group_by(mbbs_county, route_num, year) %>%
     summarize(sum_stop_num = sum(unique(stop_num), na.rm = TRUE)) %>%
-    #the sum(1:20) adds up to 210, routes with sum(unique(stop_num)) == 209 are missing only the first stop. 
-  filter(sum_stop_num == 209)
-  
-  c <- 
+    # the sum(1:20) adds up to 210, routes with sum(unique(stop_num)) == 209 are missing only the first stop.
+    filter(sum_stop_num == 209)
+
+  c <-
     mbbs %>%
     filter(route_num %in% missing_stop_one$route_num &
-             mbbs_county %in% missing_stop_one$mbbs_county &
-             year %in% missing_stop_one$year)
-  
-  #this is not giving the correct information. 
+      mbbs_county %in% missing_stop_one$mbbs_county &
+      year %in% missing_stop_one$year)
+
+  # this is not giving the correct information.
 }
