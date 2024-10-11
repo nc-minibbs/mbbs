@@ -126,40 +126,12 @@ exclude_submissions <- function(ebird, exclusions) {
   out
 }
 
-#' Removes non specific observations
-#' @inheritParams exclude_submissions
-exclude_nonspecific_obs <- function(ebird) {
-  out <- ebird |>
-    dplyr::filter(
-      !(.data$sci_name %in% c("Passeriformes sp.") |
-        .data$common_name %in%
-          c(
-            "waterfowl sp.",
-            "crow sp.",
-            "swallow sp.",
-            "hawk sp.",
-            "Accipiter sp.",
-            "duck sp.",
-            "woodpecker sp.",
-            "Buteo sp."
-          ))
-    )
-
-  logger::log_info(
-    glue::glue("{n} observations were removed due to lack of species specificity.",
-      n = nrow(ebird) - nrow(out)
-    )
-  )
-
-  out
-}
-
 #' Removes subspecies, subgroup, or domestic type designations from the common
 #' and scienfic name columns of an ebird csv
 #' @inheritParams exclude_submissions
+#' @include utilities.R
 filter_ebird_data <- function(ebird) {
   ebird |>
-    exclude_nonspecific_obs() |>
     exclude_submissions(get_exclusions())
 }
 
@@ -254,8 +226,11 @@ ebird_import_checks <- function(dt) {
 
   # Check that routes have exactly 1 or 20 submissions.
   dt |>
-    distinct(.data$year, .data$county, .data$route_num, .data$stop_num) |>
-    group_by(.data$year, .data$county, .data$route_num) |>
+    dplyr::distinct(
+      .data$year, .data$county, .data$route_num,
+      .data$stop_num
+    ) |>
+    dplyr::group_by(.data$year, .data$county, .data$route_num) |>
     dplyr::summarise(
       n = dplyr::n(),
       flag = !(.data$n %in% c(1, 20))
