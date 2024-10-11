@@ -203,3 +203,29 @@ tpaper_find_overlap <- function(
 
   x # return
 }
+
+#' Get the stop-level data transcribed from paper files
+#'
+get_stop_level_transcribed <- function() {
+  readr::read_csv(
+    file = config$stop_level_transcribed,
+    col_types = readr::cols(
+      mbbs_county = readr::col_character(),
+      year = readr::col_integer(),
+      route_num = readr::col_integer(),
+      stop_num = readr::col_integer(),
+      count = readr::col_integer(),
+      observers = readr::col_skip(),
+      notes = readr::col_skip(),
+      source = readr::col_character(),
+      common_name = readr::col_character(),
+      tax_order = readr::col_skip(),
+      sci_name = readr::col_character()
+    )
+  ) |>
+  rename(county = mbbs_county) |>
+  mutate(
+    route = make_route_id(county, route_num)
+  )
+}
+
