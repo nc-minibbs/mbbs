@@ -30,6 +30,6 @@ stdenv.mkDerivation {
     mkdir -p $out
     mkdir -p $out/data
     cp index.html $out
-    cp -r ${self.packages.${system}.data}/files $out/data
+    cp -R ${self.packages.${system}.data}/. $out/data
   '';
 }

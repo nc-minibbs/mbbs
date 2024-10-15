@@ -5,7 +5,7 @@
 \alias{config}
 \title{Defines various configuration settings used in this project}
 \format{
-An object of class \code{list} of length 6.
+An object of class \code{list} of length 11.
 }
 \usage{
 config

@@ -4,7 +4,7 @@
 \alias{pad_or_truncate}
 \title{takes a list and either extends it with 0s to the max_length or cuts it down}
 \usage{
-pad_or_truncate(x, max_length = 20)
+pad_or_truncate(x, subid, common_name)
 }
 \arguments{
 \item{x}{a list of numbers}

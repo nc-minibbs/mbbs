@@ -64,12 +64,14 @@
             R
             self.packages.${system}.mbbs
           ] ++ mbbsDeps;
-          buildPhase = ''
-            ${R}/bin/Rscript -e 'write.csv(mbbs::get_ebird_data(), file = "ebird.csv")'
+          buildPhase = 
+          ''
+           ${R}/bin/Rscript --vanilla -e 'd <- mbbs::create_mbbs_counts(); write.csv(d$stop_level, file = "mbbs_stops_counts.csv", row.names = FALSE); write.csv(d$route_level, file = "mbbs_route_counts.csv", row.names = FALSE)'
           '';
           installPhase = ''
-            mkdir -p $out/files
-            cp ebird.csv $out/files
+            mkdir -p $out
+            cp mbbs_stops_counts.csv $out
+            cp mbbs_route_counts.csv $out
           '';
 
         };
