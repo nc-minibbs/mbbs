@@ -189,6 +189,7 @@ create_route_level <- function(ebird, stop_level_data, taxonomy, config = config
 
 #' Create the MBBS datasets
 #'
+#' @export
 create_mbbs_counts <- function(config) {
   taxonomy <- get_ebird_taxonomy()
   ebird <- get_ebird_data()

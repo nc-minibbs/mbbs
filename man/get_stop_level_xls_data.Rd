@@ -6,7 +6,7 @@
 Folders of historical .xls
 and processes them all into one df}
 \usage{
-get_stop_level_xls_data(directory = config$stop_level_data_dir)
+get_stop_level_xls_data(directory = config$stop_level_xls_dir)
 }
 \arguments{
 \item{directory}{directory containing containing historical xls files.}
