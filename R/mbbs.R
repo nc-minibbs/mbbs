@@ -29,7 +29,6 @@ create_stop_level_0 <- function(ebird, taxonomy, config = config) {
   ) |>
     # Validity checks
     (\(df) {
-
       assertthat::assert_that(
         !anyNA(df$stop_num),
         msg = "Stop data has NA values in stop_num."
