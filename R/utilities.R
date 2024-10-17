@@ -19,7 +19,7 @@ make_route_id <- function(county, route_num) {
     f("orng"),
     dplyr::if_else(county == "chatham",
       f("cthm"),
-      f("dhrm")
+      f("drhm")
     )
   )
 }
