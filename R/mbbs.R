@@ -9,13 +9,12 @@ create_stop_level_0 <- function(ebird, taxonomy, config = config) {
     dplyr::filter(!is.na(stop_num)) |>
     dplyr::select(year, route, stop_num, common_name, sci_name, count, county, route_num)
 
-
-  # browser()
   stop_xls <- get_stop_level_xls_data() |>
     conform_taxonomy(taxonomy)
 
   stop_obs <- process_obs_details(ebird) |>
-    select(year, route, stop_num, common_name, sci_name, count, county, route_num)
+    select(year, route, common_name, sci_name, county, route_num, stop_data) |>
+    tidyr::unnest(cols = stop_data)
 
   stop_transcribed <- get_stop_level_transcribed() |>
     select(year, route, stop_num, common_name, sci_name, count, county, route_num, source)
@@ -30,6 +29,12 @@ create_stop_level_0 <- function(ebird, taxonomy, config = config) {
   ) |>
     # Validity checks
     (\(df) {
+
+      assertthat::assert_that(
+        !anyNA(df$stop_num),
+        msg = "Stop data has NA values in stop_num."
+      )
+
       # Check that there are not duplicate entries
       df |>
         dplyr::group_by(year, route, stop_num, common_name) |>
