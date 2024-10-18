@@ -221,18 +221,18 @@ stops_to_include <- function(deviations) {
     purrr::keep(.p = ~ length(.x$stops_nobirds) > 0) |>
     purrr::map_dfr(
       ~ .x[names(.x) %in% c("year", "date", "county", "route", "stops_nobirds")] |>
-          dplyr::as_tibble() |>
-          dplyr::rename(
-            route_num = route,
-            stop_num = stops_nobirds
-          )
-      ) |>
-      dplyr::mutate(
-        date = lubridate::ymd(date),
-        year = lubridate::year(date),
-        county = tolower(county),
-        route = make_route_id(county, route_num = route_num)
-      )
+        dplyr::as_tibble() |>
+        dplyr::rename(
+          route_num = route,
+          stop_num = stops_nobirds
+        )
+    ) |>
+    dplyr::mutate(
+      date = lubridate::ymd(date),
+      year = lubridate::year(date),
+      county = tolower(county),
+      route = make_route_id(county, route_num = route_num)
+    )
 }
 
 #' Adds stops that were surveyed,
