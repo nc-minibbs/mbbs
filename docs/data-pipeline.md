@@ -49,7 +49,7 @@ When possible, this data is used to disaggregate route-level checklists.
 [eBird taxonomy](https://support.ebird.org/en/support/solutions/articles/48000837816-the-ebird-taxonomy)
 is used to normalize checklist species to a common taxonomy.
 Taxonomy CSV files are manually downloaded and stored in
-`inst/taxonomy/ebird_taxonomy_vXXXX.csv`.
+`data/taxonomy/ebird_taxonomy_vXXXX.csv`.
 The `get_latest_taxonomy` function is used internally for accessing the taxonomy.
 
 [`observer`](#observer) [![info on observer data](../resources/img/info-16x16.svg)](#observer)
@@ -109,14 +109,14 @@ from each of the mbbs ebird accounts:
 `mbbsorangenc`,
 `mbbsdurhamnc`,
 and `mbbschathamnc`.
-Files are stored in `inst/ebird/`.
+Files are stored in `data/ebird/`.
 
 ### `historical`
 
 Prior to 2009,
 checklists were available on the old MBBS website.
 These files were collated into single `csv` file for each county.
-Files are stored in `inst/historical/`.
+Files are stored in `data/historical/`.
 These data are not updated.
 
 ### `stop-level`
@@ -125,13 +125,13 @@ Prior to 2022, survey counts were aggregated at the route level.
 This data is the un-summarized version of the routes for which records exist.
 The `stop-level` data comes from a variety of sources,
 and is all stored in
-`inst/stop_level/`.
+`data/stop_level/`.
 The data is considered stable and not updated.
 
 The sources are as follows:
 
 1. Excel files provided by observers.
-The raw data are stored in `inst/stop-level/`
+The raw data are stored in `data/stop-level/`
 in folders by the name of the observer who sent them.
 Code in `R/prepare_historical_xls`
 creates the processed `stop_level_hist_xls.csv`.
@@ -157,7 +157,7 @@ the stop-level data is taken as the source of truth.
 
 ### `survey-events`
 
-The `inst/survey-events.csv` file contains a basic summary of all
+The `data/survey-events.csv` file contains a basic summary of all
 route/years for which a survey was completed.
 This data is taken from ebird, scraped from the old website,
 and/or confirmed independently
@@ -188,7 +188,6 @@ N_species[route,year,observer(i)] - mean(N_species[route,!observer(i)]  / mean(N
 
 These comparison scores (one for every observer on every route-year) are then averaged for each observer to get their 'observer_quality'. A score of '.05' is interpretable as 'On average, this observer sees 5% more species than other surveyors on the same routes'.
 
-
 ## Data products
 
 * `survey-events`
@@ -196,7 +195,6 @@ These comparison scores (one for every observer on every route-year) are then av
 * "analysis-ready" data
 * Summarized by stop
 * Summarized by route
-
 
 ### Versioning
 
