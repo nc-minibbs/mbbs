@@ -122,7 +122,7 @@ Deviations could be for 2 reasons:
 2. The stop(s) were in fact observed,
    but no birds were seen.
    In this case, there is an eBird submission,
-   but the eBird export does not include the empty checklist.s
+   but the eBird export does not include the empty checklists.
    In this case, we do know the count of all species is 0,
    and we add observations of 0 counts for these stops.
 
