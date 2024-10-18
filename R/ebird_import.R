@@ -110,6 +110,12 @@ get_exclusions <- function(file = config$excluded_submissions) {
   yaml::read_yaml(file)
 }
 
+#' Get deviations
+#' @return a character vector of submission ids to exclude
+get_deviations <- function(file = config$stop_deviations) {
+  yaml::read_yaml(file)
+}
+
 #' Exclude submissions
 #' @param ebird data.frame loaded from `load_ebird_data`
 #' @param exclusions character vector of submission ids to exclude
@@ -145,7 +151,7 @@ filter_ebird_data <- function(ebird) {
 #' @param count character vector of ebird counts
 parse_count <- function(count) {
   logger::log_info(
-    glue::glue("{n} observations indicated count as \"X\" were excluded.",
+    glue::glue("{n} observations indicated count as \"X\" and were set to count of 1",
       n = sum(count == "X")
     )
   )
