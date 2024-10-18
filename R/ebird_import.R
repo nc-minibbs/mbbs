@@ -110,12 +110,6 @@ get_exclusions <- function(file = config$excluded_submissions) {
   yaml::read_yaml(file)
 }
 
-#' Get deviations
-#' @return a character vector of submission ids to exclude
-get_deviations <- function(file = config$stop_deviations) {
-  yaml::read_yaml(file)
-}
-
 #' Exclude submissions
 #' @param ebird data.frame loaded from `load_ebird_data`
 #' @param exclusions character vector of submission ids to exclude
@@ -212,6 +206,54 @@ transform_ebird_data <- function(ebird) {
     dplyr::select(-location)
 }
 
+
+#' Get deviations
+#' @return a list of deviations
+get_deviations <- function(file = config$stop_deviations) {
+  yaml::read_yaml(file)
+}
+
+#' Identify stops to include from the list of deviations.
+#' @return a data.frame of year/county/route/stop_num which need to be added
+#'         to the ebird data
+stops_to_include <- function(deviations) {
+  deviations |>
+    purrr::keep(.p = ~ length(.x$stops_nobirds) > 0) |>
+    purrr::map_dfr(
+      ~ .x[names(.x) %in% c("year", "date", "county", "route", "stops_nobirds")] |>
+          dplyr::as_tibble() |>
+          dplyr::rename(
+            route_num = route,
+            stop_num = stops_nobirds
+          )
+      ) |>
+      dplyr::mutate(
+        date = lubridate::ymd(date),
+        year = lubridate::year(date),
+        county = tolower(county),
+        route = make_route_id(county, route_num = route_num)
+      )
+}
+
+#' Adds stops that were surveyed,
+#' but no birds were observed.
+handle_deviations <- function(ebird, deviations) {
+  add <- stops_to_include(deviations) |>
+    # Need to add some species with a 0 count.
+    # 0 count for other species will be added downstream.
+    dplyr::mutate(
+      common_name = "Northern Cardinal",
+      sci_name = "Cardinalis cardinalis",
+      count = 0L
+    )
+
+  logger::log_info(
+    "Deviation: Adding observation for {add$year} {add$route} {add$stop_num}"
+  )
+
+  dplyr::bind_rows(ebird, add)
+}
+
 #' A basic set of import integrity checks
 #' These do not check the validity of the data.
 #' @param dt ebird data.frame
@@ -250,8 +292,7 @@ ebird_import_checks <- function(dt) {
         dplyr::pull(.data$desc)
 
       if (any(x$flag)) {
-        logger::log_warn("The following route/years don't have either 1 or 20 checklists:")
-        logger::log_warn("* {problems}")
+        logger::log_warn("{problems}: did not have 1 or 20 checklists:")
       }
     })()
 
@@ -267,5 +308,6 @@ get_ebird_data <- function() {
   load_ebird_data() |>
     filter_ebird_data() |>
     transform_ebird_data() |>
+    handle_deviations(deviations = get_deviations()) |>
     ebird_import_checks()
 }
