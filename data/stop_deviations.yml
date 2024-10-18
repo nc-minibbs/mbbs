@@ -25,7 +25,7 @@
   county : orange
   route : 2
   stops_nobirds : []
-  # reasons?
+  # The stops were missed for construction blocking the road 
   stops_skipped : [2, 3, 4]
 
 - date : 2023-05-20
