@@ -1,0 +1,48 @@
+# Sometimes stop-level data is missing when in fact route was surveyed
+# and stop-level data was collected for the rest of the route.
+# This file tracks these such deviations.
+#
+# Deviations could be for 2 reasons:
+#
+# 1) stops_skipped:
+#    The observer(s) were unable to access the stop(s) 
+#    for safety or other reasons.
+#    In this case, we do not know the bird count.
+# 2) stops_nobirds
+#    The stop(s) were in fact observed, 
+#    but no birds were seen.
+#    The eBird download does not contain the empty checklist.
+#    In this case, we do know the count of all species is 0.
+
+- date : 2021-05-16
+  county : orange
+  route : 8
+  # https://ebird.org/checklist/S88387941
+  stops_nobirds : [1]
+  stops_skipped : []
+
+- date : 2022-05-18
+  county : orange
+  route : 2
+  stops_nobirds : []
+  # The stops were missed for construction blocking the road 
+  stops_skipped : [2, 3, 4]
+
+- date : 2023-05-20
+  county : orange
+  route : 8
+  # https://ebird.org/checklist/S138614693
+  stops_nobirds : [1]
+  stops_skipped : []
+
+- date : 2023-06-25
+  county : chatham
+  route : 3
+  stops_nobirds : [12]
+  stops_skipped : []
+
+- date : 2024-06-09
+  county : chatham
+  route : 3
+  stops_nobirds : [12]
+  stops_skipped : []
