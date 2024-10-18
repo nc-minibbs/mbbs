@@ -151,7 +151,7 @@ filter_ebird_data <- function(ebird) {
 #' @param count character vector of ebird counts
 parse_count <- function(count) {
   logger::log_info(
-    glue::glue("{n} observations indicated count as \"X\" and were set to count of 1",
+    glue::glue("{n} observations had count of \"X\" and were set to count of 1",
       n = sum(count == "X")
     )
   )
