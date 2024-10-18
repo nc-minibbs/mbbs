@@ -31,7 +31,6 @@ and explained in more detail below.
 These checklists are downloaded manually as CSV files.
 Prior to 2022, checklists were submitted at the route-level.
 
-
 [`historical`](#historical) [![info on historical data](../resources/img/info-16x16.svg)](#historical)
 : Checklists scraped from the old MBBS site
 or files provided by Haven Wiley.
@@ -110,6 +109,22 @@ from each of the mbbs ebird accounts:
 `mbbsdurhamnc`,
 and `mbbschathamnc`.
 Files are stored in `data/ebird/`.
+
+Sometimes stop-level data is missing when in fact route was surveyed
+and stop-level data was collected for the rest of the route.
+The `stop_deviations.yml` file tracks these such deviations.
+Deviations could be for 2 reasons:
+
+1. The observer(s) were unable to access the stop(s)
+   for safety or other reasons.
+   In this case, we do not know the bird count,
+   and no data for these stop is available.
+2. The stop(s) were in fact observed,
+   but no birds were seen.
+   In this case, there is an eBird submission,
+   but the eBird export does not include the empty checklist.s
+   In this case, we do know the count of all species is 0,
+   and we add observations of 0 counts for these stops.
 
 ### `historical`
 
