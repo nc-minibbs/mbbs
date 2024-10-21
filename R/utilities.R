@@ -36,7 +36,8 @@ valid_date_range <- function(x) {
     .x = yrs,
     .f = ~ lubridate::interval(
       lubridate::ymd(paste0(.x, "-05-15")),
-      lubridate::ymd(paste0(.x, "-06-30")))
+      lubridate::ymd(paste0(.x, "-06-30"))
+    )
   )
   x %within% ranges
 }

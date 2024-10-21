@@ -294,7 +294,7 @@ ebird_import_checks <- function(dt) {
         logger::log_warn("{problems$desc} had {problems$n} checklists, not 1 or 20 checklists.")
       }
     })()
-  
+
   # Check for duplicate submissions (> 1 submission in year)
   dt |>
     dplyr::group_by(
