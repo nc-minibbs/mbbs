@@ -259,6 +259,7 @@ handle_deviations <- function(ebird, deviations) {
 #' @param dt ebird data.frame
 #' @importFrom glue glue
 #' @importFrom dplyr distinct summarise mutate group_by pull filter
+#' @include utilities.R
 #' @keywords internal
 ebird_import_checks <- function(dt) {
   # Check for missing values where there shouldn't be.
@@ -275,10 +276,9 @@ ebird_import_checks <- function(dt) {
   # Check that routes have exactly 1 or 20 submissions.
   dt |>
     dplyr::distinct(
-      .data$year, .data$county, .data$route_num,
-      .data$stop_num
+      .data$year, .data$route, .data$stop_num
     ) |>
-    dplyr::group_by(.data$year, .data$county, .data$route_num) |>
+    dplyr::group_by(.data$year, .data$route) |>
     dplyr::summarise(
       n = dplyr::n(),
       flag = !(.data$n %in% c(1, 20))
@@ -287,13 +287,44 @@ ebird_import_checks <- function(dt) {
       problems <-
         x[x$flag, ] |>
         dplyr::mutate(
-          desc = glue::glue("{county}, {year}, {route_num}")
+          desc = glue::glue("{route}, {year}")
+        )
+
+      if (any(x$flag)) {
+        logger::log_warn("{problems$desc} had {problems$n} checklists, not 1 or 20 checklists.")
+      }
+    })()
+
+  # Check for duplicate submissions (> 1 submission in year)
+  dt |>
+    dplyr::group_by(
+      .data$year, .data$route, .data$stop_num, .data$common_name
+    ) |>
+    dplyr::summarise(
+      n = dplyr::n(),
+      flag = n > 1
+    ) |>
+    (\(x) {
+      problems <-
+        x[x$flag, ] |>
+        dplyr::mutate(
+          desc = glue::glue("{route}-{stop_num}, {year}, {common_name}")
         ) |>
         dplyr::pull(.data$desc)
 
       if (any(x$flag)) {
-        logger::log_warn("{problems}: did not have 1 or 20 checklists:")
+        logger::log_warn("{problems}: add more than 1 submission")
       }
+    })()
+
+  # Check that submissions are within date range
+  dt |>
+    dplyr::distinct(
+      .data$submission, .data$date
+    ) |>
+    dplyr::filter(!(valid_date_range(date))) |>
+    (\(x) {
+      logger::log_error("{x$submission}: {x$date} is outside study dates")
     })()
 
   dt
