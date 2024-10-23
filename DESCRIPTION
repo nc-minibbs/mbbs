@@ -43,4 +43,3 @@ Collate:
     'stop-level_transcribed.R'
     'survey-events.R'
     'taxonomy.R'
-    'validate_data.R'
