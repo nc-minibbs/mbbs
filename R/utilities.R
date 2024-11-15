@@ -51,4 +51,5 @@ habitat_codes <- c(
   "P",
   "S",
   "O",
-  "W")
+  "W"
+)
