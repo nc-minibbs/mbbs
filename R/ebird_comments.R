@@ -103,25 +103,13 @@ postprocess_comments <- \(x) {
   purrr::map_dfr(x, tibble::as_tibble_row)
 }
 
+#'
+#' @include utilities.R
 parse_habitat_stop_level <- \(submission, x) {
-
-  if(nchar(x) == 2){
-    return(L = c(substr(x, 1, 1), R = substr(x , 2 , 2)))
-  }
-
   x |>
-    stringr::str_split_1(",") |>
-    (\(x) {
-      if (length(x) != 2) {
-        logger::log_error(
-          "{submission} does not have 2 habitats recorded"
-        )
-        # in this case set to error
-        x <- "error"
-      }
-      trimws(x)
-    })()
-    
+    toupper() |>
+    stringr::str_extract_all(habitat_codes) |>
+    unique()
 }
 
 parse_habitat_route_level <- \(submission, x) {

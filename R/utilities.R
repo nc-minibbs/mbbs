@@ -41,3 +41,14 @@ valid_date_range <- function(x) {
   )
   x %within% ranges
 }
+
+#'
+
+habitat_codes <- c(
+  "B",
+  "H",
+  "M",
+  "P",
+  "S",
+  "O",
+  "W")
