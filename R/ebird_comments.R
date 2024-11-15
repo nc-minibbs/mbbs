@@ -52,8 +52,8 @@ comment_spec <- list(
     default = list(NA_character_)
   ),
   vehicles = list(
-    field = "^([Vv]ehicle(s)?|[Vv]|[Cc]ars|TOTAL VEHICLES PASSING)\\s{0,5}==",
-    data = "[\\d]",
+    field = "^([Vv]ehicle(s)?|[Vv]|[Cc]ars|vehicles passing|TOTAL VEHICLES PASSING)\\s{0,5}==",
+    data = "[\\d]{1,3}",
     post = as.integer,
     default = NA_integer_
   ),
@@ -101,6 +101,61 @@ parse_comments <- \(x) {
 #' @param x list of list(vehicle, ...) obtained after `parse_comments`
 postprocess_comments <- \(x) {
   purrr::map_dfr(x, tibble::as_tibble_row)
+}
+
+parse_habitat_stop_level <- \(submission, x) {
+
+  if(nchar(x) == 2){
+    return(L = c(substr(x, 1, 1), R = substr(x , 2 , 2)))
+  }
+
+  x |>
+    stringr::str_split_1(",") |>
+    (\(x) {
+      if (length(x) != 2) {
+        logger::log_error(
+          "{submission} does not have 2 habitats recorded"
+        )
+        # in this case set to error
+        x <- "error"
+      }
+      trimws(x)
+    })()
+    
+}
+
+parse_habitat_route_level <- \(submission, x) {
+  x |>
+    stringr::str_split_1(" ") |>
+    trimws()
+    # |>
+    # (\(x) {
+    #   if (length(x) != 20) {
+    #     logger::log_error(
+    #       "{submission} does not have 20 habitats recorded"
+    #     )
+    #     # in this case set to error
+    #     x <- "error"
+    #   }
+    #   trimws(x)
+    # })()
+}
+
+#'
+parse_habitat <- \(submission, stop_num, habitat) {
+  purrr::pmap(
+    .l = list(s = submission, stop = stop_num, habitat = habitat),
+    .f = \(s, stop, habitat) {
+      if (is.na(habitat) || habitat == "no changes") { return(habitat) }
+
+      `if`(is.na(stop),
+           parse_habitat_route_level(submission = s, x = habitat),
+           `if`(stop == 1 && nchar(habitat) > 10,
+                parse_habitat_route_level(submission = s, x = habitat),
+                parse_habitat_stop_level(submission = s, x = habitat)
+           ))
+    }
+  )
 }
 
 #' Full workflow for processing comments
