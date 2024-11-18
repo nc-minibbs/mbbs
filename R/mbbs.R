@@ -2,9 +2,12 @@
 # Functions for collating the MBBS datasets
 #------------------------------------------------------------------------------#
 
-#' Create the stop level dataset
+#' Create the stop level dataset (initial step)
 #'
-create_stop_level_0 <- function(ebird, taxonomy, config = config) {
+#' @param ebird ebird dataset resulting from `get_ebird_data`
+#' @param taxonomy taxonomy dataset
+#' @param config mbbs configuration
+create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
   stop_ebird <- ebird |>
     dplyr::filter(!is.na(stop_num)) |>
     dplyr::select(year, route, stop_num, common_name, sci_name, count, county, route_num)
@@ -55,8 +58,11 @@ create_stop_level_0 <- function(ebird, taxonomy, config = config) {
     })()
 }
 
-create_stop_level <- function(ebird, taxonomy, config = config) {
-  df <- create_stop_level_0(ebird, taxonomy, config = config)
+#' Main function to create stop level count dataset
+#'
+#' @inheritParams create_stop_level_0
+create_stop_level_counts <- function(ebird, taxonomy, config = config) {
+  df <- create_stop_level_counts_0(ebird, taxonomy, config = config)
 
   yrs_in <- dplyr::distinct(df, year, route, stop_num) |>
     arrange(year, route, stop_num)
@@ -94,9 +100,11 @@ create_stop_level <- function(ebird, taxonomy, config = config) {
     })()
 }
 
-#' Create the route level dataset
+#' Create the route level dataset (initial step)
 #'
-create_route_level_0 <- function(ebird, stop_level_data, taxonomy, config = config) {
+#' @param stop_level_data result of `create_stop_level`
+#' @inheritParams create_stop_level_0
+create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config = config) {
   logger::log_trace("Computing route level data from stop level")
   stop_to_route <- stop_level_data |>
     group_by(year, county, route, route_num, common_name, sci_name) |>
@@ -146,8 +154,8 @@ create_route_level_0 <- function(ebird, stop_level_data, taxonomy, config = conf
         })()
     })()
 
-
   logger::log_trace("Combining route level data.")
+
   dplyr::bind_rows(
     historical |> mutate(source = "historical"),
     stop_to_route |> mutate(source = "stop-level"),
@@ -155,8 +163,11 @@ create_route_level_0 <- function(ebird, stop_level_data, taxonomy, config = conf
   )
 }
 
-create_route_level <- function(ebird, stop_level_data, taxonomy, config = config) {
-  df <- create_route_level_0(ebird, stop_level_data, taxonomy, config)
+#' Main function to create route level count dataset
+#' 
+#' @inheritParams create_route_level_0
+create_route_level_counts <- function(ebird, stop_level_data, taxonomy, config = config) {
+  df <- create_route_level_counts_0(ebird, stop_level_data, taxonomy, config)
 
   yrs_in <- dplyr::distinct(df, year, route) |> arrange(year, route)
 
@@ -191,6 +202,24 @@ create_route_level <- function(ebird, stop_level_data, taxonomy, config = config
     })()
 }
 
+#' Create the MBBS "covariate" data
+create_habitat <- function(ebird, config) {
+
+  hold <- process_ebird_comments(ebird)
+
+  habitat <- hold |>
+    filter(purrr::map_lgl(habitat, ~ !is.null(.x$result))) |>
+    dplyr::select(year, route, stop_num, habitat) |>
+    dplyr::mutate(
+      source = "ebird",
+      habitat = purrr::map(habitat, ~ .x$result)
+    )
+
+  list(
+    habitat = habitat
+  )
+}
+
 #' Create the MBBS datasets
 #'
 #' @export
@@ -198,8 +227,8 @@ create_mbbs_counts <- function(config) {
   taxonomy <- get_ebird_taxonomy()
   ebird <- get_ebird_data()
 
-  stop_level <- create_stop_level(ebird, taxonomy, config)
-  route_level <- create_route_level(ebird, stop_level, taxonomy, config)
+  stop_level <- create_stop_level_counts(ebird, taxonomy, config)
+  route_level <- create_route_level_counts(ebird, stop_level, taxonomy, config)
 
   list(
     stop_level  = stop_level,
@@ -226,7 +255,7 @@ conform_taxonomy <- function(df, taxonomy) {
     (\(x){
       assertthat::assert_that(
         nrow(df) == nrow(x),
-        msg = "Conforming taxonomy lost data. This is bad."
+        msg = "Data was lost when conforming taxonomy This is bad."
       )
       x
     })()

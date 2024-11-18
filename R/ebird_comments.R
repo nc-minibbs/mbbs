@@ -97,36 +97,54 @@ parse_comments <- \(x) {
   purrr::map(x, parse_single_comment)
 }
 
-#' PostProcess comments
-#' @param x list of list(vehicle, ...) obtained after `parse_comments`
-postprocess_comments <- \(x) {
-  purrr::map_dfr(x, tibble::as_tibble_row)
-}
-
-#'
+#' Parse habitat comments from stop-level submissions
+#' 
+#' @param submission vector of ebird submission ids
+#' @param habitat character vector of habitat extracted
+#'                from `preprocess_comments`
 #' @include utilities.R
 parse_habitat_stop_level <- \(submission, habitat) {
   habitat |>
-    toupper() |>
-    stringr::str_extract_all(habitat_codes) |>
-    unlist() |>
-    unique()
+    (\(x) {
+
+      if (stringr::str_detect(x, ",|B|H|M|P|S|O|W", negate = TRUE)) {
+        logger::log_error(
+          "{submission}: habitat comment has characters other than habitat codes."
+        )
+        return(list(error = habitat, result = NULL))
+      }
+      x |>
+        toupper() |>
+        # TODO: make less fragile
+        # If a habitat comment has words that contains one of the habitat codes,
+        # then the following extraction may erroreously include characters
+        # from these words.
+        stringr::str_extract_all(habitat_codes) |>
+        unlist() |>
+        unique() |>
+        paste0(collapse = "") |>
+        (\(x) {
+          list(error = NULL, result = x)
+        })()
+    })()
 }
 
+#' Parse habitat comments from route-level submissions
 #'
+#' @inheritParams parse_habitat_stop_level
+#' @importFrom stringr str_split_1 str_extract_all
 parse_habitat_route_level <- \(submission, habitat) {
   habitat |>
     # Extract all number followed by habitat code
-    str_extract_all("\\d+|B|H|M|P|S|O|W") |>
+    stringr::str_extract_all("\\d+|B|H|M|P|S|O|W") |>
     # Concatenate them all
     unlist() |> paste0(collapse = "") |>
     # Split at the (stop) numbers
-    str_split_1("\\d+") |>
+    stringr::str_split_1("\\d+") |>
     # Remove empty strings
     (\(x) x[ x != ""])() |>
     (\(x) {
       if(length(x) != 20) {
-        # print(habitat)
         logger::log_error(
           "{submission}: habitat comments do not parse to 20 stops"
         )
@@ -135,7 +153,10 @@ parse_habitat_route_level <- \(submission, habitat) {
       out <-
         vapply(
             x,
-            FUN = \(x) { paste0(str_unique(str_split_1(x, "")), collapse = "") },
+            FUN = \(x) { 
+              paste0(stringr::str_unique(stringr::str_split_1(x, "")),
+                     collapse = "")
+            },
             FUN.VALUE = character(1),
             USE.NAMES = FALSE)
 
@@ -143,19 +164,27 @@ parse_habitat_route_level <- \(submission, habitat) {
     })()
 }
 
+#' Parse habitat comments
 #'
+#' @param stop_num vector of stop numbers
+#' @inheritParams parse_habitat_stop_level
 parse_habitat <- \(submission, stop_num, habitat) {
   purrr::pmap(
     .l = list(s = submission, stop = stop_num, habitat = habitat),
     .f = \(s, stop, habitat) {
-      if (is.na(habitat) || habitat %in% c("no change", "no changes", "unchanged")) {
-        return(habitat)
+      if (is.na(habitat)) {
+        return(list(error = NULL, result = "no habitat recorded"))
+      } else if (habitat %in% c("no change", "no changes", "unchanged")) {
+        return(list(error = NULL, result = "no change"))
       }
 
       `if`(
         is.na(stop),
         parse_habitat_route_level(submission = s, habitat = habitat),
         `if`(
+          ## TODO: make less FRAGILE!
+          ## The `if` statement is meant to handle the case where
+          ## observers put habitat for all stops in the stop 1 submission.
           stop == 1 && nchar(habitat) > 10,
           parse_habitat_route_level(submission = s, habitat = habitat),
           parse_habitat_stop_level(submission = s, habitat = habitat)
@@ -165,12 +194,18 @@ parse_habitat <- \(submission, stop_num, habitat) {
   )
 }
 
+#' PostProcess comments
+#' @param x list of list(vehicle, ...) obtained after `parse_comments`
+postprocess_comments <- \(x) {
+  purrr::map_dfr(x, tibble::as_tibble_row)
+}
+
 #' Full workflow for processing comments
 #' @param ebird a `data.frame` of imported eBird counts
 #' @importFrom dplyr distinct mutate select distinct
 #' @return a `data.frame` with one row per submission ID in `ebird`
 #' @export
-comment_workflow <- function(ebird) {
+process_ebird_comments <- function(ebird) {
   ebird |>
     dplyr::distinct(submission, year, route, stop_num, comments) |>
     dplyr::mutate(
@@ -178,5 +213,8 @@ comment_workflow <- function(ebird) {
         preprocess_comments() |>
         parse_comments() |>
         postprocess_comments()
-    )
+    ) |>
+   dplyr::mutate(
+     habitat = parse_habitat(submission, stop_num, habitat)
+   )
 }
