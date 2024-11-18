@@ -105,28 +105,41 @@ postprocess_comments <- \(x) {
 
 #'
 #' @include utilities.R
-parse_habitat_stop_level <- \(submission, x) {
-  x |>
+parse_habitat_stop_level <- \(submission, habitat) {
+  habitat |>
     toupper() |>
     stringr::str_extract_all(habitat_codes) |>
+    unlist() |>
     unique()
 }
 
-parse_habitat_route_level <- \(submission, x) {
-  x |>
-    stringr::str_split_1(" ") |>
-    trimws()
-  # |>
-  # (\(x) {
-  #   if (length(x) != 20) {
-  #     logger::log_error(
-  #       "{submission} does not have 20 habitats recorded"
-  #     )
-  #     # in this case set to error
-  #     x <- "error"
-  #   }
-  #   trimws(x)
-  # })()
+parse_habitat_route_level <- \(submission, habitat) {
+  habitat |>
+    # Extract all number followed by habitat code
+    str_extract_all("\\d+|B|H|M|P|S|O|W") |>
+    # Concatenate them all
+    unlist() |> paste0(collapse = "") |>
+    # Split at the (stop) numbers
+    str_split_1("\\d+") |>
+    # Remove empty strings
+    (\(x) x[ x != ""])() |>
+    (\(x) {
+      if(length(x) != 20) {
+        print(habitat)
+        logger::log_error(
+          "{submission}: habitat comments do not parse to 20 stops"
+        )
+        return(list(error  = x, result = NULL))
+      }
+      out <-
+        vapply(
+            x,
+            FUN = \(x) { paste0(str_unique(str_split_1(x, "")), collapse = "") },
+            FUN.VALUE = character(1),
+            USE.NAMES = FALSE)
+
+      list(error = NULL, result = out)
+    })()
 }
 
 #'
@@ -134,17 +147,17 @@ parse_habitat <- \(submission, stop_num, habitat) {
   purrr::pmap(
     .l = list(s = submission, stop = stop_num, habitat = habitat),
     .f = \(s, stop, habitat) {
-      if (is.na(habitat) || habitat == "no changes") {
+      if (is.na(habitat) || habitat %in% c("no change", "no changes", "unchanged")) {
         return(habitat)
       }
 
       `if`(
         is.na(stop),
-        parse_habitat_route_level(submission = s, x = habitat),
+        parse_habitat_route_level(submission = s, habitat = habitat),
         `if`(
           stop == 1 && nchar(habitat) > 10,
-          parse_habitat_route_level(submission = s, x = habitat),
-          parse_habitat_stop_level(submission = s, x = habitat)
+          parse_habitat_route_level(submission = s, habitat = habitat),
+          parse_habitat_stop_level(submission = s, habitat = habitat)
         )
       )
     }
