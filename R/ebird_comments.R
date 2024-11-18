@@ -113,6 +113,7 @@ parse_habitat_stop_level <- \(submission, habitat) {
     unique()
 }
 
+#'
 parse_habitat_route_level <- \(submission, habitat) {
   habitat |>
     # Extract all number followed by habitat code
@@ -125,7 +126,7 @@ parse_habitat_route_level <- \(submission, habitat) {
     (\(x) x[ x != ""])() |>
     (\(x) {
       if(length(x) != 20) {
-        print(habitat)
+        # print(habitat)
         logger::log_error(
           "{submission}: habitat comments do not parse to 20 stops"
         )
