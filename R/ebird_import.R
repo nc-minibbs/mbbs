@@ -285,7 +285,7 @@ ebird_import_checks <- function(dt) {
     dplyr::filter(flag) |>
     (\(x) {
       if (any(x$flag)) {
-       logger::log_error("{x$submission} ({x$year}/{x$route}) is missing stop number")
+        logger::log_error("{x$submission} ({x$year}/{x$route}) is missing stop number")
       }
     })()
 

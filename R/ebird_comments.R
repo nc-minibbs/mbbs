@@ -98,7 +98,7 @@ parse_comments <- \(x) {
 }
 
 #' Parse habitat comments from stop-level submissions
-#' 
+#'
 #' @param submission vector of ebird submission ids
 #' @param habitat character vector of habitat extracted
 #'                from `preprocess_comments`
@@ -106,7 +106,6 @@ parse_comments <- \(x) {
 parse_habitat_stop_level <- \(submission, habitat) {
   habitat |>
     (\(x) {
-
       if (stringr::str_detect(x, ",|B|H|M|P|S|O|W", negate = TRUE)) {
         logger::log_error(
           "{submission}: habitat comment has characters other than habitat codes."
@@ -138,27 +137,30 @@ parse_habitat_route_level <- \(submission, habitat) {
     # Extract all number followed by habitat code
     stringr::str_extract_all("\\d+|B|H|M|P|S|O|W") |>
     # Concatenate them all
-    unlist() |> paste0(collapse = "") |>
+    unlist() |>
+    paste0(collapse = "") |>
     # Split at the (stop) numbers
     stringr::str_split_1("\\d+") |>
     # Remove empty strings
-    (\(x) x[ x != ""])() |>
+    (\(x) x[x != ""])() |>
     (\(x) {
-      if(length(x) != 20) {
+      if (length(x) != 20) {
         logger::log_error(
           "{submission}: habitat comments do not parse to 20 stops"
         )
-        return(list(error  = x, result = NULL))
+        return(list(error = x, result = NULL))
       }
       out <-
         vapply(
-            x,
-            FUN = \(x) { 
-              paste0(stringr::str_unique(stringr::str_split_1(x, "")),
-                     collapse = "")
-            },
-            FUN.VALUE = character(1),
-            USE.NAMES = FALSE)
+          x,
+          FUN = \(x) {
+            paste0(stringr::str_unique(stringr::str_split_1(x, "")),
+              collapse = ""
+            )
+          },
+          FUN.VALUE = character(1),
+          USE.NAMES = FALSE
+        )
 
       list(error = NULL, result = out)
     })()
@@ -214,7 +216,7 @@ process_ebird_comments <- function(ebird) {
         parse_comments() |>
         postprocess_comments()
     ) |>
-   dplyr::mutate(
-     habitat = parse_habitat(submission, stop_num, habitat)
-   )
+    dplyr::mutate(
+      habitat = parse_habitat(submission, stop_num, habitat)
+    )
 }

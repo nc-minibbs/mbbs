@@ -164,7 +164,7 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
 }
 
 #' Main function to create route level count dataset
-#' 
+#'
 #' @inheritParams create_route_level_0
 create_route_level_counts <- function(ebird, stop_level_data, taxonomy, config = config) {
   df <- create_route_level_counts_0(ebird, stop_level_data, taxonomy, config)
@@ -204,7 +204,6 @@ create_route_level_counts <- function(ebird, stop_level_data, taxonomy, config =
 
 #' Create the MBBS "covariate" data
 create_habitat <- function(ebird, config) {
-
   hold <- process_ebird_comments(ebird)
 
   habitat <- hold |>
