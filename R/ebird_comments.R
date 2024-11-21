@@ -134,7 +134,7 @@ parse_habitat_stop_level <- \(submission, habitat) {
 #' @importFrom stringr str_split_1 str_extract_all
 parse_habitat_route_level <- \(submission, habitat) {
   habitat |>
-    # Extract all number followed by habitat code
+    # Extract all numbers followed by habitat code
     stringr::str_extract_all("\\d+|B|H|M|P|S|O|W") |>
     # Concatenate them all
     unlist() |>
@@ -167,6 +167,10 @@ parse_habitat_route_level <- \(submission, habitat) {
 }
 
 #' Parse habitat comments
+#' 
+#' NOTE: This function collapses the left/right distinction
+#'       that may be present in the habitat comment
+#'       into a single habitat code.
 #'
 #' @param stop_num vector of stop numbers
 #' @inheritParams parse_habitat_stop_level
