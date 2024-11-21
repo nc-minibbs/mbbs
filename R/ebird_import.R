@@ -273,7 +273,7 @@ ebird_import_checks <- function(dt) {
     }
   )
 
- # Check that submissions after 2022 have stop num
+  # Check that submissions after 2022 have stop num
   dt |>
     dplyr::filter(year > 2022) |>
     dplyr::distinct(
