@@ -52,8 +52,8 @@ comment_spec <- list(
     default = list(NA_character_)
   ),
   vehicles = list(
-    field = "^([Vv]ehicle(s)?|[Vv]|[Cc]ars|TOTAL VEHICLES PASSING)\\s{0,5}==",
-    data = "[\\d]",
+    field = "^([Vv]ehicle(s)?|[Vv]|[Cc]ars|vehicles passing|TOTAL VEHICLES PASSING)\\s{0,5}==",
+    data = "[\\d]{1,3}",
     post = as.integer,
     default = NA_integer_
   ),
