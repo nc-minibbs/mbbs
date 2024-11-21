@@ -273,6 +273,22 @@ ebird_import_checks <- function(dt) {
     }
   )
 
+ # Check that submissions after 2022 have stop num
+  dt |>
+    dplyr::filter(year > 2022) |>
+    dplyr::distinct(
+      .data$submission, .data$year, .data$route, .data$stop_num
+    ) |>
+    dplyr::mutate(
+      flag = is.na(.data$stop_num)
+    ) |>
+    dplyr::filter(flag) |>
+    (\(x) {
+      if (any(x$flag)) {
+        logger::log_error("{x$submission} ({x$year}/{x$route}) is missing stop number")
+      }
+    })()
+
   # Check that routes have exactly 1 or 20 submissions.
   dt |>
     dplyr::distinct(
@@ -313,7 +329,7 @@ ebird_import_checks <- function(dt) {
         dplyr::pull(.data$desc)
 
       if (any(x$flag)) {
-        logger::log_warn("{problems}: add more than 1 submission")
+        logger::log_warn("{problems}: had more than 1 submission")
       }
     })()
 
