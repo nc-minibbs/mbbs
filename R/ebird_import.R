@@ -330,7 +330,7 @@ ebird_import_checks <- function(dt) {
         dplyr::pull(.data$desc)
 
       if (any(x$flag)) {
-        logger::log_warn("{problems}: add more than 1 submission")
+        logger::log_warn("{problems}: had more than 1 submission")
       }
     })()
 
