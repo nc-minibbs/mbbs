@@ -167,7 +167,7 @@ parse_habitat_route_level <- \(submission, habitat) {
 }
 
 #' Parse habitat comments
-#' 
+#'
 #' NOTE: This function collapses the left/right distinction
 #'       that may be present in the habitat comment
 #'       into a single habitat code.
