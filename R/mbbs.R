@@ -144,7 +144,8 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
         paste(
           "Comparing {nrow(x)}",
           "stop-to-route observations with ebird (without stops)"
-        ))
+        )
+      )
       x
     })() |>
     dplyr::filter(diff != 0) |>
@@ -157,7 +158,6 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
             "but {x$rcount} in the ebird checklist."
           )
         )
-
       }
     })()
 
