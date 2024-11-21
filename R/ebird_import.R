@@ -203,7 +203,27 @@ transform_ebird_data <- function(ebird) {
       route       = make_route_id(county, route_num)
     ) |>
     # Drop location now that county/route_num/stop_num is extractedd
-    dplyr::select(-location)
+    dplyr::select(-location) |>
+    # Handle cases where stripping common name modifier
+    # in parse_common_name creates two records for the same species.
+    # e.g. when a checklist has observations for both
+    # Mallard and Mallard (Domestic type)
+    dplyr::group_by(
+      submission,
+      common_name,
+      sci_name,
+      county,
+      route,
+      route_num,
+      stop_num,
+      date,
+      year,
+      obs_details
+    ) |>
+    dplyr::summarise(
+      count = sum(count)
+    ) |>
+    dplyr::ungroup()
 }
 
 
