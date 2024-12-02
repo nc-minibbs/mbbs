@@ -41,4 +41,3 @@ valid_date_range <- function(x) {
   )
   x %within% ranges
 }
-
