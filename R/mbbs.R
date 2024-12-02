@@ -113,28 +113,11 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
       year, common_name, sci_name, route, route_num, county, count
     )
 
-  logger::log_trace("Getting ebird data without stop-level information")
-  ebird_no_stop <- ebird |>
-    dplyr::filter(is.na(stop_num)) |>
-    select(
-      year, common_name, sci_name, route, route_num, county, count
-    ) |>
-    (\(df) {
-      df |>
-        filter(!(paste(year, route) %in% paste(stop_to_route$year, stop_to_route$route))) |>
-        (\(x) {
-          logger::log_trace(
-            "Removed {nrow(df) - nrow(x)} ebird observations for route/years that were also in stop-level data."
-          )
-          x
-        })()
-    })()
-
   # Compare stop_level and ebird counts
   dplyr::left_join(
     stop_to_route |> dplyr::ungroup() |>
       dplyr::select(common_name, year, route, scount = count),
-    ebird_no_stop |> dplyr::ungroup() |>
+    ebird |> dplyr::filter(is.na(stop_num)) |> dplyr::ungroup() |>
       dplyr::select(common_name, year, route, rcount = count),
     by = c("common_name", "year", "route")
   ) |>
@@ -159,6 +142,23 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
           )
         )
       }
+    })()
+  
+  logger::log_trace("Getting ebird data without stop-level information")
+  ebird_no_stop <- ebird |>
+    dplyr::filter(is.na(stop_num)) |>
+    select(
+      year, common_name, sci_name, route, route_num, county, count
+    ) |>
+    (\(df) {
+      df |>
+        filter(!(paste(year, route) %in% paste(stop_to_route$year, stop_to_route$route))) |>
+        (\(x) {
+          logger::log_trace(
+            "Removed {nrow(df) - nrow(x)} ebird observations for route/years that were also in stop-level data."
+          )
+          x
+        })()
     })()
 
   logger::log_trace("Getting historical data")
@@ -273,3 +273,4 @@ conform_taxonomy <- function(df, taxonomy) {
       x
     })()
 }
+
