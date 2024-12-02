@@ -31,7 +31,7 @@ make_route_id <- function(county, route_num) {
 #' @return a logical vector indicating that the date is between 5/15 and 6/30
 #' @export
 valid_date_range <- function(x) {
-  yrs <- sort(unique((year(x))))
+  yrs <- sort(unique((lubridate::year(x))))
   ranges <- purrr::map(
     .x = yrs,
     .f = ~ lubridate::interval(
@@ -41,3 +41,4 @@ valid_date_range <- function(x) {
   )
   x %within% ranges
 }
+
