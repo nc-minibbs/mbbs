@@ -36,7 +36,7 @@ create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
         !anyNA(df$stop_num),
         msg = "Stop data has NA values in stop_num."
       )
-      
+
       # Check that there are not duplicate entries with different counts
       df |>
         dplyr::group_by(year, route, stop_num, common_name) |>
@@ -56,18 +56,22 @@ create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
             )
           )
         })()
-      
+
       # Log number of duplicate entries with the same count
       df |>
         dplyr::distinct(year, route, stop_num, common_name, count,
-                        .keep_all = TRUE) |>
+          .keep_all = TRUE
+        ) |>
         (\(x) {
           logger::log_trace(
-            paste("Stop-level data contains",
-                  "{nrow(df) - nrow(x)} duplicated observations",
-                  "(same count, different sources)"))
+            paste(
+              "Stop-level data contains",
+              "{nrow(df) - nrow(x)} duplicated observations",
+              "(same count, different sources)"
+            )
+          )
         })()
-      
+
       df
     })()
 }
@@ -82,9 +86,9 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
     arrange(year, route, stop_num)
 
   logger::log_trace("Preliminary stop-level data has {nrow(df)} observations.")
-  
-  #remove duplicated observations
-  
+
+  # remove duplicated observations
+
 
   df |>
     # For each year that a route was run,
@@ -129,39 +133,39 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
     select(
       year, common_name, sci_name, route, route_num, county, count
     )
-  
+
   # Compare stop_level and ebird counts
   dplyr::left_join(
-  stop_to_route |> dplyr::ungroup() |>
-    dplyr::select(common_name, year, route, scount = count),
-  ebird |> dplyr::filter(is.na(stop_num)) |> dplyr::ungroup() |>
-    dplyr::select(common_name, year, route, rcount = count),
-  by = c("common_name", "year", "route")
+    stop_to_route |> dplyr::ungroup() |>
+      dplyr::select(common_name, year, route, scount = count),
+    ebird |> dplyr::filter(is.na(stop_num)) |> dplyr::ungroup() |>
+      dplyr::select(common_name, year, route, rcount = count),
+    by = c("common_name", "year", "route")
   ) |>
-  dplyr::mutate(diff = scount - rcount) |>
-  (\(x) {
-    logger::log_trace(
-      paste(
-        "Comparing {nrow(x)}",
-        "stop-to-route observations with ebird (without stops)"
-      )
-    )
-    x
-  })() |>
-  dplyr::filter(diff != 0) |>
-  (\(x) {
-    if (nrow(x) > 0) {
-      logger::log_warn(
+    dplyr::mutate(diff = scount - rcount) |>
+    (\(x) {
+      logger::log_trace(
         paste(
-          "{x$year}-{x$route} had",
-          "{x$scount} {x$common_name} aggregrated in stop_level",
-          "but {x$rcount} in the ebird checklist."
+          "Comparing {nrow(x)}",
+          "stop-to-route observations with ebird (without stops)"
         )
       )
-    }
-  })()
-  
-  
+      x
+    })() |>
+    dplyr::filter(diff != 0) |>
+    (\(x) {
+      if (nrow(x) > 0) {
+        logger::log_warn(
+          paste(
+            "{x$year}-{x$route} had",
+            "{x$scount} {x$common_name} aggregrated in stop_level",
+            "but {x$rcount} in the ebird checklist."
+          )
+        )
+      }
+    })()
+
+
   logger::log_trace("Getting ebird data without stop-level information")
   ebird_no_stop <- ebird |>
     dplyr::filter(is.na(stop_num)) |>
