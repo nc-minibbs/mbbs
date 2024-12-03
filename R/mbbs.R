@@ -88,7 +88,12 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
   logger::log_trace("Preliminary stop-level data has {nrow(df)} observations.")
 
   # remove duplicated observations
-
+  df <- df |>
+    dplyr::distinct(year, route, stop_num, common_name, count,
+                     .keep_all = TRUE
+    )
+  
+  logger::log_trace("Stop-level duplicated observations removed")
 
   df |>
     # For each year that a route was run,
