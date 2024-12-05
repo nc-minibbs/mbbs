@@ -63,7 +63,7 @@ create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
           .keep_all = TRUE
         ) |>
         (\(x) {
-          logger::log_trace(
+          logger::log_info(
             paste(
               "Stop-level data contains",
               "{nrow(df) - nrow(x)} duplicated observations",
@@ -133,16 +133,16 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
 create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config = config) {
   logger::log_trace("Computing route level data from stop level")
   stop_to_route <- stop_level_data |>
-    group_by(year, county, route, route_num, common_name, sci_name) |>
+    group_by(year, county, route, route_num, common_name, sci_name, source) |>
     summarise(count = sum(count)) |>
     select(
-      year, common_name, sci_name, route, route_num, county, count
+      year, common_name, sci_name, route, route_num, county, count, source
     )
 
   # Compare stop_level and ebird counts
   dplyr::left_join(
     stop_to_route |> dplyr::ungroup() |>
-      dplyr::select(common_name, year, route, scount = count),
+      dplyr::select(common_name, year, route, scount = count, source),
     ebird |> dplyr::filter(is.na(stop_num)) |> dplyr::ungroup() |>
       dplyr::select(common_name, year, route, rcount = count),
     by = c("common_name", "year", "route")
@@ -164,6 +164,7 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
           paste(
             "{x$year}-{x$route} had",
             "{x$scount} {x$common_name} aggregrated in stop_level",
+            "{x$source}",
             "but {x$rcount} in the ebird checklist."
           )
         )
