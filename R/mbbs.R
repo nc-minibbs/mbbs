@@ -113,6 +113,37 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
       year, common_name, sci_name, route, route_num, county, count
     )
 
+  # Compare stop_level and ebird counts
+  dplyr::left_join(
+    stop_to_route |> dplyr::ungroup() |>
+      dplyr::select(common_name, year, route, scount = count),
+    ebird |> dplyr::filter(is.na(stop_num)) |> dplyr::ungroup() |>
+      dplyr::select(common_name, year, route, rcount = count),
+    by = c("common_name", "year", "route")
+  ) |>
+    dplyr::mutate(diff = scount - rcount) |>
+    (\(x) {
+      logger::log_trace(
+        paste(
+          "Comparing {nrow(x)}",
+          "stop-to-route observations with ebird (without stops)"
+        )
+      )
+      x
+    })() |>
+    dplyr::filter(diff != 0) |>
+    (\(x) {
+      if (nrow(x) > 0) {
+        logger::log_warn(
+          paste(
+            "{x$year}-{x$route} had",
+            "{x$scount} {x$common_name} aggregrated in stop_level",
+            "but {x$rcount} in the ebird checklist."
+          )
+        )
+      }
+    })()
+
   logger::log_trace("Getting ebird data without stop-level information")
   ebird_no_stop <- ebird |>
     dplyr::filter(is.na(stop_num)) |>
