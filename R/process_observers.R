@@ -57,7 +57,7 @@ update_observer_table <- function(mbbs_county, selected_county, save = TRUE) {
   # load the main observer conversion table
   observer_table <- read.csv(config$main_observer_conversion_table, header = TRUE)
 
-  # load survey events
+  # load survey list
   survey_list <-
     read.csv(config$survey_list, header = TRUE) %>%
     select(-S, -N, -month, -day)
@@ -262,7 +262,7 @@ confirm_observer_NA <-
         logger::log_error(paste("{na_rows$route}",
                                "{na_rows$year}",
                                "has only NA values for observers and",
-                               "no corrected record in survey_events.",
+                               "no corrected record in survey_list",
                                "Likely source of error: the ebird entry for",
                                "stop 1 is missing observer information."))
         return(TRUE)
