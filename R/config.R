@@ -39,7 +39,7 @@ config <- list(
   ## Files for resolving mismatches in transcribed data
   transcribed_mismatches = "data/stop-level/transcribed/remaining_mistmatches.csv",
   transcribed_paper_list = "data/stop-level/transcribed/mbbs_paper_files_list.csv",
-  
+
   ## Files for handling observer standardizations and survey events
   main_observer_conversion_table = "data/observer/main_observer_conversion_table.csv",
   # the mini table is a typo converter

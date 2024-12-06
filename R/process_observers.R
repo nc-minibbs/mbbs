@@ -10,7 +10,7 @@
 #' @returns mbbs_county
 process_observers <- function(mbbs_county, county) {
   mbbs_county <- mbbs_county %>%
-    observers_extractor() 
+    observers_extractor()
 
   update_observer_table(mbbs_county, county)
   # calling the mini_table update must be done HERE and not within
@@ -52,7 +52,8 @@ save_observer_table <-
 update_observer_table <- function(mbbs_county, selected_county, save = TRUE) {
   # selected county must be one from the mbbs
   assertthat::assert_that(
-    str_detect(selected_county, config$county_pattern))
+    str_detect(selected_county, config$county_pattern)
+  )
 
   # load the main observer conversion table
   observer_table <- read.csv(config$main_observer_conversion_table, header = TRUE)
@@ -211,7 +212,7 @@ observers_extractor <- function(mbbs_county) {
 confirm_observer_NA <-
   function(passed_na_row, mbbs_county, county_observer_table,
            survey_list = read.csv(config$survey_list, header = TRUE)) {
-    #check that only one row has been passed
+    # check that only one row has been passed
     assertthat::assert_that(nrow(passed_na_row) == 1)
 
     # confirm that the passed_na_row passed is an NA, if it's not just return and exit this function
@@ -259,12 +260,14 @@ confirm_observer_NA <-
       # if there are NO rows in the mbbs where this route/year combo
       # has a non-NA observer, flag the error
       if (nrow(non_na_rows) == 0) {
-        logger::log_error(paste("{na_rows$route}",
-                               "{na_rows$year}",
-                               "has only NA values for observers and",
-                               "no corrected record in survey_events.",
-                               "Likely source of error: the ebird entry for",
-                               "stop 1 is missing observer information."))
+        logger::log_error(paste(
+          "{na_rows$route}",
+          "{na_rows$year}",
+          "has only NA values for observers and",
+          "no corrected record in survey_events.",
+          "Likely source of error: the ebird entry for",
+          "stop 1 is missing observer information."
+        ))
         return(TRUE)
       }
       # regardless of if there's an error or not, NA has now been fully evaluated.
@@ -279,20 +282,19 @@ confirm_observer_NA <-
 #' @importFrom stringr str_split_fixed str_detect str_extract str_sub
 #' @importFrom utils write.csv
 #' @param observer_table the main observer conversion table. Taken as an argument so the most recent version (potentially one in progress) can be used.
-#' @param mini_observer_table the mini observer table. Taken as an argument so we can just load it already rather than within the function. 
+#' @param mini_observer_table the mini observer table. Taken as an argument so we can just load it already rather than within the function.
 #' @param save TRUE if the updated table should be saved. Set to FALSE when testing
 #' @returns an updated version of the main observer conversion table
 update_mini_observer_table <- function(
     observer_table = read.csv(config$main_observer_conversion_table, header = TRUE),
     mini_observer_table = read.csv(config$mini_observer_conversion_table, header = TRUE),
     save = TRUE) {
-
   # make new table, get unique obs1, obs2, obs3 - all unique observers
   obs_list <- c(observer_table$obs1, observer_table$obs2, observer_table$obs3)
   obs_list <- unique(obs_list[!is.na(obs_list)])
 
-  # If a name is not yet on the mini_conversion_table 
-  # take input for the output_name 
+  # If a name is not yet on the mini_conversion_table
+  # take input for the output_name
   input_name <- "example"
   output_name <- "example"
   temp_row <- data.frame(input_name, output_name)
@@ -301,14 +303,14 @@ update_mini_observer_table <- function(
       # name is already on the list, do nothing
     } else {
       # name is not already on list, take input for the output name
-      #pull the first letter of the input_name so we can check if anything similar
-      #is already on the mini_table
+      # pull the first letter of the input_name so we can check if anything similar
+      # is already on the mini_table
       first_letter <- (str_sub(obs_list[a], start = 1, end = 1))
       pattern <- paste0("^[", toupper(first_letter), tolower(first_letter), "].*")
-      #extract matches for that first letter from the mini_table
+      # extract matches for that first letter from the mini_table
       letter_matches <- str_extract(mini_observer_table$output_name, pattern)
       letter_matches <- unique(letter_matches[!is.na(letter_matches)])
-      #take input
+      # take input
       print("New observer name needs standardizing for the mini_observer_conversion_table:")
       print(obs_list[a])
       print("Here are all standardized observers with the same first letter:")
@@ -336,9 +338,8 @@ update_mini_observer_table <- function(
 #' @param mini_observer_table the mini_observer_table, has only columns
 #'    'input_name' and 'output name'
 convert_based_on_mini_table <- function(
-    observer_table = read.csv(config$main_observer_conversion_table, header = TRUE), 
+    observer_table = read.csv(config$main_observer_conversion_table, header = TRUE),
     mini_observer_table = read.csv(config$mini_observer_conversion_table, header = TRUE)) {
-  
   # convert names to mini_table's output_name (eg, correct typos)
   # and add obs1 obs2 and obs3 to the observer_table
   observer_table <- observer_table %>%
