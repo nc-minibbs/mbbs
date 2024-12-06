@@ -260,13 +260,14 @@ confirm_observer_NA <-
       # if there are NO rows in the mbbs where this route/year combo
       # has a non-NA observer, flag the error
       if (nrow(non_na_rows) == 0) {
-        logger::log_error(paste("{na_rows$route}",
-                               "{na_rows$year}",
-                               "has only NA values for observers and",
-                               "no corrected record in survey_list",
-                               "Likely source of error: the ebird entry for",
-                               "stop 1 is missing observer information."
-          ))
+        logger::log_error(paste(
+          "{na_rows$route}",
+          "{na_rows$year}",
+          "has only NA values for observers and",
+          "no corrected record in survey_list",
+          "Likely source of error: the ebird entry for",
+          "stop 1 is missing observer information."
+        ))
         logger::log_error(paste(
           "{na_rows$route}",
           "{na_rows$year}",
