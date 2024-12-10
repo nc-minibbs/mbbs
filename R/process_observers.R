@@ -10,8 +10,7 @@
 #' @returns mbbs_county
 process_observers <- function(mbbs_county, county) {
   mbbs_county <- mbbs_county %>%
-    observers_extractor() %>%
-    propogate_observers_across_stops()
+    observers_extractor()
 
   update_observer_table(mbbs_county, county)
   # calling the mini_table update must be done HERE and not within
@@ -35,7 +34,7 @@ process_observers <- function(mbbs_county, county) {
 #' @importFrom utils write.csv
 save_observer_table <-
   function(observer_table,
-           file = system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs")) {
+           file = config$main_observer_conversion_table) {
     observer_table %>%
       arrange(mbbs_county, route_num) %>%
       write.csv(file, row.names = FALSE)
@@ -49,18 +48,19 @@ save_observer_table <-
 #' @param save  TRUE if the updated table should be saved. Set to FALSE when testing
 #' @importFrom dplyr filter add_row
 #' @importFrom assertthat assert_that
+#' @importFrom stringr str_detect
 update_observer_table <- function(mbbs_county, selected_county, save = TRUE) {
   # selected county must be one from the mbbs
-  assertthat::assert_that(selected_county == "orange" |
-    selected_county == "durham" |
-    selected_county == "chatham")
+  assertthat::assert_that(
+    str_detect(selected_county, config$county_pattern)
+  )
 
   # load the main observer conversion table
-  observer_table <- read.csv(system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
+  observer_table <- read.csv(config$main_observer_conversion_table, header = TRUE)
 
-  # load survey events
+  # load survey list
   survey_list <-
-    read.csv(system.file("/extdata/survey_list.csv", package = "mbbs"), header = TRUE) %>%
+    read.csv(config$survey_list, header = TRUE) %>%
     select(-S, -N, -month, -day)
 
   # filter the observer conversion table to just the one specified country
@@ -145,11 +145,11 @@ update_observer_table <- function(mbbs_county, selected_county, save = TRUE) {
 standardize_observer_table <- function(save = TRUE) {
   # read in the latest version of the mini table
   mini_observer_table <-
-    read.csv(system.file("/extdata/mini_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
+    read.csv(config$mini_observer_conversion_table, header = TRUE)
 
   # read in the latest version of the main table
   observer_table <-
-    read.csv(system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
+    read.csv(config$main_observer_conversion_table, header = TRUE)
 
   # update the main observer table based on mini table.
   # convert obs1 obs2 and obs3 in the main table to their standardized format
@@ -200,23 +200,6 @@ observers_extractor <- function(mbbs_county) {
 }
 
 
-
-#' Function to add observers to route stops 2:20
-#' @param mbbs_county mbbs data.frame
-#' @importFrom dplyr group_by mutate ungroup
-#' @returns mbbs_county input dataframe with the observer column added to all stops
-propogate_observers_across_stops <- function(mbbs_county) {
-  # group by route and date (all observations on that route, inclusive of stops 1:20 on ebird checklists after 2019) and give all observer columns the same value as whatever column is not NA
-  mbbs_county <- mbbs_county %>%
-    group_by(route_num, date) %>%
-    mutate(observers = observers[!is.na(observers)][1]) %>%
-    ungroup()
-  # will fill in stops 2:20 with checklist comments like v;3 and won't change data from pre-2019 because all the observations on the same route_num and date will already have the same comments/observer columns
-
-  mbbs_county
-}
-
-
 #' Takes an observer/route combo where observer is NA and throws an error if the
 #' survey for that route/year genuinely has no recorded observer either
 #' within the mbbs_county dataframe or on the survey_list
@@ -225,16 +208,16 @@ propogate_observers_across_stops <- function(mbbs_county) {
 #' @param passed_na_row a dataframe with a single route_num and observer
 #' @param mbbs_county an mbbs dataset that's restricted to just one county (as we use route_num which is not distinct between counties)
 #' @param county_observer_table a main_observer_table that has already been filtered to just the relevant county
+#' @param survey_list the simple list of the surveys that have been run and their observers, read in directly during the function call
 confirm_observer_NA <-
-  function(passed_na_row, mbbs_county, county_observer_table) {
+  function(passed_na_row, mbbs_county, county_observer_table,
+           survey_list = read.csv(config$survey_list, header = TRUE)) {
+    # check that only one row has been passed
     assertthat::assert_that(nrow(passed_na_row) == 1)
-
-    # read in survey list
-    survey_list <- read.csv(system.file("/extdata/survey_list.csv", package = "mbbs"), header = TRUE)
 
     # confirm that the passed_na_row passed is an NA, if it's not just return and exit this function
     if (is.na(passed_na_row$observers) == FALSE) {
-      # return("observers not NA") #for testing
+      logger::log_error("observer row passed to confirm_observer_NA that was not NA")
       return(FALSE) # return is correct to use, exit function early.
     }
 
@@ -257,6 +240,7 @@ confirm_observer_NA <-
       # the NA observer seen on this passed_na_row has been corrected elsewhere,
       # it's on the survey_list.
       # return("observers corrected elsewhere") #for testing
+      logger::log_trace("{na_rows$route} {na_rows$year} NA observer corrected elsewhere")
       return(FALSE)
     } else {
       # this NA observer is not already on the survey list. This is likely because
@@ -276,12 +260,21 @@ confirm_observer_NA <-
       # if there are NO rows in the mbbs where this route/year combo
       # has a non-NA observer, flag the error
       if (nrow(non_na_rows) == 0) {
-        print(paste(
-          "ERROR!",
-          na_rows$year,
-          "route",
-          na_rows$route_num,
-          "has only NA values for observers and no corrected record in mbbs_survey_events. Likely source of error: the ebird entry for stop 1 is missing observer information."
+        logger::log_error(paste(
+          "{na_rows$route}",
+          "{na_rows$year}",
+          "has only NA values for observers and",
+          "no corrected record in survey_list",
+          "Likely source of error: the ebird entry for",
+          "stop 1 is missing observer information."
+        ))
+        logger::log_error(paste(
+          "{na_rows$route}",
+          "{na_rows$year}",
+          "has only NA values for observers and",
+          "no corrected record in survey_events.",
+          "Likely source of error: the ebird entry for",
+          "stop 1 is missing observer information."
         ))
         return(TRUE)
       }
@@ -297,20 +290,19 @@ confirm_observer_NA <-
 #' @importFrom stringr str_split_fixed str_detect str_extract str_sub
 #' @importFrom utils write.csv
 #' @param observer_table the main observer conversion table. Taken as an argument so the most recent version (potentially one in progress) can be used.
+#' @param mini_observer_table the mini observer table. Taken as an argument so we can just load it already rather than within the function.
 #' @param save TRUE if the updated table should be saved. Set to FALSE when testing
 #' @returns an updated version of the main observer conversion table
 update_mini_observer_table <- function(
-    observer_table = read.csv(system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs"), header = TRUE),
+    observer_table = read.csv(config$main_observer_conversion_table, header = TRUE),
+    mini_observer_table = read.csv(config$mini_observer_conversion_table, header = TRUE),
     save = TRUE) {
-  # load the mini observer conversion table (for obs1,obs2,obs3)
-  mini_observer_table <-
-    read.csv(system.file("/extdata/mini_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
-
-  # make new table, get unique obs1, obs2, obs3
+  # make new table, get unique obs1, obs2, obs3 - all unique observers
   obs_list <- c(observer_table$obs1, observer_table$obs2, observer_table$obs3)
   obs_list <- unique(obs_list[!is.na(obs_list)])
 
-  # take input for the output_name if it's not yet on the mini_conversion_table
+  # If a name is not yet on the mini_conversion_table
+  # take input for the output_name
   input_name <- "example"
   output_name <- "example"
   temp_row <- data.frame(input_name, output_name)
@@ -319,10 +311,14 @@ update_mini_observer_table <- function(
       # name is already on the list, do nothing
     } else {
       # name is not already on list, take input for the output name
+      # pull the first letter of the input_name so we can check if anything similar
+      # is already on the mini_table
       first_letter <- (str_sub(obs_list[a], start = 1, end = 1))
       pattern <- paste0("^[", toupper(first_letter), tolower(first_letter), "].*")
+      # extract matches for that first letter from the mini_table
       letter_matches <- str_extract(mini_observer_table$output_name, pattern)
       letter_matches <- unique(letter_matches[!is.na(letter_matches)])
+      # take input
       print("New observer name needs standardizing for the mini_observer_conversion_table:")
       print(obs_list[a])
       print("Here are all standardized observers with the same first letter:")
@@ -338,7 +334,7 @@ update_mini_observer_table <- function(
 
   if (save == TRUE) {
     # save mini table
-    write.csv(mini_observer_table, system.file("/extdata/mini_observer_conversion_table.csv", package = "mbbs"), row.names = FALSE)
+    write.csv(mini_observer_table, config$mini_observer_conversion_table, row.names = FALSE)
   }
 }
 
@@ -349,8 +345,11 @@ update_mini_observer_table <- function(
 #' @param observer_table main_observer_table
 #' @param mini_observer_table the mini_observer_table, has only columns
 #'    'input_name' and 'output name'
-convert_based_on_mini_table <- function(observer_table, mini_observer_table) {
-  # add obs1 obs2 and obs3 to the observer_table
+convert_based_on_mini_table <- function(
+    observer_table = read.csv(config$main_observer_conversion_table, header = TRUE),
+    mini_observer_table = read.csv(config$mini_observer_conversion_table, header = TRUE)) {
+  # convert names to mini_table's output_name (eg, correct typos)
+  # and add obs1 obs2 and obs3 to the observer_table
   observer_table <- observer_table %>%
     left_join(mini_observer_table, by = c("obs1" = "input_name")) %>%
     mutate(obs1 = output_name) %>%
@@ -364,200 +363,4 @@ convert_based_on_mini_table <- function(observer_table, mini_observer_table) {
 
   # returns
   observer_table
-}
-
-#' Creates a fixed effect (numeric value) of observer quality, which reflects
-#' (observer's mean on this route - mean richness of years they are not one of the obs1-3)/
-#' (mean richness of years they are not one of the obs1-3) ie:
-#' (x-y)/y
-#' observer_quality = max(obs1_quality, obs2_quality, obs3_quality, na.rm = TRUE)
-#' Corrects for cases where a one-time observer accompanied a more experienced observer
-#' and saw a high number of species in a particularly good year (putting their quality
-#' above that of the more experienced observer)
-#' @importFrom dplyr
-#'  group_by summarize filter ungroup left_join first
-#'  relocate mutate rename select rowwise case_when n
-#' @importFrom tidyr pivot_longer
-#' @param mbbs_survey_events a dataframe with the list of survey events, importantly needs to include information about number of species and the observers for each survey
-get_observer_quality <- function(mbbs_survey_events) {
-  # goal is to create a fixed effect of observer quality
-
-  # table of average n species seen on each route
-  S_average_route <-
-    mbbs_survey_events %>%
-    group_by(mbbs_county, route_num) %>%
-    summarize(
-      route_meanS = mean(S),
-      n_surveys_route = n()
-    ) %>%
-    ungroup()
-
-  # summary of number of mean(S) across routes for each observer,
-  # + n surveys they've done
-  observer_average <- mbbs_survey_events %>%
-    # obs1/obs2/obs3 don't matter now
-    tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>%
-    filter(!is.na(obs)) %>%
-    # group by just how many times the observer has surveyed at all
-    group_by(obs) %>%
-    summarize(
-      obs_meanS = mean(S),
-      n_surveys_obs = n()
-    ) %>%
-    ungroup()
-
-  # Calculate proportion deviation from mean species of other observers
-  # on the route for each observer
-  observer_average_route <-
-    mbbs_survey_events %>%
-    tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>%
-    filter(!is.na(obs)) %>%
-    group_by(mbbs_county, route_num, obs) %>%
-    summarize(
-      obsroute_meanS = mean(S),
-      n_surveys_obsroute = n()
-    ) %>%
-    ungroup() %>%
-    # left join dfs we created above
-    left_join(S_average_route, by = c("mbbs_county", "route_num")) %>%
-    left_join(observer_average, by = c("obs")) %>%
-    relocate(
-      n_surveys_obsroute,
-      n_surveys_obs,
-      .after = "obs_meanS"
-    ) %>%
-    # meanS on route in years not run by that row's observer,
-    # back calculated with means,
-    # essentially
-    # removing the observer's proportion of contribution towards the route_meanS
-    mutate(
-      non_focal_obsroute_meanS =
-        ((route_meanS * n_surveys_route) -
-          (obsroute_meanS * n_surveys_obsroute)) /
-          (n_surveys_route - n_surveys_obsroute)
-    )
-
-  # use all the information we have about an observer to calculate how they do
-  # compared to all other observers on the mbbs.
-  # On each survey they've done, calculate their performance as follows:
-  # (obsroute_year_S(route, year, observer) - non_focal_obsroute_meanS)
-  # / non_focal_obsroute_meanS
-  # If an observer has 5 route_years they've run, they will have 5 rows of data
-  # and each row will contain a comparison score of how well they did that year
-  # on that route
-  # compared to every other year that route has been done by someone else.
-  # To get their total performance or observer quality across all years and routes
-  # group by observer and average their route_year observer qualities.
-  # This method also produces a value where routes the observer has run more
-  # frequently have more impact on their observer quality.
-  # and we have more information about their performance than a single datapoint
-  # for each route they've participated in.
-  observer_year_average_route <-
-    mbbs_survey_events %>%
-    tidyr::pivot_longer(obs1:obs3, values_to = "obs") %>%
-    filter(!is.na(obs)) %>%
-    group_by(mbbs_county, route_num, obs, year) %>%
-    summarize(
-      obsroute_year_S = S
-    ) %>%
-    # left join the above dataframes bc we need some of that info
-    left_join(observer_average_route, by = c("obs", "mbbs_county", "route_num")) %>%
-    mutate( # create comparison score within the route year
-      obs_yr_rt_quality =
-        (obsroute_year_S - non_focal_obsroute_meanS) / non_focal_obsroute_meanS,
-      obs_yr_rt_quality =
-        ifelse(is.nan(obs_yr_rt_quality), 0, obs_yr_rt_quality)
-    )
-
-  # group by observer and take the mean quality from all their route-years
-  # to get the average quality of each observer
-  # proportion of species each observer observes relative
-  # to what other people observe on their route(s)
-  # using data from ALL their years of observations (each route-year combo)
-  # instead of taking the average in each route and then averaging that (prev way)
-  # which (prev way) gave equal influence to a route run once and a route run 15x
-  # in (prev way) determining obs_quality
-  # Interpretation is as follows:
-  # a -0.08 observer quality means that observer on average sees 8% fewer
-  # species on their route(s) compared to the average number of species
-  # seen on their route(s) in years run by other observers
-  observer_quality <-
-    observer_year_average_route %>%
-    group_by(obs) %>%
-    summarize(
-      obs_quality = mean(obs_yr_rt_quality),
-      n_surveys_obs = first(n_surveys_obs)
-    ) %>%
-    ungroup()
-
-  # assign observer_quality based on the performance of the top observer
-  mbbs_survey_events <-
-    mbbs_survey_events %>%
-    # add obs1_deviation
-    left_join(
-      observer_quality,
-      by = c("obs1" = "obs")
-    ) %>%
-    mutate(
-      obs1_quality = obs_quality,
-      obs1_nsurveys = n_surveys_obs
-    ) %>%
-    select(-c(obs_quality, n_surveys_obs)) %>%
-    # add obs2_deviation
-    left_join(observer_quality, by = c("obs2" = "obs")) %>%
-    mutate(
-      obs2_quality = obs_quality,
-      obs2_nsurveys = n_surveys_obs
-    ) %>%
-    select(-c(obs_quality, n_surveys_obs)) %>%
-    # add obs3 deviation
-    left_join(observer_quality, by = c("obs3" = "obs")) %>%
-    mutate(
-      obs3_quality = obs_quality,
-      obs3_nsurveys = n_surveys_obs
-    ) %>%
-    select(-c(obs_quality, n_surveys_obs)) %>%
-    rowwise() %>%
-    # Get the maximum obsquality between obs1, obs2, obs,
-    # and which column it comes from
-    mutate(
-      # observer quality is max btwn the three obs deviations
-      observer_quality =
-        max(obs1_quality, obs2_quality, obs3_quality,
-          na.rm = TRUE
-        ),
-      # record which observer was the best
-      max_qual_observer =
-        which.max(c(obs1_quality, obs2_quality, obs3_quality)),
-      observer_quality = case_when(
-        # if there's only one observer
-        # don't change obs_quality
-        (sum(is.na(c(obs1, obs2, obs3)) == FALSE) == 1) ~ observer_quality,
-        # if obs 1 is the best observer but only has one survey across all routes
-        # take max of obs2 and obs3
-        (max_qual_observer == 1 & obs1_nsurveys == 1) ~ suppressWarnings(max(obs2_quality, obs3_quality, na.rm = TRUE)),
-        # if obs 2 is the best observer but only has one survey across all routes
-        # take max of obs1 and obs3
-        (max_qual_observer == 2 & obs2_nsurveys == 1) ~ suppressWarnings(max(obs1_quality, obs3_quality, na.rm = TRUE)),
-        # if obs 3 is the best observer but only has one survey across all routes
-        # take max of obs1 and obs2
-        (max_qual_observer == 3 & obs3_nsurveys == 1) ~ suppressWarnings(max(obs1_quality, obs2_quality, na.rm = TRUE)),
-        # if none of the other statements are true, leave obs_quality the same
-        TRUE ~ observer_quality
-      )
-    ) %>%
-    ungroup() %>%
-    # assign primary observer and observer ID based on the top observer
-    mutate(primary_observer = case_when(
-      max_qual_observer == 1 ~ obs1,
-      max_qual_observer == 2 ~ obs2,
-      max_qual_observer == 3 ~ obs3
-    )) %>%
-    dplyr::relocate(primary_observer, .before = "obs1") %>%
-    group_by(primary_observer) %>%
-    mutate(observer_ID = cur_group_id()) %>%
-    ungroup()
-
-  # return
-  mbbs_survey_events
 }

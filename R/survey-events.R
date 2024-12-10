@@ -14,7 +14,7 @@
 #' @importFrom utils write.csv
 update_survey_events <- function(path = config$survey_events) {
   # load in survey list
-  survey_list <- read.csv(system.file("/extdata/survey_list.csv", package = "mbbs"), header = TRUE)
+  survey_list <- read.csv(config$survey_list, header = TRUE)
 
   # # load in mbbs, when this function is called in import_data mbbs is newly updated
   # load(file = system.file("data/mbbs.rda", package = "mbbs"))
@@ -46,7 +46,7 @@ update_survey_events <- function(path = config$survey_events) {
     survey_list <-
       rbind(survey_list, new_surveys) %>%
       arrange(mbbs_county, route_num, year)
-    write.csv(survey_list, system.file("/extdata/survey_list.csv", package = "mbbs"), row.names = FALSE)
+    write.csv(survey_list, config$survey_list, row.names = FALSE)
     # print message
     cat(nrow(new_surveys), "surveys have been added to survey_list")
   } else { # report that there were no new surveys
@@ -70,13 +70,13 @@ update_survey_events <- function(path = config$survey_events) {
 
   if (nrow(updated_surveys) > 0) {
     survey_list <- rows_update(survey_list, updated_surveys, by = c("route_num", "year", "mbbs_county"))
-    write.csv(survey_list, system.file("/extdata/survey_list.csv", package = "mbbs"), row.names = FALSE)
+    write.csv(survey_list, config$survey_list, row.names = FALSE)
     cat(nrow(updated_surveys), "surveys updated on survey_list with new 'S' or 'N'")
   }
 
   # load in observer table
   observer_table <-
-    read.csv(system.file("/extdata/main_observer_conversion_table.csv", package = "mbbs"), header = TRUE)
+    read.csv(config$main_observer_conversion_table, header = TRUE)
   # Observer table may be updated several times during a year.
   # So we regenerate and update survey_events
   # even when we don't update(by rbinding new columns to) survey_list.
