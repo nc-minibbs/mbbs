@@ -171,7 +171,6 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
       }
     })()
 
-
   logger::log_trace("Getting ebird data without stop-level information")
   ebird_no_stop <- ebird |>
     dplyr::filter(is.na(stop_num)) |>
