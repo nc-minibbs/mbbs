@@ -247,8 +247,7 @@ stops_to_include <- function(deviations) {
   deviations |>
     purrr::keep(.p = ~ length(.x$stops_nobirds) > 0) |>
     purrr::map_dfr(
-      ~ .x[names(.x)
-      %in% c("year", "date", "county", "route", "stops_nobirds")] |>
+      ~ .x[names(.x) %in% c("year", "date", "county", "route", "stops_nobirds")] |>
         dplyr::as_tibble() |>
         dplyr::rename(
           route_num = route,
