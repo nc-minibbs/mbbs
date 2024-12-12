@@ -2,10 +2,12 @@
 % Please edit documentation in R/ebird_import.R
 \name{transform_ebird_data}
 \alias{transform_ebird_data}
-\title{Transformation of the ebird data}
+\title{Transformation of the ebird data to conform to format
+downstream consumers expect}
 \usage{
 transform_ebird_data(ebird)
 }
 \description{
-Transformation of the ebird data
+Transformation of the ebird data to conform to format
+downstream consumers expect
 }

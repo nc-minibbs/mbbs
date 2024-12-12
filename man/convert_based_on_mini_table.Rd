@@ -5,7 +5,10 @@
 \title{Standardize the names in the obs1, obs2, and obs3 columns
    of the main observer table}
 \usage{
-convert_based_on_mini_table(observer_table, mini_observer_table)
+convert_based_on_mini_table(
+  observer_table = read.csv(config$main_observer_conversion_table, header = TRUE),
+  mini_observer_table = read.csv(config$mini_observer_conversion_table, header = TRUE)
+)
 }
 \arguments{
 \item{observer_table}{main_observer_table}

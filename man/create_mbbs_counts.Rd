@@ -2,10 +2,10 @@
 % Please edit documentation in R/mbbs.R
 \name{create_mbbs_counts}
 \alias{create_mbbs_counts}
-\title{Create the MBBS datasets}
+\title{Create the MBBS count datasets}
 \usage{
-create_mbbs_counts(config)
+create_mbbs_counts(ebird_counts, config)
 }
 \description{
-Create the MBBS datasets
+Create the MBBS count datasets
 }

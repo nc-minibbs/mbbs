@@ -311,20 +311,21 @@ create_mbbs_data <- function(config) {
     arrange(year, route, stop_num)
   
   list(
-    mbbs_stop_counts   = counts$stop_level,
+    mbbs_stops_counts  = counts$stop_level,
     mbbs_route_counts  = counts$route_level,
     comments = comments
   )
 }
 
 #' Write MBBS datasets
+#' 
 #' @export
 write_mbbs_data <- function(config) {
   data <- create_mbbs_data(config)
-
+  dir.create("output")
   purrr::iwalk(
     .x = data,
-    .f = ~ write.csv(.x,  file = paste0(.y, ".csv"), row.names = FALSE)
+    .f = ~ write.csv(.x,  file = paste0("output/", .y, ".csv"), row.names = FALSE)
   )
 }
 

@@ -7,7 +7,7 @@
   Called from import_data after updating the data/mbbs.rda files
   Not part of the process_observers workflow.}
 \usage{
-update_survey_events(path = config$survey_events)
+update_survey_events(path = config$survey_list)
 }
 \description{
 Updates survey_events if needed by rbinding new and updated surveys,
