@@ -70,7 +70,10 @@
           '';
           installPhase = ''
             mkdir -p $out
-            cp -r output/. $out
+            ls -l
+            cp mbbs_stops_counts.csv $out
+            cp mbbs_route_counts.csv $out
+            
           '';
 
         };
