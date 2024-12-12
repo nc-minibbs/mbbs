@@ -10,7 +10,9 @@
 create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
   stop_ebird <- ebird |>
     dplyr::filter(!is.na(stop_num)) |>
-    dplyr::select(year, route, stop_num, common_name, sci_name, count, county, route_num)
+    dplyr::select(year, route, stop_num,
+                  common_name, sci_name, count,
+                  county, route_num)
 
   stop_xls <- get_stop_level_xls_data() |>
     conform_taxonomy(taxonomy)
@@ -20,7 +22,9 @@ create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
     tidyr::unnest(cols = stop_data)
 
   stop_transcribed <- get_stop_level_transcribed() |>
-    select(year, route, stop_num, common_name, sci_name, count, county, route_num, source)
+    select(year, route, stop_num,
+           common_name, sci_name, count,
+           county, route_num, source)
 
   logger::log_trace("Combining stop level data.")
 
@@ -110,7 +114,8 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
       # Check that we didn't add observations for route-stop-years
       # not in the input data.
 
-      yrs_out <- dplyr::distinct(x, year, route, stop_num) |>
+      yrs_out <- 
+        dplyr::distinct(x, year, route, stop_num) |>
         arrange(year, route, stop_num)
 
       assertthat::assert_that(
@@ -120,8 +125,11 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
       )
 
       logger::log_trace(
-        "Completing stop-level data added {nrow(x) - nrow(df)} observations with count of 0."
+        paste("Completing stop-level data added",
+              "{nrow(x) - nrow(df)}",
+              "observations with count of 0.")
       )
+
       x
     })()
 }
@@ -179,10 +187,16 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
     ) |>
     (\(df) {
       df |>
-        filter(!(paste(year, route) %in% paste(stop_to_route$year, stop_to_route$route))) |>
+        filter(
+          !(paste(year, route) 
+            %in% paste(stop_to_route$year, stop_to_route$route))
+        ) |>
         (\(x) {
           logger::log_trace(
-            "Removed {nrow(df) - nrow(x)} ebird observations for route/years that were also in stop-level data."
+            paste(
+              "Removed {nrow(df) - nrow(x)}",
+              "ebird observations for route/years",
+              "that were also in stop-level data.")
           )
           x
         })()
@@ -196,7 +210,10 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
     conform_taxonomy(taxonomy) |>
     (\(df) {
       df |>
-        filter(!(paste(year, route) %in% paste(ebird_no_stop$year, ebird_no_stop$route))) |>
+        filter(
+          !(paste(year, route) 
+            %in% paste(ebird_no_stop$year, ebird_no_stop$route))
+        ) |>
         (\(x) {
           logger::log_trace(
             "Removed {nrow(df) - nrow(x)} historical observations for route/years that were also entered in ebird."
@@ -254,21 +271,25 @@ create_route_level_counts <- function(ebird, stop_level_data, taxonomy, config =
       )
 
       logger::log_trace(
-        "Completing route-level data added {nrow(x) - nrow(df)} observations with count of 0."
+        paste(
+          "Completing route-level data added",
+          "{nrow(x) - nrow(df)}",
+          "observations with count of 0.")
       )
       x
     })()
 }
 
-#' Create the MBBS datasets
+#' Create the MBBS count datasets
 #'
 #' @export
-create_mbbs_counts <- function(config) {
+create_mbbs_counts <- function(ebird_counts, config) {
   taxonomy <- get_ebird_taxonomy()
-  ebird <- get_ebird_data()
 
-  stop_level <- create_stop_level_counts(ebird, taxonomy, config)
-  route_level <- create_route_level_counts(ebird, stop_level, taxonomy, config)
+  stop_level <-
+    create_stop_level_counts(ebird_counts, taxonomy, config)
+  route_level <-
+    create_route_level_counts(ebird_counts, stop_level, taxonomy, config)
 
   list(
     stop_level  = stop_level,
@@ -276,6 +297,37 @@ create_mbbs_counts <- function(config) {
   )
 }
 
+#' Create the MBBS datasets
+#'
+#' @export
+create_mbbs_data <- function(config) {
+  ebird <-  get_ebird_data()
+  counts <- create_mbbs_counts(ebird$counts, config)
+
+  # TODO:
+  # - add back observers
+  comments <- ebird$comments |>
+    select(-observers) |>
+    arrange(year, route, stop_num)
+  
+  list(
+    mbbs_stops_counts  = counts$stop_level,
+    mbbs_route_counts  = counts$route_level,
+    comments = comments
+  )
+}
+
+#' Write MBBS datasets
+#' 
+#' @export
+write_mbbs_data <- function(config) {
+  data <- create_mbbs_data(config)
+  dir.create("output")
+  purrr::iwalk(
+    .x = data,
+    .f = ~ write.csv(.x,  file = paste0("output/", .y, ".csv"), row.names = FALSE)
+  )
+}
 
 #' Conform taxonomy of MBBS data from different sources
 #'

@@ -66,12 +66,11 @@
           ] ++ mbbsDeps;
           buildPhase = 
           ''
-           ${R}/bin/Rscript --vanilla -e 'd <- mbbs::create_mbbs_counts(); write.csv(d$stop_level, file = "mbbs_stops_counts.csv", row.names = FALSE); write.csv(d$route_level, file = "mbbs_route_counts.csv", row.names = FALSE)'
+           ${R}/bin/Rscript --vanilla -e 'mbbs::write_mbbs_data()'
           '';
           installPhase = ''
             mkdir -p $out
-            cp mbbs_stops_counts.csv $out
-            cp mbbs_route_counts.csv $out
+            cp -r output/. $out
           '';
 
         };

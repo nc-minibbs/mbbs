@@ -4,7 +4,6 @@
 \alias{get_ebird_data}
 \title{Gets the ebird data
 This does *not* include:
-* parsing of the comments into habitat, observers, etc.
 * aligning common_names to standard taxonomy}
 \usage{
 get_ebird_data()
@@ -12,6 +11,5 @@ get_ebird_data()
 \description{
 Gets the ebird data
 This does *not* include:
-* parsing of the comments into habitat, observers, etc.
 * aligning common_names to standard taxonomy
 }

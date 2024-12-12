@@ -2,7 +2,6 @@
 # Function for updating the survey_events tables
 #------------------------------------------------------------------------------#
 
-
 #' Updates survey_events if needed by rbinding new and updated surveys,
 #'   then updates survey_events
 #'   Called from import_data after updating the data/mbbs.rda files
@@ -12,9 +11,10 @@
 #'   rows_update
 #' @importFrom stringr str_to_lower
 #' @importFrom utils write.csv
-update_survey_events <- function(path = config$survey_events) {
+update_survey_events <- function(path = config$survey_list) {
+  
   # load in survey list
-  survey_list <- read.csv(config$survey_list, header = TRUE)
+  survey_list <- read.csv(path, header = TRUE)
 
   # # load in mbbs, when this function is called in import_data mbbs is newly updated
   # load(file = system.file("data/mbbs.rda", package = "mbbs"))
@@ -22,19 +22,19 @@ update_survey_events <- function(path = config$survey_events) {
   # generate list of new surveys not yet on the survey_list
   options(dplyr.summarise.inform = FALSE) # suppress dplyr "has grouped outby by"
   surveys <-
-    mbbs %>%
-    filter(count > 0 | count_raw > 0) %>%
-    group_by(mbbs_county, route_num, year) %>%
+    mbbs |>
+    filter(count > 0 | count_raw > 0) |>
+    group_by(county, route_num, year) |>
     dplyr::summarize(
       S = dplyr::n_distinct(common_name),
       N = sum(count),
       observers = observers[!is.na(observers)][1],
       month = str_sub(first(date), start = -5, end = -4),
       day = str_sub(first(date), start = -2, end = -1)
-    ) %>%
+    ) |>
     dplyr::ungroup()
 
-  new_surveys <- surveys %>%
+  new_surveys <- surveys |>
     anti_join(survey_list, by = c("route_num", "year", "mbbs_county"))
   # differing observers does not affect this join.
   # Which is good because the survey_list should be the true source of data
@@ -45,7 +45,7 @@ update_survey_events <- function(path = config$survey_events) {
   if (nrow(new_surveys) > 0) {
     survey_list <-
       rbind(survey_list, new_surveys) %>%
-      arrange(mbbs_county, route_num, year)
+      arrange(county, route_num, year)
     write.csv(survey_list, config$survey_list, row.names = FALSE)
     # print message
     cat(nrow(new_surveys), "surveys have been added to survey_list")
@@ -66,10 +66,12 @@ update_survey_events <- function(path = config$survey_events) {
       month = as.integer(month),
       day = as.integer(day)
     ) %>%
-    anti_join(survey_list, by = c("route_num", "year", "mbbs_county", "S", "N"))
+    anti_join(survey_list, by = c("route_num", "year", "county", "S", "N"))
 
   if (nrow(updated_surveys) > 0) {
-    survey_list <- rows_update(survey_list, updated_surveys, by = c("route_num", "year", "mbbs_county"))
+    survey_list <-
+      rows_update(
+        survey_list, updated_surveys, by = c("route_num", "year", "county"))
     write.csv(survey_list, config$survey_list, row.names = FALSE)
     cat(nrow(updated_surveys), "surveys updated on survey_list with new 'S' or 'N'")
   }
@@ -85,7 +87,7 @@ update_survey_events <- function(path = config$survey_events) {
     left_join(
       survey_list,
       observer_table,
-      by = c("mbbs_county", "route_num", "observers")
+      by = c("county", "route_num", "observers")
     ) %>%
     get_observer_quality() %>%
     group_by(primary_observer) %>%
