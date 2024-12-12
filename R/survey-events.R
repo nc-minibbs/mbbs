@@ -2,7 +2,6 @@
 # Function for updating the survey_events tables
 #------------------------------------------------------------------------------#
 
-
 #' Updates survey_events if needed by rbinding new and updated surveys,
 #'   then updates survey_events
 #'   Called from import_data after updating the data/mbbs.rda files
@@ -13,6 +12,7 @@
 #' @importFrom stringr str_to_lower
 #' @importFrom utils write.csv
 update_survey_events <- function(path = config$survey_events) {
+  
   # load in survey list
   survey_list <- read.csv(config$survey_list, header = TRUE)
 
@@ -23,18 +23,18 @@ update_survey_events <- function(path = config$survey_events) {
   options(dplyr.summarise.inform = FALSE) # suppress dplyr "has grouped outby by"
   surveys <-
     mbbs %>%
-    filter(count > 0 | count_raw > 0) %>%
-    group_by(mbbs_county, route_num, year) %>%
+    filter(count > 0 | count_raw > 0) |>
+    group_by(mbbs_county, route_num, year) |>
     dplyr::summarize(
       S = dplyr::n_distinct(common_name),
       N = sum(count),
       observers = observers[!is.na(observers)][1],
       month = str_sub(first(date), start = -5, end = -4),
       day = str_sub(first(date), start = -2, end = -1)
-    ) %>%
+    ) |>
     dplyr::ungroup()
 
-  new_surveys <- surveys %>%
+  new_surveys <- surveys |>
     anti_join(survey_list, by = c("route_num", "year", "mbbs_county"))
   # differing observers does not affect this join.
   # Which is good because the survey_list should be the true source of data

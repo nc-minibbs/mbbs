@@ -188,7 +188,8 @@ parse_stop_num <- function(location) {
   as.integer(stringr::str_extract(location, "([0-9]{1,2}$)"))
 }
 
-#' Transformation of the ebird data
+#' Transformation of the ebird data to conform to format
+#' downstream consumers expect
 #' @include utilities.R
 transform_ebird_data <- function(ebird) {
   ebird |>
@@ -203,7 +204,13 @@ transform_ebird_data <- function(ebird) {
       route       = make_route_id(county, route_num)
     ) |>
     # Drop location now that county/route_num/stop_num is extractedd
-    dplyr::select(-location) |>
+    dplyr::select(-location)
+}
+
+#' Transformation of the ebird data to count data
+#' @include utilities.R
+compute_ebird_counts <- function(ebird) {
+  ebird |>
     # Handle cases where stripping common name modifier
     # in parse_common_name creates two records for the same species.
     # e.g. when a checklist has observations for both
@@ -240,7 +247,8 @@ stops_to_include <- function(deviations) {
   deviations |>
     purrr::keep(.p = ~ length(.x$stops_nobirds) > 0) |>
     purrr::map_dfr(
-      ~ .x[names(.x) %in% c("year", "date", "county", "route", "stops_nobirds")] |>
+      ~ .x[names(.x)
+          %in% c("year", "date", "county", "route", "stops_nobirds")] |>
         dplyr::as_tibble() |>
         dplyr::rename(
           route_num = route,
@@ -305,7 +313,9 @@ ebird_import_checks <- function(dt) {
     dplyr::filter(flag) |>
     (\(x) {
       if (any(x$flag)) {
-        logger::log_error("{x$submission} ({x$year}/{x$route}) is missing stop number")
+        logger::log_error(
+          "x$submission} ({x$year}/{x$route}) is missing stop number"
+        )
       }
     })()
 
@@ -327,7 +337,9 @@ ebird_import_checks <- function(dt) {
         )
 
       if (any(x$flag)) {
-        logger::log_warn("{problems$desc} had {problems$n} checklists, not 1 or 20 checklists.")
+        logger::log_warn(
+          "{problems$desc} had {problems$n} checklists, not 1 or 20 checklists."
+        )
       }
     })()
 
@@ -375,6 +387,14 @@ get_ebird_data <- function() {
   load_ebird_data() |>
     filter_ebird_data() |>
     transform_ebird_data() |>
-    handle_deviations(deviations = get_deviations()) |>
-    ebird_import_checks()
+    (\(x){
+      list(
+        counts = x |>
+          compute_ebird_counts() |>
+          handle_deviations(deviations = get_deviations()) |>
+          ebird_import_checks(),
+        comments = x |>
+          comment_workflow()
+      )
+    })()
 }
