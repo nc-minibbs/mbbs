@@ -10,9 +10,11 @@
 create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
   stop_ebird <- ebird |>
     dplyr::filter(!is.na(stop_num)) |>
-    dplyr::select(year, route, stop_num,
-                  common_name, sci_name, count,
-                  county, route_num)
+    dplyr::select(
+      year, route, stop_num,
+      common_name, sci_name, count,
+      county, route_num
+    )
 
   stop_xls <- get_stop_level_xls_data() |>
     conform_taxonomy(taxonomy)
@@ -22,9 +24,11 @@ create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
     tidyr::unnest(cols = stop_data)
 
   stop_transcribed <- get_stop_level_transcribed() |>
-    select(year, route, stop_num,
-           common_name, sci_name, count,
-           county, route_num, source)
+    select(
+      year, route, stop_num,
+      common_name, sci_name, count,
+      county, route_num, source
+    )
 
   logger::log_trace("Combining stop level data.")
 
@@ -114,7 +118,7 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
       # Check that we didn't add observations for route-stop-years
       # not in the input data.
 
-      yrs_out <- 
+      yrs_out <-
         dplyr::distinct(x, year, route, stop_num) |>
         arrange(year, route, stop_num)
 
@@ -125,9 +129,11 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
       )
 
       logger::log_trace(
-        paste("Completing stop-level data added",
-              "{nrow(x) - nrow(df)}",
-              "observations with count of 0.")
+        paste(
+          "Completing stop-level data added",
+          "{nrow(x) - nrow(df)}",
+          "observations with count of 0."
+        )
       )
 
       x
@@ -188,15 +194,16 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
     (\(df) {
       df |>
         filter(
-          !(paste(year, route) 
-            %in% paste(stop_to_route$year, stop_to_route$route))
+          !(paste(year, route)
+          %in% paste(stop_to_route$year, stop_to_route$route))
         ) |>
         (\(x) {
           logger::log_trace(
             paste(
               "Removed {nrow(df) - nrow(x)}",
               "ebird observations for route/years",
-              "that were also in stop-level data.")
+              "that were also in stop-level data."
+            )
           )
           x
         })()
@@ -211,8 +218,8 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
     (\(df) {
       df |>
         filter(
-          !(paste(year, route) 
-            %in% paste(ebird_no_stop$year, ebird_no_stop$route))
+          !(paste(year, route)
+          %in% paste(ebird_no_stop$year, ebird_no_stop$route))
         ) |>
         (\(x) {
           logger::log_trace(
@@ -274,7 +281,8 @@ create_route_level_counts <- function(ebird, stop_level_data, taxonomy, config =
         paste(
           "Completing route-level data added",
           "{nrow(x) - nrow(df)}",
-          "observations with count of 0.")
+          "observations with count of 0."
+        )
       )
       x
     })()
@@ -301,7 +309,7 @@ create_mbbs_counts <- function(ebird_counts, config) {
 #'
 #' @export
 create_mbbs_data <- function(config) {
-  ebird <-  get_ebird_data()
+  ebird <- get_ebird_data()
   counts <- create_mbbs_counts(ebird$counts, config)
 
   # TODO:
@@ -309,23 +317,23 @@ create_mbbs_data <- function(config) {
   comments <- ebird$comments |>
     select(-observers) |>
     arrange(year, route, stop_num)
-  
+
   list(
-    mbbs_stops_counts  = counts$stop_level,
-    mbbs_route_counts  = counts$route_level,
+    mbbs_stops_counts = counts$stop_level,
+    mbbs_route_counts = counts$route_level,
     comments = comments
   )
 }
 
 #' Write MBBS datasets
-#' 
+#'
 #' @export
 write_mbbs_data <- function(config) {
   data <- create_mbbs_data(config)
   dir.create("output")
   purrr::iwalk(
     .x = data,
-    .f = ~ write.csv(.x,  file = paste0("output/", .y, ".csv"), row.names = FALSE)
+    .f = ~ write.csv(.x, file = paste0("output/", .y, ".csv"), row.names = FALSE)
   )
 }
 

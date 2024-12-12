@@ -12,7 +12,6 @@
 #' @importFrom stringr str_to_lower
 #' @importFrom utils write.csv
 update_survey_events <- function(path = config$survey_list) {
-  
   # load in survey list
   survey_list <- read.csv(path, header = TRUE)
 
@@ -71,7 +70,9 @@ update_survey_events <- function(path = config$survey_list) {
   if (nrow(updated_surveys) > 0) {
     survey_list <-
       rows_update(
-        survey_list, updated_surveys, by = c("route_num", "year", "county"))
+        survey_list, updated_surveys,
+        by = c("route_num", "year", "county")
+      )
     write.csv(survey_list, config$survey_list, row.names = FALSE)
     cat(nrow(updated_surveys), "surveys updated on survey_list with new 'S' or 'N'")
   }
