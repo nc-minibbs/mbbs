@@ -380,7 +380,6 @@ ebird_import_checks <- function(dt) {
 
 #' Gets the ebird data
 #' This does *not* include:
-#' * parsing of the comments into habitat, observers, etc.
 #' * aligning common_names to standard taxonomy
 #' @export
 get_ebird_data <- function() {
