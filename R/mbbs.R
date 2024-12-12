@@ -318,6 +318,7 @@ create_mbbs_data <- function(config) {
 }
 
 #' Write MBBS datasets
+#' @export
 write_mbbs_data <- function(config) {
   data <- create_mbbs_data(config)
 
