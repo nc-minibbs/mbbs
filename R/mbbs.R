@@ -280,12 +280,11 @@ create_route_level_counts <- function(ebird, stop_level_data, taxonomy, config =
     })()
 }
 
-#' Create the MBBS datasets
+#' Create the MBBS count datasets
 #'
 #' @export
-create_mbbs_counts <- function(config) {
+create_mbbs_counts <- function(ebird_counts, config) {
   taxonomy <- get_ebird_taxonomy()
-  ebird_counts <- get_ebird_data()$counts
 
   stop_level <-
     create_stop_level_counts(ebird_counts, taxonomy, config)
@@ -298,6 +297,35 @@ create_mbbs_counts <- function(config) {
   )
 }
 
+#' Create the MBBS datasets
+#'
+#' @export
+create_mbbs_data <- function(config) {
+  ebird <-  get_ebird_data()
+  counts <- create_mbbs_counts(ebird$counts, config)
+
+  # TODO:
+  # - add back observers
+  comments <- ebird$comments |>
+    select(-observers) |>
+    arrange(year, route, stop_num)
+  
+  list(
+    mbbs_stop_counts   = counts$stop_level,
+    mbbs_route_counts  = counts$route_level,
+    comments = comments
+  )
+}
+
+#' Write MBBS datasets
+write_mbbs_data <- function(config) {
+  data <- create_mbbs_data(config)
+
+  purrr::iwalk(
+    .x = data,
+    .f = ~ write.csv(.x,  file = paste0(.y, ".csv"), row.names = FALSE)
+  )
+}
 
 #' Conform taxonomy of MBBS data from different sources
 #'
