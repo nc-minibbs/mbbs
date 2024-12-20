@@ -91,8 +91,14 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
 
   logger::log_trace("Preliminary stop-level data has {nrow(df)} observations.")
 
-  # apply heuristic:
-  # keep
+  # keep only source of stop-level data
+  # using the following order:
+  source_preference <-
+    c("ebird",
+      "obs details",
+      "transcribed_paper",
+      "observer xls")
+      
   df <- df |>
     group_by(route, year) |>
     tidyr::nest() |>
@@ -102,11 +108,6 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
         ~ if (length(.x) == 1) {
           .y 
         } else {
-            source_preference <-
-            c("ebird",
-              "obs details",
-              "transcribed_paper",
-              "observer xls")
           filter_to <- 
             source_preference[
               which.max(c(
