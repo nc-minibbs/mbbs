@@ -66,7 +66,7 @@ prep_obs_details_data <- \(ebird) {
     # Keep submissions where all species
     # contain at least one number in observation details
     group_by(submission) |>
-    filter(all(str_detect(obs_details, "[0-9]")) ) |>
+    filter(all(str_detect(obs_details, "[0-9]"))) |>
     ungroup() |>
     # Only apply to observations from 2022 and prior
     # as after that year all checklists are submitted at stop-level
