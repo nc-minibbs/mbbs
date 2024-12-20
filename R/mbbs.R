@@ -91,11 +91,38 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
 
   logger::log_trace("Preliminary stop-level data has {nrow(df)} observations.")
 
-  # remove duplicated observations
+  # apply heuristic:
+  # keep
   df <- df |>
-    dplyr::distinct(year, route, stop_num, common_name, count,
-      .keep_all = TRUE
-    )
+    group_by(route, year) |>
+    tidyr::nest() |>
+    mutate(
+      sources  = purrr::map(data, ~ unique(.x$source)),
+      data = purrr::map2(sources, data,
+        ~ if (length(.x) == 1) {
+          .y 
+        } else {
+            source_preference <-
+            c("ebird",
+              "obs details",
+              "transcribed_paper",
+              "observer xls")
+          filter_to <- 
+            source_preference[
+              which.max(c(
+                "ebird" %in% sources,
+                "obs details" %in% sources,
+                "transcribed_paper" %in% sources,
+                TRUE
+              ))
+            ]
+        filter(.y, source == filter_to)
+        }
+      )
+    ) |>
+    select(-sources) |>
+    tidyr::unnest(cols = c(data)) |>
+    ungroup()
 
   logger::log_trace("Stop-level duplicated observations removed")
 
@@ -114,7 +141,7 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
       # Check that we didn't add observations for route-stop-years
       # not in the input data.
 
-      yrs_out <- 
+      yrs_out <-
         dplyr::distinct(x, year, route, stop_num) |>
         arrange(year, route, stop_num)
 
