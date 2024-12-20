@@ -102,23 +102,24 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
       "obs details",
       "transcribed_paper",
       "observer xls")
-      
+
   df <- df |>
     group_by(route, year) |>
     tidyr::nest() |>
     mutate(
-      sources  = purrr::map(data, ~ unique(.x$source)),
+      sources  = purrr::map(data, ~ unique(.x$source)) ,
       data = purrr::map2(sources, data,
         ~ if (length(.x) == 1) {
           .y 
         } else {
-          filter_to <- 
+
+          filter_to <-
             source_preference[
               which.max(c(
-                "ebird" %in% sources,
-                "obs details" %in% sources,
-                "transcribed_paper" %in% sources,
-                TRUE
+                "ebird" %in% .x,
+                "obs details" %in% .x,
+                "transcribed_paper" %in% .x,
+                "observer xls" %in% .x
               ))
             ]
         filter(.y, source == filter_to)
