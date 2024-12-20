@@ -59,9 +59,15 @@ process_obs_details <- function(ebird) {
 #' @param ebird ebird data
 prep_obs_details_data <- \(ebird) {
   ebird |>
-    # Keep rows that contain at least one number in observation details
-    #           AND aren't already separated by stop
-    filter(str_detect(obs_details, "[0-9]") & is.na(stop_num)) |>
+    # keep rows that aren't already separated by stop
+    filter(is.na(stop_num)) |>
+    # Keep non-zero rows
+    filter(count > 0) |>
+    # Keep submissions where all species
+    # contain at least one number in observation details
+    group_by(submission) |>
+    filter(all(str_detect(obs_details, "[0-9]")) ) |>
+    ungroup() |>
     # Only apply to observations from 2022 and prior
     # as after that year all checklists are submitted at stop-level
     filter(year <= 2022) |>
