@@ -1,786 +1,786 @@
-county,route_num,year,S,N,observers,month,day
-chatham,1,2000,34,220,Patricia Bailey and Marsha Stephens,6,11
-chatham,1,2001,48,337,Patricia Bailey and Marsha Stephens,6,9
-chatham,1,2002,47,373,Marsha Stephens and Patsy Bailey,6,9
-chatham,1,2003,48,374,Patsy Bailey and Marsha Stephens,6,9
-chatham,1,2004,37,210,Patsy Bailey and Marsha Stephens,6,13
-chatham,1,2005,41,250,Patsy Bailey and Marsha Stephens,6,19
-chatham,1,2006,41,300,Patsy Bailey and Marsha Stephens,6,18
-chatham,1,2007,44,283,Patsy Bailey,6,17
-chatham,1,2008,47,284,Patsy Bailey,5,25
-chatham,1,2009,36,181,Patsy Bailey,6,11
-chatham,1,2010,40,251,Patsy Bailey,6,5
-chatham,1,2011,50,246,"Patsy Bailey, Norman Budnitz",6,5
-chatham,1,2012,45,392,Patsy Bailey,6,3
-chatham,1,2013,44,294,Patsy Bailey,5,26
-chatham,1,2014,43,288,Patsy Bailey,5,26
-chatham,1,2015,47,272,Patsy Bailey,5,17
-chatham,1,2016,34,204,Patsy Bailey,5,22
-chatham,1,2017,47,266,Patsy Bailey,6,4
-chatham,1,2018,40,214,Patsy Bailey,5,28
-chatham,1,2019,41,235,Patsy Bailey,5,27
-chatham,1,2020,39,213,Patsy Bailey,5,25
-chatham,1,2021,44,248,Patsy Bailey,6,6
-chatham,1,2022,39,239,Patsy Bailey,5,22
-chatham,1,2023,33,146,Patsy Bailey,5,28
-chatham,1,2024,42,192,Patsy Bailey,6,16
-chatham,2,2000,45,297,Norm Budnitz & Mike Schultz,5,28
-chatham,2,2001,51,347,Norm Budnitz & Mike Schultz,6,3
-chatham,2,2002,52,327,Norm Budnitz & Mike Schultz,5,26
-chatham,2,2003,40,291,Norm Budnitz & Mike Schultz,6,11
-chatham,2,2004,51,269,Norm Budnitz and Mike Schultz,5,23
-chatham,2,2005,54,299,Norm Budnitz and Mike Schultz,5,22
-chatham,2,2006,48,245,Norm Budnitz and Mike Schultz,6,13
-chatham,2,2007,43,302,Norm Budnitz and Mike Schultz,5,20
-chatham,2,2008,51,305,Norm Budnitz and Mike Schultz,5,25
-chatham,2,2009,47,299,Norm Budnitz and Mike Schultz,5,31
-chatham,2,2010,45,264,"N. Budnitz, M. Schultz",6,20
-chatham,2,2011,53,274,"Norm Budnitz, Mike Schultz",5,15
-chatham,2,2012,53,337,"Norm Budnitz, Mike Schultz",5,20
-chatham,2,2013,46,262,"Norman Budnitz, Mike Schultz",6,19
-chatham,2,2014,43,291,"Norman Budnitz, Mike Schultz",6,15
-chatham,2,2015,45,261,"Norman Budnitz, Mike Schultz",5,17
-chatham,2,2016,57,288,"Norman Budnitz, Mike Schultz",5,15
-chatham,2,2017,48,284,"Norman Budnitz, Mike Schultz",5,29
-chatham,2,2018,53,302,"Norman Budnitz, Mike Schultz",5,27
-chatham,2,2019,48,299,"Norman Budnitz, Mike Schultz, Karen Hogan",5,19
-chatham,2,2020,52,444,Norm Budnitz,5,25
-chatham,2,2021,43,230,"Norm Budnitz, Mike Schultz",5,16
-chatham,2,2022,43,214,"Norm Budnitz, Mike Schultz",5,29
-chatham,2,2023,40,157,"Norm Budnitz, Mike Schultz",5,27
-chatham,2,2024,46,201,"Mike Schultz, Norm Budnitz",5,25
-chatham,3,2000,48,261,Haven and Minna Wiley,6,3
-chatham,3,2001,48,228,Haven and Minna Wiley,6,10
-chatham,3,2002,49,253,Haven and Minna Wiley,6,2
-chatham,3,2003,42,251,Haven and Minna Wiley,6,8
-chatham,3,2004,44,248,Haven and Minna Wiley,5,31
-chatham,3,2005,49,325,Haven and Minna Wiley,5,15
-chatham,3,2006,40,237,Haven and Minna Wiley,6,18
-chatham,3,2007,44,230,Haven and Minna Wiley (6-10-2007 and 6-14-2007),6,17
-chatham,3,2008,41,235,Haven and Minna Wiley,6,15
-chatham,3,2009,44,381,Haven and Minna Wiley,6,21
-chatham,3,2010,47,248,Haven Wiley,5,30
-chatham,3,2011,46,251,Haven Wiley,6,18
-chatham,3,2012,49,257,Haven Wiley,6,3
-chatham,3,2013,42,218,Haven Wiley,6,9
-chatham,3,2014,41,244,Haven Wiley,6,15
-chatham,3,2015,39,211,Haven Wiley,5,17
-chatham,3,2016,41,229,Haven Wiley,6,5
-chatham,3,2017,37,186,Haven Wiley,6,4
-chatham,3,2018,38,186,Haven Wiley,6,3
-chatham,3,2019,41,216,Haven Wiley,6,9
-chatham,3,2020,46,277,"Haven Wiley, Minna Wiley",5,25
-chatham,3,2021,40,187,"Haven Wiley, Minna Wiley",6,13
-chatham,3,2022,38,178,"Haven Wiley, Minna Wiley",6,5
-chatham,3,2023,38,153,"Haven Wiley, Minna Wiley",6,25
-chatham,3,2024,39,163,"Haven Wiley, Minna Wiley",6,9
-chatham,4,2000,46,292,Michael and Lois Schultz,6,11
-chatham,4,2001,46,257,Michael and Lois Schultz,6,10
-chatham,4,2002,44,302,Michael and Lois Schultz,5,27
-chatham,4,2003,41,239,Michael and Lois Schultz,6,8
-chatham,4,2004,44,252,Michael and Lois Schultz,6,13
-chatham,4,2005,52,279,Michael and Lois Schultz,5,30
-chatham,4,2006,46,293,Michael and Lois Schultz,6,18
-chatham,4,2007,50,299,Michael and Lois Schultz,5,28
-chatham,4,2008,51,278,"M. Schultz, L. Schultz",5,18
-chatham,4,2009,52,288,"M. Schultz, L. Schultz",6,7
-chatham,4,2010,45,250,"M. Schultz, L. Schultz",6,1
-chatham,4,2011,45,255,Michael Schultz,5,28
-chatham,4,2012,46,297,"Mike Schultz, Lois Schultz",5,28
-chatham,4,2013,44,286,"Mike Schultz, Lois Schultz",5,26
-chatham,4,2014,45,282,"Mike Schultz, Lois Schultz",5,25
-chatham,4,2015,45,263,"Schultz, Michael",5,25
-chatham,4,2016,41,212,"M. Schultz, L. Schultz",6,14
-chatham,4,2017,38,208,"M. Schultz, L. Schultz",6,4
-chatham,4,2018,41,219,"M. Schultz, L. Schultz",5,31
-chatham,4,2019,45,223,"M. Schultz, K. Hogan",6,2
-chatham,4,2020,48,208,Michael Schultz,5,25
-chatham,4,2021,39,222,"Mike Schultz, Norm Budnitz",6,1
-chatham,4,2022,45,231," Mike Schultz, Norm Budnitz",5,23
-chatham,4,2023,48,207,"Mike Schultz, Norm Budnitz",5,26
-chatham,4,2024,48,216,"Mike Schultz, Norm Budnitz",5,24
-chatham,5,2000,42,264,Jeff Pippen and Julie Rice,6,16
-chatham,5,2001,46,278,Jeff Pippen and Julie Rice,5,30
-chatham,5,2002,43,315,Haven and Minna Wiley,5,27
-chatham,5,2003,43,299,Haven and Minna Wiley,6,29
-chatham,5,2004,41,278,Haven and Minna Wiley,6,6
-chatham,5,2005,39,288,Haven and Minna Wiley,6,26
-chatham,5,2006,51,483,"Tom Driscoll, Colyer Durovich, and Marsha Stephens",6,10
-chatham,5,2007,44,471,Tom Driscoll,6,24
-chatham,5,2008,44,359,Tom Driscoll,6,8
-chatham,5,2009,54,555,Tom Driscoll and Marsha Stephens,6,14
-chatham,5,2010,56,714,"Marsha Tuttle, Thomas Driscoll, Colyer Durovich",6,5
-chatham,5,2011,50,532,Tom Driscoll,6,4
-chatham,5,2012,48,480,Tom Driscoll,5,27
-chatham,5,2013,53,530,tom driscoll,5,26
-chatham,5,2014,41,485,tom driscoll,6,21
-chatham,5,2015,45,500,"tom driscoll, Vern Bothwell",6,16
-chatham,5,2016,47,368,"driscoll, tom",6,3
-chatham,5,2017,38,350,"Tom Driscoll, Edison Buenano",5,21
-chatham,5,2018,42,446,tom driscoll,6,2
-chatham,5,2019,42,325,tom driscoll,5,27
-chatham,5,2020,45,284,"tom driscoll, Elizabeth Keating",5,27
-chatham,5,2021,43,285,Tom Driscoll,5,31
-chatham,5,2022,49,256,tom driscoll,6,4
-chatham,5,2023,49,296,tom driscoll,6,3
-chatham,5,2024,45,267,tom driscoll,6,15
-chatham,6,2000,37,333,Cynthia Fox and Marsha Stephens,6,24
-chatham,6,2001,44,367,Cynthia Fox and Marsha Stephens,6,16
-chatham,6,2002,47,288,Cynthia Fox and Marsha Stephens,6,23
-chatham,6,2003,30,237,Cynthia Fox and Marsha Stephens,7,6
-chatham,6,2004,23,201,Cynthia Fox and Marsha Stephens,6,20
-chatham,6,2005,47,382,Cynthia Fox and Marsha Stephens,6,1
-chatham,6,2006,44,308,Cynthia Fox and Marsha Stephens,6,11
-chatham,6,2007,34,272,Cynthia Fox and Marsha Stephens,6,17
-chatham,6,2008,44,309,Cynthia Fox and Marsha Stephens,6,1
-chatham,6,2009,48,355,Cynthia Fox and Marsha Stephens,6,21
-chatham,6,2010,56,663,"Marsha Tuttle, Thomas Driscoll, Laurie Kucharik",6,20
-chatham,6,2018,51,330,Roger Shaw,6,10
-chatham,6,2019,41,264,Roger Shaw,6,29
-chatham,6,2020,42,293,Roger Shaw,6,7
-chatham,6,2021,43,289,Roger Shaw,6,15
-chatham,6,2022,53,278,Roger Shaw,6,6
-chatham,6,2023,44,281,Roger Shaw,6,3
-chatham,6,2024,44,267,Roger Shaw,5,19
-chatham,7,2000,43,267,Will Cook,6,18
-chatham,7,2001,54,323,Will Cook,6,16
-chatham,7,2002,49,325,Will Cook,6,8
-chatham,7,2003,44,317,Will Cook,6,28
-chatham,7,2004,47,332,Will Cook,6,19
-chatham,7,2005,51,316,Will Cook,7,9
-chatham,7,2006,44,245,Will Cook,6,24
-chatham,7,2007,42,293,Will Cook,6,23
-chatham,7,2008,52,302,Will Cook,6,8
-chatham,7,2009,52,321,Will Cook,6,28
-chatham,7,2010,51,264,"Will Cook, Catherine Carter",6,13
-chatham,7,2011,43,297,"Will Cook, Lesley Starke",6,19
-chatham,7,2012,54,347,"Will Cook, Lesley Starke",6,9
-chatham,7,2013,54,330,"Will Cook, Lesley Starke",6,9
-chatham,7,2014,48,303,Will Cook,7,13
-chatham,7,2015,50,295,Will Cook,6,27
-chatham,7,2016,50,341,Will Cook,6,19
-chatham,7,2017,48,328,Will Cook,7,2
-chatham,7,2018,52,298,Will Cook,6,16
-chatham,7,2019,55,337,Will Cook,6,15
-chatham,7,2020,52,320,Will Cook,6,28
-chatham,7,2021,44,237,Will Cook,6,27
-chatham,7,2022,52,300,Will Cook,6,26
-chatham,7,2023,49,281,Will Cook,6,18
-chatham,7,2024,50,328,Will Cook,6,16
-chatham,8,2000,43,322,Judy Murray and Marty Girolami,6,18
-chatham,8,2001,45,399,Judy Murray and Marty Girolami,6,10
-chatham,8,2002,45,333,Judy Murray and Marty Girolami,6,18
-chatham,8,2003,42,342,Judy Murray and Marty Girolami,6,22
-chatham,8,2004,37,262,Marty Girolami and Judy Murray,6,27
-chatham,8,2005,44,230,Marty Girolami and Judy Murray,6,26
-chatham,8,2006,42,272,"Marty Girolami, Pat Reid, and Judy Murray",6,18
-chatham,8,2007,42,240,Marty Girolami and Judy Murray,6,17
-chatham,8,2008,44,296,Marty Girolami and Judy Murray,6,15
-chatham,8,2009,47,268,Marty Girolami and Judy Murray,5,17
-chatham,8,2010,43,266,"M. Girolami, P. Reid, J. Murray",6,6
-chatham,8,2011,48,238,"Martha Girolami, Judy Murray",5,29
-chatham,8,2012,46,302,"Martha Girolami, Judy Murray",6,17
-chatham,8,2013,41,217,"Martha Girolami, Judy Murray",6,30
-chatham,8,2014,49,250,"Martha Girolami, Judy Murray",5,25
-chatham,8,2015,41,241,"Martha Girolami, Judy Murray",5,24
-chatham,8,2016,41,201,"Martha Girolami, Judy Murray",6,5
-chatham,8,2017,40,220,"Martha Girolami, Pat Reid and Judy Murray",6,11
-chatham,8,2019,52,361,Nan Dewire and Fleeta Wilkinson,6,23
-chatham,8,2020,45,243,Nan Dewire and Fleeta Chauvigne,6,14
-chatham,8,2021,48,313,Nan Dewire and fleeta Chauvigne,5,31
-chatham,8,2022,55,360,Nan Dewire and Fleeta Chauvigne,5,29
-chatham,8,2023,51,260, Nan Dewire and Fleeta Chauvigne,5,21
-chatham,8,2024,52,338,"Nan Dewire, Fleeta Chauvigne",6,2
-chatham,9,2000,47,256,Shelley Theye and Lee Van Malssen,5,24
-chatham,9,2001,54,504,Shelley Theye and Lee Van Malssen,6,16
-chatham,9,2002,52,339,Shelley Theye and Lee Van Malssen,6,16
-chatham,9,2003,54,427,Shelley Theye and Lee Van Malssen,6,22
-chatham,9,2005,53,339,S. Theye,6,19
-chatham,9,2006,49,341,Shelley Theye and Marsha Sephens,6,24
-chatham,9,2007,47,357,S. Theye,6,24
-chatham,9,2008,51,421,S. Theye,6,5
-chatham,9,2009,45,455,S. Theye,6,27
-chatham,9,2010,49,378,S. Theye,6,20
-chatham,9,2011,49,345,S. Theye,7,2
-chatham,9,2012,44,210,S. Theye,6,17
-chatham,9,2013,48,230,S. Theye,6,16
-chatham,9,2014,47,361,S. Theye,6,22
-chatham,9,2015,43,322,S. Theye,6,30
-chatham,9,2016,46,316,S. Theye,6,19
-chatham,9,2017,45,300,"S. Theye, L. Van Malssen",6,25
-chatham,9,2018,45,362,S. Theye,6,17
-chatham,9,2019,49,287,S. Theye,6,23
-chatham,9,2020,44,302,S. Theye,6,20
-chatham,9,2021,36,223,"Shelley Theye, Lee Van Malssen",6,20
-chatham,9,2022,47,280,"Shelley Theye, Lee Van Malssen",6,19
-chatham,9,2023,43,267,Shelley Theye,6,11
-chatham,9,2024,44,254,Shelley Theye,6,25
-chatham,10,2000,43,304,Sue Brady,6,17
-chatham,10,2001,51,275,Will Cook,6,23
-chatham,10,2002,49,246,Brian Strong,6,16
-chatham,10,2003,41,169,Brian Strong,6,22
-chatham,10,2004,42,200,Brian Strong,6,13
-chatham,10,2005,40,166,Brian Strong,6,19
-chatham,10,2006,33,137,Brian Strong,6,24
-chatham,10,2007,38,164,Brian Strong,6,24
-chatham,10,2008,46,156,Brian Strong,6,1
-chatham,10,2009,37,143,Brian Strong,6,21
-chatham,10,2010,35,156,Brian Strong,6,20
-chatham,10,2011,47,186,Brian Strong,6,19
-chatham,10,2012,41,209,Brian Strong,6,17
-chatham,10,2013,40,168,Brian Strong,6,23
-chatham,10,2015,31,135,Brian Strong,6,27
-chatham,10,2016,40,169,Brian Strong,6,26
-chatham,10,2017,45,222,Brian Strong,6,18
-chatham,10,2018,44,178,Brian Strong,6,24
-chatham,10,2019,37,155,Brian Strong,6,25
-chatham,10,2020,39,161,Brian Strong,6,29
-chatham,10,2021,42,148,Brian Strong,6,20
-chatham,10,2022,46,188,Brian Strong,6,24
-chatham,10,2023,48,251,"Fleeta Chauvigne, Mark Montazer",6,4
-chatham,10,2024,51,317,"Fleeta Wilkinson Chauvigné, Mark Montazer, Nan DeWire",6,9
-chatham,11,2000,35,199,M. Graves and B. Chase,5,27
-chatham,11,2001,33,208,M. Graves and B. Chase,6,17
-chatham,11,2002,37,233,Bob Chase,6,29
-chatham,11,2003,37,233,Bob Chase,6,6
-chatham,11,2005,43,222,Bob Chase,6,1
-chatham,11,2006,48,258,Bob Chase,5,17
-chatham,11,2007,49,292,Bob Chase,5,24
-chatham,11,2008,47,256,Bob Chase,5,20
-chatham,11,2009,40,214,Bob Chase,5,25
-chatham,11,2010,38,212,Bob Chase,6,11
-chatham,11,2011,37,210,Bob Chase,6,12
-chatham,11,2012,32,180,Bob Chase,6,16
-chatham,11,2013,34,135,Bob Chase,6,19
-chatham,11,2016,27,108,Bob Chase,5,29
-chatham,11,2020,43,162,Nathan Howell,6,25
-chatham,11,2022,44,231,Allen Hurlbert,5,29
-chatham,11,2023,47,210,Allen Hurlbert,6,4
-chatham,11,2024,48,266," Allen Hurlbert, Ivara Goulden",6,9
-chatham,12,2000,38,295,Kate Finlayson and Chris Canfield,6,18
-chatham,12,2001,41,228,Kate Finlayson and Chris Canfield,6,10
-chatham,12,2002,47,283,Kate Finlayson and Chris Canfield,6,23
-chatham,12,2003,47,248,Kate Finlayson and Chris Canfield,6,21
-chatham,12,2004,42,265,Chris Canfield and Kate Finlayson,6,13
-chatham,12,2005,46,306,Chris Canfield and Kate Finlayson,6,12
-chatham,12,2006,47,290,Chris Canfield and Kate Finlayson,6,18
-chatham,12,2007,50,269,Kate Finlayson and Chris Canfield,6,17
-chatham,12,2008,47,257,Kate Finlayson and Chris Canfield,6,15
-chatham,12,2009,46,215,Kate Finlayson and Chris Canfield,5,31
-chatham,12,2017,48,340,"tom driscoll, Elizabeth Keating",6,25
-chatham,12,2019,50,310,"tom driscoll, Fleeta Wilkinson",6,20
-chatham,12,2020,47,354,"tom driscoll, Elizabeth Keating",6,7
-chatham,12,2021,42,307,Tom Driscoll,6,2
-chatham,12,2022,45,250, tom driscoll,6,12
-chatham,12,2023,46,204,tom driscoll,5,27
-chatham,12,2024,50,260,tom driscoll,6,5
-chatham,13,2000,40,320,Marsha Stephens and Patsy Bailey,7,2
-chatham,13,2001,30,285,Marsha Stephens,7,7
-chatham,13,2002,25,327,Marsha Stephens,6,30
-chatham,13,2003,21,230,Marsha Stephens,6,29
-chatham,13,2004,23,273,Marsha Stephens,6,27
-chatham,13,2005,19,134,Marsha Stephens,6,13
-chatham,13,2006,23,140,JA and HS,6,24
-chatham,13,2007,44,289,Haven and Minna Wiley,7,15
-chatham,13,2008,43,322,?,5,25
-chatham,13,2009,33,329,?,6,20
-chatham,13,2010,55,546,"Marsha Tuttle, Thomas Driscoll, Laurie Kucharik",6,6
-chatham,13,2011,46,577,Tom Driscoll,6,12
-chatham,13,2012,46,456,Tom Driscoll,6,24
-chatham,13,2013,47,509,tom driscoll,6,2
-chatham,13,2014,43,435,tom driscoll,6,8
-chatham,13,2015,43,486,tom driscoll,6,14
-chatham,13,2016,47,446,tom driscoll,6,26
-chatham,13,2017,50,384,"tom driscoll, Bradley Saul",6,4
-chatham,13,2018,45,362,tom driscoll,6,9
-chatham,13,2019,52,343,"tom driscoll, Nan DeWire",6,14
-chatham,13,2020,47,283,"tom driscoll, Elizabeth Keating",6,1
-chatham,13,2021,46,336, Tom Driscoll,6,6
-chatham,13,2022,53,313, tom driscoll,6,11
-chatham,13,2023,45,293,tom driscoll,6,4
-chatham,13,2024,45,242, tom driscoll,6,2
-chatham,14,2000,46,247,Kent Fiala,5,21
-chatham,14,2001,47,307,Kent Fiala,5,27
-chatham,14,2002,51,288,Kent Fiala,6,2
-chatham,14,2003,42,209,Kent Fiala,6,1
-chatham,14,2004,43,228,Kent Fiala,5,31
-chatham,14,2005,43,237,Kent Fiala,5,30
-chatham,14,2006,46,251,Kent Fiala,5,21
-chatham,14,2007,45,238,Kent Fiala,6,10
-chatham,14,2008,41,207,Kent Fiala,5,26
-chatham,14,2009,38,200,Kent Fiala,5,25
-chatham,14,2014,45,321,Josh Sims,6,1
-chatham,14,2015,46,235,Josh Sims,6,14
-chatham,14,2019,14,87,Richard Snow,6,30
-chatham,14,2020,49,297,"Will Bennett, Jonathan Bennett",5,24
-chatham,14,2021,61,413,"Will Bennett, Jonathan Bennett",5,16
-chatham,14,2022,47,273,"Will Bennett, Jon Bennett",6,30
-chatham,14,2023,41,242,Allen Hurlbert,6,11
-chatham,14,2024,43,201,Allen Hurlbert,6,23
-durham,1,2002,40,239,Judy Murray,6,6
-durham,1,2003,37,211,Judy Murray,6,28
-durham,1,2004,42,262,Judy Murray,6,13
-durham,1,2005,43,249,Judy Murray,6,19
-durham,1,2006,40,301,Judy Murray and Tom Krakauer,6,17
-durham,1,2007,47,245,Judy Murray,6,24
-durham,1,2008,45,281,Judy Murray,6,1
-durham,1,2009,32,135,Judy Murray,5,31
-durham,1,2010,45,234,Judy Murray,5,9
-durham,1,2011,40,225,Judy Murray,5,28
-durham,1,2012,41,209,Judy Murray,5,27
-durham,1,2013,38,237,judy murray,6,16
-durham,1,2014,43,205,"Judy Murray, Robin Moran",6,1
-durham,1,2015,44,193,"Robin Moran, Judy Murray",5,24
-durham,1,2016,34,180,Judy Murray,6,26
-durham,1,2017,40,221,"judy murray, robin moran",6,4
-durham,1,2018,48,219,robin moran and jennifer maher,6,3
-durham,1,2019,49,423,robin moran and jennifer maher,5,26
-durham,1,2020,48,227,robin moran and jennifer maher,5,24
-durham,1,2021,60,329,"Robin Moran, Jennifer Maher, Noah Rokoske",5,31
-durham,1,2022,61,429,"Robin Moran, Jennifer Maher, Noah Rokoske",5,22
-durham,1,2023,55,339,"Noah Rokoske, Robin Moran, Jennifer Maher",5,21
-durham,1,2024,55,309,"Robin Moran, Jennifer Maher, Noah Rokoske",6,2
-durham,2,2002,40,359,Bruce Young,5,27
-durham,2,2003,31,233,Bruce Young,5,31
-durham,2,2004,44,226,Bruce Young,6,6
-durham,2,2005,34,230,Bruce Young,5,29
-durham,2,2006,31,199,Bruce Young,6,17
-durham,2,2007,34,252,?,5,28
-durham,2,2008,36,281,?,5,25
-durham,2,2009,35,223,?,5,31
-durham,2,2010,39,167,?,6,13
-durham,2,2011,36,201,?,6,5
-durham,2,2012,41,164,?,6,23
-durham,2,2013,39,116,Elizabeth Tatum,6,14
-durham,2,2014,36,140,Edith Tatum,6,7
-durham,2,2015,32,121,"Edith Tatum, Clea",6,1
-durham,2,2017,46,244,Jeffrey Pippen,6,10
-durham,2,2018,39,263,Jeffrey Pippen,6,10
-durham,2,2019,40,251,Jeffrey Pippen,6,30
-durham,2,2020,50,312,Jeffrey Pippen,6,7
-durham,2,2022,52,374,Jeffrey Pippen,6,19
-durham,2,2023,49,356,Jeffrey Pippen,6,11
-durham,2,2024,49,374,Jeff Pippen,6,16
-durham,3,2002,41,315,Carol Williamson and Norm Budnitz,6,2
-durham,3,2003,39,317,Carol Williamson and Norm Budnitz,6,22
-durham,3,2004,40,294,Carol Williamson and Norm Budnitz,6,20
-durham,3,2005,35,227,Carol Williamson and Norm Budnitz,6,26
-durham,3,2006,37,305,Carol Williamson and Norm Budnitz,5,28
-durham,3,2007,44,319,Carol Williamson and Norm Budnitz,5,27
-durham,3,2008,35,308,Carol Williamson and Norm Budnitz,6,1
-durham,3,2009,37,320,Carol Williamson and Norm Budnitz,6,21
-durham,3,2010,35,263,"N. Budnitz, C. Williamson",6,13
-durham,3,2011,41,326,"Patsy Bailey, Norman Budnitz",6,9
-durham,3,2012,40,334,Norman Budnitz,6,17
-durham,3,2013,35,250,Norman Budnitz,6,16
-durham,3,2014,32,180,Norman Budnitz,6,12
-durham,3,2015,37,243,Norman Budnitz,6,13
-durham,3,2016,38,211,Norman Budnitz,6,11
-durham,3,2017,34,195,Norman Budnitz,6,10
-durham,3,2018,34,233,Norman Budnitz,6,2
-durham,3,2019,33,175,Norman Budnitz,6,15
-durham,3,2020,33,218,Norm Budnitz,6,13
-durham,3,2021,29,169,Norm Budnitz,6,12
-durham,3,2022,31,173,Norm Budnitz,6,4
-durham,3,2023,33,189,Norm Budnitz,6,1
-durham,3,2024,36,187,Norm Budnitz,6,1
-durham,4,2002,49,215,Jeff Pippen and Julie Rice,6,11
-durham,4,2003,43,179,Jeff Pippen and Julie Rice,6,11
-durham,4,2004,43,207,Jeff Pippen and Julie Rice,6,10
-durham,4,2005,46,239,Jeff Pippen and Julie Rice,6,8
-durham,4,2006,46,267,Jeffrey Pippin and Julie Rice,6,17
-durham,4,2007,41,222,Jeffrey Pippen,6,7
-durham,4,2008,53,276,Jeffrey Pippen,6,1
-durham,4,2009,52,251,Jeffrey Pippen,5,30
-durham,4,2011,46,251,Jeffrey Pippen,5,22
-durham,4,2012,47,278,Jeffrey Pippen,6,10
-durham,4,2013,45,272,Jeffrey Pippen,6,9
-durham,4,2014,40,196,Jeffrey Pippen,5,15
-durham,4,2018,38,196,Patsy Bailey,6,10
-durham,4,2019,47,225,Roger Shaw,5,25
-durham,4,2020,51,272,Roger Shaw,5,24
-durham,4,2021,45,182,Roger Shaw,6,16
-durham,4,2022,46,243," Roger Shaw, Stephen Brooks, Carey Jefferson",6,5
-durham,4,2023,39,229,"Stephen Brooks, Carey Jefferson",6,3
-durham,4,2024,39,190,"Stephen Brooks, Carey Jefferson",6,30
-durham,5,2002,43,373,Alan Johnston and Shantanu Phukan,6,2
-durham,5,2003,42,256,Alan Johnston and Shantanu Phukan,6,1
-durham,5,2004,39,285,Alan Johnston and Sally Johnston,5,31
-durham,5,2005,45,292,Alan Johnston and Denny Dobbin,6,13
-durham,5,2006,43,337,Alan Johnston and Dan Williams,6,17
-durham,5,2007,36,263,Alan Johnston and David Welch,6,24
-durham,5,2008,42,359,"Alan Johnston, Bobbie Johnston, and Pamela Clark",6,8
-durham,5,2009,39,334,Alan Johnston and Denny Dobbin,6,14
-durham,5,2010,40,266,Alan Johnston and Denny Dobbin,6,13
-durham,5,2011,43,293,Alan Johnston and Denny Dobbin,5,15
-durham,5,2012,30,196,"David Smith, Judy Smith",5,27
-durham,5,2013,35,193,"David Smith, Judy Smith",6,9
-durham,5,2014,33,225,"David Smith, Judy Smith",6,8
-durham,5,2015,32,224,"David Smith, Judy Smith",5,24
-durham,5,2016,28,188,"David Smith, Judy Smith",5,22
-durham,5,2017,31,194,"David Smith, Judy Smith",6,4
-durham,5,2018,28,172,"David Smith, Judy Smith",6,3
-durham,5,2019,32,229,"David Smith, Judy Smith",5,26
-durham,5,2020,29,205,"David Smith, Judy Smith",5,24
-durham,5,2021,30,165,"David Smith, Judy Smith",5,30
-durham,5,2022,36,221,"David Smith, Judy Smith",5,29
-durham,5,2023,32,175,"David Smith, Judy Smith",6,4
-durham,5,2024,37,182," David Smith, Judy Smith",6,2
-durham,6,2002,29,151,Rick Payne,6,30
-durham,6,2003,26,117,Rick Payne,6,15
-durham,6,2004,36,159,Rick Payne,6,6
-durham,6,2005,35,174,Rick Payne,6,19
-durham,6,2006,33,210,Rick Payne,6,18
-durham,6,2007,30,179,Rick Payne,6,24
-durham,6,2008,37,204,Rick Payne,6,8
-durham,6,2009,32,166,Rick Payne,6,14
-durham,6,2010,30,172,Rick Payne,6,13
-durham,6,2011,34,260,David Smith,5,29
-durham,6,2012,30,238,"David Smith, Judy Smith",5,20
-durham,6,2013,33,194,"David Smith, Judy Smith",6,2
-durham,6,2014,28,178,"David Smith, Judy Smith",6,1
-durham,6,2015,32,203,"David Smith, Judy Smith",5,17
-durham,6,2016,29,183,"David Smith, Judy Smith",5,15
-durham,6,2017,33,171,"David Smith, Judy Smith",5,29
-durham,6,2018,37,186,"David Smith, Judy Smith",5,27
-durham,6,2019,34,207,"David Smith, Judy Smith",5,19
-durham,6,2020,35,206,"David Smith, Judy Smith",5,17
-durham,6,2021,33,190,"David Smith, Judy Smith",5,23
-durham,6,2022,34,186,"David Smith, Judy Smith",5,22
-durham,6,2023,31,221,"David Smith, Judy Smith",6,3
-durham,6,2024,29,188,"David Smith, Judy Smith",5,27
-durham,7,2002,44,193,Brian Strong,6,13
-durham,7,2003,41,153,Brian Strong,6,13
-durham,7,2004,40,162,Brian Strong,6,15
-durham,7,2005,45,193,Brian Strong,6,13
-durham,7,2006,38,176,Brian Strong,6,15
-durham,7,2007,45,181,Brian Strong,6,22
-durham,7,2008,33,167,Brian Strong,6,3
-durham,7,2009,33,154,Brian Strong,6,30
-durham,7,2010,39,161,Brian Strong,6,15
-durham,7,2011,36,153,Brian Strong,6,16
-durham,7,2012,34,147,Brian Strong,6,12
-durham,7,2013,39,143,Brian Strong,6,20
-durham,7,2015,34,162,Brian Strong,6,24
-durham,7,2016,36,136,Brian Strong,6,25
-durham,7,2017,38,175,Brian Strong,6,17
-durham,7,2018,37,160,Brian Strong,6,17
-durham,7,2019,38,164,Brian Strong,6,23
-durham,7,2020,37,155,Brian Strong,6,14
-durham,7,2021,37,179,Brian Strong,6,18
-durham,7,2022,48,195,Brian Strong,6,26
-durham,7,2023,44,234,Noah Rokoske,6,28
-durham,7,2024,35,188,William Mackin,6,26
-durham,8,2002,43,223,Brian Strong,6,13
-durham,8,2003,40,230,Brian Bockhahn,6,13
-durham,8,2004,32,194,Brian Bockhahn,6,11
-durham,8,2005,43,227,Brian Bockhahn,6,25
-durham,8,2006,42,228,Brian Bockhahn,6,17
-durham,8,2007,28,155,Brian Bockhahn,7,2
-durham,8,2008,34,212,Brian Bockhahn,6,24
-durham,8,2011,37,244,Brian Bockhahn,6,19
-durham,8,2012,41,301,Brian Bockhahn,6,10
-durham,8,2013,38,311,Brian Bockhahn,6,16
-durham,8,2014,42,312,"Brian Bockhahn, weather=57, clear, sunny, vehicles=32, habitat@1=B, habitat@2=B, habitat@3=M, habitat@4=M, habitat@5=M, habitat@6=M, habitat@7=M, habitat@8=B, habitat@9=B, habitat@10=B, habitat@11=M, habitat@12=B, habitat@13=M, habitat@14=B, habitat@15=B, habitat@16=B, habitat@17=M, habitat@18=M, habitat@19=B, habitat@20=M",6,1
-durham,8,2015,41,275,Brian Bockhahn,6,14
-durham,8,2016,42,468,Brian Bockhahn,6,19
-durham,8,2017,42,324,Brian Bockhahn,6,18
-durham,8,2018,44,280,Brian Bockhahn,6,3
-durham,8,2019,43,273,Brian Bockhahn,6,16
-durham,8,2020,38,233,Brian Bockhahn,5,31
-durham,8,2021,47,245,Brian Bockhahn,6,6
-durham,8,2022,41,283,Brian Bockhahn,6,19
-durham,8,2023,43,260,Brian Bockhahn,6,11
-durham,8,2024,43,256,Brian Bockhahn,6,9
-orange,1,1999,45,255,"Ginger Travis, Barb Brooks",6,6
-orange,1,2000,39,220,Ginger Travis and Cathy Packer,6,4
-orange,1,2001,41,243,Ginger Travis and Cathy Packer,6,3
-orange,1,2002,41,211,Ginger Travis and Cathy Packer,6,2
-orange,1,2003,54,376,Ginger Travis and Doug Shadwick,6,7
-orange,1,2004,57,395,Ginger Travis and Doug Shadwick,6,6
-orange,1,2005,54,419,Ginger Travis and Cathy Packer,5,23
-orange,1,2006,42,216,Ginger Travis and Cathy Packer,6,10
-orange,1,2007,40,210,Ginger Travis and Doug Shadwick,5,26
-orange,1,2008,40,187,Ginger Travis and Cathy Packer,6,15
-orange,1,2009,34,202,Ginger Travis and Cathy Packer,6,7
-orange,1,2010,54,278,"N. Budnitz, M. Schultz",6,17
-orange,1,2011,57,335,"Norm Budnitz, Mike Schultz",5,22
-orange,1,2012,51,343,"Norman Budnitz, Mike Schultz",6,10
-orange,1,2013,46,288,"Norman Budnitz, Mike Schultz",6,13
-orange,1,2014,45,249,"Norman Budnitz, Mike Schultz",6,22
-orange,1,2015,55,345,"Norman Budnitz, Mike Schultz",5,24
-orange,1,2016,50,291,"Norman Budnitz, Mike Schultz",5,16
-orange,1,2017,53,285,"Norman Budnitz, Mike Schultz",5,28
-orange,1,2018,43,315,"Norman Budnitz, Mike Schultz",5,28
-orange,1,2019,45,284,"Norman Budnitz, Mike Schultz",5,18
-orange,1,2020,39,226,Norm Budnitz,5,24
-orange,1,2021,41,255,"Norm Budnitz, Mike Schultz",5,31
-orange,1,2022,51,325,"Norm Budnitz, Mike Schultz",5,30
-orange,1,2023,44,262,"Norm Budnitz, Mike Schultz",6,3
-orange,1,2024,43,264,"Mike Schultz, Norm Budnitz",5,26
-orange,2,1999,35,167,Barb Brooks,5,23
-orange,2,2000,32,170,Barbara Brooks,5,27
-orange,2,2001,31,179,Barbara Brooks,6,3
-orange,2,2002,41,242,Barbara Brooks,6,2
-orange,2,2003,34,183,Barb Brooks,6,8
-orange,2,2004,34,186,Barb Brooks,5,28
-orange,2,2005,34,192,Barb Brooks,5,8
-orange,2,2006,30,243,Barb Brooks,5,28
-orange,2,2007,26,182,Barb Brooks,5,27
-orange,2,2008,37,163,barb Brooks,6,6
-orange,2,2009,30,143,barb brooks,6,3
-orange,2,2010,35,132,B. BROOKS,5,29
-orange,2,2011,31,171,Barb Brooks,5,30
-orange,2,2012,27,168,Barb Brooks,5,28
-orange,2,2013,25,132,Barb Brooks,5,26
-orange,2,2014,20,128,Barb Brooks,5,25
-orange,2,2015,33,147,Barb Brooks,5,31
-orange,2,2016,20,92,barb brooks,5,29
-orange,2,2017,19,83,Barb Brooks,5,28
-orange,2,2018,24,108,Barb Brooks,5,27
-orange,2,2019,21,61,Barb Brooks,6,9
-orange,2,2020,16,73,Barb Brooks,5,24
-orange,2,2021,25,92,barb Brooks,6,6
-orange,2,2022,24,82,barb Brooks,6,18
-orange,2,2023,25,93,barb brooks,6,3
-orange,2,2024,39,217," Barb Brooks, Will Mackin",5,26
-orange,3,1999,40,347,"Kate Finlayson, Karen Piplani",6,6
-orange,3,2000,40,281,Kate Finlayson and Karen Piplani,6,11
-orange,3,2001,43,266,Kate Finlayson and Karen Piplani,5,23
-orange,3,2002,48,272,Kate Finlayson and Karen Piplani,6,9
-orange,3,2003,43,331,Kate Finlayson and Karen Piplani,6,22
-orange,3,2004,44,271,Kate Finlayson and Karen Piplani,5,23
-orange,3,2005,45,233,Kate Finlayson and Karen Piplani,6,23
-orange,3,2006,46,300,Kate Finlayson and Karen Piplani,6,23
-orange,3,2007,44,195,Kate Finlayson and Karen Piplani,6,17
-orange,3,2008,44,224,Kate Finlayson and Karen Piplani,6,1
-orange,3,2009,40,252,Kate Finlayson and Karen Piplani,6,1
-orange,3,2011,21,120,Karen Piplani,6,12
-orange,3,2014,23,97,Barb Brooks,6,1
-orange,3,2015,28,142,Barb Brooks,6,7
-orange,3,2016,23,81,barb brooks,6,5
-orange,3,2017,23,121,Barb Brooks,6,4
-orange,3,2018,21,98,barb brooks,6,3
-orange,3,2019,29,203,"Bradley Saul, Charity Kirk",6,29
-orange,3,2020,31,179,Bradley Saul,6,14
-orange,3,2021,28,217,Bradley Saul,6,13
-orange,3,2022,31,211,Bradley Saul,6,12
-orange,3,2023,39,212,Bradley Saul,6,11
-orange,3,2024,44,225,Bradley Saul,6,16
-orange,4,1999,37,194,Kent Fiala,5,30
-orange,4,2000,39,197,Kent Kiala,5,27
-orange,4,2001,45,231,Kent Kiala,6,10
-orange,4,2002,41,184,Kent Fiala,6,9
-orange,4,2003,36,194,Kent Fiala,5,26
-orange,4,2004,40,210,Kent Fiala,6,6
-orange,4,2005,45,238,Kent Fiala,5,29
-orange,4,2006,36,168,Kent Fiala,5,27
-orange,4,2007,36,173,Kent Fiala,5,28
-orange,4,2008,34,160,Kent Fiala,5,25
-orange,4,2009,27,155,Kent Fiala,5,24
-orange,4,2010,40,235,"Will Cook, Catherine Carter",7,18
-orange,4,2011,52,439,"Jill Paul, Tom Driscoll",6,19
-orange,4,2013,39,210,Allen Hurlbert,6,9
-orange,4,2014,36,178,Allen Hurlbert,6,15
-orange,4,2015,36,208,Allen Hurlbert,5,31
-orange,4,2016,31,151,Allen Hurlbert,6,5
-orange,4,2017,32,184,Allen Hurlbert,6,4
-orange,4,2018,37,249,"Allen Hurlbert, Grace Di Cecco, Allison Duprey",6,3
-orange,4,2019,45,228,"Allen Hurlbert, Sarah Pollack",5,26
-orange,4,2020,39,230,Allen Hurlbert,5,31
-orange,4,2021,40,225,Allen Hurlbert,6,6
-orange,4,2022,47,233,"Allen Hurlbert, Ashley Moore, Ellen Weaver",6,5
-orange,4,2023,39,208,Allen Hurlbert,6,3
-orange,4,2024,43,243,Allen Hurlbert,6,2
-orange,5,1999,53,419,Will Cook,6,12
-orange,5,2000,47,359,Will Cook,5,29
-orange,5,2001,58,445,Will Cook,6,9
-orange,5,2002,48,375,Will Cook,6,15
-orange,5,2003,56,341,Will Cook,6,21
-orange,5,2004,56,478,Will Cook,5,29
-orange,5,2005,49,363,Will Cook,6,11
-orange,5,2006,53,389,Will Cook,6,24
-orange,5,2007,48,321,Will Cook,6,17
-orange,5,2008,57,424,Will Cook,6,7
-orange,5,2009,59,425,Will Cook,6,20
-orange,5,2010,51,377,"Will Cook, Catherine Anderson",5,30
-orange,5,2011,51,433,"Will Cook, Catherine Carter",6,25
-orange,5,2012,60,423,Will Cook,6,2
-orange,5,2013,57,415,Will Cook,6,2
-orange,5,2014,53,429,Will Cook,6,29
-orange,5,2015,54,385,Will Cook,5,31
-orange,5,2016,53,356,Will Cook,6,5
-orange,5,2017,54,348,Will Cook,6,10
-orange,5,2018,53,345,Will Cook,6,24
-orange,5,2019,59,369,Will Cook,6,2
-orange,5,2020,55,455,Will Cook,6,14
-orange,5,2021,58,527,Will Cook,6,19
-orange,5,2022,58,385, Will Cook,6,25
-orange,5,2023,61,365,Will Cook,6,11
-orange,5,2024,58,382,Will Cook,6,9
-orange,6,1999,34,250,"Judy Murray, Robin Moran",6,13
-orange,6,2000,38,245,Judy Murray and Robin Moran,6,4
-orange,6,2001,36,288,Judy Murray and Robin Moran,6,3
-orange,6,2002,32,237,Robin Moran and Judy Murray,6,9
-orange,6,2003,40,245,Robin Moran & Judy Murray,6,30
-orange,6,2004,38,254,Robin Moran and Judy Murray,6,6
-orange,6,2005,34,215,Robin Moran and Judy Murray,6,21
-orange,6,2006,38,251,Robin Moran and Judy Murray,5,28
-orange,6,2007,41,255,Robin Moran and Judy Murray,5,27
-orange,6,2008,42,227,Robin Moran and Judy Murray,5,18
-orange,6,2009,38,191,Robin Moran and Judy Murray,6,7
-orange,6,2010,36,193,"R. Moran, J. Murray",6,8
-orange,6,2011,38,204,"Robin Moran, Judy Murray",5,30
-orange,6,2012,41,209,"Judy Murray, Robin Moran",6,3
-orange,6,2013,38,159,"Robin Moran, Judy Murray",6,2
-orange,6,2014,38,212,"Robin Moran, Judy Murray",6,8
-orange,6,2015,28,165,Judy Murray,6,7
-orange,6,2016,31,155,"Robin Moran, Judy Murray",5,15
-orange,6,2017,30,155,"Judy Murray, Robin Moran",5,28
-orange,6,2019,35,186,"Karen Hogan, Robin Moran",6,9
-orange,6,2020,38,248,"Karen Hogan, Mark Hogan",6,7
-orange,6,2021,40,236,Karen Hogan,6,6
-orange,6,2022,38,201,Karen Hogan,6,5
-orange,6,2023,35,182,Karen Hogan,6,9
-orange,6,2024,39,221,Karen Hogan,6,2
-orange,7,1999,40,293,"Betty King, John King (driver)",6,10
-orange,7,2000,41,284,Betty and John King,5,25
-orange,7,2001,43,267,Betty and John King,5,23
-orange,7,2002,44,300,Betty King,5,22
-orange,7,2003,36,268,Betty King,5,15
-orange,7,2004,51,343,Betty King,5,22
-orange,7,2005,45,265,Betty King,5,23
-orange,7,2006,49,343,Betty King,5,21
-orange,7,2007,47,298,Betty King,5,21
-orange,7,2008,43,337,Betty King,5,21
-orange,7,2009,39,258,Betty King,5,31
-orange,7,2010,40,261,Betty King,5,23
-orange,7,2011,42,260,Betty King,5,15
-orange,7,2012,40,295,Betty King,5,17
-orange,7,2014,51,373,"Brian Bockhahn, weather=69, clear, sunny, vehicles=31, habitat@1=B, habitat@2=P, habitat@3=M, habitat@4=M, habitat@5=B, habitat@6=H, habitat@7=B, habitat@8=H, habitat@9=O, habitat@10=O, habitat@11=H, habitat@12=O, habitat@13=H, habitat@14=M, habitat@15=M, habitat@16=B, habitat@17=O, habitat@18=O, habitat@19=O, habitat@20=M",5,27
-orange,7,2015,48,327,Brian Bockhahn,5,31
-orange,7,2016,48,303,Brian Bockhahn,6,26
-orange,7,2017,53,334,Brian Bockhahn,6,6
-orange,7,2018,49,294,Brian Bockhahn,6,5
-orange,7,2019,47,280,brian bockhahn,5,23
-orange,7,2020,42,232,Brian Bockhahn,6,1
-orange,7,2021,50,243,Brian Bockhahn,6,3
-orange,7,2022,43,284,Brian Bockhahn,6,9
-orange,7,2023,53,279,Brian Bockhahn,6,6
-orange,7,2024,50,294,Brian Bockhahn,6,6
-orange,8,1999,39,245,Barb Brooks,5,30
-orange,8,2000,30,151,Barbara Brooks,5,28
-orange,8,2001,37,178,Barbara Brooks,5,27
-orange,8,2002,31,140,Barbara Brooks,6,30
-orange,8,2003,23,110,Barb Brooks,6,1
-orange,8,2004,25,182,Barb Brooks,6,2
-orange,8,2005,32,169,Barb Brooks,5,15
-orange,8,2006,28,194,Barb Brooks,5,21
-orange,8,2007,27,179,Barb Brooks,5,20
-orange,8,2008,29,190,Barb Brooks,6,1
-orange,8,2009,27,160,Barb Brooks,5,29
-orange,8,2010,33,152,Barb Brooks,6,1
-orange,8,2011,28,188,Barb Brooks,6,5
-orange,8,2012,29,167,Barb Brooks,5,13
-orange,8,2013,24,98,Barb Brooks,5,19
-orange,8,2014,24,111,Barb Brooks,5,18
-orange,8,2015,30,124,Barb Brooks,5,24
-orange,8,2016,16,88,Barb Brooks,5,22
-orange,8,2017,20,95,Barb Brooks,5,21
-orange,8,2018,16,66,Barb Brooks,5,20
-orange,8,2019,17,72,Barb Brooks,6,2
-orange,8,2020,20,70,Barb Brooks,5,17
-orange,8,2021,24,92,Barb Brooks,5,16
-orange,8,2022,34,130,Barb Brooks,6,4
-orange,8,2023,25,77,barb brooks,5,20
-orange,8,2024,37,150," Barb Brooks, Will Makin",5,19
-orange,9,1999,44,264,S. Phukan and T. Williams,5,31
-orange,9,2000,37,158,Sandy Cash,6,8
-orange,9,2001,49,270,Shantanu Phukan,6,19
-orange,9,2002,43,300,Shantanu Phukan and Alan Johnston,5,31
-orange,9,2003,32,248,Shantanu Phukan,7,27
-orange,9,2004,42,186,Shantanu Phukan,6,24
-orange,9,2005,45,248,Shantanu Phukan,6,7
-orange,9,2006,33,248,? (NOT Shantanu),6,16
-orange,9,2007,36,207,? (NOT Shantanu),6,26
-orange,9,2008,39,263,? (NOT Shantanu),6,27
-orange,9,2009,37,228,? (NOT Shantanu),6,28
-orange,9,2011,32,228,David Curtin,6,12
-orange,9,2012,36,260,David Curtin,6,10
-orange,9,2013,35,244,David Curtin,6,16
-orange,9,2014,37,305,David Curtin,5,25
-orange,9,2015,35,213,David Curtin,5,24
-orange,9,2016,32,223,David Curtin,6,9
-orange,9,2019,33,192,"Karen Hogan, Mark Hogan",6,10
-orange,9,2020,39,205,"Karen Hogan, Mark Hogan",6,8
-orange,9,2021,37,174,Karen Hogan,6,7
-orange,9,2022,42,209,Karen Hogan,6,4
-orange,9,2023,33,171,Karen Hogan,6,7
-orange,9,2024,41,212,Karen Hogan,6,5
-orange,10,1999,53,391,Will Cook,6,13
-orange,10,2000,49,320,Will Cook,6,3
-orange,10,2001,49,397,Will Cook,6,10
-orange,10,2002,50,358,Will Cook,6,16
-orange,10,2003,45,357,Will Cook,6,22
-orange,10,2004,50,317,Will Cook,5,31
-orange,10,2005,52,365,"Will Cook, Doug Shadwick",6,12
-orange,10,2006,46,303,Doug Shadwick,6,18
-orange,10,2007,51,314,Doug Shadwick,6,10
-orange,10,2008,47,369,Doug Shadwick,6,1
-orange,10,2009,43,249,Doug Shadwick,6,7
-orange,10,2012,42,425,Nate Swick,6,17
-orange,10,2013,41,309,Nathan Swick,5,26
-orange,10,2016,14,70,Barb Brooks,6,12
-orange,10,2017,15,106,Barb Brooks,6,11
-orange,10,2018,18,102,Barb Brooks,5,28
-orange,10,2019,33,213,"Vern Bothwell, Nan Dewire",6,6
-orange,10,2020,28,158,Vern Bothwell,6,24
-orange,10,2021,30,185,Vern Bothwell,6,1
-orange,10,2023,42,254,Allen Hurlbert,6,25
-orange,10,2024,51,282,Paul Taillie,6,2
-orange,11,1999,42,397,Marsha Stephens,6,6
-orange,11,2000,37,291,Marsha Stephens,6,18
-orange,11,2001,38,266,Marsha Stephens,6,24
-orange,11,2002,37,266,Marsha Stephens,6,24
-orange,11,2003,19,175,Marsha Stephens,6,22
-orange,11,2004,24,201,Marsha Stephens,6,6
-orange,11,2005,31,199,Marsha Stephens,6,26
-orange,11,2006,40,333,Marsha Stephens,6,26
-orange,11,2007,35,247,?,6,16
-orange,11,2008,24,238,?,6,7
-orange,11,2009,26,215,?,6,13
-orange,11,2012,73,700,Ali Iyoob,6,17
-orange,11,2017,36,151,Loren Hintz,6,18
-orange,11,2018,40,137,Loren Hintz,6,2
-orange,11,2019,38,169,"Loren Hintz: weather=64F then warming, sunny, no wind",6,16
-orange,11,2020,40,212,"Loren Hintz: weather=61F then warming, sunny, no wind",6,14
-orange,11,2021,39,182,"Loren Hintz: weather=66F then warming, partially cloudy, no wind",6,5
-orange,11,2022,40,191,"Loren Hintz, Margaret Vimmerstedt",6,4
-orange,11,2023,48,298,"Suzanne Roberts, Vicki Nebes",6,3
-orange,11,2024,46,289,"Suzanne Roberts,Vicki Nebes",6,16
-orange,12,1999,45,330,"Haven Wiley (Minna Wiley, recorder)",5,23
-orange,12,2000,37,297,Minna and Haven Wiley,5,28
-orange,12,2001,41,308,Minna and Haven Wiley,6,6
-orange,12,2002,36,311,Haven and Minna Wiley,5,27
-orange,12,2003,38,284,Haven and Minna Wiley,5,18
-orange,12,2004,43,282,Haven and Minna Wiley,5,23
-orange,12,2005,32,258,Haven and Minna Wiley,6,11
-orange,12,2006,43,294,Haven and Minna Wiley,5,21
-orange,12,2007,38,329,Haven and Minna Wiley,6,10
-orange,12,2008,40,321,Haven and Minna Wiley,6,8
-orange,12,2009,32,271,Haven and Minna Wiley,7,5
-orange,12,2010,39,314,H. Wiley,5,31
-orange,12,2011,36,252,Haven Wiley,5,29
-orange,12,2012,37,239,Haven Wiley,6,17
-orange,12,2013,26,230,Haven Wiley,6,2
-orange,12,2014,30,216,Haven Wiley,6,8
-orange,12,2015,27,175,Haven Wiley,6,28
-orange,12,2016,32,210,Haven Wiley,5,22
-orange,12,2017,32,181,Haven Wiley,5,28
-orange,12,2018,29,176,Haven Wiley,5,27
-orange,12,2019,34,223,Haven Wiley,6,2
-orange,12,2020,40,215,"Haven Wiley, Minna Wiley",5,24
-orange,12,2021,37,183,"Haven Wiley, Minna Wiley",6,27
-orange,12,2022,29,199,"Haven Wiley, Minna Wiley",5,22
-orange,12,2023,31,158,"Haven Wiley, Minna Wiley",5,21
-orange,12,2024,32,154,"Haven Wiley, Minna Wiley",6,2
+"route","year","observers"
+"cthm-01",2000,"Patricia Bailey and Marsha Stephens"
+"cthm-01",2001,"Patricia Bailey and Marsha Stephens"
+"cthm-01",2002,"Marsha Stephens and Patsy Bailey"
+"cthm-01",2003,"Patsy Bailey and Marsha Stephens"
+"cthm-01",2004,"Patsy Bailey and Marsha Stephens"
+"cthm-01",2005,"Patsy Bailey and Marsha Stephens"
+"cthm-01",2006,"Patsy Bailey and Marsha Stephens"
+"cthm-01",2007,"Patsy Bailey"
+"cthm-01",2008,"Patsy Bailey"
+"cthm-01",2009,"Patsy Bailey"
+"cthm-01",2010,"Patsy Bailey"
+"cthm-01",2011,"Patsy Bailey, Norman Budnitz"
+"cthm-01",2012,"Patsy Bailey"
+"cthm-01",2013,"Patsy Bailey"
+"cthm-01",2014,"Patsy Bailey"
+"cthm-01",2015,"Patsy Bailey"
+"cthm-01",2016,"Patsy Bailey"
+"cthm-01",2017,"Patsy Bailey"
+"cthm-01",2018,"Patsy Bailey"
+"cthm-01",2019,"Patsy Bailey"
+"cthm-01",2020,"Patsy Bailey"
+"cthm-01",2021,"Patsy Bailey"
+"cthm-01",2022,"Patsy Bailey"
+"cthm-01",2023,"Patsy Bailey"
+"cthm-01",2024,"Patsy Bailey"
+"cthm-02",2000,"Norm Budnitz & Mike Schultz"
+"cthm-02",2001,"Norm Budnitz & Mike Schultz"
+"cthm-02",2002,"Norm Budnitz & Mike Schultz"
+"cthm-02",2003,"Norm Budnitz & Mike Schultz"
+"cthm-02",2004,"Norm Budnitz and Mike Schultz"
+"cthm-02",2005,"Norm Budnitz and Mike Schultz"
+"cthm-02",2006,"Norm Budnitz and Mike Schultz"
+"cthm-02",2007,"Norm Budnitz and Mike Schultz"
+"cthm-02",2008,"Norm Budnitz and Mike Schultz"
+"cthm-02",2009,"Norm Budnitz and Mike Schultz"
+"cthm-02",2010,"N. Budnitz, M. Schultz"
+"cthm-02",2011,"Norm Budnitz, Mike Schultz"
+"cthm-02",2012,"Norm Budnitz, Mike Schultz"
+"cthm-02",2013,"Norman Budnitz, Mike Schultz"
+"cthm-02",2014,"Norman Budnitz, Mike Schultz"
+"cthm-02",2015,"Norman Budnitz, Mike Schultz"
+"cthm-02",2016,"Norman Budnitz, Mike Schultz"
+"cthm-02",2017,"Norman Budnitz, Mike Schultz"
+"cthm-02",2018,"Norman Budnitz, Mike Schultz"
+"cthm-02",2019,"Norman Budnitz, Mike Schultz, Karen Hogan"
+"cthm-02",2020,"Norm Budnitz"
+"cthm-02",2021,"Norm Budnitz, Mike Schultz"
+"cthm-02",2022,"Norm Budnitz, Mike Schultz"
+"cthm-02",2023,"Norm Budnitz, Mike Schultz"
+"cthm-02",2024,"Mike Schultz, Norm Budnitz"
+"cthm-03",2000,"Haven and Minna Wiley"
+"cthm-03",2001,"Haven and Minna Wiley"
+"cthm-03",2002,"Haven and Minna Wiley"
+"cthm-03",2003,"Haven and Minna Wiley"
+"cthm-03",2004,"Haven and Minna Wiley"
+"cthm-03",2005,"Haven and Minna Wiley"
+"cthm-03",2006,"Haven and Minna Wiley"
+"cthm-03",2007,"Haven and Minna Wiley (6-10-2007 and 6-14-2007)"
+"cthm-03",2008,"Haven and Minna Wiley"
+"cthm-03",2009,"Haven and Minna Wiley"
+"cthm-03",2010,"Haven Wiley"
+"cthm-03",2011,"Haven Wiley"
+"cthm-03",2012,"Haven Wiley"
+"cthm-03",2013,"Haven Wiley"
+"cthm-03",2014,"Haven Wiley"
+"cthm-03",2015,"Haven Wiley"
+"cthm-03",2016,"Haven Wiley"
+"cthm-03",2017,"Haven Wiley"
+"cthm-03",2018,"Haven Wiley"
+"cthm-03",2019,"Haven Wiley"
+"cthm-03",2020,"Haven Wiley, Minna Wiley"
+"cthm-03",2021,"Haven Wiley, Minna Wiley"
+"cthm-03",2022,"Haven Wiley, Minna Wiley"
+"cthm-03",2023,"Haven Wiley, Minna Wiley"
+"cthm-03",2024,"Haven Wiley, Minna Wiley"
+"cthm-04",2000,"Michael and Lois Schultz"
+"cthm-04",2001,"Michael and Lois Schultz"
+"cthm-04",2002,"Michael and Lois Schultz"
+"cthm-04",2003,"Michael and Lois Schultz"
+"cthm-04",2004,"Michael and Lois Schultz"
+"cthm-04",2005,"Michael and Lois Schultz"
+"cthm-04",2006,"Michael and Lois Schultz"
+"cthm-04",2007,"Michael and Lois Schultz"
+"cthm-04",2008,"M. Schultz, L. Schultz"
+"cthm-04",2009,"M. Schultz, L. Schultz"
+"cthm-04",2010,"M. Schultz, L. Schultz"
+"cthm-04",2011,"Michael Schultz"
+"cthm-04",2012,"Mike Schultz, Lois Schultz"
+"cthm-04",2013,"Mike Schultz, Lois Schultz"
+"cthm-04",2014,"Mike Schultz, Lois Schultz"
+"cthm-04",2015,"Schultz, Michael"
+"cthm-04",2016,"M. Schultz, L. Schultz"
+"cthm-04",2017,"M. Schultz, L. Schultz"
+"cthm-04",2018,"M. Schultz, L. Schultz"
+"cthm-04",2019,"M. Schultz, K. Hogan"
+"cthm-04",2020,"Michael Schultz"
+"cthm-04",2021,"Mike Schultz, Norm Budnitz"
+"cthm-04",2022," Mike Schultz, Norm Budnitz"
+"cthm-04",2023,"Mike Schultz, Norm Budnitz"
+"cthm-04",2024,"Mike Schultz, Norm Budnitz"
+"cthm-05",2000,"Jeff Pippen and Julie Rice"
+"cthm-05",2001,"Jeff Pippen and Julie Rice"
+"cthm-05",2002,"Haven and Minna Wiley"
+"cthm-05",2003,"Haven and Minna Wiley"
+"cthm-05",2004,"Haven and Minna Wiley"
+"cthm-05",2005,"Haven and Minna Wiley"
+"cthm-05",2006,"Tom Driscoll, Colyer Durovich, and Marsha Stephens"
+"cthm-05",2007,"Tom Driscoll"
+"cthm-05",2008,"Tom Driscoll"
+"cthm-05",2009,"Tom Driscoll and Marsha Stephens"
+"cthm-05",2010,"Marsha Tuttle, Thomas Driscoll, Colyer Durovich"
+"cthm-05",2011,"Tom Driscoll"
+"cthm-05",2012,"Tom Driscoll"
+"cthm-05",2013,"tom driscoll"
+"cthm-05",2014,"tom driscoll"
+"cthm-05",2015,"tom driscoll, Vern Bothwell"
+"cthm-05",2016,"driscoll, tom"
+"cthm-05",2017,"Tom Driscoll, Edison Buenano"
+"cthm-05",2018,"tom driscoll"
+"cthm-05",2019,"tom driscoll"
+"cthm-05",2020,"tom driscoll, Elizabeth Keating"
+"cthm-05",2021,"Tom Driscoll"
+"cthm-05",2022,"tom driscoll"
+"cthm-05",2023,"tom driscoll"
+"cthm-05",2024,"tom driscoll"
+"cthm-06",2000,"Cynthia Fox and Marsha Stephens"
+"cthm-06",2001,"Cynthia Fox and Marsha Stephens"
+"cthm-06",2002,"Cynthia Fox and Marsha Stephens"
+"cthm-06",2003,"Cynthia Fox and Marsha Stephens"
+"cthm-06",2004,"Cynthia Fox and Marsha Stephens"
+"cthm-06",2005,"Cynthia Fox and Marsha Stephens"
+"cthm-06",2006,"Cynthia Fox and Marsha Stephens"
+"cthm-06",2007,"Cynthia Fox and Marsha Stephens"
+"cthm-06",2008,"Cynthia Fox and Marsha Stephens"
+"cthm-06",2009,"Cynthia Fox and Marsha Stephens"
+"cthm-06",2010,"Marsha Tuttle, Thomas Driscoll, Laurie Kucharik"
+"cthm-06",2018,"Roger Shaw"
+"cthm-06",2019,"Roger Shaw"
+"cthm-06",2020,"Roger Shaw"
+"cthm-06",2021,"Roger Shaw"
+"cthm-06",2022,"Roger Shaw"
+"cthm-06",2023,"Roger Shaw"
+"cthm-06",2024,"Roger Shaw"
+"cthm-07",2000,"Will Cook"
+"cthm-07",2001,"Will Cook"
+"cthm-07",2002,"Will Cook"
+"cthm-07",2003,"Will Cook"
+"cthm-07",2004,"Will Cook"
+"cthm-07",2005,"Will Cook"
+"cthm-07",2006,"Will Cook"
+"cthm-07",2007,"Will Cook"
+"cthm-07",2008,"Will Cook"
+"cthm-07",2009,"Will Cook"
+"cthm-07",2010,"Will Cook, Catherine Carter"
+"cthm-07",2011,"Will Cook, Lesley Starke"
+"cthm-07",2012,"Will Cook, Lesley Starke"
+"cthm-07",2013,"Will Cook, Lesley Starke"
+"cthm-07",2014,"Will Cook"
+"cthm-07",2015,"Will Cook"
+"cthm-07",2016,"Will Cook"
+"cthm-07",2017,"Will Cook"
+"cthm-07",2018,"Will Cook"
+"cthm-07",2019,"Will Cook"
+"cthm-07",2020,"Will Cook"
+"cthm-07",2021,"Will Cook"
+"cthm-07",2022,"Will Cook"
+"cthm-07",2023,"Will Cook"
+"cthm-07",2024,"Will Cook"
+"cthm-08",2000,"Judy Murray and Marty Girolami"
+"cthm-08",2001,"Judy Murray and Marty Girolami"
+"cthm-08",2002,"Judy Murray and Marty Girolami"
+"cthm-08",2003,"Judy Murray and Marty Girolami"
+"cthm-08",2004,"Marty Girolami and Judy Murray"
+"cthm-08",2005,"Marty Girolami and Judy Murray"
+"cthm-08",2006,"Marty Girolami, Pat Reid, and Judy Murray"
+"cthm-08",2007,"Marty Girolami and Judy Murray"
+"cthm-08",2008,"Marty Girolami and Judy Murray"
+"cthm-08",2009,"Marty Girolami and Judy Murray"
+"cthm-08",2010,"M. Girolami, P. Reid, J. Murray"
+"cthm-08",2011,"Martha Girolami, Judy Murray"
+"cthm-08",2012,"Martha Girolami, Judy Murray"
+"cthm-08",2013,"Martha Girolami, Judy Murray"
+"cthm-08",2014,"Martha Girolami, Judy Murray"
+"cthm-08",2015,"Martha Girolami, Judy Murray"
+"cthm-08",2016,"Martha Girolami, Judy Murray"
+"cthm-08",2017,"Martha Girolami, Pat Reid and Judy Murray"
+"cthm-08",2019,"Nan Dewire and Fleeta Wilkinson"
+"cthm-08",2020,"Nan Dewire and Fleeta Chauvigne"
+"cthm-08",2021,"Nan Dewire and fleeta Chauvigne"
+"cthm-08",2022,"Nan Dewire and Fleeta Chauvigne"
+"cthm-08",2023," Nan Dewire and Fleeta Chauvigne"
+"cthm-08",2024,"Nan Dewire, Fleeta Chauvigne"
+"cthm-09",2000,"Shelley Theye and Lee Van Malssen"
+"cthm-09",2001,"Shelley Theye and Lee Van Malssen"
+"cthm-09",2002,"Shelley Theye and Lee Van Malssen"
+"cthm-09",2003,"Shelley Theye and Lee Van Malssen"
+"cthm-09",2005,"S. Theye"
+"cthm-09",2006,"Shelley Theye and Marsha Sephens"
+"cthm-09",2007,"S. Theye"
+"cthm-09",2008,"S. Theye"
+"cthm-09",2009,"S. Theye"
+"cthm-09",2010,"S. Theye"
+"cthm-09",2011,"S. Theye"
+"cthm-09",2012,"S. Theye"
+"cthm-09",2013,"S. Theye"
+"cthm-09",2014,"S. Theye"
+"cthm-09",2015,"S. Theye"
+"cthm-09",2016,"S. Theye"
+"cthm-09",2017,"S. Theye, L. Van Malssen"
+"cthm-09",2018,"S. Theye"
+"cthm-09",2019,"S. Theye"
+"cthm-09",2020,"S. Theye"
+"cthm-09",2021,"Shelley Theye, Lee Van Malssen"
+"cthm-09",2022,"Shelley Theye, Lee Van Malssen"
+"cthm-09",2023,"Shelley Theye"
+"cthm-09",2024,"Shelley Theye"
+"cthm-10",2000,"Sue Brady"
+"cthm-10",2001,"Will Cook"
+"cthm-10",2002,"Brian Strong"
+"cthm-10",2003,"Brian Strong"
+"cthm-10",2004,"Brian Strong"
+"cthm-10",2005,"Brian Strong"
+"cthm-10",2006,"Brian Strong"
+"cthm-10",2007,"Brian Strong"
+"cthm-10",2008,"Brian Strong"
+"cthm-10",2009,"Brian Strong"
+"cthm-10",2010,"Brian Strong"
+"cthm-10",2011,"Brian Strong"
+"cthm-10",2012,"Brian Strong"
+"cthm-10",2013,"Brian Strong"
+"cthm-10",2015,"Brian Strong"
+"cthm-10",2016,"Brian Strong"
+"cthm-10",2017,"Brian Strong"
+"cthm-10",2018,"Brian Strong"
+"cthm-10",2019,"Brian Strong"
+"cthm-10",2020,"Brian Strong"
+"cthm-10",2021,"Brian Strong"
+"cthm-10",2022,"Brian Strong"
+"cthm-10",2023,"Fleeta Chauvigne, Mark Montazer"
+"cthm-10",2024,"Fleeta Wilkinson Chauvigné, Mark Montazer, Nan DeWire"
+"cthm-11",2000,"M. Graves and B. Chase"
+"cthm-11",2001,"M. Graves and B. Chase"
+"cthm-11",2002,"Bob Chase"
+"cthm-11",2003,"Bob Chase"
+"cthm-11",2005,"Bob Chase"
+"cthm-11",2006,"Bob Chase"
+"cthm-11",2007,"Bob Chase"
+"cthm-11",2008,"Bob Chase"
+"cthm-11",2009,"Bob Chase"
+"cthm-11",2010,"Bob Chase"
+"cthm-11",2011,"Bob Chase"
+"cthm-11",2012,"Bob Chase"
+"cthm-11",2013,"Bob Chase"
+"cthm-11",2016,"Bob Chase"
+"cthm-11",2020,"Nathan Howell"
+"cthm-11",2022,"Allen Hurlbert"
+"cthm-11",2023,"Allen Hurlbert"
+"cthm-11",2024," Allen Hurlbert, Ivara Goulden"
+"cthm-12",2000,"Kate Finlayson and Chris Canfield"
+"cthm-12",2001,"Kate Finlayson and Chris Canfield"
+"cthm-12",2002,"Kate Finlayson and Chris Canfield"
+"cthm-12",2003,"Kate Finlayson and Chris Canfield"
+"cthm-12",2004,"Chris Canfield and Kate Finlayson"
+"cthm-12",2005,"Chris Canfield and Kate Finlayson"
+"cthm-12",2006,"Chris Canfield and Kate Finlayson"
+"cthm-12",2007,"Kate Finlayson and Chris Canfield"
+"cthm-12",2008,"Kate Finlayson and Chris Canfield"
+"cthm-12",2009,"Kate Finlayson and Chris Canfield"
+"cthm-12",2017,"tom driscoll, Elizabeth Keating"
+"cthm-12",2019,"tom driscoll, Fleeta Wilkinson"
+"cthm-12",2020,"tom driscoll, Elizabeth Keating"
+"cthm-12",2021,"Tom Driscoll"
+"cthm-12",2022," tom driscoll"
+"cthm-12",2023,"tom driscoll"
+"cthm-12",2024,"tom driscoll"
+"cthm-13",2000,"Marsha Stephens and Patsy Bailey"
+"cthm-13",2001,"Marsha Stephens"
+"cthm-13",2002,"Marsha Stephens"
+"cthm-13",2003,"Marsha Stephens"
+"cthm-13",2004,"Marsha Stephens"
+"cthm-13",2005,"Marsha Stephens"
+"cthm-13",2006,"JA and HS"
+"cthm-13",2007,"Haven and Minna Wiley"
+"cthm-13",2008,"?"
+"cthm-13",2009,"?"
+"cthm-13",2010,"Marsha Tuttle, Thomas Driscoll, Laurie Kucharik"
+"cthm-13",2011,"Tom Driscoll"
+"cthm-13",2012,"Tom Driscoll"
+"cthm-13",2013,"tom driscoll"
+"cthm-13",2014,"tom driscoll"
+"cthm-13",2015,"tom driscoll"
+"cthm-13",2016,"tom driscoll"
+"cthm-13",2017,"tom driscoll, Bradley Saul"
+"cthm-13",2018,"tom driscoll"
+"cthm-13",2019,"tom driscoll, Nan DeWire"
+"cthm-13",2020,"tom driscoll, Elizabeth Keating"
+"cthm-13",2021," Tom Driscoll"
+"cthm-13",2022," tom driscoll"
+"cthm-13",2023,"tom driscoll"
+"cthm-13",2024," tom driscoll"
+"cthm-14",2000,"Kent Fiala"
+"cthm-14",2001,"Kent Fiala"
+"cthm-14",2002,"Kent Fiala"
+"cthm-14",2003,"Kent Fiala"
+"cthm-14",2004,"Kent Fiala"
+"cthm-14",2005,"Kent Fiala"
+"cthm-14",2006,"Kent Fiala"
+"cthm-14",2007,"Kent Fiala"
+"cthm-14",2008,"Kent Fiala"
+"cthm-14",2009,"Kent Fiala"
+"cthm-14",2014,"Josh Sims"
+"cthm-14",2015,"Josh Sims"
+"cthm-14",2019,"Richard Snow"
+"cthm-14",2020,"Will Bennett, Jonathan Bennett"
+"cthm-14",2021,"Will Bennett, Jonathan Bennett"
+"cthm-14",2022,"Will Bennett, Jon Bennett"
+"cthm-14",2023,"Allen Hurlbert"
+"cthm-14",2024,"Allen Hurlbert"
+"drhm-01",2002,"Judy Murray"
+"drhm-01",2003,"Judy Murray"
+"drhm-01",2004,"Judy Murray"
+"drhm-01",2005,"Judy Murray"
+"drhm-01",2006,"Judy Murray and Tom Krakauer"
+"drhm-01",2007,"Judy Murray"
+"drhm-01",2008,"Judy Murray"
+"drhm-01",2009,"Judy Murray"
+"drhm-01",2010,"Judy Murray"
+"drhm-01",2011,"Judy Murray"
+"drhm-01",2012,"Judy Murray"
+"drhm-01",2013,"judy murray"
+"drhm-01",2014,"Judy Murray, Robin Moran"
+"drhm-01",2015,"Robin Moran, Judy Murray"
+"drhm-01",2016,"Judy Murray"
+"drhm-01",2017,"judy murray, robin moran"
+"drhm-01",2018,"robin moran and jennifer maher"
+"drhm-01",2019,"robin moran and jennifer maher"
+"drhm-01",2020,"robin moran and jennifer maher"
+"drhm-01",2021,"Robin Moran, Jennifer Maher, Noah Rokoske"
+"drhm-01",2022,"Robin Moran, Jennifer Maher, Noah Rokoske"
+"drhm-01",2023,"Noah Rokoske, Robin Moran, Jennifer Maher"
+"drhm-01",2024,"Robin Moran, Jennifer Maher, Noah Rokoske"
+"drhm-02",2002,"Bruce Young"
+"drhm-02",2003,"Bruce Young"
+"drhm-02",2004,"Bruce Young"
+"drhm-02",2005,"Bruce Young"
+"drhm-02",2006,"Bruce Young"
+"drhm-02",2007,"?"
+"drhm-02",2008,"?"
+"drhm-02",2009,"?"
+"drhm-02",2010,"?"
+"drhm-02",2011,"?"
+"drhm-02",2012,"?"
+"drhm-02",2013,"Elizabeth Tatum"
+"drhm-02",2014,"Edith Tatum"
+"drhm-02",2015,"Edith Tatum, Clea"
+"drhm-02",2017,"Jeffrey Pippen"
+"drhm-02",2018,"Jeffrey Pippen"
+"drhm-02",2019,"Jeffrey Pippen"
+"drhm-02",2020,"Jeffrey Pippen"
+"drhm-02",2022,"Jeffrey Pippen"
+"drhm-02",2023,"Jeffrey Pippen"
+"drhm-02",2024,"Jeff Pippen"
+"drhm-03",2002,"Carol Williamson and Norm Budnitz"
+"drhm-03",2003,"Carol Williamson and Norm Budnitz"
+"drhm-03",2004,"Carol Williamson and Norm Budnitz"
+"drhm-03",2005,"Carol Williamson and Norm Budnitz"
+"drhm-03",2006,"Carol Williamson and Norm Budnitz"
+"drhm-03",2007,"Carol Williamson and Norm Budnitz"
+"drhm-03",2008,"Carol Williamson and Norm Budnitz"
+"drhm-03",2009,"Carol Williamson and Norm Budnitz"
+"drhm-03",2010,"N. Budnitz, C. Williamson"
+"drhm-03",2011,"Patsy Bailey, Norman Budnitz"
+"drhm-03",2012,"Norman Budnitz"
+"drhm-03",2013,"Norman Budnitz"
+"drhm-03",2014,"Norman Budnitz"
+"drhm-03",2015,"Norman Budnitz"
+"drhm-03",2016,"Norman Budnitz"
+"drhm-03",2017,"Norman Budnitz"
+"drhm-03",2018,"Norman Budnitz"
+"drhm-03",2019,"Norman Budnitz"
+"drhm-03",2020,"Norm Budnitz"
+"drhm-03",2021,"Norm Budnitz"
+"drhm-03",2022,"Norm Budnitz"
+"drhm-03",2023,"Norm Budnitz"
+"drhm-03",2024,"Norm Budnitz"
+"drhm-04",2002,"Jeff Pippen and Julie Rice"
+"drhm-04",2003,"Jeff Pippen and Julie Rice"
+"drhm-04",2004,"Jeff Pippen and Julie Rice"
+"drhm-04",2005,"Jeff Pippen and Julie Rice"
+"drhm-04",2006,"Jeffrey Pippin and Julie Rice"
+"drhm-04",2007,"Jeffrey Pippen"
+"drhm-04",2008,"Jeffrey Pippen"
+"drhm-04",2009,"Jeffrey Pippen"
+"drhm-04",2011,"Jeffrey Pippen"
+"drhm-04",2012,"Jeffrey Pippen"
+"drhm-04",2013,"Jeffrey Pippen"
+"drhm-04",2014,"Jeffrey Pippen"
+"drhm-04",2018,"Patsy Bailey"
+"drhm-04",2019,"Roger Shaw"
+"drhm-04",2020,"Roger Shaw"
+"drhm-04",2021,"Roger Shaw"
+"drhm-04",2022," Roger Shaw, Stephen Brooks, Carey Jefferson"
+"drhm-04",2023,"Stephen Brooks, Carey Jefferson"
+"drhm-04",2024,"Stephen Brooks, Carey Jefferson"
+"drhm-05",2002,"Alan Johnston and Shantanu Phukan"
+"drhm-05",2003,"Alan Johnston and Shantanu Phukan"
+"drhm-05",2004,"Alan Johnston and Sally Johnston"
+"drhm-05",2005,"Alan Johnston and Denny Dobbin"
+"drhm-05",2006,"Alan Johnston and Dan Williams"
+"drhm-05",2007,"Alan Johnston and David Welch"
+"drhm-05",2008,"Alan Johnston, Bobbie Johnston, and Pamela Clark"
+"drhm-05",2009,"Alan Johnston and Denny Dobbin"
+"drhm-05",2010,"Alan Johnston and Denny Dobbin"
+"drhm-05",2011,"Alan Johnston and Denny Dobbin"
+"drhm-05",2012,"David Smith, Judy Smith"
+"drhm-05",2013,"David Smith, Judy Smith"
+"drhm-05",2014,"David Smith, Judy Smith"
+"drhm-05",2015,"David Smith, Judy Smith"
+"drhm-05",2016,"David Smith, Judy Smith"
+"drhm-05",2017,"David Smith, Judy Smith"
+"drhm-05",2018,"David Smith, Judy Smith"
+"drhm-05",2019,"David Smith, Judy Smith"
+"drhm-05",2020,"David Smith, Judy Smith"
+"drhm-05",2021,"David Smith, Judy Smith"
+"drhm-05",2022,"David Smith, Judy Smith"
+"drhm-05",2023,"David Smith, Judy Smith"
+"drhm-05",2024," David Smith, Judy Smith"
+"drhm-06",2002,"Rick Payne"
+"drhm-06",2003,"Rick Payne"
+"drhm-06",2004,"Rick Payne"
+"drhm-06",2005,"Rick Payne"
+"drhm-06",2006,"Rick Payne"
+"drhm-06",2007,"Rick Payne"
+"drhm-06",2008,"Rick Payne"
+"drhm-06",2009,"Rick Payne"
+"drhm-06",2010,"Rick Payne"
+"drhm-06",2011,"David Smith"
+"drhm-06",2012,"David Smith, Judy Smith"
+"drhm-06",2013,"David Smith, Judy Smith"
+"drhm-06",2014,"David Smith, Judy Smith"
+"drhm-06",2015,"David Smith, Judy Smith"
+"drhm-06",2016,"David Smith, Judy Smith"
+"drhm-06",2017,"David Smith, Judy Smith"
+"drhm-06",2018,"David Smith, Judy Smith"
+"drhm-06",2019,"David Smith, Judy Smith"
+"drhm-06",2020,"David Smith, Judy Smith"
+"drhm-06",2021,"David Smith, Judy Smith"
+"drhm-06",2022,"David Smith, Judy Smith"
+"drhm-06",2023,"David Smith, Judy Smith"
+"drhm-06",2024,"David Smith, Judy Smith"
+"drhm-07",2002,"Brian Strong"
+"drhm-07",2003,"Brian Strong"
+"drhm-07",2004,"Brian Strong"
+"drhm-07",2005,"Brian Strong"
+"drhm-07",2006,"Brian Strong"
+"drhm-07",2007,"Brian Strong"
+"drhm-07",2008,"Brian Strong"
+"drhm-07",2009,"Brian Strong"
+"drhm-07",2010,"Brian Strong"
+"drhm-07",2011,"Brian Strong"
+"drhm-07",2012,"Brian Strong"
+"drhm-07",2013,"Brian Strong"
+"drhm-07",2015,"Brian Strong"
+"drhm-07",2016,"Brian Strong"
+"drhm-07",2017,"Brian Strong"
+"drhm-07",2018,"Brian Strong"
+"drhm-07",2019,"Brian Strong"
+"drhm-07",2020,"Brian Strong"
+"drhm-07",2021,"Brian Strong"
+"drhm-07",2022,"Brian Strong"
+"drhm-07",2023,"Noah Rokoske"
+"drhm-07",2024,"William Mackin"
+"drhm-08",2002,"Brian Strong"
+"drhm-08",2003,"Brian Bockhahn"
+"drhm-08",2004,"Brian Bockhahn"
+"drhm-08",2005,"Brian Bockhahn"
+"drhm-08",2006,"Brian Bockhahn"
+"drhm-08",2007,"Brian Bockhahn"
+"drhm-08",2008,"Brian Bockhahn"
+"drhm-08",2011,"Brian Bockhahn"
+"drhm-08",2012,"Brian Bockhahn"
+"drhm-08",2013,"Brian Bockhahn"
+"drhm-08",2014,"Brian Bockhahn, weather=57, clear, sunny, vehicles=32, habitat@1=B, habitat@2=B, habitat@3=M, habitat@4=M, habitat@5=M, habitat@6=M, habitat@7=M, habitat@8=B, habitat@9=B, habitat@10=B, habitat@11=M, habitat@12=B, habitat@13=M, habitat@14=B, habitat@15=B, habitat@16=B, habitat@17=M, habitat@18=M, habitat@19=B, habitat@20=M"
+"drhm-08",2015,"Brian Bockhahn"
+"drhm-08",2016,"Brian Bockhahn"
+"drhm-08",2017,"Brian Bockhahn"
+"drhm-08",2018,"Brian Bockhahn"
+"drhm-08",2019,"Brian Bockhahn"
+"drhm-08",2020,"Brian Bockhahn"
+"drhm-08",2021,"Brian Bockhahn"
+"drhm-08",2022,"Brian Bockhahn"
+"drhm-08",2023,"Brian Bockhahn"
+"drhm-08",2024,"Brian Bockhahn"
+"orng-01",1999,"Ginger Travis, Barb Brooks"
+"orng-01",2000,"Ginger Travis and Cathy Packer"
+"orng-01",2001,"Ginger Travis and Cathy Packer"
+"orng-01",2002,"Ginger Travis and Cathy Packer"
+"orng-01",2003,"Ginger Travis and Doug Shadwick"
+"orng-01",2004,"Ginger Travis and Doug Shadwick"
+"orng-01",2005,"Ginger Travis and Cathy Packer"
+"orng-01",2006,"Ginger Travis and Cathy Packer"
+"orng-01",2007,"Ginger Travis and Doug Shadwick"
+"orng-01",2008,"Ginger Travis and Cathy Packer"
+"orng-01",2009,"Ginger Travis and Cathy Packer"
+"orng-01",2010,"N. Budnitz, M. Schultz"
+"orng-01",2011,"Norm Budnitz, Mike Schultz"
+"orng-01",2012,"Norman Budnitz, Mike Schultz"
+"orng-01",2013,"Norman Budnitz, Mike Schultz"
+"orng-01",2014,"Norman Budnitz, Mike Schultz"
+"orng-01",2015,"Norman Budnitz, Mike Schultz"
+"orng-01",2016,"Norman Budnitz, Mike Schultz"
+"orng-01",2017,"Norman Budnitz, Mike Schultz"
+"orng-01",2018,"Norman Budnitz, Mike Schultz"
+"orng-01",2019,"Norman Budnitz, Mike Schultz"
+"orng-01",2020,"Norm Budnitz"
+"orng-01",2021,"Norm Budnitz, Mike Schultz"
+"orng-01",2022,"Norm Budnitz, Mike Schultz"
+"orng-01",2023,"Norm Budnitz, Mike Schultz"
+"orng-01",2024,"Mike Schultz, Norm Budnitz"
+"orng-02",1999,"Barb Brooks"
+"orng-02",2000,"Barbara Brooks"
+"orng-02",2001,"Barbara Brooks"
+"orng-02",2002,"Barbara Brooks"
+"orng-02",2003,"Barb Brooks"
+"orng-02",2004,"Barb Brooks"
+"orng-02",2005,"Barb Brooks"
+"orng-02",2006,"Barb Brooks"
+"orng-02",2007,"Barb Brooks"
+"orng-02",2008,"barb Brooks"
+"orng-02",2009,"barb brooks"
+"orng-02",2010,"B. BROOKS"
+"orng-02",2011,"Barb Brooks"
+"orng-02",2012,"Barb Brooks"
+"orng-02",2013,"Barb Brooks"
+"orng-02",2014,"Barb Brooks"
+"orng-02",2015,"Barb Brooks"
+"orng-02",2016,"barb brooks"
+"orng-02",2017,"Barb Brooks"
+"orng-02",2018,"Barb Brooks"
+"orng-02",2019,"Barb Brooks"
+"orng-02",2020,"Barb Brooks"
+"orng-02",2021,"barb Brooks"
+"orng-02",2022,"barb Brooks"
+"orng-02",2023,"barb brooks"
+"orng-02",2024," Barb Brooks, Will Mackin"
+"orng-03",1999,"Kate Finlayson, Karen Piplani"
+"orng-03",2000,"Kate Finlayson and Karen Piplani"
+"orng-03",2001,"Kate Finlayson and Karen Piplani"
+"orng-03",2002,"Kate Finlayson and Karen Piplani"
+"orng-03",2003,"Kate Finlayson and Karen Piplani"
+"orng-03",2004,"Kate Finlayson and Karen Piplani"
+"orng-03",2005,"Kate Finlayson and Karen Piplani"
+"orng-03",2006,"Kate Finlayson and Karen Piplani"
+"orng-03",2007,"Kate Finlayson and Karen Piplani"
+"orng-03",2008,"Kate Finlayson and Karen Piplani"
+"orng-03",2009,"Kate Finlayson and Karen Piplani"
+"orng-03",2011,"Karen Piplani"
+"orng-03",2014,"Barb Brooks"
+"orng-03",2015,"Barb Brooks"
+"orng-03",2016,"barb brooks"
+"orng-03",2017,"Barb Brooks"
+"orng-03",2018,"barb brooks"
+"orng-03",2019,"Bradley Saul, Charity Kirk"
+"orng-03",2020,"Bradley Saul"
+"orng-03",2021,"Bradley Saul"
+"orng-03",2022,"Bradley Saul"
+"orng-03",2023,"Bradley Saul"
+"orng-03",2024,"Bradley Saul"
+"orng-04",1999,"Kent Fiala"
+"orng-04",2000,"Kent Kiala"
+"orng-04",2001,"Kent Kiala"
+"orng-04",2002,"Kent Fiala"
+"orng-04",2003,"Kent Fiala"
+"orng-04",2004,"Kent Fiala"
+"orng-04",2005,"Kent Fiala"
+"orng-04",2006,"Kent Fiala"
+"orng-04",2007,"Kent Fiala"
+"orng-04",2008,"Kent Fiala"
+"orng-04",2009,"Kent Fiala"
+"orng-04",2010,"Will Cook, Catherine Carter"
+"orng-04",2011,"Jill Paul, Tom Driscoll"
+"orng-04",2013,"Allen Hurlbert"
+"orng-04",2014,"Allen Hurlbert"
+"orng-04",2015,"Allen Hurlbert"
+"orng-04",2016,"Allen Hurlbert"
+"orng-04",2017,"Allen Hurlbert"
+"orng-04",2018,"Allen Hurlbert, Grace Di Cecco, Allison Duprey"
+"orng-04",2019,"Allen Hurlbert, Sarah Pollack"
+"orng-04",2020,"Allen Hurlbert"
+"orng-04",2021,"Allen Hurlbert"
+"orng-04",2022,"Allen Hurlbert, Ashley Moore, Ellen Weaver"
+"orng-04",2023,"Allen Hurlbert"
+"orng-04",2024,"Allen Hurlbert"
+"orng-05",1999,"Will Cook"
+"orng-05",2000,"Will Cook"
+"orng-05",2001,"Will Cook"
+"orng-05",2002,"Will Cook"
+"orng-05",2003,"Will Cook"
+"orng-05",2004,"Will Cook"
+"orng-05",2005,"Will Cook"
+"orng-05",2006,"Will Cook"
+"orng-05",2007,"Will Cook"
+"orng-05",2008,"Will Cook"
+"orng-05",2009,"Will Cook"
+"orng-05",2010,"Will Cook, Catherine Anderson"
+"orng-05",2011,"Will Cook, Catherine Carter"
+"orng-05",2012,"Will Cook"
+"orng-05",2013,"Will Cook"
+"orng-05",2014,"Will Cook"
+"orng-05",2015,"Will Cook"
+"orng-05",2016,"Will Cook"
+"orng-05",2017,"Will Cook"
+"orng-05",2018,"Will Cook"
+"orng-05",2019,"Will Cook"
+"orng-05",2020,"Will Cook"
+"orng-05",2021,"Will Cook"
+"orng-05",2022," Will Cook"
+"orng-05",2023,"Will Cook"
+"orng-05",2024,"Will Cook"
+"orng-06",1999,"Judy Murray, Robin Moran"
+"orng-06",2000,"Judy Murray and Robin Moran"
+"orng-06",2001,"Judy Murray and Robin Moran"
+"orng-06",2002,"Robin Moran and Judy Murray"
+"orng-06",2003,"Robin Moran & Judy Murray"
+"orng-06",2004,"Robin Moran and Judy Murray"
+"orng-06",2005,"Robin Moran and Judy Murray"
+"orng-06",2006,"Robin Moran and Judy Murray"
+"orng-06",2007,"Robin Moran and Judy Murray"
+"orng-06",2008,"Robin Moran and Judy Murray"
+"orng-06",2009,"Robin Moran and Judy Murray"
+"orng-06",2010,"R. Moran, J. Murray"
+"orng-06",2011,"Robin Moran, Judy Murray"
+"orng-06",2012,"Judy Murray, Robin Moran"
+"orng-06",2013,"Robin Moran, Judy Murray"
+"orng-06",2014,"Robin Moran, Judy Murray"
+"orng-06",2015,"Judy Murray"
+"orng-06",2016,"Robin Moran, Judy Murray"
+"orng-06",2017,"Judy Murray, Robin Moran"
+"orng-06",2019,"Karen Hogan, Robin Moran"
+"orng-06",2020,"Karen Hogan, Mark Hogan"
+"orng-06",2021,"Karen Hogan"
+"orng-06",2022,"Karen Hogan"
+"orng-06",2023,"Karen Hogan"
+"orng-06",2024,"Karen Hogan"
+"orng-07",1999,"Betty King, John King (driver)"
+"orng-07",2000,"Betty and John King"
+"orng-07",2001,"Betty and John King"
+"orng-07",2002,"Betty King"
+"orng-07",2003,"Betty King"
+"orng-07",2004,"Betty King"
+"orng-07",2005,"Betty King"
+"orng-07",2006,"Betty King"
+"orng-07",2007,"Betty King"
+"orng-07",2008,"Betty King"
+"orng-07",2009,"Betty King"
+"orng-07",2010,"Betty King"
+"orng-07",2011,"Betty King"
+"orng-07",2012,"Betty King"
+"orng-07",2014,"Brian Bockhahn, weather=69, clear, sunny, vehicles=31, habitat@1=B, habitat@2=P, habitat@3=M, habitat@4=M, habitat@5=B, habitat@6=H, habitat@7=B, habitat@8=H, habitat@9=O, habitat@10=O, habitat@11=H, habitat@12=O, habitat@13=H, habitat@14=M, habitat@15=M, habitat@16=B, habitat@17=O, habitat@18=O, habitat@19=O, habitat@20=M"
+"orng-07",2015,"Brian Bockhahn"
+"orng-07",2016,"Brian Bockhahn"
+"orng-07",2017,"Brian Bockhahn"
+"orng-07",2018,"Brian Bockhahn"
+"orng-07",2019,"brian bockhahn"
+"orng-07",2020,"Brian Bockhahn"
+"orng-07",2021,"Brian Bockhahn"
+"orng-07",2022,"Brian Bockhahn"
+"orng-07",2023,"Brian Bockhahn"
+"orng-07",2024,"Brian Bockhahn"
+"orng-08",1999,"Barb Brooks"
+"orng-08",2000,"Barbara Brooks"
+"orng-08",2001,"Barbara Brooks"
+"orng-08",2002,"Barbara Brooks"
+"orng-08",2003,"Barb Brooks"
+"orng-08",2004,"Barb Brooks"
+"orng-08",2005,"Barb Brooks"
+"orng-08",2006,"Barb Brooks"
+"orng-08",2007,"Barb Brooks"
+"orng-08",2008,"Barb Brooks"
+"orng-08",2009,"Barb Brooks"
+"orng-08",2010,"Barb Brooks"
+"orng-08",2011,"Barb Brooks"
+"orng-08",2012,"Barb Brooks"
+"orng-08",2013,"Barb Brooks"
+"orng-08",2014,"Barb Brooks"
+"orng-08",2015,"Barb Brooks"
+"orng-08",2016,"Barb Brooks"
+"orng-08",2017,"Barb Brooks"
+"orng-08",2018,"Barb Brooks"
+"orng-08",2019,"Barb Brooks"
+"orng-08",2020,"Barb Brooks"
+"orng-08",2021,"Barb Brooks"
+"orng-08",2022,"Barb Brooks"
+"orng-08",2023,"barb brooks"
+"orng-08",2024," Barb Brooks, Will Makin"
+"orng-09",1999,"S. Phukan and T. Williams"
+"orng-09",2000,"Sandy Cash"
+"orng-09",2001,"Shantanu Phukan"
+"orng-09",2002,"Shantanu Phukan and Alan Johnston"
+"orng-09",2003,"Shantanu Phukan"
+"orng-09",2004,"Shantanu Phukan"
+"orng-09",2005,"Shantanu Phukan"
+"orng-09",2006,"? (NOT Shantanu)"
+"orng-09",2007,"? (NOT Shantanu)"
+"orng-09",2008,"? (NOT Shantanu)"
+"orng-09",2009,"? (NOT Shantanu)"
+"orng-09",2011,"David Curtin"
+"orng-09",2012,"David Curtin"
+"orng-09",2013,"David Curtin"
+"orng-09",2014,"David Curtin"
+"orng-09",2015,"David Curtin"
+"orng-09",2016,"David Curtin"
+"orng-09",2019,"Karen Hogan, Mark Hogan"
+"orng-09",2020,"Karen Hogan, Mark Hogan"
+"orng-09",2021,"Karen Hogan"
+"orng-09",2022,"Karen Hogan"
+"orng-09",2023,"Karen Hogan"
+"orng-09",2024,"Karen Hogan"
+"orng-10",1999,"Will Cook"
+"orng-10",2000,"Will Cook"
+"orng-10",2001,"Will Cook"
+"orng-10",2002,"Will Cook"
+"orng-10",2003,"Will Cook"
+"orng-10",2004,"Will Cook"
+"orng-10",2005,"Will Cook, Doug Shadwick"
+"orng-10",2006,"Doug Shadwick"
+"orng-10",2007,"Doug Shadwick"
+"orng-10",2008,"Doug Shadwick"
+"orng-10",2009,"Doug Shadwick"
+"orng-10",2012,"Nate Swick"
+"orng-10",2013,"Nathan Swick"
+"orng-10",2016,"Barb Brooks"
+"orng-10",2017,"Barb Brooks"
+"orng-10",2018,"Barb Brooks"
+"orng-10",2019,"Vern Bothwell, Nan Dewire"
+"orng-10",2020,"Vern Bothwell"
+"orng-10",2021,"Vern Bothwell"
+"orng-10",2023,"Allen Hurlbert"
+"orng-10",2024,"Paul Taillie"
+"orng-11",1999,"Marsha Stephens"
+"orng-11",2000,"Marsha Stephens"
+"orng-11",2001,"Marsha Stephens"
+"orng-11",2002,"Marsha Stephens"
+"orng-11",2003,"Marsha Stephens"
+"orng-11",2004,"Marsha Stephens"
+"orng-11",2005,"Marsha Stephens"
+"orng-11",2006,"Marsha Stephens"
+"orng-11",2007,"?"
+"orng-11",2008,"?"
+"orng-11",2009,"?"
+"orng-11",2012,"Ali Iyoob"
+"orng-11",2017,"Loren Hintz"
+"orng-11",2018,"Loren Hintz"
+"orng-11",2019,"Loren Hintz: weather=64F then warming, sunny, no wind"
+"orng-11",2020,"Loren Hintz: weather=61F then warming, sunny, no wind"
+"orng-11",2021,"Loren Hintz: weather=66F then warming, partially cloudy, no wind"
+"orng-11",2022,"Loren Hintz, Margaret Vimmerstedt"
+"orng-11",2023,"Suzanne Roberts, Vicki Nebes"
+"orng-11",2024,"Suzanne Roberts,Vicki Nebes"
+"orng-12",1999,"Haven Wiley (Minna Wiley, recorder)"
+"orng-12",2000,"Minna and Haven Wiley"
+"orng-12",2001,"Minna and Haven Wiley"
+"orng-12",2002,"Haven and Minna Wiley"
+"orng-12",2003,"Haven and Minna Wiley"
+"orng-12",2004,"Haven and Minna Wiley"
+"orng-12",2005,"Haven and Minna Wiley"
+"orng-12",2006,"Haven and Minna Wiley"
+"orng-12",2007,"Haven and Minna Wiley"
+"orng-12",2008,"Haven and Minna Wiley"
+"orng-12",2009,"Haven and Minna Wiley"
+"orng-12",2010,"H. Wiley"
+"orng-12",2011,"Haven Wiley"
+"orng-12",2012,"Haven Wiley"
+"orng-12",2013,"Haven Wiley"
+"orng-12",2014,"Haven Wiley"
+"orng-12",2015,"Haven Wiley"
+"orng-12",2016,"Haven Wiley"
+"orng-12",2017,"Haven Wiley"
+"orng-12",2018,"Haven Wiley"
+"orng-12",2019,"Haven Wiley"
+"orng-12",2020,"Haven Wiley, Minna Wiley"
+"orng-12",2021,"Haven Wiley, Minna Wiley"
+"orng-12",2022,"Haven Wiley, Minna Wiley"
+"orng-12",2023,"Haven Wiley, Minna Wiley"
+"orng-12",2024,"Haven Wiley, Minna Wiley"
