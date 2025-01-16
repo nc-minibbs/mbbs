@@ -12,7 +12,6 @@
 #' @importFrom stringr str_to_lower
 #' @importFrom utils write.csv
 update_survey_events <- function(ebird, path = config$survey_list) {
-
   # load in survey list
   survey_list <- read.csv(file = path, header = TRUE)
 
