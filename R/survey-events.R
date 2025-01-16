@@ -11,46 +11,37 @@
 #'   rows_update
 #' @importFrom stringr str_to_lower
 #' @importFrom utils write.csv
-update_survey_events <- function(path = config$survey_list) {
+update_survey_events <- function(ebird, path = config$survey_list) {
+
   # load in survey list
-  survey_list <- read.csv(path, header = TRUE)
+  survey_list <- read.csv(file = path, header = TRUE)
 
-  # # load in mbbs, when this function is called in import_data mbbs is newly updated
-  # load(file = system.file("data/mbbs.rda", package = "mbbs"))
-
-  # generate list of new surveys not yet on the survey_list
-  options(dplyr.summarise.inform = FALSE) # suppress dplyr "has grouped outby by"
-  surveys <-
-    mbbs |>
-    filter(count > 0 | count_raw > 0) |>
-    group_by(county, route_num, year) |>
-    dplyr::summarize(
-      S = dplyr::n_distinct(common_name),
-      N = sum(count),
-      observers = observers[!is.na(observers)][1],
-      month = str_sub(first(date), start = -5, end = -4),
-      day = str_sub(first(date), start = -2, end = -1)
+  browser()
+  # generate list of new surveys found in ebird
+  ebird_surveys <-
+    ebird$comments |>
+    dplyr::mutate(
+      observers = purrr::map_chr(observers, ~ paste(.x, collapse = ""))
     ) |>
-    dplyr::ungroup()
+    select(route, year, observers)
 
-  new_surveys <- surveys |>
-    anti_join(survey_list, by = c("route_num", "year", "mbbs_county"))
   # differing observers does not affect this join.
   # Which is good because the survey_list should be the true source of data
   # for observers
+  new_surveys <- ebird_surveys |>
+    anti_join(survey_list, by = c("route", "year"))
 
   # add new rows to survey_list if they exist
   # and save the updated list.
   if (nrow(new_surveys) > 0) {
     survey_list <-
-      rbind(survey_list, new_surveys) %>%
-      arrange(county, route_num, year)
+      rbind(survey_list, new_surveys) |>
+      arrange(route, year)
     write.csv(survey_list, config$survey_list, row.names = FALSE)
     # print message
     cat(nrow(new_surveys), "surveys have been added to survey_list")
   } else { # report that there were no new surveys
-    cat("No new surveys to add to survey_list
-    ")
+    cat("No new surveys to add to survey_list\\n")
   }
 
   # also need to check if any surveys have been updated, eg.
@@ -102,5 +93,5 @@ update_survey_events <- function(path = config$survey_list) {
   save(mbbs_survey_events, file = system.file("data/mbbs_survey_events.rda", package = "mbbs"))
   cat("\nsurvey_events updated")
   # save a version for testing as well.
-  write.csv(mbbs_survey_events, file = system.file("tests/testthat/update_survey_events_test_cases.csv", package = "mbbs"), row.names = FALSE)
+  # write.csv(mbbs_survey_events, file = system.file("tests/testthat/update_survey_events_test_cases.csv", package = "mbbs"), row.names = FALSE)
 }
