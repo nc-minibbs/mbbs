@@ -31,7 +31,7 @@ config <- list(
   stop_deviations = "data/stop_deviations.yml",
 
   ## Used to map bird codes to common names
-  code_to_common_name = "data/bird_code_to_common_name.csv",
+  code_to_common_name = "data/stop-level/bird_code_to_common_name.csv",
 
   ## File where transcribed stop-level data is kept (statically)
   stop_level_transcribed = "data/stop-level/stop-level_transcribed.csv",
