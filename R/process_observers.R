@@ -9,9 +9,8 @@
 #' @importFrom dplyr %>%
 #' @returns mbbs_county
 process_observers <- function(config, ebird) {
- 
   # WIP!
-   mbbs_county <- mbbs_county %>%
+  mbbs_county <- mbbs_county %>%
     observers_extractor()
 
   update_observer_table(mbbs_county, county)
@@ -52,22 +51,27 @@ save_observer_table <-
 #' @importFrom assertthat assert_that
 #' @importFrom stringr str_detect
 update_observer_table <- function(config, ebird, save = TRUE) {
-
   # load the main observer conversion table
   observer_table <- read.csv(config$main_observer_conversion_table, header = TRUE)
-  
+
   observer_table <- observer_table %>%
-    mutate(route = case_when(mbbs_county == "orange" ~ "orng-", 
-                             mbbs_county == "chatham" ~ "cthm-", 
-                             mbbs_county == "durham" ~ "drhm-"),
-           route_num = as.character(route_num),
-           route_num = case_when(nchar(route_num) == 2 ~ route_num,
-                                 nchar(route_num) == 1 ~ paste0("0", route_num)),
-           route = paste0(route,route_num))
+    mutate(
+      route = case_when(
+        mbbs_county == "orange" ~ "orng-",
+        mbbs_county == "chatham" ~ "cthm-",
+        mbbs_county == "durham" ~ "drhm-"
+      ),
+      route_num = as.character(route_num),
+      route_num = case_when(
+        nchar(route_num) == 2 ~ route_num,
+        nchar(route_num) == 1 ~ paste0("0", route_num)
+      ),
+      route = paste0(route, route_num)
+    )
 
   # load survey list
   survey_list <-
-    read.csv(config$survey_list, header = TRUE) 
+    read.csv(config$survey_list, header = TRUE)
 
   # generate list of unique route number/observer combinations
   options(dplyr.summarise.inform = FALSE) # suppress dplyr "has grouped outby by"
