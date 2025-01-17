@@ -40,9 +40,7 @@ config <- list(
   transcribed_mismatches = "data/stop-level/transcribed/remaining_mistmatches.csv",
   transcribed_paper_list = "data/stop-level/transcribed/mbbs_paper_files_list.csv",
 
-  ## Files for handling observer standardizations and survey events
-  main_observer_conversion_table = "data/observer/main_observer_conversion_table.csv",
-  # the mini table is a typo converter
-  mini_observer_conversion_table = "data/observer/mini_observer_conversion_table.csv",
+  ## Files for handling observer standardizations and the survey list
+  observer_conversion_table = "data/observer/observer_conversion_table.csv",
   survey_list = "data/survey_list.csv"
 )
