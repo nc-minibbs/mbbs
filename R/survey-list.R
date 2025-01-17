@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------#
-# Function for updating the survey_events tables
+# Function for updating the survey_list table
 #------------------------------------------------------------------------------#
 
 #' Updates survey_events if needed by rbinding new and updated surveys,
@@ -19,6 +19,10 @@ update_survey_events <- function(ebird, path = config$survey_list) {
   # generate list of new surveys found in ebird
   ebird_surveys <-
     ebird$comments |>
+    # filter out all NA observers
+    # take distinct
+    # error if > 1 record 
+    # then proceed
     dplyr::mutate(
       observers = purrr::map_chr(observers, ~ paste(.x, collapse = ""))
     ) |>
