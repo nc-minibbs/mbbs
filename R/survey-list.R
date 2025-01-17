@@ -21,7 +21,7 @@ update_survey_events <- function(ebird, path = config$survey_list) {
     ebird$comments |>
     # filter out all NA observers
     # take distinct
-    # error if > 1 record 
+    # error if > 1 record
     # then proceed
     dplyr::mutate(
       observers = purrr::map_chr(observers, ~ paste(.x, collapse = ""))

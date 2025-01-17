@@ -102,9 +102,9 @@ parse_comments <- \(x) {
 postprocess_comments <- \(x) {
   purrr::map_dfr(x, tibble::as_tibble_row) |>
     mutate(
-      observer1 = trimws(purrr::map_chr(observers, ~.x[1])),
-      observer2 = trimws(purrr::map_chr(observers, ~.x[2])),
-      observer3 = trimws(purrr::map_chr(observers, ~.x[3])),
+      observer1 = trimws(purrr::map_chr(observers, ~ .x[1])),
+      observer2 = trimws(purrr::map_chr(observers, ~ .x[2])),
+      observer3 = trimws(purrr::map_chr(observers, ~ .x[3])),
     ) |>
     select(-observers)
 }
