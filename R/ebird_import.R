@@ -185,7 +185,7 @@ parse_route_num <- function(location) {
 #' @param location character vector of ebird locations
 parse_stop_num <- function(location) {
   # Getting stop from numbers at end (this is fragile):
-  as.integer(stringr::str_extract(location, "([0-9]{1,2}$)"))
+  as.integer(stringr::str_extract(trimws(location), "([0-9]{1,2}$)"))
 }
 
 #' Transformation of the ebird data to conform to format
