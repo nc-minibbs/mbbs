@@ -100,7 +100,13 @@ parse_comments <- \(x) {
 #' PostProcess comments
 #' @param x list of list(vehicle, ...) obtained after `parse_comments`
 postprocess_comments <- \(x) {
-  purrr::map_dfr(x, tibble::as_tibble_row)
+  purrr::map_dfr(x, tibble::as_tibble_row) |>
+    mutate(
+      observer1 = purrr::map_chr(observers, ~.x[1]),
+      observer2 = purrr::map_chr(observers, ~.x[2]),
+      observer3 = purrr::map_chr(observers, ~.x[3]),
+    ) |>
+    select(-observers)
 }
 
 #' Full workflow for processing comments
