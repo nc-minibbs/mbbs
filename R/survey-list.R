@@ -48,23 +48,30 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
   # Add any new observers to the conversion table
   update_observer_table(ebird_surveys, config, save = save)
   # This is called separate to ensure input still gets taken for updating the table
+  
+  # check one last time that no rows have all NA observers,
+  # like if an error happened when converting based on the
+  # observer table
+  final_check <- ebird_surveys %>%
+    filter(!(is.na(obs1) == TRUE &
+               is.na(obs2) == TRUE &
+               is.na(obs3) == TRUE))
+  assertthat::assert_that(
+    nrow(final_check) == 0
+  )
 
   # Standardize obs1/obs2/obs3 based on the conversion table
   ebird_surveys <-
     ebird_surveys |>
     convert_based_on_observer_table(config) |>
     # select only the columns we need
-    select(route, year, obs1, obs2, obs3)
-  
-    # check one last time that no rows have all NA observers,
-    # like if an error happened when converting based on the
-    # observer table
-  final_check <- ebird_surveys %>%
-    filter(!(is.na(obs1) == TRUE &
-              is.na(obs2) == TRUE &
-              is.na(obs3) == TRUE))
-    assertthat::assert_that(
-      nrow(final_check) == 0
+    select(route, year, obs1, obs2, obs3) |>
+    # create the standardized_observers column
+    rowwise() |>
+    mutate(
+      standardized_observers = 
+        paste(sort(c_across(all_of(c("obs1", "obs2", "obs3")))),
+                   collapse = ", ")
     )
 
   # Add new surveys to survey list if they exist
