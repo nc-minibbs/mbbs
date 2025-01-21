@@ -55,17 +55,17 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
     convert_based_on_observer_table(config) |>
     # select only the columns we need
     select(route, year, obs1, obs2, obs3)
-  
-    # check one last time that no rows have all NA observers,
-    # like if an error happened when converting based on the
-    # observer table
+
+  # check one last time that no rows have all NA observers,
+  # like if an error happened when converting based on the
+  # observer table
   final_check <- ebird_surveys %>%
     filter(!(is.na(obs1) == TRUE &
-              is.na(obs2) == TRUE &
-              is.na(obs3) == TRUE))
-    assertthat::assert_that(
-      nrow(final_check) == 0
-    )
+      is.na(obs2) == TRUE &
+      is.na(obs3) == TRUE))
+  assertthat::assert_that(
+    nrow(final_check) == 0
+  )
 
   # Add new surveys to survey list if they exist
   # And save the updated list if save = TRUE
@@ -141,11 +141,11 @@ update_observer_table <- function(ebird_surveys, config, save = TRUE) {
   )
 
   obs_list <- unique(obs_list[!is.na(obs_list)])
-  
-  #if there are no new names, end the function
-  if(length(obs_list) == 0) {
+
+  # if there are no new names, end the function
+  if (length(obs_list) == 0) {
     logger::log_info("Update_observer_table: No new observers added to observer conversion table")
-    return() #end the function
+    return() # end the function
   }
 
   # If a name is not yet on the conversion_table
