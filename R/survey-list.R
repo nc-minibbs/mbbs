@@ -148,11 +148,11 @@ update_observer_table <- function(ebird_surveys, config, save = TRUE) {
   )
 
   obs_list <- unique(obs_list[!is.na(obs_list)])
-  
-  #if there are no new names, end the function
-  if(length(obs_list) == 0) {
+
+  # if there are no new names, end the function
+  if (length(obs_list) == 0) {
     logger::log_info("Update_observer_table: No new observers added to observer conversion table")
-    return() #end the function
+    return() # end the function
   }
 
   # If a name is not yet on the conversion_table
