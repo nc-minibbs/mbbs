@@ -26,7 +26,7 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
   # flag and stop function if any rows in ebird_surveys have all NA observers and that survey is not represented with a non-NA observer in another row. eg: we're truly missing observer data.
   assertthat::assert_that(
     confirm_observer_NA(ebird_surveys) == FALSE,
-    msg = "While updating survey list, at least one new survey found where there is NO observer information. Please see ebird_surveys in update_survey_list and track down error in ebird."
+    msg = "While updating survey list, at least one new survey found where there is NO observer information. Please see logged error message and track down error in ebird."
   )
 
   # Checks have passed, so filter out surveys with all NA observers
@@ -127,6 +127,7 @@ confirm_observer_NA <- function(ebird_surveys) {
     # If no other ebird_surveys row has the same year/route,
     # ERROR
     if (nrow(same_survey_noNA) == 0) {
+      logger::log_error("{all_na_obs$route[i]} {all_na_obs$year[i]} has only NA values for observers and no corrected record in survey_list. Likely source of error: the ebird entry for stop 1 is missing observer information.")
       return(TRUE)
       # TRUE represents that we found a genuine case of observer information missing
     }
