@@ -31,7 +31,7 @@ config <- list(
   stop_deviations = "data/stop_deviations.yml",
 
   ## Used to map bird codes to common names
-  code_to_common_name = "data/bird_code_to_common_name.csv",
+  code_to_common_name = "data/stop-level/bird_code_to_common_name.csv",
 
   ## File where transcribed stop-level data is kept (statically)
   stop_level_transcribed = "data/stop-level/stop-level_transcribed.csv",
@@ -40,9 +40,7 @@ config <- list(
   transcribed_mismatches = "data/stop-level/transcribed/remaining_mistmatches.csv",
   transcribed_paper_list = "data/stop-level/transcribed/mbbs_paper_files_list.csv",
 
-  ## Files for handling observer standardizations and survey events
-  main_observer_conversion_table = "data/observer/main_observer_conversion_table.csv",
-  # the mini table is a typo converter
-  mini_observer_conversion_table = "data/observer/mini_observer_conversion_table.csv",
+  ## Files for handling observer standardizations and the survey list
+  observer_conversion_table = "data/observer/observer_conversion_table.csv",
   survey_list = "data/survey_list.csv"
 )
