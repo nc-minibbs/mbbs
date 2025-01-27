@@ -104,7 +104,7 @@ postprocess_comments <- \(x) {
     mutate(
       obs1 = trimws(purrr::map_chr(observers, ~ .x[1])),
       obs2 = trimws(purrr::map_chr(observers, ~ .x[2])),
-      obs3 = trimws(purrr::map_chr(observers, ~ .x[3])),
+      obs3 = trimws(purrr::map_chr(observers, ~ .x[3]))
     ) |>
     select(-observers)
 }
@@ -116,11 +116,22 @@ postprocess_comments <- \(x) {
 #' @export
 comment_workflow <- function(ebird) {
   ebird |>
-    dplyr::distinct(submission, year, route, stop_num, comments) |>
+    dplyr::distinct(submission, date, year, route, stop_num, comments) |>
     dplyr::mutate(
       comments |>
         preprocess_comments() |>
         parse_comments() |>
         postprocess_comments()
-    )
+    ) |>
+    # Flag protocol violations
+    group_by(route, date) |>
+    mutate(
+      violation =
+        # Any of the following
+        # * Survey not within valid date range
+        !(valid_date_range(date)) |
+        # * not all the submissions on the same date
+        !(all(date == date[1]))
+    ) |>
+    ungroup()
 }
