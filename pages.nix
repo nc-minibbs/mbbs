@@ -14,7 +14,7 @@ stdenv.mkDerivation {
   name = "pages";
   src = gitignoreSource ./.;
 
-  nativeBuildInputs = [ pandoc ];
+  nativeBuildInputs = [ pandoc pkgs.mermaid-filter];
 
   buildPhase = ''
     ${pandoc}/bin/pandoc docs/README.md \
@@ -31,6 +31,7 @@ stdenv.mkDerivation {
           --output=data-pipeline.html \
           --standalone \
           --template=docs/template.html \
+          --filter=mermaid-filter \
           --variable=gitcommit:${commit}
 
     ${pandoc}/bin/pandoc docs/data-checklist.md \
