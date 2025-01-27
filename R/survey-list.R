@@ -58,9 +58,11 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
   # like if an error happened when converting based on the
   # observer table
   final_check <- ebird_surveys |>
-    filter(!(is.na(obs1) == TRUE &
-      is.na(obs2) == TRUE &
-      is.na(obs3) == TRUE))
+    filter(
+      !(is.na(obs1) == TRUE &
+        is.na(obs2) == TRUE &
+        is.na(obs3) == TRUE)
+    )
 
   assertthat::assert_that(
     nrow(final_check) == 0
