@@ -422,9 +422,15 @@ create_mbbs_data <- function(.config = config) {
 #' Write MBBS datasets
 #'
 #' @export
-write_mbbs_data <- function(config) {
-  data <- create_mbbs_data(config)
+write_mbbs_data <- function(.config = config) {
+
   dir.create("output")
+
+  log_file <- "output/log.txt"
+  logger::log_appender(logger::appender_file(log_file))
+
+  data <- create_mbbs_data(.config)
+
   purrr::iwalk(
     .x = data,
     .f = ~ {

@@ -78,7 +78,7 @@ process_stop_level_xls <- function(file) {
       stop_num = as.integer(stop_num),
       route = make_route_id(county, route_num),
       count = as.integer(
-        case_when(
+        dplyr::case_when(
           count %in% c("x", "X") ~ "1",
           is.na(count) ~ "0",
           TRUE ~ count

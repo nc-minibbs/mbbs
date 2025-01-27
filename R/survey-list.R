@@ -75,10 +75,10 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
     # select only the columns we need
     select(route, year, obs1, obs2, obs3) |>
     # create the standardized_observers column
-    rowwise() |>
+    dplyr::rowwise() |>
     mutate(
       standardized_observers =
-        paste(sort(c_across(all_of(c("obs1", "obs2", "obs3")))),
+        paste(sort(dplyr::c_across(all_of(c("obs1", "obs2", "obs3")))),
           collapse = ", "
         )
     )
