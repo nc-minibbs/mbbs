@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------#
-# Functions for collating the MBBS datasets
+# Functions for collating and exporting the MBBS datasets
 #------------------------------------------------------------------------------#
 
 #' Create the stop level dataset (initial step)
@@ -250,18 +250,29 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
       df |>
         filter(
           !(paste(year, route)
-          %in% paste(ebird_no_stop$year, ebird_no_stop$route))
+           %in% paste(ebird_no_stop$year, ebird_no_stop$route))
         ) |>
         (\(x) {
           logger::log_trace(
-            "Removed {nrow(df) - nrow(x)} historical observations for route/years that were also entered in ebird."
+            paste(
+              "Removed {nrow(df) - nrow(x)}",
+              "historical observations for route/years",
+              "that were also entered in ebird."
+            )
           )
           x
         })() |>
-        filter(!(paste(year, route) %in% paste(stop_to_route$year, stop_to_route$route))) |>
+        filter(
+          !(paste(year, route) %in%
+             paste(stop_to_route$year, stop_to_route$route))
+        ) |>
         (\(x) {
           logger::log_trace(
-            "Removed {nrow(df) - nrow(x)} historical observations for route/years that were also in stop-level data."
+            paste(
+              "Removed {nrow(df) - nrow(x)}",
+              "historical observations for route/years",
+              "that were also in stop-level data."
+            )
           )
           x
         })()
@@ -336,22 +347,74 @@ create_mbbs_counts <- function(ebird_counts, config) {
   )
 }
 
+#' Create survey data
+create_survey_data <- function(ebird, route_counts, .config = config) {
+
+  # Ensure survey list is up-to-date
+  update_survey_list(ebird, config = .config)
+
+  # Extract data needed from ebird_comments
+  comments <- ebird$comments |>
+    group_by(year, route) |>
+    summarise(
+      # Take most common date in case of differences
+      date = table(date) |> which.max() |> names(),
+      # Flag if any submission is a protocol violation
+      protocol_violation = any(violation, na.rm = TRUE)
+    ) |>
+    ungroup()
+
+  # Get table of surveys
+  surveys <- readr::read_csv(
+    file = .config$survey_list,
+    col_types = readr::cols(
+      route = readr::col_character(),
+      year  = readr::col_integer(),
+      obs1  = readr::col_character(),
+      obs2  = readr::col_character(),
+      obs3  = readr::col_character(),
+      standardized_observers = readr::col_skip()
+    )
+  )
+
+  # Get summaries of counts
+  count_summary <- route_counts |>
+    group_by(route, year) |>
+    summarise(
+      total_species = sum(count > 0),
+      total_abundance = sum(count)
+    )
+
+  # Prepare data for output
+  surveys |>
+    left_join(count_summary, by = c("route", "year")) |>
+    left_join(comments, by = c("route", "year")) |>
+    mutate(
+      protocol_violation = if_else(
+        is.na(protocol_violation), FALSE, protocol_violation
+      )
+    )
+}
+
 #' Create the MBBS datasets
 #'
 #' @export
-create_mbbs_data <- function(config) {
+create_mbbs_data <- function(.config = config) {
   ebird <- get_ebird_data()
   counts <- create_mbbs_counts(ebird$counts, config)
+  surveys <- create_survey_data(
+    ebird = ebird,
+    route_counts = counts$route_level,
+    .config = .config
+  )
 
-  # TODO:
-  # - add back observers
   comments <- ebird$comments |>
-    select(-observers) |>
     arrange(year, route, stop_num)
 
   list(
     mbbs_stops_counts = counts$stop_level,
     mbbs_route_counts = counts$route_level,
+    surveys  = surveys,
     comments = comments
   )
 }
@@ -364,30 +427,8 @@ write_mbbs_data <- function(config) {
   dir.create("output")
   purrr::iwalk(
     .x = data,
-    .f = ~ write.csv(.x, file = paste0("output/", .y, ".csv"), row.names = FALSE)
+    .f = ~ {
+      write.csv(.x, file = paste0("output/", .y, ".csv"), row.names = FALSE)
+    }
   )
-}
-
-#' Conform taxonomy of MBBS data from different sources
-#'
-#' @param df a dataset with a `common_name` field
-#' @param taxonomy data.frame from `get_ebird_taxonomy`
-conform_taxonomy <- function(df, taxonomy) {
-  assertthat::assert_that(
-    all(unique(df$common_name) %in% taxonomy$common_name),
-    msg = "df has common_names that taxonomy does not have."
-  )
-
-  dplyr::left_join(
-    df,
-    taxonomy,
-    by = c("common_name")
-  ) |>
-    (\(x){
-      assertthat::assert_that(
-        nrow(df) == nrow(x),
-        msg = "Data was lost when conforming taxonomy This is bad."
-      )
-      x
-    })()
 }
