@@ -11,7 +11,7 @@
 #' @importFrom dplyr filter group_by summarize ungroup arrange
 #'   left_join mutate select ungroup n_distinct cur_group_id
 #'   rows_update
-#' @importFrom stringr str_to_lower
+#' @importFrom stringr str_to_lower str_trim str_to_title
 #' @importFrom utils write.csv
 update_survey_list <- function(ebird, config, path = config$survey_list, save = TRUE) {
   # load in survey list
@@ -23,10 +23,17 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
     # filter to only surveys not already on survey_list
     anti_join(survey_list, by = c("route", "year"))
 
-  # flag and stop function if any rows in ebird_surveys have all NA observers and that survey is not represented with a non-NA observer in another row. eg: we're truly missing observer data.
+  # flag and stop function if any rows in ebird_surveys have all NA observers
+  # and that survey is not represented with a non-NA observer in another row. 
+  # eg: we're truly missing observer data.
   assertthat::assert_that(
     confirm_observer_NA(ebird_surveys) == FALSE,
-    msg = "While updating survey list, at least one new survey found where there is NO observer information. Please see logged error message and track down error in ebird."
+    msg =
+      paste(
+        "While updating survey list",
+        "at least one new survey found where there is NO observer information.",
+        "Please see logged error message and track down error in ebird."
+      )
   )
 
   # Checks have passed, so filter out surveys with all NA observers
@@ -37,25 +44,24 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
       is.na(obs3) == TRUE)) |>
     # Modify the observer strings, all to title case and trim white space
     mutate(
-      obs1 = str_to_title(obs1),
-      obs2 = str_to_title(obs2),
-      obs3 = str_to_title(obs3),
-      obs1 = str_trim(obs1),
-      obs2 = str_trim(obs2),
-      obs3 = str_trim(obs3)
+      obs1 = str_trim(str_to_title(obs1)),
+      obs2 = str_trim(str_to_title(obs2)),
+      obs3 = str_trim(str_to_title(obs3))
     )
 
   # Add any new observers to the conversion table
   update_observer_table(ebird_surveys, config, save = save)
-  # This is called separate to ensure input still gets taken for updating the table
+  # This is called separately
+  # to ensure input still gets taken for updating the table
 
   # check one last time that no rows have all NA observers,
   # like if an error happened when converting based on the
   # observer table
-  final_check <- ebird_surveys %>%
+  final_check <- ebird_surveys |>
     filter(!(is.na(obs1) == TRUE &
       is.na(obs2) == TRUE &
       is.na(obs3) == TRUE))
+
   assertthat::assert_that(
     nrow(final_check) == 0
   )
@@ -87,13 +93,12 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
     # print message
     cat(nrow(ebird_surveys), "surveys have been added to survey_list")
   } else { # report that there were no new surveys
-    cat("No new surveys to add to survey_list\\n")
+    logger::log_info(
+      "No new surveys to add to survey_list"
+    )
   }
 
-  # save a version for testing as well.
-  # write.csv(mbbs_survey_events, file = system.file("tests/testthat/update_survey_events_test_cases.csv", package = "mbbs"), row.names = FALSE)
 }
-
 
 # Takes a df and confirms TRUE if there is a survey where we are
 # missing observer information
@@ -111,7 +116,8 @@ confirm_observer_NA <- function(ebird_surveys) {
     return(FALSE)
   }
 
-  # do these rows with NA observers have other rows with observer information? If so, we're fine. If not, ERROR and end function here.
+  # do these rows with NA observers have other rows with observer information?
+  # If so, we're fine. If not, ERROR and end function here.
   for (i in 1:nrow(all_na_obs)) {
     same_survey_noNA <-
       ebird_surveys |>
@@ -127,12 +133,21 @@ confirm_observer_NA <- function(ebird_surveys) {
     # If no other ebird_surveys row has the same year/route,
     # ERROR
     if (nrow(same_survey_noNA) == 0) {
-      logger::log_error("{all_na_obs$route[i]} {all_na_obs$year[i]} has only NA values for observers and no corrected record in survey_list. Likely source of error: the ebird entry for stop 1 is missing observer information.")
+      logger::log_error(
+        paste(
+          "{all_na_obs$route[i]} {all_na_obs$year[i]}",
+          "has only NA values for observers",
+          "and no corrected record in survey_list.",
+          "Likely source of error:",
+          "the ebird entry for stop 1 is missing observer information."
+        ))
       return(TRUE)
-      # TRUE represents that we found a genuine case of observer information missing
+      # TRUE represents that we found a genuine case
+      # of observer information missing
     }
 
-    # NAs have now been fully evaluated, if we haven't returned yet there are no NAs that are a problem
+    # NAs have now been fully evaluated,
+    # if we haven't returned yet there are no NAs that are a problem
     return(FALSE) # FALSE represents we found no genuine NAs
   }
 }
@@ -153,7 +168,10 @@ update_observer_table <- function(ebird_surveys, config, save = TRUE) {
 
   # if there are no new names, end the function
   if (length(obs_list) == 0) {
-    logger::log_info("Update_observer_table: No new observers added to observer conversion table")
+    logger::log_info(
+      paste(
+        "Update_observer_table:",
+        "No new observers added to observer conversion table"))
     return() # end the function
   }
 
