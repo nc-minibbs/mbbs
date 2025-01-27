@@ -31,7 +31,6 @@ stdenv.mkDerivation {
           --output=data-pipeline.html \
           --standalone \
           --template=docs/template.html \
-          --filter=mermaid-filter \
           --variable=gitcommit:${commit}
 
     ${pandoc}/bin/pandoc docs/data-checklist.md \
