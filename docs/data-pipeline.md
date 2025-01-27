@@ -40,8 +40,8 @@ or files provided by Haven Wiley.
 participants have provided stop-level records.
 When possible, this data is used to disaggregate route-level checklists.
 
-[`survey-events`](#survey-events) [![info on survey-event data](../resources/img/info-16x16.svg)](#survey-events)
-: Complete listing of years/route/stop where an observation was made.
+[`survey-list`](#survey-list) [![info on survey-list data](../resources/img/info-16x16.svg)](#survey-list)
+: Complete listing of years/route where an observations were made.
 
 `taxonomy`
 : The
@@ -50,9 +50,6 @@ is used to normalize checklist species to a common taxonomy.
 Taxonomy CSV files are manually downloaded and stored in
 `data/taxonomy/ebird_taxonomy_vXXXX.csv`.
 The `get_latest_taxonomy` function is used internally for accessing the taxonomy.
-
-[`observer`](#observer) [![info on observer data](../resources/img/info-16x16.svg)](#observer)
-: Observer datasets contain information on who observed which routes and when.
 
 `stop-coordinates`
 : TODO Lat/Lon of the first stops for each route (right now)
@@ -71,10 +68,9 @@ flowchart TD
   B[historical]
   C[stop-level]
   D[taxonomy]
-  E[observer]
   F[coordinates]
   G[excluded-submissions]
-  H[survey-events]
+  H[survey-list]
   O1(by-stop)
   O2(by-route)
 
@@ -86,8 +82,6 @@ flowchart TD
   A --> H
   C --> H
   H --> O1
-  A --> E
-  B --> E
   G --> A
   E --> O1
   F --> O1
@@ -98,7 +92,7 @@ flowchart TD
 ## Further details on data sources
 
 See also:
-[data-checklist.md](data-checklist.md)
+[data-checklist](data-checklist.html)
 
 ### `eBird`
 
@@ -170,9 +164,9 @@ at the route-level and the stop-level,
 such as cases where the route-level is higher by 1,
 the stop-level data is taken as the source of truth.
 
-### `survey-events`
+### `survey-list`
 
-The `data/survey-events.csv` file contains a basic summary of all
+The `data/survey-list.csv` file contains a basic summary of all
 route/years for which a survey was completed.
 This data is taken from ebird, scraped from the old website,
 and/or confirmed independently
@@ -182,35 +176,13 @@ It is updated when new surveys have been added to ebird.
 
 A normalized version of this file is availble as a [data product](#data-products).
 
-### `observer`
-
-End users will find data about which surveyors ran each route,
-and which observer is the `primary_observer` in  which contains the: route, year, number of stops, and primary_observer - as well as other information about the observers.
-`data/survey_events` is updated every time the overall dataset is updated, at least once a year when the new data is downloaded.
-
-'main_observer_conversion_table'
-This table contains a list of the expected observers for each route, used in calculating the primary_observer. It is updated when a route is surveyed by someone who hasn't run that route before. 
-
-'mini_observer_conversion_table'
-This table contains the conversions used to standardize observer names, eg 'Tom driscoll' and 'Tom Driscol' both become 'Tome Driscoll'
-
-Processing of observers happens in 'R/process_observers'
-The primary_observer is the highest quality observer who was part of the survey for a given route. 'observer_quality' is calculated as
-
-```r
-N_species[route,year,observer(i)] - mean(N_species[route,!observer(i)]  / mean(N_species[route,!observer(i)]
-```
-
-These comparison scores (one for every observer on every route-year) are then averaged for each observer to get their 'observer_quality'. A score of '.05' is interpretable as 'On average, this observer sees 5% more species than other surveyors on the same routes'.
-
 ## Data products
 
-* `survey-events`
-* "raw" data
-* "analysis-ready" data
-* Summarized by stop
-* Summarized by route
+* survey list: basic summary of
+* counts summarized by stop
+* counts Summarized by route
 
 ### Versioning
 
 Data products are versioned as follows...
+TODO

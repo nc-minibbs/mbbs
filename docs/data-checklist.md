@@ -1,50 +1,121 @@
+# Instructions for updating the data
 
-### Instructions for updating the data
-After a fresh new year and a new series of surveys, here's the walkthrough of how to update this repository with the latest information
+After a fresh new year and a new series of surveys,
+here's the walkthrough
+of how to update this repository with the latest data.
 
-#### STEP1: Checking and QC'ing the ebird data
-You'll want the 'NC Mini BBS Route Runners' google sheet up to check which routes ought to have been run, and who you should get in touch with if they haven't been. You'll check the routes on all three ebird accounts. Update the 'sampling events' tab with comments as needed.
- 1. Check that all the routes are accounted for 
- 2. Check that all routes have 20 stops 
-    - Potential errors: 
-      - More than one checklist for the same stop
-      - Checklist missing for one or more stops. To fix, read the comments on the first stop, there should be an explanation ie: "road work, stops 2-4 not surveyed". If there's no explanation, check the surveyor's ebird lists to see if the stop checklist exists and hasn't been shared to the account or if the stop checklist is fully missing. Follow up with the surveyor and make a note in the sampling events tab of 'NC Mini BBS Route Runners'
+## STEP 1 : Checking and QC'ing the ebird data
 
- 3. Does Stop 1 have environmental data? Are the types of data written correctly? The only required information is the *observers=*
+You'll want the 'NC Mini BBS Route Runners' google sheet up
+to check which routes ought to have been run,
+and who you should get in touch with if they haven't been.
+You'll check the routes on all three ebird accounts.
+Update the 'sampling events' tab with comments as needed.
 
-Here's an example of what this environmental data might look like:
+1. Check that all the routes are accounted for.
+2. Check that all routes have 20 stops.
+    * Potential errors:
+      * More than one checklist for the same stop
+      * Checklist missing for one or more stops.
+        To fix, read the comments on the first stop,
+        there should be an explanation e.g.:
+        "road work, stops 2-4 not surveyed".
+        If there's no explanation,
+        check the surveyor's ebird lists to see if the stop checklist exists
+        and hasn't been shared to the account
+        or if the stop checklist is fully missing.
+        Follow up with the surveyor
+        and make a note in the sampling events tab
+        of 'NC Mini BBS Route Runners'.
+3. Does Stop 1 have environmental data?
+   Are the types of data written correctly?
+   The only required information is the *observers=*.
 
-*observers=Allen Hurlbert, Sarah Pollack; weather=55 F, clear; notes=big thunderstorm last night, everything wet; vehicles=3 (or v=3); habitat=B,H (or h=B,H).*
+    Here's an example of what this environmental data might look like:
 
-Habitat data may only be recorded if something's changed from the last years.
+    *observers=Allen Hurlbert, Sarah Pollack;
+    weather=55 F, clear;
+    notes=big thunderstorm last night, everything wet;
+    vehicles=3 (or v=3);
+    habitat=B,H (or h=B,H).*
 
-   - Potential errors
-     - misspellings in the data type ie "wether" instead of "weather". To fix, edit the comments to the correct spelling
-     - no *"observer(s)="* in the first stop. To fix, check the submitter's ebird account or the 'NC Mini BBS Route Runners' to see who to credit with running that route. Add the information
-     - data types seperated by a comma "," instead of semi-colon ";" To fix, edit the comments to change commas to semi-colons
+    Habitat data may only be recorded if something's changed from the last years.
 
- 4. Do the other stops have comments? Are the comments formatted correctly?
-    - Potential errors
-      - missing semi-colon between data types (ie v=3 h=b,bh) or comma instead of semi-colon. To fix, add semi-colons 
-      - non-data comment. To fix, add "notes=" before the comment
-      - vehicle information on most but not all routes. To fix this use your discretion, as the surveyor may not have checked for vehicles at all stops, but if all the other stops have v>1, these are likely v=0 stops. If so add v=0 to comments.
+    * Potential errors
+      * misspellings in the data type ie "wether" instead of "weather".
+        To fix, edit the comments to the correct spelling
+      * no *"observer(s)="* in the first stop.
+        To fix, check the submitter's ebird account
+        or the 'NC Mini BBS Route Runners'
+        to see who to credit with running that route.
+        Add the information.
+      * data types seperated by a comma ","
+        instead of semi-colon ";".
+        To fix, edit the comments to change commas to semi-colons.
 
- 5. Are all the routes sorted under the right county? 
-    - Potential errors
-      - Example: a Durham checklist has been shared to Chatham - if Durham already has the checklist and it's been shared twice, delete the duplicate checklist in the Chatham account. Ebird will make this seem scary! If the checklist is on both accounts it will only be deleted from the one account. If Durham does NOT have the checklist, share the checklist to Durham and then delete the checklist from the Chatham account, or if not possible, get in touch with the surveyor to share the checklist to the Durham account instead. Determine what county the checklist belongs to based on the name of the checklist ie "MBBS, Durham, Route 1-1" rather than based on the location that ebird gives in the county column on the website. Sometimes checklists that are along county borders are put in the wrong location by ebird (ie: Wake co.) but mbbs_county is extracted from the location name.
-      -  Example: The location of the checklist does not include the county ie: "MBBS, Route=8,,Stop1" rather than something like "MBBS, Orange, Route=8,,Stop1". The dataset column mbbs_county is extracted from the checklist location, and this will cause an error where the data receives an N/A county. To fix, edit the location to the same route/stop, but one of the location names that includes the county. Double-check that the lat/long of the new location is the same. If a better labeled version of the location is not available, you'll need to get in contact with the surveyor. 
+4. Do the other stops have comments? Are the comments formatted correctly?
+    * Potential errors
+      * missing semi-colon between data types (ie v=3 h=b,bh)
+        or comma instead of semi-colon. To fix, add semi-colons.
+      * non-data comment. To fix, add "notes=" before the comment.
+      * vehicle information on most but not all routes.
+        To fix this use your discretion,
+        as the surveyor may not have checked for vehicles at all stops,
+        but if all the other stops have v>1,
+        these are likely v=0 stops.
+        If so add v=0 to comments.
 
-#### STEP2: Download the ebird data 
-Now that the data is QC'd, download the ebird data from all the accounts (it will be sent to Allen's email initially) and add it to mbbs/inst/extdata. You'll rename the files to `MyEbirdData_[COUNTY]_[YYYYMMDD]`. _IMPORTANT!_ DO NOT open the files in excel. If you want to check the data open the .csv in R. Opening the files in excel may change the date format and cause errors when processing the data. If you get an error later on relating to an invalid date format, redownload the data.
+5. Are all the routes sorted under the right county?
+    * Potential errors
+      * Example: a Durham checklist has been shared to Chatham -
+        if Durham already has the checklist and it's been shared twice,
+        delete the duplicate checklist in the Chatham account.
+        Ebird will make this seem scary!
+        If the checklist is on both accounts
+        it will only be deleted from the one account.
+        If Durham does NOT have the checklist,
+        share the checklist to Durham,
+        and then delete the checklist from the Chatham account,
+        or if not possible,
+        get in touch with the surveyor
+        to share the checklist to the Durham account instead.
+        Determine what county the checklist
+        belongs to based on the name of the checklist
+        i.e. "MBBS, Durham, Route 1-1"
+        rather than based on the location that ebird
+        gives in the county column on the website.
+        Sometimes checklists that are along county borders
+        are put in the wrong location by ebird (ie: Wake co.)
+        but mbbs_county is extracted from the location name.
+      * Example: The location of the checklist does not include the county ie:
+        "MBBS, Route=8,,Stop1"
+        rather than something like "MBBS, Orange, Route=8,,Stop1".
+        The dataset column mbbs_county is extracted from the checklist location,
+        and this will cause an error where the data receives an N/A county.
+        To fix, edit the location to the same route/stop,
+        but one of the location names that includes the county.
+        Double-check that the lat/long of the new location is the same.
+        If a better labeled version of the location is not available,
+        you'll need to get in contact with the surveyor.
 
-#### STEP3: Update the taxonomy
+## STEP 2: Download the ebird data
+
+Now that the data is QC'd,
+download the ebird data from all the accounts
+(it will be sent to Allen's email initially)
+and add it to mbbs/inst/extdata.
+You'll rename the files to `MyEbirdData_[COUNTY]_[YYYYMMDD]`. _IMPORTANT!_ DO NOT open the files in excel. If you want to check the data open the .csv in R. Opening the files in excel may change the date format and cause errors when processing the data. If you get an error later on relating to an invalid date format, redownload the data.
+
+## STEP 3: Update the taxonomy
+
 Download the latest version of the eBird taxonomy CSV to the inst/taxonomy folder. You can find the latest version of the taxonomy at 
 
 	https://www.birds.cornell.edu/clementschecklist/download/
 
 The file should be named with the format `ebird_taxonomy_vYYYY` (it should download in this format) Leave previous versions in the file.
 
-#### STEP4: Update the repository
+## STEP 4: Update the repository
+
 Run the `import_data.R` file located in mbbs/inst. Every other R code in the project contributes to this file, and it's the one thing that needs to run to update the data. You can see it calls library(mbbs) to use all the functions contained in the package. If you can't load library(mbbs) run the following lines:
 
 	install.packages('devtools')
