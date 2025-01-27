@@ -41,3 +41,27 @@ valid_date_range <- function(x) {
   )
   x %within% ranges
 }
+
+#' Conform taxonomy of MBBS data from different sources
+#'
+#' @param df a dataset with a `common_name` field
+#' @param taxonomy data.frame from `get_ebird_taxonomy`
+conform_taxonomy <- function(df, taxonomy) {
+  assertthat::assert_that(
+    all(unique(df$common_name) %in% taxonomy$common_name),
+    msg = "df has common_names that taxonomy does not have."
+  )
+
+  dplyr::left_join(
+    df,
+    taxonomy,
+    by = c("common_name")
+  ) |>
+    (\(x){
+      assertthat::assert_that(
+        nrow(df) == nrow(x),
+        msg = "Data was lost when conforming taxonomy This is bad."
+      )
+      x
+    })()
+}
