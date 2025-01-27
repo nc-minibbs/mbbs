@@ -247,7 +247,8 @@ stops_to_include <- function(deviations) {
   deviations |>
     purrr::keep(.p = ~ length(.x$stops_nobirds) > 0) |>
     purrr::map_dfr(
-      ~ .x[names(.x) %in% c("year", "date", "county", "route", "stops_nobirds")] |>
+      ~ .x[names(.x) %in%
+          c("year", "date", "county", "route", "stops_nobirds")] |>
         dplyr::as_tibble() |>
         dplyr::rename(
           route_num = route,
@@ -371,7 +372,7 @@ ebird_import_checks <- function(dt) {
     ) |>
     dplyr::filter(!(valid_date_range(date))) |>
     (\(x) {
-      logger::log_error("{x$submission}: {x$date} is outside study dates")
+      logger::log_warn("{x$submission}: {x$date} is outside study dates")
     })()
 
   dt
