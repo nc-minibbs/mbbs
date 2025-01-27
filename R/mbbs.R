@@ -250,7 +250,7 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
       df |>
         filter(
           !(paste(year, route)
-           %in% paste(ebird_no_stop$year, ebird_no_stop$route))
+          %in% paste(ebird_no_stop$year, ebird_no_stop$route))
         ) |>
         (\(x) {
           logger::log_trace(
@@ -264,7 +264,7 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
         })() |>
         filter(
           !(paste(year, route) %in%
-             paste(stop_to_route$year, stop_to_route$route))
+            paste(stop_to_route$year, stop_to_route$route))
         ) |>
         (\(x) {
           logger::log_trace(
@@ -349,7 +349,6 @@ create_mbbs_counts <- function(ebird_counts, config) {
 
 #' Create survey data
 create_survey_data <- function(ebird, route_counts, .config = config) {
-
   # Ensure survey list is up-to-date
   update_survey_list(ebird, config = .config)
 
@@ -369,10 +368,10 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
     file = .config$survey_list,
     col_types = readr::cols(
       route = readr::col_character(),
-      year  = readr::col_integer(),
-      obs1  = readr::col_character(),
-      obs2  = readr::col_character(),
-      obs3  = readr::col_character(),
+      year = readr::col_integer(),
+      obs1 = readr::col_character(),
+      obs2 = readr::col_character(),
+      obs3 = readr::col_character(),
       standardized_observers = readr::col_skip()
     )
   )
@@ -414,7 +413,7 @@ create_mbbs_data <- function(.config = config) {
   list(
     mbbs_stops_counts = counts$stop_level,
     mbbs_route_counts = counts$route_level,
-    surveys  = surveys,
+    surveys = surveys,
     comments = comments
   )
 }
@@ -423,7 +422,6 @@ create_mbbs_data <- function(.config = config) {
 #'
 #' @export
 write_mbbs_data <- function(.config = config) {
-
   dir.create("output")
 
   log_file <- "output/log.txt"

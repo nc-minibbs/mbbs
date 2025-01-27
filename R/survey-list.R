@@ -24,7 +24,7 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
     anti_join(survey_list, by = c("route", "year"))
 
   # flag and stop function if any rows in ebird_surveys have all NA observers
-  # and that survey is not represented with a non-NA observer in another row. 
+  # and that survey is not represented with a non-NA observer in another row.
   # eg: we're truly missing observer data.
   assertthat::assert_that(
     confirm_observer_NA(ebird_surveys) == FALSE,
@@ -99,7 +99,6 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
       "No new surveys to add to survey_list"
     )
   }
-
 }
 
 # Takes a df and confirms TRUE if there is a survey where we are
@@ -142,7 +141,8 @@ confirm_observer_NA <- function(ebird_surveys) {
           "and no corrected record in survey_list.",
           "Likely source of error:",
           "the ebird entry for stop 1 is missing observer information."
-        ))
+        )
+      )
       return(TRUE)
       # TRUE represents that we found a genuine case
       # of observer information missing
@@ -173,7 +173,9 @@ update_observer_table <- function(ebird_surveys, config, save = TRUE) {
     logger::log_info(
       paste(
         "Update_observer_table:",
-        "No new observers added to observer conversion table"))
+        "No new observers added to observer conversion table"
+      )
+    )
     return() # end the function
   }
 

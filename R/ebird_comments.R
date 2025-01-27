@@ -127,11 +127,11 @@ comment_workflow <- function(ebird) {
     group_by(route, date) |>
     mutate(
       violation =
-        # Any of the following
-        # * Survey not within valid date range
+      # Any of the following
+      # * Survey not within valid date range
         !(valid_date_range(date)) |
-        # * not all the submissions on the same date
-        !(all(date == date[1]))
+          # * not all the submissions on the same date
+          !(all(date == date[1]))
     ) |>
     ungroup()
 }
