@@ -4,7 +4,7 @@
 \alias{create_mbbs_data}
 \title{Create the MBBS datasets}
 \usage{
-create_mbbs_data(config)
+create_mbbs_data(.config = config)
 }
 \description{
 Create the MBBS datasets

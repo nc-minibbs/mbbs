@@ -4,7 +4,7 @@
 \alias{write_mbbs_data}
 \title{Write MBBS datasets}
 \usage{
-write_mbbs_data(config)
+write_mbbs_data(.config = config)
 }
 \description{
 Write MBBS datasets

@@ -4,7 +4,7 @@
 \alias{create_survey_data}
 \title{Create survey data}
 \usage{
-create_survey_data(ebird, .config = config)
+create_survey_data(ebird, route_counts, .config = config)
 }
 \description{
 Create survey data
