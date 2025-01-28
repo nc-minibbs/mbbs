@@ -7,7 +7,7 @@
 #' Saves any mismatches
 #' Assuming no mismatches, adds together all the double-entry data
 #' writes the stop-level-transcribed-paper csv
-#' 
+#'
 #' @importFrom dplyr select mutate rename left_join filter
 #' @importFrom assertthat assert_that
 #' @importFrom utils read.csv
