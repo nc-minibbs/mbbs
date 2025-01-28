@@ -10,6 +10,7 @@ is available at the links below:
 * [mbbs_route_counts.csv](data/mbbs_route_counts.csv)
 * [surveys.csv](data/surveys.csv)
 * [comments.csv](data/comments.csv)
+* [route_stop_coordinates.csv](data/route_stop_coordinates.csv)
 * [log.txt](data/log.txt)
 
 For a description of these files and more details on how they are generated,

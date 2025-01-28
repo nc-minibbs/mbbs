@@ -67,6 +67,9 @@
           buildPhase = 
           ''
            ${R}/bin/Rscript --vanilla -e 'mbbs::write_mbbs_data()'
+
+           # include static data
+           cp data/route_stop_coordinates.csv output/
           '';
           installPhase = ''
             mkdir -p $out
