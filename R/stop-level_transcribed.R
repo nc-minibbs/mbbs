@@ -7,10 +7,13 @@
 #' Saves any mismatches
 #' Assuming no mismatches, adds together all the double-entry data
 #' writes the stop-level-transcribed-paper csv
+#' 
 #' @importFrom dplyr select mutate rename left_join filter
 #' @importFrom assertthat assert_that
+#' @importFrom utils read.csv
 #' @include config.R
-#' @returns transcribed_paper df of all the observations transcribed from the paper files,
+#' @returns transcribed_paper df of all the observations
+#'  transcribed from the paper files,
 #'  returned just in case this function is called to set a variable.
 update_transcribed_paper <- function() {
   # browser()
