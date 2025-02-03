@@ -36,12 +36,12 @@ Prior to 2020, checklists were submitted at the route-level. Beginning in 2020, 
 or files provided by Haven Wiley.
 
 [`stop-level`](#stop-level) [![info on stop-level data](../resources/img/info-16x16.svg)](#stop-level)
-: For some routes prior to 2022,
-participants have provided stop-level records.
-When possible, this data is used to disaggregate route-level checklists.
+: For some routes prior to 2020,
+participants have provided stop-level records (e.g. on personal paper data sheets or Excel files).
+When available, we have used this data to disaggregate route-level checklists to the stop level.
 
 [`survey-list`](#survey-list) [![info on survey-list data](../resources/img/info-16x16.svg)](#survey-list)
-: Complete listing of years/route where an observations were made.
+: Complete listing of years/route where observations were made.
 
 `taxonomy`
 : The
