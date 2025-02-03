@@ -417,7 +417,7 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
     left_join(count_summary, by = c("route", "year")) |>
     left_join(comments, by = c("route", "year")) |>
     mutate(
-      protocol_violation = dplyr::case_when()(
+      protocol_violation = dplyr::case_when(
         is.na(protocol_violation) ~ FALSE,
         nstops != 20 ~ TRUE,
         TRUE ~ protocol_violation
