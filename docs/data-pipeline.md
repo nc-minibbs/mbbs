@@ -27,7 +27,7 @@ and explained in more detail below.
 
 [`eBird`](#ebird) [![info on ebird](../resources/img/info-16x16.svg)](#ebird)
 
-: As as 2009, all MBBS checklists are submitted to [eBird](https://ebird.org).
+: As of 2009, all MBBS checklists are submitted to [eBird](https://ebird.org).
 These checklists are downloaded manually as CSV files.
 Prior to 2022, checklists were submitted at the route-level.
 
