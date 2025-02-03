@@ -127,6 +127,11 @@ The file should be named with the format `ebird_taxonomy_vYYYY`
 (it should download in this format).
 Leave previous versions in the directory.
 
+If conform_taxonomy() later stops the update because it's flagged that there's a common name in the historical data that is NOT present in the ebird data,
+eg. taxonomy has changed for that species and been updated on ebird, 
+add the species to the case_when()'s in taxonomy.R/conform_taxonomy()
+eg. "House Wren ~ Northern House Wren" 
+
 ## STEP 4: Run the update locally
 
 Now, you'll run the update locally.
