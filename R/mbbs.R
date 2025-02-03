@@ -195,7 +195,7 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
     stop_to_route |>
       dplyr::ungroup() |>
       dplyr::select(common_name, year, route, scount = count, source),
-    ebird |> 
+    ebird |>
       dplyr::filter(is.na(stop_num)) |>
       dplyr::ungroup() |>
       dplyr::select(common_name, year, route, rcount = count),
@@ -309,7 +309,7 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
 create_route_level_counts <- function(ebird, stop_level_data, taxonomy, config = config) {
   df <- create_route_level_counts_0(ebird, stop_level_data, taxonomy, config)
 
-  yrs_in <- 
+  yrs_in <-
     dplyr::distinct(df, year, route) |>
     arrange(year, route)
 
@@ -402,7 +402,7 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
       total_abundance = sum(count),
       nstops = min(nstops)
     )
-  
+
   # Prepare data for output
   surveys |>
     left_join(count_summary, by = c("route", "year")) |>
