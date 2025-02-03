@@ -52,12 +52,23 @@ Taxonomy CSV files are manually downloaded and stored in
 The `get_latest_taxonomy` function is used internally for accessing the taxonomy.
 
 `route_stop_coordinates`
-: Lat/Lon of the individual point count stops for each route, as well as stop description notes
-'R/mbbs_routes'. 
+: Lat/Lon of the individual point count stops for each route,
+as well as stop description notes 'R/mbbs_routes'.
 
 `excluded-submissions`
-: A file containing a list of eBird checklists
-to exclude. Primarily these are checklists that are duplicated, but in some case they may include pre-dawn (owling) checklists, or checklists that were identified as problematic or unreliable for some reason.
+: A file containing a list of eBird checklists to exclude.
+Primarily these are checklists that are duplicated,
+but in some cases
+they may include pre-dawn (owling) checklists,
+or checklists that were identified as problematic or unreliable for some reason.
+
+`stop-deviations`
+: A configuration file identifying stops where
+(a) some deviation from the protocol occurred and/or
+(b) the stop was visited but no birds were observed.
+In the latter case,
+eBird does not include an empty checklist,
+so this is used to add back 0 counts for these stops.
 
 ## Relations between sources and products
 
@@ -91,7 +102,7 @@ flowchart TD
 ## Further details on data sources
 
 See also:
-[data-checklist](data-checklist.html)
+[data-checklist](data-checklist.html).
 
 ### `eBird`
 
@@ -129,7 +140,8 @@ These data are not updated.
 
 ### `stop-level`
 
-Prior to 2022 (prior to 2020 for some routes), survey counts were aggregated at the route level.
+Prior to 2022 (prior to 2020 for some routes),
+survey counts were aggregated at the route level.
 This data is the un-summarized version of the routes for which records exist.
 The `stop-level` data comes from a variety of sources,
 and is all stored in
@@ -147,11 +159,12 @@ creates the processed `stop_level_hist_xls.csv`.
 2. Scraped from the `ebird` `species_comments` column.
 Some checklists summarizing routes
 on ebird contain stop-level information in the notes for each species by
-listing comma-separated values of abundance at each stop like ",,3,,1,,,1,1,,,,,,,1,2,,,1,". 
+listing comma-separated values of abundance
+at each stop like ",,3,,1,,,1,1,,,,,,,1,2,,,1,".
 The `R/process_species_comments` R script processes this data
 into a stop-level format to create `stop_level_species_comments.csv`.
 
-4. Transcribed paper files.
+3. Transcribed paper files.
 Many surveyors sent Haven Wiley their paper recording sheets
 which were then summarized to route for the old website.
 These sheets have been transcribed with double-entry to prevent errors.
@@ -160,7 +173,8 @@ are processed to create `stop_level_transcribed_paper.csv`
 
 NOTE:
 When there is disagreement between counts
-at the route-level and the stop-level, the stop-level data is taken as the source of truth.
+at the route-level and the stop-level,
+the stop-level data is taken as the source of truth.
 
 ### `survey-list`
 
@@ -176,9 +190,84 @@ A normalized version of this file is availble as a [data product](#data-products
 
 ## Data products
 
-* survey list: basic summary of
-* counts summarized by stop
-* counts Summarized by route
+The following data are available from the
+[MBBS data website](https://nc-minibbs.github.io/mbbs/).
+
+* `mbbs_stops_counts.csv`:
+Species counts by route/stop/year
+*for route/years that we have available data*.
+  * `year`: year of survey
+  * `county`: chatham | durham | orange
+  * `route`: survey route
+  * `route_num`: route number within a county
+  * `stop_num`: stop number within a route (1 - 20)
+  * `source`:
+    One of `ebird`, `obs_details`, `transcribed_paper`, or `observer_xls`.
+    In the case that data are available
+    from [multiple sources](#stop-level),
+    the following preference is used:
+    (1) `ebird`,
+    (2) `obs_details`,
+    (3) `transcribed_paper`,
+    (4) `observer_xls`.
+    See [`stop-level` description](#stop-level)
+    for details on each of these sources.
+  * `common_name`: scientific name from eBird taxonomy
+  * `sci_name`: scientific name from eBird taxonomy
+  * `count`: count of birds observed
+* `mbbs_route_counts.csv`:
+Species routes by route/year
+for all route/years.
+This dataset both summarizes `mbbs_stops_counts.csv` at the route level
+and additionally includes route/years where we do not have stop level
+counts available.
+  * `year`: year of survey
+  * `county`: chatham | durham | orange
+  * `route`: survey route
+  * `route_num`: route number within a county
+  * `source`:
+    One of `historical`, `stop-level`, or `ebird`,
+    meaning the data came from [`historical`](#historical) sources,
+    summarized from `stop-level`,
+    or directly from `ebird`,
+    respectively.
+  * `common_name`: scientific name from eBird taxonomy
+  * `sci_name`: scientific name from eBird taxonomy
+  * `count`: count of birds observed
+* `surveys.csv`:
+Summary of all surveys run.
+  * `route`: survey route
+  * `year`: year of survey
+  * `obs1`: name of first observer
+  * `obs2`: name of second observer
+  * `obs3`: name of third observers
+  * `total_species`: total number of species observed
+  * `total_abundance`: total number of birds observed
+  * `date`:
+    date of survey.
+    In the case that survey was conducted on more than 1 date,
+    the most common date is used.
+  * `protocol_violation`:
+    A boolean flag that the survey had any protocol violations,
+    which may include:
+    * survey conducted on more than 1 day
+    * survey not conducted during study window (May 15 - June 30)
+    * fewer than 20 stops were surveyed
+* `comments.csv`:
+*Caveat emptor*
+This is essentially all the comments from ebird submissions.
+It does includes `vehicles` and `weather` fields,
+which are parsed from the `comments` field.
+* `route_stop_coordinates.csv`:
+Geographic coordinates of each stop.
+  * `county`
+  * `route`
+  * `route_num`
+  * `stop_num`
+  * `lat`
+  * `lon`
+  * `stop_notes`
+* `log.txt`: output of the data processing log
 
 ### Versioning
 
