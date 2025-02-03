@@ -400,6 +400,15 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
     summarise(
       total_species = sum(count > 0),
       total_abundance = sum(count),
+
+      # NOTE: the nstops variable here is used to
+      # update the protocol violation flag in the next step.
+      # Errors in the number of stops (i.e. != 20)
+      # should be caught earlier in the pipeline.
+      # Using min is hacky of course,
+      # but cases of violations of > 20 stops are errors
+      # that must be fixed earlier in the pipeline,
+      # while < 20 stops may be valid violation.
       nstops = min(nstops)
     )
 
@@ -408,10 +417,11 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
     left_join(count_summary, by = c("route", "year")) |>
     left_join(comments, by = c("route", "year")) |>
     mutate(
-      protocol_violation = if_else(
-        is.na(protocol_violation), FALSE, protocol_violation
-      ),
-      protocol_violation = if_else(nstops != 20, TRUE, protocol_violation)
+      protocol_violation = case_when()(
+        is.na(protocol_violation) ~ FALSE,
+        nstops != 20 ~ TRUE,
+        TRUE ~ protocol_violation
+      )
     ) |>
     select(-nstops)
 }
