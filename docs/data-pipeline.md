@@ -27,21 +27,21 @@ and explained in more detail below.
 
 [`eBird`](#ebird) [![info on ebird](../resources/img/info-16x16.svg)](#ebird)
 
-: As as 2009, all MBBS checklists are submitted to [eBird](https://ebird.org).
+: As of 2009, all MBBS checklists are submitted to [eBird](https://ebird.org).
 These checklists are downloaded manually as CSV files.
-Prior to 2022, checklists were submitted at the route-level.
+Prior to 2020, checklists were submitted at the route-level. Beginning in 2020, some users began submitting individual stop-level checklists, and by 2022 all (or nearly all?) checklists were stop-level eBird checklists.
 
 [`historical`](#historical) [![info on historical data](../resources/img/info-16x16.svg)](#historical)
 : Checklists scraped from the old MBBS site
 or files provided by Haven Wiley.
 
 [`stop-level`](#stop-level) [![info on stop-level data](../resources/img/info-16x16.svg)](#stop-level)
-: For some routes prior to 2022,
-participants have provided stop-level records.
-When possible, this data is used to disaggregate route-level checklists.
+: For some routes prior to 2020,
+participants have provided stop-level records (e.g. on personal paper data sheets or Excel files).
+When available, we have used this data to disaggregate route-level checklists to the stop level.
 
 [`survey-list`](#survey-list) [![info on survey-list data](../resources/img/info-16x16.svg)](#survey-list)
-: Complete listing of years/route where an observations were made.
+: Complete listing of years/route where observations were made.
 
 `taxonomy`
 : The
@@ -51,14 +51,13 @@ Taxonomy CSV files are manually downloaded and stored in
 `data/taxonomy/ebird_taxonomy_vXXXX.csv`.
 The `get_latest_taxonomy` function is used internally for accessing the taxonomy.
 
-`stop-coordinates`
-: TODO Lat/Lon of the first stops for each route (right now)
-'R/mbbs_routes'
-Stable and not updated
+`route_stop_coordinates`
+: Lat/Lon of the individual point count stops for each route, as well as stop description notes
+'R/mbbs_routes'. 
 
 `excluded-submissions`
 : A file containing a list of eBird checklists
-to exclude.
+to exclude. Primarily these are checklists that are duplicated, but in some case they may include pre-dawn (owling) checklists, or checklists that were identified as problematic or unreliable for some reason.
 
 ## Relations between sources and products
 
@@ -104,15 +103,15 @@ from each of the mbbs ebird accounts:
 and `mbbschathamnc`.
 Files are stored in `data/ebird/`.
 
-Sometimes stop-level data is missing when in fact route was surveyed
-and stop-level data was collected for the rest of the route.
-The `stop_deviations.yml` file tracks these such deviations.
+Sometimes stop-level data are missing when in fact the route was surveyed
+and stop-level data were collected for the rest of the route.
+The `stop_deviations.yml` file tracks these deviations.
 Deviations could be for 2 reasons:
 
 1. The observer(s) were unable to access the stop(s)
    for safety or other reasons.
    In this case, we do not know the bird count,
-   and no data for these stop is available.
+   and no data for these stop are available.
 2. The stop(s) were in fact observed,
    but no birds were seen.
    In this case, there is an eBird submission,
@@ -130,7 +129,7 @@ These data are not updated.
 
 ### `stop-level`
 
-Prior to 2022, survey counts were aggregated at the route level.
+Prior to 2022 (prior to 2020 for some routes), survey counts were aggregated at the route level.
 This data is the un-summarized version of the routes for which records exist.
 The `stop-level` data comes from a variety of sources,
 and is all stored in
@@ -147,11 +146,12 @@ creates the processed `stop_level_hist_xls.csv`.
 
 2. Scraped from the `ebird` `species_comments` column.
 Some checklists summarizing routes
-on ebird contain stop-level information in the notes for each species.
+on ebird contain stop-level information in the notes for each species by
+listing comma-separated values of abundance at each stop like ",,3,,1,,,1,1,,,,,,,1,2,,,1,". 
 The `R/process_species_comments` R script processes this data
 into a stop-level format to create `stop_level_species_comments.csv`.
 
-3. Transcribed paper files.
+4. Transcribed paper files.
 Many surveyors sent Haven Wiley their paper recording sheets
 which were then summarized to route for the old website.
 These sheets have been transcribed with double-entry to prevent errors.
@@ -160,9 +160,7 @@ are processed to create `stop_level_transcribed_paper.csv`
 
 NOTE:
 When there is disagreement between counts
-at the route-level and the stop-level,
-such as cases where the route-level is higher by 1,
-the stop-level data is taken as the source of truth.
+at the route-level and the stop-level, the stop-level data is taken as the source of truth.
 
 ### `survey-list`
 
