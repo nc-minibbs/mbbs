@@ -48,6 +48,7 @@ stdenv.mkDerivation {
     cp index.html $out
     cp data-pipeline.html $out
     cp data-checklist.html $out
+    cp resources/ $out
     cp -R ${self.packages.${system}.data}/. $out/data
   '';
 }

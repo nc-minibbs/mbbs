@@ -70,7 +70,6 @@
 
            # include static data
            cp data/route_stop_coordinates.csv output/
-           cp resources/ output/
           '';
           installPhase = ''
             mkdir -p $out
