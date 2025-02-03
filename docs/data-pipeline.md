@@ -57,7 +57,7 @@ The `get_latest_taxonomy` function is used internally for accessing the taxonomy
 
 `excluded-submissions`
 : A file containing a list of eBird checklists
-to exclude.
+to exclude. Primarily these are checklists that are duplicated, but in some case they may include pre-dawn (owling) checklists, or checklists that were identified as problematic or unreliable for some reason.
 
 ## Relations between sources and products
 
