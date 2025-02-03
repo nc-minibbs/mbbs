@@ -34,8 +34,8 @@ create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
 
   dplyr::bind_rows(
     stop_ebird |> mutate(source = "ebird"),
-    stop_xls |> mutate(source = "observer xls"),
-    stop_obs |> mutate(source = "obs details"),
+    stop_xls |> mutate(source = "observer_xls"),
+    stop_obs |> mutate(source = "obs_details"),
     stop_transcribed
   ) |>
     # Validity checks
@@ -100,9 +100,9 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
   source_preference <-
     c(
       "ebird",
-      "obs details",
+      "obs_details",
       "transcribed_paper",
-      "observer xls"
+      "observer_xls"
     )
 
   df <- df |>
@@ -119,9 +119,9 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
             source_preference[
               which.max(c(
                 "ebird" %in% .x,
-                "obs details" %in% .x,
+                "obs_details" %in% .x,
                 "transcribed_paper" %in% .x,
-                "observer xls" %in% .x
+                "observer_xls" %in% .x
               ))
             ]
           filter(.y, source == filter_to)
