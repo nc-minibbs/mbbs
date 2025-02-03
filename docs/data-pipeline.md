@@ -53,8 +53,7 @@ The `get_latest_taxonomy` function is used internally for accessing the taxonomy
 
 `route_stop_coordinates`
 : Lat/Lon of the individual point count stops for each route, as well as stop description notes
-'R/mbbs_routes'
-Stable and not updated
+'R/mbbs_routes'. 
 
 `excluded-submissions`
 : A file containing a list of eBird checklists
