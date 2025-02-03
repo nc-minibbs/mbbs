@@ -177,18 +177,27 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
 #' @inheritParams create_stop_level_0
 create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config = config) {
   logger::log_trace("Computing route level data from stop level")
+
   stop_to_route <- stop_level_data |>
     group_by(year, county, route, route_num, common_name, sci_name, source) |>
-    summarise(count = sum(count)) |>
+    summarise(
+      nstops = n(),
+      count = sum(count)
+    ) |>
     select(
-      year, common_name, sci_name, route, route_num, county, count, source
+      year, common_name, sci_name,
+      route, route_num, county, count,
+      nstops, source
     )
 
   # Compare stop_level and ebird counts
   dplyr::left_join(
-    stop_to_route |> dplyr::ungroup() |>
+    stop_to_route |>
+      dplyr::ungroup() |>
       dplyr::select(common_name, year, route, scount = count, source),
-    ebird |> dplyr::filter(is.na(stop_num)) |> dplyr::ungroup() |>
+    ebird |> 
+      dplyr::filter(is.na(stop_num)) |>
+      dplyr::ungroup() |>
       dplyr::select(common_name, year, route, rcount = count),
     by = c("common_name", "year", "route")
   ) |>
@@ -284,7 +293,14 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
     historical |> mutate(source = "historical"),
     stop_to_route |> mutate(source = "stop-level"),
     ebird_no_stop |> mutate(source = "ebird")
-  )
+  ) |>
+    # If the route data did not come from a stop level summary,
+    # then we assume all stops were run.
+    # Note that this only affects surveys prior to 2022 when the protocol
+    # changed to stop-level data collection in eBird.
+    mutate(
+      nstops = if_else(is.na(nstops), 20L, nstops)
+    )
 }
 
 #' Main function to create route level count dataset
@@ -293,7 +309,9 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
 create_route_level_counts <- function(ebird, stop_level_data, taxonomy, config = config) {
   df <- create_route_level_counts_0(ebird, stop_level_data, taxonomy, config)
 
-  yrs_in <- dplyr::distinct(df, year, route) |> arrange(year, route)
+  yrs_in <- 
+    dplyr::distinct(df, year, route) |>
+    arrange(year, route)
 
   df |>
     # For each year that a route was run,
@@ -301,7 +319,7 @@ create_route_level_counts <- function(ebird, stop_level_data, taxonomy, config =
     # in that route / stop / year.
     tidyr::complete(
       tidyr::nesting(
-        year, county, route, route_num, source
+        year, county, route, route_num, source, nstops
       ),
       tidyr::nesting(common_name, sci_name),
       fill = list(count = 0)
@@ -381,9 +399,10 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
     group_by(route, year) |>
     summarise(
       total_species = sum(count > 0),
-      total_abundance = sum(count)
+      total_abundance = sum(count),
+      nstops = min(nstops)
     )
-
+  
   # Prepare data for output
   surveys |>
     left_join(count_summary, by = c("route", "year")) |>
@@ -391,8 +410,10 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
     mutate(
       protocol_violation = if_else(
         is.na(protocol_violation), FALSE, protocol_violation
-      )
-    )
+      ),
+      protocol_violation = if_else(nstops != 20, TRUE, protocol_violation)
+    ) |>
+    select(-nstops)
 }
 
 #' Create the MBBS datasets
