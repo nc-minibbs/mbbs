@@ -22,3 +22,41 @@ get_ebird_taxonomy <- function(path = config$taxonomy_data_dir) {
       common_name = "PRIMARY_COM_NAME"
     )
 }
+
+#' Conform taxonomy of MBBS data from different sources
+#'
+#' @param df a dataset with a `common_name` field
+#' @param taxonomy data.frame from `get_ebird_taxonomy`
+conform_taxonomy <- function(df, taxonomy) {
+
+  df <-
+   df |>
+   mutate(
+    common_name = case_when(
+      common_name == "House Wren" ~ "Northern House Wren",
+      common_name == "Accipiter sp." ~ "Sharp-shinned/Cooper's Hawk",
+      TRUE ~ common_name
+    )
+   )
+
+  diff <- setdiff(unique(df$common_name), taxonomy$common_name)
+
+  assertthat::assert_that(
+    all(unique(df$common_name) %in% taxonomy$common_name),
+    msg = paste(paste(diff, collapse = " "),
+        "are in df but not in taxonomy")
+  )
+
+  dplyr::left_join(
+    df,
+    taxonomy,
+    by = c("common_name")
+  ) |>
+    (\(x){
+      assertthat::assert_that(
+        nrow(df) == nrow(x),
+        msg = "Data was lost when conforming taxonomy This is bad."
+      )
+      x
+    })()
+}
