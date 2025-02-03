@@ -51,8 +51,8 @@ Taxonomy CSV files are manually downloaded and stored in
 `data/taxonomy/ebird_taxonomy_vXXXX.csv`.
 The `get_latest_taxonomy` function is used internally for accessing the taxonomy.
 
-`stop-coordinates`
-: TODO Lat/Lon of the first stops for each route (right now)
+`route_stop_coordinates`
+: Lat/Lon of the individual point count stops for each route, as well as stop description notes
 'R/mbbs_routes'
 Stable and not updated
 
