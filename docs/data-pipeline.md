@@ -29,7 +29,7 @@ and explained in more detail below.
 
 : As of 2009, all MBBS checklists are submitted to [eBird](https://ebird.org).
 These checklists are downloaded manually as CSV files.
-Prior to 2022, checklists were submitted at the route-level.
+Prior to 2020, checklists were submitted at the route-level. Beginning in 2020, some users began submitting individual stop-level checklists, and by 2022 all (or nearly all?) checklists were stop-level eBird checklists.
 
 [`historical`](#historical) [![info on historical data](../resources/img/info-16x16.svg)](#historical)
 : Checklists scraped from the old MBBS site
