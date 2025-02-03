@@ -33,7 +33,7 @@ jobs:
           chown -R `id -u`:`id -g` ./result
           chmod -R a+rwx ./result
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./result
   deploy:
