@@ -227,6 +227,7 @@ counts available.
   * `county`: chatham | durham | orange
   * `route`: survey route
   * `route_num`: route number within a county
+  * `nstops`: number of stops that were surveyed on this route
   * `source`:
     One of `historical`, `stop-level`, or `ebird`,
     meaning the data came from [`historical`](#historical) sources,
