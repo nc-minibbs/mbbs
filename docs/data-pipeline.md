@@ -1,4 +1,6 @@
-# MBBS data pipeline
+---
+title: MBBS data pipeline
+---
 
 This document describes:
 

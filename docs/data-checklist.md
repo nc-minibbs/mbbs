@@ -1,4 +1,6 @@
-# Instructions for updating the data
+---
+title: MBBS data checklist
+---
 
 After a fresh new year and a new series of surveys,
 here's the walkthrough of how to update this repository
