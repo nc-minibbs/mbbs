@@ -59,7 +59,7 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
   # observer table
   final_check <- ebird_surveys |>
     filter(
-      !(is.na(obs1) == TRUE &
+      (is.na(obs1) == TRUE &
         is.na(obs2) == TRUE &
         is.na(obs3) == TRUE)
     )
