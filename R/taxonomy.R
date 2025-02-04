@@ -20,10 +20,18 @@ get_ebird_taxonomy <- function(path = config$taxonomy_data_dir) {
     dplyr::select(
       sci_name = "SCI_NAME",
       common_name = "PRIMARY_COM_NAME"
+    ) |>
+    mutate(
+      common_name = case_when(
+        common_name == "Accipitrine hawk sp. (former Accipiter sp.)" ~
+          "Accipitrine hawk sp.",
+        TRUE ~ common_name
+      )
     )
 }
 
 #' Conform taxonomy of MBBS data from different sources
+#' to the eBird taxonomy
 #'
 #' @param df a dataset with a `common_name` field
 #' @param taxonomy data.frame from `get_ebird_taxonomy`
@@ -33,7 +41,8 @@ conform_taxonomy <- function(df, taxonomy) {
     mutate(
       common_name = dplyr::case_when(
         common_name == "House Wren" ~ "Northern House Wren",
-        common_name == "Accipiter sp." ~ "Sharp-shinned/Cooper's Hawk",
+        # common_name == "Accipiter sp." ~ "Sharp-shinned/Cooper's Hawk",
+        common_name == "Accipiter sp." ~ "Accipitrine hawk sp.",
         TRUE ~ common_name
       )
     )
@@ -48,6 +57,15 @@ conform_taxonomy <- function(df, taxonomy) {
     )
   )
 
+  df
+}
+
+#' Add scientific name
+#'
+#' @param df a dataset with a `common_name` field
+#' @param taxonomy data.frame from `get_ebird_taxonomy`
+add_sci_name <- function(df, taxonomy) {
+
   dplyr::left_join(
     df,
     taxonomy,
@@ -56,7 +74,7 @@ conform_taxonomy <- function(df, taxonomy) {
     (\(x){
       assertthat::assert_that(
         nrow(df) == nrow(x),
-        msg = "Data was lost when conforming taxonomy This is bad."
+        msg = "Data was lost when conforming taxonomy. This is bad."
       )
       x
     })()
