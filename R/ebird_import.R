@@ -25,7 +25,10 @@ list_ebird_files <- function(path = config$ebird_data_dir) {
 ebird_cols <- readr::cols(
   `Submission ID`          = readr::col_character(),
   `Common Name`            = readr::col_character(),
-  `Scientific Name`        = readr::col_character(),
+  # skip scientific name
+  # -- it is added at the end of data pipeline
+  # in order to make sure the taxonomy conforms across data sources
+  `Scientific Name`        = readr::col_skip(),
   `Taxonomic Order`        = readr::col_skip(),
   Count                    = readr::col_character(),
   `State/Province`         = readr::col_skip(),
@@ -90,7 +93,6 @@ load_ebird_data <- function(path = config$ebird_data_dir) {
           submission  = `Submission ID`,
           location    = Location,
           common_name = `Common Name`,
-          sci_name    = `Scientific Name`,
           count       = Count,
           lat         = Latitude,
           lon         = Longitude,
@@ -153,13 +155,6 @@ parse_count <- function(count) {
   as.integer(ifelse(count == "X", "1", count))
 }
 
-#' Parse the character sci_name vector
-#' @param sci_name character vector of ebird scientific names
-#' @importFrom stringr word fixed
-parse_sci_name <- function(sci_name) {
-  stringr::word(sci_name, 1, 2)
-}
-
 #' Parse the character common_name vector
 #' @param common_name character vector of ebird common names
 parse_common_name <- function(common_name) {
@@ -195,7 +190,6 @@ transform_ebird_data <- function(ebird) {
   ebird |>
     dplyr::mutate(
       count       = parse_count(count),
-      sci_name    = parse_sci_name(sci_name),
       common_name = parse_common_name(common_name),
       county      = parse_county(location),
       route_num   = parse_route_num(location),
@@ -218,7 +212,6 @@ compute_ebird_counts <- function(ebird) {
     dplyr::group_by(
       submission,
       common_name,
-      sci_name,
       county,
       route,
       route_num,
@@ -267,11 +260,10 @@ stops_to_include <- function(deviations) {
 #' but no birds were observed.
 handle_deviations <- function(ebird, deviations) {
   add <- stops_to_include(deviations) |>
-    # Need to add some species with a 0 count.
+    # Need to add at least one species with a 0 count.
     # 0 count for other species will be added downstream.
     dplyr::mutate(
       common_name = "Northern Cardinal",
-      sci_name = "Cardinalis cardinalis",
       count = 0L
     )
 
