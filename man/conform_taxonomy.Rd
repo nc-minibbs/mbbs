@@ -2,7 +2,8 @@
 % Please edit documentation in R/taxonomy.R
 \name{conform_taxonomy}
 \alias{conform_taxonomy}
-\title{Conform taxonomy of MBBS data from different sources}
+\title{Conform taxonomy of MBBS data from different sources
+to the eBird taxonomy}
 \usage{
 conform_taxonomy(df, taxonomy)
 }
@@ -13,4 +14,5 @@ conform_taxonomy(df, taxonomy)
 }
 \description{
 Conform taxonomy of MBBS data from different sources
+to the eBird taxonomy
 }
