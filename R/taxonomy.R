@@ -22,7 +22,7 @@ get_ebird_taxonomy <- function(path = config$taxonomy_data_dir) {
       common_name = "PRIMARY_COM_NAME"
     ) |>
     mutate(
-      common_name = case_when(
+      common_name = dplyr::case_when(
         common_name == "Accipitrine hawk sp. (former Accipiter sp.)" ~
           "Accipitrine hawk sp.",
         TRUE ~ common_name
