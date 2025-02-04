@@ -65,7 +65,6 @@ conform_taxonomy <- function(df, taxonomy) {
 #' @param df a dataset with a `common_name` field
 #' @param taxonomy data.frame from `get_ebird_taxonomy`
 add_sci_name <- function(df, taxonomy) {
-
   dplyr::left_join(
     df,
     taxonomy,

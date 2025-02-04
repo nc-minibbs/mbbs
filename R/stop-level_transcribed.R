@@ -223,7 +223,7 @@ get_stop_level_transcribed <- function() {
       source = readr::col_character(),
       common_name = readr::col_character(),
       tax_order = readr::col_skip(),
-      sci_name  = readr::col_skip()
+      sci_name = readr::col_skip()
     )
   ) |>
     rename(county = mbbs_county) |>

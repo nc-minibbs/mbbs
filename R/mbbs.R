@@ -8,7 +8,6 @@
 #' @param taxonomy taxonomy dataset
 #' @param config mbbs configuration
 create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
-
   logger::log_trace("Getting ebird stop-level data.")
   stop_ebird <-
     ebird |>
