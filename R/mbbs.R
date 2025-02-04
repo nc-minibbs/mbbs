@@ -8,27 +8,34 @@
 #' @param taxonomy taxonomy dataset
 #' @param config mbbs configuration
 create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
-  stop_ebird <- ebird |>
+
+  logger::log_trace("Getting ebird stop-level data.")
+  stop_ebird <-
+    ebird |>
     dplyr::filter(!is.na(stop_num)) |>
     dplyr::select(
       year, route, stop_num,
-      common_name, sci_name, count,
+      common_name, count,
       county, route_num
     )
 
+  logger::log_trace("Getting xls stop-level data.")
   stop_xls <- get_stop_level_xls_data() |>
     conform_taxonomy(taxonomy)
 
+  logger::log_trace("Getting obs-details stop-level data.")
   stop_obs <- process_obs_details(ebird) |>
-    select(year, route, common_name, sci_name, county, route_num, stop_data) |>
+    select(year, route, common_name, county, route_num, stop_data) |>
     tidyr::unnest(cols = stop_data)
 
+  logger::log_trace("Getting transcribed stop-level data.")
   stop_transcribed <- get_stop_level_transcribed() |>
     select(
       year, route, stop_num,
-      common_name, sci_name, count,
+      common_name, count,
       county, route_num, source
-    )
+    ) |>
+    conform_taxonomy(taxonomy)
 
   logger::log_trace("Combining stop level data.")
 
@@ -142,7 +149,7 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
       tidyr::nesting(
         year, county, route, route_num, stop_num, source
       ),
-      tidyr::nesting(common_name, sci_name),
+      tidyr::nesting(common_name),
       fill = list(count = 0)
     ) |>
     (\(x) {
@@ -178,14 +185,15 @@ create_stop_level_counts <- function(ebird, taxonomy, config = config) {
 create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config = config) {
   logger::log_trace("Computing route level data from stop level")
 
-  stop_to_route <- stop_level_data |>
-    group_by(year, county, route, route_num, common_name, sci_name, source) |>
+  stop_to_route <-
+    stop_level_data |>
+    group_by(year, county, route, route_num, common_name, source) |>
     summarise(
       nstops = n(),
       count = sum(count)
     ) |>
     select(
-      year, common_name, sci_name,
+      year, common_name,
       route, route_num, county, count,
       nstops, source
     )
@@ -229,7 +237,7 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
   ebird_no_stop <- ebird |>
     dplyr::filter(is.na(stop_num)) |>
     select(
-      year, common_name, sci_name, route, route_num, county, count
+      year, common_name, route, route_num, county, count
     ) |>
     (\(df) {
       df |>
@@ -250,7 +258,8 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
     })()
 
   logger::log_trace("Getting historical data")
-  historical <- get_historical_data() |>
+  historical <-
+    get_historical_data() |>
     select(
       year, common_name, route, route_num, county, count
     ) |>
@@ -288,7 +297,6 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
     })()
 
   logger::log_trace("Combining route level data.")
-
   dplyr::bind_rows(
     historical |> mutate(source = "historical"),
     stop_to_route |> mutate(source = "stop-level"),
@@ -321,7 +329,7 @@ create_route_level_counts <- function(ebird, stop_level_data, taxonomy, config =
       tidyr::nesting(
         year, county, route, route_num, source, nstops
       ),
-      tidyr::nesting(common_name, sci_name),
+      tidyr::nesting(common_name),
       fill = list(count = 0)
     ) |>
     ## ADD CHECKS
@@ -355,9 +363,14 @@ create_mbbs_counts <- function(ebird_counts, config) {
   taxonomy <- get_ebird_taxonomy()
 
   stop_level <-
-    create_stop_level_counts(ebird_counts, taxonomy, config)
+    create_stop_level_counts(ebird_counts, taxonomy, config) |>
+    # add scientific name
+    add_sci_name(taxonomy)
+
   route_level <-
-    create_route_level_counts(ebird_counts, stop_level, taxonomy, config)
+    create_route_level_counts(ebird_counts, stop_level, taxonomy, config) |>
+    # add scientific name
+    add_sci_name(taxonomy)
 
   list(
     stop_level  = stop_level,
