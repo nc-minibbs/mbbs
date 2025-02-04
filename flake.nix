@@ -56,27 +56,28 @@
         };
 
         ## WIP!!
-        packages.data = with pkgs; stdenv.mkDerivation {
-          name = "data";
-          version = "";
-          src = gitignoreSource ./.;
-          buildInputs = [
-            R
-            self.packages.${system}.mbbs
-          ] ++ mbbsDeps;
-          buildPhase = 
-          ''
-           ${R}/bin/Rscript --vanilla -e 'mbbs::write_mbbs_data()'
+        packages.data =
+          with pkgs;
+          stdenv.mkDerivation {
+            name = "data";
+            version = "";
+            src = gitignoreSource ./.;
+            buildInputs = [
+              R
+              self.packages.${system}.mbbs
+            ] ++ mbbsDeps;
+            buildPhase = ''
+              ${R}/bin/Rscript --vanilla -e 'mbbs::write_mbbs_data()'
 
-           # include static data
-           cp data/route_stop_coordinates.csv output/
-          '';
-          installPhase = ''
-            mkdir -p $out
-            cp -r output/. $out/
-          '';
+              # include static data
+              cp data/route_stop_coordinates.csv output/
+            '';
+            installPhase = ''
+              mkdir -p $out
+              cp -r output/. $out/
+            '';
 
-        };
+          };
 
         packages.pages = import ./pages.nix {
           self = self;

@@ -14,7 +14,10 @@ stdenv.mkDerivation {
   name = "pages";
   src = gitignoreSource ./.;
 
-  nativeBuildInputs = [ pandoc pkgs.mermaid-filter];
+  nativeBuildInputs = [
+    pandoc
+    pkgs.mermaid-filter
+  ];
 
   buildPhase = ''
     ${pandoc}/bin/pandoc docs/README.md \
