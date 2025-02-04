@@ -11,7 +11,8 @@ writes the stop-level-transcribed-paper csv}
 update_transcribed_paper()
 }
 \value{
-transcribed_paper df of all the observations transcribed from the paper files,
+transcribed_paper df of all the observations
+ transcribed from the paper files,
  returned just in case this function is called to set a variable.
 }
 \description{
