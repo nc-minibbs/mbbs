@@ -1,0 +1,73 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - '[0-9]*'  # Match tags starting with a number
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Set up Nix
+      - name: Set up Nix
+        uses: cachix/install-nix-action@v23
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      # Build the Nix derivation
+      - name: Build derivation
+        run: |
+          nix build .#data
+
+      # Prepare release files
+      - name: Prepare release files
+        run: |
+          mkdir -p release-files
+          cp -r result/* release-files/
+          tar -czvf mbbs-data.tar.gz -C release-files .
+
+      # Determine if the tag ends with '-pre'
+      - name: Check if tag is a prerelease
+        id: check_prerelease
+        run: |
+          if [[ "${{ github.ref }}" == *-pre ]]; then
+            echo "prerelease=true" >> $GITHUB_OUTPUT
+          else
+            echo "prerelease=false" >> $GITHUB_OUTPUT
+          fi
+
+      # Create GitHub release
+      - name: Create GitHub release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: "Release generated from Nix derivation"
+          draft: false
+          prerelease: ${{ steps.check_prerelease.outputs.prerelease }}
+          
+      # Upload release assets
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./mbbs-data.tar.gz
+          asset_name: mbbs-data.tar.gz
+          asset_content_type: application/gzip
+
+      # Clean up
+      - name: Clean up
+        run: |
+          rm -rf release-files mbbs-data.tar.gz

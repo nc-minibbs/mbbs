@@ -1,6 +1,6 @@
 Package: mbbs
 Title: Data and data processing functions for the Mini-Bird Breeding Survery
-Version: 2024.2
+Version: 2024.3
 Authors@R: c(
    person("Bradley", "Saul", email = "bradleysaul@gmail.com", role = c("aut", "cre")),
    person("Allen", "Hurlbert", email = "hurlbert@bio.unc.edu", role = c("aut")),
@@ -18,8 +18,9 @@ Imports:
     assertthat,
     rlang,
     yaml,
-    beepr,
     readxl,
+    readr,
+    logger,
     tidyr
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -28,3 +29,16 @@ RoxygenNote: 7.3.2
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Collate: 
+    'config.R'
+    'ebird_comments.R'
+    'utilities.R'
+    'ebird_import.R'
+    'historical.R'
+    'mbbs.R'
+    'stop-level.R'
+    'stop-level_excel.R'
+    'stop-level_obs_comments.R'
+    'stop-level_transcribed.R'
+    'survey-list.R'
+    'taxonomy.R'

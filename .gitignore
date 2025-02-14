@@ -9,3 +9,4 @@ packrat/lib*/
 .direnv*/
 scratch
 *result
+inst/species_comments_errors.csv

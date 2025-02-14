@@ -4,7 +4,7 @@
     bash-prompt = "🐦> ";
   };
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     flake-utils.url = "github:numtide/flake-utils";
     gitignore = {
       url = "github:hercules-ci/gitignore.nix";
@@ -42,6 +42,7 @@
           glue
           assertthat
           yaml
+          logger
         ];
       in
       {
@@ -53,6 +54,30 @@
           src = gitignoreSource ./.;
           propagatedBuildInputs = mbbsDeps;
         };
+
+        ## WIP!!
+        packages.data =
+          with pkgs;
+          stdenv.mkDerivation {
+            name = "data";
+            version = "";
+            src = gitignoreSource ./.;
+            buildInputs = [
+              R
+              self.packages.${system}.mbbs
+            ] ++ mbbsDeps;
+            buildPhase = ''
+              ${R}/bin/Rscript --vanilla -e 'mbbs::write_mbbs_data()'
+
+              # include static data
+              cp data/route_stop_coordinates.csv output/
+            '';
+            installPhase = ''
+              mkdir -p $out
+              cp -r output/. $out/
+            '';
+
+          };
 
         packages.pages = import ./pages.nix {
           self = self;
@@ -70,6 +95,7 @@
             pkgs.rPackages.usethis
             pkgs.rPackages.languageserver
             pkgs.rPackages.styler
+            pkgs.rPackages.jsonlite
           ] ++ mbbsDeps;
         };
       }
