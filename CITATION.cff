@@ -1,0 +1,28 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Mini Bird Breeding Survey
+message: >-
+  If you use this dataset, please cite it using the metadata
+  from this file.
+type: dataset
+authors:
+  - given-names: Bradley
+    family-names: Saul
+    orcid: 'https://orcid.org/0000-0003-2247-9983'
+    email: bradleysaul@fastmail.com
+  - given-names: Allen
+    family-names: Hurlbert
+    email: hurlbert@bio.unc.edu
+    affiliation: University of North Carolina
+    orcid: 'https://orcid.org/0000-0002-5678-9907'
+  - given-names: Ivara 
+    email: ijbg@unc.edu
+    affiliation: University of North Carolina
+    family-names: Goulden
+    orcid: 'https://orcid.org/0009-0002-1762-2570'
+repository-code: 'https://github.com/nc-minibbs/mbbs'
+url: 'https://minibbs.us/'
+version: '2024.1'
+date-released: '2025-02-17'
