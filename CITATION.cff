@@ -17,10 +17,11 @@ authors:
     email: hurlbert@bio.unc.edu
     affiliation: University of North Carolina
     orcid: 'https://orcid.org/0000-0002-5678-9907'
-  - given-names: Ivara
+  - given-names: Ivara 
     email: ijbg@unc.edu
     affiliation: University of North Carolina
-    family-names: June Benji Goulden
+    family-names: Goulden
+    orcid: 'https://orcid.org/0009-0002-1762-2570'
 repository-code: 'https://github.com/nc-minibbs/mbbs'
 url: 'https://minibbs.us/'
 version: '2024.1'
