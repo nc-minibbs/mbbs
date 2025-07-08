@@ -46,3 +46,9 @@
   route : 3
   stops_nobirds : [12]
   stops_skipped : []
+
+- date : 2025-06-16
+  county : chatham
+  route : 3
+  stops_nobirds : [11, 12]
+  stops_skipped : []
