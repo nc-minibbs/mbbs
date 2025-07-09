@@ -35,19 +35,48 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
         "Please see logged error message and track down error in ebird."
       )
   )
+  
+  # record how many new surveys we will be adding
+  n_new_surveys <- 
+    nrow(ebird_surveys |>
+    distinct(year, route))
 
-  # Checks have passed, so filter out surveys with all NA observers
+  # Checks have passed, so filter out surveys with all NA observers 
+  # + keep only stop one when the observers= field has been filled out
+  # for multiple stops along a route
   ebird_surveys <-
     ebird_surveys |>
     filter(!(is.na(obs1) == TRUE &
       is.na(obs2) == TRUE &
       is.na(obs3) == TRUE)) |>
+    group_by(year, route) |>
+    # keep only rows with one non-NA entry or, if more than one non-NA entry,
+    # keep stop 1.
+    filter(n() == 1 | n() > 1 & stop_num == 1) |>
+    ungroup() |>
     # Modify the observer strings, all to title case and trim white space
     mutate(
       obs1 = str_trim(str_to_title(obs1)),
       obs2 = str_trim(str_to_title(obs2)),
       obs3 = str_trim(str_to_title(obs3))
     )
+  
+  # Assert that we didn't loose any surveys
+  assertthat::assert_that(
+    nrow(ebird_surveys) == n_new_surveys,
+    msg =
+      paste(
+        "While updating survey list",
+        "only",
+        nrow(ebird_surveys),
+        "surveys remained after filtering out NA observers and",
+        "keeping only the observer info from the first stop.",
+        "However, we expected to have",
+        n_new_surveys,
+        "surveys.",
+        "Please ensure in ebird that all stop 1 have `observers=` information."
+      )
+  )
 
   # Add any new observers to the conversion table
   update_observer_table(ebird_surveys, config, save = save)
