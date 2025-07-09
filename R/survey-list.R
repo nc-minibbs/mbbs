@@ -156,6 +156,7 @@ confirm_observer_NA <- function(ebird_surveys) {
 
 #' Add any new entries to the observer_conversion_table
 #' Does not return anything.
+#' @importFrom stringr str_sub str_extract
 update_observer_table <- function(ebird_surveys, config, save = TRUE) {
   observer_table <- read.csv(config$observer_conversion_table, header = TRUE)
 
@@ -191,7 +192,7 @@ update_observer_table <- function(ebird_surveys, config, save = TRUE) {
       # name is not already on list, take input for the output name
       # pull the first letter of the input_name so we can check if anything similar
       # is already on the mini_table
-      first_letter <- (str_sub(obs_list[a], start = 1, end = 1))
+      first_letter <- (stringr::str_sub(obs_list[a], start = 1, end = 1))
       pattern <- paste0("^[", toupper(first_letter), tolower(first_letter), "].*")
       # extract matches for that first letter from the mini_table
       letter_matches <- str_extract(observer_table$output_name, pattern)
