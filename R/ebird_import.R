@@ -377,19 +377,23 @@ ebird_import_checks <- function(dt) {
 #' * aligning common_names to standard taxonomy
 #' @export
 get_ebird_data <- function() {
+  
   load_ebird_data() |>
     filter_ebird_data() |>
     transform_ebird_data() |>
     (\(x){
-      list(
-        counts = x |>
-          compute_ebird_counts() |>
-          handle_deviations(deviations = get_deviations()) |>
-          ebird_import_checks(),
-        comments = x |>
-          comment_workflow(),
-        locations = counts |>
-          locations_workflow() 
-      )
+      x |>
+        compute_ebird_counts() |>
+        handle_deviations(deviations = get_deviations()) |>
+        ebird_import_checks() |>
+        (\(counts){
+          list(
+            counts = counts,
+            comments = x |>
+              comment_workflow(),
+            locations = counts |>
+              locations_workflow()
+          )
+        })()
     })()
 }
