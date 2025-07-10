@@ -35,13 +35,13 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
         "Please see logged error message and track down error in ebird."
       )
   )
-  
-  # record how many new surveys we will be adding
-  n_new_surveys <- 
-    nrow(ebird_surveys |>
-    distinct(year, route))
 
-  # Checks have passed, so filter out surveys with all NA observers 
+  # record how many new surveys we will be adding
+  n_new_surveys <-
+    nrow(ebird_surveys |>
+      distinct(year, route))
+
+  # Checks have passed, so filter out surveys with all NA observers
   # + keep only stop one when the observers= field has been filled out
   # for multiple stops along a route
   ebird_surveys <-
@@ -60,7 +60,7 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
       obs2 = str_trim(str_to_title(obs2)),
       obs3 = str_trim(str_to_title(obs3))
     )
-  
+
   # Assert that we didn't loose any surveys
   assertthat::assert_that(
     nrow(ebird_surveys) == n_new_surveys,
