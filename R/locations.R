@@ -8,19 +8,33 @@
 #get data from the $stop_counts 
 #left join the ebird locations data
 
-locations_workflow <- function(counts) {
+locations_workflow <- function(df) {
   
-  counts |>
+  df |>
     get_ebird_locations() |>
     check_location_displacement()
   
 }
 
+
+#' Name of function is temporary, should pick a better one
+#' Returns a list of recording every stop+route+year combo that we 
+#' have data for. Also has locations of stop and if that has changed
+#' between years when location data is available
+create_stop_survey_list <- function(locations, stop_level_counts) {
+  
+    stop_level_counts |>
+    #keep only unique route stop info
+    dplyr::distinct(year, county, route, route_num, stop_num, source) |>
+    #left-join lat/lon information
+    left_join(locations, by = c("year", "route", "stop_num"))
+}
+
 #' Gets the lat+lon of stop locations each year
-#' @param counts ebird data.frame, gone through compute_ebird_counts(), handle_deviations(), and ebird_import_checks()
 #' @keywords internal
-get_ebird_locations <- function(counts) {
-  counts |>
+get_ebird_locations <- function(df) {
+  
+  df |>
     #filter only to stop data
     dplyr::filter(is.na(stop_num) == FALSE) |>
     #keep one entry for each year/route/stop_num
