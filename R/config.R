@@ -29,7 +29,7 @@ config <- list(
 
   ## list of stops that have missing data
   stop_deviations = "data/stop_deviations.yml",
-  
+
   ## list of stop coordinates from 2021, taken as stop baseline
   stop_coordinates = "data/route_stop_coordinates.csv",
 

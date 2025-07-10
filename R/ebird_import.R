@@ -377,7 +377,6 @@ ebird_import_checks <- function(dt) {
 #' * aligning common_names to standard taxonomy
 #' @export
 get_ebird_data <- function() {
-  
   load_ebird_data() |>
     filter_ebird_data() |>
     transform_ebird_data() |>
