@@ -17,6 +17,8 @@
 - date : 2021-05-16
   county : orange
   route : 8
+  lat : [36.072827]
+  lon : [-79.117816]
   # https://ebird.org/checklist/S88387941
   stops_nobirds : [1]
   stops_skipped : []
@@ -24,6 +26,8 @@
 - date : 2022-05-18
   county : orange
   route : 2
+  lat : []
+  lon : []
   stops_nobirds : []
   # The stops were missed for construction blocking the road 
   stops_skipped : [2, 3, 4]
@@ -31,6 +35,8 @@
 - date : 2023-05-20
   county : orange
   route : 8
+  lat : [36.072827]
+  lon : [-79.117816]
   # https://ebird.org/checklist/S138614693
   stops_nobirds : [1]
   stops_skipped : []
@@ -38,17 +44,27 @@
 - date : 2023-06-25
   county : chatham
   route : 3
+  lat : [35.612377]
+  lon : [-79.005214]
+  # https://ebird.org/checklist/S142701475
   stops_nobirds : [12]
   stops_skipped : []
 
 - date : 2024-06-09
   county : chatham
   route : 3
+  lat : [35.612377]
+  lon : [-79.005214]
+  # https://ebird.org/checklist/S180502636
   stops_nobirds : [12]
   stops_skipped : []
 
 - date : 2025-06-16
   county : chatham
   route : 3
+  lat : [35.618867, 35.612377]
+  lon : [-79.002713, -79.005214]
+  # https://ebird.org/checklist/S251452166
+  # https://ebird.org/checklist/S251452165
   stops_nobirds : [11, 12]
   stops_skipped : []
