@@ -216,6 +216,8 @@ compute_ebird_counts <- function(ebird) {
       route,
       route_num,
       stop_num,
+      lat,
+      lon,
       date,
       year,
       obs_details
@@ -241,7 +243,7 @@ stops_to_include <- function(deviations) {
     purrr::keep(.p = ~ length(.x$stops_nobirds) > 0) |>
     purrr::map_dfr(
       ~ .x[names(.x) %in%
-        c("year", "date", "county", "route", "stops_nobirds")] |>
+        c("year", "date", "county", "route", "lat", "lon", "stops_nobirds")] |>
         dplyr::as_tibble() |>
         dplyr::rename(
           route_num = route,
@@ -385,7 +387,9 @@ get_ebird_data <- function() {
           handle_deviations(deviations = get_deviations()) |>
           ebird_import_checks(),
         comments = x |>
-          comment_workflow()
+          comment_workflow(),
+        locations = counts |>
+          locations_workflow() 
       )
     })()
 }
