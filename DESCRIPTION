@@ -35,6 +35,7 @@ Collate:
     'utilities.R'
     'ebird_import.R'
     'historical.R'
+    'locations.R'
     'mbbs.R'
     'stop-level.R'
     'stop-level_excel.R'
