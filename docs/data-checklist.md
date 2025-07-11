@@ -57,6 +57,9 @@ Update the 'sampling events' tab with comments as needed.
         Add the information.
       * data types separated by a comma "," instead of semi-colon ";". 
         To fix, edit the comments to change commas to semi-colons.
+      * h = no changes
+        This will cause errors because that's not an expected habitat string
+        To fix, change to e.g. notes = no habitat changes
 
 4. Do the other stops have comments? Are the comments formatted correctly?
 
@@ -149,7 +152,7 @@ The functions for creating
 both the stop-level and the route-level dataset are in the `R/mbbs` folder.
 Every other R code in the project contributes to this file,
 and it's the one thing that needs to run to update the data.
-Run this function: `create_mbbs_counts()`.
+Run this function: `create_mbbs_data()`.
   
 As you import the data for each county,
 warning messages may appear in the console.

@@ -36,18 +36,47 @@ update_survey_list <- function(ebird, config, path = config$survey_list, save = 
       )
   )
 
+  # record how many new surveys we will be adding
+  n_new_surveys <-
+    nrow(ebird_surveys |>
+      distinct(year, route))
+
   # Checks have passed, so filter out surveys with all NA observers
+  # + keep only stop one when the observers= field has been filled out
+  # for multiple stops along a route
   ebird_surveys <-
     ebird_surveys |>
     filter(!(is.na(obs1) == TRUE &
       is.na(obs2) == TRUE &
       is.na(obs3) == TRUE)) |>
+    group_by(year, route) |>
+    # keep only rows with one non-NA entry or, if more than one non-NA entry,
+    # keep stop 1.
+    filter(n() == 1 | n() > 1 & stop_num == 1) |>
+    ungroup() |>
     # Modify the observer strings, all to title case and trim white space
     mutate(
       obs1 = str_trim(str_to_title(obs1)),
       obs2 = str_trim(str_to_title(obs2)),
       obs3 = str_trim(str_to_title(obs3))
     )
+
+  # Assert that we didn't loose any surveys
+  assertthat::assert_that(
+    nrow(ebird_surveys) == n_new_surveys,
+    msg =
+      paste(
+        "While updating survey list",
+        "only",
+        nrow(ebird_surveys),
+        "surveys remained after filtering out NA observers and",
+        "keeping only the observer info from the first stop.",
+        "However, we expected to have",
+        n_new_surveys,
+        "surveys.",
+        "Please ensure in ebird that all stop 1 have `observers=` information."
+      )
+  )
 
   # Add any new observers to the conversion table
   update_observer_table(ebird_surveys, config, save = save)
@@ -156,6 +185,7 @@ confirm_observer_NA <- function(ebird_surveys) {
 
 #' Add any new entries to the observer_conversion_table
 #' Does not return anything.
+#' @importFrom stringr str_sub str_extract
 update_observer_table <- function(ebird_surveys, config, save = TRUE) {
   observer_table <- read.csv(config$observer_conversion_table, header = TRUE)
 
@@ -191,7 +221,7 @@ update_observer_table <- function(ebird_surveys, config, save = TRUE) {
       # name is not already on list, take input for the output name
       # pull the first letter of the input_name so we can check if anything similar
       # is already on the mini_table
-      first_letter <- (str_sub(obs_list[a], start = 1, end = 1))
+      first_letter <- (stringr::str_sub(obs_list[a], start = 1, end = 1))
       pattern <- paste0("^[", toupper(first_letter), tolower(first_letter), "].*")
       # extract matches for that first letter from the mini_table
       letter_matches <- str_extract(observer_table$output_name, pattern)
