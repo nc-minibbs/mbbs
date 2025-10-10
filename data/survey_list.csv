@@ -1,820 +1,821 @@
-"route","year","obs1","obs2","obs3","standardized_observers"
-"cthm-01",2000,"Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey"
-"cthm-01",2001,"Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey"
-"cthm-01",2002,"Marsha Stephens","Patsy Bailey",NA,"Marsha Stephens, Patsy Bailey"
-"cthm-01",2003,"Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey"
-"cthm-01",2004,"Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey"
-"cthm-01",2005,"Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey"
-"cthm-01",2006,"Patsy Bailey","Marsha Stephens",NA,"Marsha Stephens, Patsy Bailey"
-"cthm-01",2007,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2008,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2009,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2010,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2011,"Patsy Bailey","Norman Budnitz",NA,"Norman Budnitz, Patsy Bailey"
-"cthm-01",2012,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2013,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2014,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2015,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2016,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2017,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2018,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2019,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2020,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2021,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2022,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2023,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2024,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-01",2025,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"cthm-02",2000,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2001,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2002,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2003,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2004,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2005,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2006,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2007,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2008,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2009,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2010,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2011,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2012,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2013,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2014,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2015,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2016,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2017,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2018,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2019,"Norman Budnitz","Michael Schultz","Karen Hogan","Karen Hogan, Michael Schultz, Norman Budnitz"
-"cthm-02",2020,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"cthm-02",2021,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2022,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2023,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2024,"Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-02",2025,"Mike Schultz","Norm Budnitz",NA,"Mike Schultz, Norm Budnitz"
-"cthm-03",2000,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2001,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2002,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2003,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2004,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2005,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2006,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2007,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2008,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2009,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2010,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2011,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2012,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2013,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2014,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2015,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2016,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2017,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2018,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2019,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2020,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2021,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2022,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2023,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2024,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-03",2025,"Haven Wiley","Minna Wiley",NA,"Haven Wiley, Minna Wiley"
-"cthm-04",2000,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2001,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2002,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2003,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2004,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2005,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2006,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2007,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2008,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2009,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2010,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2011,"Michael Schultz",NA,NA,"Michael Schultz"
-"cthm-04",2012,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2013,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2014,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2015,"Michael Schultz",NA,NA,"Michael Schultz"
-"cthm-04",2016,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2017,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2018,"Michael Schultz","Lois Schultz",NA,"Lois Schultz, Michael Schultz"
-"cthm-04",2019,"Michael Schultz","Karen Hogan",NA,"Karen Hogan, Michael Schultz"
-"cthm-04",2020,"Michael Schultz",NA,NA,"Michael Schultz"
-"cthm-04",2021,"Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-04",2022,"Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-04",2023,"Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-04",2024,"Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz"
-"cthm-04",2025,"Mike Schultz","Norm Budnitz",NA,"Mike Schultz, Norm Budnitz"
-"cthm-05",2000,"Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice"
-"cthm-05",2001,"Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice"
-"cthm-05",2002,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-05",2003,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-05",2004,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-05",2005,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-05",2006,"Tom Driscoll","Colyer Durovich","Marsha Stephens","Colyer Durovich, Marsha Stephens, Tom Driscoll"
-"cthm-05",2007,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2008,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2009,"Tom Driscoll","Marsha Stephens",NA,"Marsha Stephens, Tom Driscoll"
-"cthm-05",2010,"Marsha Tuttle","Tom Driscoll","Colyer Durovich","Colyer Durovich, Marsha Tuttle, Tom Driscoll"
-"cthm-05",2011,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2012,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2013,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2014,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2015,"Tom Driscoll","Vern Bothwell",NA,"Tom Driscoll, Vern Bothwell"
-"cthm-05",2016,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2017,"Tom Driscoll","Edison Buenano",NA,"Edison Buenano, Tom Driscoll"
-"cthm-05",2018,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2019,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2020,"Tom Driscoll","Elizabeth Keating",NA,"Elizabeth Keating, Tom Driscoll"
-"cthm-05",2021,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2022,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2023,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2024,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-05",2025,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-06",2000,"Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens"
-"cthm-06",2001,"Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens"
-"cthm-06",2002,"Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens"
-"cthm-06",2003,"Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens"
-"cthm-06",2004,"Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens"
-"cthm-06",2005,"Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens"
-"cthm-06",2006,"Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens"
-"cthm-06",2007,"Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens"
-"cthm-06",2008,"Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens"
-"cthm-06",2009,"Cynthia Fox","Marsha Stephens",NA,"Cynthia Fox, Marsha Stephens"
-"cthm-06",2010,"Marsha Tuttle","Tom Driscoll","Laurie Kucharik","Laurie Kucharik, Marsha Tuttle, Tom Driscoll"
-"cthm-06",2018,"Roger Shaw",NA,NA,"Roger Shaw"
-"cthm-06",2019,"Roger Shaw",NA,NA,"Roger Shaw"
-"cthm-06",2020,"Roger Shaw",NA,NA,"Roger Shaw"
-"cthm-06",2021,"Roger Shaw",NA,NA,"Roger Shaw"
-"cthm-06",2022,"Roger Shaw",NA,NA,"Roger Shaw"
-"cthm-06",2023,"Roger Shaw",NA,NA,"Roger Shaw"
-"cthm-06",2024,"Roger Shaw",NA,NA,"Roger Shaw"
-"cthm-06",2025,"Roger Shaw",NA,NA,"Roger Shaw"
-"cthm-07",2000,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2001,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2002,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2003,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2004,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2005,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2006,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2007,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2008,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2009,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2010,"Will Cook","Catherine Carter",NA,"Catherine Carter, Will Cook"
-"cthm-07",2011,"Will Cook","Lesley Starke",NA,"Lesley Starke, Will Cook"
-"cthm-07",2012,"Will Cook","Lesley Starke",NA,"Lesley Starke, Will Cook"
-"cthm-07",2013,"Will Cook","Lesley Starke",NA,"Lesley Starke, Will Cook"
-"cthm-07",2014,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2015,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2016,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2017,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2018,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2019,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2020,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2021,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2022,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2023,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2024,"Will Cook",NA,NA,"Will Cook"
-"cthm-07",2025,"Will Cook",NA,NA,"Will Cook"
-"cthm-08",2000,"Judy Murray","Martha Girolami",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2001,"Judy Murray","Martha Girolami",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2002,"Judy Murray","Martha Girolami",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2003,"Judy Murray","Martha Girolami",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2004,"Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2005,"Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2006,"Martha Girolami","Pat Reid","Judy Murray","Judy Murray, Martha Girolami, Pat Reid"
-"cthm-08",2007,"Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2008,"Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2009,"Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2010,"Martha Girolami","Pat Reid","Judy Murray","Judy Murray, Martha Girolami, Pat Reid"
-"cthm-08",2011,"Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2012,"Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2013,"Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2014,"Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2015,"Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2016,"Martha Girolami","Judy Murray",NA,"Judy Murray, Martha Girolami"
-"cthm-08",2017,"Martha Girolami","Pat Reid","Judy Murray","Judy Murray, Martha Girolami, Pat Reid"
-"cthm-08",2019,"Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire"
-"cthm-08",2020,"Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire"
-"cthm-08",2021,"Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire"
-"cthm-08",2022,"Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire"
-"cthm-08",2023,"Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire"
-"cthm-08",2024,"Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire"
-"cthm-08",2025,"Nan Dewire","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Nan Dewire"
-"cthm-09",2000,"Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye"
-"cthm-09",2001,"Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye"
-"cthm-09",2002,"Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye"
-"cthm-09",2003,"Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye"
-"cthm-09",2005,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2006,"Shelley Theye","Marsha Stephens",NA,"Marsha Stephens, Shelley Theye"
-"cthm-09",2007,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2008,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2009,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2010,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2011,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2012,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2013,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2014,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2015,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2016,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2017,"Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye"
-"cthm-09",2018,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2019,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2020,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2021,"Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye"
-"cthm-09",2022,"Shelley Theye","Lee Van Malssen",NA,"Lee Van Malssen, Shelley Theye"
-"cthm-09",2023,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2024,"Shelley Theye",NA,NA,"Shelley Theye"
-"cthm-09",2025,"Shelley Theye","Deborah Fowler",NA,"Deborah Fowler, Shelley Theye"
-"cthm-10",2000,"Sue Brady",NA,NA,"Sue Brady"
-"cthm-10",2001,"Will Cook",NA,NA,"Will Cook"
-"cthm-10",2002,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2003,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2004,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2005,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2006,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2007,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2008,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2009,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2010,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2011,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2012,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2013,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2015,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2016,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2017,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2018,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2019,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2020,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2021,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2022,"Brian Strong",NA,NA,"Brian Strong"
-"cthm-10",2023,"Fleeta Chauvigne","Mark Montazer",NA,"Fleeta Chauvigne, Mark Montazer"
-"cthm-10",2024,"Fleeta Wilkinson","Mark Montazer","Nan Dewire","Fleeta Wilkinson, Mark Montazer, Nan Dewire"
-"cthm-10",2025,"Fleeta Wilkinson Chauvigné","Mark Montazer","Nan Dewire","Fleeta Wilkinson Chauvigné, Mark Montazer, Nan Dewire"
-"cthm-11",2000,"M. Graves","Bob Chase",NA,"Bob Chase, M. Graves"
-"cthm-11",2001,"M. Graves","Bob Chase",NA,"Bob Chase, M. Graves"
-"cthm-11",2002,"Bob Chase",NA,NA,"Bob Chase"
-"cthm-11",2003,"Bob Chase",NA,NA,"Bob Chase"
-"cthm-11",2005,"Bob Chase",NA,NA,"Bob Chase"
-"cthm-11",2006,"Bob Chase",NA,NA,"Bob Chase"
-"cthm-11",2007,"Bob Chase",NA,NA,"Bob Chase"
-"cthm-11",2008,"Bob Chase",NA,NA,"Bob Chase"
-"cthm-11",2009,"Bob Chase",NA,NA,"Bob Chase"
-"cthm-11",2010,"Bob Chase",NA,NA,"Bob Chase"
-"cthm-11",2011,"Bob Chase",NA,NA,"Bob Chase"
-"cthm-11",2012,"Bob Chase",NA,NA,"Bob Chase"
-"cthm-11",2013,"Bob Chase",NA,NA,"Bob Chase"
-"cthm-11",2016,"Bob Chase",NA,NA,"Bob Chase"
-"cthm-11",2020,"Nathan Howell",NA,NA,"Nathan Howell"
-"cthm-11",2022,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"cthm-11",2023,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"cthm-11",2024,"Allen Hurlbert","Ivara Goulden",NA,"Allen Hurlbert, Ivara Goulden"
-"cthm-11",2025,"Allen Hurlbert","Ivara Goulden",NA,"Allen Hurlbert, Ivara Goulden"
-"cthm-12",2000,"Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson"
-"cthm-12",2001,"Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson"
-"cthm-12",2002,"Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson"
-"cthm-12",2003,"Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson"
-"cthm-12",2004,"Chris Canfield","Kate Finlayson",NA,"Chris Canfield, Kate Finlayson"
-"cthm-12",2005,"Chris Canfield","Kate Finlayson",NA,"Chris Canfield, Kate Finlayson"
-"cthm-12",2006,"Chris Canfield","Kate Finlayson",NA,"Chris Canfield, Kate Finlayson"
-"cthm-12",2007,"Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson"
-"cthm-12",2008,"Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson"
-"cthm-12",2009,"Kate Finlayson","Chris Canfield",NA,"Chris Canfield, Kate Finlayson"
-"cthm-12",2017,"Tom Driscoll","Elizabeth Keating",NA,"Elizabeth Keating, Tom Driscoll"
-"cthm-12",2019,"Tom Driscoll","Fleeta Chauvigne",NA,"Fleeta Chauvigne, Tom Driscoll"
-"cthm-12",2020,"Tom Driscoll","Elizabeth Keating",NA,"Elizabeth Keating, Tom Driscoll"
-"cthm-12",2021,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-12",2022,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-12",2023,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-12",2024,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-12",2025,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-13",2000,"Marsha Stephens","Patsy Bailey",NA,"Marsha Stephens, Patsy Bailey"
-"cthm-13",2001,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"cthm-13",2002,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"cthm-13",2003,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"cthm-13",2004,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"cthm-13",2005,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"cthm-13",2006,"JA","HS",NA,"HS, JA"
-"cthm-13",2007,"Haven Wiley",NA,NA,"Haven Wiley"
-"cthm-13",2008,"?",NA,NA,"?"
-"cthm-13",2009,"?",NA,NA,"?"
-"cthm-13",2010,"Marsha Tuttle","Tom Driscoll","Laurie Kucharik","Laurie Kucharik, Marsha Tuttle, Tom Driscoll"
-"cthm-13",2011,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-13",2012,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-13",2013,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-13",2014,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-13",2015,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-13",2016,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-13",2017,"Tom Driscoll","Bradley Saul",NA,"Bradley Saul, Tom Driscoll"
-"cthm-13",2018,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-13",2019,"Tom Driscoll","Nan Dewire",NA,"Nan Dewire, Tom Driscoll"
-"cthm-13",2020,"Tom Driscoll","Elizabeth Keating",NA,"Elizabeth Keating, Tom Driscoll"
-"cthm-13",2021,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-13",2022,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-13",2023,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-13",2024,"Tom Driscoll",NA,NA,"Tom Driscoll"
-"cthm-13",2025,"Will Mackin",NA,NA,"Will Mackin"
-"cthm-14",2000,"Kent Fiala",NA,NA,"Kent Fiala"
-"cthm-14",2001,"Kent Fiala",NA,NA,"Kent Fiala"
-"cthm-14",2002,"Kent Fiala",NA,NA,"Kent Fiala"
-"cthm-14",2003,"Kent Fiala",NA,NA,"Kent Fiala"
-"cthm-14",2004,"Kent Fiala",NA,NA,"Kent Fiala"
-"cthm-14",2005,"Kent Fiala",NA,NA,"Kent Fiala"
-"cthm-14",2006,"Kent Fiala",NA,NA,"Kent Fiala"
-"cthm-14",2007,"Kent Fiala",NA,NA,"Kent Fiala"
-"cthm-14",2008,"Kent Fiala",NA,NA,"Kent Fiala"
-"cthm-14",2009,"Kent Fiala",NA,NA,"Kent Fiala"
-"cthm-14",2014,"Josh Sims",NA,NA,"Josh Sims"
-"cthm-14",2015,"Josh Sims",NA,NA,"Josh Sims"
-"cthm-14",2019,"Richard Snow",NA,NA,"Richard Snow"
-"cthm-14",2020,"Will Bennett","Jonathan Bennett",NA,"Jonathan Bennett, Will Bennett"
-"cthm-14",2021,"Will Bennett","Jonathan Bennett",NA,"Jonathan Bennett, Will Bennett"
-"cthm-14",2022,"Will Bennett","Jonathan Bennett",NA,"Jonathan Bennett, Will Bennett"
-"cthm-14",2023,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"cthm-14",2024,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"cthm-14",2025,"Will Begley",NA,NA,"Will Begley"
-"drhm-01",2002,"Judy Murray",NA,NA,"Judy Murray"
-"drhm-01",2003,"Judy Murray",NA,NA,"Judy Murray"
-"drhm-01",2004,"Judy Murray",NA,NA,"Judy Murray"
-"drhm-01",2005,"Judy Murray",NA,NA,"Judy Murray"
-"drhm-01",2006,"Judy Murray","Tom Krakauer",NA,"Judy Murray, Tom Krakauer"
-"drhm-01",2007,"Judy Murray",NA,NA,"Judy Murray"
-"drhm-01",2008,"Judy Murray",NA,NA,"Judy Murray"
-"drhm-01",2009,"Judy Murray",NA,NA,"Judy Murray"
-"drhm-01",2010,"Judy Murray",NA,NA,"Judy Murray"
-"drhm-01",2011,"Judy Murray",NA,NA,"Judy Murray"
-"drhm-01",2012,"Judy Murray",NA,NA,"Judy Murray"
-"drhm-01",2013,"Judy Murray",NA,NA,"Judy Murray"
-"drhm-01",2014,"Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran"
-"drhm-01",2015,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"drhm-01",2016,"Judy Murray",NA,NA,"Judy Murray"
-"drhm-01",2017,"Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran"
-"drhm-01",2018,"Robin Moran","Jennifer Maher",NA,"Jennifer Maher, Robin Moran"
-"drhm-01",2019,"Robin Moran","Jennifer Maher",NA,"Jennifer Maher, Robin Moran"
-"drhm-01",2020,"Robin Moran","Jennifer Maher",NA,"Jennifer Maher, Robin Moran"
-"drhm-01",2021,"Robin Moran","Jennifer Maher","Noah Rokoske","Jennifer Maher, Noah Rokoske, Robin Moran"
-"drhm-01",2022,"Robin Moran","Jennifer Maher","Noah Rokoske","Jennifer Maher, Noah Rokoske, Robin Moran"
-"drhm-01",2023,"Noah Rokoske","Robin Moran","Jennifer Maher","Jennifer Maher, Noah Rokoske, Robin Moran"
-"drhm-01",2024,"Robin Moran","Jennifer Maher","Noah Rokoske","Jennifer Maher, Noah Rokoske, Robin Moran"
-"drhm-01",2025,"Jennifer Maher","Noah Rokoske",NA,"Jennifer Maher, Noah Rokoske"
-"drhm-02",2002,"Bruce Young",NA,NA,"Bruce Young"
-"drhm-02",2003,"Bruce Young",NA,NA,"Bruce Young"
-"drhm-02",2004,"Bruce Young",NA,NA,"Bruce Young"
-"drhm-02",2005,"Bruce Young",NA,NA,"Bruce Young"
-"drhm-02",2006,"Bruce Young",NA,NA,"Bruce Young"
-"drhm-02",2007,"?",NA,NA,"?"
-"drhm-02",2008,"?",NA,NA,"?"
-"drhm-02",2009,"?",NA,NA,"?"
-"drhm-02",2010,"?",NA,NA,"?"
-"drhm-02",2011,"?",NA,NA,"?"
-"drhm-02",2012,"?",NA,NA,"?"
-"drhm-02",2013,"Edith Tatum",NA,NA,"Edith Tatum"
-"drhm-02",2014,"Edith Tatum",NA,NA,"Edith Tatum"
-"drhm-02",2015,"Edith Tatum","Clea ",NA,"Clea , Edith Tatum"
-"drhm-02",2017,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-02",2018,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-02",2019,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-02",2020,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-02",2022,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-02",2023,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-02",2024,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-02",2025,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-03",2002,"Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz"
-"drhm-03",2003,"Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz"
-"drhm-03",2004,"Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz"
-"drhm-03",2005,"Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz"
-"drhm-03",2006,"Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz"
-"drhm-03",2007,"Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz"
-"drhm-03",2008,"Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz"
-"drhm-03",2009,"Carol Williamson","Norman Budnitz",NA,"Carol Williamson, Norman Budnitz"
-"drhm-03",2010,"Norman Budnitz","Carol Williamson",NA,"Carol Williamson, Norman Budnitz"
-"drhm-03",2011,"Patsy Bailey","Norman Budnitz",NA,"Norman Budnitz, Patsy Bailey"
-"drhm-03",2012,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2013,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2014,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2015,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2016,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2017,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2018,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2019,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2020,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2021,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2022,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2023,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2024,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"drhm-03",2025,"Noah Rokoske","Norm Budnitz",NA,"Noah Rokoske, Norm Budnitz"
-"drhm-04",2002,"Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice"
-"drhm-04",2003,"Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice"
-"drhm-04",2004,"Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice"
-"drhm-04",2005,"Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice"
-"drhm-04",2006,"Jeff Pippen","Julie Rice",NA,"Jeff Pippen, Julie Rice"
-"drhm-04",2007,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-04",2008,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-04",2009,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-04",2011,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-04",2012,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-04",2013,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-04",2014,"Jeff Pippen",NA,NA,"Jeff Pippen"
-"drhm-04",2018,"Patsy Bailey",NA,NA,"Patsy Bailey"
-"drhm-04",2019,"Roger Shaw",NA,NA,"Roger Shaw"
-"drhm-04",2020,"Roger Shaw",NA,NA,"Roger Shaw"
-"drhm-04",2021,"Roger Shaw",NA,NA,"Roger Shaw"
-"drhm-04",2022,"Roger Shaw","Stephen Brooks","Carey Jefferson","Carey Jefferson, Roger Shaw, Stephen Brooks"
-"drhm-04",2023,"Stephen Brooks","Carey Jefferson",NA,"Carey Jefferson, Stephen Brooks"
-"drhm-04",2024,"Stephen Brooks","Carey Jefferson",NA,"Carey Jefferson, Stephen Brooks"
-"drhm-04",2025,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"drhm-05",2002,"Alan Johnston","Shantanu Phukan",NA,"Alan Johnston, Shantanu Phukan"
-"drhm-05",2003,"Alan Johnston","Shantanu Phukan",NA,"Alan Johnston, Shantanu Phukan"
-"drhm-05",2004,"Alan Johnston","Sally Johnston",NA,"Alan Johnston, Sally Johnston"
-"drhm-05",2005,"Alan Johnston","Denny Dobbin",NA,"Alan Johnston, Denny Dobbin"
-"drhm-05",2006,"Alan Johnston","Dan Williams",NA,"Alan Johnston, Dan Williams"
-"drhm-05",2007,"Alan Johnston","David Welch",NA,"Alan Johnston, David Welch"
-"drhm-05",2008,"Alan Johnston","Bobbie Johnston","Pamela Clark","Alan Johnston, Bobbie Johnston, Pamela Clark"
-"drhm-05",2009,"Alan Johnston","Denny Dobbin",NA,"Alan Johnston, Denny Dobbin"
-"drhm-05",2010,"Alan Johnston","Denny Dobbin",NA,"Alan Johnston, Denny Dobbin"
-"drhm-05",2011,"Alan Johnston","Denny Dobbin",NA,"Alan Johnston, Denny Dobbin"
-"drhm-05",2012,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2013,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2014,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2015,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2016,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2017,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2018,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2019,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2020,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2021,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2022,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2023,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2024,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-05",2025,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2002,"Rick Payne",NA,NA,"Rick Payne"
-"drhm-06",2003,"Rick Payne",NA,NA,"Rick Payne"
-"drhm-06",2004,"Rick Payne",NA,NA,"Rick Payne"
-"drhm-06",2005,"Rick Payne",NA,NA,"Rick Payne"
-"drhm-06",2006,"Rick Payne",NA,NA,"Rick Payne"
-"drhm-06",2007,"Rick Payne",NA,NA,"Rick Payne"
-"drhm-06",2008,"Rick Payne",NA,NA,"Rick Payne"
-"drhm-06",2009,"Rick Payne",NA,NA,"Rick Payne"
-"drhm-06",2010,"Rick Payne",NA,NA,"Rick Payne"
-"drhm-06",2011,"David Smith",NA,NA,"David Smith"
-"drhm-06",2012,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2013,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2014,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2015,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2016,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2017,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2018,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2019,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2020,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2021,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2022,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2023,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2024,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-06",2025,"David Smith","Judy Smith",NA,"David Smith, Judy Smith"
-"drhm-07",2002,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2003,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2004,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2005,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2006,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2007,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2008,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2009,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2010,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2011,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2012,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2013,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2015,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2016,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2017,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2018,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2019,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2020,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2021,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2022,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-07",2023,"Noah Rokoske",NA,NA,"Noah Rokoske"
-"drhm-07",2024,"William Mackin",NA,NA,"William Mackin"
-"drhm-07",2025,"Noah Rokoske",NA,NA,"Noah Rokoske"
-"drhm-08",2002,"Brian Strong",NA,NA,"Brian Strong"
-"drhm-08",2003,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2004,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2005,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2006,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2007,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2008,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2011,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2012,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2013,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2014,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2015,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2016,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2017,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2018,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2019,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2020,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2021,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2022,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2023,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2024,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"drhm-08",2025,"Noah Rokoske",NA,NA,"Noah Rokoske"
-"orng-01",1999,"Ginger Travis","Barb Brooks",NA,"Barb Brooks, Ginger Travis"
-"orng-01",2000,"Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis"
-"orng-01",2001,"Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis"
-"orng-01",2002,"Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis"
-"orng-01",2003,"Ginger Travis","Doug Shadwick",NA,"Doug Shadwick, Ginger Travis"
-"orng-01",2004,"Ginger Travis","Doug Shadwick",NA,"Doug Shadwick, Ginger Travis"
-"orng-01",2005,"Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis"
-"orng-01",2006,"Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis"
-"orng-01",2007,"Ginger Travis","Doug Shadwick",NA,"Doug Shadwick, Ginger Travis"
-"orng-01",2008,"Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis"
-"orng-01",2009,"Ginger Travis","Cathy Packer",NA,"Cathy Packer, Ginger Travis"
-"orng-01",2010,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2011,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2012,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2013,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2014,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2015,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2016,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2017,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2018,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2019,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2020,"Norman Budnitz",NA,NA,"Norman Budnitz"
-"orng-01",2021,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2022,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2023,"Norman Budnitz","Michael Schultz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2024,"Michael Schultz","Norman Budnitz",NA,"Michael Schultz, Norman Budnitz"
-"orng-01",2025,"Mike Schultz","Norm Budnitz",NA,"Mike Schultz, Norm Budnitz"
-"orng-02",1999,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2000,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2001,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2002,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2003,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2004,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2005,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2006,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2007,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2008,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2009,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2010,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2011,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2012,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2013,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2014,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2015,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2016,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2017,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2018,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2019,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2020,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2021,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2022,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2023,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-02",2024,"Barb Brooks","William Mackin",NA,"Barb Brooks, William Mackin"
-"orng-02",2025,"Barb Brooks","Will Mackin",NA,"Barb Brooks, Will Mackin"
-"orng-03",1999,"Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
-"orng-03",2000,"Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
-"orng-03",2001,"Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
-"orng-03",2002,"Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
-"orng-03",2003,"Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
-"orng-03",2004,"Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
-"orng-03",2005,"Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
-"orng-03",2006,"Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
-"orng-03",2007,"Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
-"orng-03",2008,"Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
-"orng-03",2009,"Kate Finlayson","Karen Piplani",NA,"Karen Piplani, Kate Finlayson"
-"orng-03",2011,"Karen Piplani",NA,NA,"Karen Piplani"
-"orng-03",2014,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-03",2015,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-03",2016,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-03",2017,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-03",2018,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-03",2019,"Bradley Saul","Charity Kirk",NA,"Bradley Saul, Charity Kirk"
-"orng-03",2020,"Bradley Saul",NA,NA,"Bradley Saul"
-"orng-03",2021,"Bradley Saul",NA,NA,"Bradley Saul"
-"orng-03",2022,"Bradley Saul",NA,NA,"Bradley Saul"
-"orng-03",2023,"Bradley Saul",NA,NA,"Bradley Saul"
-"orng-03",2024,"Bradley Saul",NA,NA,"Bradley Saul"
-"orng-03",2025,"Bradley Saul","Evan Sopko",NA,"Bradley Saul, Evan Sopko"
-"orng-04",1999,"Kent Fiala",NA,NA,"Kent Fiala"
-"orng-04",2000,"Kent Fiala",NA,NA,"Kent Fiala"
-"orng-04",2001,"Kent Fiala",NA,NA,"Kent Fiala"
-"orng-04",2002,"Kent Fiala",NA,NA,"Kent Fiala"
-"orng-04",2003,"Kent Fiala",NA,NA,"Kent Fiala"
-"orng-04",2004,"Kent Fiala",NA,NA,"Kent Fiala"
-"orng-04",2005,"Kent Fiala",NA,NA,"Kent Fiala"
-"orng-04",2006,"Kent Fiala",NA,NA,"Kent Fiala"
-"orng-04",2007,"Kent Fiala",NA,NA,"Kent Fiala"
-"orng-04",2008,"Kent Fiala",NA,NA,"Kent Fiala"
-"orng-04",2009,"Kent Fiala",NA,NA,"Kent Fiala"
-"orng-04",2010,"Will Cook","Catherine Carter",NA,"Catherine Carter, Will Cook"
-"orng-04",2011,"Jill Paul","Tom Driscoll",NA,"Jill Paul, Tom Driscoll"
-"orng-04",2013,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"orng-04",2014,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"orng-04",2015,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"orng-04",2016,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"orng-04",2017,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"orng-04",2018,"Allen Hurlbert","Grace Di Cecco","Allison Duprey","Allen Hurlbert, Allison Duprey, Grace Di Cecco"
-"orng-04",2019,"Allen Hurlbert","Sarah Pollack",NA,"Allen Hurlbert, Sarah Pollack"
-"orng-04",2020,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"orng-04",2021,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"orng-04",2022,"Allen Hurlbert","Ashley Moore","Ellen Weaver","Allen Hurlbert, Ashley Moore, Ellen Weaver"
-"orng-04",2023,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"orng-04",2024,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"orng-04",2025,"Allen Hurlbert","Ivara Goulden","Benjamin Acosta","Allen Hurlbert, Benjamin Acosta, Ivara Goulden"
-"orng-05",1999,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2000,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2001,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2002,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2003,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2004,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2005,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2006,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2007,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2008,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2009,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2010,"Will Cook","Catherine Anderson",NA,"Catherine Anderson, Will Cook"
-"orng-05",2011,"Will Cook","Catherine Carter",NA,"Catherine Carter, Will Cook"
-"orng-05",2012,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2013,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2014,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2015,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2016,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2017,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2018,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2019,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2020,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2021,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2022,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2023,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2024,"Will Cook",NA,NA,"Will Cook"
-"orng-05",2025,"Will Cook",NA,NA,"Will Cook"
-"orng-06",1999,"Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran"
-"orng-06",2000,"Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran"
-"orng-06",2001,"Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran"
-"orng-06",2002,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2003,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2004,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2005,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2006,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2007,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2008,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2009,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2010,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2011,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2012,"Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran"
-"orng-06",2013,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2014,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2015,"Judy Murray",NA,NA,"Judy Murray"
-"orng-06",2016,"Robin Moran","Judy Murray",NA,"Judy Murray, Robin Moran"
-"orng-06",2017,"Judy Murray","Robin Moran",NA,"Judy Murray, Robin Moran"
-"orng-06",2019,"Karen Hogan","Robin Moran",NA,"Karen Hogan, Robin Moran"
-"orng-06",2020,"Karen Hogan","Mark Hogan",NA,"Karen Hogan, Mark Hogan"
-"orng-06",2021,"Karen Hogan",NA,NA,"Karen Hogan"
-"orng-06",2022,"Karen Hogan",NA,NA,"Karen Hogan"
-"orng-06",2023,"Karen Hogan",NA,NA,"Karen Hogan"
-"orng-06",2024,"Karen Hogan",NA,NA,"Karen Hogan"
-"orng-06",2025,"Karen Hogan",NA,NA,"Karen Hogan"
-"orng-07",1999,"Betty King",NA,NA,"Betty King"
-"orng-07",2000,"Betty King",NA,NA,"Betty King"
-"orng-07",2001,"Betty King",NA,NA,"Betty King"
-"orng-07",2002,"Betty King",NA,NA,"Betty King"
-"orng-07",2003,"Betty King",NA,NA,"Betty King"
-"orng-07",2004,"Betty King",NA,NA,"Betty King"
-"orng-07",2005,"Betty King",NA,NA,"Betty King"
-"orng-07",2006,"Betty King",NA,NA,"Betty King"
-"orng-07",2007,"Betty King",NA,NA,"Betty King"
-"orng-07",2008,"Betty King",NA,NA,"Betty King"
-"orng-07",2009,"Betty King",NA,NA,"Betty King"
-"orng-07",2010,"Betty King",NA,NA,"Betty King"
-"orng-07",2011,"Betty King",NA,NA,"Betty King"
-"orng-07",2012,"Betty King",NA,NA,"Betty King"
-"orng-07",2014,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"orng-07",2015,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"orng-07",2016,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"orng-07",2017,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"orng-07",2018,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"orng-07",2019,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"orng-07",2020,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"orng-07",2021,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"orng-07",2022,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"orng-07",2023,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"orng-07",2024,"Brian Bockhahn",NA,NA,"Brian Bockhahn"
-"orng-07",2025,"Marc Howlett","Laurie Howlett","Ezra Howlett","Ezra Howlett, Laurie Howlett, Marc Howlett"
-"orng-08",1999,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2000,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2001,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2002,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2003,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2004,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2005,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2006,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2007,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2008,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2009,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2010,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2011,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2012,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2013,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2014,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2015,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2016,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2017,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2018,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2019,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2020,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2021,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2022,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2023,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-08",2024,"Barb Brooks","William Mackin",NA,"Barb Brooks, William Mackin"
-"orng-08",2025,"Barb Brooks","Will Mackin",NA,"Barb Brooks, Will Mackin"
-"orng-09",1999,"Shantanu Phukan","T. Williams",NA,"Shantanu Phukan, T. Williams"
-"orng-09",2000,"Sandy Cash",NA,NA,"Sandy Cash"
-"orng-09",2001,"Shantanu Phukan",NA,NA,"Shantanu Phukan"
-"orng-09",2002,"Shantanu Phukan","Alan Johnston",NA,"Alan Johnston, Shantanu Phukan"
-"orng-09",2003,"Shantanu Phukan",NA,NA,"Shantanu Phukan"
-"orng-09",2004,"Shantanu Phukan",NA,NA,"Shantanu Phukan"
-"orng-09",2005,"Shantanu Phukan",NA,NA,"Shantanu Phukan"
-"orng-09",2006,"?",NA,NA,"?"
-"orng-09",2007,"?",NA,NA,"?"
-"orng-09",2008,"?",NA,NA,"?"
-"orng-09",2009,"?",NA,NA,"?"
-"orng-09",2011,"David Curtin",NA,NA,"David Curtin"
-"orng-09",2012,"David Curtin",NA,NA,"David Curtin"
-"orng-09",2013,"David Curtin",NA,NA,"David Curtin"
-"orng-09",2014,"David Curtin",NA,NA,"David Curtin"
-"orng-09",2015,"David Curtin",NA,NA,"David Curtin"
-"orng-09",2016,"David Curtin",NA,NA,"David Curtin"
-"orng-09",2019,"Karen Hogan","Mark Hogan",NA,"Karen Hogan, Mark Hogan"
-"orng-09",2020,"Karen Hogan","Mark Hogan",NA,"Karen Hogan, Mark Hogan"
-"orng-09",2021,"Karen Hogan",NA,NA,"Karen Hogan"
-"orng-09",2022,"Karen Hogan",NA,NA,"Karen Hogan"
-"orng-09",2023,"Karen Hogan",NA,NA,"Karen Hogan"
-"orng-09",2024,"Karen Hogan",NA,NA,"Karen Hogan"
-"orng-09",2025,"Karen Hogan",NA,NA,"Karen Hogan"
-"orng-10",1999,"Will Cook",NA,NA,"Will Cook"
-"orng-10",2000,"Will Cook",NA,NA,"Will Cook"
-"orng-10",2001,"Will Cook",NA,NA,"Will Cook"
-"orng-10",2002,"Will Cook",NA,NA,"Will Cook"
-"orng-10",2003,"Will Cook",NA,NA,"Will Cook"
-"orng-10",2004,"Will Cook",NA,NA,"Will Cook"
-"orng-10",2005,"Will Cook","Doug Shadwick",NA,"Doug Shadwick, Will Cook"
-"orng-10",2006,"Doug Shadwick",NA,NA,"Doug Shadwick"
-"orng-10",2007,"Doug Shadwick",NA,NA,"Doug Shadwick"
-"orng-10",2008,"Doug Shadwick",NA,NA,"Doug Shadwick"
-"orng-10",2009,"Doug Shadwick",NA,NA,"Doug Shadwick"
-"orng-10",2012,"Nathan Swick",NA,NA,"Nathan Swick"
-"orng-10",2013,"Nathan Swick",NA,NA,"Nathan Swick"
-"orng-10",2016,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-10",2017,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-10",2018,"Barb Brooks",NA,NA,"Barb Brooks"
-"orng-10",2019,"Vern Bothwell","Nan Dewire",NA,"Nan Dewire, Vern Bothwell"
-"orng-10",2020,"Vern Bothwell",NA,NA,"Vern Bothwell"
-"orng-10",2021,"Vern Bothwell",NA,NA,"Vern Bothwell"
-"orng-10",2023,"Allen Hurlbert",NA,NA,"Allen Hurlbert"
-"orng-10",2024,"Paul Taillie",NA,NA,"Paul Taillie"
-"orng-10",2025,"Paul Taillie",NA,NA,"Paul Taillie"
-"orng-11",1999,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"orng-11",2000,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"orng-11",2001,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"orng-11",2002,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"orng-11",2003,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"orng-11",2004,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"orng-11",2005,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"orng-11",2006,"Marsha Stephens",NA,NA,"Marsha Stephens"
-"orng-11",2007,"?",NA,NA,"?"
-"orng-11",2008,"?",NA,NA,"?"
-"orng-11",2009,"?",NA,NA,"?"
-"orng-11",2012,"Ali Iyoob",NA,NA,"Ali Iyoob"
-"orng-11",2017,"Loren Hintz",NA,NA,"Loren Hintz"
-"orng-11",2018,"Loren Hintz",NA,NA,"Loren Hintz"
-"orng-11",2019,"Loren Hintz",NA,NA,"Loren Hintz"
-"orng-11",2020,"Loren Hintz",NA,NA,"Loren Hintz"
-"orng-11",2021,"Loren Hintz",NA,NA,"Loren Hintz"
-"orng-11",2022,"Loren Hintz","Margaret Vimmerstedt",NA,"Loren Hintz, Margaret Vimmerstedt"
-"orng-11",2023,"Suzanne Roberts","Vicki Nebes",NA,"Suzanne Roberts, Vicki Nebes"
-"orng-11",2024,"Suzanne Roberts","Vicki Nebes",NA,"Suzanne Roberts, Vicki Nebes"
-"orng-11",2025,"Suzanne Roberts",NA,NA,"Suzanne Roberts"
-"orng-12",1999,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2000,NA,"Haven Wiley",NA,"Haven Wiley"
-"orng-12",2001,NA,"Haven Wiley",NA,"Haven Wiley"
-"orng-12",2002,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2003,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2004,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2005,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2006,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2007,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2008,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2009,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2010,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2011,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2012,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2013,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2014,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2015,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2016,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2017,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2018,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2019,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2020,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2021,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2022,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2023,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2024,"Haven Wiley",NA,NA,"Haven Wiley"
-"orng-12",2025,"Haven Wiley","Minna Wiley",NA,"Haven Wiley, Minna Wiley"
+route,year,obs1,obs2,obs3,standardized_observers
+cthm-01,2000,Patsy Bailey,Marsha Stephens,NA,"Marsha Stephens, Patsy Bailey"
+cthm-01,2001,Patsy Bailey,Marsha Stephens,NA,"Marsha Stephens, Patsy Bailey"
+cthm-01,2002,Marsha Stephens,Patsy Bailey,NA,"Marsha Stephens, Patsy Bailey"
+cthm-01,2003,Patsy Bailey,Marsha Stephens,NA,"Marsha Stephens, Patsy Bailey"
+cthm-01,2004,Patsy Bailey,Marsha Stephens,NA,"Marsha Stephens, Patsy Bailey"
+cthm-01,2005,Patsy Bailey,Marsha Stephens,NA,"Marsha Stephens, Patsy Bailey"
+cthm-01,2006,Patsy Bailey,Marsha Stephens,NA,"Marsha Stephens, Patsy Bailey"
+cthm-01,2007,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2008,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2009,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2010,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2011,Patsy Bailey,Norman Budnitz,NA,"Norman Budnitz, Patsy Bailey"
+cthm-01,2012,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2013,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2014,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2015,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2016,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2017,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2018,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2019,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2020,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2021,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2022,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2023,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2024,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-01,2025,Patsy Bailey,NA,NA,Patsy Bailey
+cthm-02,2000,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2001,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2002,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2003,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2004,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2005,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2006,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2007,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2008,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2009,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2010,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2011,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2012,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2013,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2014,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2015,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2016,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2017,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2018,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2019,Norman Budnitz,Michael Schultz,Karen Hogan,"Karen Hogan, Michael Schultz, Norman Budnitz"
+cthm-02,2020,Norman Budnitz,NA,NA,Norman Budnitz
+cthm-02,2021,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2022,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2023,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2024,Michael Schultz,Norman Budnitz,NA,"Michael Schultz, Norman Budnitz"
+cthm-02,2025,Mike Schultz,Norm Budnitz,NA,"Mike Schultz, Norm Budnitz"
+cthm-03,2000,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2001,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2002,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2003,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2004,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2005,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2006,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2007,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2008,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2009,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2010,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2011,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2012,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2013,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2014,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2015,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2016,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2017,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2018,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2019,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2020,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2021,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2022,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2023,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2024,Haven Wiley,NA,NA,Haven Wiley
+cthm-03,2025,Haven Wiley,Minna Wiley,NA,"Haven Wiley, Minna Wiley"
+cthm-04,2000,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2001,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2002,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2003,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2004,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2005,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2006,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2007,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2008,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2009,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2010,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2011,Michael Schultz,NA,NA,Michael Schultz
+cthm-04,2012,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2013,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2014,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2015,Michael Schultz,NA,NA,Michael Schultz
+cthm-04,2016,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2017,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2018,Michael Schultz,Lois Schultz,NA,"Lois Schultz, Michael Schultz"
+cthm-04,2019,Michael Schultz,Karen Hogan,NA,"Karen Hogan, Michael Schultz"
+cthm-04,2020,Michael Schultz,NA,NA,Michael Schultz
+cthm-04,2021,Michael Schultz,Norman Budnitz,NA,"Michael Schultz, Norman Budnitz"
+cthm-04,2022,Michael Schultz,Norman Budnitz,NA,"Michael Schultz, Norman Budnitz"
+cthm-04,2023,Michael Schultz,Norman Budnitz,NA,"Michael Schultz, Norman Budnitz"
+cthm-04,2024,Michael Schultz,Norman Budnitz,NA,"Michael Schultz, Norman Budnitz"
+cthm-04,2025,Mike Schultz,Norm Budnitz,NA,"Mike Schultz, Norm Budnitz"
+cthm-05,2000,Jeff Pippen,Julie Rice,NA,"Jeff Pippen, Julie Rice"
+cthm-05,2001,Jeff Pippen,Julie Rice,NA,"Jeff Pippen, Julie Rice"
+cthm-05,2002,Haven Wiley,NA,NA,Haven Wiley
+cthm-05,2003,Haven Wiley,NA,NA,Haven Wiley
+cthm-05,2004,Haven Wiley,NA,NA,Haven Wiley
+cthm-05,2005,Haven Wiley,NA,NA,Haven Wiley
+cthm-05,2006,Tom Driscoll,Colyer Durovich,Marsha Stephens,"Colyer Durovich, Marsha Stephens, Tom Driscoll"
+cthm-05,2007,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2008,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2009,Tom Driscoll,Marsha Stephens,NA,"Marsha Stephens, Tom Driscoll"
+cthm-05,2010,Marsha Tuttle,Tom Driscoll,Colyer Durovich,"Colyer Durovich, Marsha Tuttle, Tom Driscoll"
+cthm-05,2011,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2012,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2013,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2014,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2015,Tom Driscoll,Vern Bothwell,NA,"Tom Driscoll, Vern Bothwell"
+cthm-05,2016,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2017,Tom Driscoll,Edison Buenano,NA,"Edison Buenano, Tom Driscoll"
+cthm-05,2018,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2019,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2020,Tom Driscoll,Elizabeth Keating,NA,"Elizabeth Keating, Tom Driscoll"
+cthm-05,2021,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2022,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2023,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2024,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-05,2025,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-06,2000,Cynthia Fox,Marsha Stephens,NA,"Cynthia Fox, Marsha Stephens"
+cthm-06,2001,Cynthia Fox,Marsha Stephens,NA,"Cynthia Fox, Marsha Stephens"
+cthm-06,2002,Cynthia Fox,Marsha Stephens,NA,"Cynthia Fox, Marsha Stephens"
+cthm-06,2003,Cynthia Fox,Marsha Stephens,NA,"Cynthia Fox, Marsha Stephens"
+cthm-06,2004,Cynthia Fox,Marsha Stephens,NA,"Cynthia Fox, Marsha Stephens"
+cthm-06,2005,Cynthia Fox,Marsha Stephens,NA,"Cynthia Fox, Marsha Stephens"
+cthm-06,2006,Cynthia Fox,Marsha Stephens,NA,"Cynthia Fox, Marsha Stephens"
+cthm-06,2007,Cynthia Fox,Marsha Stephens,NA,"Cynthia Fox, Marsha Stephens"
+cthm-06,2008,Cynthia Fox,Marsha Stephens,NA,"Cynthia Fox, Marsha Stephens"
+cthm-06,2009,Cynthia Fox,Marsha Stephens,NA,"Cynthia Fox, Marsha Stephens"
+cthm-06,2010,Marsha Tuttle,Tom Driscoll,Laurie Kucharik,"Laurie Kucharik, Marsha Tuttle, Tom Driscoll"
+cthm-06,2018,Roger Shaw,NA,NA,Roger Shaw
+cthm-06,2019,Roger Shaw,NA,NA,Roger Shaw
+cthm-06,2020,Roger Shaw,NA,NA,Roger Shaw
+cthm-06,2021,Roger Shaw,NA,NA,Roger Shaw
+cthm-06,2022,Roger Shaw,NA,NA,Roger Shaw
+cthm-06,2023,Roger Shaw,NA,NA,Roger Shaw
+cthm-06,2024,Roger Shaw,NA,NA,Roger Shaw
+cthm-06,2025,Roger Shaw,NA,NA,Roger Shaw
+cthm-07,2000,Will Cook,NA,NA,Will Cook
+cthm-07,2001,Will Cook,NA,NA,Will Cook
+cthm-07,2002,Will Cook,NA,NA,Will Cook
+cthm-07,2003,Will Cook,NA,NA,Will Cook
+cthm-07,2004,Will Cook,NA,NA,Will Cook
+cthm-07,2005,Will Cook,NA,NA,Will Cook
+cthm-07,2006,Will Cook,NA,NA,Will Cook
+cthm-07,2007,Will Cook,NA,NA,Will Cook
+cthm-07,2008,Will Cook,NA,NA,Will Cook
+cthm-07,2009,Will Cook,NA,NA,Will Cook
+cthm-07,2010,Will Cook,Catherine Carter,NA,"Catherine Carter, Will Cook"
+cthm-07,2011,Will Cook,Lesley Starke,NA,"Lesley Starke, Will Cook"
+cthm-07,2012,Will Cook,Lesley Starke,NA,"Lesley Starke, Will Cook"
+cthm-07,2013,Will Cook,Lesley Starke,NA,"Lesley Starke, Will Cook"
+cthm-07,2014,Will Cook,NA,NA,Will Cook
+cthm-07,2015,Will Cook,NA,NA,Will Cook
+cthm-07,2016,Will Cook,NA,NA,Will Cook
+cthm-07,2017,Will Cook,NA,NA,Will Cook
+cthm-07,2018,Will Cook,NA,NA,Will Cook
+cthm-07,2019,Will Cook,NA,NA,Will Cook
+cthm-07,2020,Will Cook,NA,NA,Will Cook
+cthm-07,2021,Will Cook,NA,NA,Will Cook
+cthm-07,2022,Will Cook,NA,NA,Will Cook
+cthm-07,2023,Will Cook,NA,NA,Will Cook
+cthm-07,2024,Will Cook,NA,NA,Will Cook
+cthm-07,2025,Will Cook,NA,NA,Will Cook
+cthm-08,2000,Judy Murray,Martha Girolami,NA,"Judy Murray, Martha Girolami"
+cthm-08,2001,Judy Murray,Martha Girolami,NA,"Judy Murray, Martha Girolami"
+cthm-08,2002,Judy Murray,Martha Girolami,NA,"Judy Murray, Martha Girolami"
+cthm-08,2003,Judy Murray,Martha Girolami,NA,"Judy Murray, Martha Girolami"
+cthm-08,2004,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
+cthm-08,2005,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
+cthm-08,2006,Martha Girolami,Pat Reid,Judy Murray,"Judy Murray, Martha Girolami, Pat Reid"
+cthm-08,2007,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
+cthm-08,2008,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
+cthm-08,2009,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
+cthm-08,2010,Martha Girolami,Pat Reid,Judy Murray,"Judy Murray, Martha Girolami, Pat Reid"
+cthm-08,2011,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
+cthm-08,2012,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
+cthm-08,2013,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
+cthm-08,2014,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
+cthm-08,2015,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
+cthm-08,2016,Martha Girolami,Judy Murray,NA,"Judy Murray, Martha Girolami"
+cthm-08,2017,Martha Girolami,Pat Reid,Judy Murray,"Judy Murray, Martha Girolami, Pat Reid"
+cthm-08,2019,Nan Dewire,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Nan Dewire"
+cthm-08,2020,Nan Dewire,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Nan Dewire"
+cthm-08,2021,Nan Dewire,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Nan Dewire"
+cthm-08,2022,Nan Dewire,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Nan Dewire"
+cthm-08,2023,Nan Dewire,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Nan Dewire"
+cthm-08,2024,Nan Dewire,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Nan Dewire"
+cthm-08,2025,Nan Dewire,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Nan Dewire"
+cthm-09,2000,Shelley Theye,Lee Van Malssen,NA,"Lee Van Malssen, Shelley Theye"
+cthm-09,2001,Shelley Theye,Lee Van Malssen,NA,"Lee Van Malssen, Shelley Theye"
+cthm-09,2002,Shelley Theye,Lee Van Malssen,NA,"Lee Van Malssen, Shelley Theye"
+cthm-09,2003,Shelley Theye,Lee Van Malssen,NA,"Lee Van Malssen, Shelley Theye"
+cthm-09,2005,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2006,Shelley Theye,Marsha Stephens,NA,"Marsha Stephens, Shelley Theye"
+cthm-09,2007,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2008,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2009,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2010,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2011,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2012,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2013,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2014,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2015,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2016,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2017,Shelley Theye,Lee Van Malssen,NA,"Lee Van Malssen, Shelley Theye"
+cthm-09,2018,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2019,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2020,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2021,Shelley Theye,Lee Van Malssen,NA,"Lee Van Malssen, Shelley Theye"
+cthm-09,2022,Shelley Theye,Lee Van Malssen,NA,"Lee Van Malssen, Shelley Theye"
+cthm-09,2023,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2024,Shelley Theye,NA,NA,Shelley Theye
+cthm-09,2025,Shelley Theye,Deborah Fowler,NA,"Deborah Fowler, Shelley Theye"
+cthm-10,2000,Sue Brady,NA,NA,Sue Brady
+cthm-10,2001,Will Cook,NA,NA,Will Cook
+cthm-10,2002,Brian Strong,NA,NA,Brian Strong
+cthm-10,2003,Brian Strong,NA,NA,Brian Strong
+cthm-10,2004,Brian Strong,NA,NA,Brian Strong
+cthm-10,2005,Brian Strong,NA,NA,Brian Strong
+cthm-10,2006,Brian Strong,NA,NA,Brian Strong
+cthm-10,2007,Brian Strong,NA,NA,Brian Strong
+cthm-10,2008,Brian Strong,NA,NA,Brian Strong
+cthm-10,2009,Brian Strong,NA,NA,Brian Strong
+cthm-10,2010,Brian Strong,NA,NA,Brian Strong
+cthm-10,2011,Brian Strong,NA,NA,Brian Strong
+cthm-10,2012,Brian Strong,NA,NA,Brian Strong
+cthm-10,2013,Brian Strong,NA,NA,Brian Strong
+cthm-10,2015,Brian Strong,NA,NA,Brian Strong
+cthm-10,2016,Brian Strong,NA,NA,Brian Strong
+cthm-10,2017,Brian Strong,NA,NA,Brian Strong
+cthm-10,2018,Brian Strong,NA,NA,Brian Strong
+cthm-10,2019,Brian Strong,NA,NA,Brian Strong
+cthm-10,2020,Brian Strong,NA,NA,Brian Strong
+cthm-10,2021,Brian Strong,NA,NA,Brian Strong
+cthm-10,2022,Brian Strong,NA,NA,Brian Strong
+cthm-10,2023,Fleeta Chauvigne,Mark Montazer,NA,"Fleeta Chauvigne, Mark Montazer"
+cthm-10,2024,Fleeta Wilkinson,Mark Montazer,Nan Dewire,"Fleeta Wilkinson, Mark Montazer, Nan Dewire"
+cthm-10,2025,Fleeta Wilkinson Chauvigné,Mark Montazer,Nan Dewire,"Fleeta Wilkinson Chauvigné, Mark Montazer, Nan Dewire"
+cthm-11,2000,M. Graves,Bob Chase,NA,"Bob Chase, M. Graves"
+cthm-11,2001,M. Graves,Bob Chase,NA,"Bob Chase, M. Graves"
+cthm-11,2002,Bob Chase,NA,NA,Bob Chase
+cthm-11,2003,Bob Chase,NA,NA,Bob Chase
+cthm-11,2005,Bob Chase,NA,NA,Bob Chase
+cthm-11,2006,Bob Chase,NA,NA,Bob Chase
+cthm-11,2007,Bob Chase,NA,NA,Bob Chase
+cthm-11,2008,Bob Chase,NA,NA,Bob Chase
+cthm-11,2009,Bob Chase,NA,NA,Bob Chase
+cthm-11,2010,Bob Chase,NA,NA,Bob Chase
+cthm-11,2011,Bob Chase,NA,NA,Bob Chase
+cthm-11,2012,Bob Chase,NA,NA,Bob Chase
+cthm-11,2013,Bob Chase,NA,NA,Bob Chase
+cthm-11,2016,Bob Chase,NA,NA,Bob Chase
+cthm-11,2020,Nathan Howell,NA,NA,Nathan Howell
+cthm-11,2022,Allen Hurlbert,NA,NA,Allen Hurlbert
+cthm-11,2023,Allen Hurlbert,NA,NA,Allen Hurlbert
+cthm-11,2024,Allen Hurlbert,Ivara Goulden,NA,"Allen Hurlbert, Ivara Goulden"
+cthm-11,2025,Allen Hurlbert,Ivara Goulden,NA,"Allen Hurlbert, Ivara Goulden"
+cthm-12,2000,Kate Finlayson,Chris Canfield,NA,"Chris Canfield, Kate Finlayson"
+cthm-12,2001,Kate Finlayson,Chris Canfield,NA,"Chris Canfield, Kate Finlayson"
+cthm-12,2002,Kate Finlayson,Chris Canfield,NA,"Chris Canfield, Kate Finlayson"
+cthm-12,2003,Kate Finlayson,Chris Canfield,NA,"Chris Canfield, Kate Finlayson"
+cthm-12,2004,Chris Canfield,Kate Finlayson,NA,"Chris Canfield, Kate Finlayson"
+cthm-12,2005,Chris Canfield,Kate Finlayson,NA,"Chris Canfield, Kate Finlayson"
+cthm-12,2006,Chris Canfield,Kate Finlayson,NA,"Chris Canfield, Kate Finlayson"
+cthm-12,2007,Kate Finlayson,Chris Canfield,NA,"Chris Canfield, Kate Finlayson"
+cthm-12,2008,Kate Finlayson,Chris Canfield,NA,"Chris Canfield, Kate Finlayson"
+cthm-12,2009,Kate Finlayson,Chris Canfield,NA,"Chris Canfield, Kate Finlayson"
+cthm-12,2017,Tom Driscoll,Elizabeth Keating,NA,"Elizabeth Keating, Tom Driscoll"
+cthm-12,2019,Tom Driscoll,Fleeta Chauvigne,NA,"Fleeta Chauvigne, Tom Driscoll"
+cthm-12,2020,Tom Driscoll,Elizabeth Keating,NA,"Elizabeth Keating, Tom Driscoll"
+cthm-12,2021,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-12,2022,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-12,2023,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-12,2024,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-12,2025,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-13,2000,Marsha Stephens,Patsy Bailey,NA,"Marsha Stephens, Patsy Bailey"
+cthm-13,2001,Marsha Stephens,NA,NA,Marsha Stephens
+cthm-13,2002,Marsha Stephens,NA,NA,Marsha Stephens
+cthm-13,2003,Marsha Stephens,NA,NA,Marsha Stephens
+cthm-13,2004,Marsha Stephens,NA,NA,Marsha Stephens
+cthm-13,2005,Marsha Stephens,NA,NA,Marsha Stephens
+cthm-13,2006,JA,HS,NA,"HS, JA"
+cthm-13,2007,Haven Wiley,NA,NA,Haven Wiley
+cthm-13,2008,?,NA,NA,?
+cthm-13,2009,?,NA,NA,?
+cthm-13,2010,Marsha Tuttle,Tom Driscoll,Laurie Kucharik,"Laurie Kucharik, Marsha Tuttle, Tom Driscoll"
+cthm-13,2011,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-13,2012,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-13,2013,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-13,2014,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-13,2015,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-13,2016,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-13,2017,Tom Driscoll,Bradley Saul,NA,"Bradley Saul, Tom Driscoll"
+cthm-13,2018,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-13,2019,Tom Driscoll,Nan Dewire,NA,"Nan Dewire, Tom Driscoll"
+cthm-13,2020,Tom Driscoll,Elizabeth Keating,NA,"Elizabeth Keating, Tom Driscoll"
+cthm-13,2021,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-13,2022,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-13,2023,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-13,2024,Tom Driscoll,NA,NA,Tom Driscoll
+cthm-13,2025,Will Mackin,NA,NA,Will Mackin
+cthm-14,2000,Kent Fiala,NA,NA,Kent Fiala
+cthm-14,2001,Kent Fiala,NA,NA,Kent Fiala
+cthm-14,2002,Kent Fiala,NA,NA,Kent Fiala
+cthm-14,2003,Kent Fiala,NA,NA,Kent Fiala
+cthm-14,2004,Kent Fiala,NA,NA,Kent Fiala
+cthm-14,2005,Kent Fiala,NA,NA,Kent Fiala
+cthm-14,2006,Kent Fiala,NA,NA,Kent Fiala
+cthm-14,2007,Kent Fiala,NA,NA,Kent Fiala
+cthm-14,2008,Kent Fiala,NA,NA,Kent Fiala
+cthm-14,2009,Kent Fiala,NA,NA,Kent Fiala
+cthm-14,2014,Josh Sims,NA,NA,Josh Sims
+cthm-14,2015,Josh Sims,NA,NA,Josh Sims
+cthm-14,2019,Richard Snow,NA,NA,Richard Snow
+cthm-14,2020,Will Bennett,Jonathan Bennett,NA,"Jonathan Bennett, Will Bennett"
+cthm-14,2021,Will Bennett,Jonathan Bennett,NA,"Jonathan Bennett, Will Bennett"
+cthm-14,2022,Will Bennett,Jonathan Bennett,NA,"Jonathan Bennett, Will Bennett"
+cthm-14,2023,Allen Hurlbert,NA,NA,Allen Hurlbert
+cthm-14,2024,Allen Hurlbert,NA,NA,Allen Hurlbert
+cthm-14,2025,Will Begley,NA,NA,Will Begley
+drhm-01,2002,Judy Murray,NA,NA,Judy Murray
+drhm-01,2003,Judy Murray,NA,NA,Judy Murray
+drhm-01,2004,Judy Murray,NA,NA,Judy Murray
+drhm-01,2005,Judy Murray,NA,NA,Judy Murray
+drhm-01,2006,Judy Murray,Tom Krakauer,NA,"Judy Murray, Tom Krakauer"
+drhm-01,2007,Judy Murray,NA,NA,Judy Murray
+drhm-01,2008,Judy Murray,NA,NA,Judy Murray
+drhm-01,2009,Judy Murray,NA,NA,Judy Murray
+drhm-01,2010,Judy Murray,NA,NA,Judy Murray
+drhm-01,2011,Judy Murray,NA,NA,Judy Murray
+drhm-01,2012,Judy Murray,NA,NA,Judy Murray
+drhm-01,2013,Judy Murray,NA,NA,Judy Murray
+drhm-01,2014,Judy Murray,Robin Moran,NA,"Judy Murray, Robin Moran"
+drhm-01,2015,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+drhm-01,2016,Judy Murray,NA,NA,Judy Murray
+drhm-01,2017,Judy Murray,Robin Moran,NA,"Judy Murray, Robin Moran"
+drhm-01,2018,Robin Moran,Jennifer Maher,NA,"Jennifer Maher, Robin Moran"
+drhm-01,2019,Robin Moran,Jennifer Maher,NA,"Jennifer Maher, Robin Moran"
+drhm-01,2020,Robin Moran,Jennifer Maher,NA,"Jennifer Maher, Robin Moran"
+drhm-01,2021,Robin Moran,Jennifer Maher,Noah Rokoske,"Jennifer Maher, Noah Rokoske, Robin Moran"
+drhm-01,2022,Robin Moran,Jennifer Maher,Noah Rokoske,"Jennifer Maher, Noah Rokoske, Robin Moran"
+drhm-01,2023,Noah Rokoske,Robin Moran,Jennifer Maher,"Jennifer Maher, Noah Rokoske, Robin Moran"
+drhm-01,2024,Robin Moran,Jennifer Maher,Noah Rokoske,"Jennifer Maher, Noah Rokoske, Robin Moran"
+drhm-01,2025,Jennifer Maher,Noah Rokoske,NA,"Jennifer Maher, Noah Rokoske"
+drhm-02,2002,Bruce Young,NA,NA,Bruce Young
+drhm-02,2003,Bruce Young,NA,NA,Bruce Young
+drhm-02,2004,Bruce Young,NA,NA,Bruce Young
+drhm-02,2005,Bruce Young,NA,NA,Bruce Young
+drhm-02,2006,Bruce Young,NA,NA,Bruce Young
+drhm-02,2007,?,NA,NA,?
+drhm-02,2008,?,NA,NA,?
+drhm-02,2009,?,NA,NA,?
+drhm-02,2010,?,NA,NA,?
+drhm-02,2011,?,NA,NA,?
+drhm-02,2012,?,NA,NA,?
+drhm-02,2013,Edith Tatum,NA,NA,Edith Tatum
+drhm-02,2014,Edith Tatum,NA,NA,Edith Tatum
+drhm-02,2015,Edith Tatum,Clea ,NA,"Clea , Edith Tatum"
+drhm-02,2017,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-02,2018,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-02,2019,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-02,2020,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-02,2022,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-02,2023,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-02,2024,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-02,2025,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-03,2002,Carol Williamson,Norman Budnitz,NA,"Carol Williamson, Norman Budnitz"
+drhm-03,2003,Carol Williamson,Norman Budnitz,NA,"Carol Williamson, Norman Budnitz"
+drhm-03,2004,Carol Williamson,Norman Budnitz,NA,"Carol Williamson, Norman Budnitz"
+drhm-03,2005,Carol Williamson,Norman Budnitz,NA,"Carol Williamson, Norman Budnitz"
+drhm-03,2006,Carol Williamson,Norman Budnitz,NA,"Carol Williamson, Norman Budnitz"
+drhm-03,2007,Carol Williamson,Norman Budnitz,NA,"Carol Williamson, Norman Budnitz"
+drhm-03,2008,Carol Williamson,Norman Budnitz,NA,"Carol Williamson, Norman Budnitz"
+drhm-03,2009,Carol Williamson,Norman Budnitz,NA,"Carol Williamson, Norman Budnitz"
+drhm-03,2010,Norman Budnitz,Carol Williamson,NA,"Carol Williamson, Norman Budnitz"
+drhm-03,2011,Patsy Bailey,Norman Budnitz,NA,"Norman Budnitz, Patsy Bailey"
+drhm-03,2012,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2013,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2014,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2015,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2016,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2017,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2018,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2019,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2020,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2021,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2022,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2023,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2024,Norman Budnitz,NA,NA,Norman Budnitz
+drhm-03,2025,Noah Rokoske,Norm Budnitz,NA,"Noah Rokoske, Norm Budnitz"
+drhm-04,2002,Jeff Pippen,Julie Rice,NA,"Jeff Pippen, Julie Rice"
+drhm-04,2003,Jeff Pippen,Julie Rice,NA,"Jeff Pippen, Julie Rice"
+drhm-04,2004,Jeff Pippen,Julie Rice,NA,"Jeff Pippen, Julie Rice"
+drhm-04,2005,Jeff Pippen,Julie Rice,NA,"Jeff Pippen, Julie Rice"
+drhm-04,2006,Jeff Pippen,Julie Rice,NA,"Jeff Pippen, Julie Rice"
+drhm-04,2007,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-04,2008,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-04,2009,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-04,2010,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-04,2011,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-04,2012,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-04,2013,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-04,2014,Jeff Pippen,NA,NA,Jeff Pippen
+drhm-04,2018,Patsy Bailey,NA,NA,Patsy Bailey
+drhm-04,2019,Roger Shaw,NA,NA,Roger Shaw
+drhm-04,2020,Roger Shaw,NA,NA,Roger Shaw
+drhm-04,2021,Roger Shaw,NA,NA,Roger Shaw
+drhm-04,2022,Roger Shaw,Stephen Brooks,Carey Jefferson,"Carey Jefferson, Roger Shaw, Stephen Brooks"
+drhm-04,2023,Stephen Brooks,Carey Jefferson,NA,"Carey Jefferson, Stephen Brooks"
+drhm-04,2024,Stephen Brooks,Carey Jefferson,NA,"Carey Jefferson, Stephen Brooks"
+drhm-04,2025,Allen Hurlbert,NA,NA,Allen Hurlbert
+drhm-05,2002,Alan Johnston,Shantanu Phukan,NA,"Alan Johnston, Shantanu Phukan"
+drhm-05,2003,Alan Johnston,Shantanu Phukan,NA,"Alan Johnston, Shantanu Phukan"
+drhm-05,2004,Alan Johnston,Sally Johnston,NA,"Alan Johnston, Sally Johnston"
+drhm-05,2005,Alan Johnston,Denny Dobbin,NA,"Alan Johnston, Denny Dobbin"
+drhm-05,2006,Alan Johnston,Dan Williams,NA,"Alan Johnston, Dan Williams"
+drhm-05,2007,Alan Johnston,David Welch,NA,"Alan Johnston, David Welch"
+drhm-05,2008,Alan Johnston,Bobbie Johnston,Pamela Clark,"Alan Johnston, Bobbie Johnston, Pamela Clark"
+drhm-05,2009,Alan Johnston,Denny Dobbin,NA,"Alan Johnston, Denny Dobbin"
+drhm-05,2010,Alan Johnston,Denny Dobbin,NA,"Alan Johnston, Denny Dobbin"
+drhm-05,2011,Alan Johnston,Denny Dobbin,NA,"Alan Johnston, Denny Dobbin"
+drhm-05,2012,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2013,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2014,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2015,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2016,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2017,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2018,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2019,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2020,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2021,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2022,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2023,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2024,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-05,2025,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2002,Rick Payne,NA,NA,Rick Payne
+drhm-06,2003,Rick Payne,NA,NA,Rick Payne
+drhm-06,2004,Rick Payne,NA,NA,Rick Payne
+drhm-06,2005,Rick Payne,NA,NA,Rick Payne
+drhm-06,2006,Rick Payne,NA,NA,Rick Payne
+drhm-06,2007,Rick Payne,NA,NA,Rick Payne
+drhm-06,2008,Rick Payne,NA,NA,Rick Payne
+drhm-06,2009,Rick Payne,NA,NA,Rick Payne
+drhm-06,2010,Rick Payne,NA,NA,Rick Payne
+drhm-06,2011,David Smith,NA,NA,David Smith
+drhm-06,2012,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2013,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2014,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2015,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2016,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2017,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2018,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2019,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2020,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2021,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2022,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2023,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2024,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-06,2025,David Smith,Judy Smith,NA,"David Smith, Judy Smith"
+drhm-07,2002,Brian Strong,NA,NA,Brian Strong
+drhm-07,2003,Brian Strong,NA,NA,Brian Strong
+drhm-07,2004,Brian Strong,NA,NA,Brian Strong
+drhm-07,2005,Brian Strong,NA,NA,Brian Strong
+drhm-07,2006,Brian Strong,NA,NA,Brian Strong
+drhm-07,2007,Brian Strong,NA,NA,Brian Strong
+drhm-07,2008,Brian Strong,NA,NA,Brian Strong
+drhm-07,2009,Brian Strong,NA,NA,Brian Strong
+drhm-07,2010,Brian Strong,NA,NA,Brian Strong
+drhm-07,2011,Brian Strong,NA,NA,Brian Strong
+drhm-07,2012,Brian Strong,NA,NA,Brian Strong
+drhm-07,2013,Brian Strong,NA,NA,Brian Strong
+drhm-07,2015,Brian Strong,NA,NA,Brian Strong
+drhm-07,2016,Brian Strong,NA,NA,Brian Strong
+drhm-07,2017,Brian Strong,NA,NA,Brian Strong
+drhm-07,2018,Brian Strong,NA,NA,Brian Strong
+drhm-07,2019,Brian Strong,NA,NA,Brian Strong
+drhm-07,2020,Brian Strong,NA,NA,Brian Strong
+drhm-07,2021,Brian Strong,NA,NA,Brian Strong
+drhm-07,2022,Brian Strong,NA,NA,Brian Strong
+drhm-07,2023,Noah Rokoske,NA,NA,Noah Rokoske
+drhm-07,2024,William Mackin,NA,NA,William Mackin
+drhm-07,2025,Noah Rokoske,NA,NA,Noah Rokoske
+drhm-08,2002,Brian Strong,NA,NA,Brian Strong
+drhm-08,2003,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2004,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2005,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2006,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2007,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2008,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2011,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2012,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2013,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2014,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2015,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2016,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2017,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2018,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2019,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2020,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2021,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2022,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2023,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2024,Brian Bockhahn,NA,NA,Brian Bockhahn
+drhm-08,2025,Noah Rokoske,NA,NA,Noah Rokoske
+orng-01,1999,Ginger Travis,Barb Brooks,NA,"Barb Brooks, Ginger Travis"
+orng-01,2000,Ginger Travis,Cathy Packer,NA,"Cathy Packer, Ginger Travis"
+orng-01,2001,Ginger Travis,Cathy Packer,NA,"Cathy Packer, Ginger Travis"
+orng-01,2002,Ginger Travis,Cathy Packer,NA,"Cathy Packer, Ginger Travis"
+orng-01,2003,Ginger Travis,Doug Shadwick,NA,"Doug Shadwick, Ginger Travis"
+orng-01,2004,Ginger Travis,Doug Shadwick,NA,"Doug Shadwick, Ginger Travis"
+orng-01,2005,Ginger Travis,Cathy Packer,NA,"Cathy Packer, Ginger Travis"
+orng-01,2006,Ginger Travis,Cathy Packer,NA,"Cathy Packer, Ginger Travis"
+orng-01,2007,Ginger Travis,Doug Shadwick,NA,"Doug Shadwick, Ginger Travis"
+orng-01,2008,Ginger Travis,Cathy Packer,NA,"Cathy Packer, Ginger Travis"
+orng-01,2009,Ginger Travis,Cathy Packer,NA,"Cathy Packer, Ginger Travis"
+orng-01,2010,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2011,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2012,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2013,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2014,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2015,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2016,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2017,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2018,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2019,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2020,Norman Budnitz,NA,NA,Norman Budnitz
+orng-01,2021,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2022,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2023,Norman Budnitz,Michael Schultz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2024,Michael Schultz,Norman Budnitz,NA,"Michael Schultz, Norman Budnitz"
+orng-01,2025,Mike Schultz,Norm Budnitz,NA,"Mike Schultz, Norm Budnitz"
+orng-02,1999,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2000,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2001,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2002,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2003,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2004,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2005,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2006,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2007,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2008,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2009,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2010,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2011,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2012,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2013,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2014,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2015,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2016,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2017,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2018,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2019,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2020,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2021,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2022,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2023,Barb Brooks,NA,NA,Barb Brooks
+orng-02,2024,Barb Brooks,William Mackin,NA,"Barb Brooks, William Mackin"
+orng-02,2025,Barb Brooks,Will Mackin,NA,"Barb Brooks, Will Mackin"
+orng-03,1999,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
+orng-03,2000,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
+orng-03,2001,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
+orng-03,2002,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
+orng-03,2003,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
+orng-03,2004,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
+orng-03,2005,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
+orng-03,2006,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
+orng-03,2007,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
+orng-03,2008,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
+orng-03,2009,Kate Finlayson,Karen Piplani,NA,"Karen Piplani, Kate Finlayson"
+orng-03,2011,Karen Piplani,NA,NA,Karen Piplani
+orng-03,2014,Barb Brooks,NA,NA,Barb Brooks
+orng-03,2015,Barb Brooks,NA,NA,Barb Brooks
+orng-03,2016,Barb Brooks,NA,NA,Barb Brooks
+orng-03,2017,Barb Brooks,NA,NA,Barb Brooks
+orng-03,2018,Barb Brooks,NA,NA,Barb Brooks
+orng-03,2019,Bradley Saul,Charity Kirk,NA,"Bradley Saul, Charity Kirk"
+orng-03,2020,Bradley Saul,NA,NA,Bradley Saul
+orng-03,2021,Bradley Saul,NA,NA,Bradley Saul
+orng-03,2022,Bradley Saul,NA,NA,Bradley Saul
+orng-03,2023,Bradley Saul,NA,NA,Bradley Saul
+orng-03,2024,Bradley Saul,NA,NA,Bradley Saul
+orng-03,2025,Bradley Saul,Evan Sopko,NA,"Bradley Saul, Evan Sopko"
+orng-04,1999,Kent Fiala,NA,NA,Kent Fiala
+orng-04,2000,Kent Fiala,NA,NA,Kent Fiala
+orng-04,2001,Kent Fiala,NA,NA,Kent Fiala
+orng-04,2002,Kent Fiala,NA,NA,Kent Fiala
+orng-04,2003,Kent Fiala,NA,NA,Kent Fiala
+orng-04,2004,Kent Fiala,NA,NA,Kent Fiala
+orng-04,2005,Kent Fiala,NA,NA,Kent Fiala
+orng-04,2006,Kent Fiala,NA,NA,Kent Fiala
+orng-04,2007,Kent Fiala,NA,NA,Kent Fiala
+orng-04,2008,Kent Fiala,NA,NA,Kent Fiala
+orng-04,2009,Kent Fiala,NA,NA,Kent Fiala
+orng-04,2010,Will Cook,Catherine Carter,NA,"Catherine Carter, Will Cook"
+orng-04,2011,Jill Paul,Tom Driscoll,NA,"Jill Paul, Tom Driscoll"
+orng-04,2013,Allen Hurlbert,NA,NA,Allen Hurlbert
+orng-04,2014,Allen Hurlbert,NA,NA,Allen Hurlbert
+orng-04,2015,Allen Hurlbert,NA,NA,Allen Hurlbert
+orng-04,2016,Allen Hurlbert,NA,NA,Allen Hurlbert
+orng-04,2017,Allen Hurlbert,NA,NA,Allen Hurlbert
+orng-04,2018,Allen Hurlbert,Grace Di Cecco,Allison Duprey,"Allen Hurlbert, Allison Duprey, Grace Di Cecco"
+orng-04,2019,Allen Hurlbert,Sarah Pollack,NA,"Allen Hurlbert, Sarah Pollack"
+orng-04,2020,Allen Hurlbert,NA,NA,Allen Hurlbert
+orng-04,2021,Allen Hurlbert,NA,NA,Allen Hurlbert
+orng-04,2022,Allen Hurlbert,Ashley Moore,Ellen Weaver,"Allen Hurlbert, Ashley Moore, Ellen Weaver"
+orng-04,2023,Allen Hurlbert,NA,NA,Allen Hurlbert
+orng-04,2024,Allen Hurlbert,NA,NA,Allen Hurlbert
+orng-04,2025,Allen Hurlbert,Ivara Goulden,Benjamin Acosta,"Allen Hurlbert, Benjamin Acosta, Ivara Goulden"
+orng-05,1999,Will Cook,NA,NA,Will Cook
+orng-05,2000,Will Cook,NA,NA,Will Cook
+orng-05,2001,Will Cook,NA,NA,Will Cook
+orng-05,2002,Will Cook,NA,NA,Will Cook
+orng-05,2003,Will Cook,NA,NA,Will Cook
+orng-05,2004,Will Cook,NA,NA,Will Cook
+orng-05,2005,Will Cook,NA,NA,Will Cook
+orng-05,2006,Will Cook,NA,NA,Will Cook
+orng-05,2007,Will Cook,NA,NA,Will Cook
+orng-05,2008,Will Cook,NA,NA,Will Cook
+orng-05,2009,Will Cook,NA,NA,Will Cook
+orng-05,2010,Will Cook,Catherine Anderson,NA,"Catherine Anderson, Will Cook"
+orng-05,2011,Will Cook,Catherine Carter,NA,"Catherine Carter, Will Cook"
+orng-05,2012,Will Cook,NA,NA,Will Cook
+orng-05,2013,Will Cook,NA,NA,Will Cook
+orng-05,2014,Will Cook,NA,NA,Will Cook
+orng-05,2015,Will Cook,NA,NA,Will Cook
+orng-05,2016,Will Cook,NA,NA,Will Cook
+orng-05,2017,Will Cook,NA,NA,Will Cook
+orng-05,2018,Will Cook,NA,NA,Will Cook
+orng-05,2019,Will Cook,NA,NA,Will Cook
+orng-05,2020,Will Cook,NA,NA,Will Cook
+orng-05,2021,Will Cook,NA,NA,Will Cook
+orng-05,2022,Will Cook,NA,NA,Will Cook
+orng-05,2023,Will Cook,NA,NA,Will Cook
+orng-05,2024,Will Cook,NA,NA,Will Cook
+orng-05,2025,Will Cook,NA,NA,Will Cook
+orng-06,1999,Judy Murray,Robin Moran,NA,"Judy Murray, Robin Moran"
+orng-06,2000,Judy Murray,Robin Moran,NA,"Judy Murray, Robin Moran"
+orng-06,2001,Judy Murray,Robin Moran,NA,"Judy Murray, Robin Moran"
+orng-06,2002,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2003,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2004,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2005,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2006,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2007,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2008,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2009,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2010,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2011,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2012,Judy Murray,Robin Moran,NA,"Judy Murray, Robin Moran"
+orng-06,2013,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2014,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2015,Judy Murray,NA,NA,Judy Murray
+orng-06,2016,Robin Moran,Judy Murray,NA,"Judy Murray, Robin Moran"
+orng-06,2017,Judy Murray,Robin Moran,NA,"Judy Murray, Robin Moran"
+orng-06,2019,Karen Hogan,Robin Moran,NA,"Karen Hogan, Robin Moran"
+orng-06,2020,Karen Hogan,Mark Hogan,NA,"Karen Hogan, Mark Hogan"
+orng-06,2021,Karen Hogan,NA,NA,Karen Hogan
+orng-06,2022,Karen Hogan,NA,NA,Karen Hogan
+orng-06,2023,Karen Hogan,NA,NA,Karen Hogan
+orng-06,2024,Karen Hogan,NA,NA,Karen Hogan
+orng-06,2025,Karen Hogan,NA,NA,Karen Hogan
+orng-07,1999,Betty King,NA,NA,Betty King
+orng-07,2000,Betty King,NA,NA,Betty King
+orng-07,2001,Betty King,NA,NA,Betty King
+orng-07,2002,Betty King,NA,NA,Betty King
+orng-07,2003,Betty King,NA,NA,Betty King
+orng-07,2004,Betty King,NA,NA,Betty King
+orng-07,2005,Betty King,NA,NA,Betty King
+orng-07,2006,Betty King,NA,NA,Betty King
+orng-07,2007,Betty King,NA,NA,Betty King
+orng-07,2008,Betty King,NA,NA,Betty King
+orng-07,2009,Betty King,NA,NA,Betty King
+orng-07,2010,Betty King,NA,NA,Betty King
+orng-07,2011,Betty King,NA,NA,Betty King
+orng-07,2012,Betty King,NA,NA,Betty King
+orng-07,2014,Brian Bockhahn,NA,NA,Brian Bockhahn
+orng-07,2015,Brian Bockhahn,NA,NA,Brian Bockhahn
+orng-07,2016,Brian Bockhahn,NA,NA,Brian Bockhahn
+orng-07,2017,Brian Bockhahn,NA,NA,Brian Bockhahn
+orng-07,2018,Brian Bockhahn,NA,NA,Brian Bockhahn
+orng-07,2019,Brian Bockhahn,NA,NA,Brian Bockhahn
+orng-07,2020,Brian Bockhahn,NA,NA,Brian Bockhahn
+orng-07,2021,Brian Bockhahn,NA,NA,Brian Bockhahn
+orng-07,2022,Brian Bockhahn,NA,NA,Brian Bockhahn
+orng-07,2023,Brian Bockhahn,NA,NA,Brian Bockhahn
+orng-07,2024,Brian Bockhahn,NA,NA,Brian Bockhahn
+orng-07,2025,Marc Howlett,Laurie Howlett,Ezra Howlett,"Ezra Howlett, Laurie Howlett, Marc Howlett"
+orng-08,1999,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2000,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2001,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2002,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2003,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2004,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2005,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2006,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2007,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2008,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2009,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2010,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2011,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2012,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2013,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2014,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2015,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2016,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2017,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2018,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2019,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2020,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2021,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2022,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2023,Barb Brooks,NA,NA,Barb Brooks
+orng-08,2024,Barb Brooks,William Mackin,NA,"Barb Brooks, William Mackin"
+orng-08,2025,Barb Brooks,Will Mackin,NA,"Barb Brooks, Will Mackin"
+orng-09,1999,Shantanu Phukan,T. Williams,NA,"Shantanu Phukan, T. Williams"
+orng-09,2000,Sandy Cash,NA,NA,Sandy Cash
+orng-09,2001,Shantanu Phukan,NA,NA,Shantanu Phukan
+orng-09,2002,Shantanu Phukan,Alan Johnston,NA,"Alan Johnston, Shantanu Phukan"
+orng-09,2003,Shantanu Phukan,NA,NA,Shantanu Phukan
+orng-09,2004,Shantanu Phukan,NA,NA,Shantanu Phukan
+orng-09,2005,Shantanu Phukan,NA,NA,Shantanu Phukan
+orng-09,2006,?,NA,NA,?
+orng-09,2007,?,NA,NA,?
+orng-09,2008,?,NA,NA,?
+orng-09,2009,?,NA,NA,?
+orng-09,2011,David Curtin,NA,NA,David Curtin
+orng-09,2012,David Curtin,NA,NA,David Curtin
+orng-09,2013,David Curtin,NA,NA,David Curtin
+orng-09,2014,David Curtin,NA,NA,David Curtin
+orng-09,2015,David Curtin,NA,NA,David Curtin
+orng-09,2016,David Curtin,NA,NA,David Curtin
+orng-09,2019,Karen Hogan,Mark Hogan,NA,"Karen Hogan, Mark Hogan"
+orng-09,2020,Karen Hogan,Mark Hogan,NA,"Karen Hogan, Mark Hogan"
+orng-09,2021,Karen Hogan,NA,NA,Karen Hogan
+orng-09,2022,Karen Hogan,NA,NA,Karen Hogan
+orng-09,2023,Karen Hogan,NA,NA,Karen Hogan
+orng-09,2024,Karen Hogan,NA,NA,Karen Hogan
+orng-09,2025,Karen Hogan,NA,NA,Karen Hogan
+orng-10,1999,Will Cook,NA,NA,Will Cook
+orng-10,2000,Will Cook,NA,NA,Will Cook
+orng-10,2001,Will Cook,NA,NA,Will Cook
+orng-10,2002,Will Cook,NA,NA,Will Cook
+orng-10,2003,Will Cook,NA,NA,Will Cook
+orng-10,2004,Will Cook,NA,NA,Will Cook
+orng-10,2005,Will Cook,Doug Shadwick,NA,"Doug Shadwick, Will Cook"
+orng-10,2006,Doug Shadwick,NA,NA,Doug Shadwick
+orng-10,2007,Doug Shadwick,NA,NA,Doug Shadwick
+orng-10,2008,Doug Shadwick,NA,NA,Doug Shadwick
+orng-10,2009,Doug Shadwick,NA,NA,Doug Shadwick
+orng-10,2012,Nathan Swick,NA,NA,Nathan Swick
+orng-10,2013,Nathan Swick,NA,NA,Nathan Swick
+orng-10,2016,Barb Brooks,NA,NA,Barb Brooks
+orng-10,2017,Barb Brooks,NA,NA,Barb Brooks
+orng-10,2018,Barb Brooks,NA,NA,Barb Brooks
+orng-10,2019,Vern Bothwell,Nan Dewire,NA,"Nan Dewire, Vern Bothwell"
+orng-10,2020,Vern Bothwell,NA,NA,Vern Bothwell
+orng-10,2021,Vern Bothwell,NA,NA,Vern Bothwell
+orng-10,2023,Allen Hurlbert,NA,NA,Allen Hurlbert
+orng-10,2024,Paul Taillie,NA,NA,Paul Taillie
+orng-10,2025,Paul Taillie,NA,NA,Paul Taillie
+orng-11,1999,Marsha Stephens,NA,NA,Marsha Stephens
+orng-11,2000,Marsha Stephens,NA,NA,Marsha Stephens
+orng-11,2001,Marsha Stephens,NA,NA,Marsha Stephens
+orng-11,2002,Marsha Stephens,NA,NA,Marsha Stephens
+orng-11,2003,Marsha Stephens,NA,NA,Marsha Stephens
+orng-11,2004,Marsha Stephens,NA,NA,Marsha Stephens
+orng-11,2005,Marsha Stephens,NA,NA,Marsha Stephens
+orng-11,2006,Marsha Stephens,NA,NA,Marsha Stephens
+orng-11,2007,?,NA,NA,?
+orng-11,2008,?,NA,NA,?
+orng-11,2009,?,NA,NA,?
+orng-11,2012,Ali Iyoob,NA,NA,Ali Iyoob
+orng-11,2017,Loren Hintz,NA,NA,Loren Hintz
+orng-11,2018,Loren Hintz,NA,NA,Loren Hintz
+orng-11,2019,Loren Hintz,NA,NA,Loren Hintz
+orng-11,2020,Loren Hintz,NA,NA,Loren Hintz
+orng-11,2021,Loren Hintz,NA,NA,Loren Hintz
+orng-11,2022,Loren Hintz,Margaret Vimmerstedt,NA,"Loren Hintz, Margaret Vimmerstedt"
+orng-11,2023,Suzanne Roberts,Vicki Nebes,NA,"Suzanne Roberts, Vicki Nebes"
+orng-11,2024,Suzanne Roberts,Vicki Nebes,NA,"Suzanne Roberts, Vicki Nebes"
+orng-11,2025,Suzanne Roberts,NA,NA,Suzanne Roberts
+orng-12,1999,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2000,NA,Haven Wiley,NA,Haven Wiley
+orng-12,2001,NA,Haven Wiley,NA,Haven Wiley
+orng-12,2002,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2003,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2004,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2005,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2006,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2007,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2008,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2009,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2010,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2011,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2012,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2013,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2014,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2015,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2016,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2017,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2018,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2019,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2020,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2021,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2022,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2023,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2024,Haven Wiley,NA,NA,Haven Wiley
+orng-12,2025,Haven Wiley,Minna Wiley,NA,"Haven Wiley, Minna Wiley"
