@@ -26,6 +26,12 @@ get_ebird_taxonomy <- function(path = config$taxonomy_data_dir) {
         common_name == "Accipitrine hawk sp. (former Accipiter sp.)" ~
           "Accipitrine hawk sp.",
         TRUE ~ common_name
+        ),
+      sci_name = dplyr::case_when(
+        #unidentified Accipitrine hawks on the MBBS are only either Sharp-Shinned or Cooper's Hawks
+        sci_name == "Aerospiza/Tachyspiza/Accipiter/Astur sp." ~
+          "Accipiter striatus/Astur cooperii", 
+        TRUE ~ sci_name
       )
     )
 }
