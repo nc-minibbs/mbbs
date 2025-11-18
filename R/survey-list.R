@@ -257,7 +257,7 @@ convert_based_on_observer_table <- function(ebird_surveys, config) {
   observer_table <- read.csv(config$observer_conversion_table, header = TRUE)
 
   # convert names to the observer table's output_name (eg, correct typos)
-  ebird_surveys2 <- ebird_surveys %>%
+  ebird_surveys <- ebird_surveys %>%
     left_join(observer_table, by = c("obs1" = "input_name")) %>%
     mutate(obs1 = output_name) %>%
     dplyr::select(-output_name) %>%
