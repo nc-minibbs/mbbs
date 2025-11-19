@@ -18,9 +18,7 @@ test_that("survey_list has no rows with NA observers", {
   )
 })
 
-test_that("survey_list handles a new row as expected", {
-
-})
+test_that("survey_list handles a new row as expected", {})
 
 # test_that("update_observer_table runs without error", {
 #

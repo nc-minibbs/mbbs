@@ -120,11 +120,12 @@ read_transcribed_csv <- function(filepath = "inst/stop-level/transcribed_paper_f
 #' @param source2 character
 #' @param overlap the list of who transcribed which files
 tpaper_find_mismatches <- function(
-    df1 = read.csv("inst/stop-level/transcribed_paper_files/transcribed_paper_files_GEL.csv"),
-    df2 = read.csv("inst/stop-level/transcribed_paper_files/transcribed_paper_files_ADS.csv"),
-    source1 = "GEL",
-    source2 = "ADS",
-    overlap = read.csv(config$transcribed_paper_list)) {
+  df1 = read.csv("inst/stop-level/transcribed_paper_files/transcribed_paper_files_GEL.csv"),
+  df2 = read.csv("inst/stop-level/transcribed_paper_files/transcribed_paper_files_ADS.csv"),
+  source1 = "GEL",
+  source2 = "ADS",
+  overlap = read.csv(config$transcribed_paper_list)
+) {
   # filter only to the rows where we expect overlap
   overlap <- overlap %>%
     # pick out just the columns we need, including the columns "transcribed_by_SOURCE1|2"
@@ -182,11 +183,12 @@ tpaper_find_mismatches <- function(
 #' @param source2 character
 #' @param overlap the list of who transcribed which files
 tpaper_find_overlap <- function(
-    df1 = read.csv("inst/stop-level/transcribed_paper_files/transcribed_paper_files_GEL.csv"),
-    df2 = read.csv("inst/stop-level/transcribed_paper_files/transcribed_paper_files_ADS.csv"),
-    source1 = "GEL",
-    source2 = "ADS",
-    overlap = read.csv(config$transcribed_paper_list)) {
+  df1 = read.csv("inst/stop-level/transcribed_paper_files/transcribed_paper_files_GEL.csv"),
+  df2 = read.csv("inst/stop-level/transcribed_paper_files/transcribed_paper_files_ADS.csv"),
+  source1 = "GEL",
+  source2 = "ADS",
+  overlap = read.csv(config$transcribed_paper_list)
+) {
   # filter only to the rows where we expect overlap between the two dfs
   overlap <- overlap %>%
     # pick out just the columns we need, including the columns "transcribed_by_SOURCE1|2"

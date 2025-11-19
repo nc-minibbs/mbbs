@@ -189,14 +189,18 @@ confirm_observer_NA <- function(ebird_surveys) {
 update_observer_table <- function(ebird_surveys, config, save = TRUE) {
   observer_table <- read.csv(config$observer_conversion_table, header = TRUE)
 
-  # get new names from ebird_surveys
+  # get potential new names from the new ebird_surveys
   obs_list <- c(
     ebird_surveys$obs1,
     ebird_surveys$obs2,
     ebird_surveys$obs3
   )
 
+  # keep only the unique, non NA potential new names
   obs_list <- unique(obs_list[!is.na(obs_list)])
+
+  # keep only the names that aren't already on the observer table
+  obs_list <- obs_list[!obs_list %in% observer_table$input_name]
 
   # if there are no new names, end the function
   if (length(obs_list) == 0) {
@@ -253,7 +257,7 @@ convert_based_on_observer_table <- function(ebird_surveys, config) {
   observer_table <- read.csv(config$observer_conversion_table, header = TRUE)
 
   # convert names to the observer table's output_name (eg, correct typos)
-  ebird_surveys2 <- ebird_surveys %>%
+  ebird_surveys <- ebird_surveys %>%
     left_join(observer_table, by = c("obs1" = "input_name")) %>%
     mutate(obs1 = output_name) %>%
     dplyr::select(-output_name) %>%
