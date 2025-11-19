@@ -198,11 +198,11 @@ update_observer_table <- function(ebird_surveys, config, save = TRUE) {
 
   # keep only the unique, non NA potential new names
   obs_list <- unique(obs_list[!is.na(obs_list)])
-  
+
   # keep only the names that aren't already on the observer table
   obs_list <- obs_list[!obs_list %in% observer_table$input_name]
 
-  # if there are no new names, end the function 
+  # if there are no new names, end the function
   if (length(obs_list) == 0) {
     logger::log_info(
       paste(
