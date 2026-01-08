@@ -3,7 +3,7 @@
 \name{create_stop_survey_list}
 \alias{create_stop_survey_list}
 \title{Name of function is temporary, should pick a better one
-Returns a list of recording every stop+route+year combo that we 
+Returns a list of recording every stop+route+year combo that we
 have data for. Also has locations of stop and if that has changed
 between years when location data is available}
 \usage{
@@ -11,7 +11,7 @@ create_stop_survey_list(locations, stop_level_counts)
 }
 \description{
 Name of function is temporary, should pick a better one
-Returns a list of recording every stop+route+year combo that we 
+Returns a list of recording every stop+route+year combo that we
 have data for. Also has locations of stop and if that has changed
 between years when location data is available
 }
