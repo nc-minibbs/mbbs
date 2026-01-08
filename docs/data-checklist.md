@@ -183,7 +183,11 @@ Leave a note about the county, route, year, and why the checklist was excluded.
 If everything's gone well,
 we've now updated the mbbs datasets with the new year's info.
 
-## STEP 5: Update the version number
+## STEP 5: Update docs
+
+If you changed any functions, update the documentation with `devtools::document()`
+
+## STEP 6: Update the version number
 
 Once you've confirmed that the update is running smoothly locally,
 update the version number in the DESCRIPTION file.
@@ -192,7 +196,7 @@ You will also need to update the version number in the git tags for an official 
 Example:
 `git tag -a 2024.1 -m "version 2024.1"`
 
-## STEP 6: Push update to github
+## STEP 7: Push update to github
 
 Push your commits to github. Push the tag as well with `git push --tags`
 
