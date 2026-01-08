@@ -5,9 +5,9 @@
 # name is temporary
 #------------------------------------------------------------------------------#
 
-# get data from the $stop_counts
-# left join the ebird locations data
-
+#' get data from the $stop_counts
+#' left join the ebird locations data
+#' called in ebird_import
 locations_workflow <- function(df) {
   df |>
     get_ebird_locations() |>
@@ -53,12 +53,13 @@ check_location_displacement <- function(df, file = config$stop_coordinates) {
     arrange(route, stop_num, year) |>
     mutate(
       dist_displaced_m = distHaversine(c(lat, lon), c(dplyr::lag(lat), dplyr::lag(lon))),
-      flag_for_change = dplyr::case_when(
+      flag_stop_displaced = dplyr::case_when(
         is.na(dist_displaced_m) == TRUE ~ NA,
         is.na(dist_displaced_m) == FALSE & dist_displaced_m > 100 ~ TRUE,
         is.na(dist_displaced_m) == FALSE & dist_displaced_m <= 100 ~ FALSE
       )
-    )
+    ) %>%
+    ungroup()
 }
 
 #' Compute distance between two points on the globe
