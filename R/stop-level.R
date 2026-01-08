@@ -64,22 +64,4 @@ run_process_species_comments <- function() {
 }
 
 
-# we will...worry about this later
-add_stop_one <- function(mbbs) {
-  # better way to do this would be to select routes with any stop_nums filled in, and then filter for that county,route,year within a filter x %in% y$x
 
-  missing_stop_one <-
-    mbbs %>%
-    group_by(mbbs_county, route_num, year) %>%
-    summarize(sum_stop_num = sum(unique(stop_num), na.rm = TRUE)) %>%
-    # the sum(1:20) adds up to 210, routes with sum(unique(stop_num)) == 209 are missing only the first stop.
-    filter(sum_stop_num == 209)
-
-  c <-
-    mbbs %>%
-    filter(route_num %in% missing_stop_one$route_num &
-      mbbs_county %in% missing_stop_one$mbbs_county &
-      year %in% missing_stop_one$year)
-
-  # this is not giving the correct information.
-}
