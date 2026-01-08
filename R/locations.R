@@ -5,9 +5,9 @@
 # name is temporary
 #------------------------------------------------------------------------------#
 
-# get data from the $stop_counts
-# left join the ebird locations data
-
+#' get data from the $stop_counts
+#' left join the ebird locations data
+#' called in ebird_import
 locations_workflow <- function(df) {
   df |>
     get_ebird_locations() |>
@@ -22,7 +22,7 @@ locations_workflow <- function(df) {
 create_stop_survey_list <- function(locations, stop_level_counts) {
   stop_level_counts |>
     # keep only unique route stop info
-    dplyr::distinct(year, county, route, route_num, stop_num, source) |>
+    dplyr::distinct(year, route, stop_num, source) |>
     # left-join lat/lon information
     left_join(locations, by = c("year", "route", "stop_num"))
 }
@@ -52,13 +52,14 @@ check_location_displacement <- function(df, file = config$stop_coordinates) {
     group_by(route, stop_num) |>
     arrange(route, stop_num, year) |>
     mutate(
-      distance_m = distHaversine(c(lat, lon), c(dplyr::lag(lat), dplyr::lag(lon))),
-      flag_for_change = dplyr::case_when(
-        is.na(distance_m) == TRUE ~ NA,
-        is.na(distance_m) == FALSE & distance_m > 100 ~ TRUE,
-        is.na(distance_m) == FALSE & distance_m <= 100 ~ FALSE
+      dist_displaced_m = distHaversine(c(lat, lon), c(dplyr::lag(lat), dplyr::lag(lon))),
+      flag_stop_displaced = dplyr::case_when(
+        is.na(dist_displaced_m) == TRUE ~ NA,
+        is.na(dist_displaced_m) == FALSE & dist_displaced_m > 100 ~ TRUE,
+        is.na(dist_displaced_m) == FALSE & dist_displaced_m <= 100 ~ FALSE
       )
-    )
+    ) %>%
+    ungroup()
 }
 
 #' Compute distance between two points on the globe
