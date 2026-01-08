@@ -22,7 +22,7 @@ locations_workflow <- function(df) {
 create_stop_survey_list <- function(locations, stop_level_counts) {
   stop_level_counts |>
     # keep only unique route stop info
-    dplyr::distinct(year, county, route, route_num, stop_num, source) |>
+    dplyr::distinct(year, route, stop_num, source) |>
     # left-join lat/lon information
     left_join(locations, by = c("year", "route", "stop_num"))
 }
@@ -52,11 +52,11 @@ check_location_displacement <- function(df, file = config$stop_coordinates) {
     group_by(route, stop_num) |>
     arrange(route, stop_num, year) |>
     mutate(
-      distance_m = distHaversine(c(lat, lon), c(dplyr::lag(lat), dplyr::lag(lon))),
+      dist_displaced_m = distHaversine(c(lat, lon), c(dplyr::lag(lat), dplyr::lag(lon))),
       flag_for_change = dplyr::case_when(
-        is.na(distance_m) == TRUE ~ NA,
-        is.na(distance_m) == FALSE & distance_m > 100 ~ TRUE,
-        is.na(distance_m) == FALSE & distance_m <= 100 ~ FALSE
+        is.na(dist_displaced_m) == TRUE ~ NA,
+        is.na(dist_displaced_m) == FALSE & dist_displaced_m > 100 ~ TRUE,
+        is.na(dist_displaced_m) == FALSE & dist_displaced_m <= 100 ~ FALSE
       )
     )
 }
