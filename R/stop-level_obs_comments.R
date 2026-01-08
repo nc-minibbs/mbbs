@@ -154,21 +154,27 @@ pad_or_truncate <- \(x, subid, common_name) {
   `if`(
     length(x) == 19,
     {
-      logger::log_error(
-        "{subid} {common_name}: observation details parsed to length == 19."
-      )
-      logger::log_trace("{subid} {common_name}: 0 count added add at stop 20")
+    # LOG CALL REMOVED: we won't be updating/modifying these data further, no
+    # longer need to give error when obs details only parse to length 19.
+    # all cases that could be fixed have been handled.
+    #  logger::log_error(
+    #    "{subid} {common_name}: observation details parsed to length == 19."
+    #  )
+    #  logger::log_trace("{subid} {common_name}: 0 count added add at stop 20")
       c(x, "")
     },
     `if`(
       length(x) > 20,
       {
-        logger::log_error(
-          "{subid} {common_name}: observation details parsed to length > 20."
-        )
-        logger::log_trace(
-          "{subid} {common_name}: counts truncated at first 20 stops"
-        )
+        # LOG CALL REMOVED: we won't be updating/modifying these data further, no
+        # longer need to give error obs details > length 20.
+        # all cases that could be fixed have been handled.
+        #logger::log_error(
+        #  "{subid} {common_name}: observation details parsed to length > 20."
+        #)
+        #logger::log_trace(
+        #  "{subid} {common_name}: counts truncated at first 20 stops"
+        #)
         x[1:20]
       },
       x
