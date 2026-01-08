@@ -62,6 +62,3 @@ run_process_species_comments <- function() {
 
   write.csv(species_comments, "inst/extdata/stop_level_species_comments.csv", row.names = FALSE)
 }
-
-
-
