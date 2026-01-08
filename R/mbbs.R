@@ -52,9 +52,9 @@ create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
       )
 
       # Check that there are not duplicate entries with different counts
-# LOG CALL REMOVED: we won't be updating/modifying these data further. 
-# Surveys with differing counts from different sources are assigned the 'true' 
-# values based on handling detailed in docs/data_pipeline. 
+      # LOG CALL REMOVED: we won't be updating/modifying these data further.
+      # Surveys with differing counts from different sources are assigned the 'true'
+      # values based on handling detailed in docs/data_pipeline.
       # df |>
       #   dplyr::group_by(year, route, stop_num, common_name) |>
       #   dplyr::summarise(
@@ -75,25 +75,25 @@ create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
       #   })()
 
       # Log number of duplicate entries with the same count
-    # LOG CALL REMOVED: we won't be updating/modifying these data further.
-    # No longer need to know how many stop-level data entries had duplicates
-    # from two or more sources. 
-    #   df |>
-    #     dplyr::distinct(year, route, stop_num, common_name, count,
-    #       .keep_all = TRUE
-    #     ) |>
-    #     (\(x) {
-    #       logger::log_info(
-    #         paste(
-    #           "Stop-level data contains",
-    #           "{nrow(df) - nrow(x)} duplicated observations",
-    #           "(same count, different sources)"
-    #         )
-    #       )
-    #     })()
-    # 
-       df
-     })()
+      # LOG CALL REMOVED: we won't be updating/modifying these data further.
+      # No longer need to know how many stop-level data entries had duplicates
+      # from two or more sources.
+      #   df |>
+      #     dplyr::distinct(year, route, stop_num, common_name, count,
+      #       .keep_all = TRUE
+      #     ) |>
+      #     (\(x) {
+      #       logger::log_info(
+      #         paste(
+      #           "Stop-level data contains",
+      #           "{nrow(df) - nrow(x)} duplicated observations",
+      #           "(same count, different sources)"
+      #         )
+      #       )
+      #     })()
+      #
+      df
+    })()
 }
 
 #' Main function to create stop level count dataset
@@ -225,21 +225,21 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
       x
     })() |>
     dplyr::filter(diff != 0) #|>
-  # LOG CALL REMOVED: we won't be updating/modifying these data further. 
+  # LOG CALL REMOVED: we won't be updating/modifying these data further.
   # Surveys with differing counts from different sources are assigned the 'true'
-  # values based on handling detailed in docs/data_pipeline. 
-    #(\(x) {
-    #  if (nrow(x) > 0) {
-    #    logger::log_warn(
-    #      paste(
-    #        "{x$year}-{x$route} had",
-    #        "{x$scount} {x$common_name} aggregrated in stop_level",
-    #        "{x$source}",
-    #        "but {x$rcount} in the ebird checklist."
-    #      )
-    #    )
-    #  }
-    #})()
+  # values based on handling detailed in docs/data_pipeline.
+  # (\(x) {
+  #  if (nrow(x) > 0) {
+  #    logger::log_warn(
+  #      paste(
+  #        "{x$year}-{x$route} had",
+  #        "{x$scount} {x$common_name} aggregrated in stop_level",
+  #        "{x$source}",
+  #        "but {x$rcount} in the ebird checklist."
+  #      )
+  #    )
+  #  }
+  # })()
 
   logger::log_trace("Getting ebird data without stop-level information")
   ebird_no_stop <- ebird |>
