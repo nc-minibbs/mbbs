@@ -188,10 +188,15 @@ we've now updated the mbbs datasets with the new year's info.
 Once you've confirmed that the update is running smoothly locally,
 update the version number in the DESCRIPTION file.
 
+You will also need to update the version number in the git tags for an official release.
+Example:
+`git tag -a 2024.1 -m "version 2024.1"`
+
 ## STEP 6: Push update to github
 
-Push your commits to github.
+Push your commits to github. Push the tag as well with `git push --tags`
 
-The data available for download on the website will be automatically updated.
+The data available for download on the website will be automatically updated,
+and the github release will also note the latest version.
 Download it and check that the latest year of data is available in the dataset.
 Voilà!
