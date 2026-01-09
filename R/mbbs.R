@@ -50,42 +50,6 @@ create_stop_level_counts_0 <- function(ebird, taxonomy, config = config) {
         !anyNA(df$stop_num),
         msg = "Stop data has NA values in stop_num."
       )
-
-      # Check that there are not duplicate entries with different counts
-      df |>
-        dplyr::group_by(year, route, stop_num, common_name) |>
-        dplyr::summarise(
-          n = dplyr::n(),
-          distinctcounts = n_distinct(count),
-          sources = paste(source, collapse = " & ")
-        ) |>
-        dplyr::filter(n > 1 & distinctcounts > 1) |>
-        (\(x) {
-          logger::log_error(
-            paste(
-              "Route {x$route}-{x$stop_num} has multiple entries",
-              "with differing counts",
-              "for {x$common_name}",
-              "in {x$year} coming from {x$sources}"
-            )
-          )
-        })()
-
-      # Log number of duplicate entries with the same count
-      df |>
-        dplyr::distinct(year, route, stop_num, common_name, count,
-          .keep_all = TRUE
-        ) |>
-        (\(x) {
-          logger::log_info(
-            paste(
-              "Stop-level data contains",
-              "{nrow(df) - nrow(x)} duplicated observations",
-              "(same count, different sources)"
-            )
-          )
-        })()
-
       df
     })()
 }
@@ -217,19 +181,6 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
         )
       )
       x
-    })() |>
-    dplyr::filter(diff != 0) |>
-    (\(x) {
-      if (nrow(x) > 0) {
-        logger::log_warn(
-          paste(
-            "{x$year}-{x$route} had",
-            "{x$scount} {x$common_name} aggregrated in stop_level",
-            "{x$source}",
-            "but {x$rcount} in the ebird checklist."
-          )
-        )
-      }
     })()
 
   logger::log_trace("Getting ebird data without stop-level information")

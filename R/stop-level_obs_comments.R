@@ -154,21 +154,11 @@ pad_or_truncate <- \(x, subid, common_name) {
   `if`(
     length(x) == 19,
     {
-      logger::log_error(
-        "{subid} {common_name}: observation details parsed to length == 19."
-      )
-      logger::log_trace("{subid} {common_name}: 0 count added add at stop 20")
       c(x, "")
     },
     `if`(
       length(x) > 20,
       {
-        logger::log_error(
-          "{subid} {common_name}: observation details parsed to length > 20."
-        )
-        logger::log_trace(
-          "{subid} {common_name}: counts truncated at first 20 stops"
-        )
         x[1:20]
       },
       x
