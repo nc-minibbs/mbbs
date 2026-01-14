@@ -353,7 +353,7 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
       obs1 = readr::col_character(),
       obs2 = readr::col_character(),
       obs3 = readr::col_character(),
-      standardized_observers = readr::col_skip()
+      standardized_observers = readr::col_character()
     )
   )
 
