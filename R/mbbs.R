@@ -404,7 +404,7 @@ create_mbbs_data <- function(.config = config) {
 
   comments <- ebird$comments |>
     arrange(year, route, stop_num) %>%
-    dplyr::select(-obs1, -obs2, -obs3) #corrected versions in surveys.csv
+    dplyr::select(-obs1, -obs2, -obs3) # corrected versions in surveys.csv
 
   list(
     mbbs_stops_counts = counts$stop_level,
