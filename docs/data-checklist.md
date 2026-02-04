@@ -190,7 +190,7 @@ If you changed any functions, update the documentation with `devtools::document(
 ## STEP 6: Update the version number
 
 Once you've confirmed that the update is running smoothly locally,
-update the version number in the DESCRIPTION file.
+update the version number in the DESCRIPTION file and in the CITATION.cff file.
 
 You will also need to update the version number in the git tags for an official release.
 Example:
