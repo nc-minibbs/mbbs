@@ -385,8 +385,8 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
         nstops != 20 ~ TRUE,
         TRUE ~ protocol_violation
       )
-    ) |>
-    select(-nstops)
+    ) 
+  
 }
 
 #' Create the MBBS datasets
@@ -401,6 +401,8 @@ create_mbbs_data <- function(.config = config) {
     .config = .config
   )
   stop_surveys <- create_stop_survey_list(ebird$locations, counts$stop_level)
+  counts$route_level <- counts$route_level %>%
+    dplyr::select(-nstops) #remove as this is duplicated in surveys.csv
 
   comments <- ebird$comments |>
     arrange(year, route, stop_num) %>%
