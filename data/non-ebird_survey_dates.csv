@@ -1,0 +1,246 @@
+year,route,standardized_observers,source,date
+2001,cthm-02,"Michael Schultz, Norman Budnitz",historical,NA
+2003,cthm-03,Haven Wiley,historical,NA
+2004,cthm-03,Haven Wiley,historical,NA
+2005,cthm-03,Haven Wiley,historical,NA
+2006,cthm-03,Haven Wiley,historical,NA
+2007,cthm-03,Haven Wiley,historical,NA
+2008,cthm-03,Haven Wiley,historical,NA
+2009,cthm-03,Haven Wiley,historical,NA
+2002,cthm-04,"Lois Schultz, Michael Schultz",historical,NA
+2003,cthm-04,"Lois Schultz, Michael Schultz",historical,NA
+2004,cthm-04,"Lois Schultz, Michael Schultz",historical,NA
+2006,cthm-04,"Lois Schultz, Michael Schultz",historical,NA
+2007,cthm-04,"Lois Schultz, Michael Schultz",historical,NA
+2003,cthm-05,Haven Wiley,historical,NA
+2004,cthm-05,Haven Wiley,historical,NA
+2005,cthm-05,Haven Wiley,historical,NA
+2006,cthm-05,"Colyer Durovich, Marsha Stephens, Tom Driscoll",historical,NA
+2007,cthm-05,Tom Driscoll,historical,NA
+2008,cthm-05,Tom Driscoll,historical,NA
+2009,cthm-05,"Marsha Stephens, Tom Driscoll",historical,NA
+2002,cthm-06,"Cynthia Fox, Marsha Stephens",historical,NA
+2003,cthm-06,"Cynthia Fox, Marsha Stephens",historical,NA
+2004,cthm-06,"Cynthia Fox, Marsha Stephens",historical,NA
+2005,cthm-06,"Cynthia Fox, Marsha Stephens",historical,NA
+2006,cthm-06,"Cynthia Fox, Marsha Stephens",historical,NA
+2007,cthm-06,"Cynthia Fox, Marsha Stephens",historical,NA
+2008,cthm-06,"Cynthia Fox, Marsha Stephens",historical,NA
+2006,cthm-07,Will Cook,historical,NA
+2002,cthm-08,"Judy Murray, Martha Girolami",historical,NA
+2003,cthm-08,"Judy Murray, Martha Girolami",historical,NA
+2004,cthm-08,"Judy Murray, Martha Girolami",historical,NA
+2005,cthm-08,"Judy Murray, Martha Girolami",historical,NA
+2006,cthm-08,"Judy Murray, Martha Girolami, Pat Reid",historical,NA
+2007,cthm-08,"Judy Murray, Martha Girolami",historical,NA
+2008,cthm-08,"Judy Murray, Martha Girolami",historical,NA
+2009,cthm-08,"Judy Murray, Martha Girolami",historical,NA
+2002,cthm-09,"Lee Van Malssen, Shelley Theye",historical,NA
+2003,cthm-09,"Lee Van Malssen, Shelley Theye",historical,NA
+2005,cthm-09,Shelley Theye,historical,NA
+2006,cthm-09,"Marsha Stephens, Shelley Theye",historical,NA
+2007,cthm-09,Shelley Theye,historical,NA
+2008,cthm-09,Shelley Theye,historical,NA
+2009,cthm-09,Shelley Theye,historical,NA
+2002,cthm-10,Brian Strong,historical,NA
+2003,cthm-10,Brian Strong,historical,NA
+2004,cthm-10,Brian Strong,historical,NA
+2005,cthm-10,Brian Strong,historical,NA
+2006,cthm-10,Brian Strong,historical,NA
+2007,cthm-10,Brian Strong,historical,NA
+2008,cthm-10,Brian Strong,historical,NA
+2009,cthm-10,Brian Strong,historical,NA
+2002,cthm-11,Bob Chase,historical,NA
+2003,cthm-11,Bob Chase,historical,NA
+2005,cthm-11,Bob Chase,historical,NA
+2006,cthm-11,Bob Chase,historical,NA
+2007,cthm-11,Bob Chase,historical,NA
+2008,cthm-11,Bob Chase,historical,NA
+2009,cthm-11,Bob Chase,historical,NA
+2003,cthm-12,"Chris Canfield, Kate Finlayson",historical,NA
+2004,cthm-12,"Chris Canfield, Kate Finlayson",historical,NA
+2005,cthm-12,"Chris Canfield, Kate Finlayson",historical,NA
+2006,cthm-12,"Chris Canfield, Kate Finlayson",historical,NA
+2007,cthm-12,"Chris Canfield, Kate Finlayson",historical,NA
+2008,cthm-12,"Chris Canfield, Kate Finlayson",historical,NA
+2009,cthm-12,"Chris Canfield, Kate Finlayson",historical,NA
+2002,cthm-13,Marsha Stephens,historical,NA
+2003,cthm-13,Marsha Stephens,historical,NA
+2004,cthm-13,Marsha Stephens,historical,NA
+2005,cthm-13,Marsha Stephens,historical,NA
+2006,cthm-13,"HS, JA",historical,NA
+2007,cthm-13,Haven Wiley,historical,NA
+2008,cthm-13,unknown,historical,NA
+2009,cthm-13,unknown,historical,NA
+2001,cthm-14,Kent Fiala,historical,NA
+2002,cthm-14,Kent Fiala,historical,NA
+2003,cthm-14,Kent Fiala,historical,NA
+2004,cthm-14,Kent Fiala,historical,NA
+2005,cthm-14,Kent Fiala,historical,NA
+2006,cthm-14,Kent Fiala,historical,NA
+2007,cthm-14,Kent Fiala,historical,NA
+2008,cthm-14,Kent Fiala,historical,NA
+2009,cthm-14,Kent Fiala,historical,NA
+2002,drhm-01,Judy Murray,historical,NA
+2009,drhm-01,Judy Murray,historical,NA
+2002,drhm-02,Bruce Young,historical,NA
+2003,drhm-02,Bruce Young,historical,NA
+2004,drhm-02,Bruce Young,historical,NA
+2005,drhm-02,Bruce Young,historical,NA
+2006,drhm-02,Bruce Young,historical,NA
+2007,drhm-02,unknown,historical,NA
+2008,drhm-02,unknown,historical,NA
+2009,drhm-02,unknown,historical,NA
+2002,drhm-04,"Jeff Pippen, Julie Rice",historical,NA
+2004,drhm-04,"Jeff Pippen, Julie Rice",historical,NA
+2002,drhm-05,"Alan Johnston, Shantanu Phukan",historical,NA
+2003,drhm-05,"Alan Johnston, Shantanu Phukan",historical,NA
+2004,drhm-05,"Alan Johnston, Sally Johnston",historical,NA
+2005,drhm-05,"Alan Johnston, Denny Dobbin",historical,NA
+2006,drhm-05,"Alan Johnston, Dan Williams",historical,NA
+2007,drhm-05,"Alan Johnston, David Welch",historical,NA
+2008,drhm-05,"Alan Johnston, Bobbie Johnston, Pamela Clark",historical,NA
+2009,drhm-05,"Alan Johnston, Denny Dobbin",historical,NA
+2002,drhm-06,Rick Payne,historical,NA
+2003,drhm-06,Rick Payne,historical,NA
+2004,drhm-06,Rick Payne,historical,NA
+2005,drhm-06,Rick Payne,historical,NA
+2006,drhm-06,Rick Payne,historical,NA
+2007,drhm-06,Rick Payne,historical,NA
+2008,drhm-06,Rick Payne,historical,NA
+2009,drhm-06,Rick Payne,historical,NA
+2002,drhm-07,Brian Strong,historical,NA
+2003,drhm-07,Brian Strong,historical,NA
+2004,drhm-07,Brian Strong,historical,NA
+2005,drhm-07,Brian Strong,historical,NA
+2006,drhm-07,Brian Strong,historical,NA
+2007,drhm-07,Brian Strong,historical,NA
+2008,drhm-07,Brian Strong,historical,NA
+2009,drhm-07,Brian Strong,historical,NA
+2002,drhm-08,Brian Strong,historical,NA
+2003,drhm-08,Brian Bockhahn,historical,NA
+2004,drhm-08,Brian Bockhahn,historical,NA
+2005,drhm-08,Brian Bockhahn,historical,NA
+2006,drhm-08,Brian Bockhahn,historical,NA
+2007,drhm-08,Brian Bockhahn,historical,NA
+2008,drhm-08,Brian Bockhahn,historical,NA
+1999,orng-01,"Barb Brooks, Ginger Travis",historical,NA
+2000,orng-01,"Cathy Packer, Ginger Travis",historical,NA
+2003,orng-01,"Doug Shadwick, Ginger Travis",historical,NA
+1999,orng-02,Barb Brooks,historical,NA
+2000,orng-02,Barb Brooks,historical,NA
+2003,orng-02,Barb Brooks,historical,NA
+1999,orng-03,"Karen Piplani, Kate Finlayson",historical,NA
+2000,orng-03,"Karen Piplani, Kate Finlayson",historical,NA
+2002,orng-03,"Karen Piplani, Kate Finlayson",historical,NA
+2003,orng-03,"Karen Piplani, Kate Finlayson",historical,NA
+1999,orng-04,Kent Fiala,historical,NA
+2000,orng-04,Kent Fiala,historical,NA
+2001,orng-04,Kent Fiala,historical,NA
+2002,orng-04,Kent Fiala,historical,NA
+2003,orng-04,Kent Fiala,historical,NA
+2009,orng-04,Kent Fiala,historical,NA
+1999,orng-06,"Judy Murray, Robin Moran",historical,NA
+2000,orng-06,"Judy Murray, Robin Moran",historical,NA
+2002,orng-06,"Judy Murray, Robin Moran",historical,NA
+2003,orng-06,"Judy Murray, Robin Moran",historical,NA
+1999,orng-07,Betty King,historical,NA
+2000,orng-07,Betty King,historical,NA
+2002,orng-07,Betty King,historical,NA
+2003,orng-07,Betty King,historical,NA
+2006,orng-07,Betty King,historical,NA
+1999,orng-08,Barb Brooks,historical,NA
+2000,orng-08,Barb Brooks,historical,NA
+2002,orng-08,Barb Brooks,historical,NA
+2003,orng-08,Barb Brooks,historical,NA
+1999,orng-09,"Shantanu Phukan, T. Williams",historical,NA
+2000,orng-09,Sandy Cash,historical,NA
+2002,orng-09,"Alan Johnston, Shantanu Phukan",historical,NA
+1999,orng-11,Marsha Stephens,historical,NA
+2000,orng-11,Marsha Stephens,historical,NA
+2002,orng-11,Marsha Stephens,historical,NA
+2003,orng-11,Marsha Stephens,historical,NA
+1999,orng-12,Haven Wiley,historical,NA
+2000,orng-12,Haven Wiley,historical,NA
+2002,orng-12,Haven Wiley,historical,NA
+2003,orng-12,Haven Wiley,historical,NA
+2002,cthm-01,"Marsha Stephens, Patsy Bailey",observer_xls,2002-06-09
+2003,cthm-01,"Marsha Stephens, Patsy Bailey",observer_xls,2003-05-18
+2004,cthm-01,"Marsha Stephens, Patsy Bailey",observer_xls,2004-06-13
+2005,cthm-01,"Marsha Stephens, Patsy Bailey",observer_xls,2005-06-19
+2006,cthm-01,"Marsha Stephens, Patsy Bailey",observer_xls,2006-06-18
+2007,cthm-01,Patsy Bailey,observer_xls,2007-06-17
+2008,cthm-01,Patsy Bailey,observer_xls,2008-05-25
+2009,cthm-01,Patsy Bailey,observer_xls,2009-06-11
+2002,cthm-02,"Michael Schultz, Norman Budnitz",observer_xls,2002-05-26
+2003,cthm-02,"Michael Schultz, Norman Budnitz",observer_xls,2003-06-11
+2004,cthm-02,"Michael Schultz, Norman Budnitz",observer_xls,2004-05-23
+2005,cthm-02,"Michael Schultz, Norman Budnitz",observer_xls,2005-05-22
+2006,cthm-02,"Michael Schultz, Norman Budnitz",observer_xls,2006-06-13
+2007,cthm-02,"Michael Schultz, Norman Budnitz",observer_xls,2007-05-20
+2008,cthm-02,"Michael Schultz, Norman Budnitz",observer_xls,2008-05-25
+2009,cthm-02,"Michael Schultz, Norman Budnitz",observer_xls,2009-05-31
+2005,cthm-04,"Lois Schultz, Michael Schultz",observer_xls,2005-05-30
+2008,cthm-04,"Lois Schultz, Michael Schultz",observer_xls,2008-05-18
+2009,cthm-04,"Lois Schultz, Michael Schultz",observer_xls,2009-06-07
+2002,drhm-03,"Carol Williamson, Norman Budnitz",observer_xls,2002-06-02
+2003,drhm-03,"Carol Williamson, Norman Budnitz",observer_xls,2003-06-22
+2004,drhm-03,"Carol Williamson, Norman Budnitz",observer_xls,2004-06-20
+2005,drhm-03,"Carol Williamson, Norman Budnitz",observer_xls,2005-06-26
+2006,drhm-03,"Carol Williamson, Norman Budnitz",observer_xls,2006-05-28
+2007,drhm-03,"Carol Williamson, Norman Budnitz",observer_xls,2007-05-27
+2008,drhm-03,"Carol Williamson, Norman Budnitz",observer_xls,2008-06-01
+2009,drhm-03,"Carol Williamson, Norman Budnitz",observer_xls,2009-06-21
+2003,drhm-04,"Jeff Pippen, Julie Rice",observer_xls,2003-06-11
+2005,drhm-04,"Jeff Pippen, Julie Rice",observer_xls,2005-06-08
+2006,drhm-04,"Jeff Pippen, Julie Rice",observer_xls,2006-06-17
+2007,drhm-04,Jeff Pippen,observer_xls,2007-06-07
+2008,drhm-04,Jeff Pippen,observer_xls,2008-06-01
+2009,drhm-04,Jeff Pippen,observer_xls,2009-05-30
+2010,drhm-04,Jeff Pippen,observer_xls,2010-06-13
+2000,cthm-01,"Marsha Stephens, Patsy Bailey",transcribed_paper,NA
+2001,cthm-01,"Marsha Stephens, Patsy Bailey",transcribed_paper,NA
+2000,cthm-02,"Michael Schultz, Norman Budnitz",transcribed_paper,NA
+2000,cthm-03,Haven Wiley,transcribed_paper,NA
+2001,cthm-03,Haven Wiley,transcribed_paper,NA
+2002,cthm-03,Haven Wiley,transcribed_paper,NA
+2000,cthm-04,"Lois Schultz, Michael Schultz",transcribed_paper,NA
+2001,cthm-04,"Lois Schultz, Michael Schultz",transcribed_paper,NA
+2000,cthm-05,"Jeff Pippen, Julie Rice",transcribed_paper,NA
+2001,cthm-05,"Jeff Pippen, Julie Rice",transcribed_paper,NA
+2002,cthm-05,Haven Wiley,transcribed_paper,NA
+2000,cthm-06,"Cynthia Fox, Marsha Stephens",transcribed_paper,NA
+2001,cthm-06,"Cynthia Fox, Marsha Stephens",transcribed_paper,NA
+2009,cthm-06,"Cynthia Fox, Marsha Stephens",transcribed_paper,NA
+2000,cthm-08,"Judy Murray, Martha Girolami",transcribed_paper,NA
+2001,cthm-08,"Judy Murray, Martha Girolami",transcribed_paper,NA
+2000,cthm-09,"Lee Van Malssen, Shelley Theye",transcribed_paper,NA
+2001,cthm-09,"Lee Van Malssen, Shelley Theye",transcribed_paper,NA
+2000,cthm-10,Sue Brady,transcribed_paper,NA
+2000,cthm-11,"Bob Chase, M. Graves",transcribed_paper,NA
+2001,cthm-11,"Bob Chase, M. Graves",transcribed_paper,NA
+2000,cthm-12,"Chris Canfield, Kate Finlayson",transcribed_paper,NA
+2001,cthm-12,"Chris Canfield, Kate Finlayson",transcribed_paper,NA
+2002,cthm-12,"Chris Canfield, Kate Finlayson",transcribed_paper,NA
+2000,cthm-13,"Marsha Stephens, Patsy Bailey",transcribed_paper,NA
+2001,cthm-13,Marsha Stephens,transcribed_paper,NA
+2000,cthm-14,Kent Fiala,transcribed_paper,NA
+2003,drhm-01,Judy Murray,transcribed_paper,NA
+2004,drhm-01,Judy Murray,transcribed_paper,NA
+2005,drhm-01,Judy Murray,transcribed_paper,NA
+2006,drhm-01,"Judy Murray, Tom Krakauer",transcribed_paper,NA
+2007,drhm-01,Judy Murray,transcribed_paper,NA
+2008,drhm-01,Judy Murray,transcribed_paper,NA
+2001,orng-01,"Cathy Packer, Ginger Travis",transcribed_paper,NA
+2002,orng-01,"Cathy Packer, Ginger Travis",transcribed_paper,NA
+2001,orng-02,Barb Brooks,transcribed_paper,NA
+2002,orng-02,Barb Brooks,transcribed_paper,NA
+2001,orng-03,"Karen Piplani, Kate Finlayson",transcribed_paper,NA
+2001,orng-06,"Judy Murray, Robin Moran",transcribed_paper,NA
+2001,orng-07,Betty King,transcribed_paper,NA
+2001,orng-08,Barb Brooks,transcribed_paper,NA
+2001,orng-09,Shantanu Phukan,transcribed_paper,NA
+2001,orng-11,Marsha Stephens,transcribed_paper,NA
+2001,orng-12,Haven Wiley,transcribed_paper,NA
+2003,orng-09,Shantanu Phukan,NA,NA
+2012,orng-11,Ali Iyoob,NA,NA
