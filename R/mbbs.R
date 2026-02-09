@@ -249,7 +249,7 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
   logger::log_trace("Combining route level data.")
   dplyr::bind_rows(
     historical |> mutate(source = "historical"),
-    stop_to_route |> mutate(source = "stop-level"),
+    stop_to_route |> mutate(source = source),
     ebird_no_stop |> mutate(source = "ebird")
   ) |>
     # If the route data did not come from a stop level summary,
@@ -329,7 +329,7 @@ create_mbbs_counts <- function(ebird_counts, config) {
 }
 
 #' Create survey data
-create_survey_data <- function(ebird, route_counts, .config = config) {
+create_survey_data <- function(ebird, route_counts, stop_counts, .config = config) {
   # Ensure survey list is up-to-date
   update_survey_list(ebird, config = .config)
 
@@ -359,7 +359,7 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
 
   # Get summaries of counts
   count_summary <- route_counts |>
-    group_by(route, year) |>
+    group_by(route, year, source) |>
     summarise(
       total_species = sum(count > 0),
       total_abundance = sum(count),
@@ -372,20 +372,31 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
       # but cases of violations of > 20 stops are errors
       # that must be fixed earlier in the pipeline,
       # while < 20 stops may be valid violation.
-      nstops = min(nstops)
+      nstops = min(nstops),
     )
 
+  # Get summaries of which routes have stop-level data
+  stop_level_summary <- stop_counts |>
+    dplyr::group_by(year, route) |>
+    dplyr::summarize(
+      stop_level = TRUE
+    )
+  
   # Prepare data for output
   surveys |>
     left_join(count_summary, by = c("route", "year")) |>
     left_join(comments, by = c("route", "year")) |>
+    left_join(stop_level_summary, by = c("route", "year")) |>
     mutate(
       protocol_violation = dplyr::case_when(
         is.na(protocol_violation) ~ FALSE,
         nstops != 20 ~ TRUE,
         TRUE ~ protocol_violation
-      )
-    )
+      ),
+      stop_level = ifelse(is.na(stop_level), FALSE, stop_level)
+    ) |>
+    relocate(route, year, obs1, obs2, obs3, standardized_observers, total_species, total_abundance, date, source, nstops, stop_level, protocol_violation)
+  
 }
 
 #' Create the MBBS datasets
@@ -397,11 +408,14 @@ create_mbbs_data <- function(.config = config) {
   surveys <- create_survey_data(
     ebird = ebird,
     route_counts = counts$route_level,
+    stop_counts = counts$stop_level,
     .config = .config
   )
-  stop_surveys <- create_stop_survey_list(ebird$locations, counts$stop_level)
+  #stop_surveys <- create_stop_survey_list(ebird$locations, counts$stop_level)
   counts$route_level <- counts$route_level %>%
-    dplyr::select(-nstops) # remove as this is duplicated in surveys.csv
+    dplyr::select(-nstops, -source) # remove as this is duplicated in surveys.csv
+  counts$stop_level <- counts$stop_level %>%
+    dplyr::select(-source) # remove as this is duplicated in surveys.csv
 
   comments <- ebird$comments |>
     arrange(year, route, stop_num) %>%
@@ -411,8 +425,8 @@ create_mbbs_data <- function(.config = config) {
     mbbs_stops_counts = counts$stop_level,
     mbbs_route_counts = counts$route_level,
     surveys = surveys,
-    comments = comments,
-    stop_surveys = stop_surveys
+    comments = comments#,
+    #stop_surveys = stop_surveys
   )
 }
 
