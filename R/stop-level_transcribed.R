@@ -86,7 +86,9 @@ update_transcribed_paper <- function() {
     # add taxonomy
     left_join(taxonomy, by = "common_name") %>%
     # remove unnesecary columns
-    dplyr::select(-species_code, )
+    dplyr::select(-species_code, ) %>%
+    # remove any duplicated rows (just in case)
+    dplyr::distinct(mbbs_county, year, route_num, stop_num, count, common_name, sci_name, .keep_all = TRUE)
 
   # write csv
   write.csv(transcribed_paper, config$stop_level_transcribed, row.names = FALSE)
@@ -224,7 +226,6 @@ get_stop_level_transcribed <- function() {
       notes = readr::col_skip(),
       source = readr::col_character(),
       common_name = readr::col_character(),
-      tax_order = readr::col_skip(),
       sci_name = readr::col_skip()
     )
   ) |>
