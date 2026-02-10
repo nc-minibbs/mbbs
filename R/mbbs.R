@@ -356,11 +356,12 @@ create_survey_data <- function(ebird, route_counts, stop_counts, .config = confi
       standardized_observers = readr::col_character()
     )
   ) |>
-    # remove overly protocol-violating surveys for which 
+    # remove overly protocol-violating surveys for which
     # we do not provide count data to end users
-    dplyr::filter(!(route == "orng-09" & year == 2003), # date 07-27
-                  !(route == "orng-11" & year == 2012) # n sp too high
-                  )
+    dplyr::filter(
+      !(route == "orng-09" & year == 2003), # date 07-27
+      !(route == "orng-11" & year == 2012) # n sp too high
+    )
 
   # Get summaries of counts
   count_summary <- route_counts |>
@@ -386,7 +387,7 @@ create_survey_data <- function(ebird, route_counts, stop_counts, .config = confi
     dplyr::summarize(
       stop_level = TRUE
     )
-  
+
   # Get dates for surveys with non-ebird sources
   nebird_dates <- readr::read_csv(
     file = .config$non_ebird_survey_dates,
@@ -396,11 +397,11 @@ create_survey_data <- function(ebird, route_counts, stop_counts, .config = confi
       standardized_observers = readr::col_skip(),
       source = readr::col_skip(),
       date = readr::col_character()
-     )
-    ) |>
+    )
+  ) |>
     rename(nebird_date = date)
-    
-  
+
+
   # Prepare data for output
   surveys |>
     left_join(count_summary, by = c("route", "year")) |>
@@ -422,7 +423,6 @@ create_survey_data <- function(ebird, route_counts, stop_counts, .config = confi
       stop_level = ifelse(is.na(stop_level), FALSE, stop_level)
     ) |>
     relocate(route, year, obs1, obs2, obs3, standardized_observers, total_species, total_abundance, date, source, nstops, stop_level, protocol_violation)
-  
 }
 
 #' Create the MBBS datasets
@@ -437,7 +437,7 @@ create_mbbs_data <- function(.config = config) {
     stop_counts = counts$stop_level,
     .config = .config
   )
-  #stop_surveys <- create_stop_survey_list(ebird$locations, counts$stop_level)
+  # stop_surveys <- create_stop_survey_list(ebird$locations, counts$stop_level)
   counts$route_level <- counts$route_level %>%
     dplyr::select(-nstops, -source) # remove as this is duplicated in surveys.csv
   counts$stop_level <- counts$stop_level %>%
@@ -451,8 +451,8 @@ create_mbbs_data <- function(.config = config) {
     mbbs_stops_counts = counts$stop_level,
     mbbs_route_counts = counts$route_level,
     surveys = surveys,
-    comments = comments#,
-    #stop_surveys = stop_surveys
+    comments = comments # ,
+    # stop_surveys = stop_surveys
   )
 }
 
