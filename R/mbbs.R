@@ -355,7 +355,12 @@ create_survey_data <- function(ebird, route_counts, stop_counts, .config = confi
       obs3 = readr::col_character(),
       standardized_observers = readr::col_character()
     )
-  )
+  ) |>
+    # remove overly protocol-violating surveys for which 
+    # we do not provide count data to end users
+    dplyr::filter(!(route == "orng-09" & year == 2003), # date 07-27
+                  !(route == "orng-11" & year == 2012) # n sp too high
+                  )
 
   # Get summaries of counts
   count_summary <- route_counts |>
@@ -382,11 +387,32 @@ create_survey_data <- function(ebird, route_counts, stop_counts, .config = confi
       stop_level = TRUE
     )
   
+  # Get dates for surveys with non-ebird sources
+  nebird_dates <- readr::read_csv(
+    file = .config$non_ebird_survey_dates,
+    col_types = readr::cols(
+      year = readr::col_number(),
+      route = readr::col_character(),
+      standardized_observers = readr::col_skip(),
+      source = readr::col_skip(),
+      date = readr::col_character()
+     )
+    ) |>
+    rename(nebird_date = date)
+    
+  
   # Prepare data for output
   surveys |>
     left_join(count_summary, by = c("route", "year")) |>
     left_join(comments, by = c("route", "year")) |>
     left_join(stop_level_summary, by = c("route", "year")) |>
+    left_join(nebird_dates, by = c("route", "year")) |>
+    mutate(date = if_else(is.na(date), nebird_date, date)) |>
+    select(-nebird_date) |>
+    # !!!! Missing way to validate date range.
+    # I'm not sure how to use the valid_date_range() function, I keep getting an error
+    # but basically I think that protocol flag should happen here
+    # rather than in making the comments df above
     mutate(
       protocol_violation = dplyr::case_when(
         is.na(protocol_violation) ~ FALSE,

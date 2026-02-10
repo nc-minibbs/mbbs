@@ -44,5 +44,8 @@ config <- list(
 
   ## Files for handling observer standardizations and the survey list
   observer_conversion_table = "data/observer/observer_conversion_table.csv",
-  survey_list = "data/survey_list.csv"
+  survey_list = "data/survey_list.csv",
+  
+  ## File for adding dates to non-ebird surveys
+  non_ebird_survey_dates = "data/non-ebird_survey_dates.csv"
 )
