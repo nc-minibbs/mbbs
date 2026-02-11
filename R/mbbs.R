@@ -378,7 +378,7 @@ create_survey_data <- function(ebird, route_counts, stop_counts, .config = confi
       # but cases of violations of > 20 stops are errors
       # that must be fixed earlier in the pipeline,
       # while < 20 stops may be valid violation.
-      nstops = min(nstops),
+      nstops = min(nstops)
     )
 
   # Get summaries of which routes have stop-level data
