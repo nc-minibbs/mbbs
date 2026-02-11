@@ -249,7 +249,7 @@ create_route_level_counts_0 <- function(ebird, stop_level_data, taxonomy, config
   logger::log_trace("Combining route level data.")
   dplyr::bind_rows(
     historical |> mutate(source = "historical"),
-    stop_to_route |> mutate(source = "stop-level"),
+    stop_to_route |> mutate(source = source),
     ebird_no_stop |> mutate(source = "ebird")
   ) |>
     # If the route data did not come from a stop level summary,
@@ -329,7 +329,7 @@ create_mbbs_counts <- function(ebird_counts, config) {
 }
 
 #' Create survey data
-create_survey_data <- function(ebird, route_counts, .config = config) {
+create_survey_data <- function(ebird, route_counts, stop_counts, .config = config) {
   # Ensure survey list is up-to-date
   update_survey_list(ebird, config = .config)
 
@@ -355,11 +355,17 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
       obs3 = readr::col_character(),
       standardized_observers = readr::col_character()
     )
-  )
+  ) |>
+    # remove overly protocol-violating surveys for which
+    # we do not provide count data to end users
+    dplyr::filter(
+      !(route == "orng-09" & year == 2003), # date 07-27
+      !(route == "orng-11" & year == 2012) # n sp too high
+    )
 
   # Get summaries of counts
   count_summary <- route_counts |>
-    group_by(route, year) |>
+    group_by(route, year, source) |>
     summarise(
       total_species = sum(count > 0),
       total_abundance = sum(count),
@@ -375,17 +381,54 @@ create_survey_data <- function(ebird, route_counts, .config = config) {
       nstops = min(nstops)
     )
 
+  # Get summaries of which routes have stop-level data
+  stop_level_summary <- stop_counts |>
+    dplyr::group_by(year, route) |>
+    dplyr::summarize(
+      stop_level = TRUE
+    )
+
+  # Get dates for surveys with non-ebird sources
+  nebird_dates <- readr::read_csv(
+    file = .config$non_ebird_survey_dates,
+    col_types = readr::cols(
+      year = readr::col_number(),
+      route = readr::col_character(),
+      standardized_observers = readr::col_skip(),
+      source = readr::col_skip(),
+      date = readr::col_character()
+    )
+  ) |>
+    rename(nebird_date = date)
+
+
   # Prepare data for output
   surveys |>
     left_join(count_summary, by = c("route", "year")) |>
     left_join(comments, by = c("route", "year")) |>
+    left_join(stop_level_summary, by = c("route", "year")) |>
+    left_join(nebird_dates, by = c("route", "year")) |>
+    mutate(date = if_else(is.na(date), nebird_date, date)) |>
+    select(-nebird_date) |>
+    # !!!! Missing way to validate date range.
+    # I'm not sure how to use the valid_date_range() function, I keep getting an error
+    # but basically I think that protocol flag should happen here
+    # rather than in making the comments df above
     mutate(
-      protocol_violation = dplyr::case_when(
-        is.na(protocol_violation) ~ FALSE,
-        nstops != 20 ~ TRUE,
-        TRUE ~ protocol_violation
-      )
-    )
+      protocol_violation =
+        dplyr::case_when(
+          # check for valid date
+          !valid_date_range(lubridate::ymd(date)) ~ TRUE,
+          # check for 20 stops
+          nstops != 20 ~ TRUE,
+          # if otherwise protocol violation is unfilled give it FALSE
+          is.na(protocol_violation) ~ FALSE,
+          # if already marked for protocol violation don't change
+          TRUE ~ protocol_violation
+        ),
+      stop_level = ifelse(is.na(stop_level), FALSE, stop_level)
+    ) |>
+    relocate(route, year, obs1, obs2, obs3, standardized_observers, total_species, total_abundance, date, source, nstops, stop_level, protocol_violation)
 }
 
 #' Create the MBBS datasets
@@ -397,11 +440,14 @@ create_mbbs_data <- function(.config = config) {
   surveys <- create_survey_data(
     ebird = ebird,
     route_counts = counts$route_level,
+    stop_counts = counts$stop_level,
     .config = .config
   )
   stop_surveys <- create_stop_survey_list(ebird$locations, counts$stop_level)
   counts$route_level <- counts$route_level %>%
-    dplyr::select(-nstops) # remove as this is duplicated in surveys.csv
+    dplyr::select(-nstops, -source) # remove as this is duplicated in surveys.csv
+  counts$stop_level <- counts$stop_level %>%
+    dplyr::select(-source) # remove as this is duplicated in surveys.csv
 
   comments <- ebird$comments |>
     arrange(year, route, stop_num) %>%
