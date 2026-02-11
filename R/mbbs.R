@@ -417,15 +417,15 @@ create_survey_data <- function(ebird, route_counts, stop_counts, .config = confi
     mutate(
       protocol_violation =
         dplyr::case_when(
-        # check for valid date
-        !valid_date_range(lubridate::ymd(date)) ~ TRUE,
-        # check for 20 stops
-        nstops != 20 ~ TRUE,
-        # if otherwise protocol violation is unfilled give it FALSE
-        is.na(protocol_violation) ~ FALSE,
-        # if already marked for protocol violation don't change
-        TRUE ~ protocol_violation
-      ),
+          # check for valid date
+          !valid_date_range(lubridate::ymd(date)) ~ TRUE,
+          # check for 20 stops
+          nstops != 20 ~ TRUE,
+          # if otherwise protocol violation is unfilled give it FALSE
+          is.na(protocol_violation) ~ FALSE,
+          # if already marked for protocol violation don't change
+          TRUE ~ protocol_violation
+        ),
       stop_level = ifelse(is.na(stop_level), FALSE, stop_level)
     ) |>
     relocate(route, year, obs1, obs2, obs3, standardized_observers, total_species, total_abundance, date, source, nstops, stop_level, protocol_violation)
