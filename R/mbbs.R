@@ -415,9 +415,15 @@ create_survey_data <- function(ebird, route_counts, stop_counts, .config = confi
     # but basically I think that protocol flag should happen here
     # rather than in making the comments df above
     mutate(
-      protocol_violation = dplyr::case_when(
-        is.na(protocol_violation) ~ FALSE,
+      protocol_violation =
+        dplyr::case_when(
+        # check for valid date
+        !valid_date_range(lubridate::ymd(date)) ~ TRUE,
+        # check for 20 stops
         nstops != 20 ~ TRUE,
+        # if otherwise protocol violation is unfilled give it FALSE
+        is.na(protocol_violation) ~ FALSE,
+        # if already marked for protocol violation don't change
         TRUE ~ protocol_violation
       ),
       stop_level = ifelse(is.na(stop_level), FALSE, stop_level)
