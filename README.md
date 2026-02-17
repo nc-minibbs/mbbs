@@ -1,5 +1,6 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/bsaul/mbbs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/bsaul/mbbs/actions/workflows/R-CMD-check.yaml)
+[![DOI](https://zenodo.org/badge/166725320.svg)](https://doi.org/10.5281/zenodo.18674852)
 <!-- badges: end -->
 
 # Mini-Bird Breeding Survey
