@@ -192,6 +192,11 @@ If you changed any functions, update the documentation with `devtools::document(
 Once you've confirmed that the update is running smoothly locally,
 update the version number in the DESCRIPTION file and in the CITATION.cff file.
 
+Our versions are formatted as “year.update number”, where the year is the latest year of survey data.
+e.g. 
+2024.1 = first release of 2024 data
+2024.2 = update to the dataset, oldest year of data available still 2024
+
 You will also need to update the version number in the git tags for an official release.
 Example:
 `git tag -a 2024.1 -m "version 2024.1"`
@@ -204,3 +209,13 @@ The data available for download on the website will be automatically updated,
 and the github release will also note the latest version.
 Download it and check that the latest year of data is available in the dataset.
 Voilà!
+
+## STEP 8: Upload the latest release to Zenodo
+
+The NCMBBS code and dataset are backed up on Zenodo.
+
+The code underlying the release is automatically uploaded to Zenodo [doi: https://doi.org/10.5281/zenodo.18674853] when a github release is made. If any changes need to be made to the text description of the code release, that can be edited in `.github/workflows/release`
+
+However, backing up the dataset requires a manual upload. Go to the NCMBBS: North Carolina Mini Breeding Bird Survey Zenodo page [doi: https://doi.org/10.5281/zenodo.18223679] and create a new version. Upload the mbbs-data.tar.gz file that is available from the latest github release, make sure all the links in the description still work, update the Zenodo version number, and publish the new version.
+
+Pat yourself on the back, the latest update is now complete!
