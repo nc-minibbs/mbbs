@@ -216,6 +216,6 @@ The NCMBBS code and dataset are backed up on Zenodo.
 
 The code underlying the release is automatically uploaded to Zenodo [doi: https://doi.org/10.5281/zenodo.18674853] when a github release is made. If any changes need to be made to the text description of the code release, that can be edited in `.github/workflows/release`
 
-However, backing up the dataset requires a manual upload. Go to the NCMBBS: North Carolina Mini Breeding Bird Survey Zenodo page [doi:https://doi.org/10.5281/zenodo.18223679] and create a new version. Upload the mbbs-data.tar.gz file that is available from the latest github release, make sure all the links in the description still work, update the Zenodo version number, and publish the new version.
+However, backing up the dataset requires a manual upload. Go to the NCMBBS: North Carolina Mini Breeding Bird Survey Zenodo page [doi: https://doi.org/10.5281/zenodo.18223679] and create a new version. Upload the mbbs-data.tar.gz file that is available from the latest github release, make sure all the links in the description still work, update the Zenodo version number, and publish the new version.
 
 Pat yourself on the back, the latest update is now complete!
