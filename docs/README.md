@@ -15,8 +15,8 @@ is available at the links below:
 
 For a description of these files
 and more details on how they are generated,
-see the [data pipeline](data-pipeline.md).
-The [data checklist](data-checklist.md) outlines
+see the [data pipeline](data-pipeline.html#Data-products).
+The [data checklist](data-checklist.html) outlines
 how the data are updated annually.
 
 ## Versioned Data (recommended)
