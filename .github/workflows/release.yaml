@@ -52,7 +52,15 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body: "Release generated from Nix derivation"
+          body: "
+In this release/Zenodo repository:
+
+nc-minibbs/mbbs-${{ github.ref }}.zip is the code and underlying data used to generate the packaged dataset available at: https://doi.org/10.5281/zenodo.18223679 
+
+See results and explore the data at: minibbs.us
+
+Download the latest data from our data website: https://nc-minibbs.github.io/mbbs/
+"
           draft: false
           prerelease: ${{ steps.check_prerelease.outputs.prerelease }}
           
