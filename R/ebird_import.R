@@ -126,7 +126,6 @@ exclude_submissions <- function(ebird, exclusions) {
   )
 
   out
-  
 }
 
 #' Log X Counts
@@ -134,9 +133,9 @@ exclude_submissions <- function(ebird, exclusions) {
 log_x_counts <- function(ebird) {
   x <- ebird |>
     dplyr::filter(count == "X")
-  
+
   logger::log_info("{x$submission}: Count of X for {x$common_name}")
-  
+
   # return ebird unchanged
   ebird
 }

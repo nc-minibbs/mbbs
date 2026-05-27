@@ -5,7 +5,7 @@
 # name is temporary
 
 # This R script is not in use. Keeping in the repository in case it becomes useful
-# again in future. 
+# again in future.
 #------------------------------------------------------------------------------#
 
 #' get data from the $stop_counts
