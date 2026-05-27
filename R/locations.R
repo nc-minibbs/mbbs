@@ -3,6 +3,9 @@
 # really also a record of what stop-level data has been surveyed
 # like survey-list but for stops instead of whole routes
 # name is temporary
+
+# This R script is not in use. Keeping in the repository in case it becomes useful
+# again in future. 
 #------------------------------------------------------------------------------#
 
 #' get data from the $stop_counts

@@ -443,7 +443,6 @@ create_mbbs_data <- function(.config = config) {
     stop_counts = counts$stop_level,
     .config = .config
   )
-  stop_surveys <- create_stop_survey_list(ebird$locations, counts$stop_level)
   counts$route_level <- counts$route_level %>%
     dplyr::select(-nstops, -source) # remove as this is duplicated in surveys.csv
   counts$stop_level <- counts$stop_level %>%
@@ -457,8 +456,7 @@ create_mbbs_data <- function(.config = config) {
     mbbs_stops_counts = counts$stop_level,
     mbbs_route_counts = counts$route_level,
     surveys = surveys,
-    comments = comments,
-    stop_surveys = stop_surveys
+    comments = comments
   )
 }
 
