@@ -128,13 +128,26 @@ exclude_submissions <- function(ebird, exclusions) {
   out
 }
 
+#' Log X Counts
+#' @param ebird data.frame loaded from `load_ebird_data`
+log_x_counts <- function(ebird) {
+  x <- ebird |>
+    dplyr::filter(count == "X")
+
+  logger::log_info("{x$submission}: Count of X for {x$common_name}")
+
+  # return ebird unchanged
+  ebird
+}
+
 #' Removes subspecies, subgroup, or domestic type designations from the common
 #' and scienfic name columns of an ebird csv
 #' @inheritParams exclude_submissions
 #' @include utilities.R
 filter_ebird_data <- function(ebird) {
   ebird |>
-    exclude_submissions(get_exclusions())
+    exclude_submissions(get_exclusions()) |>
+    log_x_counts()
 }
 
 #' Parse the character count vector into an integer vector
