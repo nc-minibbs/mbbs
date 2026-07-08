@@ -68,3 +68,12 @@
   # https://ebird.org/checklist/S251452165
   stops_nobirds : [11, 12]
   stops_skipped : []
+
+- date : 2026-06-07
+  county : durham
+  route : 5
+  lat : [35.9735894]
+  lon : [-78.9428726]
+  # https://ebird.org/checklist/S354307246
+  stops_nobirds : [18]
+  stops_skipped : []
