@@ -137,6 +137,12 @@ eg. taxonomy has changed for that species and been updated on ebird,
 add the species to the case_when()'s in taxonomy.R/conform_taxonomy()
 eg. "House Wren ~ Northern House Wren" 
 
+If the species are not already listed in the error message, run:
+df <- get_stop_level_xls_data()
+taxonomy <- get_ebird_taxonomy()
+conform_taxonomy(df, taxonomy)
+And it will output the species that are in the df but not in the taxonomy.
+
 ## STEP 4: Run the update locally
 
 Now, you'll run the update locally.
