@@ -47,6 +47,8 @@ conform_taxonomy <- function(df, taxonomy) {
     mutate(
       common_name = dplyr::case_when(
         common_name == "House Wren" ~ "Northern House Wren",
+        common_name == "Yellow Warbler" ~ "Northern Yellow Warbler",
+        common_name == "Warbling Vireo" ~ "Eastern Warbling Vireo",
         # common_name == "Accipiter sp." ~ "Sharp-shinned/Cooper's Hawk",
         common_name == "Accipiter sp." ~ "Accipitrine hawk sp.",
         TRUE ~ common_name
