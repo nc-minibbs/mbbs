@@ -179,6 +179,9 @@ chatham,cthm-09,9,17,35.73419,-79.05825,NA
 chatham,cthm-09,9,18,35.72962,-79.00367,NA
 chatham,cthm-09,9,19,35.72154,-79.00648,NA
 chatham,cthm-09,9,20,35.71445,-79.00917,NA
+chatham,cthm-09,9,21,35.74706,-79.05417,"replacement stop for stop 18, used ONLY in 2025"
+chatham,cthm-09,9,22,35.75567,-79.05308,"replacement stop for stop 19, used ONLY in 2025"
+chatham,cthm-09,9,23,35.76546,-79.05084,"replacement stop for stop 20, used ONLY in 2025"
 chatham,cthm-10,10,1,35.665815,-79.09656,"""Just be aware the mileage might be correct but some of the landmarks have changed."" Clark Poe Road - 0.0m"
 chatham,cthm-10,10,2,35.660276,-79.102497,Just past first house on left (Gum Springs Road) - 0.55m
 chatham,cthm-10,10,3,35.654274,-79.106031,Just past house on left in valley - 1.0m
