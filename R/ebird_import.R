@@ -279,12 +279,12 @@ stops_moved <- function(deviations) {
     purrr::keep(.p = ~ length(.x$stops_moved) > 0) |>
     purrr::map_dfr(
       ~ .x[names(.x) %in%
-             c("year", "date", "county", "route", "stops_skipped", "stops_moved")] |>
+        c("year", "date", "county", "route", "stops_skipped", "stops_moved")] |>
         dplyr::as_tibble() |>
         dplyr::rename(
           route_num = route,
-          stop_num = stops_skipped, #the original stops that were moved in this year.
-          stop_moved = stops_moved #where the stop was moved to
+          stop_num = stops_skipped, # the original stops that were moved in this year.
+          stop_moved = stops_moved # where the stop was moved to
         )
     ) |>
     dplyr::mutate(
@@ -309,9 +309,9 @@ handle_deviations <- function(ebird, deviations) {
   logger::log_info(
     "Deviation: Adding observation for {add$year} {add$route} {add$stop_num}"
   )
-  
+
   move <- stops_moved(deviations)
-  
+
   logger::log_warn(
     "Deviation: Stop {move$year} {move$route} {move$stop_num} was moved to stop {move$route} {move$stop_moved}. Okay for route-level uses. Remove for stop-level analyses."
   )
