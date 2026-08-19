@@ -276,4 +276,7 @@ Geographic coordinates of each stop.
 ### Versioning
 
 Data products are versioned as follows...
-TODO
+Our versions are formatted as “year.update number”, where the year is the latest year of survey data.
+e.g. 
+2024.1 = first release of 2024 data
+2024.2 = update to the dataset, oldest year of data available still 2024
