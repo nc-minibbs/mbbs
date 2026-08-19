@@ -57,7 +57,11 @@
 - S37534803 #Chatham 3 2017
 
 
-#Durham Route 1 night surveys stop "1-0"
+#Durham Route 1 night surveys stop "1-0".
+#Over time, this 1-0 survey started to be labeled as 1-1,
+#and stop 20 became stop 21. 
+#Therefore, we remove the 1-0 survey and keep stop 21,
+#as that stop is consistent with the historical stop 20.
 #2021
 - S117821453 
 #2022
@@ -66,6 +70,8 @@
 - S180364396 
 #2025
 - S242596527
+#2026
+#- S350282717 #not excluding for the moment.
 #2021 summary
 - S90333099
 

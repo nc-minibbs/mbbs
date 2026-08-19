@@ -256,6 +256,7 @@ Summary of all surveys run.
     * survey conducted on more than 1 day
     * survey not conducted during study window (May 15 - June 30)
     * fewer than 20 stops were surveyed
+    * stops were surveyed in different location
 * `comments.csv`:
 *Caveat emptor*
 This is essentially all the comments from ebird submissions.

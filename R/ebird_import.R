@@ -271,6 +271,30 @@ stops_to_include <- function(deviations) {
     )
 }
 
+#' Identify stops that were moved in the list of deviations.
+#' @return a data.frame of year/county/route/stop_num which need to be added
+#'         to the ebird data
+stops_moved <- function(deviations) {
+  deviations |>
+    purrr::keep(.p = ~ length(.x$stops_moved) > 0) |>
+    purrr::map_dfr(
+      ~ .x[names(.x) %in%
+             c("year", "date", "county", "route", "stops_skipped", "stops_moved")] |>
+        dplyr::as_tibble() |>
+        dplyr::rename(
+          route_num = route,
+          stop_num = stops_skipped, #the original stops that were moved in this year.
+          stop_moved = stops_moved #where the stop was moved to
+        )
+    ) |>
+    dplyr::mutate(
+      date = lubridate::ymd(date),
+      year = lubridate::year(date),
+      county = tolower(county),
+      route = make_route_id(county, route_num = route_num)
+    )
+}
+
 #' Adds stops that were surveyed,
 #' but no birds were observed.
 handle_deviations <- function(ebird, deviations) {
@@ -284,6 +308,12 @@ handle_deviations <- function(ebird, deviations) {
 
   logger::log_info(
     "Deviation: Adding observation for {add$year} {add$route} {add$stop_num}"
+  )
+  
+  move <- stops_moved(deviations)
+  
+  logger::log_warn(
+    "Deviation: Stop {move$year} {move$route} {move$stop_num} was moved to stop {move$route} {move$stop_moved}. Okay for route-level uses. Remove for stop-level analyses."
   )
 
   dplyr::bind_rows(ebird, add)
