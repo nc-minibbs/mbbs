@@ -12,15 +12,28 @@
 #' @importFrom dplyr select
 #' @importFrom stringr str_extract
 #' @include config.R
-get_ebird_taxonomy <- function(path = config$taxonomy_data_dir) {
+get_ebird_taxonomy <- function(path = config$taxonomy_data_dir, all_columns = FALSE) {
+  
   list.files(path) |>
     (\(x) x[which.max(as.integer(stringr::str_extract(x, "\\d{4}")))])() |>
     (\(x) file.path(path, x))() |>
     read.csv() |>
-    dplyr::select(
-      sci_name = "SCI_NAME",
-      common_name = "PRIMARY_COM_NAME"
-    ) |>
+  {
+   \(x)   if(all_columns == TRUE) {
+      x |> dplyr::select(
+        sci_name = "SCI_NAME",
+        common_name = "PRIMARY_COM_NAME",
+        family = "FAMILY",
+        species_group = "SPECIES_GROUP",
+        taxon_order = "TAXON_ORDER"
+      ) 
+    } else { # default state used in most functions in this package
+      x |> dplyr::select(
+        sci_name = "SCI_NAME",
+        common_name = "PRIMARY_COM_NAME"
+      )
+    }
+  }() |> 
     mutate(
       common_name = dplyr::case_when(
         common_name == "Accipitrine hawk sp. (former Accipiter sp.)" ~
@@ -34,6 +47,7 @@ get_ebird_taxonomy <- function(path = config$taxonomy_data_dir) {
         TRUE ~ sci_name
       )
     )
+  
 }
 
 #' Conform taxonomy of MBBS data from different sources

@@ -451,12 +451,16 @@ create_mbbs_data <- function(.config = config) {
   comments <- ebird$comments |>
     arrange(year, route, stop_num) %>%
     dplyr::select(-obs1, -obs2, -obs3) # corrected versions in surveys.csv
+  
+  taxonomy <- get_ebird_taxonomy(all_columns = TRUE) |>
+    dplyr::filter(common_name %in% counts$route_level$common_name)
 
   list(
     mbbs_stops_counts = counts$stop_level,
     mbbs_route_counts = counts$route_level,
     surveys = surveys,
-    comments = comments
+    comments = comments,
+    taxonomy = taxonomy
   )
 }
 
