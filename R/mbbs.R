@@ -452,11 +452,15 @@ create_mbbs_data <- function(.config = config) {
     arrange(year, route, stop_num) %>%
     dplyr::select(-obs1, -obs2, -obs3) # corrected versions in surveys.csv
 
+  taxonomy <- get_ebird_taxonomy(all_columns = TRUE) |>
+    dplyr::filter(common_name %in% counts$route_level$common_name)
+
   list(
     mbbs_stops_counts = counts$stop_level,
     mbbs_route_counts = counts$route_level,
     surveys = surveys,
-    comments = comments
+    comments = comments,
+    taxonomy = taxonomy
   )
 }
 
@@ -468,12 +472,14 @@ write_mbbs_data <- function(.config = config) {
 
   log_file <- "output/log.txt"
   logger::log_appender(logger::appender_file(log_file))
-  
-  readme <- c("This dataset is updated yearly and a newer version may be available.", 
-              "Please visit Zenodo [https://doi.org/10.5281/zenodo.18223678] or our website [https://minibbs.us] to access the latest version.",
-              "If you use this data please cite our datapaper: [datapaper citation pending]",
-              "",
-              "Version associated with this README = 2026.1")
+
+  readme <- c(
+    "This dataset is updated yearly and a newer version may be available.",
+    "Please visit Zenodo [https://doi.org/10.5281/zenodo.18223678] or our website [https://minibbs.us] to access the latest version.",
+    "If you use this data please cite our datapaper: [datapaper citation pending]",
+    "",
+    "Version associated with this README = 2026.2"
+  )
   writeLines(readme, "output/README.txt")
 
   data <- create_mbbs_data(.config)
