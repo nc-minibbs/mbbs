@@ -477,7 +477,7 @@ write_mbbs_data <- function(.config = config) {
               "Please visit Zenodo [https://doi.org/10.5281/zenodo.18223678] or our website [https://minibbs.us] to access the latest version.",
               "If you use this data please cite our datapaper: [datapaper citation pending]",
               "",
-              "Version associated with this README = 2026.1")
+              "Version associated with this README = 2026.2")
   writeLines(readme, "output/README.txt")
 
   data <- create_mbbs_data(.config)
