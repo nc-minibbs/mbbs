@@ -137,6 +137,12 @@ eg. taxonomy has changed for that species and been updated on ebird,
 add the species to the case_when()'s in taxonomy.R/conform_taxonomy()
 eg. "House Wren ~ Northern House Wren" 
 
+If the species are not already listed in the error message, run:
+df <- get_stop_level_xls_data()
+taxonomy <- get_ebird_taxonomy()
+conform_taxonomy(df, taxonomy)
+And it will output the species that are in the df but not in the taxonomy.
+
 ## STEP 4: Run the update locally
 
 Now, you'll run the update locally.
@@ -190,7 +196,7 @@ If you changed any functions, update the documentation with `devtools::document(
 ## STEP 6: Update the version number
 
 Once you've confirmed that the update is running smoothly locally,
-update the version number in the DESCRIPTION file and in the CITATION.cff file.
+update the version number in the DESCRIPTION file, in the CITATION.cff file, and for the readme in the 'write_mbbs_data' function at the bottom of the file mbbs.R
 
 Our versions are formatted as “year.update number”, where the year is the latest year of survey data.
 e.g. 

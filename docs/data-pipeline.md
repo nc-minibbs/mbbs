@@ -256,6 +256,7 @@ Summary of all surveys run.
     * survey conducted on more than 1 day
     * survey not conducted during study window (May 15 - June 30)
     * fewer than 20 stops were surveyed
+    * stops were surveyed in different location
 * `comments.csv`:
 *Caveat emptor*
 This is essentially all the comments from ebird submissions.
@@ -275,4 +276,7 @@ Geographic coordinates of each stop.
 ### Versioning
 
 Data products are versioned as follows...
-TODO
+Our versions are formatted as “year.update number”, where the year is the latest year of survey data.
+e.g. 
+2024.1 = first release of 2024 data
+2024.2 = update to the dataset, oldest year of data available still 2024

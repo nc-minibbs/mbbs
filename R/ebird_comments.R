@@ -131,7 +131,9 @@ comment_workflow <- function(ebird) {
       # * Survey not within valid date range
         !(valid_date_range(date)) |
           # * not all the submissions on the same date
-          !(all(date == date[1]))
+          !(all(date == date[1])) |
+          # * stops were moved from expected stops 1-20
+          (any(stop_num > 20))
     ) |>
     ungroup()
 }

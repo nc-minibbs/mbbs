@@ -2,7 +2,7 @@
 # and stop-level data was collected for the rest of the route.
 # This file tracks these such deviations.
 #
-# Deviations could be for 2 reasons:
+# Deviations could be for 3 reasons:
 #
 # 1) stops_skipped:
 #    The observer(s) were unable to access the stop(s) 
@@ -13,6 +13,12 @@
 #    but no birds were seen.
 #    The eBird download does not contain the empty checklist.
 #    In this case, we do know the count of all species is 0.
+# 3) stops_moved:
+#    The stop(s) were moved
+#    for safety or other reasons.
+#    In this case, we do know the count of all the species
+#    If it's only a few stops affected, these can be used in route-level summaries
+#    But should be removed for stop-level analyses.
 
 - date : 2021-05-16
   county : orange
@@ -22,6 +28,7 @@
   # https://ebird.org/checklist/S88387941
   stops_nobirds : [1]
   stops_skipped : []
+  stops_moved : []
 
 - date : 2022-05-18
   county : orange
@@ -31,6 +38,7 @@
   stops_nobirds : []
   # The stops were missed for construction blocking the road 
   stops_skipped : [2, 3, 4]
+  stops_moved : []
 
 - date : 2023-05-20
   county : orange
@@ -40,6 +48,7 @@
   # https://ebird.org/checklist/S138614693
   stops_nobirds : [1]
   stops_skipped : []
+  stops_moved : []
 
 - date : 2023-06-25
   county : chatham
@@ -49,6 +58,7 @@
   # https://ebird.org/checklist/S142701475
   stops_nobirds : [12]
   stops_skipped : []
+  stops_moved : []
 
 - date : 2024-06-09
   county : chatham
@@ -58,6 +68,7 @@
   # https://ebird.org/checklist/S180502636
   stops_nobirds : [12]
   stops_skipped : []
+  stops_moved : []
 
 - date : 2025-06-16
   county : chatham
@@ -68,6 +79,7 @@
   # https://ebird.org/checklist/S251452165
   stops_nobirds : [11, 12]
   stops_skipped : []
+  stops_moved : []
 
 - date : 2026-06-07
   county : durham
@@ -77,3 +89,17 @@
   # https://ebird.org/checklist/S354307246
   stops_nobirds : [18]
   stops_skipped : []
+  stops_moved : []
+
+- date : 2025-06-16
+  county : chatham
+  route : 9
+  lat : []
+  lon : []
+  # https://ebird.org/checklist/S252929973
+  # https://ebird.org/checklist/S252929972
+  # https://ebird.org/checklist/S252929971
+  # the stops were moved for traffic, but ultimately traffic was similar at previous location so we went back to the historic stops in 2026.
+  stops_nobirds : []
+  stops_skipped : [18, 19, 20]
+  stops_moved : [21, 22, 23]
